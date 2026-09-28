@@ -2,8 +2,8 @@
 
 # Skill Quality Evaluation Model (SQEM)
 
-> Version: 1.0  
-> Status: Draft for Pilot Validation  
+> Version: 1.0<br>
+> Status: Draft for Pilot Validation<br>
 > Scope: Agent Skills / Awesome QA Skills
 
 ## 1. Purpose

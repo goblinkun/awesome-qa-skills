@@ -2,7 +2,7 @@
 
 # Skill Eval 契约
 
-> 版本：1.0  
+> 版本：1.0
 > 关联规范：Skill Quality Evaluation Model（SQEM）
 
 ## 1. 目的

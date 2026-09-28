@@ -2,7 +2,7 @@
 
 # Awesome QA Skills 的 SQEM Pilot 计划
 
-> 版本：1.0  
+> 版本：1.0<br>
 > 目的：在全仓库推广前验证 SQEM 的可行性和实用性。
 
 ## 1. Pilot 目标
@@ -22,28 +22,28 @@ Pilot 不假设 SQEM v1.0 已经正确。**SQEM 自己也是被测试对象。**
 ## 2. Pilot Skills
 
 ### P1 - functional-testing
-类型：通用 QA Skill  
-目标：L3 Evaluated  
+类型：通用 QA Skill<br>
+目标：L3 Evaluated<br>
 重点：Trigger、Behavior、Benchmark、双语一致性。
 
 ### P2 - testability-analysis
-类型：分析型 QA Skill  
-目标：L3 Evaluated  
+类型：分析型 QA Skill<br>
+目标：L3 Evaluated<br>
 重点：Boundary、Contrastive Selection、Unsupported Assumptions、Evidence Handling。
 
 ### P3 - performance-testing
-类型：专业领域 QA Skill  
-目标：L2 Verified + 部分 L3  
+类型：专业领域 QA Skill<br>
+目标：L2 Verified + 部分 L3<br>
 重点：Behavior、领域正确性、Model Sensitivity。
 
 ### P4 - skill-evaluation-design
-类型：Skill Engineering  
-目标：L3 Evaluated  
+类型：Skill Engineering<br>
+目标：L3 Evaluated<br>
 重点：Behavior Contract、Eval Design、Judge Usage、Risk-based Selection。
 
 ### P5 - skill-change-verification
-类型：Skill Engineering / Regression  
-目标：L3 Evaluated  
+类型：Skill Engineering / Regression<br>
+目标：L3 Evaluated<br>
 重点：Change Impact、Regression Selection、Evidence Comparison、Failure Handling。
 
 ## 3. Pilot 阶段

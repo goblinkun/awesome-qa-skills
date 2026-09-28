@@ -2,7 +2,7 @@
 
 # SQEM Pilot Plan for Awesome QA Skills
 
-> Version: 1.0  
+> Version: 1.0<br>
 > Purpose: Validate SQEM before repository-wide adoption.
 
 ## 1. Objective
@@ -16,28 +16,28 @@ The five Skills listed here are SQEM methodology Pilot candidates. They do not r
 ## 2. Pilot Skills
 
 ### P1 - functional-testing
-Type: General QA Skill  
-Target: L3 Evaluated  
+Type: General QA Skill<br>
+Target: L3 Evaluated<br>
 Focus: Trigger, Behavior, Benchmark, bilingual parity.
 
 ### P2 - testability-analysis
-Type: Analytical QA Skill  
-Target: L3 Evaluated  
+Type: Analytical QA Skill<br>
+Target: L3 Evaluated<br>
 Focus: Boundary, contrastive selection, unsupported assumptions, evidence handling.
 
 ### P3 - performance-testing
-Type: Domain-specific QA Skill  
-Target: L2 Verified + selected L3 evaluation  
+Type: Domain-specific QA Skill<br>
+Target: L2 Verified + selected L3 evaluation<br>
 Focus: Behavior, domain correctness, model sensitivity.
 
 ### P4 - skill-evaluation-design
-Type: Skill Engineering  
-Target: L3 Evaluated  
+Type: Skill Engineering<br>
+Target: L3 Evaluated<br>
 Focus: Behavior Contract, Eval design, Judge usage, risk-based selection.
 
 ### P5 - skill-change-verification
-Type: Skill Engineering / Regression  
-Target: L3 Evaluated  
+Type: Skill Engineering / Regression<br>
+Target: L3 Evaluated<br>
 Focus: Change impact, regression selection, evidence comparison, failure handling.
 
 ## 3. Pilot Stages

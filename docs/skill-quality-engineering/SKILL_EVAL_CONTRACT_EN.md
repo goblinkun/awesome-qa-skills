@@ -2,7 +2,7 @@
 
 # Skill Eval Contract
 
-> Version: 1.0  
+> Version: 1.0
 > Related specification: Skill Quality Evaluation Model (SQEM)
 
 ## 1. Purpose

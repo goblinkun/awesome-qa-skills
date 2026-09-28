@@ -2,8 +2,8 @@
 
 # Skill 质量评测模型（SQEM）
 
-> 版本：1.0  
-> 状态：Pilot 验证草案  
+> 版本：1.0<br>
+> 状态：Pilot 验证草案<br>
 > 适用范围：Agent Skills / Awesome QA Skills
 
 ## 1. 目的

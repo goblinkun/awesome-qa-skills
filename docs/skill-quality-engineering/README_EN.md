@@ -2,8 +2,8 @@
 
 # Skill Quality Engineering Toolkit (SQET)
 
-> Version: 1.0  
-> Core model: Skill Quality Evaluation Model (SQEM)  
+> Version: 1.0<br>
+> Core model: Skill Quality Evaluation Model (SQEM)<br>
 > Current status: Pilot validation
 
 SQET is the Skill quality-engineering methodology layer for Awesome QA Skills. It covers Agent Skill design, evaluation, validation, evolution, and review. It is documentation and standards, not an installable Skill and not a second Eval Engine.

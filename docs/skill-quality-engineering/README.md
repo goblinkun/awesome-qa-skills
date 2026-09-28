@@ -2,8 +2,8 @@
 
 # Skill Quality Engineering Toolkit（SQET）
 
-> 版本：1.0  
-> 核心模型：Skill Quality Evaluation Model（SQEM）  
+> 版本：1.0<br>
+> 核心模型：Skill Quality Evaluation Model（SQEM）<br>
 > 当前状态：Pilot validation
 
 SQET 是 Awesome QA Skills 的 Skill 质量工程方法层，用于设计、评估、验证、演进和审查 Agent Skill。它定义质量声明、评测契约、风险和证据边界；它不是一个可安装的 Skill，也不是第二套 Eval Engine。
