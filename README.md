@@ -13,7 +13,7 @@
 
 **在线目录：** [https://inaodeng.com/qaskills/](https://inaodeng.com/qaskills/)
 
-**快速入口：** [完整技能索引](docs/catalog/skills-index.md) · [Composition 路由目录](docs/catalog/skills-composition.md) · [安装说明](scripts/INSTALL_SKILLS.md) · [Skills CLI 集成指南](docs/integrations/SKILLS_CLI_INTEGRATION.md) · [v1.4 治理收口](docs/governance/PHASE_0_V1_4_CLOSEOUT.md) · [贡献指南](CONTRIBUTING.md)
+**快速入口：** [完整技能索引](docs/catalog/skills-index.md) · [Composition 路由目录](docs/catalog/skills-composition.md) · [Skill Quality Engineering Toolkit](docs/skill-quality-engineering/README.md) · [安装说明](scripts/INSTALL_SKILLS.md) · [Skills CLI 集成指南](docs/integrations/SKILLS_CLI_INTEGRATION.md) · [v1.4 治理收口](docs/governance/PHASE_0_V1_4_CLOSEOUT.md) · [贡献指南](CONTRIBUTING.md)
 
 ---
 

@@ -53,6 +53,27 @@ PROJECT_PAIRS = (
         "docs/governance/SKILL_EVALUATION_PILOTS_EN.md",
     ),
     (
+        "docs/skill-quality-engineering/README.md",
+        "docs/skill-quality-engineering/README_EN.md",
+    ),
+    (
+        "docs/skill-quality-engineering/SKILL_QUALITY_EVALUATION_MODEL.md",
+        "docs/skill-quality-engineering/SKILL_QUALITY_EVALUATION_MODEL_EN.md",
+    ),
+    (
+        "docs/skill-quality-engineering/SKILL_EVAL_CONTRACT.md",
+        "docs/skill-quality-engineering/SKILL_EVAL_CONTRACT_EN.md",
+    ),
+    (
+        "docs/skill-quality-engineering/SKILL_QUALITY_PILOT.md",
+        "docs/skill-quality-engineering/SKILL_QUALITY_PILOT_EN.md",
+    ),
+    ("evals/README.md", "evals/README_EN.md"),
+    (
+        "evidence/skill-quality/README.md",
+        "evidence/skill-quality/README_EN.md",
+    ),
+    (
         "docs/governance/WORKFLOW_EVAL_INSTALL_SYNC.md",
         "docs/governance/WORKFLOW_EVAL_INSTALL_SYNC_EN.md",
     ),

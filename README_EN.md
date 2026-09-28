@@ -13,7 +13,7 @@ A language-partitioned **AI testing skills library** (Agent Skills) for Codex, C
 
 **Online directory:** [https://inaodeng.com/qaskills/](https://inaodeng.com/qaskills/)
 
-**Quick links:** [Complete Skills index](docs/catalog/skills-index_EN.md) · [Composition Router catalog](docs/catalog/skills-composition_EN.md) · [Installation guide](scripts/INSTALL_SKILLS.md) · [Skills CLI integration guide](docs/integrations/SKILLS_CLI_INTEGRATION_EN.md) · [v1.4 governance closeout](docs/governance/PHASE_0_V1_4_CLOSEOUT_EN.md) · [Contributing](CONTRIBUTING_EN.md)
+**Quick links:** [Complete Skills index](docs/catalog/skills-index_EN.md) · [Composition Router catalog](docs/catalog/skills-composition_EN.md) · [Skill Quality Engineering Toolkit](docs/skill-quality-engineering/README_EN.md) · [Installation guide](scripts/INSTALL_SKILLS.md) · [Skills CLI integration guide](docs/integrations/SKILLS_CLI_INTEGRATION_EN.md) · [v1.4 governance closeout](docs/governance/PHASE_0_V1_4_CLOSEOUT_EN.md) · [Contributing](CONTRIBUTING_EN.md)
 
 ---
 
