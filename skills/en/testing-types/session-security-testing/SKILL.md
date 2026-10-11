@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded session-security-test
 - Read evals/eval.yaml and matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Identify Cookie/opaque-session/access+refresh mechanisms and contracts for creation, post-login rotation, fixation, idle/absolute expiry, revocation, logout and concurrent clients.
+- Deliver mechanism-specific credential/permission timelines; successful logout does not prove old credentials are invalid.
+- When deriving domain candidates, read and follow [prompts/session-security-testing.md](prompts/session-security-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only session creation, fixation, expiry, revocation, concurrency, and cross-device boundaries; do not log in, call real APIs, or read credentials.

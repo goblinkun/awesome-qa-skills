@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, behavior of concern, source ev
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Extract field types, required/null rules, ranges, length encoding, payload limits, identity/permission rules, and error contracts with sources.
+2. Derive missing, null, empty, wrong-type, out-of-range, oversized, and unauthorized candidates. Isolate one violated constraint when possible; label combined violations separately.
+3. Record allowed/rejected expectations, supplied status/business codes, and no-order/payment/message obligations; never invent unspecified status codes.
+4. Compare responses and commit ledgers and retain valid neighboring controls. Error responses alone do not prove absence of side effects; preserve distinct invalid classes.
+
+**Decision and deliverable:** Deliver constraint, input variant, allow/reject expectation, response/side-effect observation, and validation, tracing field and permission rules separately.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

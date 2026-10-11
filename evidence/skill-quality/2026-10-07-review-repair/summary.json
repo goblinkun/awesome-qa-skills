@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-07",
+  "base_head": "c61f507f61711c3c0f0d1777136a5a4ff0e211b3",
+  "branch": "develop",
+  "skills": 164,
+  "language_packages": 328,
+  "added_eval_cases": 530,
+  "added_eval_cases_by_language": {
+    "en": 265,
+    "zh": 265
+  },
+  "eval_case_count": 1658,
+  "primary_repair_groups": {
+    "domain_method": 42,
+    "method_enhancement": 59,
+    "evaluation": 50,
+    "shared_contract_or_script": 13
+  },
+  "canonical_names_changed": 0,
+  "original_review_preserved": true,
+  "quality_gate": {
+    "status": "PASS",
+    "exit_code": 0,
+    "valid_eval_configs": 328,
+    "invalid_eval_configs": 0,
+    "unit_tests_passed": 227,
+    "log": "quality.txt"
+  },
+  "unit_tests": 227,
+  "cli_gate": {
+    "status": "PASS",
+    "exit_code": 0,
+    "discovered_skills": 164,
+    "pinned_version": "1.7.0"
+  },
+  "standalone_resource_copies": 74,
+  "python_ast_valid": 1107,
+  "api_generated_projects": 8,
+  "api_framework_outcome_runs": 24,
+  "model_current_run": "PARTIAL_SELECTED_CASES_WITH_BLOCKS",
+  "missing_initial_files": 0,
+  "initial_dirty_files_preserved": 1288,
+  "initial_dirty_eval_manifests_appended": 4,
+  "git_commit_push": "NOT_REQUESTED_NOT_PERFORMED",
+  "model_selected_cases_passed": 13,
+  "model_other_semantic_cases": "PARTIAL; 515 NOT_RUN; one judge ERROR; one fixed grader FAIL awaiting live rerun",
+  "model_latest_unique_case_statuses": {
+    "PASS": 13,
+    "FAIL": 1,
+    "ERROR": 1,
+    "NOT_RUN": 515
+  },
+  "runtime_followup": "runtime-followup.json",
+  "continued_model_queue": "BLOCKED_BY_AUTOMATIC_APPROVAL_REVIEW",
+  "latest_continuation": "../2026-10-08-review-continuation/summary.json"
+}

@@ -12,6 +12,10 @@ Route the user request to the best-fit testing skill. This skill **only selects 
 - current phase if known: clarification / strategy / case design / execution / defects / daily / sprint / release
 - constraints: language, toolchain, whether plus/enhanced is wanted
 
+## Exact IDs and Host availability
+
+Read `references/skill-capability-inventory.json` to check exact canonical IDs. This 2026-10-06 snapshot catalogs 164 IDs; catalog existence does not prove installation or callability on the current Host. Missing installation evidence means availability=`UNKNOWN`; explicitly absent means `UNAVAILABLE`. Match explicit specialties (authentication vs authorization, retrieval vs answer quality, impact scope vs regression selection) before broad Composition routes. Keep one primary and at most one helper. For an unavailable target, state the gap and minimal installation/handoff action without claiming invocation.
+
 ## Composition routing source
 
 1. Read the same-directory `reference.md` first and check whether the request matches one of five structured routes: `new-feature-quality`, `api-delivery`, `change-regression`, `performance-decision`, or `ai-feature-validation`.

@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded authentication-testin
 - Read evals/eval.yaml and matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Model unauthenticated, challenged, authenticated, locked and recovery states for supplied password/MFA/recovery/federation mechanisms, with creation/rotation/expiry/revocation/replay rules.
+- Deliver authentication transitions and credential lifecycles with expected state/token, observation and gaps; authentication does not replace authorization.
+- When deriving domain candidates, read and follow [prompts/authentication-testing.md](prompts/authentication-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only identity credentials, authentication flows, failure paths, and lifecycle; do not log in, call real APIs, or read credentials.

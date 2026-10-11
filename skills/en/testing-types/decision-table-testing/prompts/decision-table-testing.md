@@ -29,6 +29,17 @@ Each finding contains rule ID, condition combination, applicability, action/outc
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Discretize continuous conditions into sourced mutually exclusive ranges/categories and list domains, actions, exceptions and precedence; do not force vague conditions into booleans.
+2. Enumerate legal combinations for small models and match rules, checking no match, conflicting multiple matches, exclusive conditions and unreachable rules.
+3. Use don't-care compression only when sourced actions are invariant to that condition; retain traceability for every compressed combination.
+4. Choose representatives/key boundaries per rule with action oracles. Unknown precedence in overlapping rules remains an unresolved conflict, not implicit row-order priority.
+
+**Decision and deliverable:** Deliver full combination/rule/action mapping and overlap/gap lists; compression must not hide undefined behavior.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

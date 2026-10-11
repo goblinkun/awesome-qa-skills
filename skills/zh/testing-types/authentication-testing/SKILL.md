@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded authentication-testin
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 根据已给密码、MFA、恢复或联邦机制建未认证/挑战中/已认证/锁定/恢复中的状态图，标创建、轮换、过期、撤销与重放规则。
+- 输出认证状态迁移与凭证生命周期表，逐事件写预期状态/令牌、材料观察和缺口；身份验证不替代授权。
+- 形成领域候选时，必须读取并遵循 [prompts/authentication-testing.md](prompts/authentication-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析身份凭证、认证流程、失败路径和生命周期，不登录系统、不调用真实 API、不读取凭据。

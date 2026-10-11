@@ -27,6 +27,12 @@ Do not use it to execute tests, invent rules, replace a complete strategy, or ac
 3. Record EP-## with equivalence class, partition rationale, representative value, valid/invalid state, source evidence, expected concern, and validation method, source, evidence state, impact, owner, close condition, and validation.
 4. Preserve conflicts, unknown constraints, and open questions.
 
+## Domain Execution Essentials
+
+- Partition by sourced equivalent behavior/errors and constraints, not input shape alone; invalid classes with different responses must remain distinct.
+- Deliver joint partitions, behavioral oracles and representatives, with disjointness/completeness scope and unknown classes; retain conditional validity.
+- When deriving domain candidates, read and follow [prompts/equivalence-partitioning.md](prompts/equivalence-partitioning.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - do not merge classes from similar field names, invent error codes or rules, or treat one representative per class as full coverage.

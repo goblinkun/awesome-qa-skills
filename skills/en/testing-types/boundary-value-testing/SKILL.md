@@ -27,6 +27,12 @@ Do not use it to execute tests, invent rules, replace a complete strategy, or ac
 3. Record BVT-## with input domain, boundary value, neighboring value, inclusivity, unit, source evidence, impact, priority, and validation method, source, evidence state, impact, owner, close condition, and validation.
 4. Preserve conflicts, unknown constraints, and open questions.
 
+## Domain Execution Essentials
+
+- Extract bounds, inclusive/exclusive rules, discrete/continuous type, smallest representable step, length encoding, money precision, time unit/timezone and sources.
+- Deliver rules, units/steps, boundary values, validity and sources; do not invent 0.01 precision or default time granularity.
+- When deriving domain candidates, read and follow [prompts/boundary-value-testing.md](prompts/boundary-value-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - without a source, do not invent thresholds, units, or neighbors, and do not turn a candidate into a product rule or pass.

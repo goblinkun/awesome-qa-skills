@@ -27,10 +27,18 @@ description: Use this skill when you need to test AI agent goals, state, plannin
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/ai-agent-testing.md`; it is the complete execution specification for this skill.
 - For evaluation or regression, read `evals/eval.yaml` and the relevant cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
 
+## Domain Execution Essentials
+
+1. Define input sample ID, task-success oracle, allowed tools/resources, prohibited effects, and stopping conditions. Missing goals remain open.
+2. Check run/step order, permission, idempotency, isolation, recovery, and budget invariants. Judge outcome correctness and process compliance separately; either failure prevents an overall pass.
+3. Classify termination as success, goal failure, budget exhaustion, cancellation, safety block, or environment error. Missing terminal events do not prove completion.
+4. Record model/prompt/tool/data/environment versions, sample selection, and project-supplied repetitions. Report per-sample pass/fail counts and intermittent failures; a single trial establishes no stability claim.
 ## Core Constraints
 
 - evaluate both final results and execution traces

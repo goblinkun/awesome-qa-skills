@@ -1,0 +1,317 @@
+{
+  "target": "ephemeral loopback fixture",
+  "records": [
+    {
+      "label": "en-pytest-normalize",
+      "exit_code": 0,
+      "seconds": 0.23
+    },
+    {
+      "label": "en-pytest-generate",
+      "exit_code": 0,
+      "seconds": 0.14
+    },
+    {
+      "label": "en-pytest-good",
+      "exit_code": 0,
+      "seconds": 0.71,
+      "expected_exit": "zero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-pytest-status",
+      "exit_code": 1,
+      "seconds": 0.58,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-pytest-body",
+      "exit_code": 1,
+      "seconds": 0.58,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-supertest-normalize",
+      "exit_code": 0,
+      "seconds": 0.17
+    },
+    {
+      "label": "en-supertest-generate",
+      "exit_code": 0,
+      "seconds": 0.12
+    },
+    {
+      "label": "en-supertest-good",
+      "exit_code": 0,
+      "seconds": 0.95,
+      "expected_exit": "zero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-supertest-status",
+      "exit_code": 1,
+      "seconds": 0.51,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-supertest-body",
+      "exit_code": 1,
+      "seconds": 1.52,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-restassure-normalize",
+      "exit_code": 0,
+      "seconds": 0.22
+    },
+    {
+      "label": "en-restassure-generate",
+      "exit_code": 0,
+      "seconds": 0.14
+    },
+    {
+      "label": "en-restassure-good",
+      "exit_code": 0,
+      "seconds": 11.36,
+      "expected_exit": "zero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-restassure-status",
+      "exit_code": 1,
+      "seconds": 7.25,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-restassure-body",
+      "exit_code": 1,
+      "seconds": 5.22,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-bruno-normalize",
+      "exit_code": 0,
+      "seconds": 0.21
+    },
+    {
+      "label": "en-bruno-generate",
+      "exit_code": 0,
+      "seconds": 0.13
+    },
+    {
+      "label": "en-bruno-good",
+      "exit_code": 0,
+      "seconds": 1.6,
+      "expected_exit": "zero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-bruno-good-report",
+      "exit_code": 0,
+      "seconds": 0.12,
+      "matched_expectation": true
+    },
+    {
+      "label": "en-bruno-status",
+      "exit_code": 1,
+      "seconds": 0.92,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-bruno-status-report",
+      "exit_code": 1,
+      "seconds": 0.13,
+      "matched_expectation": true
+    },
+    {
+      "label": "en-bruno-body",
+      "exit_code": 1,
+      "seconds": 0.9,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "en-bruno-body-report",
+      "exit_code": 1,
+      "seconds": 0.13,
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-pytest-normalize",
+      "exit_code": 0,
+      "seconds": 0.19
+    },
+    {
+      "label": "zh-pytest-generate",
+      "exit_code": 0,
+      "seconds": 0.13
+    },
+    {
+      "label": "zh-pytest-good",
+      "exit_code": 0,
+      "seconds": 0.59,
+      "expected_exit": "zero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-pytest-status",
+      "exit_code": 1,
+      "seconds": 0.56,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-pytest-body",
+      "exit_code": 1,
+      "seconds": 0.52,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-supertest-normalize",
+      "exit_code": 0,
+      "seconds": 0.17
+    },
+    {
+      "label": "zh-supertest-generate",
+      "exit_code": 0,
+      "seconds": 0.12
+    },
+    {
+      "label": "zh-supertest-good",
+      "exit_code": 0,
+      "seconds": 0.67,
+      "expected_exit": "zero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-supertest-status",
+      "exit_code": 1,
+      "seconds": 0.5,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-supertest-body",
+      "exit_code": 1,
+      "seconds": 0.52,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-restassure-normalize",
+      "exit_code": 0,
+      "seconds": 0.19
+    },
+    {
+      "label": "zh-restassure-generate",
+      "exit_code": 0,
+      "seconds": 0.13
+    },
+    {
+      "label": "zh-restassure-good",
+      "exit_code": 0,
+      "seconds": 5.38,
+      "expected_exit": "zero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-restassure-status",
+      "exit_code": 1,
+      "seconds": 8.93,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-restassure-body",
+      "exit_code": 1,
+      "seconds": 4.05,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-bruno-normalize",
+      "exit_code": 0,
+      "seconds": 0.2
+    },
+    {
+      "label": "zh-bruno-generate",
+      "exit_code": 0,
+      "seconds": 0.13
+    },
+    {
+      "label": "zh-bruno-good",
+      "exit_code": 0,
+      "seconds": 1.17,
+      "expected_exit": "zero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-bruno-good-report",
+      "exit_code": 0,
+      "seconds": 0.13,
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-bruno-status",
+      "exit_code": 1,
+      "seconds": 0.92,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-bruno-status-report",
+      "exit_code": 1,
+      "seconds": 0.13,
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-bruno-body",
+      "exit_code": 1,
+      "seconds": 0.89,
+      "expected_exit": "nonzero",
+      "matched_expectation": true
+    },
+    {
+      "label": "zh-bruno-body-report",
+      "exit_code": 1,
+      "seconds": 0.12,
+      "matched_expectation": true
+    }
+  ],
+  "invalid_bruno_request_control": {
+    "cli_exit": 0,
+    "report_check_exit": 1,
+    "skipped": 1,
+    "responses_with_http_status": 0
+  },
+  "scope": "8 bilingual generated projects, 24 framework outcome runs. Local synthetic service only; no production/provider/business acceptance.",
+  "tested_versions": {
+    "pytest": "8.3.3",
+    "jest": "29.7.0",
+    "supertest": "7.0.0",
+    "bruno_cli": "4.2.1"
+  },
+  "current_source_snapshot_sha256": {
+    "skills/en/testing-types/api-test-bruno/scripts/parse_api_sources.py": "4e7f259e0688307e981e36a7925fd16a4c8087be672f62da57de83264390abe4",
+    "skills/en/testing-types/api-test-bruno/scripts/api_case_contract.py": "68e8a8ad626cbb22e3114ccd963b15d472bc072656b9850fde6cc4d9dbd711c0",
+    "skills/en/testing-types/api-test-bruno/scripts/generate_bruno_requests.py": "f8d086b5d586bdfaa71efef18970d36b22b5844ffa71b4bc8f630a3291c207d5",
+    "skills/en/testing-types/api-test-bruno/scripts/check_bruno_report.py": "6695ef96137305902e3e8bbea9df9318906d5366ac42e843ea00fb6090e82045",
+    "skills/en/testing-types/api-test-pytest/scripts/parse_api_sources.py": "4e7f259e0688307e981e36a7925fd16a4c8087be672f62da57de83264390abe4",
+    "skills/en/testing-types/api-test-pytest/scripts/api_case_contract.py": "68e8a8ad626cbb22e3114ccd963b15d472bc072656b9850fde6cc4d9dbd711c0",
+    "skills/en/testing-types/api-test-pytest/scripts/generate_pytest_tests.py": "fad9a6e5ee537084860fea5c695b9bdd8c811f7e141f22b56919525aeb80a53a",
+    "skills/en/testing-types/api-test-restassure/scripts/parse_api_sources.py": "4e7f259e0688307e981e36a7925fd16a4c8087be672f62da57de83264390abe4",
+    "skills/en/testing-types/api-test-restassure/scripts/api_case_contract.py": "68e8a8ad626cbb22e3114ccd963b15d472bc072656b9850fde6cc4d9dbd711c0",
+    "skills/en/testing-types/api-test-restassure/scripts/generate_restassured_tests.py": "032b7b818de1ae411d58d36627c312f00a857b8fbd8cff378b1b8710e64b7354",
+    "skills/en/testing-types/api-test-supertest/scripts/generate_supertest_tests.py": "e78c8b796fb61a9ca13f823adccc7571c9c28424cbeb592a4871cfe9bc8a5480",
+    "skills/en/testing-types/api-test-supertest/scripts/parse_api_sources.py": "4e7f259e0688307e981e36a7925fd16a4c8087be672f62da57de83264390abe4",
+    "skills/en/testing-types/api-test-supertest/scripts/api_case_contract.py": "68e8a8ad626cbb22e3114ccd963b15d472bc072656b9850fde6cc4d9dbd711c0"
+  }
+}

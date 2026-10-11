@@ -20,6 +20,7 @@ cases:
     - evals/cases/edge-incomplete-input.yaml
     - evals/cases/edge-risk-priority.yaml
     - evals/cases/phase-1-project-context.yaml
+    - evals/cases/domain-method-regression.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

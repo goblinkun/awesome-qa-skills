@@ -1,0 +1,1 @@
+The files define a consistent four-field JSON contract, including integer-cent amounts, status precedence, and read-only behavior. The package also explicitly allows `sample/` as the fixture container and requires `sample-review` as the installed directory name. I’m checking resource paths and eval assertions next; runtime evidence remains absent.

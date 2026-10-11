@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded disaster-recovery-tes
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录实际存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 从灾备合同标主/备用区域、跨区故障范围、RTO/RPO 起止定义、可接受丢失和业务恢复标准，未知目标不得自设。
+- 交付跨区恢复依赖表、时间线、RTO/RPO 计算及一致性证据，目标满足与未验证项分开。
+- 形成领域候选时，必须读取并遵循 [prompts/disaster-recovery-testing.md](prompts/disaster-recovery-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析灾难场景、恢复优先级、备份证据、Runbook 和恢复验证，不注入故障、不访问真实依赖、不调用生产系统。

@@ -27,9 +27,18 @@ description: Use this skill when you need to determine test impact from a pull r
 
 ## 参考文件
 
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
+
 - 每次执行必须读取 `prompts/pr-test-impact-analysis.md`；它是本 Skill 的完整执行规范。
 - 需要评测或回归本 Skill 时，读取 `evals/eval.yaml` 与匹配的 `evals/cases/` 用例。
 - 只有目录实际存在且任务需要时，才读取 `references/`、`examples/`、`scripts/` 或 `output-formats.md`，不要假设不存在的资产。
+
+## 领域执行要点
+
+1. 固定repo/base/head SHA与diff范围；为文件、符号、schema/config变化列来源，不按文件名猜影响或将不同HEAD的测试结果合并。
+2. 输出变化符号→直接/传递消费者→保护义务→test ID/层级/执行版本的映射表，边标confirmed/candidate/unknown；只在有证据的隔离边界停止。
+3. 删除或改弱测试要核对所保护义务是否仍有独立覆盖，不能仅从当前测试集选取导致消失的风险被漏掉。
+4. 未知动态依赖或缺映射时保守纳入相关契约/集成候选并标缺口；区分候选范围、已执行和已满足，列追加验证/升级触发。
 
 ## 核心约束
 

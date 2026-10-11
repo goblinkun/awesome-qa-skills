@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded dependency-failure-te
 - Read evals/eval.yaml and the matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Map caller/dependency, synchronous/asynchronous mode, timeout/retry/fallback contracts and required business/data invariants.
+- Deliver failure-mode/caller/dependency/side-effect cells, distinguishing synchronous rejection, async pending and unknown commit, with recovery validation.
+- When deriving domain candidates, read and follow [prompts/dependency-failure-testing.md](prompts/dependency-failure-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only dependency-failure taxonomy, isolation, degradation, fallback, and dependency recovery; do not inject faults, access real dependencies, or call production systems.

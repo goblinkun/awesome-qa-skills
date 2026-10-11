@@ -34,6 +34,13 @@ Do not use it to execute tests, generate a complete strategy, or claim full cove
 4. Separate scope facts, risk inferences, recommendations, and Human decisions; give a verifiable reason for every tradeoff.
 5. Deliver a bounded scope and expansion criteria when context is missing; never upgrade a scope statement into coverage proof.
 
+## Domain Execution Essentials
+
+1. Build scope cells for version×layer×platform×data state from the delivery objective, linked to requirements, include/exclude evidence, owners, and observable acceptance. New-feature scope is broader than change-only regression.
+2. Separate INCLUDE, EXCLUDE, and UNKNOWN. Exclusions need a sourced scope or independent-contract reason; unclear platform/data/boundary support cannot mean 'do not test'.
+3. Record budget/environment/authority blockers and residual risk. Escalate unmet critical obligations rather than inventing product boundaries or accepting risk.
+4. Changes in requirements, platforms, interfaces, or versions trigger reassessment. Selection/design, execution, and satisfaction remain separate; a checklist is not coverage proof.
+
 ## Core Constraints
 
 - Do not generate a full test strategy, choose a concrete executable set, or execute tests.
@@ -42,6 +49,8 @@ Do not use it to execute tests, generate a complete strategy, or claim full cove
 - Without risk, execution, or environment evidence, mark status `unassessed`, `unverified`, or `unexecuted`.
 
 ## Reference Files
+
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
 
 - Always read `prompts/test-scope-analysis.md` before producing an analysis.
 - For regression, read `evals/eval.yaml` and its cases; a scope draft does not prove testing ran.

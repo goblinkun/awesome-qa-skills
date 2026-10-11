@@ -26,6 +26,12 @@ Select high-risk multi-factor combinations after factors, values, and constraint
 4. Separate facts, evidence-backed inferences, recommendations, and Human decisions.
 5. Recommend follow-up validation without claiming execution.
 
+## Domain Execution Essentials
+
+- Build sourced factor/value tables and constraints, distinguishing input, environment and state; do not invent binary domains for unknown values.
+- Deliver factors/constraints, strength rationale, legal t-tuples and gaps; any static combination coverage is scoped to the enumerated model.
+- When deriving domain candidates, read and follow [prompts/combinatorial-testing.md](prompts/combinatorial-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not turn combination counts into coverage proof, ignore constraints, or invent values from experience.

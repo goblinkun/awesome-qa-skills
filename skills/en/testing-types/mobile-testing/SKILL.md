@@ -19,6 +19,13 @@ description: Use this skill when you need to design mobile test plans for iOS or
 3. If input is incomplete, return a usable first draft and explicitly mark assumptions and gaps.
 4. Default to Markdown; switch formats only when the user asks.
 
+## Domain Execution Essentials
+
+1. Select OS×device×install/upgrade×network×lifecycle combinations from distribution, changes, and incidents. Record samples and gaps; do not invent supported devices.
+2. Preserve raw deeplink URI, decoding policy, route/parameters, and authorization. Compare cold/warm/resume paths; restoration must not drop parameters or double-decode.
+3. For interrupted payments retain order/operation IDs and commit point. Read back ledger state and reconcile UI on resume; query lost responses before retrying to avoid duplicate payment.
+4. Check upgrade data compatibility, permissions, process termination/restoration, and resources. Unexecuted devices are candidates; support claims require actual device evidence.
+
 ## Core Constraints
 
 - Prioritize by risk / business impact — do not treat everything equally.
@@ -27,6 +34,8 @@ description: Use this skill when you need to design mobile test plans for iOS or
 - Keep output executable: concrete scenarios, clear priority, clear next steps.
 
 ## Progressive Disclosure
+
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
 
 - Before producing output, read and follow `prompts/mobile-testing.md` (minimum coverage, output structure, quality bar).
 - When Excel/CSV/JSON/Word is requested: read `output-formats.md` and honor the format.

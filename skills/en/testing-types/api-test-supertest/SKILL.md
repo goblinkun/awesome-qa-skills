@@ -12,6 +12,10 @@ description: Use this skill when you need to parse multi-format API definitions 
 - Need API outputs that should land in Supertest based automation.
 - The project is Node.js-based or already uses Supertest/Jest.
 
+## Generation and execution boundary
+
+Generators produce smoke assertions for known fields only: require nonempty endpoints and explicit expected_statuses; optional expected_json and sourced max_response_ms. Missing data, unresolved parameters/variables, or schema assertions produce incomplete scaffolds and a nonzero exit. Read `references/generator-contract.md`; configure target and credentials explicitly.
+
 ## Workflow
 
 1. Read and follow the main prompt listed under Progressive disclosure (coverage, structure, quality bar).

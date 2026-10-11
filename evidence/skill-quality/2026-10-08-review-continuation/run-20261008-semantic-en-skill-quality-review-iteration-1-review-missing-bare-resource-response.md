@@ -1,0 +1,1 @@
+The mandatory `references/contracts.md` file is absent from the complete inventory. All three eval cases also accept either heading without checking the behavior named by the case; I’m finishing the path audit before assigning the review conclusion.

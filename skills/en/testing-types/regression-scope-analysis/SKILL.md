@@ -27,9 +27,18 @@ description: Use this skill when you need to define risk-based regression scope 
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/regression-scope-analysis.md`; it is the complete execution specification for this skill.
 - For evaluation or regression, read `evals/eval.yaml` and the relevant cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Map changes and current baseline to affected obligations, layers/platforms/data states, include/exclude decisions and evidence. Regression protects existing behavior; new-feature acceptance is distinct.
+2. Check direct, transitive and dynamic dependencies, historical escapes and nonfunctional impact. Unknown mappings are not proof of no impact; exclusion needs an evidenced boundary.
+3. Under budget limits expose uncovered mandatory protection, alternatives, owners and authorized acceptance/escalation. Do not silently drop high-risk tests.
+4. Deliver candidates, order, resources and scope-expansion triggers. Selected, executed and satisfied states stay separate; planned counts are no pass evidence.
 
 ## Core Constraints
 

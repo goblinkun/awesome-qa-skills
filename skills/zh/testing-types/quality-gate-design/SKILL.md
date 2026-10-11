@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded entry criteria, evide
 
 ## 参考文件
 
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
+
 - 每次执行必须读取 `prompts/quality-gate-design.md`；它是本 Skill 的完整执行规范。
 - 需要评测时读取 `evals/eval.yaml` 和 `evals/cases/` 下的匹配用例。
 - 只有目录实际存在且任务需要时，才读取 `references/`、`examples/`、`scripts/` 或 `output-formats.md`，不要假设不存在的资产。
+
+## 领域执行要点
+
+1. 为每个门槛记录义务、输入/版本/时效、比较符、PASS/FAIL、不可执行BLOCKED、缺证据或无法判断UNKNOWN的真值表；没有记录不得视为PASS。
+2. 聚合规则由项目指定：必要门槛FAIL优先，无法验证按fail-closed停止；UNKNOWN/BLOCKED保持原因而不是折算失败率。所有必要门槛有新鲜有效PASS才可推荐通过。
+3. 例外单列义务范围、授权人、理由、批准证据、有效期、补偿控制与撤销条件；过期/越界/无授权不生效，不改写原始FAIL。
+4. 明确门禁触发、负责人、重新验证和回滚/停止条件；设计、静态证据判定与实际流水线实施分别报告，缺规则提交待Human决策。
 
 ## 核心约束
 

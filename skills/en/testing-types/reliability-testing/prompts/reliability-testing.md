@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not inject faults, access real dependencies, read credentials, or call production systems.
 - Do not upgrade file presence, names, templates, or dry-runs into execution, passing, coverage, or release evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Define SLI event/time basis, success/failure, denominator, exclusions, observation window and sourced targets; request success and time availability are different metrics.
+2. Recalculate success/total or available/eligible time per window, retaining missing observations, retries, duplicate events and denominator conflicts. Merge only compatible definitions.
+3. List failure frequency/duration/recurrence and recovery criteria, checking incident deduplication and representativeness of load.
+4. Separate window observations from long-term inference; short failure-free periods do not prove long-term reliability. Absent targets/windows permit limited distributions and observation needs only.
+
+**Decision and deliverable:** Deliver window/denominator-defined SLIs and failure timelines, stating applicability for target comparisons and extrapolation.
+
 ## Minimum Coverage Checklist
 
 - reliability objective and applicability

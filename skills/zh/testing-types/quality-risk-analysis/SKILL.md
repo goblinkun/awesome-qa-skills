@@ -27,9 +27,18 @@ description: Use this skill when you need to identify and prioritize quality ris
 
 ## 参考文件
 
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
+
 - 每次执行必须读取 `prompts/quality-risk-analysis.md`；它是本 Skill 的完整执行规范。
 - 需要评测或回归本 Skill 时，读取 `evals/eval.yaml` 与匹配的 `evals/cases/` 用例。
 - 只有目录实际存在且任务需要时，才读取 `references/`、`examples/`、`scripts/` 或 `output-formats.md`，不要假设不存在的资产。
+
+## 领域执行要点
+
+1. 从风险事件、受影响资产/人群、触发和当前控制建立登记表；影响、可能性、可探测性各给可观察证据锚点与来源，不凭印象填分。
+2. 项目未指定量化规则时用有理由的定性排序；重大不可逆影响、授权边界与已知控制缺口单列，低频不自动降为低风险。
+3. 证据不确定分别传播到概率/影响/控制置信度，给条件结论和最小判别验证，不把UNKNOWN乘成0或精确风险分。
+4. 每项关联控制/测试、剩余风险、责任人与接受授权；风险排序是决策辅助，不代表漏洞、故障根因或实际验收。
 
 ## 核心约束
 

@@ -27,6 +27,12 @@ description: Use this skill when you need to review UI automation selectors for 
 3. 用 USR-## 记录对象、前置条件、关注点、来源证据和验证方法，保留影响/优先级、责任角色、关闭条件和证据状态。
 4. 材料冲突、缺少约束或没有执行证据时，保留双方和待确认问题。
 
+## 领域执行要点
+
+- 从DOM/组件与用户动作明确目标元素，比较role+accessible name、稳定test ID、作用域及CSS/XPath的实际语义和维护合同。
+- 交付目标、匹配数、稳定性来源和替代理由表，语义/唯一性比定位器语法偏好更重要。
+- 形成领域候选时，必须读取并遵循 [prompts/ui-test-selector-review.md](prompts/ui-test-selector-review.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不执行测试，不假设未提供的规则、版本、阈值、数据或结果，不把候选数量当作覆盖证明。

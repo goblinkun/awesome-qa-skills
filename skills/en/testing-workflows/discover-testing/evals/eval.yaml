@@ -25,6 +25,10 @@ cases:
     - evals/cases/route-change-regression.yaml
     - evals/cases/route-performance-decision.yaml
     - evals/cases/route-ai-feature.yaml
+    - evals/cases/review-authn-neighbor.yaml
+    - evals/cases/review-authz-neighbor.yaml
+    - evals/cases/review-rag-retrieval-neighbor.yaml
+    - evals/cases/review-regression-selection-neighbor.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

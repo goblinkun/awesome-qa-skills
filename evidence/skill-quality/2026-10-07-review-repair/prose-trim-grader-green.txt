@@ -1,0 +1,6 @@
+test_prose_trim_grader_preserves_fixture_bytes_and_document_lines (scripts.tests.test_review_eval_graders.PackagedGraderTests.test_prose_trim_grader_preserves_fixture_bytes_and_document_lines) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.358s
+
+OK

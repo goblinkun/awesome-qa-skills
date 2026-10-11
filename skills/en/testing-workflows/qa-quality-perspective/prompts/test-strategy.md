@@ -11,7 +11,7 @@ Require at least one scope, goal, or risk signal; otherwise return **Not applica
 
 ## Evidence and risk
 
-Use supplied scope, risk, and capability constraints as evidence. Classify high, medium, or low using impact × likelihood × evidence uncertainty, then prioritize coverage. Do not invent coverage, staffing, executed tests, or pass results.
+Use supplied scope, risk, and capability constraints as evidence. Classify high, medium, or low using the qualitative impact, likelihood, and uncertainty anchors in SKILL.md, then prioritize coverage; do not multiply them into a numerical score. Do not invent coverage, staffing, executed tests, or pass results.
 
 ## Output structure
 

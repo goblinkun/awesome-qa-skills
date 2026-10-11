@@ -97,3 +97,7 @@ State: current stage → invoke `<skill-name>` → required context (scope, risk
 - [ ] Next skill has a single focus + context
 - [ ] DoD/exit evidence is checkable
 - [ ] Assumptions and carryover marked
+
+## Mapping phases to the actual delivery cadence
+
+The day numbers above are illustrative, not mandatory elapsed durations. Use supplied iteration length, working days, capacity, and delivery events to map all six phases. For a one-week iteration, overlap preparation with development only when entry evidence permits; never remove ready-for-test, feature-complete, or exit gates to fit the calendar. For continuous flow, express planning/ready/execution/regression/stabilization/review as per-item and integration milestones without inventing sprint dates. A delayed story stays not done until its agreed evidence exists; carry its unfinished scope, defects, and missing evidence to the backlog with source and owner or unknown owner. An unresolved P0 without written authorized acceptance blocks exit.

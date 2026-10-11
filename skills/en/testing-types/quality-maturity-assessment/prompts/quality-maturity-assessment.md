@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix the project's framework, dimensions, anchors and scope. Without a framework provide candidate anchors and evidence, not ratings or a repository Quality Score.
+2. Each anchor needs observable practice, artifacts and continuity. Templates prove existence; repeated runs with failure handling prove operating practice. Label example levels as illustrative.
+3. Report evidence, level, confidence and gaps by dimension. N/A needs a scope reason; UNKNOWN is missing evidence rather than the lowest level. Verify interview claims against artifacts.
+4. Match product risk, scale and windows before comparison. Aggregate only with supplied weights and coverage; missing dimensions are not zero. Improvements include acceptance evidence and review timing.
+
 ## Minimum Coverage Checklist
 
 - maturity dimension, rubric anchor, evidence sufficiency, gap, improvement path

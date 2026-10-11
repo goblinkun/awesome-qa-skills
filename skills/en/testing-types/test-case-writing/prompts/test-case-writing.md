@@ -70,3 +70,7 @@ Each case includes at least: case ID, title, priority, `source_role` list, `Trac
 - Do not write expected results that cannot be verified.
 - Avoid duplicate cases; synonymous role candidates must not become wording-only duplicates.
 - Organize one requirement/risk-based suite whose `source_role` and `Trace` values remain checkable against the input.
+
+## Source identity in merged cases
+
+When candidates supply `source_id` and `version`, retain each contribution as a `sources` entry beside source_role and Trace. A missing version remains unknown; do not copy another role report version into it. Merging requires equivalent execution and observable pass criteria; distinct supplied state/expected-outcome criteria must remain executable as separate or clearly parameterized cases. Source conflicts stay visible as questions rather than being silently resolved.

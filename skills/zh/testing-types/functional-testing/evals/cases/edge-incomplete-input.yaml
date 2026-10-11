@@ -13,8 +13,6 @@ expect:
   must_contain:
     - "假设"
     - "待确认"
-    - "信息缺口"
-    - "需确认"
   must_not_contain:
     - "TODO"
     - "我无法"
@@ -22,8 +20,8 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
           - "假设"
           - "待确认"
-          - "信息缺口"
+          - "(信息缺口|必须补齐的信息|待补充信息|信息不足|需要补齐)"

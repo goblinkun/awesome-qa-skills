@@ -29,6 +29,17 @@ Each finding contains factors, value pair, validity constraint, interaction risk
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. List sourced factors/domains/joint constraints and pairwise applicability, retaining higher-order obligations outside its guarantee.
+2. Enumerate/solve legal assignments and project each factor pair into the legal universe; verify extendability to a legal full assignment rather than removing only obvious invalid pairs.
+3. Project suite pairs and compare covered/missing sets against the universe, listing illegal assignments and duplicate candidates separately.
+4. Add targeted higher-order cases or stronger coverage for known risks, preserving cost/scope. Complete static pairs do not imply all combinations or executed success.
+
+**Decision and deliverable:** Deliver legal pair-universe and covered/missing details, with additional justified candidates for higher-order interactions.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

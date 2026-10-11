@@ -31,6 +31,14 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For user data, production, or safety work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and safety judgments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Build failure | confirmed write state | retryability | retry/compensate/escalate | recovered state | evidence from the project protocol. Separate transient, permanent, and indeterminate outcomes.
+2. A timeout does not mean no execution: query committed effects by operation_id/idempotency key before replay. Read back an existing result or retry safely; the same key must not produce a second business write.
+3. For partial success reconcile completed and remaining steps. Compensate only under the supplied protocol and authority, recording each outcome; failed compensation escalates.
+4. Stop unchanged retries for permanent errors and notify the owner. Compare business state, attempt count, user-visible outcome, and resources before/after recovery; missing logs leave recovery unverified.
 ## Minimum Coverage Checklist
 
 - failure classification, retry and fallback, escalation path, state consistency, user notice

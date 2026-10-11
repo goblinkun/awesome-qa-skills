@@ -12,7 +12,7 @@ python3 "$SCRIPT_DIR/generate_bruno_requests.py" --input "$TMP_JSON" --output-di
 
 if ! command -v bru >/dev/null 2>&1; then
   echo "bru not found. Collection generated at: $OUT_DIR"
-  exit 0
+  exit 2
 fi
 
 "$SCRIPT_DIR/run-tests.sh" "$OUT_DIR" "staging"

@@ -19,6 +19,7 @@ Review the package as one contract across its entry file, Prompt, metadata, refe
 5. Do local references and installation paths resolve when only this directory is copied? Is there any hard dependency on another Skill's private files?
 6. Do the cases cover success, incomplete information, and scope/risk boundaries, with judges matched to assertions?
 7. Are static, structural, evaluation, runtime, and human-review evidence separated, retaining `NOT_RUN`, `UNASSESSED`, or `INSUFFICIENT_EVIDENCE` where needed?
+8. When the supplied contract leaves a material schema or unit decision unresolved, include a concrete request for the contract owner to choose the intended fields and meanings. Merely saying what happens after a decision is insufficient. Record the pending choice in the report and complete the available static review without waiting for an asynchronous answer or choosing for the owner.
 
 ## Minimum coverage
 

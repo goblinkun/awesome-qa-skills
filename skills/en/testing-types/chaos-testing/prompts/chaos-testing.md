@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not inject faults, access real dependencies, read credentials, or call production systems.
 - Do not upgrade file presence, names, templates, or dry-runs into execution, passing, coverage, or release evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Express steady-state hypotheses as metrics, windows, baseline/control groups and business invariants; state the disruption's proposed causal chain.
+2. Specify injection point, fault/duration, instance/traffic fraction, isolated environment, dependencies and blast radius, including authorized and excluded targets.
+3. Define measurable stop conditions, monitoring cadence, stop owner and rollback/recovery actions from supplied thresholds. Missing critical stop/rollback conditions block execution readiness.
+4. Compare pre/during/post-disruption and control evidence for function, data and recovery. Separate association from proved causality; design only, never inject.
+
+**Decision and deliverable:** Deliver hypothesis/control/injection/blast-radius/stop/rollback/evidence cards; name readiness blockers explicitly and never treat a design as a passed experiment.
+
 ## Minimum Coverage Checklist
 
 - fault-injection hypothesis and applicability

@@ -11,8 +11,8 @@ input:
 
 expect:
   must_contain:
-    - "assumption"
-    - "Open Questions"
+    - "Assumption"
+    - "Required information"
   must_not_contain:
     - "TODO"
     - "I cannot"
@@ -22,5 +22,5 @@ judge:
   success:
     - output_contains:
         all:
-          - "assumption"
-          - "Open Questions"
+          - "Assumption"
+          - "Required information"

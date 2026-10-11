@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not log in, call real APIs, read credentials, or perform destructive security actions.
 - Do not upgrade files, names, templates, or dry-runs into absence-of-vulnerability, exploit success, or release-approval evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Map asset→threat actor/path→security obligation→control→verifiable acceptance, retaining scope, sources and project-supplied standard/version; do not select an unsupplied compliance baseline.
+2. Turn vague secure/encrypted wording into questions about subject/action/boundary/timing/observable outcome; thresholds/algorithms must be sourced or labeled proposals.
+3. Check allow/deny controls, failure paths, evidence and owner per obligation, identifying unimplemented obligations or untestable acceptance.
+4. Separate requirement completeness, design controls, test results and standards conformity. Material review cannot establish certification, compliance or overall security approval.
+
+**Decision and deliverable:** Deliver obligation/acceptance/evidence mappings and testability gaps; drafted requirements remain proposals rather than approved obligations.
+
 ## Minimum Coverage Checklist
 
 - security requirement and applicability

@@ -27,6 +27,12 @@ Do not use it to execute tests, invent contract or behavior, replace a complete 
 3. Record APT-## with the subject, preconditions, behavior of concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Extract page size, offset/cursor, sort direction, unique tie-breaker, snapshot/live-change semantics, and cursor binding/expiry rules.
+- Deliver expected/observed cross-page ID sequences, set/duplicate comparisons, cursor chain, and applicability of change semantics.
+- When deriving domain candidates, read and follow [prompts/api-pagination-testing.md](prompts/api-pagination-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or responses, or treat candidate counts as coverage proof.

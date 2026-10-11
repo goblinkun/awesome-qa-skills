@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, concern, source evidence, and 
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Define baseline keys: page/revision/viewport/browser/OS/font/theme/data; verify matching comparison conditions or mark environment differences/noncomparability first.
+2. Check font readiness, animation/time, dynamic data and screenshot readiness; justify mask scope without masking required content.
+3. Interpret diffs using project pixel/perceptual/region thresholds, distinguishing layout/content defects, environment noise and approved design changes; do not invent tolerance rates.
+4. Trace differences to approved design changes/owners/versions and propose baseline updates with evidence. Do not auto-edit baselines or approve for Humans; route explicitly authorized changes to their workflow.
+
+**Decision and deliverable:** Deliver environment keys, regional diffs/thresholds, attribution and baseline decisions; over-threshold diffs are not automatically product defects, and updates must not hide defects.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

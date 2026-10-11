@@ -14,5 +14,6 @@ cases:
     - evals/cases/strong-behavior.yaml
     - evals/cases/fake-mocked-subject.yaml
     - evals/cases/functional-route.yaml
+    - evals/cases/domain-method-regression.yaml
 report:
   formats: [json]

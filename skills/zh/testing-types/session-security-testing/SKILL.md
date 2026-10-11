@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded session-security-test
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 先识别 Cookie/opaque session/access+refresh token 等机制，列创建、认证后轮换、固定、闲置/绝对过期、撤销、退出和多端合同。
+- 交付按机制的凭据生命周期与权限状态时间线，退出响应成功不自动证明旧凭据不可用。
+- 形成领域候选时，必须读取并遵循 [prompts/session-security-testing.md](prompts/session-security-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析会话创建、固定、过期、撤销、并发和跨设备边界，不登录系统、不调用真实 API、不读取凭据。

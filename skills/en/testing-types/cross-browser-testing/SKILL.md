@@ -27,6 +27,12 @@ Do not use it to execute tests, invent behavior conclusions, replace a complete 
 3. Record CBT-## with the subject, preconditions, concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Map project support and user distribution to engine/platform/version/device cells, retaining real-browser/device, emulator and automation-engine identities.
+- Deliver support cells, risk-based sampling and evidence per cell; brand/emulator counts do not establish target-environment coverage.
+- When deriving domain candidates, read and follow [prompts/cross-browser-testing.md](prompts/cross-browser-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or outcomes, or treat candidate counts as coverage proof.

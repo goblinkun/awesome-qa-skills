@@ -9,6 +9,7 @@ import zlib
 from pathlib import Path
 from typing import Any, Optional
 from xml.etree import ElementTree as ET
+from xlsx_reader import read_workbook
 
 
 def parse_markdown(path: Path) -> dict[str, Any]:
@@ -183,27 +184,10 @@ def _read_shared_strings(zf: zipfile.ZipFile) -> list[str]:
 
 
 def parse_xlsx(path: Path) -> dict[str, Any]:
-    rows_out: list[list[str]] = []
-    with zipfile.ZipFile(path) as zf:
-        shared = _read_shared_strings(zf)
-        with zf.open("xl/worksheets/sheet1.xml") as f:
-            root = ET.fromstring(f.read())
-    ns = {"a": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
-    for row in root.findall(".//a:sheetData/a:row", ns):
-        vals = []
-        for c in row.findall("a:c", ns):
-            cell_type = c.attrib.get("t")
-            v = c.find("a:v", ns)
-            if v is None or v.text is None:
-                vals.append("")
-                continue
-            if cell_type == "s":
-                idx = int(v.text)
-                vals.append(shared[idx] if 0 <= idx < len(shared) else "")
-            else:
-                vals.append(v.text)
-        rows_out.append(vals)
-    return {"format": "excel", "row_count": len(rows_out), "sample_rows": rows_out[:20]}
+    sheets = read_workbook(path)
+    return {"format": "excel", "row_count": sum(len(s["rows"]) for s in sheets),
+            "sample_rows": sheets[0]["rows"][:20], "sheets": sheets,
+            "value_representation": "raw stored/cached strings; Excel formatting is not applied"}
 
 
 def parse_xmind(path: Path) -> dict[str, Any]:

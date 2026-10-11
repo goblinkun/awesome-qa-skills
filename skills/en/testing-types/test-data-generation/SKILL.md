@@ -27,9 +27,18 @@ description: Use this skill when you need to design safe, representative test da
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/test-data-generation.md`; it is the complete execution specification for this skill.
 - For evaluation or regression, read `evals/eval.yaml` and the relevant cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Derive groups from supplied schema, foreign keys, uniqueness, state relationships, and scenario oracles. Fix seed/generator version; missing rules remain UNKNOWN without invented fields or real identities.
+2. Separate valid happy/boundary data from deliberate invalid groups. Name the violated constraint and expected allow/reject outcome while preserving other relationships; invalid rows cannot silently enter valid groups.
+3. Deliver actual sanitized samples with uniqueness, foreign-key, type/range, state, and reproducibility checks. Equal seeds must reproduce data identities, not merely a strategy statement.
+4. Use isolated IDs/namespaces with provenance, privacy restrictions, and reverse dependency cleanup. Missing authority prevents real personal-data collection; synthetic rows do not establish population representativeness.
 
 ## Core Constraints
 

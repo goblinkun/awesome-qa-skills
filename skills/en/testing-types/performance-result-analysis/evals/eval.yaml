@@ -19,6 +19,8 @@ cases:
     - evals/cases/basic-success.yaml
     - evals/cases/edge-incomplete-input.yaml
     - evals/cases/edge-risk-priority.yaml
+    - evals/cases/review-stage-targets-and-denominator.yaml
+    - evals/cases/review-met-target-control.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

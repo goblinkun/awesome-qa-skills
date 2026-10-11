@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded circuit-breaker-testi
 - Read evals/eval.yaml and the matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Extract failure-count definitions, rolling/consecutive window, threshold, open duration, half-open probe/concurrency allowance, and success/failure transitions.
+- Deliver pre-state/count/action/post-state/fallback per event, distinguishing probes from ordinary calls; state labels are not behavior evidence.
+- When deriving domain candidates, read and follow [prompts/circuit-breaker-testing.md](prompts/circuit-breaker-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only closed, open, and half-open states, threshold evidence, recovery probes, and fallback; do not inject faults, access real dependencies, or call production systems.

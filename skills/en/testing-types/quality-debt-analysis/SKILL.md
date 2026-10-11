@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded quality-debt items, o
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/quality-debt-analysis.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Separate active product defects, test/architecture debt, exceptions and evidence gaps. Record source, impact, cause, age and current controls.
+2. Explain accumulated risk through observed maintenance effort, exposure or detection delay. Missing rates yield qualitative or conditional estimates, not invented money.
+3. Rank impact, exposure, detectability, dependencies and repayment effort/benefit; age is one signal. A new severe gap may precede old minor debt.
+4. Closure requires changed assets, independent checks, removed debt effects and accountable acceptance. Tickets alone do not repay debt; accepted risk needs authority and expiry.
 
 ## Core Constraints
 

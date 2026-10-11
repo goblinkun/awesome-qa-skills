@@ -24,6 +24,15 @@ Design Playwright UI testing assets or a Playwright-ready plan that the team can
 - Prefer maintainable test organization over large one-off scripts.
 - If information is incomplete, give a usable first version and mark assumptions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix project Playwright/Node/browser versions, projects, fixtures, and config. Retain entry points with test ID, commit, worker/project, and environment; diagnose incompatible config without switching stacks.
+2. Prefer stable role/name/testid locators and auto-retrying business assertions for order/ledger/state/principal. Title/URL checks protect navigation only, not payment success.
+3. Give each worker independent browser context, storage state/account, and business keys. Context isolation still needs server-side account isolation; cleanup follows reverse dependencies.
+4. Pair wrong-business-state and parallel A/B controls to test assertion sensitivity. Preserve traces/screenshots/logs and nonzero runner/CI status, including first retry failures. Separate generated assets, real browser runs, and acceptance.
+
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

@@ -88,3 +88,7 @@ Check and correct every item before delivery:
 - Are Project Constraints separate from Quality Facts, with no project/PM input incorrectly changing quality status?
 - Is there any fact, evidence, root cause, impact, owner, date, status, or conclusion unsupported by the inputs? Delete it or convert it into an explicitly unverified Open Question.
 - Is optional-role absence recorded only as a coverage/confidence limitation, with no invented content for that role?
+
+## Versioned source identity
+
+Preserve a supplied report `version` in the Source Register and in finding/action provenance; write Not supplied when absent. If the same `source_id` appears with different versions or conflicting content, expose an identity conflict before merging. Retain both inputs with version-qualified locators and request a unique identity or an explicit supersession decision. Do not silently choose the latest version, overwrite evidence, or count versions of one source as multi-source consensus.

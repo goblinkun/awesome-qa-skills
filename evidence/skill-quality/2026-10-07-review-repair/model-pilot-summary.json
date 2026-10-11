@@ -1,0 +1,192 @@
+{
+  "historic_runs": [
+    {
+      "language": "en",
+      "historic_iteration": 2,
+      "runner": "codex",
+      "observed_runner_version": "0.160.0",
+      "model_identity": "UNKNOWN",
+      "start_time": "2026-10-06T20:37:02.713636+08:00",
+      "end_time": "2026-10-06T20:38:10.563091+08:00",
+      "case_id": "review-repair-regression",
+      "historic_run_status": "PASS",
+      "input_tokens_reported": 155378,
+      "output_tokens_reported": 1733,
+      "historic_grading": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "pass_rate": 1
+      },
+      "sanitized_response": "model-en-iteration-2-response.md",
+      "sanitized_response_sha256": "6de7eb7e403b8400930519915442b718f7c59b09d93dcb22f640d3682215bd77"
+    },
+    {
+      "language": "en",
+      "historic_iteration": 3,
+      "runner": "codex",
+      "observed_runner_version": "0.160.0",
+      "model_identity": "UNKNOWN",
+      "start_time": "2026-10-06T20:43:05.568677+08:00",
+      "end_time": "2026-10-06T20:44:22.029522+08:00",
+      "case_id": "review-repair-regression",
+      "historic_run_status": "FAIL",
+      "input_tokens_reported": 144222,
+      "output_tokens_reported": 2002,
+      "historic_grading": {
+        "passed": 1,
+        "failed": 1,
+        "total": 2,
+        "pass_rate": 0.5
+      },
+      "sanitized_response": "model-en-iteration-3-response.md",
+      "sanitized_response_sha256": "39343e9a3070ae648714bf59e10c9c7845a6becaed689d154c55c7e8c8fc3f33"
+    },
+    {
+      "language": "zh",
+      "historic_iteration": 1,
+      "runner": "codex",
+      "observed_runner_version": "0.160.0",
+      "model_identity": "UNKNOWN",
+      "start_time": "2026-10-06T20:43:14.350569+08:00",
+      "end_time": "2026-10-06T20:43:39.262026+08:00",
+      "case_id": "review-repair-regression",
+      "historic_run_status": "ERROR",
+      "input_tokens_reported": 0,
+      "output_tokens_reported": 0,
+      "error_class": "ACCOUNT_USAGE_LIMIT",
+      "completed_semantic_answer": false
+    }
+  ],
+  "current_grader_offline_regrade": [
+    {
+      "historic_iteration": 2,
+      "current_grader_exit_code": 0,
+      "response_sha256": "046416a824a7f0ea483077ae2b0163a6ef56c086076fde3c8c8d410f75092412",
+      "current_grader_sha256": "89707f81d8f4d7436e9effe2541ce778a38d79c71d4b3a0c3b8199ee37da134d",
+      "status": "OFFLINE_REGRADE_PASS"
+    },
+    {
+      "historic_iteration": 3,
+      "current_grader_exit_code": 0,
+      "response_sha256": "7b078d66665170c5a93382754586813b3b463c5f90747e0d1bc0de0b1e8e7484",
+      "current_grader_sha256": "89707f81d8f4d7436e9effe2541ce778a38d79c71d4b3a0c3b8199ee37da134d",
+      "status": "OFFLINE_REGRADE_PASS"
+    }
+  ],
+  "current_live_rerun": "PASS_SELECTED_CASES",
+  "other_semantic_cases": "PARTIAL; see runtime-followup.json for per-case reported verdicts, offline regrading and remaining NOT_RUN cases",
+  "scope": "Both current bilingual instances of one selected fixture pass the repaired grader. Historic outcomes are retained separately. Model identity is UNKNOWN; historic/current observed Codex versions differ. No full-suite acceptance or generalized uplift is established.",
+  "previous_approval_block": {
+    "status": "BLOCKED_BY_AUTOMATIC_APPROVAL_REVIEW",
+    "action": "Authenticated Codex skill-up run with bypass_sandbox=true on the repaired English case, followed by its Chinese counterpart.",
+    "reason": "Potential external disclosure of repository Skill/Prompt content and account-backed execution lacked explicit user authorization. No workaround attempted.",
+    "resolved_by": "User explicitly authorized in the current chat: 授权和继续"
+  },
+  "authorization": {
+    "date": "2026-10-07",
+    "user_instruction": "授权和继续",
+    "scope": "Two bilingual targeted skill-up/Codex runs using the existing login and bypass_sandbox; external Skill/Prompt transmission explicitly authorized."
+  },
+  "current_runs": [
+    {
+      "language": "en",
+      "iteration": 4,
+      "runner": "codex",
+      "observed_runner_version": "0.160.1",
+      "model_identity": "UNKNOWN",
+      "case_id": "review-repair-regression",
+      "status": "PASS",
+      "duration_ms": 78410,
+      "start_time": "2026-10-07T20:41:35.710537+08:00",
+      "end_time": "2026-10-07T20:42:55.354594+08:00",
+      "input_tokens_reported": 146274,
+      "output_tokens_reported": 1713,
+      "grading_summary": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "pass_rate": 1
+      },
+      "assertions": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "script: skills/en/skill-engineering/skill-change-verification/evals/graders/review-repair-regression.py",
+          "passed": true,
+          "evidence": "Exact fixture decisions passed; semantic explanation remains separately reviewable"
+        }
+      ],
+      "raw_response_sha256": "c4d00d39eb9777a72a4487970ca6e13369824d5c95e79cbd0d5a8a514e3fee2c",
+      "sanitized_response": "model-en-authorized-iteration-4-response.md",
+      "sanitized_response_sha256": "8cc796af47832468058a985ac07d6053d27c39454e6daa1e13b8f48aa5ffa1a7",
+      "current_source_sha256": {
+        "skills/en/skill-engineering/skill-change-verification/SKILL.md": "864f5713a0f4d13c97b31848f9686a099a3167c11b7e1a6f8d43c34675fbd575",
+        "skills/en/skill-engineering/skill-change-verification/prompts/skill-change-verification.md": "c603e1ba339701f110e02a38809e82fd8de62e8cf573687a181f13ceb80f5ddd",
+        "skills/en/skill-engineering/skill-change-verification/evals/eval.yaml": "0a258c0f19870154e3327fef3153ed92bfce54bf88d490de84cee8db62f37ff3",
+        "skills/en/skill-engineering/skill-change-verification/evals/cases/review-repair-regression.yaml": "1d30c729b3a4ff3bb3a16752ef04ccc34f619a14b33276d1eac137a889f1ac96",
+        "skills/en/skill-engineering/skill-change-verification/evals/graders/review-repair-regression.py": "89707f81d8f4d7436e9effe2541ce778a38d79c71d4b3a0c3b8199ee37da134d",
+        "skills/en/skill-engineering/skill-change-verification/agents/openai.yaml": "49f0db084edf5f573a2e589f3d6f72c3b9f86ac6dea1031b49b6efe1dfb7793d"
+      },
+      "semantic_explanation_review": "V1 is configuration-only/behavior NOT_RUN; V2 behavior FAIL follows one failing judge, independent of engine exit zero. No claimed external test execution."
+    },
+    {
+      "language": "zh",
+      "iteration": 2,
+      "runner": "codex",
+      "observed_runner_version": "0.160.1",
+      "model_identity": "UNKNOWN",
+      "case_id": "review-repair-regression",
+      "status": "PASS",
+      "duration_ms": 80279,
+      "start_time": "2026-10-07T20:43:53.8123+08:00",
+      "end_time": "2026-10-07T20:45:15.133693+08:00",
+      "input_tokens_reported": 144865,
+      "output_tokens_reported": 1985,
+      "grading_summary": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "pass_rate": 1
+      },
+      "assertions": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "script: skills/zh/skill-engineering/skill-change-verification/evals/graders/review-repair-regression.py",
+          "passed": true,
+          "evidence": "Exact fixture decisions passed; semantic explanation remains separately reviewable"
+        }
+      ],
+      "raw_response_sha256": "b7fc42b167905cb36edd81c9b480deab3eead5f1d4fb228c3e665a43e709e365",
+      "sanitized_response": "model-zh-authorized-iteration-2-response.md",
+      "sanitized_response_sha256": "e2f1d342105eb5526f5b4c916624375ef93dbad519735e499507158527aa23ef",
+      "current_source_sha256": {
+        "skills/zh/skill-engineering/skill-change-verification/SKILL.md": "e27a04a136a70ac492a4d40e6d63361e4d9c8494174140906a72244656307c6e",
+        "skills/zh/skill-engineering/skill-change-verification/prompts/skill-change-verification.md": "7c72a608c3a075e56bd85d7222642f91a6263afeb97a28714355ccd898646045",
+        "skills/zh/skill-engineering/skill-change-verification/evals/eval.yaml": "87dc9768ac91fa13278f7ba14ec66a22acb7cdeebf79d5ddc32e5c062585341c",
+        "skills/zh/skill-engineering/skill-change-verification/evals/cases/review-repair-regression.yaml": "830f7cb61b8e33fe74aaab9cedb5db5e20b1320deb33a1f386e3b392ca71bb17",
+        "skills/zh/skill-engineering/skill-change-verification/evals/graders/review-repair-regression.py": "89707f81d8f4d7436e9effe2541ce778a38d79c71d4b3a0c3b8199ee37da134d",
+        "skills/zh/skill-engineering/skill-change-verification/agents/openai.yaml": "f1f194daa52b253b8045f3f1f1a5502d08f914f890e80b847880916a27bce560"
+      },
+      "semantic_explanation_review": "V1 is configuration-only/behavior NOT_RUN; V2 behavior FAIL follows one failing judge, independent of engine exit zero. No claimed external test execution."
+    }
+  ],
+  "runtime_followup": "runtime-followup.json",
+  "continued_batch_approval_block": {
+    "status": "BLOCKED_BY_AUTOMATIC_APPROVAL_REVIEW",
+    "action": "Resume the finite queue of new script-graded skill-up cases using Codex account login and bypass_sandbox=true.",
+    "reason": "Existing explicit authorization covered two bilingual targeted cases; the reviewer rejected the expanded batch because external transmission of Skill, Prompt, and case content was not explicitly authorized for this batch.",
+    "destination": "OpenAI Codex service using the existing ChatGPT account login",
+    "remaining_script_cases": 159,
+    "unattempted_script_cases": 158,
+    "fixed_case_requiring_live_rerun": 1,
+    "workaround_attempted": false
+  }
+}

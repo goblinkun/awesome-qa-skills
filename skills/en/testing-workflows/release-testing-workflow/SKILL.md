@@ -12,6 +12,10 @@ description: Use this skill when you need release-phase QA workflow from T-14 pl
 - Need a release-window cadence: T-N planning → specialties → RC → Go/No-Go → post-release watch.
 - Need release gates and a ship evidence pack, with specialty execution handed to type skills.
 
+## Decision authority
+
+Provide a release recommendation; formal approval requires an authorized owner and version, scope, time, and evidence record. Hotfix/canary schedules may compress while preserving gate criteria.
+
 ## Workflow
 
 1. Read and follow `prompts/release-testing-workflow.md` (timeline, gates, Go/No-Go, handoffs).
@@ -21,7 +25,7 @@ description: Use this skill when you need release-phase QA workflow from T-14 pl
 
 ## Core Constraints
 
-- Own release timeline and ship decision; hand specialty reports to `performance-testing` / `security-testing` / etc.
+- Own release timeline and Go/No-Go recommendation; hand specialty reports to `performance-testing` / `security-testing` / etc.
 - Timelines may compress; gate criteria may not be deleted.
 - Go/No-Go requires evidence; conditional Go must be verifiable.
 - No relative-path links to other skill files.

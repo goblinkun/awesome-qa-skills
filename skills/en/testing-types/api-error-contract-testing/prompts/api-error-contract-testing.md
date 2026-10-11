@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, behavior of concern, source ev
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Build an operation/error contract table for HTTP status, business code, required fields/types, correlation ID, retry meaning, and redaction; retain sourced operation exceptions.
+2. Match each response to its request, log, and contract version and compare fields; correlate one interaction without requiring different requests to reuse an ID.
+3. Compare common rules and declared differences across operations. Separate status conflicts, missing/type-invalid fields, retry conflicts, and disclosure.
+4. Attach a valid response control and minimal isolated validation to each conflict. Mark missing catalog, retry, or redaction rules as open; do not choose status codes yourself.
+
+**Decision and deliverable:** Deliver an operation/error consistency table with sourced expectations and observations; differences become findings only when they violate an applicable rule.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

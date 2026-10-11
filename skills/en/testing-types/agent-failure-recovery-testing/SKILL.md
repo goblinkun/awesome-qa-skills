@@ -27,10 +27,18 @@ description: Use this skill when you need evidence-bounded failure classificatio
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/agent-failure-recovery-testing.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
 
+## Domain Execution Essentials
+
+1. Build failure | confirmed write state | retryability | retry/compensate/escalate | recovered state | evidence from the project protocol. Separate transient, permanent, and indeterminate outcomes.
+2. A timeout does not mean no execution: query committed effects by operation_id/idempotency key before replay. Read back an existing result or retry safely; the same key must not produce a second business write.
+3. For partial success reconcile completed and remaining steps. Compensate only under the supplied protocol and authority, recording each outcome; failed compensation escalates.
+4. Stop unchanged retries for permanent errors and notify the owner. Compare business state, attempt count, user-visible outcome, and resources before/after recovery; missing logs leave recovery unverified.
 ## Core Constraints
 
 - Keep the analysis focused on failure classification, retry/fallback/escalation, state consistency, user notice, and recovery evidence; do not replace business owners or Human risk acceptance, exception approval, or safety decisions.

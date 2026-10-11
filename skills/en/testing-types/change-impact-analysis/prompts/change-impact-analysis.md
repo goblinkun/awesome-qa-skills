@@ -39,6 +39,15 @@ If critical input is absent, list `Working Assumptions` and `Open Questions`, th
 - Reuse the current toolchain and assets; avoid large code samples unless the user requests them.
 - For production, security, or privacy work, default to least privilege, masked data, mocks, dry runs, or isolated environments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix change version/scope and build typed changed file/symbol/config→dependent→business obligation→test ID evidence edges with source/version and confirmed/candidate/unknown states.
+2. Traverse direct/transitive consumers with cycle deduplication. Stop only at evidenced contract isolation/no-consumer boundaries and record why; directories alone are no boundary.
+3. Dynamic registration/runtime configuration/untraced dependencies remain unknown. Propose risk-based consumer contract/integration checks; absent mapping does not mean no impact.
+4. Explain inclusion/exclusion, minimum validation, residual risk, and expansion triggers. This Skill covers code/data/config changes broadly; the PR-specific counterpart owns base/head/diff identity.
+
 ## Minimum Coverage Checklist
 
 Unless the user narrows the scope, cover at least:

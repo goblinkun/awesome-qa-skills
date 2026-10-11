@@ -40,6 +40,15 @@ If critical input is absent, list `Working Assumptions` and `Open Questions`, th
 - Reuse the current toolchain and assets; avoid large code samples unless the user requests them.
 - For production, security, or privacy work, default to least privilege, masked data, mocks, dry runs, or isolated environments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Register risk events, affected assets/groups, triggers and controls with observable impact, likelihood and detectability anchors and sources.
+2. Without project quantitative rules provide justified qualitative ordering. Separate irreversible impact, authority boundaries and known control gaps; low frequency alone is not low risk.
+3. Propagate uncertainty across likelihood, impact and control confidence using conditional conclusions and minimal checks. UNKNOWN is neither zero nor a precise score.
+4. Link controls/tests, residual risk, owners and authorized acceptance. Ranking supports decisions; it is no vulnerability, root-cause or acceptance proof.
+
 ## Minimum Coverage Checklist
 
 Unless the user narrows the scope, cover at least:

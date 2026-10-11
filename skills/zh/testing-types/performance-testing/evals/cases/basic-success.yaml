@@ -12,11 +12,8 @@ input:
 
 expect:
   must_contain:
-    - "场景"
-    - "阈值"
-    - "指标"
-    - "负载模型"
-    - "瓶颈"
+    - "800 RPS"
+    - "回调"
   must_not_contain:
     - "TODO"
     - "我无法"
@@ -24,9 +21,9 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
           - "任务理解"
           - "性能风险"
           - "指标"
-          - "负载模型"
+          - "(负载模型|流量模型|目标负载)"

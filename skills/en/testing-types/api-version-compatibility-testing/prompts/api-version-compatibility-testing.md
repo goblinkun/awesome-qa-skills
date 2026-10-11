@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, behavior of concern, source ev
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Identify contract/client/server versions, support/deprecation timeline and migration order; build applicable old/new client by old/new server combinations.
+2. Compare wire fields/types, requiredness, enums, defaults, errors and semantic units in each direction. Additive compatibility depends on actual client tolerance, not an assumed ignore-unknown policy.
+3. Apply client read/write contracts to each cell: accepted, migration needed, explicitly unsupported, or unknown. Compatible shapes still require unchanged business meaning.
+4. Trace risks to changes and old-client paths and propose dual-version/deprecation checks; missing client samples/support policy prevents a backward-compatibility claim.
+
+**Decision and deliverable:** Deliver the version matrix and wire/semantic differences, retaining unsupported/unknown cells; scope compatibility to sourced client behavior and support.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

@@ -19,6 +19,12 @@ description: Use this skill when you need AI-assisted testing workflows such as 
 3. If input is incomplete, return a usable first draft and explicitly mark assumptions and gaps.
 4. Default to Markdown; switch formats only when the user asks.
 
+## Domain Execution Essentials
+
+1. Record input classification, sanitization, and allowed use. Replace identities, tokens, and personal data with non-reversible placeholders while retaining schema/business constraints.
+2. Trace input snapshot→model/prompt version→AI draft ID→Human review→adopted version ID→acceptance evidence. Drafts do not automatically become execution assets.
+3. Name the reviewers of business oracles, assertions, privacy, and high-risk tradeoffs. Unreviewed work remains draft, unexecuted work NOT_RUN; AI does not accept on behalf of Human.
+4. Compare equal tasks/complexity/windows: manual baseline versus AI generation+review+rework+acceptance time. Track defects/rework separately; generation time alone cannot prove productivity gains.
 ## Core Constraints
 
 - Prioritize by risk / business impact — do not treat everything equally.
@@ -27,6 +33,8 @@ description: Use this skill when you need AI-assisted testing workflows such as 
 - Keep output executable: concrete scenarios, clear priority, clear next steps.
 
 ## Progressive Disclosure
+
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
 
 - Before producing output, read and follow `prompts/ai-assisted-testing.md` (minimum coverage, output structure, quality bar).
 - When Excel/CSV/JSON/Word is requested: read `output-formats.md` and honor the format.

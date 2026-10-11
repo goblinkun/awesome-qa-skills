@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded security-requirement-
 - Read evals/eval.yaml and matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Map asset→threat actor/path→security obligation→control→verifiable acceptance, retaining scope, sources and project-supplied standard/version; do not select an unsupplied compliance baseline.
+- Deliver obligation/acceptance/evidence mappings and testability gaps; drafted requirements remain proposals rather than approved obligations.
+- When deriving domain candidates, read and follow [prompts/security-requirement-review.md](prompts/security-requirement-review.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only security objectives, testability, trace links, acceptance conditions, and evidence gaps; do not log in, call real APIs, or read credentials.

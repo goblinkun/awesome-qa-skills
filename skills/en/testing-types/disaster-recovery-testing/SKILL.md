@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded disaster-recovery-tes
 - Read evals/eval.yaml and the matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Identify primary/recovery regions, failure scope, RTO/RPO start/end definitions, acceptable loss and business restoration criteria from contracts; do not invent targets.
+- Deliver cross-region dependencies, timeline, RTO/RPO calculations and consistency evidence, separating target comparisons from unverified areas.
+- When deriving domain candidates, read and follow [prompts/disaster-recovery-testing.md](prompts/disaster-recovery-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only disaster scenarios, recovery priority, backup evidence, runbooks, and restore validation; do not inject faults, access real dependencies, or call production systems.

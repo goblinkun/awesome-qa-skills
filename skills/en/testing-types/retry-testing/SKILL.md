@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded retry-testing analysi
 - Read evals/eval.yaml and the matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Classify retryable, permanent and unknown-outcome errors from contracts; define total attempts versus additional retries and nested call relationships.
+- Deliver error/attempt/time-budget/side-effect tables with nested call counts and uncertain timeout commits.
+- When deriving domain candidates, read and follow [prompts/retry-testing.md](prompts/retry-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only retry triggers, backoff, idempotency, retry limits, and duplicate side effects; do not inject faults, access real dependencies, or call production systems.

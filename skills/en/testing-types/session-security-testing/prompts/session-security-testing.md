@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not log in, call real APIs, read credentials, or perform destructive security actions.
 - Do not upgrade files, names, templates, or dry-runs into absence-of-vulnerability, exploit success, or release-approval evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Identify Cookie/opaque-session/access+refresh mechanisms and contracts for creation, post-login rotation, fixation, idle/absolute expiry, revocation, logout and concurrent clients.
+2. Build before/after states with credential labels, tracking old-credential invalidation, new privilege and server state without real Cookie/token values.
+3. Specify expiry-boundary, old-credential-after-logout, permission-change and concurrent-session oracles using supplied expiry/propagation windows, not invented lifetimes.
+4. Separate refresh revocation from issued access-token lifetime and Cookie attributes from server revocation. Do not impose universal immediate invalidation on different contracts; label gaps as risk proposals.
+
+**Decision and deliverable:** Deliver mechanism-specific credential/permission timelines; successful logout does not prove old credentials are invalid.
+
 ## Minimum Coverage Checklist
 
 - session security and applicability

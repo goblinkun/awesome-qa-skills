@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not inject faults, access real dependencies, read credentials, or call production systems.
 - Do not upgrade file presence, names, templates, or dry-runs into execution, passing, coverage, or release evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Extract failure-count definitions, rolling/consecutive window, threshold, open duration, half-open probe/concurrency allowance, and success/failure transitions.
+2. Build timed request-identified closed→open→half-open→closed/open event tables, updating counts/state per event without inventing thresholds.
+3. Check open short-circuiting, business-safe fallback, excess half-open probes, and ordinary requests incorrectly admitted after a failed probe.
+4. Separate dependency calls from local rejections and count them only as contracted. Check concurrent probes/time boundaries; absent logs imply expected, not observed, transitions.
+
+**Decision and deliverable:** Deliver pre-state/count/action/post-state/fallback per event, distinguishing probes from ordinary calls; state labels are not behavior evidence.
+
 ## Minimum Coverage Checklist
 
 - circuit-breaker state and applicability

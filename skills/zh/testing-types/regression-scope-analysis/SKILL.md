@@ -27,9 +27,18 @@ description: Use this skill when you need to define risk-based regression scope 
 
 ## 参考文件
 
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
+
 - 每次执行必须读取 `prompts/regression-scope-analysis.md`；它是本 Skill 的完整执行规范。
 - 需要评测或回归本 Skill 时，读取 `evals/eval.yaml` 与匹配的 `evals/cases/` 用例。
 - 只有目录实际存在且任务需要时，才读取 `references/`、`examples/`、`scripts/` 或 `output-formats.md`，不要假设不存在的资产。
+
+## 领域执行要点
+
+1. 以变更和当前基线为入口，列变更→受影响义务→测试层/平台/数据状态→纳入/排除及证据的矩阵；回归保护已有行为，不把新特性完整测试混为回归。
+2. 检查直接、传递与动态依赖、历史逃逸和非功能影响；未知依赖单列，不以无映射当无影响，排除需契约/证据证明。
+3. 预算不足时保留最低关键义务和风险余量，给不可覆盖项、最小替代证据、负责人及授权接受/升级条件，不静默裁掉高风险。
+4. 输出候选范围、顺序、资源、触发追加范围的信号；已选测试、已执行和已满足分别记，不能用计划数替代通过证据。
 
 ## 核心约束
 

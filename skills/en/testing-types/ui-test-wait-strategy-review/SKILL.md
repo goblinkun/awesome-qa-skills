@@ -27,6 +27,12 @@ Do not use it to execute tests, invent behavior conclusions, replace a complete 
 3. Record UWR-## with the subject, preconditions, concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Choose readiness by obligation: DOM presence/actionability establishes element conditions; business state/version/confirmation IDs establish progress; network/events need correlation to the target operation.
+- Deliver action/readiness/correlation-ID/budget/retry-side-effect cells; business completion needs an observable oracle for the intended operation.
+- When deriving domain candidates, read and follow [prompts/ui-test-wait-strategy-review.md](prompts/ui-test-wait-strategy-review.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or outcomes, or treat candidate counts as coverage proof.

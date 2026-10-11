@@ -27,6 +27,12 @@ Do not use it to execute tests, invent contract or behavior, replace a complete 
 3. Record ASV-## with the subject, preconditions, behavior of concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Identify OpenAPI/JSON Schema/GraphQL and its version/dialect, operation/direction, content type, reference root and resolution context. Suspend version-dependent decisions when unknown.
+- Deliver dialect, reference-resolution status, and sample/constraint decisions; required presence and a null value must be assessed separately.
+- When deriving domain candidates, read and follow [prompts/api-schema-validation.md](prompts/api-schema-validation.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or responses, or treat candidate counts as coverage proof.

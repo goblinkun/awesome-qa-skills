@@ -39,6 +39,14 @@ If critical input is absent, list `Working Assumptions` and `Open Questions`, th
 - Reuse the current toolchain and assets; avoid large code samples unless the user requests them.
 - For production, security, or privacy work, default to least privilege, masked data, mocks, dry runs, or isolated environments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix trace/span IDs, parent IDs, asynchronous links, service/deployment versions, timestamps, and sampling scope. Check nesting and clock skew; a link is not automatically synchronous parentage.
+2. Within one clock domain, subtract the union of synchronous child intervals to obtain observed exclusive time; overlapping children are not additive. Missing spans limit this to observed intervals, not true exclusive work.
+3. Derive critical paths from actual dependency/blocking order. Queue time requires enqueue/dequeue evidence; unexplained gaps are not automatically queues.
+4. A longest span is an investigation candidate; causation needs logs/metrics/controlled faults. State separate missing-span, sampling, and clock limitations.
 ## Minimum Coverage Checklist
 
 Unless the user narrows the scope, cover at least:

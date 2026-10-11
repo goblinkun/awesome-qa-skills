@@ -12,58 +12,20 @@ from common_formatter import (
     write_output,
 )
 from common_parser import PARSERS, detect_format
+from evidence_scaffold import prepare_documents, source_candidates, analysis_markdown
 
 
-def _extract_candidate_points(req_text: str, ana_text: str) -> List[str]:
-    text = "\n".join([req_text, ana_text])
-    lines = [x.strip() for x in text.splitlines() if x.strip()]
-    patterns = [
-        r"(必须|需要|应当|规则|流程|状态|接口|校验|验证|限制)",
-        r"(must|should|required|rule|flow|state|api|validate|eligibility)",
-    ]
-    points = []
-    for line in lines:
-        if any(re.search(p, line, flags=re.IGNORECASE) for p in patterns):
-            points.append(line)
-    if not points:
-        points = lines[:8]
-    return points[:12]
 
 
-def _priority_for_index(i: int) -> str:
-    if i <= 2:
-        return "P0"
-    if i <= 6:
-        return "P1"
-    return "P2"
 
 
-def _normalize_step_text(raw: str) -> str:
-    raw = re.sub(r"\s+", " ", raw).strip()
-    if len(raw) > 80:
-        return raw[:77] + "..."
-    return raw
 
 
-def generate_test_cases(req_text: str, ana_text: str) -> List[Dict]:
-    points = _extract_candidate_points(req_text, ana_text)
-    cases = []
-    for idx, p in enumerate(points, start=1):
-        short = _normalize_step_text(p)
-        case = {
-            "title": f"TC-{idx:03d} {short}",
-            "priority": _priority_for_index(idx),
-            "type": "功能/接口",
-            "preconditions": "活动配置已生效，测试账号和库存数据已准备",
-            "steps": f"1) 进入活动页 2) 执行与“{short}”相关操作 3) 观察页面与接口返回",
-            "data": "测试账号、活动ID、礼品ID、资格条件参数",
-            "expected": "业务结果与规则一致，状态更新正确，无越权和异常漏处理",
-            "actual": "",
-            "status": "",
-            "remark": "",
-        }
-        cases.append(case)
-    return cases
+
+
+
+def generate_test_cases(req_text, ana_text):
+    return source_candidates(req_text, ana_text)
 
 
 def _render(content_cases: List[Dict], output_format: str) -> str:
@@ -87,7 +49,7 @@ def _default_output_path(requirement_file: Path, output_format: str) -> Path:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="TestcaseWriter Plus runner")
+    parser = argparse.ArgumentParser(description="TestcaseWriter Plus input preparation (NOT_ASSESSED)")
     parser.add_argument("--requirement", required=True, type=Path, help="Requirement document file path")
     parser.add_argument("--analysis", required=True, type=Path, help="Requirement analysis result file path")
     parser.add_argument(
@@ -110,10 +72,13 @@ def main() -> None:
     req_text = PARSERS[req_fmt](args.requirement)
     ana_text = PARSERS[ana_fmt](args.analysis)
 
-    # Prompt is loaded to keep writing policy tied to this skill execution.
-    _ = args.prompt.read_text(encoding="utf-8", errors="ignore")
+    # Reading the prompt checks its presence; this deterministic script does not execute it.
+    prompt_text = args.prompt.read_text(encoding="utf-8", errors="strict")
 
     cases = generate_test_cases(req_text, ana_text)
+    import hashlib
+    for candidate in cases:
+        candidate["prompt_hash"] = hashlib.sha256(prompt_text.encode("utf-8")).hexdigest()
     output_path = args.output or _default_output_path(args.requirement, args.output_format)
     if args.output_format == "word":
         write_word_docx(cases, output_path)

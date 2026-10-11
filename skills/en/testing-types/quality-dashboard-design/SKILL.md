@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded quality dashboard aud
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/quality-dashboard-design.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Map audience decisions to metrics, definitions/windows, source versions, actions and owners; available data alone must not decide what matters.
+2. Show numerator/denominator, refresh time and source status. Distinguish zero, null, NOT_RUN, BLOCKED and stale data; never fill gaps with zero or reuse stale green.
+3. Preserve P0 blockers and small high-risk groups in summaries. Overall pass rates cannot override individual blockers; aggregation follows project rules.
+4. Provide drill-down to run/obligation/defect evidence, refresh contracts and action triggers. Missing sources or gates yield design and gaps, not a current pass.
 
 ## Core Constraints
 

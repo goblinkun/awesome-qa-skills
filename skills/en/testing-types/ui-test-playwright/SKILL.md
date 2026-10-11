@@ -24,11 +24,20 @@ Markdown by default unless the request explicitly asks for another format.
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - `prompts/ui-test-playwright.md`: main prompt for this skill.
 - `references/framework-spec.md`: tool-specific structure and coverage notes.
 - `references/setup-and-ci.md`: setup, execution, and CI notes.
 - `examples/sample-context.md`: sample request context.
 - `scripts/run-tests.sh`: lightweight local execution entry point.
+
+## Domain Execution Essentials
+
+1. Fix project Playwright/Node/browser versions, projects, fixtures, and config. Retain entry points with test ID, commit, worker/project, and environment; diagnose incompatible config without switching stacks.
+2. Prefer stable role/name/testid locators and auto-retrying business assertions for order/ledger/state/principal. Title/URL checks protect navigation only, not payment success.
+3. Give each worker independent browser context, storage state/account, and business keys. Context isolation still needs server-side account isolation; cleanup follows reverse dependencies.
+4. Pair wrong-business-state and parallel A/B controls to test assertion sensitivity. Preserve traces/screenshots/logs and nonzero runner/CI status, including first retry failures. Separate generated assets, real browser runs, and acceptance.
 
 ## Common Pitfalls
 
@@ -41,3 +50,5 @@ Markdown by default unless the request explicitly asks for another format.
 - Start from the prompt file, then add only the context that matters.
 - Keep the output risk-driven and executable.
 - If the request is incomplete, return a usable first version and mark gaps.
+
+- To verify generated business assertions, failure propagation or isolation, read [evals/fixtures/checkout-app/README.md](evals/fixtures/checkout-app/README.md) and its local good/bug/timeout controls; execute only when a run is requested.

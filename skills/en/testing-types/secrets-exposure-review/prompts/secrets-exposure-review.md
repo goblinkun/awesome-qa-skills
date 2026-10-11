@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not log in, call real APIs, read credentials, or perform destructive security actions.
 - Do not upgrade files, names, templates, or dry-runs into absence-of-vulnerability, exploit success, or release-approval evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Inventory supplied authorized code/config/CI/log/artifact/history, recording candidate locations, categories and redacted fingerprints without copying values or reading real credentials.
+2. Distinguish environment placeholders, explicitly synthetic test values and credential-shaped candidates of unknown validity; patterns do not prove a live credential.
+3. Assess visibility, privilege/use, exposure period, copies/retention and owner, retaining validity unknowns and authorization-dependent verification gaps.
+4. Propose stop-the-leak, owner confirmation, revocation/rotation, old-value invalidation and historical-copy handling. Removing text does not revoke credentials; do not mutate secrets or declare closure.
+
+**Decision and deliverable:** Deliver redacted locations/lifecycle risks; ground severity in exposure/use evidence and retain unknown candidate validity.
+
 ## Minimum Coverage Checklist
 
 - secrets exposure and applicability

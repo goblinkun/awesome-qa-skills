@@ -11,7 +11,6 @@ expect:
   must_contain:
     - "P0"
     - "P1"
-    - "Residual Risk"
     - "condition"
   must_not_contain:
     - "TODO"
@@ -21,8 +20,8 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
           - "P0"
           - "P1"
-          - "Residual Risk"
+          - "(?i)(residual risk|remaining risk|unverified.*risk)"

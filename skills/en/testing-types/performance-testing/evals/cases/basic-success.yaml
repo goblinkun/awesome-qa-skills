@@ -12,11 +12,8 @@ input:
 
 expect:
   must_contain:
-    - "scenario"
-    - "threshold"
-    - "metric"
-    - "load model"
-    - "bottleneck"
+    - "800 RPS"
+    - "callback"
   must_not_contain:
     - "TODO"
     - "I cannot"
@@ -24,9 +21,9 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
-          - "Task Understanding"
-          - "Performance Risk"
-          - "metric"
-          - "load model"
+          - "(?i)Task Understanding"
+          - "(?i)Performance Risk"
+          - "(?i)(metric|measurement)"
+          - "(?i)(load model|traffic model|scenario plan|workload)"

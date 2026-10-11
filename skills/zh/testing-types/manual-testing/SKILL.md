@@ -19,6 +19,13 @@ description: Use this skill when you need to plan manual or exploratory testing 
 3. 信息不全时先给可用初版，并显式标出假设与信息缺口。
 4. 默认 Markdown；用户指定其他格式时再切换。
 
+## 领域执行要点
+
+1. 为每个时间盒建立 charter：任务/风险、环境/构建、数据、探索范围、截止和证据；执行既定路径与探索新问题分别记账，不自行扩展授权。
+2. 步骤记录 前置状态→动作→预期→实际→证据 ID→状态；未启动为 NOT_RUN，中断为 INCOMPLETE，环境阻断为 BLOCKED，不把清单当完成记录。
+3. 先准备可恢复数据与检查点，结束按项目规则恢复账户、订单和配置并核对残留；未授权删除不能当清理捷径。
+4. 时间不足先完成关键风险闭环并保存未完成项、负责人和恢复入口；报告只覆盖真实观察，未知预期仍待确认。
+
 ## 核心约束
 
 - 按风险/业务影响排优先级，不要平均摊铺。
@@ -27,6 +34,8 @@ description: Use this skill when you need to plan manual or exploratory testing 
 - 结果必须可执行：场景具体、有优先级、能指导下一步。
 
 ## 按需加载
+
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
 
 - 产出前必须阅读并遵循 `prompts/manual-testing.md`（最低覆盖清单、输出结构、质量要求）。
 - 需要 Excel/CSV/JSON/Word 等格式时：读 `output-formats.md`，并按用户格式要求输出。

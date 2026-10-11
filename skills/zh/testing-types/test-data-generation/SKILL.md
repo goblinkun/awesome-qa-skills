@@ -27,9 +27,18 @@ description: Use this skill when you need to design safe, representative test da
 
 ## 参考文件
 
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
+
 - 每次执行必须读取 `prompts/test-data-generation.md`；它是本 Skill 的完整执行规范。
 - 需要评测或回归本 Skill 时，读取 `evals/eval.yaml` 与匹配的 `evals/cases/` 用例。
 - 只有目录实际存在且任务需要时，才读取 `references/`、`examples/`、`scripts/` 或 `output-formats.md`，不要假设不存在的资产。
+
+## 领域执行要点
+
+1. 从已提供schema、实体外键、唯一约束、状态关系与场景预期派生数据组；固定种子/生成器版本，缺规则保留UNKNOWN，不自动发明字段或真实用户。
+2. 分开有效happy/boundary数据与定向无效数据，每组注明改变的约束、预期拒绝/允许和不受影响的关系；无效数据不能悄悄进入正常流程组。
+3. 实际交付脱敏样本及验证：唯一性、外键存在、字段类型/范围、状态关联、可重复输出；重跑相同seed应得到相同数据身份而非只写可复现建议。
+4. 使用隔离ID/命名空间，保留来源许可、个人数据限制和清理逆依赖顺序；缺授权不抓真实个人资料，不把生成样本当真实业务代表性证明。
 
 ## 核心约束
 

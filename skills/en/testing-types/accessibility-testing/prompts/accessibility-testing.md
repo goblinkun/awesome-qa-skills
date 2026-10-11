@@ -25,6 +25,14 @@ Assess product accessibility risks and produce a practical testing plan or revie
 - Separate confirmed issues, likely risks, and items that still need manual verification.
 - If the release scope is small, focus on the in-scope journeys, forms, navigation, and critical states.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Record the project-supplied WCAG version/level, scope, and success criterion IDs. Missing targets stay open; never choose a level or claim conformance by default.
+2. Build criterion ID | user task/state | input/assistive technology/version | steps | evidence type | outcome. Keep automated scan, keyboard, screen-reader, and manual visual evidence separate.
+3. Exercise keyboard navigation, opening, operation, closing, and focus restoration. Check screen-reader name/role/state and dynamic announcements. Prioritize inaccessible critical actions by user impact.
+4. A scan with zero findings establishes only the scanned result. Preserve manual FAIL and unexecuted NOT_RUN; aggregate evidence by criterion without promoting a partial scan to conformance.
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

@@ -19,6 +19,13 @@ description: Use this skill when you need to define a test strategy covering sco
 3. 信息不全时先给可用初版，并显式标出假设与信息缺口。
 4. 默认 Markdown；用户指定其他格式时再切换。
 
+## 领域执行要点
+
+1. 以版本/业务目标与风险建立最小执行表：目标→义务/范围→层与深度→数据/环境→资源/负责人→准入准出来源→证据与剩余风险，避免分散章节无法执行。
+2. 沿用项目工具与现实容量，先覆盖关键资损/授权等最低保护；每场景有业务后置条件和证据，资源不足列不可完成项与最小替代验证。
+3. 准入准出值仅取项目规则，缺门槛保持待确认/UNKNOWN，不自动套95%通过率或P0数值；Human决定风险接受，不由策略草稿代替。
+4. 区分设计、计划、实际运行和业务验收；给依赖/环境阻塞、范围变化、停止/重审触发与交付责任，策略能由另一执行者直接接手。
+
 ## 核心约束
 
 - 按风险/业务影响排优先级，不要平均摊铺。
@@ -27,6 +34,8 @@ description: Use this skill when you need to define a test strategy covering sco
 - 结果必须可执行：场景具体、有优先级、能指导下一步。
 
 ## 按需加载
+
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
 
 - 产出前必须阅读并遵循 `prompts/test-strategy.md`（最低覆盖清单、输出结构、质量要求）。
 - 需要 Excel/CSV/JSON/Word 等格式时：读 `output-formats.md`，并按用户格式要求输出。

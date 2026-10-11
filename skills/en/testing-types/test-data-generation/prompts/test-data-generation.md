@@ -40,6 +40,15 @@ If critical input is absent, list `Working Assumptions` and `Open Questions`, th
 - Reuse the current toolchain and assets; avoid large code samples unless the user requests them.
 - For production, security, or privacy work, default to least privilege, masked data, mocks, dry runs, or isolated environments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Derive groups from supplied schema, foreign keys, uniqueness, state relationships, and scenario oracles. Fix seed/generator version; missing rules remain UNKNOWN without invented fields or real identities.
+2. Separate valid happy/boundary data from deliberate invalid groups. Name the violated constraint and expected allow/reject outcome while preserving other relationships; invalid rows cannot silently enter valid groups.
+3. Deliver actual sanitized samples with uniqueness, foreign-key, type/range, state, and reproducibility checks. Equal seeds must reproduce data identities, not merely a strategy statement.
+4. Use isolated IDs/namespaces with provenance, privacy restrictions, and reverse dependency cleanup. Missing authority prevents real personal-data collection; synthetic rows do not establish population representativeness.
+
 ## Minimum Coverage Checklist
 
 Unless the user narrows the scope, cover at least:

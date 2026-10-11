@@ -7,6 +7,7 @@ import zipfile
 from pathlib import Path
 from typing import Any
 from xml.etree import ElementTree as ET
+from xlsx_reader import read_workbook
 
 
 # ---- parsing ----
@@ -61,26 +62,9 @@ def _shared_strings(zf: zipfile.ZipFile) -> list[str]:
 
 
 def parse_xlsx(path: Path) -> dict[str, Any]:
-    rows: list[list[str]] = []
-    with zipfile.ZipFile(path) as zf:
-        shared = _shared_strings(zf)
-        with zf.open("xl/worksheets/sheet1.xml") as f:
-            root = ET.fromstring(f.read())
-    ns = {"a": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
-    for row in root.findall(".//a:sheetData/a:row", ns):
-        vals = []
-        for c in row.findall("a:c", ns):
-            t = c.attrib.get("t")
-            v = c.find("a:v", ns)
-            if v is None or v.text is None:
-                vals.append("")
-            elif t == "s":
-                idx = int(v.text)
-                vals.append(shared[idx] if 0 <= idx < len(shared) else "")
-            else:
-                vals.append(v.text)
-        rows.append(vals)
-    return {"title": path.stem, "rows": rows}
+    sheets = read_workbook(path)
+    return {"title": path.stem, "rows": sheets[0]["rows"], "sheets": sheets,
+            "value_representation": "raw stored/cached strings; Excel formatting is not applied"}
 
 
 def parse_xmind(path: Path) -> dict[str, Any]:
@@ -142,7 +126,12 @@ def normalize(parsed: dict[str, Any]) -> dict[str, Any]:
             sections.append({"name": "json_array", "items": [{"key": "row", "value": v} for v in data[:200]]})
         else:
             sections.append({"name": "json_value", "items": [{"key": "value", "value": data}]})
-    if "rows" in parsed:
+    if "sheets" in parsed:
+        for sheet in parsed["sheets"]:
+            items = [{"key": f"row_{number}", "value": row}
+                     for number, row in zip(sheet["row_numbers"], sheet["rows"])]
+            sections.append({"name": "worksheet:" + sheet["name"], "items": items})
+    elif "rows" in parsed:
         rows = parsed["rows"]
         sections.append({"name": "rows", "items": [{"key": f"row_{i+1}", "value": r} for i, r in enumerate(rows[:200])]})
     if "columns" in parsed:

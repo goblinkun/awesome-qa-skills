@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, concern, source evidence, and 
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Identify the intended user target from DOM/components; compare role+accessible name, stable test IDs, scoping and CSS/XPath against actual semantics/maintenance contracts.
+2. Check match count, visibility/interactability and intended instance in supplied states; use business containers/stable identity for duplicate buttons rather than masking ambiguity with first().
+3. Assess dynamic/localized text, repeated rows, DOM reordering and generated styles with explicit assumptions; missing DOM/language evidence requires validation.
+4. Propose reviewable alternatives/valid controls with target/uniqueness reasons. Stable contracted CSS/XPath is allowed; do not ban selector categories categorically.
+
+**Decision and deliverable:** Deliver target, match count, stability sources and alternative rationale; semantics/uniqueness matter more than selector syntax preference.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

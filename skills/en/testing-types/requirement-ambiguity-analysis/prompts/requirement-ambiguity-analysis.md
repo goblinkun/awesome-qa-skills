@@ -49,6 +49,17 @@ Use `RA-##` for each item:
 
 When two sources explicitly state different rules, do not reduce the matter to ordinary ambiguity or choose one. Preserve both statements, sources, applicability, and impact; use `conflict` and suggest `requirement-conflict-detection` for focused organization. Leave precedence and the final business rule to a Human decision.
 
+## Domain Procedure and Oracle
+
+Uppercase decisions belong to a per-item decision view; RA findings retain ambiguous/missing/untestable/conflict/stale/out_of_scope. CLEAR is a valid control: show its testability in the overview rather than inventing a finding.
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Retain requirement ID, source, version, and wording. Separate AMBIGUOUS (multiple meanings), MISSING_RULE (undefined behavior), CONFLICT (opposing sources), and CLEAR (testable wording); do not flag normal shorthand to manufacture findings.
+2. For ambiguity show at least two plausible interpretations, conditions, different business/test consequences, and supporting wording. Without a plausible alternative, check whether material is merely missing.
+3. Ask the smallest discriminating question about start event, comparison, commit point, or scope. Offer options while leaving the product decision with its owner.
+4. Mark explicit criteria CLEAR with observable oracles. Do not fill gaps with invented limits or policy. Prioritize clarification by impact and implementation blockage.
+
 ## Output
 
 1. Input audit and scope;

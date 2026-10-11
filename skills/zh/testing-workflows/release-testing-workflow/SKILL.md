@@ -12,6 +12,10 @@ description: Use this skill when you need release-phase QA workflow from T-14 pl
 - 需要按发布窗口推进：T-N 规划 → 专项 → RC → Go/No-Go → 发布后观察。
 - 需要发布门禁与放行证据包，并向类型 skill 交接专项执行。
 
+## 授权决策边界
+
+只提供发布建议；正式批准需授权决策者及版本、范围、时间、来源记录。紧急热修/灰度可压缩时间线，门禁条件不能省略。
+
 ## 执行流程
 
 1. 阅读并遵循 `prompts/release-testing-workflow.md`（时间线、门禁、Go/No-Go、交接）。
@@ -21,7 +25,7 @@ description: Use this skill when you need release-phase QA workflow from T-14 pl
 
 ## 核心约束
 
-- 管发布时间线与放行决策；专项报告交给 `performance-testing` / `security-testing` 等。
+- 管发布时间线与放行建议；专项报告交给 `performance-testing` / `security-testing` 等。
 - 门禁可压缩时间，不可删除判据。
 - Go/No-Go 必须基于证据；条件放行必须可验证。
 - 禁止相对路径链到其他 skill 文件。

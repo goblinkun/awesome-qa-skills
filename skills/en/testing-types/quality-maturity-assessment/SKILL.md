@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded quality-practice matu
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/quality-maturity-assessment.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Fix the project's framework, dimensions, anchors and scope. Without a framework provide candidate anchors and evidence, not ratings or a repository Quality Score.
+2. Each anchor needs observable practice, artifacts and continuity. Templates prove existence; repeated runs with failure handling prove operating practice. Label example levels as illustrative.
+3. Report evidence, level, confidence and gaps by dimension. N/A needs a scope reason; UNKNOWN is missing evidence rather than the lowest level. Verify interview claims against artifacts.
+4. Match product risk, scale and windows before comparison. Aggregate only with supplied weights and coverage; missing dimensions are not zero. Improvements include acceptance evidence and review timing.
 
 ## Core Constraints
 

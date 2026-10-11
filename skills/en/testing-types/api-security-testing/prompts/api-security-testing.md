@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not log in, call real APIs, read credentials, or perform destructive security actions.
 - Do not upgrade files, names, templates, or dry-runs into absence-of-vulnerability, exploit success, or release-approval evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Map supplied endpoints, subjects, resources, actions, sensitive fields and trust boundaries, distinguishing server-derived identity from client-controlled input.
+2. Expand allow/deny controls for object, field and function permissions, including ownership, tenant and delegation. Authentication does not establish resource permission.
+3. Check supplied resource quotas, page/batch limits, upload/external-call boundaries, and error/log disclosure on actual entries; do not invent components.
+4. Trace controllable input to protected resources and server controls. Separate contract gaps, static design risks, and supplied violations; propose isolated validation without calling APIs or claiming exploitation.
+
+**Decision and deliverable:** Each risk needs a supplied entry, subject/resource/action, boundary path, applicable obligation and evidence; static candidates are not confirmed vulnerabilities.
+
 ## Minimum Coverage Checklist
 
 - API security and applicability

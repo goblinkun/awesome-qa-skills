@@ -27,6 +27,12 @@ description: Use this skill when you need to assess test-suite health from durat
 3. 用 TSH-## 记录对象、前置条件、关注点、来源证据和验证方法，保留影响/优先级、责任角色、关闭条件和证据状态。
 4. 材料冲突、缺少约束或没有执行证据时，保留双方和待确认问题。
 
+## 领域执行要点
+
+- 按稳定test ID、义务、代码/数据版本与run ID归一化运行，分开首尝试、重试、隔离、跳过和未运行。
+- 交付身份化运行指标、失败/重试/隔离义务与耗时风险；最终通过率必须同时展示其分母和重试。
+- 形成领域候选时，必须读取并遵循 [prompts/test-suite-health-analysis.md](prompts/test-suite-health-analysis.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不执行测试，不假设未提供的规则、版本、阈值、数据或结果，不把候选数量当作覆盖证明。

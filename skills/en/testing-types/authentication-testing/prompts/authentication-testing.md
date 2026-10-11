@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not log in, call real APIs, read credentials, or perform destructive security actions.
 - Do not upgrade files, names, templates, or dry-runs into absence-of-vulnerability, exploit success, or release-approval evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Model unauthenticated, challenged, authenticated, locked and recovery states for supplied password/MFA/recovery/federation mechanisms, with creation/rotation/expiry/revocation/replay rules.
+2. Derive valid/invalid credentials, incomplete challenges, MFA replay, lock boundaries, recovery-token use and expiry scenarios; do not invent attempt limits, lifetimes or mandatory MFA policy.
+3. Compare server authentication state, token issuance and old-credential validity after each event. Compare existent/nonexistent account responses/timing against the contract, separating enumeration risk from proved disclosure.
+4. Separate identity verification from resource authorization and use each channel's contract. Missing lifecycle/state evidence requires isolated validation, not an assertion of successful bypass.
+
+**Decision and deliverable:** Deliver authentication transitions and credential lifecycles with expected state/token, observation and gaps; authentication does not replace authorization.
+
 ## Minimum Coverage Checklist
 
 - authentication and applicability

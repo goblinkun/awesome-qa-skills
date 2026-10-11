@@ -27,10 +27,18 @@ description: Use this skill when you need evidence-bounded memory write/read/upd
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/agent-memory-testing.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
 
+## Domain Execution Essentials
+
+1. Capture tenant/user IDs, memory ID, content version, source, write time, expiry, and withdrawal/deletion status. Retain retrieved provenance/version, not only the final answer.
+2. Resolve old/new preferences using supplied precedence rules. Undefined conflicts remain open; never assume last-write-wins or invent retention periods.
+3. Compare visibility for the same query in two tenants. Assess stale versions, expired returns, and post-deletion retrieval using the project's consistency window.
+4. Check deletion across the actual index/cache/backup scope. Missing propagation/backup policies limit the conclusion. Include permitted retrieval as the isolation control.
 ## Core Constraints
 
 - Keep the analysis focused on memory write/read/update/delete, retention, contamination, isolation, provenance, and forgetting behavior; do not replace business owners or Human risk acceptance, exception approval, or safety decisions.

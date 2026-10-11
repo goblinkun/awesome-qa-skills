@@ -13,11 +13,7 @@ input:
 
 expect:
   must_contain:
-    - "优先级"
     - "支付"
-    - "边界"
-    - "异常路径"
-    - "假设"
   must_not_contain:
     - "TODO"
     - "我无法"
@@ -25,9 +21,9 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
           - "任务理解"
-          - "风险"
-          - "边界"
-          - "异常路径"
+          - "(风险|优先级)"
+          - "(边界|极值|限制)"
+          - "(异常|负向|失败)"

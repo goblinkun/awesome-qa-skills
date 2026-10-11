@@ -27,6 +27,12 @@ Do not use it to execute tests, invent rules, replace a complete strategy, or ac
 3. Record DTT-## with rule ID, condition combination, applicability, action/outcome, exception, source evidence, and validation method, source, evidence state, impact, owner, close condition, and validation.
 4. Preserve conflicts, unknown constraints, and open questions.
 
+## Domain Execution Essentials
+
+- Discretize continuous conditions into sourced mutually exclusive ranges/categories and list domains, actions, exceptions and precedence; do not force vague conditions into booleans.
+- Deliver full combination/rule/action mapping and overlap/gap lists; compression must not hide undefined behavior.
+- When deriving domain candidates, read and follow [prompts/decision-table-testing.md](prompts/decision-table-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - do not execute table rows, assume missing rules, or treat row counts as coverage proof.

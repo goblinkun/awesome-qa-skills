@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not log in, call real APIs, read credentials, or perform destructive security actions.
 - Do not upgrade files, names, templates, or dry-runs into absence-of-vulnerability, exploit success, or release-approval evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Extract subject roles, ownership, tenant, actions, fields, delegation scope/lifetime and revocation rules; build allow/deny/unknown cells.
+2. Derive horizontal/vertical boundaries by changing subject, resource/tenant or privilege-sensitive action, with permitted controls.
+3. Trace each decision to server enforcement and denied-request side effects. Hidden UI, login, and client tenant fields are not server authorization evidence.
+4. Check old sessions/caches/delegations after revocation against the supplied propagation window. Keep unspecified cells unknown; label default-deny as a sourced obligation or proposal.
+
+**Decision and deliverable:** Deliver subject/resource/action cells and revocation timelines, tracing allow and deny decisions without inferring global privileges from role names.
+
 ## Minimum Coverage Checklist
 
 - authorization decision and applicability

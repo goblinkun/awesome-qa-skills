@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For user data, production, or safety work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and safety judgments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Version queries, relevance annotations, document/chunk units, labelers and corpus. Recall@k uses the known relevant set; Precision@k uses actual returns with the supplied duplicate policy.
+2. Check rank, relevance, permission/tenant filters, freshness and version for each hit. Relevant but unauthorized hits are failures; high scores cannot cure stale content.
+3. Compare configurations under matched queries, index, filters and resources. Incomplete relevant sets allow proxy measurements, not claims of complete recall.
+4. Distinguish missing retrieval from correct retrieval followed by wrong generation. Missing generation output cannot locate its failure; absent labels leave UNKNOWN.
+
 ## Minimum Coverage Checklist
 
 - query variants, chunking, filters, recall proxy, ranking and freshness

@@ -33,6 +33,7 @@ description: Use this skill when designing, running, interpreting, or reporting 
 - `skill-up validate` 不是 runtime 语义验证；静态、CLI smoke、Project Done 和单次语义观察不能自动升级为发布或业务结论。
 - 不自动修改 Skill，不自动无限优化；不把 Benchmark（with/without Skill）和 Version Regression（previous/current）混为一谈。
 - 值未知时写 `unknown`；证据不足保留 `NOT_RUN`、`UNASSESSED`、`BLOCKED` 或 `INSUFFICIENT_EVIDENCE`。
+- 即使输入极少、没有可运行目标或没有原始 trace，也先输出最小报告骨架，并显式写出本次适用的 canonical evidence state；不能只写“未验证”等自然语言替代 `NOT_RUN`、`BLOCKED`、`UNASSESSED` 或 `INSUFFICIENT_EVIDENCE`。
 
 ## 参考文件
 

@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For user data, production, or safety work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and safety judgments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Split independently checkable claims including numbers/units, entities, conditions, dates, and citations. Assign IDs, retaining original answer text and evidence version/location.
+2. SUPPORTED means evidence supports the same scope; CONTRADICTED means explicit opposing evidence; MISSING_SOURCE means no supplied support or direct contradiction; UNASSESSABLE means inaccessible, unclear-scope, or outdated evidence prevents comparison. Missing support alone does not prove fabrication.
+3. Check citation existence, accessibility, relevance, and claim support separately. A real source with an opposing number is a contradiction; do not label an entire mixed paragraph at once.
+4. Preserve claim denominators and separate supported rates from unknown proportions. Without ground truth or adequate sampling provide the check plan, not factual-accuracy proof.
+
 ## Minimum Coverage Checklist
 
 - claim-to-source relation, unsupported assertion, abstention, uncertainty, evidence review

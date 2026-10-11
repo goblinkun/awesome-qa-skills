@@ -25,9 +25,11 @@ Organize a one-day QA cadence—plan, execute, defect, wrap-up—and hand each s
 
 ## Daily gates
 
-1. **Start gate**: no “env all-red with no owner”; otherwise replan day to env recovery + offline design.
+1. **Start gate**: if the environment is RED/unusable or current-build smoke is unavailable, readiness stays RED and the day is replanned to environment recovery + offline design. Assign or escalate a recovery owner; ownership alone does not change readiness to AMBER/GREEN. Require observed environment recovery and passing smoke for the current build before clearing this execution blocker.
 2. **Midday gate**: have P0s started? If not, replan afternoon and cut P2.
 3. **Close gate**: every P0 failure has a bug or escalation; tomorrow’s risks visible; “feels fine” is not done.
+
+Track recovery accountability separately from execution readiness. An escalated blocker can complete the reporting or handoff step while the start/environment gate remains RED. Offline planning may continue; execution outcomes remain NOT_RUN/BLOCKED until supported by actual evidence.
 
 Default pass criteria (customize per project, but state them):
 - 100% of today’s P0 checks have a result (pass/fail/blocked)
@@ -97,3 +99,7 @@ Workflow output should include “Next: invoke `<skill-name>` with …”, not a
 - [ ] Next hop names a skill and required context
 - [ ] Blockers have escalation; assumptions marked
 - [ ] Did not replace type skills with full long artifacts
+
+## Cadence adaptation
+
+Use the supplied shift, capacity, and freeze points. Morning/midday/EOD are milestone labels: start-of-work, priority checkpoint, and handoff/close. A night shift or split shift keeps the same gates. If times are missing, use milestones rather than inventing clock times. Each focus-stage handoff names exactly one primary Skill, carrying its scope, blocker, owner or unknown owner, and required evidence.

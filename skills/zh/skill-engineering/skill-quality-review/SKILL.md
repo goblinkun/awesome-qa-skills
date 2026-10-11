@@ -61,3 +61,7 @@ description: Use this skill when reviewing a complete Skill package for architec
 - [ ] 触发、输入、输出、约束、独立安装和 Eval readiness 已检查
 - [ ] 阻塞问题、建议、未评估项和证据等级可追溯
 - [ ] 没有把静态检查冒充 runtime/model 证据
+
+## 选择审查范围
+
+完整包契约与安装就绪审查使用本 Skill，包括文件、metadata、资源、示例和 eval。仅审阅一段文字、Prompt 或文档契约时使用 skill-prose-review；文本审查不能证明包完整。

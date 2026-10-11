@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, concern, source evidence, and 
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Normalize stable test IDs, protected obligations, code/data revisions and run IDs, separating first attempts, retries, quarantine, skips and unrun cases.
+2. Recalculate final/first-attempt pass, retry proportions and failure categories under sourced definitions; retain product/test/environment/unknown causes. Green retries do not establish resolved causes.
+3. Map quarantine/redundant coverage to obligations and compare durations for equivalent scope; test counts without mappings cannot prove protection.
+4. Give risk owners, quarantine-exit criteria and follow-up evidence; without weights/thresholds do not invent a health score or extrapolate stability from one green run.
+
+**Decision and deliverable:** Deliver identified run metrics, failure/retry/quarantined obligations and duration risks; show denominators/retries alongside final pass rates.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

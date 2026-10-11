@@ -1,0 +1,441 @@
+{
+  "date": "2026-10-08",
+  "generated_at": "2026-10-11T10:33:28.852301+08:00",
+  "base_head": "c61f507f61711c3c0f0d1777136a5a4ff0e211b3",
+  "canonical_skills_reviewed": 164,
+  "language_packages": 328,
+  "new_cases": 530,
+  "configured_cases": 1658,
+  "current_source_case_statuses": {
+    "PASS": 94,
+    "NOT_RUN": 431,
+    "ERROR": 4,
+    "FAIL": 1
+  },
+  "current_source_basis_counts": {
+    "VERIFIED_YAML_BLANK_LINE_EQUIVALENCE": 36,
+    "EXACT_HASH": 63,
+    "NOT_RUN": 431
+  },
+  "current_source_profile_statuses": {
+    "canonical-config": {
+      "PASS": 15
+    },
+    "codex-chatgpt-compatible": {
+      "PASS": 10
+    },
+    "codex-chatgpt-compatible-300s": {
+      "PASS": 2
+    },
+    "codex-chatgpt-compatible-600s": {
+      "ERROR": 4
+    },
+    "codex-host-300s": {
+      "PASS": 67,
+      "FAIL": 1
+    }
+  },
+  "quality_gate": {
+    "status": "PASS",
+    "unit_tests": 230,
+    "valid_eval_packages": 328
+  },
+  "distribution_gate": {
+    "status": "PASS",
+    "pinned_version": "skills@1.7.0",
+    "discovery": 164,
+    "isolated_install": "English functional-testing"
+  },
+  "review_skill_regressions": [
+    {
+      "skill": "skill-prose-review",
+      "language": "en",
+      "scope": "FULL_SKILL_SUITE",
+      "profile": "codex-chatgpt-compatible",
+      "status": "STOP_FOR_REVIEW",
+      "iteration": "iteration-1",
+      "cases": [
+        {
+          "case_id": "basic-success",
+          "status": "ERROR",
+          "error": "agent execution failed: codex run failed: context deadline exceeded (case timeout 180s via cases.defaults.timeout_seconds)"
+        },
+        {
+          "case_id": "edge-incomplete-input",
+          "status": "FAIL",
+          "error": null
+        },
+        {
+          "case_id": "edge-scope-risk",
+          "status": "FAIL",
+          "error": null
+        },
+        {
+          "case_id": "review-conflicting-source",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-consistent-control",
+          "status": "PASS",
+          "error": null
+        }
+      ],
+      "current_source": false
+    },
+    {
+      "skill": "skill-prose-review",
+      "language": "en",
+      "scope": "FULL_SKILL_SUITE",
+      "profile": "codex-chatgpt-compatible",
+      "status": "PASS",
+      "iteration": "iteration-2",
+      "cases": [
+        {
+          "case_id": "basic-success",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "edge-incomplete-input",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "edge-scope-risk",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-conflicting-source",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-consistent-control",
+          "status": "PASS",
+          "error": null
+        }
+      ],
+      "current_source": true
+    },
+    {
+      "skill": "skill-prose-review",
+      "language": "zh",
+      "scope": "FULL_SKILL_SUITE",
+      "profile": "codex-chatgpt-compatible",
+      "status": "STOP_FOR_REVIEW",
+      "iteration": "iteration-1",
+      "cases": [
+        {
+          "case_id": "basic-success",
+          "status": "ERROR",
+          "error": "judge evaluation failed: agent_judge output validation failed and correction retry could not start: agent_judge failed to parse agent output: invalid JSON response: invalid character 'æ' looking for beginning of value\ncontext deadline exceeded (case timeout 180s via cases.defaults.timeout_seconds)"
+        },
+        {
+          "case_id": "edge-incomplete-input",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "edge-scope-risk",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-conflicting-source",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-consistent-control",
+          "status": "PASS",
+          "error": null
+        }
+      ],
+      "current_source": true
+    },
+    {
+      "skill": "skill-prose-review",
+      "language": "zh",
+      "scope": "FAILED_CASE_RETRY",
+      "profile": "codex-chatgpt-compatible-300s",
+      "status": "PASS",
+      "iteration": "iteration-2",
+      "cases": [
+        {
+          "case_id": "basic-success",
+          "status": "PASS",
+          "error": null
+        }
+      ],
+      "current_source": true
+    },
+    {
+      "skill": "skill-prose-review",
+      "language": "zh",
+      "scope": "FULL_SKILL_SUITE",
+      "profile": "codex-chatgpt-compatible-300s",
+      "status": "PASS",
+      "iteration": "iteration-3",
+      "cases": [
+        {
+          "case_id": "basic-success",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "edge-incomplete-input",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "edge-scope-risk",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-conflicting-source",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-consistent-control",
+          "status": "PASS",
+          "error": null
+        }
+      ],
+      "current_source": true
+    },
+    {
+      "skill": "skill-quality-review",
+      "language": "en",
+      "scope": "EXISTING_CASE_AUDIT",
+      "profile": "codex-chatgpt-compatible-300s",
+      "status": "STOP_FOR_REVIEW",
+      "iteration": "iteration-1",
+      "cases": [
+        {
+          "case_id": "basic-success",
+          "status": "ERROR",
+          "error": "agent execution failed: codex run failed (exit 1): Reading additional input from stdin...\n2026-10-08T13:28:12.056437Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-08T13:28:12.056459Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n"
+        },
+        {
+          "case_id": "edge-incomplete-input",
+          "status": "FAIL",
+          "error": null
+        },
+        {
+          "case_id": "edge-runtime-claim",
+          "status": "ERROR",
+          "error": "agent execution failed: codex run failed (exit 1): Reading additional input from stdin...\n2026-10-08T13:29:12.094315Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-08T13:29:12.094344Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-08T13:29:13.595220Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-08T13:29:13.595235Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-08T13:29:15.697070Z  WARN codex_core::session::startup_prewarm: startup websocket prewarm setup failed: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Oct 9th, 2026 1:37 AM.\n"
+        }
+      ],
+      "current_source": false
+    },
+    {
+      "skill": "skill-quality-review",
+      "language": "en",
+      "scope": "FULL_SKILL_SUITE",
+      "profile": "codex-chatgpt-compatible-300s",
+      "status": "STOP_FOR_REVIEW",
+      "iteration": "iteration-2",
+      "cases": [
+        {
+          "case_id": "basic-success",
+          "status": "ERROR",
+          "error": "judge evaluation failed: agent_judge output validation failed and correction retry could not start: agent_judge failed to parse agent output: invalid JSON response: invalid character '<' looking for beginning of value\ncontext deadline exceeded (case timeout 300s via cases.defaults.timeout_seconds)"
+        },
+        {
+          "case_id": "edge-incomplete-input",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "edge-runtime-claim",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-valid-package",
+          "status": "FAIL",
+          "error": null
+        },
+        {
+          "case_id": "review-missing-prompt",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-missing-bare-resource",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-bilingual-schema",
+          "status": "PASS",
+          "error": null
+        }
+      ],
+      "current_source": false
+    },
+    {
+      "skill": "skill-quality-review",
+      "language": "en",
+      "scope": "FAILED_CASE_RETRY",
+      "profile": "codex-chatgpt-compatible-600s",
+      "status": "PASS",
+      "iteration": "iteration-3",
+      "cases": [
+        {
+          "case_id": "basic-success",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-valid-package",
+          "status": "PASS",
+          "error": null
+        }
+      ],
+      "current_source": true
+    },
+    {
+      "skill": "skill-quality-review",
+      "language": "en",
+      "scope": "FULL_SKILL_SUITE",
+      "profile": "codex-chatgpt-compatible-600s",
+      "status": "STOP_FOR_REVIEW",
+      "iteration": "iteration-4",
+      "cases": [
+        {
+          "case_id": "basic-success",
+          "status": "ERROR",
+          "error": "judge evaluation failed: agent_judge correction retry remained invalid after initial validation error \"agent_judge failed to parse agent output: invalid JSON response: invalid character '<' looking for beginning of value\": agent_judge failed to parse agent output: invalid JSON response: invalid character '<' looking for beginning of value"
+        },
+        {
+          "case_id": "edge-incomplete-input",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "edge-runtime-claim",
+          "status": "PASS",
+          "error": null
+        },
+        {
+          "case_id": "review-valid-package",
+          "status": "ERROR",
+          "error": "agent execution failed: codex run failed (exit 1): Reading additional input from stdin...\n2026-10-09T08:18:19.844153Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:18:19.844192Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:18:20.776202Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:18:20.776220Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n"
+        },
+        {
+          "case_id": "review-missing-prompt",
+          "status": "ERROR",
+          "error": "agent execution failed: codex run failed (exit 1): Reading additional input from stdin...\n2026-10-09T08:20:23.793903Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:23.793928Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:24.703804Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:24.703820Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:26.004681Z  WARN codex_core::session::startup_prewarm: startup websocket prewarm setup failed: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 8:09 PM.\n"
+        },
+        {
+          "case_id": "review-missing-bare-resource",
+          "status": "ERROR",
+          "error": "agent execution failed: codex run failed (exit 1): Reading additional input from stdin...\n2026-10-09T08:20:30.454459Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:30.454488Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:31.373656Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:31.373671Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:32.628901Z  WARN codex_core::session::startup_prewarm: startup websocket prewarm setup failed: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 8:09 PM.\n"
+        },
+        {
+          "case_id": "review-bilingual-schema",
+          "status": "ERROR",
+          "error": "agent execution failed: codex run failed (exit 1): Reading additional input from stdin...\n2026-10-09T08:20:35.213721Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:35.213750Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:36.144021Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:36.144036Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:37.310909Z  WARN codex_core::session::startup_prewarm: startup websocket prewarm setup failed: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 8:09 PM.\n"
+        }
+      ],
+      "current_source": true
+    },
+    {
+      "skill": "daily-testing-workflow",
+      "language": "en",
+      "scope": "FAILED_CASE_RETRY",
+      "profile": "codex-chatgpt-compatible",
+      "status": "PASS",
+      "iteration": "iteration-1",
+      "cases": [
+        {
+          "case_id": "review-red-night-shift",
+          "status": "PASS",
+          "error": null
+        }
+      ],
+      "current_source": false
+    },
+    {
+      "skill": "daily-testing-workflow",
+      "language": "en",
+      "scope": "FULL_SKILL_SUITE",
+      "profile": "codex-chatgpt-compatible",
+      "status": "STOP_FOR_REVIEW",
+      "iteration": "iteration-2",
+      "cases": [
+        {
+          "case_id": "basic-success",
+          "status": "FAIL",
+          "error": null
+        },
+        {
+          "case_id": "edge-incomplete-input",
+          "status": "FAIL",
+          "error": null
+        },
+        {
+          "case_id": "edge-gates-handoff",
+          "status": "FAIL",
+          "error": null
+        },
+        {
+          "case_id": "review-red-night-shift",
+          "status": "ERROR",
+          "error": "judge evaluation failed: agent_judge correction retry remained invalid after initial validation error \"agent_judge failed to parse agent output: invalid JSON response: invalid character '<' looking for beginning of value\": agent_judge failed to parse agent output: invalid JSON response: invalid character '<' looking for beginning of value"
+        },
+        {
+          "case_id": "review-unstarted-p0",
+          "status": "ERROR",
+          "error": "agent execution failed: codex run failed (exit 1): Reading additional input from stdin...\n2026-10-09T08:20:47.334505Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:47.334533Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:48.265518Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:48.265543Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:49.731476Z  WARN codex_core::session::startup_prewarm: startup websocket prewarm setup failed: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 8:09 PM.\n"
+        },
+        {
+          "case_id": "review-unregistered-close-failure",
+          "status": "ERROR",
+          "error": "agent execution failed: codex run failed (exit 1): Reading additional input from stdin...\n2026-10-09T08:20:55.288922Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:55.288948Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-10-09T08:20:56.844415Z  WARN codex_core::session::startup_prewarm: startup websocket prewarm setup failed: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 8:09 PM.\n"
+        }
+      ],
+      "current_source": false
+    }
+  ],
+  "authorization": {
+    "status": "AUTHORIZED_CONTINUOUSLY",
+    "user_text": "后续全量评测所需的外部传送和运行",
+    "destination": "OpenAI Codex using the existing ChatGPT account login"
+  },
+  "git_commit_push": "USER_REQUESTED; snapshot generated before delivery; verify the final Git ref separately",
+  "runtime_evidence": "runtime-continuation.json",
+  "evaluation_checkpoint": {
+    "date": "2026-10-11",
+    "full_evaluation_status": "INCOMPLETE",
+    "current_source_cases": {
+      "total": 530,
+      "PASS": 94,
+      "FAIL": 1,
+      "ERROR": 4,
+      "NOT_RUN": 431
+    },
+    "external_evaluation_authorization": "REMAINS_VALID",
+    "path_restricted_attempt": "NESTED_CODEX_SANDBOX_COULD_NOT_START",
+    "broad_access_attempt": "REJECTED_BY_AUTOMATIC_APPROVAL_REVIEW",
+    "rejection_reason": "bypass_sandbox=true would grant the evaluator broader local file access; the limited path denylist did not establish protection against reading or exporting other private files.",
+    "raw_rollout_logs_in_repository": false,
+    "status_handling": "Missing outputs remain NOT_RUN; reported FAIL and ERROR statuses are preserved."
+  },
+  "verification_run": {
+    "recorded_at": "2026-10-11T10:35:35.213318+08:00",
+    "candidate": "clean archive plus selected task files",
+    "quality_tests": 230,
+    "valid_eval_packages": 328,
+    "skills_cli_version": "1.7.0",
+    "skills_discovered": 164,
+    "isolated_install": "English functional-testing",
+    "raw_rollouts_in_repository": false
+  }
+}

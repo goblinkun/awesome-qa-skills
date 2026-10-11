@@ -27,6 +27,12 @@ Do not use it to execute tests, invent behavior conclusions, replace a complete 
 3. Record MQR-## with the subject, preconditions, concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Identify the subject and external-collaborator boundary; map mock/stub version, fields, statuses, errors, timing and side effects to the real contract.
+- Deliver contract/stub/protected-obligation differences with concrete missed paths; mock counts are not a quality oracle.
+- When deriving domain candidates, read and follow [prompts/mock-quality-review.md](prompts/mock-quality-review.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or outcomes, or treat candidate counts as coverage proof.

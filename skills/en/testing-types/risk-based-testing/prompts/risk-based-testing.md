@@ -46,6 +46,15 @@ When key risk material is missing, provide qualitative bounded priorities and li
 
 Without real risk evidence, a rating is qualitative or `unassessed`; do not manufacture a precise score with a formula.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Anchor qualitative risk in observable impact, exposure/occurrence evidence, detectability, and control gaps. Without a project numeric model do not invent score products; unknown likelihood remains uncertain.
+2. Link each risk to objective, layer/platform, depth, data, minimum observable evidence, sourced duration, and residual risk. High risk needs falsifiable business assertions, not merely more cases.
+3. Allocate the constrained window with mandatory protection/authority first. Expose deferrals, alternatives, owners, and Human risk acceptance; time shortage never automatically waives gates.
+4. Retain benign/low-risk controls, selection reasons, and scope expansion triggers. Planned priority is no execution or risk-elimination evidence.
+
 ## Output
 
 1. Objective, in/out-of-scope boundaries, time-box, and success criteria;

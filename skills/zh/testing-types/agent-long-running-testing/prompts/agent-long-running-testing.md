@@ -31,6 +31,14 @@
 - 涉及用户数据、生产或安全时默认使用最小权限、脱敏数据、mock、dry-run 或隔离环境。
 - 将事实、推断、候选建议和 Human 决策分开；风险接受、例外和安全判断只能由 Human 确认。
 
+## 领域操作与判定
+
+以下步骤对提供材料进行设计或静态核对；fixture 判定、候选方案与真实执行证据分别记录。项目未提供的规则、门槛和授权保持待确认。
+
+1. 从实际协议写出 queued→running→checkpointed→interrupted→resuming→completed 和 running→cancelling→cancelled；未定义状态或转换标为待确认。
+2. 每个 checkpoint 记录 task_id、schema/状态版本、已提交 step ID、来源和完整性；恢复先校验版本与已提交效果，版本不兼容不得盲目重放。
+3. 记录 owner、lease/fencing token 和过期规则。租约丢失的 worker 不得继续提交；重复 task_id 按项目幂等协议合并或拒绝，不能假定 exactly-once。
+4. 按时间线检查取消与提交竞争：用项目定义的提交点判定赢家，保留已提交结果；核对终态、资源释放和取消确认，规则缺失交 Human 决策。
 ## 最低覆盖清单
 
 - 检查点、心跳、恢复与取消、重复提交、资源生命周期

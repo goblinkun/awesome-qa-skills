@@ -15,6 +15,6 @@ public class HealthApiTest extends BaseApiTest {
         .when()
             .get("/health")
         .then()
-            .statusCode(anyOf(is(200), is(404)));
+            .statusCode(is(200));
     }
 }

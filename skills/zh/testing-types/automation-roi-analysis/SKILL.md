@@ -27,10 +27,18 @@ description: Use this skill when you need evidence-bounded automation candidates
 
 ## 参考文件
 
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
+
 - 每次执行必须读取 `prompts/automation-roi-analysis.md`；它是本 Skill 的完整执行规范。
 - 需要评测时读取 `evals/eval.yaml` 和 `evals/cases/` 下的匹配用例。
 - 只有目录实际存在且任务需要时，才读取 `references/`、`examples/`、`scripts/` 或 `output-formats.md`，不要假设不存在的资产。
 
+## 领域执行要点
+
+1. 固定候选、时间窗和单位；人工工时、自动执行占用、人工复核、维护工时与货币成本分开，换算必须有费率来源。
+2. 以同一时间窗计算净节省 = 次数×(人工单次成本−自动单次成本)−维护成本−建设成本；ROI 的分子/分母须明示，未有货币换算只报工时。
+3. 若每窗净运行节省 >0，break-even 窗口数 = 建设成本/每窗净运行节省；整数执行窗口向上取整。<=0 时在该假设下无回本点。
+4. 对频率和变更引起的维护成本分别做项目给定的低/基准/高情景，记录来源及结论翻转点；缺数据输出公式/条件范围而非伪精确回报或自动采纳决定。
 ## 核心约束
 
 - 只分析自动化候选、建设/运行/维护成本、收益假设、时间窗与敏感性，不替代业务负责人或 Human 的风险接受、例外批准和发布决定。

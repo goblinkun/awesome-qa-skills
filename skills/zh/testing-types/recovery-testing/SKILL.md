@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded recovery-testing anal
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录实际存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 分开服务重启/就绪、数据恢复点和业务一致性，提取 RTO/RPO 定义、故障起点、业务恢复终点及可接受丢失。
+- 交付服务/业务/数据恢复时间线、目标计算与差额/补偿表，部分恢复不能概括为恢复完成。
+- 形成领域候选时，必须读取并遵循 [prompts/recovery-testing.md](prompts/recovery-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析恢复点、恢复时间、恢复步骤、验证证据和人工接管，不注入故障、不访问真实依赖、不调用生产系统。

@@ -1,0 +1,11 @@
+Conclusion: **fail** — three concrete contract conflicts.
+
+| Location and evidence | Conflict and possible impact | Smallest wording correction |
+|---|---|---|
+| [SKILL.md:2](../../../skills/en/skill-engineering/skill-prose-review/evals/cases/review-conflicting-source.yaml), [openai.yaml:3](../../../skills/en/skill-engineering/skill-prose-review/evals/cases/review-conflicting-source.yaml), [package-contract.md:3–4](../../../skills/en/skill-engineering/skill-prose-review/evals/cases/review-conflicting-source.yaml) | The canonical ID is `sample-review`, but `metadata.key` is `invoice-editor`. This violates the declared equality rule and may prevent package validation or canonical-ID lookup. | Change YAML line 3 to `key: sample-review`. Preserve the declared canonical ID; `sample/` is only the fixture container. |
+| [SKILL.md:7](../../../skills/en/skill-engineering/skill-prose-review/evals/cases/review-conflicting-source.yaml), [review.md:3](../../../skills/en/skill-engineering/skill-prose-review/evals/cases/review-conflicting-source.yaml) | The entrypoint requires CSV with `invoice_id,total`; the referenced prompt requires Markdown with Summary and Findings. A consumer expecting CSV may receive an unparseable report. | To retain the entrypoint’s format, replace prompt line 3 with `Output CSV with invoice_id,total.` |
+| [openai.yaml:7](../../../skills/en/skill-engineering/skill-prose-review/evals/cases/review-conflicting-source.yaml), [SKILL.md:8](../../../skills/en/skill-engineering/skill-prose-review/evals/cases/review-conflicting-source.yaml), [review.md:4](../../../skills/en/skill-engineering/skill-prose-review/evals/cases/review-conflicting-source.yaml) | The default prompt requests automatic edits to invoice totals, while both instruction files prohibit editing invoices. Following it could modify invoice data beyond the review contract. | Replace YAML line 7 with `default_prompt: Use sample-review to review invoices without editing them.` |
+
+Information gaps: accepted invoice formats, review criteria, and missing-source reporting are unspecified. These are omissions, rather than additional demonstrated conflicts.
+
+Evidence is static reading of all four files in `sample/`. No invoice task was executed and no files were edited. The possible consequences above were not runtime-validated.

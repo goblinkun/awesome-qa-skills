@@ -27,6 +27,12 @@ Do not use it to execute tests, invent contract or behavior, replace a complete 
 3. Record AVC-## with the subject, preconditions, behavior of concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Identify contract/client/server versions, support/deprecation timeline and migration order; build applicable old/new client by old/new server combinations.
+- Deliver the version matrix and wire/semantic differences, retaining unsupported/unknown cells; scope compatibility to sourced client behavior and support.
+- When deriving domain candidates, read and follow [prompts/api-version-compatibility-testing.md](prompts/api-version-compatibility-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or responses, or treat candidate counts as coverage proof.

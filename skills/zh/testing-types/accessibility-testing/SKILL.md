@@ -19,6 +19,12 @@ description: Use this skill when you need to design accessibility testing agains
 3. 信息不全时先给可用初版，并显式标出假设与信息缺口。
 4. 默认 Markdown；用户指定其他格式时再切换。
 
+## 领域执行要点
+
+1. 记录项目指定的 WCAG 版本/等级、范围和成功标准 ID；目标未指定时列为缺口，不能自行选等级或声称合规。
+2. 建立 成功标准 ID | 用户任务/状态 | 输入方式/辅助技术/版本 | 检查步骤 | 证据类型 | 结果 表。自动扫描、键盘操作、读屏和人工视觉检查分别记录。
+3. 键盘检查实际完成导航、打开、操作、关闭并检查焦点去向；读屏检查名称/角色/状态与动态更新。不可达的关键操作按用户任务影响优先。
+4. 扫描零发现只能表示扫描范围内未发现；人工失败保留 FAIL，未执行项目保留 NOT_RUN。按准则汇总证据，不将局部扫描升级为整体合规。
 ## 核心约束
 
 - 按风险/业务影响排优先级，不要平均摊铺。
@@ -27,6 +33,8 @@ description: Use this skill when you need to design accessibility testing agains
 - 结果必须可执行：场景具体、有优先级、能指导下一步。
 
 ## 按需加载
+
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
 
 - 产出前必须阅读并遵循 `prompts/accessibility-testing.md`（最低覆盖清单、输出结构、质量要求）。
 - 需要 Excel/CSV/JSON/Word 等格式时：读 `output-formats.md`，并按用户格式要求输出。

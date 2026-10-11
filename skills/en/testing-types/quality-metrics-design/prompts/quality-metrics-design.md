@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Define purpose, statistical unit, numerator/denominator, window/timezone, filters, deduplication, missing-data handling, version, source and lineage.
+2. Separate defect entities from state events, first attempts from reruns, and closure from reopening. Aggregate supplied IDs/event times; duplicates are not new defects and retries cannot inflate first-pass rates.
+3. Recompute samples and check denominator coverage, delays and exclusions. Missing records remain unknown. Treat flawed records as measurement issues until product-quality evidence exists.
+4. Provide worked calculations, interpretation limits, sourced action thresholds and comparability rules. Correlation does not establish cause.
+
 ## Minimum Coverage Checklist
 
 - metric definition, numerator and denominator, data source, freshness, interpretation limits

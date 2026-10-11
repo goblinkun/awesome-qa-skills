@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded chaos-testing analysi
 - Read evals/eval.yaml and the matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Express steady-state hypotheses as metrics, windows, baseline/control groups and business invariants; state the disruption's proposed causal chain.
+- Deliver hypothesis/control/injection/blast-radius/stop/rollback/evidence cards; name readiness blockers explicitly and never treat a design as a passed experiment.
+- When deriving domain candidates, read and follow [prompts/chaos-testing.md](prompts/chaos-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only fault-injection hypotheses, blast radius, stop conditions, and safety guardrails; do not inject faults, access real dependencies, or call production systems.

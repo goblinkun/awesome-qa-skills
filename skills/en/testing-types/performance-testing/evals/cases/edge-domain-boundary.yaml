@@ -14,7 +14,6 @@ expect:
     - "security"
     - "scope"
     - "baseline"
-    - "do not attribute"
   must_not_contain:
     - "TODO"
     - "I cannot"

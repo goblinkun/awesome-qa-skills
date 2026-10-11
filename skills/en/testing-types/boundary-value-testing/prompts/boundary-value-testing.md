@@ -29,6 +29,17 @@ Each finding contains input domain, boundary value, neighboring value, inclusivi
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Extract bounds, inclusive/exclusive rules, discrete/continuous type, smallest representable step, length encoding, money precision, time unit/timezone and sources.
+2. For known discrete boundaries choose inside neighbors, the boundary and outside neighbors. Integer step 1 cannot be applied to decimals, byte lengths or time blindly.
+3. Distinguish bytes/codepoints/graphemes, use supplied currency units and time precision/open intervals. With unknown precision provide symbolic bounds and gaps only.
+4. Record validity expectations/rules per value and preserve interaction/partition preconditions; candidate counts do not establish executed coverage.
+
+**Decision and deliverable:** Deliver rules, units/steps, boundary values, validity and sources; do not invent 0.01 precision or default time granularity.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

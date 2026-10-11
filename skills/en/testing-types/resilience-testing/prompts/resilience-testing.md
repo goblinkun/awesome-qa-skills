@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not inject faults, access real dependencies, read credentials, or call production systems.
 - Do not upgrade file presence, names, templates, or dry-runs into execution, passing, coverage, or release evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Define pre/during/post-disruption function/data invariants and normal/degraded/unavailable states from business contracts, retaining permitted experience changes.
+2. Model partial/slow dependency failure and failed recovery, specifying protected core and suspendable functions in each state.
+3. Join fallback/isolation/recovery/compensation timelines and ledgers; check duplicates, resource exhaustion, restored invariants and exit from degradation.
+4. Separate resilience scenarios, long-term reliability metrics and chaos-injection experiments. Missing recovery evidence prevents a resilience claim; provide candidates/static comparison only.
+
+**Decision and deliverable:** Deliver phase/function/data invariants and degradation/recovery evidence; responding during disruption does not compensate for failed recovery.
+
 ## Minimum Coverage Checklist
 
 - resilience objective and applicability

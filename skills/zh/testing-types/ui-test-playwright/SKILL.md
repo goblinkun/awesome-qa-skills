@@ -24,11 +24,20 @@ description: Use this skill when you need to design Playwright Test suites with 
 
 ## 参考文件
 
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
+
 - `prompts/ui-test-playwright.md`：本技能主提示词。
 - `references/framework-spec.md`：工具专项结构和覆盖说明。
 - `references/setup-and-ci.md`：安装、执行和 CI 说明。
 - `examples/sample-context.md`：示例请求上下文。
 - `scripts/run-tests.sh`：轻量本地执行入口。
+
+## 领域执行要点
+
+1. 固定项目Playwright/Node/browser版本、projects/fixtures与配置；沿用真实入口，记录测试ID、commit、worker/project和环境，未兼容配置先诊断不擅自换框架。
+2. 优先role/name/testid等稳定语义定位，执行后以auto-retrying assertion核对订单/账务/状态与主体；页面标题/URL只满足相应导航义务，不能替代付款成功。
+3. 每worker独立browser context、storage state/账号与业务键，禁止共享会冲突的数据；同浏览器不同context仍须核对服务端账号隔离，teardown逆依赖清理。
+4. 用错误业务状态和并行A/B对照验证断言敏感性；失败保留trace/screenshot/日志与非0 runner/CI，retry首失败仍可见。生成资产、实际browser运行与业务验收分别报告。
 
 ## 常见误区
 
@@ -41,3 +50,5 @@ description: Use this skill when you need to design Playwright Test suites with 
 - 从 prompt 文件开始，只补充真正影响结果的上下文。
 - 输出保持风险驱动，并能直接用于执行或评审。
 - 信息不完整时，先给可用版本，再标清缺口。
+
+- 验证生成资产的业务断言、失败传播或隔离时，读取 [evals/fixtures/checkout-app/README.md](evals/fixtures/checkout-app/README.md)，使用本地good/bug/timeout对照；仅在明确运行时执行。

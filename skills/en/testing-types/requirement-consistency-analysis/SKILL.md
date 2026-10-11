@@ -35,6 +35,15 @@ Do not use it with one source when only general requirements analysis is needed,
 5. When the task requests `business-rule` mode, use stable rule keys and `BR-##` rule-level evidence for subject, trigger, applicability, precedence/override, action, outcome, and exception while retaining generic `RC-##` findings.
 6. Provide impact, priority, owner role, open question, close condition, and validation method.
 
+## Domain Execution Essentials
+
+These decisions do not replace RC/BR fields: EQUIVALENT maps to aligned/assessed; same-scope CONTRADICTED maps to conflict/assessed; NOT_COMPARABLE retains unassessed or stale evidence without asserting aligned/conflict. Keep the decision view separate from Relation/Status.
+
+1. Fix sources, versions, and effective dates. Build evidenced aliases, entity IDs, units, and state mappings; equal names are not automatically equivalent.
+2. Compare rules with matched scope, version, and conditions. Convert units with documented factors and normalize states only through explicit mappings; never silently merge versions or entities.
+3. EQUIVALENT needs traceable semantic/numeric equality. CONTRADICTED means rules cannot both hold under the same conditions. NOT_COMPARABLE means missing identity/version/unit mapping prevents comparison.
+4. Show originals, normalized values, mapping sources, impact, and minimal clarification. One source cannot establish cross-document consistency; no stated authority means no automatic overwrite.
+
 ## Core Constraints
 
 - Use `RC-##` finding IDs; each row includes source pair, comparison key, relation, status, evidence, scope/version, impact, and action. Relations are `aligned`, `inconsistent`, or `conflict`; statuses are `assessed`, `missing`, `stale`, or `unassessed`.
@@ -46,6 +55,8 @@ Do not use it with one source when only general requirements analysis is needed,
 - Do not invent state transitions, field meaning, platform support, or a final specification.
 
 ## Reference Files
+
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
 
 - Always read `prompts/requirement-consistency-analysis.md` before producing an analysis.
 - Use `evals/eval.yaml` and `evals/cases/` to regress this Skill; structural gates do not prove cross-source semantic correctness.

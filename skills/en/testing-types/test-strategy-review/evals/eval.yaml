@@ -17,6 +17,7 @@ cases:
     - evals/cases/edge-blocking-gap.yaml
     - evals/cases/edge-incomplete-input.yaml
     - evals/cases/edge-conflicting-input.yaml
+    - evals/cases/review-strategy-control-and-conflicts.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

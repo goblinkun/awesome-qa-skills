@@ -33,6 +33,7 @@ description: Use this skill when designing, running, interpreting, or reporting 
 - `skill-up validate` is not runtime semantic validation. Static checks, CLI smoke, Project Done, and one semantic observation cannot be promoted automatically to release or business claims.
 - Do not modify the Skill or enter an unlimited optimization loop. Keep Benchmark (with/without Skill) separate from Version Regression (previous/current).
 - Use `unknown` for unknown values; preserve `NOT_RUN`, `UNASSESSED`, `BLOCKED`, or `INSUFFICIENT_EVIDENCE` when evidence is incomplete.
+- Even with minimal input, no runnable target, or no original trace, emit the minimum report skeleton and explicitly write the applicable canonical evidence state; do not replace `NOT_RUN`, `BLOCKED`, `UNASSESSED`, or `INSUFFICIENT_EVIDENCE` with natural language such as “not verified.”
 
 ## Reference files
 

@@ -1,0 +1,16 @@
+{
+  "package": "local checkout",
+  "cli_version": "skills@1.7.0",
+  "exit_code": 0,
+  "discovered_skills": 164,
+  "english_functional_testing_isolated_install": "PASS",
+  "checks": [
+    "[skills-cli] Discovering representative Skills with skills@1.7.0 from local checkout",
+    "◇  Found 164 skills",
+    "[skills-cli] Installing English functional-testing into an isolated global Codex target",
+    "◇  Found 164 skills",
+    "[skills-cli] English functional-testing smoke passed"
+  ],
+  "scope": "Distribution discovery/install only; no Skill/model/Host execution.",
+  "verified_date": "2026-10-07"
+}

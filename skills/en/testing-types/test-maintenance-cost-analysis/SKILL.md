@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded change frequency, rep
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/test-maintenance-cost-analysis.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Fix assets, sample window, unit, and time sources. Separate product change, test defect, infrastructure, data, duplication, and unclassified costs; do not double-count one event across causes.
+2. Link trigger, change frequency, time ranges, review/rework, and failure impact. Separate one-time build from recurring maintenance; one sample cannot predict precise long-term costs.
+3. Explain sample size, representativeness, outliers, and interval formulas. Without monetary rates report labor; unknown causes remain UNKNOWN and are no personal-performance rating.
+4. Equal totals may require different interventions: change decoupling, test repair, environment stability, isolation, or deduplication. Validate gains and retained protection in matched follow-up samples.
 
 ## Core Constraints
 

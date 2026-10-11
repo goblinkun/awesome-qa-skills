@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded secrets-exposure-revi
 - Read evals/eval.yaml and matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Inventory supplied authorized code/config/CI/log/artifact/history, recording candidate locations, categories and redacted fingerprints without copying values or reading real credentials.
+- Deliver redacted locations/lifecycle risks; ground severity in exposure/use evidence and retain unknown candidate validity.
+- When deriving domain candidates, read and follow [prompts/secrets-exposure-review.md](prompts/secrets-exposure-review.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only secret locations, flows, log exposure, configuration boundaries, and rotation evidence; do not log in, call real APIs, or read credentials.

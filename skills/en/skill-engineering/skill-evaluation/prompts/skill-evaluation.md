@@ -46,6 +46,8 @@ Design or interpret the smallest useful evaluation set, select judges, assess ev
 
 Define `PASS`, `FAIL`, `BLOCKED`, `NOT_RUN`, `NOT_SCORED`, `UNASSESSED`, and `INSUFFICIENT_EVIDENCE` in the report. Quality Score remains owned by the existing governance contract.
 
+Even with minimal input, no runnable target, or no original trace, emit the minimum report skeleton and explicitly write the applicable canonical evidence state (for example, `NOT_RUN`, `BLOCKED`, `UNASSESSED`, or `INSUFFICIENT_EVIDENCE`) for the current result; do not replace the state with natural language such as “not verified.”
+
 ## Quality requirements
 
 - Every conclusion maps to an input, case, judge, and evidence state.

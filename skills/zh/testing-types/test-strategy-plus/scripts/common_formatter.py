@@ -1,3 +1,4 @@
+ORDERED_KEYS = ["artifact_mode", "analysis_status", "sources", "prompt_hash", "pending_human_decisions", "next_action"]
 #!/usr/bin/env python3
 import json
 import zipfile
@@ -6,73 +7,26 @@ from pathlib import Path
 from typing import Dict
 
 
-def strategy_to_lines(strategy: Dict[str, str]) -> list[str]:
-    ordered_keys = [
-        "策略标题",
-        "质量目标",
-        "范围_包含",
-        "范围_不包含",
-        "测试类型与覆盖",
-        "环境与工具",
-        "测试数据策略",
-        "准入准出标准",
-        "风险与缓解",
-        "里程碑与角色",
-        "交付物与度量",
-    ]
-    lines = ["测试策略输出", ""]
-    for k in ordered_keys:
-        lines.append(f"{k}: {strategy.get(k, '')}")
-    return lines
+def strategy_to_lines(artifact):
+    return ["Evidence preparation — NOT_ASSESSED", ""] + [key + ": " + json.dumps(artifact.get(key), ensure_ascii=False) for key in ORDERED_KEYS]
 
 
-def format_markdown(strategy: Dict[str, str]) -> str:
-    return "\n".join(
-        [
-            "# 测试策略输出",
-            "",
-            f"## {strategy['策略标题']}",
-            "",
-            "### 质量目标",
-            f"- {strategy['质量目标']}",
-            "",
-            "### 范围定义",
-            f"- In Scope: {strategy['范围_包含']}",
-            f"- Out of Scope: {strategy['范围_不包含']}",
-            "",
-            "### 测试类型与覆盖",
-            f"- {strategy['测试类型与覆盖']}",
-            "",
-            "### 环境与工具",
-            f"- {strategy['环境与工具']}",
-            "",
-            "### 测试数据策略",
-            f"- {strategy['测试数据策略']}",
-            "",
-            "### 准入/准出标准",
-            f"- {strategy['准入准出标准']}",
-            "",
-            "### 风险与缓解",
-            f"- {strategy['风险与缓解']}",
-            "",
-            "### 里程碑与角色",
-            f"- {strategy['里程碑与角色']}",
-            "",
-            "### 交付物与度量",
-            f"- {strategy['交付物与度量']}",
-            "",
-        ]
-    )
+def format_markdown(artifact):
+    lines = ["# Evidence preparation — NOT_ASSESSED", ""]
+    for key in ORDERED_KEYS:
+        lines += ["## " + key, "", "~~~~json", json.dumps(artifact.get(key), ensure_ascii=False, indent=2), "~~~~", ""]
+    return "\n".join(lines)
 
 
 def format_json(strategy: Dict[str, str]) -> str:
     return json.dumps(strategy, ensure_ascii=False, indent=2) + "\n"
 
 
-def format_excel_tsv(strategy: Dict[str, str]) -> str:
-    rows = ["模块\t内容"]
-    for key, value in strategy.items():
-        rows.append(f"{key}\t{str(value).replace('\t', ' ').replace('\n', ' ')}")
+def format_excel_tsv(artifact):
+    rows = ["field\tvalue"]
+    for key in ORDERED_KEYS:
+        value = json.dumps(artifact.get(key), ensure_ascii=False).replace("\t", " ").replace("\n", " ")
+        rows.append(key + "\t" + value)
     return "\n".join(rows) + "\n"
 
 

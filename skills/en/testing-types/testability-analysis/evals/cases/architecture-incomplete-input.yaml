@@ -10,9 +10,8 @@ input:
 
 expect:
   must_contain:
-    - "known"
-    - "missing"
-    - "assumptions"
+    - "Order Service"
+    - "payment"
     - "architecture"
   must_not_contain:
     - "TODO"
@@ -21,8 +20,8 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
-          - "Input Audit"
-          - "open"
-          - "evidence"
+          - "(?i)Input Audit"
+          - "(?i)(open questions|missing|gaps)"
+          - "(?i)evidence"

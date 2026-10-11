@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded failover-testing anal
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录实际存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 提取主备角色、自动/手动触发、健康检测、流量转移、fencing/写权与切回合同，以及业务 RTO 定义。
+- 交付节点/路由/写权时间线、账本冲突与恢复/切回判据；可用性与单写一致性分别判定。
+- 形成领域候选时，必须读取并遵循 [prompts/failover-testing.md](prompts/failover-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析主备切换触发、流量转移、数据一致性和恢复证据，不注入故障、不访问真实依赖、不调用生产系统。

@@ -6,70 +6,29 @@ from pathlib import Path
 from typing import Dict
 
 
-ORDERED_KEYS = [
-    "评审标题",
-    "整体结论",
-    "覆盖性评估",
-    "可执行性评估",
-    "问题清单_P0",
-    "问题清单_P1",
-    "问题清单_P2",
-    "缺失场景",
-    "改进建议",
-    "补测计划",
-]
+ORDERED_KEYS = ["artifact_mode", "analysis_status", "sources", "prompt_hash", "pending_human_decisions", "next_action"]
 
 
-def review_to_lines(review: Dict[str, str]) -> list[str]:
-    lines = ["测试用例评审结果", ""]
+def review_to_lines(artifact):
+    return ["Evidence preparation — NOT_ASSESSED", ""] + [key + ": " + json.dumps(artifact.get(key), ensure_ascii=False) for key in ORDERED_KEYS]
+
+
+def format_markdown(artifact):
+    lines = ["# Evidence preparation — NOT_ASSESSED", ""]
     for key in ORDERED_KEYS:
-        lines.append(f"{key}: {review.get(key, '')}")
-    return lines
-
-
-def format_markdown(review: Dict[str, str]) -> str:
-    return "\n".join(
-        [
-            "# 测试用例评审结果",
-            "",
-            f"## {review['评审标题']}",
-            "",
-            "### 整体结论",
-            f"- {review['整体结论']}",
-            "",
-            "### 覆盖性评估",
-            f"- {review['覆盖性评估']}",
-            "",
-            "### 可执行性评估",
-            f"- {review['可执行性评估']}",
-            "",
-            "### 问题清单",
-            f"- P0: {review['问题清单_P0']}",
-            f"- P1: {review['问题清单_P1']}",
-            f"- P2: {review['问题清单_P2']}",
-            "",
-            "### 缺失场景",
-            f"- {review['缺失场景']}",
-            "",
-            "### 改进建议",
-            f"- {review['改进建议']}",
-            "",
-            "### 补测计划",
-            f"- {review['补测计划']}",
-            "",
-        ]
-    )
+        lines += ["## " + key, "", "~~~~json", json.dumps(artifact.get(key), ensure_ascii=False, indent=2), "~~~~", ""]
+    return "\n".join(lines)
 
 
 def format_json(review: Dict[str, str]) -> str:
     return json.dumps(review, ensure_ascii=False, indent=2) + "\n"
 
 
-def format_excel_tsv(review: Dict[str, str]) -> str:
-    rows = ["模块\t内容"]
+def format_excel_tsv(artifact):
+    rows = ["field\tvalue"]
     for key in ORDERED_KEYS:
-        value = str(review.get(key, "")).replace("\t", " ").replace("\n", " ")
-        rows.append(f"{key}\t{value}")
+        value = json.dumps(artifact.get(key), ensure_ascii=False).replace("\t", " ").replace("\n", " ")
+        rows.append(key + "\t" + value)
     return "\n".join(rows) + "\n"
 
 

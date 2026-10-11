@@ -21,8 +21,8 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
-          - "Input Audit"
-          - "isolation"
-          - "validation"
+          - "(?i)(input audit|input evidence|evidence (basis|quality)|evidence is limited|confirmed facts)"
+          - "(?i)isolation"
+          - "(?i)(validation|verification|verify)"

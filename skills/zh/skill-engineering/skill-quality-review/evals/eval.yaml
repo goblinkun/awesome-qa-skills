@@ -15,6 +15,10 @@ cases:
     - evals/cases/basic-success.yaml
     - evals/cases/edge-incomplete-input.yaml
     - evals/cases/edge-runtime-claim.yaml
+    - evals/cases/review-valid-package.yaml
+    - evals/cases/review-missing-prompt.yaml
+    - evals/cases/review-missing-bare-resource.yaml
+    - evals/cases/review-bilingual-schema.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

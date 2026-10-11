@@ -19,6 +19,7 @@ cases:
     - evals/cases/basic-success.yaml
     - evals/cases/edge-incomplete-input.yaml
     - evals/cases/edge-bad-or-neighbor.yaml
+    - evals/cases/review-repair-regression.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

@@ -27,6 +27,12 @@ description: Use this skill when you need to compare API schemas with sourced re
 3. 用 ASV-## 记录对象、前置条件、关注行为、来源证据和验证方法，保留影响/优先级、责任角色、关闭条件和证据状态。
 4. 材料冲突、缺少约束或没有执行证据时，保留双方和待确认问题。
 
+## 领域执行要点
+
+- 先确认 OpenAPI/JSON Schema/GraphQL 及具体版本或 dialect、operation/方向、内容类型、引用根与解析上下文；版本未知时暂停依赖版本的判断。
+- 交付 dialect、引用解析状态、样例×约束判定表；“缺失”和“值为 null”须分别判定，不能由 required 推导非空。
+- 形成领域候选时，必须读取并遵循 [prompts/api-schema-validation.md](prompts/api-schema-validation.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不执行测试，不假设未提供的规则、版本、阈值、数据或响应，不把候选数量当作覆盖证明。

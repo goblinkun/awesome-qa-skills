@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded safety policy, abuse 
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/ai-safety-testing.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Fix policy ID/version/audience and map category/conditions→allow/restrict/refuse/escalate→allowed content/prohibited effects→evidence. Missing policy cannot become a safety approval.
+2. Pair policy-defined harmful cases with neighboring benign controls. Assess harmful handling, allowed-task completion, and over-refusal independently; refusal rate alone is no safety metric.
+3. Check actual content and tool actions in restricted/redirection paths, not merely a refusal prefix. Record escalation cause, responsible role, and pending Human decision.
+4. Labels retain policy source, sample version, expected and actual branches. Missing execution outputs remain NOT_RUN; unknown policy boundaries remain UNKNOWN.
 
 ## Core Constraints
 

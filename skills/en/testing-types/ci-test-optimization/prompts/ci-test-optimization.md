@@ -30,7 +30,16 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Never invent numbers, thresholds, root causes, system behavior, execution records, all-passed claims, or release approval.
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
+- In Markdown tables, escape literal `|` characters inside cells as `\|` (including inline code), or rephrase them so they do not create extra columns.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix commit/run/runner/config/test-set identities. Decompose events into queue, checkout/install, setup, execute, retry, and report; separate end-to-end waiting from runner busy time.
+2. Compute the actual DAG critical path without summing overlapping jobs. Preserve retry counts and original failures; retry green cannot erase first failure.
+3. Cache keys include relevant lockfile/toolchain/config identity. Compare cold/warm runs, hits, and invalidation evidence; mismatched cache cannot bypass dependency validation.
+4. Match before/after protection obligations, tests, fault detection, resources, and windows. Reject speedups through dropped tests/swallowed failures; propose measurable gains and rollback signals.
 ## Minimum Coverage Checklist
 
 - stage dependency, feedback latency, resource use, flakiness, caching and sharding

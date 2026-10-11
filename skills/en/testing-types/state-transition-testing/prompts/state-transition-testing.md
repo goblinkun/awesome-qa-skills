@@ -29,6 +29,17 @@ Each finding contains state, event, precondition/guard, action, target state, re
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Build sourced state/event/guard/action/target cells with initial/terminal, persistence and failure-atomicity contracts.
+2. Check reachability from the initial state and illegal/undefined events, deriving true/false guard boundaries rather than checking state-name presence.
+3. Specify pre-state, input/role, action, side effects and post-state oracle per transition, distinguishing action failure from partial commits.
+4. Map valid edges, invalid transitions and guard-boundary candidates to the matrix, listing gaps/conflicts; absent failure policy leaves rollback state unknown.
+
+**Decision and deliverable:** Deliver valid/invalid transitions and guard-boundary cells, comparing both state changes and business side effects.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

@@ -27,9 +27,18 @@ description: Use this skill when you need to find missing, conflicting, or untes
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/requirement-gap-analysis.md`; it is the complete execution specification for this skill.
 - For evaluation or regression, read `evals/eval.yaml` and the relevant cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Build a versioned checklist of applicable roles, states, rules, exceptions, and closure conditions, tied to supplied sources. Do not force irrelevant checklist items onto a product.
+2. Separate MISSING_RULE (relevant but undefined behavior), MISSING_MATERIAL (referenced evidence absent), CONFLICT, N/A (evidenced scope exclusion), and COMPLETE.
+3. Give requirement ID, missing content, affected scenarios, blockage, owner, and minimal clarification. An unseen field or empty document does not by itself prove a product defect.
+4. Close only with authoritative added rules/source version and testable expectations, updating traceability. Unapproved suggestions remain proposals; complete controls must not receive invented gaps.
 
 ## Core Constraints
 

@@ -1,0 +1,8 @@
+test_defect_controls_keep_the_declared_resource_missing (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_defect_controls_keep_the_declared_resource_missing) ... ok
+test_quality_review_embedded_cases_are_valid_skill_up_inputs (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_quality_review_embedded_cases_are_valid_skill_up_inputs) ... ok
+test_sample_graders_reject_wrong_results_and_invoice_edits (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_sample_graders_reject_wrong_results_and_invoice_edits) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.256s
+
+OK

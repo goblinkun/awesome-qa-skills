@@ -20,6 +20,12 @@ description: Use this skill when reviewing AI-generated unit, functional, API, o
 4. 仅加载已发现层级的规则：单元测试、功能测试（functional testing）、API 或 E2E；跨层问题可加载多份。不要因存在多个规则文件而直接全局审查。
 5. 将“阻断合入”的错误与可接受的改进分开；不要因风格偏好把有效测试判为问题。
 
+## 领域执行要点
+
+1. 按所验证的契约判断断言，不能仅因出现 mock、snapshot 或状态码就标为 WEAK/FAKE。
+2. 边界 mock 可替代已确认的外部依赖，但被测生产逻辑必须真实执行；mock 被测对象并断言它返回的预设值才缺乏保护。
+3. 快照需基于独立审核的业务结构、稳定字段且错误结果会产生差异；忽略所有业务字段的快照无保护。状态码足以完整表达所给契约时可为 STRONG；持久化义务存在则需追加业务后置条件。
+4. 每个分类给具体可逃逸缺陷或会被检出的变异，以及契约来源；证据不足保留置信度和缺口，中英文采用同一分类理由。
 ## 核心约束
 
 - 以可观察行为、失败信号和风险覆盖为准，不能只评价行覆盖率、测试名称或 mock 调用次数。
@@ -28,6 +34,8 @@ description: Use this skill when reviewing AI-generated unit, functional, API, o
 - 测试代码、日志和示例中不得泄露真实凭据、个人数据或生产写操作。
 
 ## 按需加载
+
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
 
 - 每次评审必须读 `prompts/review-test.md`；其中的“测试类型路由”先于逐条评审。
 - 识别伪测试、过度 mock 或无效断言时读 `references/fake-test-patterns.md`。

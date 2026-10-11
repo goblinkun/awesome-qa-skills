@@ -78,3 +78,7 @@ Use the audit results to perform this specialist analysis and deliver traceable,
 - Are missing evidence, different scopes, and unclear freshness distinct from a real conflict?
 - Did you avoid choosing precedence, risk acceptance, or the final rule for the Human?
 - Do high-priority findings have an owner, close condition, and validation method?
+
+## Multi-rule conflicts
+
+Check small sets of related constraints as well as pairs. A shared invariant may make three or more rules jointly unsatisfiable even when each pair is satisfiable. Cite every participating rule ID/source and show a smallest supported conflict set by removing one rule at a time. Do not force the result into an invented contradictory pair. If applicability or the invariant is missing, retain ambiguous/unassessed and request that evidence.

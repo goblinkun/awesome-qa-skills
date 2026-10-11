@@ -34,6 +34,15 @@ Do not use it to make a final decision between mutually exclusive rules, execute
 4. Rank delivery, quality, and testability impact; provide assignable, closeable questions and validation methods.
 5. When material is explicitly mutually exclusive, mark it as conflict and suggest `requirement-conflict-detection` by Skill name only; do not link its internal files.
 
+## Domain Execution Essentials
+
+Uppercase decisions belong to a per-item decision view; RA findings retain ambiguous/missing/untestable/conflict/stale/out_of_scope. CLEAR is a valid control: show its testability in the overview rather than inventing a finding.
+
+1. Retain requirement ID, source, version, and wording. Separate AMBIGUOUS (multiple meanings), MISSING_RULE (undefined behavior), CONFLICT (opposing sources), and CLEAR (testable wording); do not flag normal shorthand to manufacture findings.
+2. For ambiguity show at least two plausible interpretations, conditions, different business/test consequences, and supporting wording. Without a plausible alternative, check whether material is merely missing.
+3. Ask the smallest discriminating question about start event, comparison, commit point, or scope. Offer options while leaving the product decision with its owner.
+4. Mark explicit criteria CLEAR with observable oracles. Do not fill gaps with invented limits or policy. Prioritize clarification by impact and implementation blockage.
+
 ## Core Constraints
 
 - Use `RA-##` finding IDs and distinguish `ambiguous`, `missing`, `untestable`, `conflict`, and `out_of_scope`.
@@ -43,6 +52,8 @@ Do not use it to make a final decision between mutually exclusive rules, execute
 - Do not decide the final interpretation for product, business, legal, or compliance roles.
 
 ## Reference Files
+
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
 
 - Always read `prompts/requirement-ambiguity-analysis.md` before producing an analysis.
 - Use `evals/eval.yaml` and `evals/cases/` to regress this Skill; structural or rule-based checks do not prove real-project effectiveness.

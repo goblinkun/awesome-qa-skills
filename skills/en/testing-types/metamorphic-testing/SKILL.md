@@ -26,6 +26,12 @@ Derive test candidates from input transformations and expected relations when a 
 4. Separate facts, evidence-backed inferences, recommendations, and Human decisions.
 5. Recommend follow-up validation without claiming execution.
 
+## Domain Execution Essentials
+
+- Define source input domain, transformation T, output relation R and sourced preconditions. An absent exact oracle does not permit arbitrary equivalence assumptions.
+- Deliver input/transformation/output-relation/precondition/counterexample tables, separating relation applicability from implementation satisfaction.
+- When deriving domain candidates, read and follow [prompts/metamorphic-testing.md](prompts/metamorphic-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not invent transformation relations, outputs, or randomness claims, or treat a relation table as execution evidence.

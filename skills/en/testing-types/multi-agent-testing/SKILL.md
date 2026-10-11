@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded delegation, coordinat
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/multi-agent-testing.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Trace task/message/correlation IDs, sender/receiver, parent delegation, scope, owner, shared-state version, and ACK using actual acceptance/rejection/termination rules.
+2. Claim/commit follows the project's atomic ownership or fencing protocol. Stale/duplicate messages must not regain ownership or duplicate writes; never assume exactly-once delivery.
+3. Reconcile completed, unfinished, and indeterminate effects on partial failures before reassignment. One child's failure/timeout cannot silently discard unresolved tasks.
+4. Check stop propagation, ACKs, terminal states, and remaining owners; expired leases cannot commit. Include valid single claims/handoffs so message redelivery alone is not a false defect.
 
 ## Core Constraints
 

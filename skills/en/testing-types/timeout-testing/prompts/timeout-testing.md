@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not inject faults, access real dependencies, read credentials, or call production systems.
 - Do not upgrade file presence, names, templates, or dry-runs into execution, passing, coverage, or release evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Identify end-to-end absolute deadlines, connect/queue/read/process budgets, time source and start points, distinguishing serial, overlapping and independent timeouts.
+2. Sum elapsed time/remaining deadline along the actual chain and check child-budget propagation; individual phases under limits can still exceed the end-to-end limit.
+3. Model cancellation, timeout-after-commit, late responses and continued background work, joining client state, server commit and downstream cancellation/completion evidence.
+4. Apply sourced unknown/reject/compensation/reconciliation rules and retry side effects; without a state policy timeout cannot imply business failure or invented rollback.
+
+**Decision and deliverable:** Deliver chain budgets and post-timeout state/side effects; late commits and cancellation require independent evidence.
+
 ## Minimum Coverage Checklist
 
 - timeout policy and applicability

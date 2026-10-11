@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded retry-testing analysi
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录实际存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 按错误合同分类可重试、永久拒绝和结果未知，明确“次数”是总尝试还是追加重试及每层调用关系。
+- 交付错误×尝试/时间预算×副作用表，明确嵌套实际调用数和超时提交不确定性。
+- 形成领域候选时，必须读取并遵循 [prompts/retry-testing.md](prompts/retry-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析重试触发、退避、幂等、最大次数和重复副作用，不注入故障、不访问真实依赖、不调用生产系统。

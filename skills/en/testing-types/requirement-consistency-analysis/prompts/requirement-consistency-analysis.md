@@ -53,6 +53,17 @@ The `business-rule` mode keeps relation values `aligned`, `inconsistent`, and `c
 
 Explicitly mutually exclusive rules preserve both sources and use `conflict`; do not rewrite them into a compromise answer. A difference between versions, platforms, or applicability scopes is not automatically a conflict. If the target scope is unknown, use `stale` or `unassessed` and ask for it. When focused organization is needed, suggest `requirement-conflict-detection` without choosing the final rule for a Human.
 
+## Domain Procedure and Oracle
+
+These decisions do not replace RC/BR fields: EQUIVALENT maps to aligned/assessed; same-scope CONTRADICTED maps to conflict/assessed; NOT_COMPARABLE retains unassessed or stale evidence without asserting aligned/conflict. Keep the decision view separate from Relation/Status.
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix sources, versions, and effective dates. Build evidenced aliases, entity IDs, units, and state mappings; equal names are not automatically equivalent.
+2. Compare rules with matched scope, version, and conditions. Convert units with documented factors and normalize states only through explicit mappings; never silently merge versions or entities.
+3. EQUIVALENT needs traceable semantic/numeric equality. CONTRADICTED means rules cannot both hold under the same conditions. NOT_COMPARABLE means missing identity/version/unit mapping prevents comparison.
+4. Show originals, normalized values, mapping sources, impact, and minimal clarification. One source cannot establish cross-document consistency; no stated authority means no automatic overwrite.
+
 ## Output
 
 1. Input audit and comparison scope;

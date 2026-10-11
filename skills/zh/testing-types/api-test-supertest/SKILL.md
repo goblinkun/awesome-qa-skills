@@ -12,6 +12,10 @@ description: Use this skill when you need to parse multi-format API definitions 
 - 需要把 API 测试结果落到 Supertest 自动化结构里。
 - 项目偏 Node.js，或已经在用 Supertest/Jest。
 
+## 生成与执行边界
+
+生成脚本只生成已知字段的 smoke 断言：必须提供非空 endpoints、明确 expected_statuses；可提供 expected_json 和来源化 max_response_ms。缺数据、未解析参数/变量或 response_schema 待实现时生成失败工件并非零退出，不能运行成绿色。先读 `references/generator-contract.md`，目标与凭据必须显式配置。
+
 ## 执行流程
 
 1. 阅读并遵循「按需加载」中的主提示词（覆盖清单、输出结构、质量要求）。

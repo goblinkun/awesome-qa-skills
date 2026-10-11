@@ -12,6 +12,10 @@ description: Use this skill when you need high-quality test cases from requireme
 - 需要基于多来源材料编写更完整、更有优先级的测试用例。
 - 需要比基础版更强的追踪关系和风险意识。
 
+## 脚本能力边界
+
+可选 `scripts/run_*.py` 只准备解析后的输入材料或来源候选，输出 `NOT_ASSESSED`，不调用模型、不执行主 Prompt，不生成语义结论、风险优先级、完整用例或批准。正式分析由 Agent 按主 Prompt 执行；需要运行脚本时先读 `references/script-contract.md`。
+
 ## 执行流程
 
 1. 阅读并遵循「按需加载」中的主提示词（覆盖清单、输出结构、质量要求）。

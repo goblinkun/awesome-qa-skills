@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For user data, production, or safety work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and safety judgments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix policy ID/version/audience and map category/conditions→allow/restrict/refuse/escalate→allowed content/prohibited effects→evidence. Missing policy cannot become a safety approval.
+2. Pair policy-defined harmful cases with neighboring benign controls. Assess harmful handling, allowed-task completion, and over-refusal independently; refusal rate alone is no safety metric.
+3. Check actual content and tool actions in restricted/redirection paths, not merely a refusal prefix. Record escalation cause, responsible role, and pending Human decision.
+4. Labels retain policy source, sample version, expected and actual branches. Missing execution outputs remain NOT_RUN; unknown policy boundaries remain UNKNOWN.
+
 ## Minimum Coverage Checklist
 
 - safety policy, abuse category, refusal and redirect, privacy boundary, escalation decision

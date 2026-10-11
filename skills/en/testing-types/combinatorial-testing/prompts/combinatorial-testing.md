@@ -23,6 +23,17 @@ Each CT-## includes at least the object/rule, source, trigger or applicability, 
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Build sourced factor/value tables and constraints, distinguishing input, environment and state; do not invent binary domains for unknown values.
+2. Choose t-way strength from defect/risk evidence, explaining t>=3 for higher-order obligations. Pairwise coverage cannot replace a known three-factor risk.
+3. Enumerate or solve legal full assignments and project them into the t-tuple universe; required tuples must extend to some legal full assignment.
+4. Compare suite projections with that universe, listing covered/missing tuples and invalid candidates. Preserve budget/residual risk; counts or generator names do not prove coverage.
+
+**Decision and deliverable:** Deliver factors/constraints, strength rationale, legal t-tuples and gaps; any static combination coverage is scoped to the enumerated model.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

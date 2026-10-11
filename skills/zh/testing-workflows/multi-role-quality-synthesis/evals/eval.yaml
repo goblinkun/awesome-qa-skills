@@ -17,6 +17,10 @@ cases:
     - evals/cases/edge-missing-optional-role.yaml
     - evals/cases/edge-no-new-facts.yaml
     - evals/cases/edge-pm-override.yaml
+    - evals/cases/review-source-union.yaml
+    - evals/cases/review-mixed-stage.yaml
+    - evals/cases/review-duplicate-source-version.yaml
+    - evals/cases/review-similar-name-distinct-conditions.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

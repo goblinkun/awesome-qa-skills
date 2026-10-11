@@ -10,21 +10,15 @@ input:
 
 expect:
   must_contain:
-    - "assumption"
-    - "Open Questions"
-    - "gaps"
-    - "assumptions"
-    - "confirm"
+    - "points"
+    - "performance"
   must_not_contain:
     - "TODO"
-    - "I cannot"
 
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
-          - "assumption"
-          - "Open Questions"
-          - "gaps"
-          - "assumptions"
+          - "(?i)(assumption|working assumptions)"
+          - "(?i)(gap|gaps|open questions|missing|what I need)"

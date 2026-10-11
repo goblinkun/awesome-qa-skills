@@ -24,11 +24,20 @@ description: Use this skill when you need to design Cypress e2e and component te
 
 ## 参考文件
 
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
+
 - `prompts/ui-test-cypress.md`：本技能主提示词。
 - `references/framework-spec.md`：工具专项结构和覆盖说明。
 - `references/setup-and-ci.md`：安装、执行和 CI 说明。
 - `examples/sample-context.md`：示例请求上下文。
 - `scripts/run-tests.sh`：轻量本地执行入口。
+
+## 领域执行要点
+
+1. 从项目lockfile/config确认Cypress、Node和浏览器版本及component/E2E边界；按该版本生成配置、custom command、spec与CI命令，不默认升级或混用旧配置。
+2. 保留真实页面/组件与业务逻辑，cy.intercept只替换已确认外部边界；仅验证stub回包不足以证明真实后置条件。明确fixture数据与session隔离/注销。
+3. 区分可重试query/assertion与执行一次的动作及整个test重试；等待以别名请求/可观察状态而不是sleep，重试不能掩盖首失败或重复副作用。
+4. 最小应用正/负对照核对付款后订单状态/金额/主体；标题正常但业务错误必须断言失败且CI非0。记录截图/视频/原失败、teardown与真实运行证据，文件存在不等于通过。
 
 ## 常见误区
 
@@ -41,3 +50,5 @@ description: Use this skill when you need to design Cypress e2e and component te
 - 从 prompt 文件开始，只补充真正影响结果的上下文。
 - 输出保持风险驱动，并能直接用于执行或评审。
 - 信息不完整时，先给可用版本，再标清缺口。
+
+- 验证生成资产的业务断言、失败传播或隔离时，读取 [evals/fixtures/checkout-app/README.md](evals/fixtures/checkout-app/README.md)，使用本地good/bug/timeout对照；仅在明确运行时执行。

@@ -27,6 +27,12 @@ Do not use it to execute tests, invent rules, replace a complete strategy, or ac
 3. Record PWT-## with factors, value pair, validity constraint, interaction risk, coverage rationale, source evidence, priority, and validation method, source, evidence state, impact, owner, close condition, and validation.
 4. Preserve conflicts, unknown constraints, and open questions.
 
+## Domain Execution Essentials
+
+- List sourced factors/domains/joint constraints and pairwise applicability, retaining higher-order obligations outside its guarantee.
+- Deliver legal pair-universe and covered/missing details, with additional justified candidates for higher-order interactions.
+- When deriving domain candidates, read and follow [prompts/pairwise-testing.md](prompts/pairwise-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - do not describe pairwise coverage as all-combination coverage, ignore exclusions, or invent factors or values from experience.

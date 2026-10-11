@@ -1,0 +1,28 @@
+test_prose_trim_grader_preserves_fixture_bytes_and_document_lines (scripts.tests.test_review_eval_graders.PackagedGraderTests.test_prose_trim_grader_preserves_fixture_bytes_and_document_lines) ...
+  test_prose_trim_grader_preserves_fixture_bytes_and_document_lines (scripts.tests.test_review_eval_graders.PackagedGraderTests.test_prose_trim_grader_preserves_fixture_bytes_and_document_lines) (language='en') ... FAIL
+  test_prose_trim_grader_preserves_fixture_bytes_and_document_lines (scripts.tests.test_review_eval_graders.PackagedGraderTests.test_prose_trim_grader_preserves_fixture_bytes_and_document_lines) (language='zh') ... FAIL
+
+======================================================================
+FAIL: test_prose_trim_grader_preserves_fixture_bytes_and_document_lines (scripts.tests.test_review_eval_graders.PackagedGraderTests.test_prose_trim_grader_preserves_fixture_bytes_and_document_lines) (language='en')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./scripts/tests/test_review_eval_graders.py", line 72, in test_prose_trim_grader_preserves_fixture_bytes_and_document_lines
+    result=run();self.assertEqual(result.returncode,0,result.stderr)
+                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : fixture assertion failed: ('# Safe review\nNever send production writes.\nMeasured limit: one local fixture; runtime effectiveness is UNASSESSED.\nHistory: 2026-09-18, issue #42 recorded the schema change.\nFormal reference: https://example.test/spec/v1', '# Safe review\nNever send production writes.\nMeasured limit: one local fixture; runtime effectiveness is UNASSESSED.\nHistory: 2026-09-18, issue #42 recorded the schema change.\nFormal reference: https://example.test/spec/v1\n')
+
+
+======================================================================
+FAIL: test_prose_trim_grader_preserves_fixture_bytes_and_document_lines (scripts.tests.test_review_eval_graders.PackagedGraderTests.test_prose_trim_grader_preserves_fixture_bytes_and_document_lines) (language='zh')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./scripts/tests/test_review_eval_graders.py", line 72, in test_prose_trim_grader_preserves_fixture_bytes_and_document_lines
+    result=run();self.assertEqual(result.returncode,0,result.stderr)
+                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : fixture assertion failed: ('# Safe review\nNever send production writes.\nMeasured limit: one local fixture; runtime effectiveness is UNASSESSED.\nHistory: 2026-09-18, issue #42 recorded the schema change.\nFormal reference: https://example.test/spec/v1', '# Safe review\nNever send production writes.\nMeasured limit: one local fixture; runtime effectiveness is UNASSESSED.\nHistory: 2026-09-18, issue #42 recorded the schema change.\nFormal reference: https://example.test/spec/v1\n')
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.092s
+
+FAILED (failures=2)

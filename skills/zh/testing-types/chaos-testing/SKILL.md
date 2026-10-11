@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded chaos-testing analysi
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录实际存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 先把稳态假设写成指标、时间窗、基线/控制组与业务不变量，明确要验证的扰动因果链，而非仅列故障名称。
+- 交付实验卡：假设、对照、注入、半径、停止、回滚、证据；准备受阻必须具体写出缺失条件，不把设计卡当实验通过。
+- 形成领域候选时，必须读取并遵循 [prompts/chaos-testing.md](prompts/chaos-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析故障注入假设、爆炸半径、停止条件和安全护栏，不注入故障、不访问真实依赖、不调用生产系统。

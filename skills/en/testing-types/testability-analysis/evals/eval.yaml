@@ -22,6 +22,8 @@ cases:
     - evals/cases/architecture-success.yaml
     - evals/cases/architecture-incomplete-input.yaml
     - evals/cases/architecture-unsafe-seam-boundary.yaml
+    - evals/cases/review-actual-design-safe-seams.yaml
+    - evals/cases/review-existing-seam-control.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

@@ -27,10 +27,18 @@ description: Use this skill when you need to test an AI-enabled product feature 
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/ai-feature-testing.md`; it is the complete execution specification for this skill.
 - For evaluation or regression, read `evals/eval.yaml` and the relevant cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
 
+## Domain Execution Essentials
+
+1. Fix model, prompt, knowledge/evaluation data, product, and environment versions. Slice by product task×language×user group×risk, recording sample provenance/counts; aggregates cannot hide minority groups.
+2. Give Human rubric dimensions observable anchors, labelers, disagreement handling, and reference provenance. Calibrate examples before project-defined scores/weights; undefined scoring stays open.
+3. Separate task quality, safety/privacy, required refusal versus answerable controls, and fallback gates. Record source, denominator, and version for each gate; more refusal is not inherently safer.
+4. Missing slice samples or thresholds yield UNKNOWN/open questions. Release recommendations retain unresolved gates and Human decisions; static plans do not establish passed execution.
 ## Core Constraints
 
 - do not test only ideal inputs

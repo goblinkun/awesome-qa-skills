@@ -64,3 +64,7 @@ Unless the result is Not applicable, every report includes: Summary, Facts, Evid
 - Do not turn a product-quality perspective into unsupported code-review or test-pass conclusions.
 - Do not equate “the requirement is met” with “the code is correct” or “tests have passed.”
 - Do not hide critical information gaps behind a generic checklist.
+
+## Report provenance
+
+Keep the selected `stage`, a stable `source_id`, and supplied `version` in the report header. If a source ID is absent, declare a temporary local locator; if version is absent, write unknown rather than inventing it. Each finding has a stable `finding_id`, its source/evidence locator and status. Each action links its finding and specifies the evidence that would close it; owner, date and action status stay unknown unless supplied. These are standalone report fields, not a dependency on another Skill.

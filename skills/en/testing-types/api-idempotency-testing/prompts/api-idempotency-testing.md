@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, behavior of concern, source ev
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Extract key scope, payload equivalence, lifetime/expiry boundary, concurrency, and replay contracts. Separate response replay from order/payment/message side-effect obligations.
+2. Build same-key/same-payload, same-key/different-payload, different-key, concurrency, expiry, and timeout-after-commit scenarios with initial state and project expectations.
+3. Join requests, responses, database and message ledgers by key, business ID, and timeline. Count committed side effects rather than response equality or request counts.
+4. Check reconciliation for uncertain commits, key reuse on retry, and post-expiry risk; retain missing lifetime or conflict behavior as gaps.
+
+**Decision and deliverable:** Deliver request sequence, responses, commit ledger, and contract decision per scenario; assess both side effects and response obligations.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.
