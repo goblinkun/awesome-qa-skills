@@ -25,6 +25,12 @@ description: Use this skill when you need to select high-risk multi-factor combi
 3. 事实、推断、建议和 Human 决策必须分开。
 4. 只提出后续验证意图，不写成已执行结果。
 
+## 领域执行要点
+
+- 从材料建 factor/value 表及约束表达式，区分输入、环境与状态；未知值域不能补成任意二元值。
+- 交付因素/约束、强度理由、合法 t 元组 universe 和缺口；只对已枚举的模型声明静态组合覆盖。
+- 形成领域候选时，必须读取并遵循 [prompts/combinatorial-testing.md](prompts/combinatorial-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不把多因素组合数量写成覆盖证明，不忽略约束或凭经验补造取值。

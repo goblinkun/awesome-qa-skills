@@ -12,6 +12,10 @@ description: Use this skill when you need high-quality test cases from requireme
 - Need test cases from multiple source documents with stronger prioritization.
 - Need better traceability and clearer risk focus than the base version.
 
+## Script capability boundary
+
+Optional `scripts/run_*.py` prepare parsed evidence or source candidates with `NOT_ASSESSED`. They do not call a model, execute the main prompt, or produce semantic conclusions, risk priorities, complete cases, or approval. An agent performs the main prompt. Read `references/script-contract.md` before running helpers.
+
 ## Workflow
 
 1. Read and follow the main prompt listed under Progressive disclosure (coverage, structure, quality bar).

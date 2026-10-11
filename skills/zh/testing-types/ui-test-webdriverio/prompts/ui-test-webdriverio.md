@@ -25,6 +25,15 @@
 - 优先给可维护的测试组织方式，不输出一次性大脚本。
 - 信息不完整时，先给可用第一版，并标清假设。
 
+## 领域操作与判定
+
+以下步骤对提供材料进行设计或静态核对；fixture 判定、候选方案与真实执行证据分别记录。项目未提供的规则、门槛和授权保持待确认。
+
+1. 固定WebdriverIO/Node、runner/framework、browser/driver/service版本组合；核对capabilities、services与实际安装包、配置及远端支持，不从名称假定兼容。
+2. 生成该版本的async spec/BDD步骤，所有异步命令await；等待以可观察业务状态和元素条件，原命令错误不得catch吞成通过。
+3. 每worker独立session/身份/业务键，生命周期hooks负责初始化和清理；平台/浏览器差异仅覆盖项目支持矩阵，缺矩阵标未知。
+4. 失败证据含testID、worker/session/capability、版本、URL、截图/日志和原堆栈；不兼容配置CONFIG_ERROR、业务断言失败与环境错误分列，均需可诊断并传播至CI。
+
 ## 最低覆盖清单
 
 除非用户明确缩小范围，输出至少覆盖：

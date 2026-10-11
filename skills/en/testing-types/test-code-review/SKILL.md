@@ -27,6 +27,12 @@ Do not use it to execute tests, invent behavior conclusions, replace a complete 
 3. Record TCR-## with the subject, preconditions, concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Identify protected behavior and how failure must fail the test, tracing actual values to the subject; check tautologies, type-only assertions and swallowed errors with no failure exit.
+- Deliver locations/snippets, protected obligations, missed-failure counterexamples and fix validation, retaining properly isolated failure-sensitive controls.
+- When deriving domain candidates, read and follow [prompts/test-code-review.md](prompts/test-code-review.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or outcomes, or treat candidate counts as coverage proof.

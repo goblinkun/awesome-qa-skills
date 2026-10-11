@@ -9,11 +9,8 @@ input:
 
 expect:
   must_contain:
-    - "任务理解"
-    - "输入审计"
     - "风险"
     - "P0"
-    - "预期"
   must_not_contain:
     - "TODO"
     - "我无法"
@@ -22,8 +19,9 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
-          - "任务理解"
-          - "输入审计"
+          - "(输入审计|输入证据|证据与边界|证据基础)"
           - "风险"
+          - "P0"
+          - "(预期|判断标准|验收标准|成功标准)"

@@ -31,6 +31,14 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For user data, production, or safety work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and safety judgments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Derive queued→running→checkpointed→interrupted→resuming→completed and running→cancelling→cancelled from the actual protocol; undefined transitions remain open.
+2. Capture task_id, checkpoint schema/state version, committed step IDs, provenance, and integrity. Validate versions and committed effects before resuming; incompatible checkpoints cannot be blindly replayed.
+3. Record owner, lease/fencing token, and expiry policy. A worker that loses its lease must not commit. Merge/reject duplicate task IDs according to project idempotency rules; do not assume exactly-once delivery.
+4. Reconstruct cancellation versus commit races using the specified commit point. Preserve committed results and verify terminal state, released resources, and cancellation acknowledgment; missing race rules require Human decisions.
 ## Minimum Coverage Checklist
 
 - checkpoint, heartbeat, resume and cancel, duplicate submission, resource lifecycle

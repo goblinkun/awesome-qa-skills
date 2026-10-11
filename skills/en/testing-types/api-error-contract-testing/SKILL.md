@@ -27,6 +27,12 @@ Do not use it to execute tests, invent contract or behavior, replace a complete 
 3. Record AEC-## with the subject, preconditions, behavior of concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Build an operation/error contract table for HTTP status, business code, required fields/types, correlation ID, retry meaning, and redaction; retain sourced operation exceptions.
+- Deliver an operation/error consistency table with sourced expectations and observations; differences become findings only when they violate an applicable rule.
+- When deriving domain candidates, read and follow [prompts/api-error-contract-testing.md](prompts/api-error-contract-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or responses, or treat candidate counts as coverage proof.

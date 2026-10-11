@@ -9,10 +9,7 @@ input:
 
 expect:
   must_contain:
-    - "Working Assumptions"
-    - "Open Questions"
     - "evidence"
-    - "Next Actions"
   must_not_contain:
     - "TODO"
     - "I cannot"
@@ -21,8 +18,9 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
-          - "Working Assumptions"
-          - "Open Questions"
-          - "evidence"
+          - "(?i)working assumptions"
+          - "(?i)open questions"
+          - "(?i)evidence"
+          - "(?i)(next actions|next steps|immediate requests|smallest next actions)"

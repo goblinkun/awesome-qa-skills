@@ -27,9 +27,18 @@ description: Use this skill when you need to identify and prioritize quality ris
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/quality-risk-analysis.md`; it is the complete execution specification for this skill.
 - For evaluation or regression, read `evals/eval.yaml` and the relevant cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Register risk events, affected assets/groups, triggers and controls with observable impact, likelihood and detectability anchors and sources.
+2. Without project quantitative rules provide justified qualitative ordering. Separate irreversible impact, authority boundaries and known control gaps; low frequency alone is not low risk.
+3. Propagate uncertainty across likelihood, impact and control confidence using conditional conclusions and minimal checks. UNKNOWN is neither zero nor a precise score.
+4. Link controls/tests, residual risk, owners and authorized acceptance. Ranking supports decisions; it is no vulnerability, root-cause or acceptance proof.
 
 ## Core Constraints
 

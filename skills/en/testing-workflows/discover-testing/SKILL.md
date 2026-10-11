@@ -12,6 +12,10 @@ description: Use this skill when you need to route a request to the right testin
 - Need to decide which testing skill should be used before execution.
 - The request mixes multiple testing directions or phases.
 
+## Full inventory and availability
+
+Read `references/skill-capability-inventory.json` to check exact canonical IDs. This 2026-10-06 snapshot catalogs 164 IDs; catalog existence does not prove installation or callability on the current Host. Missing installation evidence means availability=`UNKNOWN`; explicitly absent means `UNAVAILABLE`. Match explicit specialties (authentication vs authorization, retrieval vs answer quality, impact scope vs regression selection) before broad Composition routes. Keep one primary and at most one helper. For an unavailable target, state the gap and minimal installation/handoff action without claiming invocation.
+
 ## Workflow
 
 1. Read the same-directory `reference.md` first and match one structured route when applicable; it is the only Composition reference required for independent installation.

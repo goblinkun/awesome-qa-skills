@@ -23,6 +23,8 @@ cases:
     - evals/cases/edge-role-conflict.yaml
     - evals/cases/edge-unsupported-stage.yaml
     - evals/cases/edge-condition-not-met.yaml
+    - evals/cases/review-test-reporting-raw-results.yaml
+    - evals/cases/review-test-report-review-raw-results.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

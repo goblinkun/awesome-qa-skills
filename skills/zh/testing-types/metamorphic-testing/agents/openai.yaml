@@ -3,7 +3,7 @@ metadata:
   key: "metamorphic-testing"
 interface:
   display_name: "蜕变测试设计"
-  short_description: "Design evidence-backed candidates without claiming execution."
+  short_description: "依据已提供证据设计蜕变测试设计，明确来源、缺口与尚未执行的验证。"
   default_prompt: "Use the metamorphic-testing skill to produce MT-## without claiming execution."
 policy:
   allow_implicit_invocation: true

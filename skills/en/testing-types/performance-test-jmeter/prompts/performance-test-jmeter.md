@@ -24,6 +24,15 @@ Design JMeter performance testing assets or a JMeter-ready plan that the team ca
 - Prefer maintainable test organization over large one-off scripts.
 - If information is incomplete, give a usable first version and mark assumptions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Confirm project JMeter/JDK/plugins and JMX version. Check TestPlan/ThreadGroup/Sampler and adjacent hashTree structure, variables, and properties. Parseable XML proves structure only, not execution or SLO success.
+2. Standard ThreadGroup controls closed-loop threads. Target RPS needs declared think time/timers, throughput control, or an installed arrival-rate plugin; verify achieved throughput/counts rather than inferring RPS from threads.
+3. Record CSV path, encoding, columns, sharing, recycle/stopThread settings and consumption per thread/loop. For distributed runs check each injector's data/plugins/network and load allocation.
+4. Use non-GUI entry in authorized environments, preserving JTL/logs. Check business assertions, latency/error gates, and CI propagation separately. Missing thresholds are UNKNOWN; HTML reports or exit 0 cannot hide failed samples.
+
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

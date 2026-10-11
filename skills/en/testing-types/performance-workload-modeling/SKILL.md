@@ -27,9 +27,18 @@ description: Use this skill when you need to model realistic performance workloa
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/performance-workload-modeling.md`; it is the complete execution specification for this skill.
 - For evaluation or regression, read `evals/eval.yaml` and the relevant cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Describe each input with value, unit, timezone/window, source, and coverage. Requests/transactions/sessions/users are distinct; convert through transaction mix and requests per transaction with retries/background traffic noted.
+2. Daily volume gives an all-day average only. Peak rate requires peak-share volume and window width; missing width yields a conditional formula/range, never invented peak duration/multipliers.
+3. Choose open arrival or closed concurrency explicitly. Use Little's Law L=λW only within a steady window and consistent units; online/daily-active users are not concurrency.
+4. Provide candidate curves, sourced session lengths/think times, and verification. Check observed arrivals/completions/mix; unconfirmed values are no production-capacity conclusion.
 
 ## Core Constraints
 

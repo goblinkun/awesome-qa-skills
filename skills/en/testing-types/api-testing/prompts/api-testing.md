@@ -30,6 +30,15 @@ The user may provide:
 - If the system is REST, GraphQL, SOAP, gRPC, or WebSocket, adapt the checks to that protocol.
 - If there is not enough information for a complete plan, still give a usable first version and mark the gaps.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Branch only for confirmed protocols: REST method/status/schema/idempotency; GraphQL data+errors/null/field permissions; gRPC status/metadata/deadline/stream termination; WebSocket handshake/message IDs/order/reconnect; SOAP WSDL/namespaces/Fault. Do not require unused protocols.
+2. Separate contract checks from cross-request business postconditions: create/update→read-back→permission view→repeat/downstream effects. Preserve request IDs, business keys, versions, and evidence.
+3. Correct status with wrong persisted balance/state/relationships is a business failure. For asynchronous effects apply project consistency windows, never invented delays.
+4. Prepare isolated namespaces/unique business keys, clean in reverse dependency order, and record residuals. Missing authority or real-effect constraints stay blocked.
+
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the plan addresses these items:

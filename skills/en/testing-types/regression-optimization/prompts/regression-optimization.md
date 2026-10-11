@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Match before/after versions, environment, obligations, data and windows. Source selection/order/parallel/cache inclusions and exclusions; different test volumes cannot support timing comparisons.
+2. Preserve critical risks, known escapes and mandatory gates. Reject removal of sole protection; unknown mappings require conservative checks or escalation.
+3. Measure duration/resources, detection, misses/escapes and flakiness separately. The same controlled fault must still fail an effective assertion for the same obligation.
+4. State benefit conditions, residual risk, implementation/rollback triggers and owners. Removing protection requires authorized acceptance, not an optimization proposal alone.
+
 ## Minimum Coverage Checklist
 
 - selection basis, ordering, parallelism, caching, risk preservation

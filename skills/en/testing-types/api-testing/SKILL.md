@@ -19,6 +19,13 @@ description: Use this skill when you need to design API test plans or cases for 
 3. If input is incomplete, return a usable first draft and explicitly mark assumptions and gaps.
 4. Default to Markdown; switch formats only when the user asks.
 
+## Domain Execution Essentials
+
+1. Branch only for confirmed protocols: REST method/status/schema/idempotency; GraphQL data+errors/null/field permissions; gRPC status/metadata/deadline/stream termination; WebSocket handshake/message IDs/order/reconnect; SOAP WSDL/namespaces/Fault. Do not require unused protocols.
+2. Separate contract checks from cross-request business postconditions: create/update→read-back→permission view→repeat/downstream effects. Preserve request IDs, business keys, versions, and evidence.
+3. Correct status with wrong persisted balance/state/relationships is a business failure. For asynchronous effects apply project consistency windows, never invented delays.
+4. Prepare isolated namespaces/unique business keys, clean in reverse dependency order, and record residuals. Missing authority or real-effect constraints stay blocked.
+
 ## Core Constraints
 
 - Prioritize by risk / business impact — do not treat everything equally.
@@ -27,6 +34,8 @@ description: Use this skill when you need to design API test plans or cases for 
 - Keep output executable: concrete scenarios, clear priority, clear next steps.
 
 ## Progressive Disclosure
+
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
 
 - Before producing output, read and follow `prompts/api-testing.md` (minimum coverage, output structure, quality bar).
 - When Excel/CSV/JSON/Word is requested: read `output-formats.md` and honor the format.

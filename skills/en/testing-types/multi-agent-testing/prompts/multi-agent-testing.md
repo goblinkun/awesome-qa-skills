@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For user data, production, or safety work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and safety judgments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Trace task/message/correlation IDs, sender/receiver, parent delegation, scope, owner, shared-state version, and ACK using actual acceptance/rejection/termination rules.
+2. Claim/commit follows the project's atomic ownership or fencing protocol. Stale/duplicate messages must not regain ownership or duplicate writes; never assume exactly-once delivery.
+3. Reconcile completed, unfinished, and indeterminate effects on partial failures before reassignment. One child's failure/timeout cannot silently discard unresolved tasks.
+4. Check stop propagation, ACKs, terminal states, and remaining owners; expired leases cannot commit. Include valid single claims/handoffs so message redelivery alone is not a false defect.
+
 ## Minimum Coverage Checklist
 
 - delegation, coordination protocol, shared state, conflict handling, termination and traceability

@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, concern, source evidence, and 
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Verify subject revision, operators, mutant IDs/locations, test mapping and budgets; distinguish killed, survived, no-coverage, timeout, error and pending equivalence.
+2. Read tool/project scoring and exclusion policies before reporting totals, numerator, denominator and exclusions. With no formula report distribution instead of inventing a single score.
+3. Analyze survived assertion/input gaps and no-coverage reachability; retain execution uncertainty for timeouts/errors. Pending equivalence cannot be automatically excluded.
+4. Map risky mutants to obligations, existing tests and minimal distinguishing cases. Recalculation/survival does not prove product defects or overall test excellence.
+
+**Decision and deliverable:** Deliver mutant categories/test maps, explicitly defined reproducible metrics and exclusion evidence, retaining every unresolved category.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

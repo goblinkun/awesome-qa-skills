@@ -24,6 +24,15 @@ Design TestCafe UI testing assets or a TestCafe-ready plan that the team can imp
 - Prefer maintainable test organization over large one-off scripts.
 - If information is incomplete, give a usable first version and mark assumptions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Confirm TestCafe/Node/browser, native automation mode, CI, and reporter versions. Produce fixtures/tests/config compatible with the existing runner; missing config is open, not an implicit upgrade.
+2. Initialize isolated sessions with Roles or independent identities and isolate accounts/business keys too. Await asynchronous t actions and use supported Selector/assertion waits rather than fixed sleeps.
+3. Verify paid state, amount, and principal. Boundary stubs must not bypass the real UI; a normal title is no success. Negative controls must fail business assertions.
+4. CLI nonzero or programmatic failedCount>0 must fail CI. Reporters cannot swallow failures; retain screenshots/console/test IDs and cleanup. Parseable config is distinct from actual execution.
+
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

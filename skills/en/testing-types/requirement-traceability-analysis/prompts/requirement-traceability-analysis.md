@@ -50,6 +50,16 @@ When the user requests `test-coverage-analysis` or `coverage_analysis`, retain b
 
 Relationship types remain limited to `direct`, `derived`, `indirect`, `contradictory`, and `missing`; coverage statuses remain `complete`, `partial`, `unverified`, `stale`, `unexecuted`, and `unassessed`. A test file, name, report summary, or static presence cannot alone produce `complete`, and absent runtime evidence cannot be written as `passed`.
 
+## Domain Procedure and Oracle
+
+RT/TC relationship types remain direct/derived/indirect/contradictory/missing and coverage statuses complete/partial/unverified/stale/unexecuted/unassessed. MAPPED/EXECUTED/SATISFIED and IDENTITY_CONFLICT are additional decision columns, not replacement enums; mapped-but-unrun stays unexecuted and unresolved identity conflicts never count as satisfied.
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix IDs/versions for requirements, obligations, implementation, tests, and runs. Keep relationship types direct/derived/indirect/contradictory/missing; record implements/validates/executed-by/satisfies as a separate edge-purpose column with sources; file existence or name similarity is no evidence edge.
+2. Deduplicate obligation denominators when multiple tests protect one obligation, preserving layers/assertions. Same ID with conflicting content is IDENTITY_CONFLICT, not a mergeable duplicate.
+3. Separate MAPPED, EXECUTED, and SATISFIED. Mapping is no run; a passed run without an effective obligation assertion is no satisfaction. Old-version edges cannot satisfy new versions.
+4. Check both directions for unlinked obligations, orphan tests, and stale edges. Coverage reports use current unique obligations with explicit exclusions/UNKNOWN; gaps cannot become PASS.
 ## Output
 
 1. Input audit and traceability scope;

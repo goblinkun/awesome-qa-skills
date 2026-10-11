@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not log in, call real APIs, read credentials, or perform destructive security actions.
 - Do not upgrade files, names, templates, or dry-runs into absence-of-vulnerability, exploit success, or release-approval evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Map supplied actors, entries, stores/flows and trust boundaries, listing assets, sensitive data and permitted actions; do not add unsupplied components.
+2. For each boundary path record actor, capability, preconditions, controlled input, asset impact and obligation. Optional spoofing/tampering/disclosure/disruption/privilege categories may aid checks.
+3. Locate controls on actual paths, checking server binding/validation and bypass preconditions; separate existing controls, unverified controls and candidate threats.
+4. Deliver threat/control/validation/residual-risk/owner chains. Static architecture gaps are not successful attacks; missing authorization/component detail permits a bounded model only.
+
+**Decision and deliverable:** Deliver sourced flows and path-specific threat cards with actual components/preconditions/assets; taxonomy names do not establish paths.
+
 ## Minimum Coverage Checklist
 
 - threat scenario and applicability

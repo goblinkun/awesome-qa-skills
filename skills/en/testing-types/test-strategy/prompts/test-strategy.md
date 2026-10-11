@@ -25,6 +25,15 @@ Build a practical test strategy that matches the project risks, scope, timeline,
 - Be explicit about what will be covered, what will be sampled, and what will not be covered yet.
 - Keep the strategy actionable for the actual team.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Build a minimum executable table linking objective→obligation/scope→layer/depth→data/environment→resources/owner→entry/exit rule source→evidence/residual risk.
+2. Reuse the project stack and actual capacity, protecting critical loss/authority obligations first. Each scenario needs business postconditions/evidence; insufficient resources expose unfinished work and minimal alternatives.
+3. Gates come from the project. Missing thresholds remain open/UNKNOWN; never apply an automatic95% pass gate. Human risk acceptance cannot be replaced by a strategy draft.
+4. Separate design, plan, actual runs, and acceptance. Include dependencies/blockers, changes, stop/reassessment triggers, and owners so another executor can take over.
+
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

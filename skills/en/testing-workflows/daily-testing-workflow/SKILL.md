@@ -23,6 +23,7 @@ description: Use this skill when you need a day-by-day QA routine including plan
 
 - Own phases and gates; hand full cases/strategy/reports to type skills.
 - Prioritize by risk; gates must be checkable.
+- Keep start/environment readiness RED while the environment is unusable or current-build smoke is unavailable; naming a recovery owner does not clear that blocker.
 - Separate confirmed facts from assumptions.
 - Do not invent missing details; no relative-path links to other skill files.
 

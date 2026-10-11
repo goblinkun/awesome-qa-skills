@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded resilience-testing an
 - Read evals/eval.yaml and the matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Define pre/during/post-disruption function/data invariants and normal/degraded/unavailable states from business contracts, retaining permitted experience changes.
+- Deliver phase/function/data invariants and degradation/recovery evidence; responding during disruption does not compensate for failed recovery.
+- When deriving domain candidates, read and follow [prompts/resilience-testing.md](prompts/resilience-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only degradation behavior, isolation boundaries, recovery capability, and residual risk; do not inject faults, access real dependencies, or call production systems.

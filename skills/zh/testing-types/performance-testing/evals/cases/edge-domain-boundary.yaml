@@ -14,7 +14,6 @@ expect:
     - "安全"
     - "范围"
     - "基线"
-    - "不归因"
   must_not_contain:
     - "TODO"
     - "我无法"

@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded claim-to-source relat
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/llm-hallucination-testing.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Split independently checkable claims including numbers/units, entities, conditions, dates, and citations. Assign IDs, retaining original answer text and evidence version/location.
+2. SUPPORTED means evidence supports the same scope; CONTRADICTED means explicit opposing evidence; MISSING_SOURCE means no supplied support or direct contradiction; UNASSESSABLE means inaccessible, unclear-scope, or outdated evidence prevents comparison. Missing support alone does not prove fabrication.
+3. Check citation existence, accessibility, relevance, and claim support separately. A real source with an opposing number is a contradiction; do not label an entire mixed paragraph at once.
+4. Preserve claim denominators and separate supported rates from unknown proportions. Without ground truth or adequate sampling provide the check plan, not factual-accuracy proof.
 
 ## Core Constraints
 

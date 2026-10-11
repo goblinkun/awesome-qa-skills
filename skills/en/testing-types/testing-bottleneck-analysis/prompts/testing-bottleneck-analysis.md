@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix window, work IDs/complexity, arrival/completion, and state events. Separate queue/dependency waiting, execution, rework, handoffs, and blockers; total cycle time is not labor.
+2. WIP counts unfinished items; throughput counts completed items per matching window. Measure cycle/stage times separately and disclose missing events/sampling; averages alone establish no cause.
+3. Identify the limiting stage/upstream dependency using utilization, arrivals, and completions. Idle resources may be blocked on materials/environment; more concurrency may increase contention and reduce throughput.
+4. Propose small measurable interventions, matched before/after metrics, and rollback signals. Staffing shortage is a hypothesis, not a conclusion from waiting time or a personal ranking.
+
 ## Minimum Coverage Checklist
 
 - wait queue, dependency, capacity, handoff, constraint evidence

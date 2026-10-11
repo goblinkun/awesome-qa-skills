@@ -25,6 +25,15 @@ Design Cypress UI testing assets or a Cypress-ready plan that the team can imple
 - Prefer maintainable test organization over large one-off scripts.
 - If information is incomplete, give a usable first version and mark assumptions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Read Cypress, Node, browser, config, and component/E2E scope from project artifacts. Generate compatible config, custom commands, specs, and CI commands without implicit upgrades or mixed legacy formats.
+2. Exercise real page/component logic; cy.intercept replaces only confirmed external boundaries. Stub responses alone cannot prove business postconditions. Define isolated fixture data/session cleanup.
+3. Separate retryable queries/assertions, one-time actions, and whole-test retries. Wait on aliased requests/observable states, not sleeps. Preserve first failures and prevent repeated effects.
+4. Use minimum-app positive/negative controls for paid state, amount, and principal. Correct titles with wrong business state must fail assertions and CI. Preserve screenshots/video/failures, teardown, and actual run evidence; files alone prove nothing.
+
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

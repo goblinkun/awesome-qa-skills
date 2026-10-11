@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded dependency-failure-te
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录实际存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 列调用方、依赖、同步/异步、超时/重试/降级合同，以及必须保持的数据和业务不变量。
+- 交付故障模式×调用方/依赖状态和副作用表，区分同步拒绝、异步待处理及未知提交，注明恢复验证。
+- 形成领域候选时，必须读取并遵循 [prompts/dependency-failure-testing.md](prompts/dependency-failure-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析依赖故障分类、隔离、降级、兜底和依赖恢复，不注入故障、不访问真实依赖、不调用生产系统。

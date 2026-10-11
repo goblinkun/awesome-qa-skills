@@ -27,6 +27,12 @@ Do not use it to execute tests, invent rules, replace a complete strategy, or ac
 3. Record STT-## with state, event, precondition/guard, action, target state, reachability, source evidence, and validation method, source, evidence state, impact, owner, close condition, and validation.
 4. Preserve conflicts, unknown constraints, and open questions.
 
+## Domain Execution Essentials
+
+- Build sourced state/event/guard/action/target cells with initial/terminal, persistence and failure-atomicity contracts.
+- Deliver valid/invalid transitions and guard-boundary cells, comparing both state changes and business side effects.
+- When deriving domain candidates, read and follow [prompts/state-transition-testing.md](prompts/state-transition-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - do not invent states or events, treat a static state diagram as runtime evidence, or claim all paths executed.

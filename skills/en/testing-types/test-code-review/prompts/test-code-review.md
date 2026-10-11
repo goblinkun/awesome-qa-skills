@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, concern, source evidence, and 
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Identify protected behavior and how failure must fail the test, tracing actual values to the subject; check tautologies, type-only assertions and swallowed errors with no failure exit.
+2. Check mock boundaries, error branches, async waits/returns and cleanup so the subject is not replaced and promise results are observed.
+3. Review fixture/data/concurrency isolation: shared IDs/clocks/ports/global state, order dependence and cleanup after failures, using run contracts rather than blanket bans on sharing.
+4. For each defect give a minimal distinguishing counterexample/change and location, with sound controls; static code review does not prove tests passed or are stable.
+
+**Decision and deliverable:** Deliver locations/snippets, protected obligations, missed-failure counterexamples and fix validation, retaining properly isolated failure-sensitive controls.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

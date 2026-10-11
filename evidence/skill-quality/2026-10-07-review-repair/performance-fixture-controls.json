@@ -1,0 +1,30 @@
+{
+  "jmeter": {
+    "good": {
+      "jmeter_exit_code": 0,
+      "samples": 2,
+      "failed_samples": 0,
+      "gate_exit_code": 0,
+      "gate_output": "samples=2 p95_ms=368.0 error_percent=0.0",
+      "fixture_gate_note": "100000ms only prevents incidental latency from hiding the business/count assertion control; not a product SLO."
+    },
+    "bug": {
+      "jmeter_exit_code": 0,
+      "samples": 2,
+      "failed_samples": 2,
+      "gate_exit_code": 1,
+      "gate_output": "samples=2 p95_ms=295.0 error_percent=100.0\nTraceback (most recent call last):\n  File \"<temporary-fixture-script>\", line 18, in <module>\n    assert error <= a.error_percent, 'error gate failed'\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: error gate failed",
+      "fixture_gate_note": "100000ms only prevents incidental latency from hiding the business/count assertion control; not a product SLO."
+    },
+    "eof": {
+      "jmeter_exit_code": 0,
+      "samples": 2,
+      "failed_samples": 0,
+      "gate_exit_code": 1,
+      "gate_output": "Traceback (most recent call last):\n  File \"<temporary-fixture-script>\", line 11, in <module>\n    assert len(rows)==a.expected_samples, f'wrong sample count: {len(rows)} != {a.expected_samples}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: wrong sample count: 2 != 3",
+      "fixture_gate_note": "100000ms only prevents incidental latency from hiding the business/count assertion control; not a product SLO."
+    }
+  },
+  "gatling": "Gatling 3.9.5 Java DSL fixtures compiled for EN/ZH in temporary projects; no Gatling load run or achieved-RPS/SLO claim.",
+  "ui_frameworks": "Tool-specific fixtures reviewed/syntax checked; browser framework runtime NOT_RUN."
+}

@@ -65,3 +65,11 @@ Unless returning Not applicable, every report contains, in order: **Summary, Fac
 - Do not present a generic UX checklist as a proven defect in this product.
 - Do not compensate for an absent prototype by inventing screens, states, or mobile behavior.
 - Do not turn UX review into unsupported implementation-correctness, API-reliability, or release conclusions.
+
+## Report provenance
+
+Keep the selected `stage`, a stable `source_id`, and supplied `version` in the report header. If a source ID is absent, declare a temporary local locator; if version is absent, write unknown rather than inventing it. Each finding has a stable `finding_id`, its source/evidence locator and status. Each action links its finding and specifies the evidence that would close it; owner, date and action status stay unknown unless supplied. These are standalone report fields, not a dependency on another Skill.
+
+## Optional experience evidence matrix
+
+When project material selects these dimensions, record `input method × device/breakpoint × assistive technology × UI state`, with source/version and observed result or NOT_RUN/unknown per cell. Do not assume every combination applies, prescribe unsupplied devices, or mark an unobserved cell passed. A screenshot supports its visible cell; keyboard, screen-reader, mobile and recovery claims require their own evidence.

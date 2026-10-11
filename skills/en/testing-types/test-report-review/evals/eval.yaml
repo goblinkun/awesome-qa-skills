@@ -17,6 +17,7 @@ cases:
     - evals/cases/edge-insufficient-evidence.yaml
     - evals/cases/edge-hidden-untested-scope.yaml
     - evals/cases/edge-pm-override.yaml
+    - evals/cases/review-report-reconciliation.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

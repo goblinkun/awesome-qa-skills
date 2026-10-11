@@ -1,0 +1,1 @@
+The originals define the shipping threshold and duplicate-refund rule clearly. The fixture contradicts both at 100 and on the refund retry; the 99-unit shipping charge matches. “Refund promptly” lacks a measurable timing rule. I’ll check the calculations and table structure locally, without treating this as a system test.

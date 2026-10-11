@@ -28,6 +28,19 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not inject faults, access real dependencies, read credentials, or call production systems.
 - Do not upgrade file presence, names, templates, or dry-runs into execution, passing, coverage, or release evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Classify retryable, permanent and unknown-outcome errors from contracts; define total attempts versus additional retries and nested call relationships.
+2. List end-to-end deadline, per-attempt timeout, backoff/jitter, HTTP Retry-After (delay seconds or HTTP-date) and cancellation; sum attempts/waits on the timeline without inventing backoff values.
+3. Model timeout-after-commit, duplicate messages and nested retries; reconcile ledgers by idempotency/business ID. Retryability does not permit uncontrolled duplicate side effects.
+4. Check stop-on-permanent-error, hint constraints, late results after cancellation and exhausted-budget state/reconciliation; absent strategies/uncertain commits remain open.
+
+**Decision and deliverable:** Deliver error/attempt/time-budget/side-effect tables with nested call counts and uncertain timeout commits.
+
+For HTTP Retry-After units and syntax, see [RFC 9110 §10.2.3](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3); protocol syntax does not decide project retry policy.
+
 ## Minimum Coverage Checklist
 
 - retry policy and applicability

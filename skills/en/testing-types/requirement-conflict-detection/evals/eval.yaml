@@ -15,6 +15,9 @@ cases:
     - evals/cases/basic-success.yaml
     - evals/cases/edge-incomplete-input.yaml
     - evals/cases/edge-scope-boundary.yaml
+    - evals/cases/review-multi-rule-minimal-conflict.yaml
+    - evals/cases/review-role-version-nonconflict.yaml
+    - evals/cases/review-unknown-scope.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

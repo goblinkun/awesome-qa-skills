@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded authorization-testing
 - Read evals/eval.yaml and matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Extract subject roles, ownership, tenant, actions, fields, delegation scope/lifetime and revocation rules; build allow/deny/unknown cells.
+- Deliver subject/resource/action cells and revocation timelines, tracing allow and deny decisions without inferring global privileges from role names.
+- When deriving domain candidates, read and follow [prompts/authorization-testing.md](prompts/authorization-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only subject-resource-action relations, permission boundaries, denial paths, and delegation; do not log in, call real APIs, or read credentials.

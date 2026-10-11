@@ -25,6 +25,12 @@ description: Use this skill when you need to derive test-path candidates from so
 3. 事实、推断、建议和 Human 决策必须分开。
 4. 只提出后续验证意图，不写成已执行结果。
 
+## 领域执行要点
+
+- 从来源建立初始/终止状态、事件、guard、动作、目标及持久化模型，明确是行为模型而非随意列状态。
+- 交付可达图、实际候选路径、状态/边缺口与 oracle；不可达节点不能计为已覆盖。
+- 形成领域候选时，必须读取并遵循 [prompts/model-based-testing.md](prompts/model-based-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不创造模型节点、路径或版本，不把模型静态存在当作运行结果。

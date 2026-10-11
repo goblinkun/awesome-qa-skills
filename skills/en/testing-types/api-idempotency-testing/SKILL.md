@@ -27,6 +27,12 @@ Do not use it to execute tests, invent contract or behavior, replace a complete 
 3. Record AIT-## with the subject, preconditions, behavior of concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Extract key scope, payload equivalence, lifetime/expiry boundary, concurrency, and replay contracts. Separate response replay from order/payment/message side-effect obligations.
+- Deliver request sequence, responses, commit ledger, and contract decision per scenario; assess both side effects and response obligations.
+- When deriving domain candidates, read and follow [prompts/api-idempotency-testing.md](prompts/api-idempotency-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or responses, or treat candidate counts as coverage proof.

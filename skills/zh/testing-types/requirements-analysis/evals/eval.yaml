@@ -20,6 +20,8 @@ cases:
     - evals/cases/edge-incomplete-input.yaml
     - evals/cases/edge-risk-priority.yaml
     - evals/cases/edge-semantic-agent-judge.yaml
+    - evals/cases/review-state-rule-trace.yaml
+    - evals/cases/review-complete-analysis-control.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

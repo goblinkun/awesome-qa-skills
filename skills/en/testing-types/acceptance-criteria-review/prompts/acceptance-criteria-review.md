@@ -1,6 +1,6 @@
 # Acceptance Criteria Review Prompt
 
-Turn requirements and user stories into verifiable, unambiguous acceptance criteria that cover failure paths and produce an artifact that can be executed, reviewed, and tracked directly.
+Review existing acceptance criteria against their original rules, keep proposed rewrites separate, and identify missing rules and produce an artifact that can be executed, reviewed, and tracked directly.
 
 ## Role
 
@@ -38,6 +38,14 @@ If critical input is absent, list `Working Assumptions` and `Open Questions`, th
 - Reuse the current toolchain and assets; avoid large code samples unless the user requests them.
 - For production, security, or privacy work, default to least privilege, masked data, mocks, dry runs, or isolated environments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Select `review` (check existing criteria), `proposed-rewrite` (suggest a rewrite), or `missing-rule` (undefined policy). Retain each original AC ID, version, text, and source; a proposal never replaces the source rule.
+2. Produce: AC ID | original criterion | mode | observable oracle | proposed wording | reason for change | product confirmation. Leave undefined rules open.
+3. For each comparison, split below/equal/above inputs using the supplied operator. For repeated requests capture the business key, cumulative refund, refundable balance, and persisted state; a successful response does not prove correct accounting.
+4. Proposed Given/When/Then wording includes observable data and error paths. Mark a sufficiently defined criterion testable instead of manufacturing ambiguity.
 ## Minimum Coverage Checklist
 
 Unless the user narrows the scope, cover at least:

@@ -54,3 +54,17 @@ Unless returning **Not applicable**, include: **Summary, Facts, Evidence, Infere
 
 - Read only the mapped `prompts/` file after `stage` is valid. Read `evals/` for regression work, but never treat eval cases as project facts.
 - Do not replace evidence with a generic risk checklist, or present test recommendations, static reading, or stakeholder opinion as a passing execution result.
+
+## Report provenance
+
+Keep the selected `stage`, a stable `source_id`, and supplied `version` in the report header. If a source ID is absent, declare a temporary local locator; if version is absent, write unknown rather than inventing it. Each finding has a stable `finding_id`, its source/evidence locator and status. Each action links its finding and specifies the evidence that would close it; owner, date and action status stay unknown unless supplied. These are standalone report fields, not a dependency on another Skill.
+
+## Qualitative risk anchors
+
+Use impact, observed likelihood signals, and uncertainty together; this is judgment, not arithmetic multiplication or a new score. Unknown likelihood stays unknown.
+
+| Risk | Impact and likelihood evidence | Uncertainty/action |
+| --- | --- | --- |
+| High | Critical loss, blocking defect, or critical untested path; credible recurrence or unresolved exposure | Missing critical evidence prevents a confident low-risk claim; prioritize verification/escalation |
+| Medium | Bounded impact or partial evidence with a plausible failure path | State the missing evidence and targeted follow-up |
+| Low | Limited impact with supporting control evidence; no supplied critical exposure | State residual limits; do not equate low risk with release approval |

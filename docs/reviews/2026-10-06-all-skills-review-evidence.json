@@ -1,0 +1,1918 @@
+{
+  "date": "2026-10-06",
+  "head": "c61f507f61711c3c0f0d1777136a5a4ff0e211b3",
+  "reviewed_state": "working tree including pre-existing uncommitted changes",
+  "coverage": {
+    "canonical_skills": 164,
+    "language_directories": 328,
+    "recommendation_priorities": {
+      "P1": 71,
+      "P2": 93
+    }
+  },
+  "verification": {
+    "scope": "current working tree; static/configuration checks and offline helper reproduction only",
+    "evaluation_yaml": {
+      "ok": 328,
+      "fail": 0,
+      "command": "bash scripts/validate_skill_evals.sh"
+    },
+    "unit_tests": {
+      "tests": 191,
+      "result": "OK",
+      "command": "python3 -m unittest discover -s scripts/tests"
+    },
+    "python_ast": {
+      "files": 791,
+      "syntax_errors": 0
+    },
+    "not_run": [
+      "full model evaluations",
+      "target UI/API framework execution",
+      "CLI discovery/install smoke",
+      "production/business acceptance"
+    ]
+  },
+  "fixture_inputs": {
+    "curl": "curl 'https://example.test/orders' --data '{\"qty\":1}'",
+    "postman_url": "{{baseUrl}}/orders",
+    "bruno_url": "{{baseUrl}}/orders",
+    "markdown": "user_id >= -1; retry-count > 3; REQ-001",
+    "excel": {
+      "A1": {
+        "type": "inlineStr",
+        "value": "REQ-1"
+      },
+      "B1": null,
+      "C1": {
+        "type": "numeric",
+        "value": "42"
+      }
+    },
+    "writer": "密码必须至少 12 字符，不允许真实账号。",
+    "reviewer": "计算器：1+1=2。",
+    "strategy": "只需验证计算器：1+1=2。"
+  },
+  "actual_offline_outputs": {
+    "api-test-bruno": {
+      "curl_implicit_post": [
+        {
+          "method": "GET",
+          "path": "/orders",
+          "source": "fixture",
+          "raw_url": "https://example.test/orders",
+          "format": "curl"
+        }
+      ],
+      "postman_variable_url": [
+        {
+          "method": "GET",
+          "path": "/",
+          "source": "fixture",
+          "raw_url": "{{baseUrl}}/orders",
+          "format": "postman"
+        }
+      ],
+      "bruno_variable_url": [
+        {
+          "method": "GET",
+          "path": "/{{baseUrl}}/orders",
+          "source": "fixture",
+          "raw_url": "{{baseUrl}}/orders",
+          "format": "bruno"
+        }
+      ],
+      "yaml_dependency_available": false
+    },
+    "api-test-pytest": {
+      "curl_implicit_post": [
+        {
+          "method": "GET",
+          "path": "/orders",
+          "source": "fixture",
+          "raw_url": "https://example.test/orders",
+          "format": "curl"
+        }
+      ],
+      "postman_variable_url": [
+        {
+          "method": "GET",
+          "path": "/",
+          "source": "fixture",
+          "raw_url": "{{baseUrl}}/orders",
+          "format": "postman"
+        }
+      ],
+      "bruno_variable_url": [
+        {
+          "method": "GET",
+          "path": "/{{baseUrl}}/orders",
+          "source": "fixture",
+          "raw_url": "{{baseUrl}}/orders",
+          "format": "bruno"
+        }
+      ],
+      "yaml_dependency_available": false,
+      "wsdl": [
+        {
+          "method": "POST",
+          "path": "/soap/CreateOrder",
+          "source": "fixture",
+          "raw_url": "https://example.test/service",
+          "format": "wsdl",
+          "operation": "CreateOrder"
+        }
+      ]
+    },
+    "api-test-restassure": {
+      "curl_implicit_post": [
+        {
+          "method": "GET",
+          "path": "/orders",
+          "source": "fixture",
+          "raw_url": "https://example.test/orders",
+          "format": "curl"
+        }
+      ],
+      "postman_variable_url": [
+        {
+          "method": "GET",
+          "path": "/",
+          "source": "fixture",
+          "raw_url": "{{baseUrl}}/orders",
+          "format": "postman"
+        }
+      ],
+      "bruno_variable_url": [
+        {
+          "method": "GET",
+          "path": "/{{baseUrl}}/orders",
+          "source": "fixture",
+          "raw_url": "{{baseUrl}}/orders",
+          "format": "bruno"
+        }
+      ],
+      "yaml_dependency_available": false
+    },
+    "api-test-supertest": {
+      "curl_implicit_post": [
+        {
+          "method": "GET",
+          "path": "/orders",
+          "source": "fixture",
+          "raw_url": "https://example.test/orders",
+          "format": "curl"
+        }
+      ],
+      "postman_variable_url": [
+        {
+          "method": "GET",
+          "path": "/",
+          "source": "fixture",
+          "raw_url": "{{baseUrl}}/orders",
+          "format": "postman"
+        }
+      ],
+      "bruno_variable_url": [
+        {
+          "method": "GET",
+          "path": "/{{baseUrl}}/orders",
+          "source": "fixture",
+          "raw_url": "{{baseUrl}}/orders",
+          "format": "bruno"
+        }
+      ],
+      "yaml_dependency_available": false
+    },
+    "markdown_fidelity": {
+      "input": "user_id >= -1; retry-count > 3; REQ-001",
+      "parsed": "user id = 1; retry count 3; REQ 001"
+    },
+    "bruno_rendered_url": "url: {baseUrl}/orders",
+    "excel_inline_sparse": {
+      "input_cells": {
+        "A1": "REQ-1",
+        "C1": "42"
+      },
+      "parsed": {
+        "format": "excel",
+        "row_count": 1,
+        "sample_rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      }
+    },
+    "writer_foreign_domain": {
+      "title": "TC-001 密码必须至少 12 字符，不允许真实账号。",
+      "priority": "P0",
+      "type": "功能/接口",
+      "preconditions": "活动配置已生效，测试账号和库存数据已准备",
+      "steps": "1) 进入活动页 2) 执行与“密码必须至少 12 字符，不允许真实账号。”相关操作 3) 观察页面与接口返回",
+      "data": "测试账号、活动ID、礼品ID、资格条件参数",
+      "expected": "业务结果与规则一致，状态更新正确，无越权和异常漏处理",
+      "actual": "",
+      "status": "",
+      "remark": ""
+    },
+    "reviewer_foreign_domain": {
+      "评审标题": "Test-Case-Reviewer Plus 输出 - 测试用例评审结果",
+      "整体结论": "当前用例可用于基础回归，但不建议直接作为最终入库版本；需补齐高风险场景后再通过评审。",
+      "覆盖性评估": "主流程覆盖基本完整，但关键漏测点存在：并发冲突、失败回滚、权限绕过、边界值覆盖不足。",
+      "可执行性评估": "可执行性中等，发现问题：部分用例前置条件和测试数据描述不充分。",
+      "问题清单_P0": "库存一致性与回滚路径缺少强校验用例",
+      "问题清单_P1": "性能阈值和安全攻击场景覆盖不足",
+      "问题清单_P2": "部分文案不统一、步骤粒度不一致、可读性有提升空间。",
+      "缺失场景": "重复提交幂等、支付失败补偿、并发抢占冲突、资格边界、越权调用与风控拦截。",
+      "改进建议": "补充高风险异常与边界用例；统一前置条件/步骤/预期模板；为关键断言补充可观测指标与日志核验点。 参考文档：fixture。提示词摘要：...",
+      "补测计划": "先补P0再补P1：T+1完成用例补充，T+2完成评审回归，阻塞缺陷清零后再入库。"
+    },
+    "strategy_foreign_domain": {
+      "策略标题": "Test Strategy Plus 输出 - 业务活动质量保障策略",
+      "质量目标": "保障关键链路正确性、稳定性与安全性。重点：核心业务流程、资格校验、库存一致性；性能关注：高峰并发与稳定性验证。",
+      "范围_包含": "资格校验、活动参与、库存扣减、订单状态联动、失败回滚、幂等控制、关键接口与前端主流程。",
+      "范围_不包含": "非活动范围的历史模块重构验证、与当前发布无关的低风险边缘特性。",
+      "测试类型与覆盖": "功能+接口为P0，性能压测/稳定性为P1，安全与权限为P1，兼容与可访问性为P2；覆盖正常、异常、边界、并发冲突场景。",
+      "环境与工具": "独立测试环境（网关/服务/缓存/消息队列/数据库）+ API自动化 + UI回归 + 性能压测工具 + 安全扫描工具。",
+      "测试数据策略": "构造多层级用户与库存数据集，覆盖资格达标/不达标、库存充足/不足、重复提交、失败补偿；敏感数据脱敏。",
+      "准入准出标准": "准入：需求冻结、接口文档可用、环境联通；准出：P0用例通过率100%，P1通过率>=95%，阻塞缺陷清零，高风险项有结论。",
+      "风险与缓解": "风险：并发超卖、状态不一致、越权与刷单、回滚失败。缓解：前置压测、幂等校验、风控规则验证、补偿链路演练。补充：认证鉴权、越权、数据保护。",
+      "里程碑与角色": "里程碑：按项目节奏分阶段执行与评审。角色：QA负责人统筹策略与门禁，测试工程师执行分层测试，开发与SRE协同定位和修复。",
+      "交付物与度量": "交付物：测试策略、测试计划、用例集、缺陷报告、测试总结。度量：需求覆盖率、缺陷密度、通过率、回归耗时、线上问题逃逸率。来源文档：fixture。 提示词约束摘要：..."
+    }
+  },
+  "excel_implementations": {
+    "accessibility-testing": {
+      "source": "skills/zh/testing-types/accessibility-testing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "ai-assisted-testing": {
+      "source": "skills/zh/testing-types/ai-assisted-testing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "api-testing": {
+      "source": "skills/zh/testing-types/api-testing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "automation-testing": {
+      "source": "skills/zh/testing-types/automation-testing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "bug-reporting": {
+      "source": "skills/zh/testing-types/bug-reporting/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "code-review": {
+      "source": "skills/zh/testing-types/code-review/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "functional-testing": {
+      "source": "skills/zh/testing-types/functional-testing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "manual-testing": {
+      "source": "skills/zh/testing-types/manual-testing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "mobile-testing": {
+      "source": "skills/zh/testing-types/mobile-testing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "performance-testing": {
+      "source": "skills/zh/testing-types/performance-testing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "requirements-analysis": {
+      "source": "skills/zh/testing-types/requirements-analysis/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "requirements-analysis-plus": {
+      "source": "skills/zh/testing-types/requirements-analysis-plus/scripts/common_parser.py",
+      "actual": "42",
+      "inline_text_lost": true
+    },
+    "security-testing": {
+      "source": "skills/zh/testing-types/security-testing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "test-case-reviewer": {
+      "source": "skills/zh/testing-types/test-case-reviewer/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "test-case-reviewer-plus": {
+      "source": "skills/zh/testing-types/test-case-reviewer-plus/scripts/common_parser.py",
+      "actual": "42",
+      "inline_text_lost": true
+    },
+    "test-case-writing": {
+      "source": "skills/zh/testing-types/test-case-writing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "test-reporting": {
+      "source": "skills/zh/testing-types/test-reporting/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "test-strategy": {
+      "source": "skills/zh/testing-types/test-strategy/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "test-strategy-plus": {
+      "source": "skills/zh/testing-types/test-strategy-plus/scripts/common_parser.py",
+      "actual": "42",
+      "inline_text_lost": true
+    },
+    "testcase-writer-plus": {
+      "source": "skills/zh/testing-types/testcase-writer-plus/scripts/common_parser.py",
+      "actual": "42",
+      "inline_text_lost": true
+    },
+    "daily-testing-workflow": {
+      "source": "skills/zh/testing-workflows/daily-testing-workflow/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "discover-testing": {
+      "source": "skills/zh/testing-workflows/discover-testing/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "release-testing-workflow": {
+      "source": "skills/zh/testing-workflows/release-testing-workflow/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    },
+    "sprint-testing-workflow": {
+      "source": "skills/zh/testing-workflows/sprint-testing-workflow/scripts/convert_formats.py",
+      "actual": {
+        "title": "inline-sparse",
+        "rows": [
+          [
+            "",
+            "42"
+          ]
+        ]
+      },
+      "inline_text_lost": true
+    }
+  },
+  "skills": [
+    {
+      "name": "skill-change-verification",
+      "category": "skill-engineering",
+      "zh": "skills/zh/skill-engineering/skill-change-verification",
+      "en": "skills/en/skill-engineering/skill-change-verification",
+      "priority": "P1",
+      "primary_recommendation_kind": "contract"
+    },
+    {
+      "name": "skill-evaluation",
+      "category": "skill-engineering",
+      "zh": "skills/zh/skill-engineering/skill-evaluation",
+      "en": "skills/en/skill-engineering/skill-evaluation",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "skill-prose-review",
+      "category": "skill-engineering",
+      "zh": "skills/zh/skill-engineering/skill-prose-review",
+      "en": "skills/en/skill-engineering/skill-prose-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "skill-prose-trim",
+      "category": "skill-engineering",
+      "zh": "skills/zh/skill-engineering/skill-prose-trim",
+      "en": "skills/en/skill-engineering/skill-prose-trim",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "skill-quality-review",
+      "category": "skill-engineering",
+      "zh": "skills/zh/skill-engineering/skill-quality-review",
+      "en": "skills/en/skill-engineering/skill-quality-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "acceptance-criteria-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/acceptance-criteria-review",
+      "en": "skills/en/testing-types/acceptance-criteria-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "accessibility-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/accessibility-testing",
+      "en": "skills/en/testing-types/accessibility-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "agent-failure-recovery-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/agent-failure-recovery-testing",
+      "en": "skills/en/testing-types/agent-failure-recovery-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "agent-long-running-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/agent-long-running-testing",
+      "en": "skills/en/testing-types/agent-long-running-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "agent-loop-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/agent-loop-testing",
+      "en": "skills/en/testing-types/agent-loop-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "agent-memory-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/agent-memory-testing",
+      "en": "skills/en/testing-types/agent-memory-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "agent-permission-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/agent-permission-testing",
+      "en": "skills/en/testing-types/agent-permission-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "agent-tool-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/agent-tool-testing",
+      "en": "skills/en/testing-types/agent-tool-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "ai-agent-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ai-agent-testing",
+      "en": "skills/en/testing-types/ai-agent-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "ai-assisted-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ai-assisted-testing",
+      "en": "skills/en/testing-types/ai-assisted-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "ai-feature-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ai-feature-testing",
+      "en": "skills/en/testing-types/ai-feature-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "ai-generated-test-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ai-generated-test-review",
+      "en": "skills/en/testing-types/ai-generated-test-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "ai-safety-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ai-safety-testing",
+      "en": "skills/en/testing-types/ai-safety-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "api-contract-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-contract-testing",
+      "en": "skills/en/testing-types/api-contract-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "api-design-quality-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-design-quality-review",
+      "en": "skills/en/testing-types/api-design-quality-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "api-error-contract-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-error-contract-testing",
+      "en": "skills/en/testing-types/api-error-contract-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "api-idempotency-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-idempotency-testing",
+      "en": "skills/en/testing-types/api-idempotency-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "api-negative-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-negative-testing",
+      "en": "skills/en/testing-types/api-negative-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "api-pagination-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-pagination-testing",
+      "en": "skills/en/testing-types/api-pagination-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "api-rate-limit-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-rate-limit-testing",
+      "en": "skills/en/testing-types/api-rate-limit-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "api-schema-validation",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-schema-validation",
+      "en": "skills/en/testing-types/api-schema-validation",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "api-security-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-security-testing",
+      "en": "skills/en/testing-types/api-security-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "api-test-bruno",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-test-bruno",
+      "en": "skills/en/testing-types/api-test-bruno",
+      "priority": "P1",
+      "primary_recommendation_kind": "bug"
+    },
+    {
+      "name": "api-test-postman",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-test-postman",
+      "en": "skills/en/testing-types/api-test-postman",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "api-test-pytest",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-test-pytest",
+      "en": "skills/en/testing-types/api-test-pytest",
+      "priority": "P1",
+      "primary_recommendation_kind": "bug"
+    },
+    {
+      "name": "api-test-restassure",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-test-restassure",
+      "en": "skills/en/testing-types/api-test-restassure",
+      "priority": "P1",
+      "primary_recommendation_kind": "bug"
+    },
+    {
+      "name": "api-test-supertest",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-test-supertest",
+      "en": "skills/en/testing-types/api-test-supertest",
+      "priority": "P1",
+      "primary_recommendation_kind": "bug"
+    },
+    {
+      "name": "api-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-testing",
+      "en": "skills/en/testing-types/api-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "api-version-compatibility-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/api-version-compatibility-testing",
+      "en": "skills/en/testing-types/api-version-compatibility-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "authentication-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/authentication-testing",
+      "en": "skills/en/testing-types/authentication-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "authorization-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/authorization-testing",
+      "en": "skills/en/testing-types/authorization-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "automation-roi-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/automation-roi-analysis",
+      "en": "skills/en/testing-types/automation-roi-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "automation-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/automation-testing",
+      "en": "skills/en/testing-types/automation-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "boundary-value-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/boundary-value-testing",
+      "en": "skills/en/testing-types/boundary-value-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "bug-reporting",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/bug-reporting",
+      "en": "skills/en/testing-types/bug-reporting",
+      "priority": "P1",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "business-rule-extraction",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/business-rule-extraction",
+      "en": "skills/en/testing-types/business-rule-extraction",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "capacity-planning-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/capacity-planning-analysis",
+      "en": "skills/en/testing-types/capacity-planning-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "change-impact-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/change-impact-analysis",
+      "en": "skills/en/testing-types/change-impact-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "chaos-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/chaos-testing",
+      "en": "skills/en/testing-types/chaos-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "ci-test-optimization",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ci-test-optimization",
+      "en": "skills/en/testing-types/ci-test-optimization",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "circuit-breaker-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/circuit-breaker-testing",
+      "en": "skills/en/testing-types/circuit-breaker-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "code-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/code-review",
+      "en": "skills/en/testing-types/code-review",
+      "priority": "P1",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "combinatorial-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/combinatorial-testing",
+      "en": "skills/en/testing-types/combinatorial-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "cross-browser-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/cross-browser-testing",
+      "en": "skills/en/testing-types/cross-browser-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "database-design-quality-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/database-design-quality-review",
+      "en": "skills/en/testing-types/database-design-quality-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "decision-table-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/decision-table-testing",
+      "en": "skills/en/testing-types/decision-table-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "dependency-failure-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/dependency-failure-testing",
+      "en": "skills/en/testing-types/dependency-failure-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "disaster-recovery-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/disaster-recovery-testing",
+      "en": "skills/en/testing-types/disaster-recovery-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "distributed-trace-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/distributed-trace-analysis",
+      "en": "skills/en/testing-types/distributed-trace-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "edge-case-discovery",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/edge-case-discovery",
+      "en": "skills/en/testing-types/edge-case-discovery",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "equivalence-partitioning",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/equivalence-partitioning",
+      "en": "skills/en/testing-types/equivalence-partitioning",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "error-handling-design-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/error-handling-design-review",
+      "en": "skills/en/testing-types/error-handling-design-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "failover-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/failover-testing",
+      "en": "skills/en/testing-types/failover-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "flaky-test-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/flaky-test-analysis",
+      "en": "skills/en/testing-types/flaky-test-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "functional-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/functional-testing",
+      "en": "skills/en/testing-types/functional-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "bug"
+    },
+    {
+      "name": "llm-consistency-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/llm-consistency-testing",
+      "en": "skills/en/testing-types/llm-consistency-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "llm-evaluation-design",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/llm-evaluation-design",
+      "en": "skills/en/testing-types/llm-evaluation-design",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "llm-hallucination-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/llm-hallucination-testing",
+      "en": "skills/en/testing-types/llm-hallucination-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "llm-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/llm-testing",
+      "en": "skills/en/testing-types/llm-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "log-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/log-analysis",
+      "en": "skills/en/testing-types/log-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "manual-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/manual-testing",
+      "en": "skills/en/testing-types/manual-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "metamorphic-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/metamorphic-testing",
+      "en": "skills/en/testing-types/metamorphic-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "metrics-anomaly-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/metrics-anomaly-analysis",
+      "en": "skills/en/testing-types/metrics-anomaly-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "mobile-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/mobile-testing",
+      "en": "skills/en/testing-types/mobile-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "mock-quality-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/mock-quality-review",
+      "en": "skills/en/testing-types/mock-quality-review",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "model-based-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/model-based-testing",
+      "en": "skills/en/testing-types/model-based-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "multi-agent-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/multi-agent-testing",
+      "en": "skills/en/testing-types/multi-agent-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "mutation-testing-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/mutation-testing-analysis",
+      "en": "skills/en/testing-types/mutation-testing-analysis",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "negative-scenario-discovery",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/negative-scenario-discovery",
+      "en": "skills/en/testing-types/negative-scenario-discovery",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "observability-design-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/observability-design-review",
+      "en": "skills/en/testing-types/observability-design-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "pairwise-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/pairwise-testing",
+      "en": "skills/en/testing-types/pairwise-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "performance-bottleneck-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/performance-bottleneck-analysis",
+      "en": "skills/en/testing-types/performance-bottleneck-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "performance-regression-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/performance-regression-analysis",
+      "en": "skills/en/testing-types/performance-regression-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "performance-result-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/performance-result-analysis",
+      "en": "skills/en/testing-types/performance-result-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "performance-test-gatling",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/performance-test-gatling",
+      "en": "skills/en/testing-types/performance-test-gatling",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "performance-test-jmeter",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/performance-test-jmeter",
+      "en": "skills/en/testing-types/performance-test-jmeter",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "performance-test-k6",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/performance-test-k6",
+      "en": "skills/en/testing-types/performance-test-k6",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "performance-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/performance-testing",
+      "en": "skills/en/testing-types/performance-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "bug"
+    },
+    {
+      "name": "performance-workload-modeling",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/performance-workload-modeling",
+      "en": "skills/en/testing-types/performance-workload-modeling",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "pr-test-impact-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/pr-test-impact-analysis",
+      "en": "skills/en/testing-types/pr-test-impact-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "production-incident-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/production-incident-analysis",
+      "en": "skills/en/testing-types/production-incident-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "production-verification",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/production-verification",
+      "en": "skills/en/testing-types/production-verification",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "prompt-injection-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/prompt-injection-testing",
+      "en": "skills/en/testing-types/prompt-injection-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "prompt-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/prompt-testing",
+      "en": "skills/en/testing-types/prompt-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "property-based-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/property-based-testing",
+      "en": "skills/en/testing-types/property-based-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "quality-dashboard-design",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/quality-dashboard-design",
+      "en": "skills/en/testing-types/quality-dashboard-design",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "quality-debt-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/quality-debt-analysis",
+      "en": "skills/en/testing-types/quality-debt-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "quality-gate-design",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/quality-gate-design",
+      "en": "skills/en/testing-types/quality-gate-design",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "quality-maturity-assessment",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/quality-maturity-assessment",
+      "en": "skills/en/testing-types/quality-maturity-assessment",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "quality-metrics-design",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/quality-metrics-design",
+      "en": "skills/en/testing-types/quality-metrics-design",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "quality-productivity-metrics",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/quality-productivity-metrics",
+      "en": "skills/en/testing-types/quality-productivity-metrics",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "quality-risk-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/quality-risk-analysis",
+      "en": "skills/en/testing-types/quality-risk-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "rag-quality-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/rag-quality-testing",
+      "en": "skills/en/testing-types/rag-quality-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "rag-retrieval-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/rag-retrieval-testing",
+      "en": "skills/en/testing-types/rag-retrieval-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "recovery-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/recovery-testing",
+      "en": "skills/en/testing-types/recovery-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "regression-optimization",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/regression-optimization",
+      "en": "skills/en/testing-types/regression-optimization",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "regression-scope-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/regression-scope-analysis",
+      "en": "skills/en/testing-types/regression-scope-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "regression-test-selection",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/regression-test-selection",
+      "en": "skills/en/testing-types/regression-test-selection",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "reliability-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/reliability-testing",
+      "en": "skills/en/testing-types/reliability-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "requirement-ambiguity-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/requirement-ambiguity-analysis",
+      "en": "skills/en/testing-types/requirement-ambiguity-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "requirement-conflict-detection",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/requirement-conflict-detection",
+      "en": "skills/en/testing-types/requirement-conflict-detection",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "requirement-consistency-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/requirement-consistency-analysis",
+      "en": "skills/en/testing-types/requirement-consistency-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "requirement-gap-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/requirement-gap-analysis",
+      "en": "skills/en/testing-types/requirement-gap-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "requirement-quality-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/requirement-quality-review",
+      "en": "skills/en/testing-types/requirement-quality-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "requirement-traceability-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/requirement-traceability-analysis",
+      "en": "skills/en/testing-types/requirement-traceability-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "requirements-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/requirements-analysis",
+      "en": "skills/en/testing-types/requirements-analysis",
+      "priority": "P1",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "requirements-analysis-plus",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/requirements-analysis-plus",
+      "en": "skills/en/testing-types/requirements-analysis-plus",
+      "priority": "P1",
+      "primary_recommendation_kind": "bug"
+    },
+    {
+      "name": "resilience-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/resilience-testing",
+      "en": "skills/en/testing-types/resilience-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "retry-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/retry-testing",
+      "en": "skills/en/testing-types/retry-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "risk-based-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/risk-based-testing",
+      "en": "skills/en/testing-types/risk-based-testing",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "root-cause-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/root-cause-analysis",
+      "en": "skills/en/testing-types/root-cause-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "secrets-exposure-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/secrets-exposure-review",
+      "en": "skills/en/testing-types/secrets-exposure-review",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "security-requirement-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/security-requirement-review",
+      "en": "skills/en/testing-types/security-requirement-review",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "security-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/security-testing",
+      "en": "skills/en/testing-types/security-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "session-security-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/session-security-testing",
+      "en": "skills/en/testing-types/session-security-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "state-transition-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/state-transition-testing",
+      "en": "skills/en/testing-types/state-transition-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "technical-design-quality-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/technical-design-quality-review",
+      "en": "skills/en/testing-types/technical-design-quality-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "test-case-reviewer",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-case-reviewer",
+      "en": "skills/en/testing-types/test-case-reviewer",
+      "priority": "P1",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "test-case-reviewer-plus",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-case-reviewer-plus",
+      "en": "skills/en/testing-types/test-case-reviewer-plus",
+      "priority": "P1",
+      "primary_recommendation_kind": "bug"
+    },
+    {
+      "name": "test-case-writing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-case-writing",
+      "en": "skills/en/testing-types/test-case-writing",
+      "priority": "P1",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "test-code-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-code-review",
+      "en": "skills/en/testing-types/test-code-review",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "test-data-generation",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-data-generation",
+      "en": "skills/en/testing-types/test-data-generation",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "test-data-requirement-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-data-requirement-analysis",
+      "en": "skills/en/testing-types/test-data-requirement-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "test-effectiveness-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-effectiveness-analysis",
+      "en": "skills/en/testing-types/test-effectiveness-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "test-gap-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-gap-analysis",
+      "en": "skills/en/testing-types/test-gap-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "test-maintenance-cost-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-maintenance-cost-analysis",
+      "en": "skills/en/testing-types/test-maintenance-cost-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "test-report-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-report-review",
+      "en": "skills/en/testing-types/test-report-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "test-reporting",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-reporting",
+      "en": "skills/en/testing-types/test-reporting",
+      "priority": "P1",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "test-runtime-optimization",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-runtime-optimization",
+      "en": "skills/en/testing-types/test-runtime-optimization",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "test-scope-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-scope-analysis",
+      "en": "skills/en/testing-types/test-scope-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "test-strategy",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-strategy",
+      "en": "skills/en/testing-types/test-strategy",
+      "priority": "P1",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "test-strategy-plus",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-strategy-plus",
+      "en": "skills/en/testing-types/test-strategy-plus",
+      "priority": "P1",
+      "primary_recommendation_kind": "bug"
+    },
+    {
+      "name": "test-strategy-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-strategy-review",
+      "en": "skills/en/testing-types/test-strategy-review",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "test-suite-health-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/test-suite-health-analysis",
+      "en": "skills/en/testing-types/test-suite-health-analysis",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "testability-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/testability-analysis",
+      "en": "skills/en/testing-types/testability-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "testcase-writer-plus",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/testcase-writer-plus",
+      "en": "skills/en/testing-types/testcase-writer-plus",
+      "priority": "P1",
+      "primary_recommendation_kind": "bug"
+    },
+    {
+      "name": "testing-bottleneck-analysis",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/testing-bottleneck-analysis",
+      "en": "skills/en/testing-types/testing-bottleneck-analysis",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "threat-modeling",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/threat-modeling",
+      "en": "skills/en/testing-types/threat-modeling",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "timeout-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/timeout-testing",
+      "en": "skills/en/testing-types/timeout-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "ui-test-cypress",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ui-test-cypress",
+      "en": "skills/en/testing-types/ui-test-cypress",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "ui-test-playwright",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ui-test-playwright",
+      "en": "skills/en/testing-types/ui-test-playwright",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "ui-test-puppeteer",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ui-test-puppeteer",
+      "en": "skills/en/testing-types/ui-test-puppeteer",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "ui-test-selector-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ui-test-selector-review",
+      "en": "skills/en/testing-types/ui-test-selector-review",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "ui-test-selenium",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ui-test-selenium",
+      "en": "skills/en/testing-types/ui-test-selenium",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "ui-test-strategy",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ui-test-strategy",
+      "en": "skills/en/testing-types/ui-test-strategy",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "ui-test-testcafe",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ui-test-testcafe",
+      "en": "skills/en/testing-types/ui-test-testcafe",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "ui-test-wait-strategy-review",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ui-test-wait-strategy-review",
+      "en": "skills/en/testing-types/ui-test-wait-strategy-review",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "ui-test-webdriverio",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/ui-test-webdriverio",
+      "en": "skills/en/testing-types/ui-test-webdriverio",
+      "priority": "P2",
+      "primary_recommendation_kind": "enhance"
+    },
+    {
+      "name": "visual-regression-testing",
+      "category": "testing-types",
+      "zh": "skills/zh/testing-types/visual-regression-testing",
+      "en": "skills/en/testing-types/visual-regression-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "gap"
+    },
+    {
+      "name": "daily-testing-workflow",
+      "category": "testing-workflows",
+      "zh": "skills/zh/testing-workflows/daily-testing-workflow",
+      "en": "skills/en/testing-workflows/daily-testing-workflow",
+      "priority": "P1",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "discover-testing",
+      "category": "testing-workflows",
+      "zh": "skills/zh/testing-workflows/discover-testing",
+      "en": "skills/en/testing-workflows/discover-testing",
+      "priority": "P1",
+      "primary_recommendation_kind": "routing"
+    },
+    {
+      "name": "multi-role-quality-synthesis",
+      "category": "testing-workflows",
+      "zh": "skills/zh/testing-workflows/multi-role-quality-synthesis",
+      "en": "skills/en/testing-workflows/multi-role-quality-synthesis",
+      "priority": "P2",
+      "primary_recommendation_kind": "eval"
+    },
+    {
+      "name": "product-quality-perspective",
+      "category": "testing-workflows",
+      "zh": "skills/zh/testing-workflows/product-quality-perspective",
+      "en": "skills/en/testing-workflows/product-quality-perspective",
+      "priority": "P2",
+      "primary_recommendation_kind": "coverage"
+    },
+    {
+      "name": "project-delivery-perspective",
+      "category": "testing-workflows",
+      "zh": "skills/zh/testing-workflows/project-delivery-perspective",
+      "en": "skills/en/testing-workflows/project-delivery-perspective",
+      "priority": "P2",
+      "primary_recommendation_kind": "coverage"
+    },
+    {
+      "name": "qa-quality-perspective",
+      "category": "testing-workflows",
+      "zh": "skills/zh/testing-workflows/qa-quality-perspective",
+      "en": "skills/en/testing-workflows/qa-quality-perspective",
+      "priority": "P2",
+      "primary_recommendation_kind": "coverage"
+    },
+    {
+      "name": "release-testing-workflow",
+      "category": "testing-workflows",
+      "zh": "skills/zh/testing-workflows/release-testing-workflow",
+      "en": "skills/en/testing-workflows/release-testing-workflow",
+      "priority": "P1",
+      "primary_recommendation_kind": "contract"
+    },
+    {
+      "name": "sprint-testing-workflow",
+      "category": "testing-workflows",
+      "zh": "skills/zh/testing-workflows/sprint-testing-workflow",
+      "en": "skills/en/testing-workflows/sprint-testing-workflow",
+      "priority": "P1",
+      "primary_recommendation_kind": "adaptability"
+    },
+    {
+      "name": "technical-quality-perspective",
+      "category": "testing-workflows",
+      "zh": "skills/zh/testing-workflows/technical-quality-perspective",
+      "en": "skills/en/testing-workflows/technical-quality-perspective",
+      "priority": "P2",
+      "primary_recommendation_kind": "coverage"
+    },
+    {
+      "name": "ux-quality-perspective",
+      "category": "testing-workflows",
+      "zh": "skills/zh/testing-workflows/ux-quality-perspective",
+      "en": "skills/en/testing-workflows/ux-quality-perspective",
+      "priority": "P2",
+      "primary_recommendation_kind": "coverage"
+    }
+  ],
+  "source_sha256": {
+    "skills/en/testing-types/accessibility-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/ai-assisted-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/api-test-bruno/scripts/generate_bruno_requests.py": "0f6b435e56b24f014976c71a07de01545ed548ceb634aac93b612dec90cf2320",
+    "skills/en/testing-types/api-test-bruno/scripts/parse_api_sources.py": "4b7868813044fc8b22166cd5c48f2a50aa16bff7f67fca37718065ab14891c12",
+    "skills/en/testing-types/api-test-pytest/scripts/generate_pytest_tests.py": "a1282a2d213c9dbee56e37102efc9e9d347e5a8c1c458f0699d1ef81fa88b7e3",
+    "skills/en/testing-types/api-test-pytest/scripts/parse_api_sources.py": "4b7868813044fc8b22166cd5c48f2a50aa16bff7f67fca37718065ab14891c12",
+    "skills/en/testing-types/api-test-restassure/scripts/generate_restassured_tests.py": "c0a25832aca28ab9f675fc78a39b71552b7df370f44cbf3823caad86040aaebf",
+    "skills/en/testing-types/api-test-restassure/scripts/parse_api_sources.py": "4b7868813044fc8b22166cd5c48f2a50aa16bff7f67fca37718065ab14891c12",
+    "skills/en/testing-types/api-test-supertest/scripts/generate_supertest_tests.py": "88f883c5eb26a130b62851c72175c54ab10f45953eec1412ad0ec7d0462db2ab",
+    "skills/en/testing-types/api-test-supertest/scripts/parse_api_sources.py": "2ae73b15b8762654abd8a3f1b7f9222eb868b1b2c3220c86c65526a147e32858",
+    "skills/en/testing-types/api-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/automation-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/bug-reporting/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/code-review/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/functional-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/functional-testing/scripts/parse_formats.py": "564dc3bafce784a3f6937bd820167f79c17eb8c14fbd9a3e62303915b9de1ab4",
+    "skills/en/testing-types/manual-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/mobile-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/performance-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/performance-testing/scripts/parse_formats.py": "564dc3bafce784a3f6937bd820167f79c17eb8c14fbd9a3e62303915b9de1ab4",
+    "skills/en/testing-types/requirements-analysis-plus/scripts/common_parser.py": "ed107355453ed42c4cc4b09898874aa79a1f5f9d83323939dfe0354b62708749",
+    "skills/en/testing-types/requirements-analysis/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/security-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/test-case-reviewer-plus/scripts/common_parser.py": "c25f99ae6c9e0469f871fdf7d49a4afd8c1e7af32881fd130fa3d1b3923a82e1",
+    "skills/en/testing-types/test-case-reviewer-plus/scripts/run_review.py": "4cf713bad43504f9030f6934f9d876c714b738b961392961e928d3a4935ebbb0",
+    "skills/en/testing-types/test-case-reviewer/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/test-case-writing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/test-reporting/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/test-strategy-plus/scripts/common_parser.py": "c25f99ae6c9e0469f871fdf7d49a4afd8c1e7af32881fd130fa3d1b3923a82e1",
+    "skills/en/testing-types/test-strategy-plus/scripts/run_strategy.py": "78f008aaf9e11561a63de2c89d8da6e82e2dc072df4584f14a6d7c9a6e1078e7",
+    "skills/en/testing-types/test-strategy/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-types/testcase-writer-plus/scripts/common_parser.py": "c25f99ae6c9e0469f871fdf7d49a4afd8c1e7af32881fd130fa3d1b3923a82e1",
+    "skills/en/testing-types/testcase-writer-plus/scripts/run_writer.py": "01e6fb313ddab70f6108859a07118213e7bf54dc70920c3777f4dc3244bf5636",
+    "skills/en/testing-workflows/daily-testing-workflow/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-workflows/discover-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-workflows/release-testing-workflow/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/en/testing-workflows/sprint-testing-workflow/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/accessibility-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/ai-assisted-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/api-test-bruno/scripts/generate_bruno_requests.py": "0f6b435e56b24f014976c71a07de01545ed548ceb634aac93b612dec90cf2320",
+    "skills/zh/testing-types/api-test-bruno/scripts/parse_api_sources.py": "4b7868813044fc8b22166cd5c48f2a50aa16bff7f67fca37718065ab14891c12",
+    "skills/zh/testing-types/api-test-pytest/scripts/generate_pytest_tests.py": "a1282a2d213c9dbee56e37102efc9e9d347e5a8c1c458f0699d1ef81fa88b7e3",
+    "skills/zh/testing-types/api-test-pytest/scripts/parse_api_sources.py": "4b7868813044fc8b22166cd5c48f2a50aa16bff7f67fca37718065ab14891c12",
+    "skills/zh/testing-types/api-test-restassure/scripts/generate_restassured_tests.py": "c0a25832aca28ab9f675fc78a39b71552b7df370f44cbf3823caad86040aaebf",
+    "skills/zh/testing-types/api-test-restassure/scripts/parse_api_sources.py": "4b7868813044fc8b22166cd5c48f2a50aa16bff7f67fca37718065ab14891c12",
+    "skills/zh/testing-types/api-test-supertest/scripts/generate_supertest_tests.py": "88f883c5eb26a130b62851c72175c54ab10f45953eec1412ad0ec7d0462db2ab",
+    "skills/zh/testing-types/api-test-supertest/scripts/parse_api_sources.py": "2ae73b15b8762654abd8a3f1b7f9222eb868b1b2c3220c86c65526a147e32858",
+    "skills/zh/testing-types/api-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/automation-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/bug-reporting/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/code-review/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/functional-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/functional-testing/scripts/parse_formats.py": "564dc3bafce784a3f6937bd820167f79c17eb8c14fbd9a3e62303915b9de1ab4",
+    "skills/zh/testing-types/manual-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/mobile-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/performance-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/performance-testing/scripts/parse_formats.py": "564dc3bafce784a3f6937bd820167f79c17eb8c14fbd9a3e62303915b9de1ab4",
+    "skills/zh/testing-types/requirements-analysis-plus/scripts/common_parser.py": "ed107355453ed42c4cc4b09898874aa79a1f5f9d83323939dfe0354b62708749",
+    "skills/zh/testing-types/requirements-analysis/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/security-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/test-case-reviewer-plus/scripts/common_parser.py": "c25f99ae6c9e0469f871fdf7d49a4afd8c1e7af32881fd130fa3d1b3923a82e1",
+    "skills/zh/testing-types/test-case-reviewer-plus/scripts/run_review.py": "4cf713bad43504f9030f6934f9d876c714b738b961392961e928d3a4935ebbb0",
+    "skills/zh/testing-types/test-case-reviewer/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/test-case-writing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/test-reporting/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/test-strategy-plus/scripts/common_parser.py": "c25f99ae6c9e0469f871fdf7d49a4afd8c1e7af32881fd130fa3d1b3923a82e1",
+    "skills/zh/testing-types/test-strategy-plus/scripts/run_strategy.py": "78f008aaf9e11561a63de2c89d8da6e82e2dc072df4584f14a6d7c9a6e1078e7",
+    "skills/zh/testing-types/test-strategy/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-types/testcase-writer-plus/scripts/common_parser.py": "c25f99ae6c9e0469f871fdf7d49a4afd8c1e7af32881fd130fa3d1b3923a82e1",
+    "skills/zh/testing-types/testcase-writer-plus/scripts/run_writer.py": "01e6fb313ddab70f6108859a07118213e7bf54dc70920c3777f4dc3244bf5636",
+    "skills/zh/testing-workflows/daily-testing-workflow/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-workflows/discover-testing/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-workflows/release-testing-workflow/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+    "skills/zh/testing-workflows/sprint-testing-workflow/scripts/convert_formats.py": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3"
+  }
+}

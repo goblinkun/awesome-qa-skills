@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded the relationship betw
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/test-effectiveness-analysis.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Map obligation/fault class→test ID→real production behavior→effective assertion→escaping defect. Pass/coverage rates are signals, not fault-detection proof.
+2. Historical escapes retain observation window, exposure, detection/misses, and sources. Controlled fault injections use separate denominators, controls, environment, and mutation identity; do not pool them into production-defect rates.
+3. Verify failures came from the intended business assertion; environment errors/timeouts are not automatically valid detections. Give candidate causes/minimal independent checks without claiming causation from correlation.
+4. Report detected/missed/unexecuted faults by class with residual uncertainty, prioritizing critical oracles. Without fault/escape data deliver an evaluation plan, not effectiveness proof.
 
 ## Core Constraints
 

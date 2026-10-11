@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Map obligation/fault class→test ID→real production behavior→effective assertion→escaping defect. Pass/coverage rates are signals, not fault-detection proof.
+2. Historical escapes retain observation window, exposure, detection/misses, and sources. Controlled fault injections use separate denominators, controls, environment, and mutation identity; do not pool them into production-defect rates.
+3. Verify failures came from the intended business assertion; environment errors/timeouts are not automatically valid detections. Give candidate causes/minimal independent checks without claiming causation from correlation.
+4. Report detected/missed/unexecuted faults by class with residual uncertainty, prioritizing critical oracles. Without fault/escape data deliver an evaluation plan, not effectiveness proof.
+
 ## Minimum Coverage Checklist
 
 - test signal, risk coverage, missed-detection limit, false signal, validation plan

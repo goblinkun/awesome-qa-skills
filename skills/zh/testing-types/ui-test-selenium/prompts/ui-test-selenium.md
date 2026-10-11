@@ -24,6 +24,15 @@
 - 优先给可维护的测试组织方式，不输出一次性大脚本。
 - 信息不完整时，先给可用第一版，并标清假设。
 
+## 领域操作与判定
+
+以下步骤对提供材料进行设计或静态核对；fixture 判定、候选方案与真实执行证据分别记录。项目未提供的规则、门槛和授权保持待确认。
+
+1. 固定项目Selenium/binding/browser/driver/Grid版本、capabilities和runner，生成兼容配置与POM；未提供Grid不自建拓扑，版本冲突先诊断。
+2. 显式等待可观察条件（元素可交互、业务状态/窗口/URL达成），区分presence/visibility/业务ready；不混用implicit/explicit或以固定sleep修复所有时序。
+3. rerender导致stale时依稳定locator重新查找并等待新状态，有限重试按项目策略；不能盲目重放付款动作引入重复效果。
+4. 每并行session独立账号/业务键；try/finally driver.quit，失败留截图/日志/Grid session与原错误；重新渲染、业务失败、异常退出对照都需检查资源和失败传播。
+
 ## 最低覆盖清单
 
 除非用户明确缩小范围，输出至少覆盖：

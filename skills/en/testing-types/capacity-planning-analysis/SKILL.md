@@ -27,10 +27,18 @@ description: Use this skill when you need to assess capacity demand, headroom, c
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/capacity-planning-analysis.md`; it is the complete execution specification for this skill.
 - For evaluation or regression, read `evals/eval.yaml` and the relevant cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
 
+## Domain Execution Essentials
+
+1. For each point record environment/config/instances, workload mix, arrival/completion throughput, latency percentiles, errors, CPU/memory/queues, and window. Trace measurement→SLO→candidate capacity.
+2. Estimate only within measured SLO-acceptable regions. CPU percentage cannot linearly predict throughput; unmeasured points remain candidates constrained by downstream saturation/scaling delay.
+3. Under supplied constant-rate/queue assumptions, scaling-wait backlog=max(0,arrivals−validated service rate)×wait seconds; check backlog latency/recovery, not only totals.
+4. Use measured or explicitly conditional capacity after project-specified instance/dependency failure. Missing failure data cannot establish adequate headroom; margin, growth, cost, and acceptance come from the project.
 ## Core Constraints
 
 - use ranges instead of false precision when data is missing

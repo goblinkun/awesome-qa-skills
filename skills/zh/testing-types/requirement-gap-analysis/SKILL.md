@@ -27,9 +27,18 @@ description: Use this skill when you need to find missing, conflicting, or untes
 
 ## 参考文件
 
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
+
 - 每次执行必须读取 `prompts/requirement-gap-analysis.md`；它是本 Skill 的完整执行规范。
 - 需要评测或回归本 Skill 时，读取 `evals/eval.yaml` 与匹配的 `evals/cases/` 用例。
 - 只有目录实际存在且任务需要时，才读取 `references/`、`examples/`、`scripts/` 或 `output-formats.md`，不要假设不存在的资产。
+
+## 领域执行要点
+
+1. 以范围/版本和适用角色、状态、规则、异常、关闭条件建立需求清单；每项注明来源与已提供材料覆盖，不把通常清单强套到不适用产品。
+2. 分列MISSING_RULE（确认相关但规则未定义）、MISSING_MATERIAL（引用资料未提供）、CONFLICT（已提供规则冲突）、N/A（有范围理由不适用）与COMPLETE。
+3. 缺口给原需求ID、缺失内容、影响场景、阻塞程度、责任人和最小澄清；空文档或未见字段不自动证明产品缺陷。
+4. 关闭需权威补充规则/来源版本与可测试预期，并更新追踪；建议填法未经批准保持proposal，定义充分的正确对照不得报缺口。
 
 ## 核心约束
 

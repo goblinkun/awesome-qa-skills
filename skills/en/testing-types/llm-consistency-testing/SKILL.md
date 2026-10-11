@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded repeat inputs, versio
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/llm-consistency-testing.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Fix sample ID, model/prompt/tool/data versions, temperature, seed where supported, and other sampling parameters, with project-supplied repetition counts. Equal seeds do not establish reproducibility across versions.
+2. Check structural invariants first: schema, required fields, enums, and policy. Then compare semantic decisions using the project rubric; permitted paraphrases/order changes are not failures.
+3. Report repeated-trial denominators, structural/semantic failure counts, and intermittent failures per sample. Variance needs a named numeric variable, unit, and formula; wording difference rates are not quality variance.
+4. Single observations establish no repeated consistency. Missing rubrics leave semantic consistency UNKNOWN. Separate parameter/version groups rather than pooling them as stability evidence.
 
 ## Core Constraints
 

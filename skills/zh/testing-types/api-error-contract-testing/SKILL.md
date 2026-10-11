@@ -27,6 +27,12 @@ description: Use this skill when you need to review API error shape, status, cod
 3. 用 AEC-## 记录对象、前置条件、关注行为、来源证据和验证方法，保留影响/优先级、责任角色、关闭条件和证据状态。
 4. 材料冲突、缺少约束或没有执行证据时，保留双方和待确认问题。
 
+## 领域执行要点
+
+- 按 operation 与错误触发建立契约表：HTTP 状态、业务码、必需字段/类型、关联 ID、重试含义和脱敏规则；允许有来源的 operation 例外。
+- 交付 operation×错误的一致性表，逐项保留契约预期、响应观察和来源；只有违反适用规则才列发现，差异本身不是缺陷。
+- 形成领域候选时，必须读取并遵循 [prompts/api-error-contract-testing.md](prompts/api-error-contract-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不执行测试，不假设未提供的规则、版本、阈值、数据或响应，不把候选数量当作覆盖证明。

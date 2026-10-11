@@ -40,6 +40,15 @@ If critical input is absent, list `Working Assumptions` and `Open Questions`, th
 - Reuse the current toolchain and assets; avoid large code samples unless the user requests them.
 - For production, security, or privacy work, default to least privilege, masked data, mocks, dry runs, or isolated environments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Describe each input with value, unit, timezone/window, source, and coverage. Requests/transactions/sessions/users are distinct; convert through transaction mix and requests per transaction with retries/background traffic noted.
+2. Daily volume gives an all-day average only. Peak rate requires peak-share volume and window width; missing width yields a conditional formula/range, never invented peak duration/multipliers.
+3. Choose open arrival or closed concurrency explicitly. Use Little's Law L=λW only within a steady window and consistent units; online/daily-active users are not concurrency.
+4. Provide candidate curves, sourced session lengths/think times, and verification. Check observed arrivals/completions/mix; unconfirmed values are no production-capacity conclusion.
+
 ## Minimum Coverage Checklist
 
 Unless the user narrows the scope, cover at least:

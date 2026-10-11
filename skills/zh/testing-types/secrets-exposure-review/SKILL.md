@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded secrets-exposure-revi
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 按已授权材料盘点代码、配置、CI、日志、产物和历史位置，记录候选的路径/行号、类别及脱敏指纹，不复制值或自行读取真实凭据。
+- 交付脱敏位置与生命周期风险表，风险等级根据暴露/用途证据，候选有效性保持未知。
+- 形成领域候选时，必须读取并遵循 [prompts/secrets-exposure-review.md](prompts/secrets-exposure-review.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析敏感信息位置、流转、日志暴露、配置边界和轮换证据，不登录系统、不调用真实 API、不读取凭据。

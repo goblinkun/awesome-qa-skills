@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not inject faults, access real dependencies, read credentials, or call production systems.
 - Do not upgrade file presence, names, templates, or dry-runs into execution, passing, coverage, or release evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Extract primary/standby roles, automatic/manual triggers, health detection, routing, fencing/write authority, failback and business-RTO definitions.
+2. Build partition timelines for detection, election, old-primary isolation, routing and readiness, tracking writers and request destinations per phase.
+3. Relate dual-primary, old-writer activity, stale routing and duplicate handling to commit ledgers; traffic movement does not establish fencing or consistency.
+4. Check reconciliation, failback gates, replication lag and rollback; calculate RTO from business readiness and leave unspecified consistency/loss goals open rather than claiming zero loss.
+
+**Decision and deliverable:** Deliver node/routing/write-authority timelines, ledger conflicts and recovery/failback oracles, assessing availability and single-writer consistency separately.
+
 ## Minimum Coverage Checklist
 
 - failover path and applicability

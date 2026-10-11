@@ -11,7 +11,7 @@ input:
 
 expect:
   must_contain:
-    - "entry"
+    - "Entry gate"
     - "handoff"
   must_not_contain:
     - "TODO"

@@ -1,0 +1,1 @@
+Static parsing found a blocker: `evals/cases/success.yaml:3` contains an unquoted colon followed by a space, so the case is invalid YAML. I’m applying verification-before-completion to finish the remaining static checks and confirm the fixture is unchanged.

@@ -12,6 +12,10 @@ description: Use this skill when you need to route a request to the right testin
 - 需要在执行前先判断应该用哪个测试 skill。
 - 一个请求同时涉及多个测试方向或多个阶段。
 
+## 全量清单与可用性
+
+先读取 `references/skill-capability-inventory.json` 检查精确 canonical ID。该文件是 2026-10-06 目录快照，164 个 ID 的目录存在不等于当前 Host 已安装/可调用；安装证据缺失则 availability=`UNKNOWN`，用户明确未安装则 `UNAVAILABLE`。命中专项产出（认证 vs 授权、检索 vs 回答质量、影响范围 vs 回归选择）时优先匹配专项，只有意图相符才套通用 Composition 路线。仍只给一个主 Skill 和至多一个辅助；目标不可用时说明缺口与最小安装/交接动作，不宣称已调用。
+
 ## 执行流程
 
 1. 先读取同目录 `reference.md`，优先匹配其中一条结构化路线；该文件是独立安装时唯一需要的 Composition 参考。

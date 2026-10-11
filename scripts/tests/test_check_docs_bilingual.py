@@ -12,6 +12,35 @@ from scripts.check_docs_bilingual import (
 
 
 class DocsBilingualCheckTest(unittest.TestCase):
+    def test_sqet_entrypoints_are_registered_as_bilingual_project_pairs(self):
+        expected_pairs = (
+            (
+                "docs/skill-quality-engineering/README.md",
+                "docs/skill-quality-engineering/README_EN.md",
+            ),
+            (
+                "docs/skill-quality-engineering/SKILL_QUALITY_EVALUATION_MODEL.md",
+                "docs/skill-quality-engineering/SKILL_QUALITY_EVALUATION_MODEL_EN.md",
+            ),
+            (
+                "docs/skill-quality-engineering/SKILL_EVAL_CONTRACT.md",
+                "docs/skill-quality-engineering/SKILL_EVAL_CONTRACT_EN.md",
+            ),
+            (
+                "docs/skill-quality-engineering/SKILL_QUALITY_PILOT.md",
+                "docs/skill-quality-engineering/SKILL_QUALITY_PILOT_EN.md",
+            ),
+            ("evals/README.md", "evals/README_EN.md"),
+            (
+                "evidence/skill-quality/README.md",
+                "evidence/skill-quality/README_EN.md",
+            ),
+        )
+
+        for pair in expected_pairs:
+            with self.subTest(pair=pair):
+                self.assertIn(pair, PROJECT_PAIRS)
+
     def test_composition_catalog_is_registered_as_a_bilingual_pair(self):
         self.assertIn(
             ("docs/catalog/skills-composition.md", "docs/catalog/skills-composition_EN.md"),

@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded tradeoffs among regre
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/regression-optimization.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Match before/after versions, environment, obligations, data and windows. Source selection/order/parallel/cache inclusions and exclusions; different test volumes cannot support timing comparisons.
+2. Preserve critical risks, known escapes and mandatory gates. Reject removal of sole protection; unknown mappings require conservative checks or escalation.
+3. Measure duration/resources, detection, misses/escapes and flakiness separately. The same controlled fault must still fail an effective assertion for the same obligation.
+4. State benefit conditions, residual risk, implementation/rollback triggers and owners. Removing protection requires authorized acceptance, not an optimization proposal alone.
 
 ## Core Constraints
 

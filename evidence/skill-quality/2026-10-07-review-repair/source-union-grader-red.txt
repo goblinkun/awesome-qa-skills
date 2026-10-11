@@ -1,0 +1,25 @@
+FF
+======================================================================
+FAIL: test_source_union_accepts_versioned_provenance_and_rejects_altered_evidence (scripts.tests.test_review_eval_graders.PackagedGraderTests.test_source_union_accepts_versioned_provenance_and_rejects_altered_evidence) (language='en')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./scripts/tests/test_review_eval_graders.py", line 110, in test_source_union_accepts_versioned_provenance_and_rejects_altered_evidence
+    result=run(valid);self.assertEqual(result.returncode,0,result.stderr)
+                      ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : fixture assertion failed: ({'version': 'v1', 'severity': 'P0'}, 'P0')
+
+
+======================================================================
+FAIL: test_source_union_accepts_versioned_provenance_and_rejects_altered_evidence (scripts.tests.test_review_eval_graders.PackagedGraderTests.test_source_union_accepts_versioned_provenance_and_rejects_altered_evidence) (language='zh')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./scripts/tests/test_review_eval_graders.py", line 110, in test_source_union_accepts_versioned_provenance_and_rejects_altered_evidence
+    result=run(valid);self.assertEqual(result.returncode,0,result.stderr)
+                      ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : fixture assertion failed: ({'version': 'v1', 'severity': 'P0'}, 'P0')
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.140s
+
+FAILED (failures=2)

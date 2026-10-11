@@ -44,3 +44,11 @@ description: Use this skill when technical quality perspective is needed for req
 - [ ] 仅覆盖阶段相关技术维度；无证据时未声称测试通过或代码正确
 
 仅在验证阶段后读取对应的一个 Prompt。仅为回归工作读取 `evals/`，绝不将其当作项目证据。
+
+## 报告来源
+
+报告头保留所选 `stage`、稳定 `source_id` 和已提供 `version`。缺少来源 ID 时声明临时本地定位；缺少版本写 unknown，不得编造。每项发现含稳定 `finding_id`、来源/证据定位与状态。每项行动回链发现并说明关闭所需证据；负责人、日期和行动状态仅在提供时填写，否则 unknown。这些是独立报告字段，不构成对其他 Skill 的依赖。
+
+## 静态发现定位与交接
+
+已提供代码或可编号文字使用 `file:line@version` 并引用原始证据。只有设计材料时使用文档/章节/版本，不编造代码文件或行号。向 code-review 或专项设计审查按 Skill 名交接同一发现 ID/证据，便于继续核实，避免重复宣称运行缺陷。

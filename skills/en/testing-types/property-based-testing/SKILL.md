@@ -26,6 +26,12 @@ Turn invariants, generation domains, and shrinking strategies into reviewable pr
 4. Separate facts, evidence-backed inferences, recommendations, and Human decisions.
 5. Recommend follow-up validation without claiming execution.
 
+## Domain Execution Essentials
+
+- Extract the input domain, sourced invariants, preconditions and observable oracles; do not infer properties solely from a function name or preference.
+- Deliver domain/properties/preconditions, replay data and minimal-counterexample oracles; sorted output losing elements violates such a sorting contract.
+- When deriving domain candidates, read and follow [prompts/property-based-testing.md](prompts/property-based-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not invent invariants, generation domains, or shrink results, or treat a generator as proof of a finding.

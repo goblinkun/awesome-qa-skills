@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Map audience decisions to metrics, definitions/windows, source versions, actions and owners; available data alone must not decide what matters.
+2. Show numerator/denominator, refresh time and source status. Distinguish zero, null, NOT_RUN, BLOCKED and stale data; never fill gaps with zero or reuse stale green.
+3. Preserve P0 blockers and small high-risk groups in summaries. Overall pass rates cannot override individual blockers; aggregation follows project rules.
+4. Provide drill-down to run/obligation/defect evidence, refresh contracts and action triggers. Missing sources or gates yield design and gaps, not a current pass.
+
 ## Minimum Coverage Checklist
 
 - audience, decision question, panel, drill-down path, freshness and alerting

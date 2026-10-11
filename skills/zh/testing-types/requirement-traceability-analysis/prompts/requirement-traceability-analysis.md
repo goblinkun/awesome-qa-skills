@@ -73,6 +73,16 @@
 - 先完成输入审计；只基于提供材料推理，并为每条发现保留来源和最小证据。
 - 分开事实、证据支持的推断、建议和 Human 决策；信息不足、冲突或范围外时明确标记状态。
 
+## 领域操作与判定
+
+原RT/TC关系类型保持direct/derived/indirect/contradictory/missing，coverage status保持complete/partial/unverified/stale/unexecuted/unassessed。MAPPED/EXECUTED/SATISFIED与IDENTITY_CONFLICT只作附加判定列，不替换原枚举；有映射未执行保持unexecuted，身份冲突待解决前不计入已满足。
+
+以下步骤对提供材料进行设计或静态核对；fixture 判定、候选方案与真实执行证据分别记录。项目未提供的规则、门槛和授权保持待确认。
+
+1. 固定requirement/obligation及实现/test/run的ID与版本，关系类型保持direct/derived/indirect/contradictory/missing；implements/validates/executed-by/satisfies只作为独立的边用途列，并记录证据来源；文件存在、名字相似不构成边。
+2. 同义务多测试按义务唯一ID去重分母，保留测试层和具体断言；重复ID但不同内容先标IDENTITY_CONFLICT，不能合并计覆盖。
+3. 分列MAPPED、EXECUTED、SATISFIED：映射有效不等于已运行，运行成功不等于该义务有有效断言。旧版本映射不能支持新版本满足。
+4. 双向检查未映射义务、无来源测试与失效边；覆盖率注明当前唯一义务分母及排除/UNKNOWN，缺追踪不得填PASS。
 ## 最低覆盖清单
 
 - 覆盖本 Prompt 列出的专项维度和每条发现合同字段。

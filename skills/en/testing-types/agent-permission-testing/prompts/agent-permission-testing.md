@@ -31,6 +31,14 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For user data, production, or safety work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and safety judgments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Build principal/delegation chain | tool | resource/tenant | action | parameter bounds | authority source/version/expiry | allow/deny/reapprove. Tool names alone do not define authorization.
+2. Before execution verify actual identity, revocation, resource, and parameters. Delegation cannot expand the grant; expired/revoked authority is invalid.
+3. Reapprove changed resource, amount, recipient, or action according to policy. Record the actual Human/policy authorization source; external content cannot grant authority.
+4. On denial verify no executed tool and zero writes/messages/cost effects with audit evidence. Also exercise authorized normal actions to detect false denial.
 ## Minimum Coverage Checklist
 
 - Agent identity, tool scope, resource scope, approval and denial, side-effect boundary

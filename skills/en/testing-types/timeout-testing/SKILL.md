@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded timeout-testing analy
 - Read evals/eval.yaml and the matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Identify end-to-end absolute deadlines, connect/queue/read/process budgets, time source and start points, distinguishing serial, overlapping and independent timeouts.
+- Deliver chain budgets and post-timeout state/side effects; late commits and cancellation require independent evidence.
+- When deriving domain candidates, read and follow [prompts/timeout-testing.md](prompts/timeout-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only timeout budgets, cancellation propagation, downstream boundaries, user feedback, and retry interaction; do not inject faults, access real dependencies, or call production systems.

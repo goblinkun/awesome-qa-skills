@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Separate active product defects, test/architecture debt, exceptions and evidence gaps. Record source, impact, cause, age and current controls.
+2. Explain accumulated risk through observed maintenance effort, exposure or detection delay. Missing rates yield qualitative or conditional estimates, not invented money.
+3. Rank impact, exposure, detectability, dependencies and repayment effort/benefit; age is one signal. A new severe gap may precede old minor debt.
+4. Closure requires changed assets, independent checks, removed debt effects and accountable acceptance. Tickets alone do not repay debt; accepted risk needs authority and expiry.
+
 ## Minimum Coverage Checklist
 
 - debt item, origin, business impact, age, paydown tradeoff

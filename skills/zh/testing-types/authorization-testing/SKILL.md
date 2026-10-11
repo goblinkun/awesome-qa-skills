@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded authorization-testing
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 提取主体角色、资源所有权、租户、动作、字段、委派范围/期限及撤权生效合同，建立允许/拒绝/未知矩阵。
+- 交付主体×资源×动作矩阵与撤权时间线，许可和拒绝都须可追溯；不由角色名称推断全局权限。
+- 形成领域候选时，必须读取并遵循 [prompts/authorization-testing.md](prompts/authorization-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析主体-资源-动作关系、权限边界、拒绝路径和委派，不登录系统、不调用真实 API、不读取凭据。

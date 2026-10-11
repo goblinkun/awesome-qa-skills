@@ -27,6 +27,12 @@ Do not use it to execute tests, invent contract or behavior, replace a complete 
 3. Record ARL-## with the subject, preconditions, behavior of concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Extract algorithm, quota N, window/time source, burst allowance, counted events, user/tenant/route scope, and reset rules.
+- Deliver per-subject timed quota ledgers and expected/observed responses; correctness includes rejecting excess and allowing in-quota requests.
+- When deriving domain candidates, read and follow [prompts/api-rate-limit-testing.md](prompts/api-rate-limit-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or responses, or treat candidate counts as coverage proof.

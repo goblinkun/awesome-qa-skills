@@ -58,37 +58,30 @@ perf/
 
 **Injection / run defaults**
 
-- Use an open-model profile matching the scenario (e.g. `rampUsers` / `constantUsersPerSec` / `stressPeakUsers` equivalents) with clear ramp and hold durations
+- Select open arrival-rate or closed concurrency injection from the project goal using compatible DSL APIs. State when user arrival rate converts to request RPS; missing inputs stay unconfigured.
 - `baseUrl`, tokens via system properties or env vars — never hardcode hosts or secrets
 - Name critical requests / groups distinctly for assertions and report splits
 - Feeders: list required columns and refresh strategy; without real business data, column-name placeholders only
 
-**Default assertion shape (even without an SLA — mark numbers as Assumptions)**
+**Assertion structure (project-supplied thresholds only)**
 
-Mirror k6’s `http_req_duration` p95 / `http_req_failed` with a Gatling global assertion skeleton:
+Record gate ID/version, comparison operators, p95 time units and error percentage before choosing the compatible DSL API. Without SLA/SLO, keep thresholds unconfigured; do not invent defaults or claim a passed gate.
 
-```text
-assertions:
-  - global responseTime percentile(95) < 500   # assumption — confirm
-  - global failedRequests percent < 1          # assumption — confirm
-```
+Java DSL shape using variables from confirmed project gates:
 
-DSL sketch (pick one language shape for the project; do not mix casually):
-
-```scala
+```java
 .assertions(
-  global.responseTime.percentile(95).lt(500),  // assumption
-  global.failedRequests.percent.lt(1)            // assumption
+  global().responseTime().percentile(95.0).lte(projectP95Millis),
+  global().failedRequests().percent().lte(projectErrorPercent)
 )
 ```
 
-- Prefer request-scoped assertions for critical names, not one vague global line
-- When the user provides an SLA, use their numbers and cite the source
-- Add p99 or per-request splits only when needed — do not dump a long default list
+- Use scoped assertions for critical requests/groups with API/version/source evidence; do not mix Scala property chains and Java method chains.
+- Missing gates permit a compiled scenario skeleton with acceptance UNKNOWN; numeric loads also require supplied values or unconfigured variables.
 
 **No SLA / no traffic data**
 
-- Every user count, RPS, duration, and assertion number must be labeled **Assumption**
+- Keep user counts, RPS, durations and thresholds as unconfigured variables; only authorized exploratory numeric assumptions may be used with their source and pending status
 - End with an Open Questions list (see Output §6) covering at least: peak traffic, target p95/error rate, safe-to-load env, feeder data and auth
 
 If the project already has a Simulation package layout, **align to what exists** and apply defaults only in the gaps.
@@ -100,8 +93,17 @@ If the project already has a Simulation package layout, **align to what exists**
 - Feeder paths and columns must come from user materials; do not invent business keys or flood fake data rows.
 - Do not ship a “standard pack” that enables all five scenario types by default.
 - Do not rewrite the Gatling plan as k6, JMeter, Locust, etc. (unless the user explicitly asks for a comparison).
-- When input is incomplete, still deliver a usable first draft (scenario choice + injection skeleton + assumed assertions) with assumptions listed.
+- When input is incomplete, still deliver a usable first draft (scenario choice + unconfigured injection skeleton + pending gates) with assumptions listed.
 - Unless the user asks for runnable full Simulations, prefer structure + short snippets over huge code dumps.
+
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Read project Gatling/plugin/JDK and Java/Scala/Kotlin DSL versions, retaining its layout. Use compatible injection/assertion APIs in one DSL. Offline test-compile generated assets with the project build; uncached dependencies mean BLOCKED, not a passed compile.
+2. Open models control user arrivals; arrivals equal request RPS only for one request per user without additional loops/retries. Closed models control concurrency; verify RPS from actual request counts/windows.
+3. Calculate feeder consumption per user/loop. Queue exhaustion must visibly fail; circular reuse requires policy permission and non-conflicting identities/business keys.
+4. Use project thresholds and version-supported assertions. Missing gates yield an unconfigured skeleton, not invented 500ms/1% values. Compile, achieved load, and SLO results are distinct evidence.
 
 ## Minimum Coverage Checklist
 
@@ -110,7 +112,7 @@ Unless the user explicitly narrows scope, the result must cover:
 - Chosen scenario type(s) and why other types are out of scope
 - Load model and ramp profile (users / RPS / duration)
 - Data or feeder needs
-- Assertion thresholds (at least response-time p95 + failure rate)
+- Sourced or unconfigured gates for response-time p95 and failure rate
 - Environment and monitoring focus
 - Priority bottleneck / risk transactions (P0)
 - Reporting needs (which metrics decide pass/fail)
@@ -138,9 +140,9 @@ Return in this order (keep the sections; fill concrete fields):
 
 ### 3. Load Model and Thresholds
 - Injection model: ramp, hold, spike shape, total duration (label assumptions)
-- Default assertions: `responseTime` percentile(95), `failedRequests` percent (and per-request splits if any)
+- Assertion structure: `responseTime` percentile(95), `failedRequests` percent (and per-request splits if any)
 - How to interpret pass/fail
-- With no SLA: mark every number as Assumption
+- Without SLA: gates remain unconfigured/UNKNOWN; do not fill default numbers
 
 ### 4. Environment and Data Notes
 - `baseUrl` / env limits / whether load is allowed
@@ -156,12 +158,12 @@ Return in this order (keep the sections; fill concrete fields):
 
 ### 6. Open Questions
 - Information gaps
-- Assumptions this round (itemized; when no SLA/traffic, list every assumed traffic and assertion number to confirm)
+- Unconfigured inputs and authorized assumptions (itemized; missing SLA/traffic stays variable-based without default numbers)
 
 ## Pre-delivery Checklist
 
 - [ ] Scenarios narrowed via the decision tree — not all five by default — with deferred types explained
-- [ ] Assertions include response-time p95 and failure rate; without SLA, numbers are Assumptions and Open Questions are present
+- [ ] Assertions use sourced p95/error gates; missing thresholds remain unconfigured/UNKNOWN with Open Questions
 - [ ] No real secrets; no invented paths; feeders are column placeholders only — no fake business data dumps
 - [ ] P0 transactions and injection model are concrete and actionable — not “care about performance” fluff
 - [ ] All six output sections present; run entry and pass/fail criteria are implementable

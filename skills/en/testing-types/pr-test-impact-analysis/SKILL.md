@@ -27,9 +27,18 @@ description: Use this skill when you need to determine test impact from a pull r
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/pr-test-impact-analysis.md`; it is the complete execution specification for this skill.
 - For evaluation or regression, read `evals/eval.yaml` and the relevant cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Fix repository/base/head SHAs and diff scope. Source file/symbol/schema/config changes; names alone do not prove impact and results from different HEADs cannot be pooled.
+2. Map changed symbol→direct/transitive consumer→obligation→test ID/layer/execution version. Label edges confirmed/candidate/unknown and stop only at evidenced isolation boundaries.
+3. For removed/weakened tests check whether their obligations retain independent protection; selection from the remaining inventory alone can hide disappeared coverage.
+4. Unknown dynamic dependencies/mappings trigger conservative contract/integration candidates with explicit gaps. Separate scope candidates, executed tests, and satisfied obligations; list expansion/escalation triggers.
 
 ## Core Constraints
 

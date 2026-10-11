@@ -12,7 +12,7 @@ input:
 
 expect:
   must_contain:
-    - "today"
+    - "Today"
     - "priority"
   must_not_contain:
     - "TODO"

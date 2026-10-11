@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, behavior of concern, source ev
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Extract page size, offset/cursor, sort direction, unique tie-breaker, snapshot/live-change semantics, and cursor binding/expiry rules.
+2. Sort one snapshot into the expected ID sequence and derive first/middle/last/empty pages, resolving equal primary keys using the supplied tie-breaker.
+3. Join page requests and next cursors; check progress, termination, duplicates, omissions, and order. Require exact no-duplication/no-loss only under a stable-data contract.
+4. Separate concurrent inserts/deletes and tampered/expired/rebound cursors. Leave unspecified live-change semantics and error responses open; do not assume snapshots.
+
+**Decision and deliverable:** Deliver expected/observed cross-page ID sequences, set/duplicate comparisons, cursor chain, and applicability of change semantics.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

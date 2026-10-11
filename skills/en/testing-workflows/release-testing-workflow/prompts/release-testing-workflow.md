@@ -1,6 +1,6 @@
 # Release Testing Workflow Prompt
 
-Organize QA across the release window (T-N → Go/No-Go → post-release watch): release gates and handoffs to type skills. This skill owns **timeline and ship decision**; specialty testing stays with type skills.
+Organize QA across the release window (T-N → Go/No-Go → post-release watch): release gates and handoffs to type skills. This skill owns **timeline and Go/No-Go recommendations**; specialty testing stays with type skills.
 
 ## Role
 
@@ -22,10 +22,16 @@ Organize QA across the release window (T-N → Go/No-Go → post-release watch):
 | 3. Feature-freeze validation | T-7 | evidence after freeze | freeze or controlled change | P0 paths evidenced; controlled-change list |
 | 4. Specialty testing | T-5–T-4 | perf/security/a11y/etc. | candidate build available | specialty reports + open high-risk list |
 | 5. Release candidate | T-3 | final regression & exploratory fills | specialty outcomes known | RC regression done; Blockers cleared or escalated |
-| 6. Go/No-Go | T-2–T-1 | ship decision | evidence pack complete | written Go / No-Go / Go-with-conditions |
+| 6. Go/No-Go | T-2–T-1 | recommendation and pending authorization | evidence pack complete | recommendation, decision owner, approval record or pending state |
 | 7. Post-release | T+0+ | monitoring & hotfix path | shipped or in progressive rollout | watch list + escalation path ready |
 
 Windows may compress, but **gates cannot be deleted**—only timelines merge; criteria must remain.
+
+## Decision authority and adaptable windows
+
+The AI produces a Go/No-Go **recommendation**. Formal approval requires the authorized decision owner, version/scope, decision time, and evidence source. Without that record, state "pending authorized decision"; silence or a planned meeting is not approval. Keep test facts, risk acceptance, and release approval separate.
+
+T-14 and other dates are compressible examples. For a hotfix, preserve impact assessment, necessary regression/specialties, rollback/monitoring, and authorized decision gates even in a 30-minute window. For a canary, name cohort scope, observation interval, sourced error/business thresholds, stop/rollback conditions, and on-call Owner. Unknown thresholds stay open; unrun specialties stay evidence gaps.
 
 ## Release gates
 

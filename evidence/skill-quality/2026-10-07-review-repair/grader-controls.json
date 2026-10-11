@@ -1,0 +1,1217 @@
+{
+  "isolated_method_graders": [
+    {
+      "skill": "quality-maturity-assessment",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "requirement-traceability-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 10
+    },
+    {
+      "skill": "performance-test-gatling",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "agent-loop-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "accessibility-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-cypress",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-selenium",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-puppeteer",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "agent-permission-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "risk-based-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "agent-long-running-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "automation-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "performance-test-jmeter",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "regression-scope-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "agent-memory-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-maintenance-cost-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ai-assisted-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "change-impact-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "multi-agent-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-data-requirement-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-risk-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "api-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "requirement-gap-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "mobile-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "acceptance-criteria-review",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-testcafe",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "rag-quality-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "agent-failure-recovery-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ai-feature-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-debt-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ci-test-optimization",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 8
+    },
+    {
+      "skill": "test-scope-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-data-generation",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-effectiveness-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-runtime-optimization",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 8
+    },
+    {
+      "skill": "requirement-ambiguity-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "rag-retrieval-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 12
+    },
+    {
+      "skill": "capacity-planning-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 6
+    },
+    {
+      "skill": "llm-hallucination-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-metrics-design",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 10
+    },
+    {
+      "skill": "regression-optimization",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 6
+    },
+    {
+      "skill": "quality-productivity-metrics",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "performance-workload-modeling",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 10
+    },
+    {
+      "skill": "security-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "llm-consistency-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-gate-design",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "distributed-trace-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 8
+    },
+    {
+      "skill": "pr-test-impact-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "testing-bottleneck-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 10
+    },
+    {
+      "skill": "manual-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "automation-roi-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 8
+    },
+    {
+      "skill": "requirement-consistency-analysis",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-strategy",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-playwright",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-dashboard-design",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-webdriverio",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ai-generated-test-review",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ai-safety-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ai-agent-testing",
+      "language": "en",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-maturity-assessment",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "requirement-traceability-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 10
+    },
+    {
+      "skill": "performance-test-gatling",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "agent-loop-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "accessibility-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-cypress",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-selenium",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-puppeteer",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "agent-permission-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "risk-based-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "agent-long-running-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "automation-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "performance-test-jmeter",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "regression-scope-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "agent-memory-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-maintenance-cost-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ai-assisted-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "change-impact-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "multi-agent-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-data-requirement-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-risk-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "api-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "requirement-gap-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "mobile-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "acceptance-criteria-review",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-testcafe",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "rag-quality-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "agent-failure-recovery-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ai-feature-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-debt-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ci-test-optimization",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 8
+    },
+    {
+      "skill": "test-scope-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-data-generation",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-effectiveness-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-runtime-optimization",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 8
+    },
+    {
+      "skill": "requirement-ambiguity-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "rag-retrieval-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 12
+    },
+    {
+      "skill": "capacity-planning-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 6
+    },
+    {
+      "skill": "llm-hallucination-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-metrics-design",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 10
+    },
+    {
+      "skill": "regression-optimization",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 6
+    },
+    {
+      "skill": "quality-productivity-metrics",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "performance-workload-modeling",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 10
+    },
+    {
+      "skill": "security-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "llm-consistency-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-gate-design",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "distributed-trace-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 8
+    },
+    {
+      "skill": "pr-test-impact-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "testing-bottleneck-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 10
+    },
+    {
+      "skill": "manual-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "automation-roi-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 8
+    },
+    {
+      "skill": "requirement-consistency-analysis",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "test-strategy",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-playwright",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "quality-dashboard-design",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ui-test-webdriverio",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ai-generated-test-review",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ai-safety-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    },
+    {
+      "skill": "ai-agent-testing",
+      "language": "zh",
+      "standalone_copy": "PASS",
+      "table_forms": "bounded and unbounded",
+      "mutation_controls": 4
+    }
+  ],
+  "root_graders": [
+    {
+      "skill": "skill-change-verification",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "release-testing-workflow",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "functional-testing",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "performance-testing",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "requirements-analysis-plus",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "testcase-writer-plus",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "test-case-reviewer-plus",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "test-strategy-plus",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "api-test-pytest",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "api-test-bruno",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "api-test-restassure",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "api-test-supertest",
+      "lang": "en",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "discover-testing",
+      "lang": "en",
+      "case": "review-authn-neighbor",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "discover-testing",
+      "lang": "en",
+      "case": "review-authz-neighbor",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "discover-testing",
+      "lang": "en",
+      "case": "review-rag-retrieval-neighbor",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "discover-testing",
+      "lang": "en",
+      "case": "review-regression-selection-neighbor",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "skill-change-verification",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "release-testing-workflow",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "functional-testing",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "performance-testing",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "requirements-analysis-plus",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "testcase-writer-plus",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "test-case-reviewer-plus",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "test-strategy-plus",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "api-test-pytest",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "api-test-bruno",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "api-test-restassure",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "api-test-supertest",
+      "lang": "zh",
+      "case": "review-repair-regression",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "discover-testing",
+      "lang": "zh",
+      "case": "review-authn-neighbor",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "discover-testing",
+      "lang": "zh",
+      "case": "review-authz-neighbor",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "discover-testing",
+      "lang": "zh",
+      "case": "review-rag-retrieval-neighbor",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "skill": "discover-testing",
+      "lang": "zh",
+      "case": "review-regression-selection-neighbor",
+      "controls": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "scope": "Stored fixture outputs and deliberate mutants; no model execution."
+}

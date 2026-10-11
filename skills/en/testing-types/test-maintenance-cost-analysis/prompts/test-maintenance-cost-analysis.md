@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix assets, sample window, unit, and time sources. Separate product change, test defect, infrastructure, data, duplication, and unclassified costs; do not double-count one event across causes.
+2. Link trigger, change frequency, time ranges, review/rework, and failure impact. Separate one-time build from recurring maintenance; one sample cannot predict precise long-term costs.
+3. Explain sample size, representativeness, outliers, and interval formulas. Without monetary rates report labor; unknown causes remain UNKNOWN and are no personal-performance rating.
+4. Equal totals may require different interventions: change decoupling, test repair, environment stability, isolation, or deduplication. Validate gains and retained protection in matched follow-up samples.
+
 ## Minimum Coverage Checklist
 
 - change frequency, repair effort, flaky cost, ownership, maintainability

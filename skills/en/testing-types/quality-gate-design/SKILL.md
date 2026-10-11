@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded entry criteria, evide
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/quality-gate-design.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Define each obligation, evidence version/freshness, operator and PASS/FAIL/BLOCKED/UNKNOWN table. Execution prevented is BLOCKED; missing or indeterminate evidence is UNKNOWN; absence never means PASS.
+2. Apply project aggregation and fail-closed rules. Preserve unknown/blocked causes and recommend advancement only when all required gates have fresh valid evidence.
+3. Record exceptions separately with scope, authorizer, reason, approval, expiry, compensating controls and revocation. Invalid exceptions do not override or rewrite failures.
+4. State triggers, owners, revalidation and stop/rollback conditions. Separate design, evidence comparison and pipeline implementation; missing policy needs Human resolution.
 
 ## Core Constraints
 

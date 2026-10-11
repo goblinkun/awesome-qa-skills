@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded failover-testing anal
 - Read evals/eval.yaml and the matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Extract primary/standby roles, automatic/manual triggers, health detection, routing, fencing/write authority, failback and business-RTO definitions.
+- Deliver node/routing/write-authority timelines, ledger conflicts and recovery/failback oracles, assessing availability and single-writer consistency separately.
+- When deriving domain candidates, read and follow [prompts/failover-testing.md](prompts/failover-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only primary-secondary triggers, traffic transfer, data consistency, and recovery evidence; do not inject faults, access real dependencies, or call production systems.

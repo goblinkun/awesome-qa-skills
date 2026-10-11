@@ -31,6 +31,14 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For user data, production, or safety work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and safety judgments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Capture tenant/user IDs, memory ID, content version, source, write time, expiry, and withdrawal/deletion status. Retain retrieved provenance/version, not only the final answer.
+2. Resolve old/new preferences using supplied precedence rules. Undefined conflicts remain open; never assume last-write-wins or invent retention periods.
+3. Compare visibility for the same query in two tenants. Assess stale versions, expired returns, and post-deletion retrieval using the project's consistency window.
+4. Check deletion across the actual index/cache/backup scope. Missing propagation/backup policies limit the conclusion. Include permitted retrieval as the isolation control.
 ## Minimum Coverage Checklist
 
 - write/read, update/delete, retention, tenant isolation, provenance

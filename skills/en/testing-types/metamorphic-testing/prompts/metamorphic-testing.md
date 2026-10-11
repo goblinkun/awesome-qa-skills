@@ -23,6 +23,17 @@ Each MT-## includes at least the object/rule, source, trigger or applicability, 
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Define source input domain, transformation T, output relation R and sourced preconditions. An absent exact oracle does not permit arbitrary equivalence assumptions.
+2. Check both source/transformed constraints and flag semantic-changing transformations; distinguish equality, proportionality and monotonic relations.
+3. Provide positive examples and minimal counterexamples, especially duplicates, order, state and precision; judge only sourced relations.
+4. Join source/transformed observations and compare R. Model derivations are candidates and satisfying R does not establish complete correctness.
+
+**Decision and deliverable:** Deliver input/transformation/output-relation/precondition/counterexample tables, separating relation applicability from implementation satisfaction.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

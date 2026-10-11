@@ -35,6 +35,14 @@ Do not use it only to write test cases, execute tests, or decide business priori
 5. Preserve orphan items, broken links, duplicate mappings, missing execution records, and name-only links with a gap, owner, next action, and validation method.
 6. Keep conclusions bounded by supplied material; execution, defect closure, and release claims require corresponding evidence.
 
+## Domain Execution Essentials
+
+RT/TC relationship types remain direct/derived/indirect/contradictory/missing and coverage statuses complete/partial/unverified/stale/unexecuted/unassessed. MAPPED/EXECUTED/SATISFIED and IDENTITY_CONFLICT are additional decision columns, not replacement enums; mapped-but-unrun stays unexecuted and unresolved identity conflicts never count as satisfied.
+
+1. Fix IDs/versions for requirements, obligations, implementation, tests, and runs. Keep relationship types direct/derived/indirect/contradictory/missing; record implements/validates/executed-by/satisfies as a separate edge-purpose column with sources; file existence or name similarity is no evidence edge.
+2. Deduplicate obligation denominators when multiple tests protect one obligation, preserving layers/assertions. Same ID with conflicting content is IDENTITY_CONFLICT, not a mergeable duplicate.
+3. Separate MAPPED, EXECUTED, and SATISFIED. Mapping is no run; a passed run without an effective obligation assertion is no satisfaction. Old-version edges cannot satisfy new versions.
+4. Check both directions for unlinked obligations, orphan tests, and stale edges. Coverage reports use current unique obligations with explicit exclusions/UNKNOWN; gaps cannot become PASS.
 ## Core Constraints
 
 - Use `RT-##` finding IDs; each row includes requirement/control, source, linked artifact, relationship type, coverage status, evidence, and gap action.
@@ -47,6 +55,8 @@ Do not use it only to write test cases, execute tests, or decide business priori
 - Do not invent requirements, relationships, thresholds, owners, approvals, or runtime results; state the basis and close condition for recommendations.
 
 ## Reference Files
+
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
 
 - Always read `prompts/requirement-traceability-analysis.md` before producing an analysis.
 - Use `evals/eval.yaml` and `evals/cases/` to regress this Skill; configuration and static mappings do not prove real system execution.

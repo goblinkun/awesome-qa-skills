@@ -25,6 +25,15 @@ Design or refine an automation testing approach that is worth building, maintain
 - Flag areas with poor automation ROI such as unstable UI or one-off flows.
 - Respect the current stack when possible instead of proposing a full rewrite.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Select using candidate flow | protection obligation | repeat-frequency evidence | oracle/observability | isolation/cleanup | stability | maintenance constraint | adopt/defer rationale. Keep ROI cost scenarios separate; returns cannot remedy missing oracles or authority.
+2. Reuse the existing framework. First require observable postconditions, independent data, and a CI entry that propagates failure. Defer unmet candidates with unblock conditions.
+3. Specify unique identities/business keys, setup, actions, business postconditions, failure signal, and teardown. Failed assertions must fail runner/CI, not merely log.
+4. Separate candidate selection, generated assets, real runs, and business acceptance. Rapidly changing prototypes or non-isolatable real payments may need Human/controlled verification, with evidence-based tradeoffs.
+
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

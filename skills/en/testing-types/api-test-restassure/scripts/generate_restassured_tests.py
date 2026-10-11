@@ -2,83 +2,43 @@
 import argparse
 import json
 import re
+from decimal import Decimal
 from pathlib import Path
+from api_case_contract import contract_errors, endpoints_from, incomplete_message, fail_incomplete
 
+def _safe_name(method,path,idx):
+    return re.sub(r'[^a-z0-9]+','_',f'{idx}_{method}_{path}'.lower()).strip('_')
 
-def _safe_method(m: str) -> str:
-    return m.upper() if m.upper() in {"GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"} else "GET"
-
-
-def _safe_name(method: str, path: str, idx: int) -> str:
-    s = f"{idx}_{method}_{path}".lower()
-    return re.sub(r"[^a-z0-9]+", "_", s).strip("_")
-
-
-def _invoke_line(method: str, path: str) -> str:
-    m = method.lower()
-    if m in {"post", "put", "patch"}:
-        return (
-            f'given().spec(requestSpec).body("{{}}").when().{m}("{path}")'
-            '.then().statusCode(anyOf(is(200), is(201), is(202), is(204), is(400), is(401), is(403), is(404)))'
-            '.time(lessThan(3000L));'
-        )
-    return (
-        f'given().spec(requestSpec).when().{m}("{path}")'
-        '.then().statusCode(anyOf(is(200), is(201), is(202), is(204), is(400), is(401), is(403), is(404)))'
-        '.time(lessThan(3000L));'
-    )
-
+def _invoke_line(method,path,ep=None):
+    ep=ep or {};errors=contract_errors(method,path,ep)
+    if errors: return f"org.junit.jupiter.api.Assertions.fail({json.dumps(incomplete_message(errors))});"
+    call='given().spec(requestSpec)'
+    for k,v in ep.get('headers',{}).items(): call+=f".header({json.dumps(k)}, {json.dumps(v)})"
+    for k,v in ep.get('headers_env',{}).items(): call+=f".header({json.dumps(k)}, requiredEnv({json.dumps(v)}))"
+    if 'body' in ep:
+        body=json.dumps(ep['body'],ensure_ascii=False) if ep.get('body_encoding','json')=='json' else ep['body']
+        call+=f".body({json.dumps(body)})"
+    call+=f".when().{method.lower()}({json.dumps(path)}).then().statusCode(anyOf("+', '.join(f'is({s})' for s in ep['expected_statuses'])+'))'
+    if ep.get('max_response_ms') is not None:
+        max_nanos = min(int(Decimal(str(ep['max_response_ms'])) * Decimal(1_000_000)), (1 << 63) - 1)
+        call+=f".time(lessThanOrEqualTo({max_nanos}L), java.util.concurrent.TimeUnit.NANOSECONDS)"
+    if 'expected_json' not in ep: return call+';'
+    return ('String actual = '+call+'.extract().asString();\n        '+
+        'org.junit.jupiter.api.Assertions.assertEquals(new com.fasterxml.jackson.databind.ObjectMapper().readTree('+json.dumps(json.dumps(ep['expected_json'],ensure_ascii=False))+'), new com.fasterxml.jackson.databind.ObjectMapper().readTree(actual));')
 
 def build_java_class(endpoints):
-    lines = [
-        "package com.example.api;",
-        "",
-        "import org.junit.jupiter.api.Test;",
-        "",
-        "import static io.restassured.RestAssured.given;",
-        "import static org.hamcrest.Matchers.anyOf;",
-        "import static org.hamcrest.Matchers.is;",
-        "import static org.hamcrest.Matchers.lessThan;",
-        "",
-        "public class GeneratedApiTest extends BaseApiTest {",
-        "",
-        "    @Test",
-        "    void generatedCollectionNotEmpty() {",
-        f"        org.junit.jupiter.api.Assertions.assertTrue({len(endpoints)} >= 0);",
-        "    }",
-        "",
-    ]
-    for idx, ep in enumerate(endpoints, start=1):
-        method = _safe_method(str(ep.get("method", "GET")))
-        path = str(ep.get("path", "/"))
-        name = _safe_name(method, path, idx)
-        lines.extend(
-            [
-                "    @Test",
-                f"    void test_{name}() {{",
-                f"        {_invoke_line(method, path)}",
-                "    }",
-                "",
-            ]
-        )
-    lines.append("}")
-    lines.append("")
-    return "\n".join(lines)
+    endpoints=endpoints_from({'endpoints':endpoints})
+    lines=['package com.example.api;','import org.junit.jupiter.api.Test;','import static io.restassured.RestAssured.given;','import static org.hamcrest.Matchers.*;','public class GeneratedApiTest extends BaseApiTest {']
+    for i,ep in enumerate(endpoints,1):
+        method,path=str(ep.get('method','')),str(ep.get('path',''))
+        lines+=['    @Test',f'    void test_{_safe_name(method,path,i)}() throws Exception {{','        '+_invoke_line(method,path,ep),'    }']
+    return '\n'.join(lines+['}',''])
 
+def main():
+    parser=argparse.ArgumentParser(description='Generate contract-derived API smoke tests')
+    parser.add_argument('--input',required=True,type=Path);parser.add_argument('--output',required=True,type=Path)
+    args=parser.parse_args();endpoints=endpoints_from(json.loads(args.input.read_text(encoding='utf-8')))
+    code=build_java_class(endpoints);args.output.parent.mkdir(parents=True,exist_ok=True)
+    args.output.write_text(code,encoding='utf-8');print(args.output);fail_incomplete(endpoints)
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate Rest Assured tests from normalized endpoint JSON")
-    parser.add_argument("--input", required=True, type=Path, help="Normalized endpoint JSON")
-    parser.add_argument("--output", required=True, type=Path, help="Output Java test class path")
-    args = parser.parse_args()
-
-    payload = json.loads(args.input.read_text(encoding="utf-8"))
-    endpoints = payload.get("endpoints", [])
-    java = build_java_class(endpoints)
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(java, encoding="utf-8")
-    print(str(args.output))
-
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__': main()

@@ -12,7 +12,7 @@ python3 "$SCRIPT_DIR/generate_restassured_tests.py" --input "$TMP_JSON" --output
 
 if ! command -v mvn >/dev/null 2>&1; then
   echo "mvn not found. Test class generated at: $OUT_JAVA"
-  exit 0
+  exit 2
 fi
 
 cd "$SCRIPT_DIR/templates/restassured"

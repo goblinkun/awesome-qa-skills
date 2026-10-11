@@ -16,6 +16,9 @@ cases:
     - evals/cases/edge-no-sourced-delivery-input.yaml
     - evals/cases/edge-unsupported-stage.yaml
     - evals/cases/edge-quality-fact-override.yaml
+    - evals/cases/review-test-strategy-sources.yaml
+    - evals/cases/review-test-strategy-review-sources.yaml
+    - evals/cases/review-test-report-review-sources.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

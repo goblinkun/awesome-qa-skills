@@ -27,6 +27,12 @@ description: Use this skill when you need to review mock fidelity, contract alig
 3. 用 MQR-## 记录对象、前置条件、关注点、来源证据和验证方法，保留影响/优先级、责任角色、关闭条件和证据状态。
 4. 材料冲突、缺少约束或没有执行证据时，保留双方和待确认问题。
 
+## 领域执行要点
+
+- 先标被测对象与外部协作者边界，将 mock/stub 的版本、字段、状态码、错误、时序和副作用与真实合同逐项对应。
+- 交付真实合同×stub×被测义务的差异表，指出具体漏检路径；mock 使用数量不是质量判据。
+- 形成领域候选时，必须读取并遵循 [prompts/mock-quality-review.md](prompts/mock-quality-review.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不执行测试，不假设未提供的规则、版本、阈值、数据或结果，不把候选数量当作覆盖证明。

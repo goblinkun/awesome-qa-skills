@@ -20,6 +20,13 @@ Determine whether AI-generated tests prove real behavior instead of merely raisi
 4. Load rules only for discovered layers: unit, functional test, API, or E2E. Load more than one only for cross-layer concerns; do not perform a global review just because multiple rule files exist.
 5. Separate merge-blocking faults from improvements; do not call an effective test defective because of style preference.
 
+## Domain Execution Essentials
+
+1. Evaluate assertions against the actual contract; mock, snapshot, or status-only syntax alone does not imply WEAK/FAKE.
+2. A boundary mock may replace a confirmed external dependency while real production logic executes. Mocking the subject itself and asserting its preset return offers no protection.
+3. A reviewed, independent snapshot of stable business structure can detect meaningful mutations. A snapshot that discards all business fields cannot. A status assertion can be STRONG when status fully expresses the supplied contract; persistence obligations require business postconditions.
+4. Support each classification with a concrete escaping/detected mutation and contract source. Retain confidence/gaps when evidence is missing, using the same bilingual rationale.
+
 ## Core Constraints
 
 - Judge observable behavior, failure signals, and risk coverage—not line coverage, test names, or mock-call counts alone.
@@ -28,6 +35,8 @@ Determine whether AI-generated tests prove real behavior instead of merely raisi
 - Do not expose credentials, personal data, or production write operations in tests, logs, or examples.
 
 ## Progressive Disclosure
+
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
 
 - Always read `prompts/review-test.md` before reviewing; its test-type routing precedes per-test review.
 - For fake tests, excessive mocks, or ineffective assertions, read `references/fake-test-patterns.md`.

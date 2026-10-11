@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded query variants, chunk
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/rag-retrieval-testing.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Version queries, relevance annotations, document/chunk units, labelers and corpus. Recall@k uses the known relevant set; Precision@k uses actual returns with the supplied duplicate policy.
+2. Check rank, relevance, permission/tenant filters, freshness and version for each hit. Relevant but unauthorized hits are failures; high scores cannot cure stale content.
+3. Compare configurations under matched queries, index, filters and resources. Incomplete relevant sets allow proxy measurements, not claims of complete recall.
+4. Distinguish missing retrieval from correct retrieval followed by wrong generation. Missing generation output cannot locate its failure; absent labels leave UNKNOWN.
 
 ## Core Constraints
 

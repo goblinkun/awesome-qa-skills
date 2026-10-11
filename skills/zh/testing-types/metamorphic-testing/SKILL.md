@@ -25,6 +25,12 @@ description: Use this skill when you need to derive test candidates from input t
 3. 事实、推断、建议和 Human 决策必须分开。
 4. 只提出后续验证意图，不写成已执行结果。
 
+## 领域执行要点
+
+- 先确定原始输入域、变换 T、输出关系 R 及其来源/适用前提；没有可靠 oracle 不代表可以自行假设任意等价关系。
+- 交付输入→变换→输出关系→前提→反例表，关系的适用性与实现是否满足关系分开。
+- 形成领域候选时，必须读取并遵循 [prompts/metamorphic-testing.md](prompts/metamorphic-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不发明变换关系、输出结果或随机性结论，不把关系表当成执行证明。

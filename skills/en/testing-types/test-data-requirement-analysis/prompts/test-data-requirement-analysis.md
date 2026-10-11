@@ -45,6 +45,15 @@ When key material is missing, deliver a bounded first pass and state what cannot
 
 `TDR-##` describes preparation requirements only. Without evidence, do not write that data was created, available, compliant, complete, or test-passed.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Map scenario/risk→entities/states/relationships→values/boundaries→quantity basis→source/authority→setup/cleanup. This Skill analyzes needs, not implicit generation or collection.
+2. Quantity derives from concurrency/isolation/repetitions/consumption. Missing counts yield formulas/gaps, not an invented100 rows; session counts are not entity counts.
+3. Without schema separate known business relationships from undefined fields/keys and ask minimal questions. Trace cross-entity states/foreign keys rather than merely naming CSV files.
+4. Prefer synthetic or permitted sanitized personal data with source constraints, retention/cleanup, and acceptance oracle. Unknown authority is BLOCKED; recommendations are no prepared-data evidence.
+
 ## Output
 
 1. Objective, scenario, in/out-of-scope boundaries, and data-preparation success criteria;

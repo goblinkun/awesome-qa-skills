@@ -18,8 +18,8 @@ REPORT_JSON="$REPORT_DIR/bru-report-${TS}.json"
 
 echo "Running Bruno collection: $COLLECTION_DIR (env=$ENV_NAME)"
 
-# Note: CLI flags may vary by Bruno version.
-# This command targets common CLI usage.
-bru run "$COLLECTION_DIR" --env "$ENV_NAME" --reporter-json "$REPORT_JSON"
+# Report validation is verified with Bruno CLI 4.2.1; unsupported formats fail explicitly.
+(cd "$COLLECTION_DIR" && bru run --env "$ENV_NAME" --reporter-json "$REPORT_JSON")
+python3 "$SCRIPT_DIR/check_bruno_report.py" "$REPORT_JSON"
 
 echo "Report generated: $REPORT_JSON"

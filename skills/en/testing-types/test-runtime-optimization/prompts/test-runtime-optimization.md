@@ -31,6 +31,14 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Profile setup, execution, teardown, and retries with matched commit, obligations, data, resources, and windows. Derive DAG critical paths without adding overlapping jobs.
+2. Separate cold/warm cache, runner limits, concurrency, isolated data, and contention. Record changed factors; different test volumes/environments cannot prove speedups.
+3. Recheck the same business fault against effective assertions while retaining failures/logs/traces. Parallelism cannot share conflicting accounts or swallow errors; faster time cannot offset lost protection.
+4. Give baseline/candidate duration, resource cost, percentage gain, and rollback signals. Comparable actual runs establish observed gains; estimates remain candidates, not production guarantees.
 ## Minimum Coverage Checklist
 
 - slow test, profiling evidence, setup and teardown, parallelism, isolation

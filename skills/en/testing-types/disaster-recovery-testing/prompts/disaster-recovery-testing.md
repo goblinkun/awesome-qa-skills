@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not inject faults, access real dependencies, read credentials, or call production systems.
 - Do not upgrade file presence, names, templates, or dry-runs into execution, passing, coverage, or release evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Identify primary/recovery regions, failure scope, RTO/RPO start/end definitions, acceptable loss and business restoration criteria from contracts; do not invent targets.
+2. Check backup points and supplied integrity/decryption/restore evidence plus access dependencies; backup existence is not recoverability.
+3. Sequence recovery using dependency relationships across data, configuration, identity, network/routing and critical business, retaining readiness/verification/rollback evidence.
+4. Calculate business RTO and time from failure to the actual recovered data point, then reconcile ledgers/references/compensation. Healthy services do not alone establish business/data restoration.
+
+**Decision and deliverable:** Deliver cross-region dependencies, timeline, RTO/RPO calculations and consistency evidence, separating target comparisons from unverified areas.
+
 ## Minimum Coverage Checklist
 
 - disaster-recovery objective and applicability

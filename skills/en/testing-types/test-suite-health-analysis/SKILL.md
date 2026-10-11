@@ -27,6 +27,12 @@ Do not use it to execute tests, invent behavior conclusions, replace a complete 
 3. Record TSH-## with the subject, preconditions, concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Normalize stable test IDs, protected obligations, code/data revisions and run IDs, separating first attempts, retries, quarantine, skips and unrun cases.
+- Deliver identified run metrics, failure/retry/quarantined obligations and duration risks; show denominators/retries alongside final pass rates.
+- When deriving domain candidates, read and follow [prompts/test-suite-health-analysis.md](prompts/test-suite-health-analysis.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or outcomes, or treat candidate counts as coverage proof.

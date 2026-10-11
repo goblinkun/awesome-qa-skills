@@ -27,6 +27,12 @@ description: Use this skill when you need to identify interactions that need at 
 3. 用 PWT-## 记录 因素、取值对、合法性约束、交互风险、覆盖理由、来源证据、优先级和验证方法，保留来源、证据状态、影响/优先级、责任角色、关闭条件和验证方法。
 4. 材料冲突、缺少约束或没有执行证据时，保留双方和待确认问题。
 
+## 领域执行要点
+
+- 列来源化因素、值域与联合约束，确定 pairwise 适用风险及不覆盖的三阶以上义务。
+- 交付合法 pair universe、已覆盖与缺失 pair 明细；需要高阶交互时明确额外候选与理由。
+- 形成领域候选时，必须读取并遵循 [prompts/pairwise-testing.md](prompts/pairwise-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不把成对覆盖写成全组合覆盖，不忽略互斥约束，不凭经验补造因素或取值。

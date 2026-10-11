@@ -82,3 +82,7 @@ Each finding includes at least:
 - Does every `TG-##` have source, evidence, gap type, priority, action, and close condition?
 - Do unsupported execution claims remain `unverified`, `unexecuted`, or `unassessed`?
 - Did you avoid writing gap recommendations as executed, passed, or covered?
+
+## Obligation assessment states
+
+Keep mapping, execution, and demonstrated obligation satisfaction separate. A mapped but unrun item is unverified_execution. An executed test can leave uncovered_risk when its assertions do not establish the obligation or supplied observations contradict it; preserve the raw test status as well. With insufficient rule/applicability material, keep the assessment unassessed and request evidence before claiming an authoritative gap. Explicitly out-of-scope/not-applicable items are not mandatory missed tests. Counted inventory items alone do not determine effective coverage.

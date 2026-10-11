@@ -10,10 +10,8 @@ input:
 
 expect:
   must_contain:
-    - "known"
-    - "missing"
-    - "assumptions"
-    - "architecture"
+    - "订单服务"
+    - "支付系统"
   must_not_contain:
     - "TODO"
     - "我无法"
@@ -21,8 +19,8 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
           - "输入审计"
-          - "待确认"
-          - "证据"
+          - "(待确认|信息缺口|开放问题)"
+          - "(证据|依据)"

@@ -6,6 +6,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from typing import Callable, Dict
 from xml.etree import ElementTree as ET
+from xlsx_reader import read_workbook
 
 
 class _HTMLTextExtractor(HTMLParser):
@@ -65,8 +66,6 @@ def parse_json(path: Path) -> str:
 
 def parse_markdown(path: Path) -> str:
     text = path.read_text(encoding="utf-8", errors="ignore")
-    # Keep heading context but remove markdown emphasis markers.
-    text = re.sub(r"[*_`>#-]", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = re.sub(r"[ \t]{2,}", " ", text)
     return text.strip()
@@ -87,28 +86,13 @@ def _read_shared_strings(zf: zipfile.ZipFile) -> list:
 
 
 def parse_excel(path: Path) -> str:
-    with zipfile.ZipFile(path) as zf:
-        shared = _read_shared_strings(zf)
-        with zf.open("xl/worksheets/sheet1.xml") as f:
-            root = ET.fromstring(f.read())
-    ns = {"a": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
-    rows = []
-    for row in root.findall(".//a:sheetData/a:row", ns):
-        values = []
-        for c in row.findall("a:c", ns):
-            ctype = c.attrib.get("t")
-            v = c.find("a:v", ns)
-            if v is None or v.text is None:
-                values.append("")
-            elif ctype == "s":
-                idx = int(v.text)
-                values.append(shared[idx] if 0 <= idx < len(shared) else "")
-            else:
-                values.append(v.text)
-        joined = " | ".join(x for x in values if x)
-        if joined:
-            rows.append(joined)
-    return "\n".join(rows)
+    sheets = read_workbook(path)
+    lines = []
+    for sheet in sheets:
+        lines.append("## Worksheet: " + sheet["name"])
+        for number, row in zip(sheet["row_numbers"], sheet["rows"]):
+            lines.append(f"row {number}: " + json.dumps(row, ensure_ascii=False))
+    return "\n".join(lines)
 
 
 PARSERS: Dict[str, Callable[[Path], str]] = {

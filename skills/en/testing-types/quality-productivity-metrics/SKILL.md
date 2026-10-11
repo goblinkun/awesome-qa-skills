@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded quality and delivery 
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/quality-productivity-metrics.md`; it is the complete execution specification for this skill.
 - For evaluation, read `evals/eval.yaml` and the matching cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Balance effort/cost, accepted output, defects/escapes and waiting/rework with explicit windows, team/task units, complexity and product risk.
+2. Deduplicate split or merged cases and verify acceptance. Case/commit counts do not equal value; missing quality/rework evidence prevents productivity claims.
+3. Compare only matched tasks, complexity, tools and windows. Different team work mixes cannot support direct ranking or personal performance evaluation; expose context and uncertainty.
+4. Check dropped hard tests, unreported defects, deferred time and rerun counts. Metrics trigger investigations and experiments, not automatic causal or reward decisions.
 
 ## Core Constraints
 

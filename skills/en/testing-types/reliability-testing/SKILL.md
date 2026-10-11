@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded reliability-testing a
 - Read evals/eval.yaml and the matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Define SLI event/time basis, success/failure, denominator, exclusions, observation window and sourced targets; request success and time availability are different metrics.
+- Deliver window/denominator-defined SLIs and failure timelines, stating applicability for target comparisons and extrapolation.
+- When deriving domain candidates, read and follow [prompts/reliability-testing.md](prompts/reliability-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only availability objectives, failure modes, exposure windows, and evidence readiness; do not inject faults, access real dependencies, or call production systems.

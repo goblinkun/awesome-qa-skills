@@ -24,6 +24,15 @@ Design Puppeteer UI testing assets or a Puppeteer-ready plan that the team can i
 - Prefer maintainable test organization over large one-off scripts.
 - If information is incomplete, give a usable first version and mark assumptions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Read actual Puppeteer/Node/browser and launch config/support scope. Incompatibility is CONFIG_ERROR; successful launch does not prove every feature is compatible.
+2. Identify new windows through target creation/opener association and wait for a usable page, verifying URI/authority. Navigation readiness and business readiness are separate; real state is the oracle, not a fixed sleep.
+3. Close owned pages/browser in try/finally and preserve timeout/load errors. Report primary and cleanup failures separately; never swallow exceptions and return success.
+4. Minimum fixtures include good payment, wrong state, popup, load failure, and timeout. Verify business state/principal plus screenshot/URL/log/version evidence; generated files and successful loads are no business pass.
+
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

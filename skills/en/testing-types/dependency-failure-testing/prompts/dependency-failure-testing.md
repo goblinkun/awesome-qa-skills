@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not inject faults, access real dependencies, read credentials, or call production systems.
 - Do not upgrade file presence, names, templates, or dry-runs into execution, passing, coverage, or release evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Map caller/dependency, synchronous/asynchronous mode, timeout/retry/fallback contracts and required business/data invariants.
+2. Build unreachable, timeout, slow, error and partial-success matrices; add delay/duplicate/reordering/acknowledgment for async paths without borrowing synchronous status expectations.
+3. Join caller state, dependency commit, retries and message/database side effects by request/message ID and timeline, separating failed from unknown outcomes.
+4. Check isolation, backlog, fallback and reconciliation/compensation after recovery. Missing contracts remain candidates; a 500 does not establish no dependency commit.
+
+**Decision and deliverable:** Deliver failure-mode/caller/dependency/side-effect cells, distinguishing synchronous rejection, async pending and unknown commit, with recovery validation.
+
 ## Minimum Coverage Checklist
 
 - dependency failure and applicability

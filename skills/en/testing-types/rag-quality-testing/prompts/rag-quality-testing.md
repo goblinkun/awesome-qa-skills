@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For user data, production, or safety work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and safety judgments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix query/sample, knowledge/index/retrieval/model/prompt versions. Map queries to retrieved chunks, atomic claims and citations with support/contradiction/gap labels.
+2. Judge citation accuracy, claim support and completeness separately. Supported claims may omit required conditions; use the task and project rubric.
+3. Pair answerable in-corpus cases with out-of-corpus refusal controls. Assess task correctness, over-refusal and unsupported answers separately; refusal rate is no quality proxy.
+4. Missing chunks, ground truth, permissions or gates remain UNKNOWN/NOT_RUN. Distinguish retrieval failure from generation misreading, retaining evidence boundaries and responsible stages.
+
 ## Minimum Coverage Checklist
 
 - grounding, relevance, completeness, citation support, abstention

@@ -11,7 +11,7 @@ input:
 expect:
   must_contain:
     - "architecture"
-    - "seam"
+    - "接缝"
     - "替身"
     - "证据"
   must_not_contain:
@@ -21,8 +21,8 @@ expect:
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
-          - "输入审计"
+          - "(输入审计|输入证据|证据与边界|证据基础)"
           - "隔离"
           - "验证"

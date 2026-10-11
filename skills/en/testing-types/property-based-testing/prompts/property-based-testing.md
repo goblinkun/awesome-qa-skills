@@ -23,6 +23,17 @@ Each PBT-## includes at least the object/rule, source, trigger or applicability,
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Extract the input domain, sourced invariants, preconditions and observable oracles; do not infer properties solely from a function name or preference.
+2. Design constrained generators/distributions, including empty/duplicate/extreme cases only if allowed, and retain seed, generator version, samples and failing input for replay.
+3. Evaluate conjunctive properties separately so one cannot hide another; a sorting contract may require both ordering and multiset preservation.
+4. Shrink failures while preserving preconditions, recheck the property and retain minimal counterexample/seed. Without execution, generation/shrinking remain proposals.
+
+**Decision and deliverable:** Deliver domain/properties/preconditions, replay data and minimal-counterexample oracles; sorted output losing elements violates such a sorting contract.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

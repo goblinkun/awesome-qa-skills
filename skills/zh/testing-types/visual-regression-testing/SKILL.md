@@ -27,6 +27,12 @@ description: Use this skill when you need to define evidence-bounded visual regr
 3. 用 VRT-## 记录对象、前置条件、关注点、来源证据和验证方法，保留影响/优先级、责任角色、关闭条件和证据状态。
 4. 材料冲突、缺少约束或没有执行证据时，保留双方和待确认问题。
 
+## 领域执行要点
+
+- 定义baseline键：页面/版本/视口/浏览器/OS/字体/主题/数据，并检查比较双方同条件；条件不同先标不可比或环境差异。
+- 交付环境键、区域差异/阈值、归因证据与基线决策表；超阈值差异不自动等于产品缺陷，更新基线也不能掩盖缺陷。
+- 形成领域候选时，必须读取并遵循 [prompts/visual-regression-testing.md](prompts/visual-regression-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不执行测试，不假设未提供的规则、版本、阈值、数据或结果，不把候选数量当作覆盖证明。

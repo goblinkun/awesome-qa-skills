@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, behavior of concern, source ev
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Extract algorithm, quota N, window/time source, burst allowance, counted events, user/tenant/route scope, and reset rules.
+2. Build timed N-1/N/N+1, burst, window-boundary, separate-subject, and recovery scenarios. Recalculate sliding windows/token buckets from their own contracts.
+3. Compare per-request status, remaining quota, server hints, and successful side effects. Require 429/Retry-After only when contracted, interpreting delay seconds versus dates.
+4. Check cross-subject interference, early/late recovery, hint-aware retries and budgets; preserve unknown clock and failed-request counting rules.
+
+**Decision and deliverable:** Deliver per-subject timed quota ledgers and expected/observed responses; correctness includes rejecting excess and allowing in-quota requests.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

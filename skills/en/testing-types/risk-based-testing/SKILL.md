@@ -34,6 +34,13 @@ Do not use it only to identify quality risks, write a complete test strategy, se
 4. Define stop conditions, expansion triggers, residual risk, and Human decisions for constrained work.
 5. Never turn unsupported numbers, risk grades, or test recommendations into facts or execution results.
 
+## Domain Execution Essentials
+
+1. Anchor qualitative risk in observable impact, exposure/occurrence evidence, detectability, and control gaps. Without a project numeric model do not invent score products; unknown likelihood remains uncertain.
+2. Link each risk to objective, layer/platform, depth, data, minimum observable evidence, sourced duration, and residual risk. High risk needs falsifiable business assertions, not merely more cases.
+3. Allocate the constrained window with mandatory protection/authority first. Expose deferrals, alternatives, owners, and Human risk acceptance; time shortage never automatically waives gates.
+4. Retain benign/low-risk controls, selection reasons, and scope expansion triggers. Planned priority is no execution or risk-elimination evidence.
+
 ## Core Constraints
 
 - `RBT-##` is a test-decision recommendation, not risk acceptance, a quality score, coverage proof, or release approval.
@@ -42,6 +49,8 @@ Do not use it only to identify quality risks, write a complete test strategy, se
 - Do not select concrete existing test IDs, execute tests, or invent environments, thresholds, defects, or pass results.
 
 ## Reference Files
+
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
 
 - Always read `prompts/risk-based-testing.md` before producing an analysis.
 - For regression, read `evals/eval.yaml` and its cases; configuration and recommendations do not prove that risks are controlled.

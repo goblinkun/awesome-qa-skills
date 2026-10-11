@@ -23,6 +23,17 @@ Each MBT-## includes at least the object/rule, source, trigger or applicability,
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Build sourced initial/terminal states, events, guards, actions, targets and persistence, rather than an arbitrary state list.
+2. Traverse from the initial state and list unreachable states/edges, conflicting transitions and undefined events; retain unsatisfied-guard reasons.
+3. Generate reachable paths for supplied state/edge/path goals with guard inputs, actions and state/data oracles per step. Add negative events only under a sourced invalid-behavior contract.
+4. Compare candidate state/edge sets with goals, retaining cycles/path budgets; model coverage does not prove implementation execution or model correctness.
+
+**Decision and deliverable:** Deliver the reachable graph, candidate paths, state/edge gaps and oracles; unreachable nodes cannot count as covered.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

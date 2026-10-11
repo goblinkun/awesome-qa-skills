@@ -24,11 +24,20 @@ Markdown by default unless the request explicitly asks for another format.
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - `prompts/ui-test-selenium.md`: main prompt for this skill.
 - `references/framework-spec.md`: tool-specific structure and coverage notes.
 - `references/setup-and-ci.md`: setup, execution, and CI notes.
 - `examples/sample-context.md`: sample request context.
 - `scripts/run-tests.sh`: lightweight local execution entry point.
+
+## Domain Execution Essentials
+
+1. Fix Selenium/binding/browser/driver/Grid versions, capabilities, and runner. Produce compatible config/POM; do not invent Grid topology and diagnose version conflicts first.
+2. Explicitly wait on observable interactability, business state, window, or URL conditions. Presence/visibility is not business readiness; avoid mixed implicit/explicit waits and universal fixed sleeps.
+3. After rerender/stale references re-find by stable locator and wait for fresh state. Bounded retries follow supplied policy; blind payment replay can duplicate effects.
+4. Isolate accounts/business keys per parallel session. Use try/finally driver.quit with screenshots/logs/session/original failures. Rerender, business-failure, and exception controls verify cleanup and nonzero propagation.
 
 ## Common Pitfalls
 
@@ -41,3 +50,5 @@ Markdown by default unless the request explicitly asks for another format.
 - Start from the prompt file, then add only the context that matters.
 - Keep the output risk-driven and executable.
 - If the request is incomplete, return a usable first version and mark gaps.
+
+- To verify generated business assertions, failure propagation or isolation, read [evals/fixtures/checkout-app/README.md](evals/fixtures/checkout-app/README.md) and its local good/bug/timeout controls; execute only when a run is requested.

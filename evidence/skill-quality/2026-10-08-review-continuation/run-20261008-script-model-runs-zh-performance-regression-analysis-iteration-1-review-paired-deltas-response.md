@@ -1,0 +1,1 @@
+{"groups":[{"id":"stable","comparable":true,"median_absolute_ms":20,"median_baseline_ms":100,"median_candidate_ms":120,"relative_change_pct":20,"classification":"consistent_observed_degradation"},{"id":"variable","comparable":true,"median_absolute_ms":0,"median_baseline_ms":100,"median_candidate_ms":100,"relative_change_pct":0,"classification":"inconclusive_variation"}]}

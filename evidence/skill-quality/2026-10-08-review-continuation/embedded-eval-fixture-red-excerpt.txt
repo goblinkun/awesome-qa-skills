@@ -1,0 +1,18 @@
+FAIL: test_quality_review_embedded_cases_are_valid_skill_up_inputs (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_quality_review_embedded_cases_are_valid_skill_up_inputs) (language='en', case='review-valid-package')
+AssertionError: 1 != 0 : Error: failed to load config: failed to parse case file evals/cases/success.yaml: yaml: line 3: mapping values are not allowed in this context
+FAIL: test_quality_review_embedded_cases_are_valid_skill_up_inputs (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_quality_review_embedded_cases_are_valid_skill_up_inputs) (language='en', case='review-missing-prompt')
+AssertionError: 1 != 0 : Error: failed to load config: failed to parse case file evals/cases/success.yaml: yaml: line 3: mapping values are not allowed in this context
+FAIL: test_quality_review_embedded_cases_are_valid_skill_up_inputs (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_quality_review_embedded_cases_are_valid_skill_up_inputs) (language='en', case='review-missing-bare-resource')
+AssertionError: 1 != 0 : Error: failed to load config: failed to parse case file evals/cases/success.yaml: yaml: line 3: mapping values are not allowed in this context
+FAIL: test_quality_review_embedded_cases_are_valid_skill_up_inputs (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_quality_review_embedded_cases_are_valid_skill_up_inputs) (language='en', case='review-bilingual-schema')
+AssertionError: 1 != 0 : Error: failed to load config: failed to parse case file evals/cases/success.yaml: yaml: line 3: mapping values are not allowed in this context
+FAIL: test_quality_review_embedded_cases_are_valid_skill_up_inputs (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_quality_review_embedded_cases_are_valid_skill_up_inputs) (language='zh', case='review-valid-package')
+AssertionError: 1 != 0 : Error: failed to load config: failed to parse case file evals/cases/success.yaml: yaml: line 3: mapping values are not allowed in this context
+FAIL: test_quality_review_embedded_cases_are_valid_skill_up_inputs (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_quality_review_embedded_cases_are_valid_skill_up_inputs) (language='zh', case='review-missing-prompt')
+AssertionError: 1 != 0 : Error: failed to load config: failed to parse case file evals/cases/success.yaml: yaml: line 3: mapping values are not allowed in this context
+FAIL: test_quality_review_embedded_cases_are_valid_skill_up_inputs (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_quality_review_embedded_cases_are_valid_skill_up_inputs) (language='zh', case='review-missing-bare-resource')
+AssertionError: 1 != 0 : Error: failed to load config: failed to parse case file evals/cases/success.yaml: yaml: line 3: mapping values are not allowed in this context
+FAIL: test_quality_review_embedded_cases_are_valid_skill_up_inputs (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_quality_review_embedded_cases_are_valid_skill_up_inputs) (language='zh', case='review-bilingual-schema')
+AssertionError: 1 != 0 : Error: failed to load config: failed to parse case file evals/cases/success.yaml: yaml: line 3: mapping values are not allowed in this context
+Ran 1 test in 0.696s
+FAILED (failures=8)

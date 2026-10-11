@@ -1,0 +1,101 @@
+{
+  "xlsx_reader.py": {
+    "canonical_sha256": "90ab5644f0327fd375331de781c8864b767c9cfe5991fe553b6c3fe944dfb8d3",
+    "leaf_copies": [
+      "skills/en/testing-types/performance-testing/scripts/xlsx_reader.py",
+      "skills/en/testing-types/accessibility-testing/scripts/xlsx_reader.py",
+      "skills/en/testing-types/requirements-analysis-plus/scripts/xlsx_reader.py",
+      "skills/en/testing-types/test-case-reviewer/scripts/xlsx_reader.py",
+      "skills/en/testing-types/automation-testing/scripts/xlsx_reader.py",
+      "skills/en/testing-types/bug-reporting/scripts/xlsx_reader.py",
+      "skills/en/testing-types/test-case-writing/scripts/xlsx_reader.py",
+      "skills/en/testing-types/ai-assisted-testing/scripts/xlsx_reader.py",
+      "skills/en/testing-types/test-strategy-plus/scripts/xlsx_reader.py",
+      "skills/en/testing-types/api-testing/scripts/xlsx_reader.py",
+      "skills/en/testing-types/mobile-testing/scripts/xlsx_reader.py",
+      "skills/en/testing-types/code-review/scripts/xlsx_reader.py",
+      "skills/en/testing-types/testcase-writer-plus/scripts/xlsx_reader.py",
+      "skills/en/testing-types/test-reporting/scripts/xlsx_reader.py",
+      "skills/en/testing-types/security-testing/scripts/xlsx_reader.py",
+      "skills/en/testing-types/requirements-analysis/scripts/xlsx_reader.py",
+      "skills/en/testing-types/manual-testing/scripts/xlsx_reader.py",
+      "skills/en/testing-types/test-case-reviewer-plus/scripts/xlsx_reader.py",
+      "skills/en/testing-types/functional-testing/scripts/xlsx_reader.py",
+      "skills/en/testing-types/test-strategy/scripts/xlsx_reader.py",
+      "skills/en/testing-workflows/release-testing-workflow/scripts/xlsx_reader.py",
+      "skills/en/testing-workflows/discover-testing/scripts/xlsx_reader.py",
+      "skills/en/testing-workflows/sprint-testing-workflow/scripts/xlsx_reader.py",
+      "skills/en/testing-workflows/daily-testing-workflow/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/performance-testing/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/accessibility-testing/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/requirements-analysis-plus/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/test-case-reviewer/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/automation-testing/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/bug-reporting/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/test-case-writing/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/ai-assisted-testing/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/test-strategy-plus/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/api-testing/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/mobile-testing/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/code-review/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/testcase-writer-plus/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/test-reporting/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/security-testing/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/requirements-analysis/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/manual-testing/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/test-case-reviewer-plus/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/functional-testing/scripts/xlsx_reader.py",
+      "skills/zh/testing-types/test-strategy/scripts/xlsx_reader.py",
+      "skills/zh/testing-workflows/release-testing-workflow/scripts/xlsx_reader.py",
+      "skills/zh/testing-workflows/discover-testing/scripts/xlsx_reader.py",
+      "skills/zh/testing-workflows/sprint-testing-workflow/scripts/xlsx_reader.py",
+      "skills/zh/testing-workflows/daily-testing-workflow/scripts/xlsx_reader.py"
+    ]
+  },
+  "parse_api_sources.py": {
+    "canonical_sha256": "4e7f259e0688307e981e36a7925fd16a4c8087be672f62da57de83264390abe4",
+    "leaf_copies": [
+      "skills/en/testing-types/api-test-bruno/scripts/parse_api_sources.py",
+      "skills/en/testing-types/api-test-supertest/scripts/parse_api_sources.py",
+      "skills/en/testing-types/api-test-restassure/scripts/parse_api_sources.py",
+      "skills/en/testing-types/api-test-pytest/scripts/parse_api_sources.py",
+      "skills/zh/testing-types/api-test-bruno/scripts/parse_api_sources.py",
+      "skills/zh/testing-types/api-test-supertest/scripts/parse_api_sources.py",
+      "skills/zh/testing-types/api-test-restassure/scripts/parse_api_sources.py",
+      "skills/zh/testing-types/api-test-pytest/scripts/parse_api_sources.py"
+    ]
+  },
+  "api_case_contract.py": {
+    "canonical_sha256": "68e8a8ad626cbb22e3114ccd963b15d472bc072656b9850fde6cc4d9dbd711c0",
+    "leaf_copies": [
+      "skills/en/testing-types/api-test-bruno/scripts/api_case_contract.py",
+      "skills/en/testing-types/api-test-supertest/scripts/api_case_contract.py",
+      "skills/en/testing-types/api-test-restassure/scripts/api_case_contract.py",
+      "skills/en/testing-types/api-test-pytest/scripts/api_case_contract.py",
+      "skills/zh/testing-types/api-test-bruno/scripts/api_case_contract.py",
+      "skills/zh/testing-types/api-test-supertest/scripts/api_case_contract.py",
+      "skills/zh/testing-types/api-test-restassure/scripts/api_case_contract.py",
+      "skills/zh/testing-types/api-test-pytest/scripts/api_case_contract.py"
+    ]
+  },
+  "evidence_scaffold.py": {
+    "canonical_sha256": "11b7c7d7c227480e1dc42b426829d18dee4e3fcc3a5a2887c94dcf5b55d036d0",
+    "leaf_copies": [
+      "skills/en/testing-types/requirements-analysis-plus/scripts/evidence_scaffold.py",
+      "skills/en/testing-types/test-strategy-plus/scripts/evidence_scaffold.py",
+      "skills/en/testing-types/testcase-writer-plus/scripts/evidence_scaffold.py",
+      "skills/en/testing-types/test-case-reviewer-plus/scripts/evidence_scaffold.py",
+      "skills/zh/testing-types/requirements-analysis-plus/scripts/evidence_scaffold.py",
+      "skills/zh/testing-types/test-strategy-plus/scripts/evidence_scaffold.py",
+      "skills/zh/testing-types/testcase-writer-plus/scripts/evidence_scaffold.py",
+      "skills/zh/testing-types/test-case-reviewer-plus/scripts/evidence_scaffold.py"
+    ]
+  },
+  "check_bruno_report.py": {
+    "canonical_sha256": "6695ef96137305902e3e8bbea9df9318906d5366ac42e843ea00fb6090e82045",
+    "leaf_copies": [
+      "skills/en/testing-types/api-test-bruno/scripts/check_bruno_report.py",
+      "skills/zh/testing-types/api-test-bruno/scripts/check_bruno_report.py"
+    ]
+  }
+}

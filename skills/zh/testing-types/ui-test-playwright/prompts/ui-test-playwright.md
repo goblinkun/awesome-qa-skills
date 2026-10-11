@@ -24,6 +24,15 @@
 - 优先给可维护的测试组织方式，不输出一次性大脚本。
 - 信息不完整时，先给可用第一版，并标清假设。
 
+## 领域操作与判定
+
+以下步骤对提供材料进行设计或静态核对；fixture 判定、候选方案与真实执行证据分别记录。项目未提供的规则、门槛和授权保持待确认。
+
+1. 固定项目Playwright/Node/browser版本、projects/fixtures与配置；沿用真实入口，记录测试ID、commit、worker/project和环境，未兼容配置先诊断不擅自换框架。
+2. 优先role/name/testid等稳定语义定位，执行后以auto-retrying assertion核对订单/账务/状态与主体；页面标题/URL只满足相应导航义务，不能替代付款成功。
+3. 每worker独立browser context、storage state/账号与业务键，禁止共享会冲突的数据；同浏览器不同context仍须核对服务端账号隔离，teardown逆依赖清理。
+4. 用错误业务状态和并行A/B对照验证断言敏感性；失败保留trace/screenshot/日志与非0 runner/CI，retry首失败仍可见。生成资产、实际browser运行与业务验收分别报告。
+
 ## 最低覆盖清单
 
 除非用户明确缩小范围，输出至少覆盖：

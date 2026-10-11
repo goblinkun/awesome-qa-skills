@@ -26,6 +26,12 @@ Derive test-path candidates from sourced behavior, state, or process models. Pro
 4. Separate facts, evidence-backed inferences, recommendations, and Human decisions.
 5. Recommend follow-up validation without claiming execution.
 
+## Domain Execution Essentials
+
+- Build sourced initial/terminal states, events, guards, actions, targets and persistence, rather than an arbitrary state list.
+- Deliver the reachable graph, candidate paths, state/edge gaps and oracles; unreachable nodes cannot count as covered.
+- When deriving domain candidates, read and follow [prompts/model-based-testing.md](prompts/model-based-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not invent model nodes, paths, or versions, or treat model presence as runtime evidence.

@@ -27,6 +27,12 @@ description: Use this skill when you need to assess API version compatibility fr
 3. 用 AVC-## 记录对象、前置条件、关注行为、来源证据和验证方法，保留影响/优先级、责任角色、关闭条件和证据状态。
 4. 材料冲突、缺少约束或没有执行证据时，保留双方和待确认问题。
 
+## 领域执行要点
+
+- 标出契约与客户端/服务端版本、支持/弃用时间线和迁移顺序，建立旧/新客户端×旧/新服务端的适用矩阵。
+- 交付版本矩阵及字段/语义差异表，保留不适用与未知格；兼容性结论必须带客户端行为和支持范围。
+- 形成领域候选时，必须读取并遵循 [prompts/api-version-compatibility-testing.md](prompts/api-version-compatibility-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 不执行测试，不假设未提供的规则、版本、阈值、数据或响应，不把候选数量当作覆盖证明。

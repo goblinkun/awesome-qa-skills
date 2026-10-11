@@ -29,6 +29,17 @@ Each finding contains equivalence class, partition rationale, representative val
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Partition by sourced equivalent behavior/errors and constraints, not input shape alone; invalid classes with different responses must remain distinct.
+2. Check disjointness/completeness within the supplied domain and retain unclassified values; express dependencies as joint region/postcode or role/action classes.
+3. Choose representatives preserving each distinguishing condition, with equivalence assumptions; handle boundaries separately and do not claim one representative protects all implementations.
+4. Map candidates to expected behavior, sources, exclusions and gaps. Unsupplied conditional domains/behavior remain unknown rather than being replaced by experience.
+
+**Decision and deliverable:** Deliver joint partitions, behavioral oracles and representatives, with disjointness/completeness scope and unknown classes; retain conditional validity.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

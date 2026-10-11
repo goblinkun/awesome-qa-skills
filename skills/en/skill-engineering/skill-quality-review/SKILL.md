@@ -61,3 +61,7 @@ description: Use this skill when reviewing a complete Skill package for architec
 - [ ] Triggers, inputs, outputs, constraints, independent installation, and Eval readiness were checked
 - [ ] Blocking issues, suggestions, unassessed items, and evidence levels are traceable
 - [ ] Static checks are not presented as runtime/model evidence
+
+## Choosing the review scope
+
+Use this Skill for the package-wide contract and installation readiness, including files, metadata, resources, examples, and evals. Use skill-prose-review for a bounded passage, Prompt, or document contract; a prose-only review cannot establish package completeness.

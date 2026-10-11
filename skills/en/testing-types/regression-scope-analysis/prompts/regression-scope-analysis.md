@@ -40,6 +40,15 @@ If critical input is absent, list `Working Assumptions` and `Open Questions`, th
 - Reuse the current toolchain and assets; avoid large code samples unless the user requests them.
 - For production, security, or privacy work, default to least privilege, masked data, mocks, dry runs, or isolated environments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Map changes and current baseline to affected obligations, layers/platforms/data states, include/exclude decisions and evidence. Regression protects existing behavior; new-feature acceptance is distinct.
+2. Check direct, transitive and dynamic dependencies, historical escapes and nonfunctional impact. Unknown mappings are not proof of no impact; exclusion needs an evidenced boundary.
+3. Under budget limits expose uncovered mandatory protection, alternatives, owners and authorized acceptance/escalation. Do not silently drop high-risk tests.
+4. Deliver candidates, order, resources and scope-expansion triggers. Selected, executed and satisfied states stay separate; planned counts are no pass evidence.
+
 ## Minimum Coverage Checklist
 
 Unless the user narrows the scope, cover at least:

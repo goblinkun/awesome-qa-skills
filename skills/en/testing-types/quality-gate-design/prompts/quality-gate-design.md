@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Define each obligation, evidence version/freshness, operator and PASS/FAIL/BLOCKED/UNKNOWN table. Execution prevented is BLOCKED; missing or indeterminate evidence is UNKNOWN; absence never means PASS.
+2. Apply project aggregation and fail-closed rules. Preserve unknown/blocked causes and recommend advancement only when all required gates have fresh valid evidence.
+3. Record exceptions separately with scope, authorizer, reason, approval, expiry, compensating controls and revocation. Invalid exceptions do not override or rewrite failures.
+4. State triggers, owners, revalidation and stop/rollback conditions. Separate design, evidence comparison and pipeline implementation; missing policy needs Human resolution.
+
 ## Minimum Coverage Checklist
 
 - gate objective, entry criteria, evidence source, owner role, exception and rollback

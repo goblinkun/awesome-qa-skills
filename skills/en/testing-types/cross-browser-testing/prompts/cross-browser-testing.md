@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, concern, source evidence, and 
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Map project support and user distribution to engine/platform/version/device cells, retaining real-browser/device, emulator and automation-engine identities.
+2. Sample by risky journeys, known engine differences and user weight. Multiple Chromium browsers do not establish WebKit/Gecko obligations.
+3. Specify behavior, rendering, input and platform-integration evidence per cell; viewport emulation does not prove real-device, OS-input or hardware behavior.
+4. Map existing runs to matching versions/platforms/environments and list missing, stale or nonequivalent evidence; do not expand support or claim unrun compatibility.
+
+**Decision and deliverable:** Deliver support cells, risk-based sampling and evidence per cell; brand/emulator counts do not establish target-environment coverage.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

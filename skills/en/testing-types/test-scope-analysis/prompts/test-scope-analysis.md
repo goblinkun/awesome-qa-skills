@@ -27,6 +27,15 @@ Start with:
 
 At minimum distinguish core journeys, direct impact, transitive impact, non-functional concerns, migration/compatibility, and unassessed areas. Explain every tradeoff with a reviewable reason.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Build scope cells for version×layer×platform×data state from the delivery objective, linked to requirements, include/exclude evidence, owners, and observable acceptance. New-feature scope is broader than change-only regression.
+2. Separate INCLUDE, EXCLUDE, and UNKNOWN. Exclusions need a sourced scope or independent-contract reason; unclear platform/data/boundary support cannot mean 'do not test'.
+3. Record budget/environment/authority blockers and residual risk. Escalate unmet critical obligations rather than inventing product boundaries or accepting risk.
+4. Changes in requirements, platforms, interfaces, or versions trigger reassessment. Selection/design, execution, and satisfaction remain separate; a checklist is not coverage proof.
+
 ## Output
 
 1. Objective, version, activity, and in/out-of-scope boundaries;

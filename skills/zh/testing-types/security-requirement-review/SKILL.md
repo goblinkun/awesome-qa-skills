@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded security-requirement-
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 建立资产→威胁主体/路径→安全义务→控制→可验证验收链，标范围、来源与项目指定标准/版本，未给标准不能自选合规基线。
+- 交付安全义务到验收证据的映射与可测性缺口；补写的候选要求必须标建议，不能当已批准义务。
+- 形成领域候选时，必须读取并遵循 [prompts/security-requirement-review.md](prompts/security-requirement-review.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析安全目标、可测试性、追踪关系、接受条件和证据缺口，不登录系统、不调用真实 API、不读取凭据。

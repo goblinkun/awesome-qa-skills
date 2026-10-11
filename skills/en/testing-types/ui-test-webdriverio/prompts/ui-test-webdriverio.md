@@ -25,6 +25,15 @@ Design WebdriverIO UI testing assets or a WebdriverIO-ready plan that the team c
 - Prefer maintainable test organization over large one-off scripts.
 - If information is incomplete, give a usable first version and mark assumptions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix WebdriverIO/Node, runner/framework, and browser/driver/service combinations. Check capabilities/services against installed packages, config, and remote support; names alone do not prove compatibility.
+2. Generate version-compatible async specs/BDD steps and await every async command. Wait on observable business/element conditions; never catch command errors into a pass.
+3. Isolate session, identity, and business keys per worker with setup/cleanup hooks. Cover supplied platform/browser matrix only; missing scope remains unknown.
+4. Preserve test/worker/session/capability IDs, versions, URL, screenshot/logs, and original stack. Separate CONFIG_ERROR, business assertion failures, and environment errors, with diagnosis and CI propagation.
+
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

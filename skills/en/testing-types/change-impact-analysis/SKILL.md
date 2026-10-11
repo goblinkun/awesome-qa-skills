@@ -27,9 +27,18 @@ description: Use this skill when you need to analyze how a code, configuration, 
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - Always read `prompts/change-impact-analysis.md`; it is the complete execution specification for this skill.
 - For evaluation or regression, read `evals/eval.yaml` and the relevant cases under `evals/cases/`.
 - Load `references/`, `examples/`, `scripts/`, or `output-formats.md` only when those directories exist and the task needs them.
+
+## Domain Execution Essentials
+
+1. Fix change version/scope and build typed changed file/symbol/config→dependent→business obligation→test ID evidence edges with source/version and confirmed/candidate/unknown states.
+2. Traverse direct/transitive consumers with cycle deduplication. Stop only at evidenced contract isolation/no-consumer boundaries and record why; directories alone are no boundary.
+3. Dynamic registration/runtime configuration/untraced dependencies remain unknown. Propose risk-based consumer contract/integration checks; absent mapping does not mean no impact.
+4. Explain inclusion/exclusion, minimum validation, residual risk, and expansion triggers. This Skill covers code/data/config changes broadly; the PR-specific counterpart owns base/head/diff identity.
 
 ## Core Constraints
 

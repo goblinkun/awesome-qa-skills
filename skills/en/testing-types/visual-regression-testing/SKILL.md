@@ -27,6 +27,12 @@ Do not use it to execute tests, invent behavior conclusions, replace a complete 
 3. Record VRT-## with the subject, preconditions, concern, source evidence, and validation, plus impact/priority, owner role, close condition, and evidence state.
 4. Preserve conflicts, unknown constraints, and open questions when evidence is incomplete.
 
+## Domain Execution Essentials
+
+- Define baseline keys: page/revision/viewport/browser/OS/font/theme/data; verify matching comparison conditions or mark environment differences/noncomparability first.
+- Deliver environment keys, regional diffs/thresholds, attribution and baseline decisions; over-threshold diffs are not automatically product defects, and updates must not hide defects.
+- When deriving domain candidates, read and follow [prompts/visual-regression-testing.md](prompts/visual-regression-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Do not execute tests, assume missing rules, versions, thresholds, data, or outcomes, or treat candidate counts as coverage proof.

@@ -25,6 +25,15 @@ Create a focused manual testing plan or checklist that helps testers cover the m
 - Include exploratory focus areas when requirements are incomplete or risk is high.
 - Avoid bloated checklists that hide the real priorities.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Give each time-box a charter: task/risk, environment/build, data, exploration scope, deadline, and evidence. Track scripted execution and exploration separately within authorization.
+2. Record precondition→action→expected→actual→evidence ID→state. Not started is NOT_RUN, interrupted is INCOMPLETE, environment prevention is BLOCKED; a checklist is no execution log.
+3. Prepare recoverable data/checkpoints and restore accounts/orders/config according to policy, checking residuals. Unauthorized deletion is not cleanup.
+4. Under limited time complete the critical risk loop first, then preserve unfinished work, owners, and restart points. Conclusions cover observations only; missing oracles stay open.
+
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

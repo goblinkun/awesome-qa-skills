@@ -1,0 +1,2964 @@
+{
+  "generated_at": "2026-10-09T15:52:52.461968+08:00",
+  "scope": "Blank-line formatting only. Original execution hashes and source-current checks remain separate from explicitly verified parsed-content equivalence.",
+  "changes": [
+    {
+      "path": "skills/zh/skill-engineering/skill-quality-review/evals/cases/review-missing-prompt.yaml",
+      "before_sha256": "5ab823811912af38a2548edc028f3c77f3bed40eb1f2a4493c30dd4bbb200e22",
+      "after_sha256": "004d80657b4a24398fe43398328806d4c1fda53bec4e37e0416ec4889a6614ad",
+      "change": "Removed whitespace on blank lines only; parsed YAML and all embedded file contents are identical.",
+      "parsed_yaml_equal": true
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-quality-review/evals/cases/basic-success.yaml",
+      "before_sha256": "451bd1ef5d3a0ddee4b52253045588024ae2454c2253cb49cd651f4df4e8e99c",
+      "after_sha256": "3fa7c3777c64ac637988d77d1e86d77c0777632b03c2a165571451ef30a35ab6",
+      "change": "Removed whitespace on blank lines only; parsed YAML and all embedded file contents are identical.",
+      "parsed_yaml_equal": true
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-quality-review/evals/cases/review-missing-bare-resource.yaml",
+      "before_sha256": "5d623386e58532a47bc57155036eb3711a5a67d5c8c48daddcb657551f394922",
+      "after_sha256": "f665fbdfd7ca38a0870e036ebce24b290ee80140fa9176e7add85b929ffa88eb",
+      "change": "Removed whitespace on blank lines only; parsed YAML and all embedded file contents are identical.",
+      "parsed_yaml_equal": true
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-quality-review/evals/cases/review-valid-package.yaml",
+      "before_sha256": "39d77ad2162bf6533bf8ec68dc2fcddbf42ca12a5ac93a0c8492ae87ebbb2b88",
+      "after_sha256": "ae6f27cc1becf26ecaeead68b53025d658e58f8110161671bfdd3adb5b940edc",
+      "change": "Removed whitespace on blank lines only; parsed YAML and all embedded file contents are identical.",
+      "parsed_yaml_equal": true
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-quality-review/evals/cases/review-bilingual-schema.yaml",
+      "before_sha256": "980e7f5262f22488f8b56972628be2cf4888ed926c0d4036f718f8350e3175b3",
+      "after_sha256": "58ca9f7f8373c5412bf104b6cbb8ed18be28efec8080ade57adfaee147950ca3",
+      "change": "Removed whitespace on blank lines only; parsed YAML and all embedded file contents are identical.",
+      "parsed_yaml_equal": true
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-quality-review/evals/cases/review-missing-prompt.yaml",
+      "before_sha256": "bcd33b845a851fa0515509fe00beef1f49406eab6fcd04dd3beb10bd118eecc2",
+      "after_sha256": "4b95cdbfe522a052463a056b4e8b0a33dfc1e2e5fdcc6c0eeedeb89d88c8e2ad",
+      "change": "Removed whitespace on blank lines only; parsed YAML and all embedded file contents are identical.",
+      "parsed_yaml_equal": true
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-quality-review/evals/cases/basic-success.yaml",
+      "before_sha256": "290a520d5de8bd768ae2e1dfef482e5a3766bab5d5661adb9de221bac8a7a89b",
+      "after_sha256": "80ffc64124c6ce08cad62cb5645f84a8f9a961df1d0e79eff2f61ac1818e1829",
+      "change": "Removed whitespace on blank lines only; parsed YAML and all embedded file contents are identical.",
+      "parsed_yaml_equal": true
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-quality-review/evals/cases/review-missing-bare-resource.yaml",
+      "before_sha256": "3ac21a4f1ae3aa7f1532e5ed5881a9f2dfd647e340f44771ff92f46b24beba59",
+      "after_sha256": "f490142c81ad8704659b6da7890d0798223c9a3a819685958aa83516b2e204be",
+      "change": "Removed whitespace on blank lines only; parsed YAML and all embedded file contents are identical.",
+      "parsed_yaml_equal": true
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-quality-review/evals/cases/review-valid-package.yaml",
+      "before_sha256": "b93bba9f2dbf175f8063775e7e4fc849593240fb67c457493060f54c0f1fa4a9",
+      "after_sha256": "cbe129e1683d367d0bfd9541656a67bac023dd5eaaba243254568954ec98f987",
+      "change": "Removed whitespace on blank lines only; parsed YAML and all embedded file contents are identical.",
+      "parsed_yaml_equal": true
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-quality-review/evals/cases/review-bilingual-schema.yaml",
+      "before_sha256": "52f6218a2d97ff904eb9eb2b71d8de035058df3c246d5dd113a8da5730435cde",
+      "after_sha256": "407e055ac8eacb4fdab6e0e964839dc1884f76bd6c49a59d91b08b2e44fc0384",
+      "change": "Removed whitespace on blank lines only; parsed YAML and all embedded file contents are identical.",
+      "parsed_yaml_equal": true
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-change-verification/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "1d30c729b3a4ff3bb3a16752ef04ccc34f619a14b33276d1eac137a889f1ac96",
+      "after_sha256": "f9ee32e7d64a33b67e32f9c31ef03048ce504b4ee8f4af5acd1724ff6f4555cf",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "defc7aad6b395ccbbfaf981dc28b8197ed7a40b89bd7ac7c160aa6c7887ea4ce",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/acceptance-criteria-review/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "6363e613c186a6c57773b08c9fcc6a6ea2e5a0d25e2c624727c57b1ead8473bc",
+      "after_sha256": "d7fb7a17569f516e13d48237b5138dba13d73c581e6c366a3f86fbbebd03c0b7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d73724c0ef1d71168a68e226ba92e5a2f987329fb3c0ced0065bde5ef94c3fa2",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/accessibility-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "a1f1150355da283f797879bd7d9a42cec3be99e92cebc404103683404e99738b",
+      "after_sha256": "e87f1395430adf4b46aabd97659261a6aabbed9fef996c93db8b5221eda54d3f",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fe91a947f06930c305411355246219a7770ad887d531ce8a365af422be5b9433",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/agent-failure-recovery-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "9c62ef52ffaf9f5110d5d37ef51ab35919587ec15669b4d82360e720ee55ce55",
+      "after_sha256": "6f70261e27075f30aa96baa5d956340cc03939823eba98b673a47c426aa08850",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e0ec6df3af93f068684e8beda0650d010e1e1f10371a3e943874ca7d40368d1d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/agent-long-running-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "077ba1c646e78438e855527f15a60837deafe1b52f5bc6fdb90d36308991e7c3",
+      "after_sha256": "b7db4a8b7b7525ef8a3a9430a9b9210f6dceb9a4fa1a5b37a2ab63646612da6f",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fef78bede86a262b34e08ddab9e68ad9afb3a33824dd936bfe297ec4d689c971",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/agent-loop-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "b287fcd630081d1a93cbf7357fd75475a6b6c7668bc6ee9b428055b4f66c0b23",
+      "after_sha256": "2949a593459f2b749ab6e341fee12cc74339456d933b276b898cc037afcbf6f6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d0e2cf04ed2dcace2ef6e4f8181e8a264e7ea1f2e8f1764ea4a974fe1634f5dd",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/agent-memory-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "2d009d99e710a055e96303efcc6846a276c5af521bee5d435589947ae8b24c6c",
+      "after_sha256": "ad850e4fa6da5b5fc5c548336045bc1a133ee6bc6a97d8b748d34be52ac7c427",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d64220504230bef808ed3e06a82f01b6061813dc7adff72ae6c533c95a5cb1aa",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/agent-permission-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "887ea1e6c6e0d90df1910479baad38cdd378e413d3819d272c6f609527324a1f",
+      "after_sha256": "5b30d251d1f79584bbe9308868be3c867b7f97cd95c0a367ca60baed4af995e7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9cf52ac9bf16c6f0664aa0937bf6e3e3b5674d4a0383d75e4f16863f40812a00",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ai-agent-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "f993c6791b03104a091831a0b77b74e48c856619f014bf1e41f789896ca58731",
+      "after_sha256": "ed7db9527f53ef33c8a9c4872a0f1110da31e74951a845e7e39ce6d88fb71ea0",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fd304a79c36d37efcaeacdc8e98b0694987de2fdc34328796bcb1a05433647ec",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ai-assisted-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "cd3cbffe885d5759c8a6c64e5c4b86f3e3efb76a6d97f4626e9b62ea37c2285b",
+      "after_sha256": "0cd259e13e1be468beea038263fbc781ef03f42be5412a5162d0cb8f62b65d6a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "cf74d8dcaff10cbcc339dcb65855ffee7dbad30dcf31dd5092a143f88fcc1dfc",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ai-feature-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "5041f8723b79e3115e96c3aa5bb8230e73b43b45319fc84faa921176f4c559cb",
+      "after_sha256": "f634770d6966297f4df29fa4c1eff5795e70efa27434aaa6c0a5e37b12e534bb",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "73799c4beb4f76fbeb5b7d6a651967b5dfdfa4522064e1e3a860a5311f7281d1",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ai-generated-test-review/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "6bd5e40c4a615b51d7975786e80af1e1249deeb89e66ca9c0e4ca0e031c79b6a",
+      "after_sha256": "30229742360b0eb405518607e35e8365523afe93a2e9326789bf897a9d66056e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "64f20c1b37da48736dbf3b2552c50c91192fa597b9b803e1a21aa5059bb0616f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ai-safety-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "8d02187eaf74f7d18aca5e6f2ed652b43535f5719be460ea630916f85b12b917",
+      "after_sha256": "36153f29ccc405a475023d170cb0e3d4c4141403442ca632a439b47f04413be6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9ae5e794b3ce9b7a77cb653d8f7470556df462739bc879c4c3377f350250b9fc",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-error-contract-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "fa3bf44dc72e90b0a1394af5b32ed840c6ba47eb355e89f86f87cc506ac56ec1",
+      "after_sha256": "0575fa676381b66b60d236566f46c315b662037df7d8769332ac060c5e4a30b9",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "3fbdc54736c97e0e5dcf6c714d9fe72d2aa68e048fb7319f475e4d95b0cb398f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-error-contract-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "94c4edabd79f469186fbda7944552314485a33206281134b013a7713e50c1e91",
+      "after_sha256": "54dc7dde5515a15546f0e340ef32b78e55c7aaceab901dcb190ee5fbd77bb3f7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "031226c7da2016a3102699fbce871c176da4b2513b755d8b1bee99393c9df1b8",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-idempotency-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "46444d1dac56707dcab10e145d13a19b25697e5ad23846a46aa92ca48bf1ff94",
+      "after_sha256": "5475761644cc6090e7737d9f9e156aa4a4e3ed16d262bd3d6f43951a9d096e4d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c3e7c4e2b6ab0c4ce94443e99adab8bb86b78a4eaa66543319a0cf88a445d985",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-idempotency-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "8ff00244f9de9b02183f13425711f44ee0de9d751db0751f106692fa5c660567",
+      "after_sha256": "94de4c7c00584632e718af396017cae079b757ca967c496742b53cb4a5f2ea1e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "492d71deb8c4f5e99e312988d99ae9da2d1af9d7145c264d06a6680c06615aac",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-negative-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "cb55e1ed5014300ef143d16b442a664fedd49e4f9bc0d7e28ad34403cc0d775c",
+      "after_sha256": "a5268f0438d9571eb73df1f7b22c05dd65de51a1ebbde2885d7367919143d8a5",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "7f4ae852a044c7825843e6250eb37d0f4d8a752e3ef6832f520fceba2689bcf8",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-negative-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "c52fe90b0186bdac0ab58dd345962bb96335f89b509f790632d8158476c2f744",
+      "after_sha256": "fcfd4b2085632890ad98d68fe0013d92d79a892549f219b8cef2186c6f274ddd",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "407a5c07326576796e35c2714662dee9dccf131a9012b44c76aff36f721d5cd1",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-pagination-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "c0c54cb4dac3159e55bf6702041e44ef74133ed9ac64656ee904a5590a6bb811",
+      "after_sha256": "cf0246869b85c16d768d65334a247a27439a7800b03259885e7832faea7ab61d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0b6e5d2982479a9a7cde5cbeb87b2bf05e79bbb3595f246ea06901c14ec7076f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-pagination-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "a888580f619eea10ffedba565c6cafa0cc6c4b5d55ccc5245b00855fad4500e8",
+      "after_sha256": "5b3fedf85d62c9357aa9b0edef1e4498b26f8f87dc20ca14d54c75cfd89f55f9",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "cdf2ff9ed12353cd80eaf6ff3e2cab36833dd261164a452494d9ad45bf1eb80f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-rate-limit-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "a45fb326eb61fee0a754639e76cdfb55f4291e5b03c21a287eab1f1a63c6705b",
+      "after_sha256": "97a8a1d86546c09ff1e98fbad764f37cb3396468903d770800f6bf2f734e65b2",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "6c07c78d40a04d4d9b0e93488b8017466db616e25a1939875db35bf25f016dc0",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-rate-limit-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "9858ca2a9960076cab557eb7b3dc91591026a2d50f37a89953aac40ae66f07e7",
+      "after_sha256": "547e5d5355f230ac79941bb56efa7e13607a3074c2bf96334ab2d770724eea4c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "409124c828994826301eb7490271b6064aafbea9ff99206f1a899e3b4769dd2f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-schema-validation/evals/cases/domain-method-control.yaml",
+      "before_sha256": "c6e7ba81d4b64220e146c41a8680adf6891be3cf07519a2d10bbebaa1b91f707",
+      "after_sha256": "c7f4e3d9133939339532f22b7b42cd3982577c2550482a4c2d63caff025dd33c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "8740a79dbc3354eba71c056e8db71831a2cb3f19707a23b6e03dc7115a37d279",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-schema-validation/evals/cases/domain-method-success.yaml",
+      "before_sha256": "510c1c08f3060700c3a4e04d2b2e705da3bcad6707a0811fc27a0d1966c73753",
+      "after_sha256": "eb1bd23f15c790fb32d5f64e908705b8f589d43a433791499d718061e5d80514",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "3a1c4b85e0a813293efd57d8c0c22bc83e891e22295bd5f6cb931bf8efe97044",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-security-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "98784babed59baab67329ec6915daea066a81a26a23c4124f0b9427b8445bdcf",
+      "after_sha256": "63d7b12bbc54a6a716a8f6c60857e151c33ed990c17d772cf8f7084051c3abc4",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "7200b78a1e2b13169cb427626aadf4d549125d2938595ab3ae4e3bed42af8fc3",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-security-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "cca0affa79637ae1047bcac444ed3644c98cfd6e2570521e4b72660a3c63b782",
+      "after_sha256": "a2f824b164faebef78155e4271e0bafa7513ad694a60041c05fc4360da9144b0",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "30a7b00f3331d2358d7130b7e167b247b2f80d29ab2d42201a9ed06fe2e9ce15",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-test-bruno/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "be5f494c474f5119b32384f575cd2f7b0fbd6f43a91237fe9b0b99d51f22eee6",
+      "after_sha256": "5f24992a6c26afaf0e858599e1f8ee830a0697488bdc6ca2b2cd29ebdd4f2892",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "72964d8f1ece00dd24ba6c8e506421ab51d7349635c0c781cde11b8e7da12270",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-test-pytest/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "c52033dda763d92c5b53803011ae19e5f71918f27b2fef7e12e3f3ba16e9dc81",
+      "after_sha256": "087bac789201d3d6a0f5f0c5ac6631f5c2e28974657c9ec7520457b188322e65",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e0775b86e40b29929612f7eec3753039479e59f052f93930e61e42ece133fdaf",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-test-restassure/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "10768e38af9dd6d541516db251849db637a8a4332a5abff912e7705484d50748",
+      "after_sha256": "c8c73e9b30dc446f753e342421108a62b97445d3f1908a053b5bfe4e9b2c0eee",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b680cb6565f8d7936fa445e26ba40142aae2a46a59d70c853924761f0536a983",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-test-supertest/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "2840cd58ca9b845dc01a270e03bb3d20175ebec2cee7a49a45a9e786f4dd2abf",
+      "after_sha256": "79e85a7442e1d8f148c365b105c6e90218c0ed029aa48c673b0a168fc67f8fcb",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "4ccc70d724c3f589416de7b7250fe8e3207dba292503857be4dd925e1b115b92",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "4353385cee1b2a1380ae11523260e98e1641576e0d76467dd1717abb336212a2",
+      "after_sha256": "6a510eefd2027871588b9aea19afd8584d7b5e215d506eca908721e0a05b6d1a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "2a763dc07d6dac36b347b5a957efd685839b94dfe8956c30717d7730f5135a18",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-version-compatibility-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "33cd864e5e3a4ef6210da672eb2f6e80175ee1c06ee8b80b0595407da5ee0b0e",
+      "after_sha256": "747989ffd1b090fc1762f7236a37866b1790674d9bdef397525a6e7ad4596f06",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fe7a6bc8a4dea9772680a2871017c117c976ce11f57019e1e9139170f7b97e70",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/api-version-compatibility-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "12e7c3718eb9e9d414e6b8a5d41200fd95c9624923afa8664721b0a8202d6c7c",
+      "after_sha256": "7986df2e0bee1c131ac22e90867c83350a0d2b26aace0b7856285a1bf57afa6d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0bd943c7c577dfd24a3fa6357ffb54d7e8b7aa1f119d173f25189db1ec01781d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/authentication-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "c654b61cb60eaf3c9ac63be8e10c0dc223551e48f750973bf3aff5e9432370dd",
+      "after_sha256": "7dea9907b86250f1cd5c52caa00e1e477a00c5004ad42d6c3813d901d77b0065",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "42414d5861cda86f99a55c175a57043c64ce0812f32f184ba29f7133b0bdf758",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/authentication-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "0eb4499e1dd281c3763e7886543f739ee9cc71e1f7326782a321da9b0df46a10",
+      "after_sha256": "46599b8b2f87cf5adb9830c5e8e908eb117c12ad5ad86a004ee7a57175e9d25c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b232f881f53dfedca40342ae31eb016a46cafb29822f19b0b24c062dde16971b",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/authorization-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "9ca74a5bd1dbc9e1af9d215f50f06d040ba138f23bdc5f4c985ace9eeb65b5e2",
+      "after_sha256": "3b5feaf1683011b7dddc7908836a64df7d32bfa6560af06fac940e2dcc932ed8",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "601e1ba56555f16a9fbe684b9d5ae8c3b18956fe01e71e0e029b1824e14df7e9",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/authorization-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "9903a4a3c3da185adb046b702a0258676953cf3f469283214459599d5b74c38f",
+      "after_sha256": "4dbe727437c3d35af52378a3f15871796b8b50b6635054149c7a329bb20bc8e7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5a405e6279e78387a3d1019d90b3085cf072caa2204b1fd382d588411b791e75",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/automation-roi-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "7f580130cda8d1acea657bf21668705bb353d652c7b311860beb1f00f0b468c4",
+      "after_sha256": "5230330d27c6fdf42196b6f8b676a4ac0a8d9d3ac78852e550ba921937a5ee75",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c911b1f492b4ca731bf3fcfcfb2d596a82d881710b7d998484036a1f0f036d04",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/automation-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "a7e7ab414f454e4e91428379d361ce92f7ba17e52c969bf3e59e0e4346f0cc22",
+      "after_sha256": "68d768ff8729dd8d3f31c2687918f4e1d2efd5ae11ba3bc5a4f05ab5e9c04d6a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0181be8315e33d407425a027b75477f8700d00267f181480add3b6f0d75b3b53",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/boundary-value-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "f8617332da303edcb8bbb81fc5000df6ce887dc3fcdf69cad49c1b15b98ef9bf",
+      "after_sha256": "3839d7e6caa05396a12db40bde56939705187eca03c6bb15a21bcc4a77a18dce",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "8dad2513ec8e347742ef01561c5b61c59a045cc7a8e2cbede91bc09d98dcca50",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/boundary-value-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "27a3ac6438db2e24139bd12e61c335a35d35bdf97e3a8f71b850f0233db73b3c",
+      "after_sha256": "99f47cbf2f3333189cc0936909c52aa88a8cd62d173da2f714b9fd1ec75ce545",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "6e3b27fa073b8faf3445c278496a30a837f4e003aa35e1c293c3ff4612908f7b",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/capacity-planning-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "efa69175dd4198201dfc8b95d3b4bbcda21990e2acfbad75fa741b9c5145dcf4",
+      "after_sha256": "abdb75aea0160fc22dc28f21afe9c398332f8d63a779952238415b2010951d09",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fa41a0d8b681d44ac6550637d26052b38dcda54020850a55d1077ba6fca48ebe",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/change-impact-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "c7b8241b493f5848a5844f7aa248e671bec3e4a68d419e9babb720e2004c1b54",
+      "after_sha256": "e24781a85a53d558d91002f76cd2a13409d17761afa7dd513026d1406481a542",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c5c769b6b639eab25541da1c87625cacc48a1c32a70f42ddb5a3feaec45647a3",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/chaos-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "94599c92b9dd305e0be8445f721d6faebb227b1bf7306506fcbe1f8d850ec79e",
+      "after_sha256": "c1c8d83b2702fdb760853b854330612b0080ba951caba4c49e5dc66c3a1d2343",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5895ce6ce87fdbc6d74f70921fe83cf628e13dabaec39a3f79e50d3f77c8c631",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/chaos-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "a4535f39789c66be91e981fa3c3ea832706d70e7227fde527abcde9469f5b23c",
+      "after_sha256": "b9f06b3b69d73ab120e106a9d6fddbde6b11cbe346886cbe87d3cc63ab53be88",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5edafff53a1ae99443fc67f9ff17f0a5ada38f9d0f982a84ce6a8be1cda83806",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ci-test-optimization/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "34c5fadbda89a55a648ee8c672061c526c09c94de8e5d826b5c0e79a34d39047",
+      "after_sha256": "7ba8f4129770b66adc5eb55f1a5fda88ba4a110c36f1946fc2179f09a871c1ce",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "191f8eae988dcaabaa4cccef3aaad110cf0da13cdf60c55571e853d45b39386d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/circuit-breaker-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "3f5903f9b707daa4198517a61ed7e4bfc1f91a8606b19a8d6566d3081de68b63",
+      "after_sha256": "61c4e8b2b636443784563e28ead6cfb1325fc89ee2716eec34eae288e01bd2d7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "f4ddf61dfc4ffcf115c005c27a0df9e2f2e7110be961c206972f54e242dcfa57",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/circuit-breaker-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "05904aed3be07f62bdda14e66436319412a87bc35eaf8ee31f93683a6c261b92",
+      "after_sha256": "53aaa4cef58c625d3d5fbc00f42282bf10a6d28f74515a69bb516a9715812991",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "83c9146e63e97824a85f8499ad29a08d30eada7d721cad769e7c7faba52c4468",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/code-review/evals/cases/review-upstream-guard-control.yaml",
+      "before_sha256": "aa43b92c88fb1695ece115a7231f83f753d34b181620ab975bb210b935e9f5b2",
+      "after_sha256": "76d2f839286ef8c9a322dd5c0ab9190eb3b27e98de2f8647324b3fe1aaa7cafd",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9b66971cee59703241a8832b6ea4944b46c7272b003f8627ea1d6b7857f59653",
+      "embedded_file_sha256_unchanged": {
+        "patch.diff": "05099b223e3a32632a81f892e5c3da61335d8fead98624f0eaad45afbc2b9432",
+        "items.py": "faa1f0d5f587cce530fee5df8bfa9d5e25ca6ed1880ab9db130457e3389ef03c",
+        "scope.md": "4877850740c5cd4282f9acc62dfa5a359e5f917c2c3643809df190b21731d702"
+      },
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/combinatorial-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "a78c87ae635d66db421687901374a67fae285a4c2d5b32879106de94471fc01a",
+      "after_sha256": "026db75f7f320ab71ff19873e7ac796e2b6ce70b2bb419c04a8b2d95d0314495",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "afe514484fd6f3bd14cddd872caafb05395172058d59a44d52fad945cc19b523",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/combinatorial-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "4a594d4ca1de43a9803f45af7a0e0748d52832ece6695bea47b9b4c1e0f64eca",
+      "after_sha256": "52c2af198ca635978fbcfbc4df599e12de4dfa200b442b31f4241a3c396d3c58",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c07120e3555d578d42f029e3719e1b0c336dcfdb2c35555e9129aff4838d86fd",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/cross-browser-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "9cbb78f4f3721d8209b4e4eebefc94410a6c34a98befc41660dc3332818d25e2",
+      "after_sha256": "de96b1162fb634a1fcf171d7a40de7c87f203bb8a2eec004736f953dc2417c98",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d91539eb9fe76f5c7e1c84db597c8cd7c8e6b18797c5f2737605fd55cdda4bf4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/cross-browser-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "c442fa99bbfb6228b6b99f7c9129855b88559156cbd1ed4aafd30309803de406",
+      "after_sha256": "7120da2c3e7dfeeb82832e01894c179235f818d587163461e5e0342d9874404a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "29f1261cfc90df085d52f87fcb2f48cd3f8d113f6300a929e515a7b443bc39e4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/decision-table-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "897778f4c39fcebca99b26f07f2b54b55318df666dfdfe10f4669d0baa38c64f",
+      "after_sha256": "6223505ea78c803e7548a6792c116eaa859492bea8361147a724c2a9fb8f3fe4",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b4874fbe4f9b3fae6ab0d27d628c2d5261528b875d05dec8a716be4c4d2557e1",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/decision-table-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "3d2291cd1830f88d946976459bebe96ccdccaaa34d3f6eee062844e818ab939b",
+      "after_sha256": "d8a3c7a533e57aeedc21fb39dc2066142ce5d0ca964b70b05816605e1aba4497",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "dc4b1a92ac39e652ba603c4d397670c6ac4da37dacf84297b4a8fed443652581",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/dependency-failure-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "300c00cf17e767bcd1493c394e1747cd8c3a94d1754e3c6ab183b87f9a7a0f4a",
+      "after_sha256": "bb8bc0894cdfe89985e89e10497c837f840707233fdd96a24111b9e36ee549cb",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "3592e42a72a765ee3f86e9bbe100870f69f1bf3840a38eb8c721ace405181041",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/dependency-failure-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "1a8ecab92820aa47f1eaae7c870a65187e9b2f5268ac87b56f6098ef9f554094",
+      "after_sha256": "4e5e9403f5db9eacf7edc7c3198d57ade7fc2c25d5f3cdeadd69bb9f296fc21a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1759275fa79606eec666e24415c2cb8739682ae9e4a260b1800bd667852a2845",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/disaster-recovery-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "c1fea5ffd4281f491d3fa8bd2b2cb30cbd15fbec683b0b8dcb14e054ddc4e726",
+      "after_sha256": "d7e2a83fe9de8d75e1a7677739c7eac0d5f2673d235964376e3ff2165f3dd21b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "43362185ec089250fb8cb8a3431298fbb6a1476dc1f5a4d0a284a9b076c310bb",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/disaster-recovery-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "5c0fb6d5163a65d0d820b3296e883a611f285298c32b40e768aa5c05994f0adc",
+      "after_sha256": "89837441c905e1a8c4cdf47093a8a1dbc3135578c2abc555250f2b7cc8672ad2",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "04b5bd68b1c4a041f8609ccd1da6e41f2d81d0e5b5b828960d1700a58c61ba80",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/distributed-trace-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "fed834f26ed9708b6e6fa0e77b868972b4cfada4d8799137b4f46581b020e5ae",
+      "after_sha256": "946b5ce8d5da6ed24b41d9d3d074ecacec9049a7d42514a6415a04c520da2ca7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5b6d89bcab816206536f09373b58ad701b208014f13f72b23e7569895bde3373",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/equivalence-partitioning/evals/cases/domain-method-control.yaml",
+      "before_sha256": "d4b60b6a6c0df343de0edf1fe6561dbd17459abd6172568ce96fd1b53163fd24",
+      "after_sha256": "36cee8ff092d6e58fcda2d65b5e75ceb55659d0b79e1e4f2c3e50abac08d8209",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "140271c1c77e4e7b807dc09ef74fa380b5e508899d7d4bea42992564fb09bdb7",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/equivalence-partitioning/evals/cases/domain-method-success.yaml",
+      "before_sha256": "50dc1784abfa26f3d20ce89fe0d35257c2e013a35825906c687755acc13b020d",
+      "after_sha256": "d9f23346dedcb7b0374b89fe8fd8830ea63e0ffe692f963f078c2d9ee8020166",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "a0866e9dd95dc0017dade36724b544bf270988e34753d99c35709d3eeb818ee6",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/failover-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "97cf591898205367b43db5aaa7ab384caf4ae00ba88ad1a72f745a98e2b71c4d",
+      "after_sha256": "d30ae6b5b00cd80119b55763debd0dc07a9340509d75c9dfc1b47e21299be63b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fd5dc13916774c08a274c3343a1b5868b007ba742285a01febdd4db27cf27f30",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/failover-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "0913ce18802864a9c76337404015e98ed0f2f8d61eaba002b9ac1d9bd9fa6434",
+      "after_sha256": "7b85dd3d8e912082aacfbe75e7559d114e91bb8256265dd94b27ea5f92c2be94",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "67497218a7b1d482804a4282f14a0d8df2fed6187a221a25b16dfbf96cd2dd95",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "ca9ac688db5c3b51fe3c70d6abf3eec73cb06585c34e22a3f4ca67371780a812",
+      "after_sha256": "2a2bec222249a0182cee7481ffe90ac573d7f383887c98544054fd96ee61b4ed",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "33a1986557ceeab20782c4027f36b340e25d5a1629fa40c213899595de505bcc",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/llm-consistency-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "57f41ba72f00e8568d3dc002a26b7073a2924d03cc6d3fa95696543290ba1079",
+      "after_sha256": "89878b6a2d11b1003fb27137534dfcaa946f8fce5015ff8fec99f438fda971d3",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "7a6712b23f24b1c966a6e0e8f020f555a3b584e591aca3abf1e9657d592f1393",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/llm-hallucination-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "1d1101f8615e3208787599a0d47895494c8fe3838ca2499e1f5a1200ac92aea7",
+      "after_sha256": "610ce4f83783c062371a6dabb0249149ac64c8ec70d576a6279ac122c2142028",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c7745f3ae94b91e84f27f4cd6e3dd2ef1907ebd6ed016666a5afffeb2860f7f7",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/manual-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "5cb1173b1b38d289c5848b87749e4df851be3bbef5fa274829a549cbae6db02d",
+      "after_sha256": "834c3293dc3b961a7f88183bde62f8f9a86179c25293fe979f6b884b5fd2b552",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "520be5f6047bed879fd45ca52ea3b8e847e406b92a3796fdb14f7bbbe6f05065",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/metamorphic-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "7928b74b1e10e53c3d1ec2ed75aa75261bd22c497ebcca252045283f10d2a6b3",
+      "after_sha256": "4b4f6c1720420534a3541c5af9c5ca3f2c3fea00fcad9044c2b14abaf9e9e863",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "25ba6216cc1592b59de03e0aabb67f130984ace403a48de72c2eaf13445f9745",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/metamorphic-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "5146ce30bb7af06fa66ee3d5d8524bbb70b778ac1fe61e7e8bf0ed55e54c23d0",
+      "after_sha256": "c9e498e6cb1837867f5a2cb67edf1f6751439486d81bddcc6f47242daabbe550",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1d4da62ab03b23b4c7e7862afd0a41df6af0d73443a90d466a09cd415610567a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/mobile-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "a54ef1bd84541e597b2d9e2aef2b8edf4ea09c848b0427e880ecdb53f6b7236d",
+      "after_sha256": "25c63e641220169ccae2028609f8c05c7cfbea8c5ad37b887c436b7905d5076f",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "ba955f76f8220d45fe51a2bf0b40d03a91d69d63d8ef3550c6b079282e8d3dfa",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/mock-quality-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "72640819d316b6f101a020f56a33f7dffa114db49be164d42d8fcc2c6f79ec98",
+      "after_sha256": "625c5491d8eb9889506d130997742b08dd32517bba8fdeecf64230edf990bf0a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "8f6858bdb0b82625d699db7c67fe84c7a1bcfc5805e5199742bb7cc9d603cc10",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/mock-quality-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "3ba62d74b85ad626bc50c2097ef49bff8ad721c8c7bd47edbf46de0a05e8e0c9",
+      "after_sha256": "5cffd7071db0e141f620cc74abef09fce451c2cf1018387e39fd14977c803e58",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0a36a6a658813eeb9d10664295a8496fb10f06fbe106942e71fa86eb664ddecd",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/model-based-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "8446542b907bff998af58df54cc22be90ec2671bc6a4e18b380a4e0caebed6e4",
+      "after_sha256": "d417208e66852088fc668b2330c6a4049c5618263710d28fef400b2d6129dab0",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fbcefd9711505019f6463a24c2826829a67c7a7282f9fca9c213f95d8924ea12",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/model-based-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "cf9c0148346cd82706ee8ea539d5099f6d9e8216b3a69e522d66611e6db8e1f8",
+      "after_sha256": "5cdc5f7d3d5d1855d2f1df2a47b58baac6c49da9028ef451c975a3342e9db324",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "aebfcf7a9988305bfdfe26a8bc7a87f4b0ba80a84e59d670969ecc855a724b8e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/multi-agent-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "614f3c8fb4a066f43a79a801d84886cd5205f7ab7379ce7b0ff1b2cb6b0c5a4c",
+      "after_sha256": "5a7f23519cae2cb7558f374f9137c62233c1101a793c7100f0cdf2c471ae8824",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "83ac3a5d378b286528c4c7370e4c7d7b29b5a3a5310754bfe9b8629b8a69566f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/mutation-testing-analysis/evals/cases/domain-method-control.yaml",
+      "before_sha256": "4a9c8c6cd05866883e7ba24972702b06b71c242ab8a263e9f3fbd5f4a724bcab",
+      "after_sha256": "92dde73c4e8bb9c1fdbdc0c8ac618e5a326204c5198e79c4aea9d282624fc2d4",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "091a60afc19c56f99addb67dfddbc759057a5adff8e5118289a4c8bf54e8bfce",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/mutation-testing-analysis/evals/cases/domain-method-success.yaml",
+      "before_sha256": "fbcb93f55685aebb1d158a1eaa59d3d5b68337edeee8195b649f24cd60ff3897",
+      "after_sha256": "41275fa10144053b5a6467b89fac15cbdd96af7b4e13ddfe6cd655adf51f837b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d6f03b29c734fd4abfa4144a11211f1f0fb0e8f03a5667aaaf1ee84c8fd40be4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/pairwise-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "2dfeebcbd7c082bb8cdc5f2fd1108b23bcf287590a36d5ed40762309e82cee8f",
+      "after_sha256": "69e9495f57410d01380856483b25319c9e7c4365fb3e01562eae5ed0e8406378",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "f0b9b2b13bf180322da79a6f21435a9b8b31eecb6fd4685d6cefc91bea9f7653",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/pairwise-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "004ce9b7dd3e656d3cea617db7072592d3d718991ad507945975f5865a457da3",
+      "after_sha256": "1f30fbb7c7a1672867d2c2b1cfdb1785fd79b6954f29eecb636465e36d5d0941",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "8c7a211415d5a15c20ffef22670a74ca43ac25c76d1718de974105b865208e12",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/performance-test-gatling/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "e6f7d811874dc4ea37da37547949a3fb56ebd14b4c5f4e74e7f176fb520fafbb",
+      "after_sha256": "8fc9d72e1fd13a3be6881fe8c3e4c5bce042a8d45b1278e3f2c1db34533ffccc",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "81aa29bea03101db09d6862fde2e1fc4fa506bd7cb9b5c8004a821c9bf8d1307",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/performance-test-jmeter/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "fafdec0415d92c46c76a2d19d3d54eeb171a96076173f6893883f8c9bc935028",
+      "after_sha256": "87ec6d09549ce852563e3e62d671870e10ca5c3b4eff3501f814aa1b1506deac",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "4d08796c218b929a1cec2ff0b778bc370630f54af0ae5714fb759a5cdbac3587",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "b6cb8c971ba183ba025aaa4d64b2cd97ee9cd790e7eff5bc5831bcfbeec58546",
+      "after_sha256": "6cd57d0265779f4ba7b5f8210c391a7e4438d0dfd9ead956a3f21f5cea4bc35a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c7f3d760fd750bbeab2e3bf6b392f73c84298fa670763ccef28728d812deab2e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/performance-workload-modeling/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "d68e7da902fc047b7ea42a6d770e87d178c940b8bd044f8b8aea2c11398507d6",
+      "after_sha256": "d08bf306a133a2232958b6834450249eb14f282bd9f1939141a651ec144da932",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "8c033e6e64703cd365ccbb3b2aa81f00cda3cf5d599d49f33bcb4423814f9e2d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/pr-test-impact-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "fc00906a3006d00e1c3e8905ce3dc8107189c38001ed9f9ef76944b1b07b30f4",
+      "after_sha256": "ce26e0bc552648caf0f4c196f9c14d26db22b1ce4fd841ec0bd133fbda79c3f1",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "252602bd7e55367a86f273f4e0620485e9f29604398e949eb789f8121279691f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/property-based-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "de1849c2916537086673c78d1ca9c2ca495825439a13306de0a64a4556dfe6fe",
+      "after_sha256": "2a30df9443e9b810c4e9a3d6dc0f1f1ba34beb4f0a7bad8239e281ce0afcc88c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "05de38c23657aeff3c7789944164fe3c238ca29da9266800c169a0cf7f4b4108",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/property-based-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "19fcb4a96bcb48562205e31c588c3e72043b965d77380d9116097640df74b210",
+      "after_sha256": "d52b2fbac1766f00e446527d5ee69457ae045c2679c9e26fee91b1259af0589e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "20f282492ca0d08946d1c8a1aac55393ad28987cc565e53f9355f082fdc89ce6",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/quality-dashboard-design/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "c12d2a9f38a178ca2619f9067af9e756f82157bbc632b9ccae90a5091e67d639",
+      "after_sha256": "1d8ece327d5c496a0a04f71069367b5d1bfac66a48eff6f19ec70b597c0a4b45",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c59c1fa1c1ce119abb92257871709614b58577bf53bbb07b6eb896739b525dc9",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/quality-debt-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "099abc5d4f74ceb987b394635214841c88dd926aca8173f7febb49fbadeaff7d",
+      "after_sha256": "144e2159754d6d98d1ab7babf331c5b85929cced229123ce145a147e2e79f1c3",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e86ba6e5a854bda2c9e2dd093f83e5c2dd3a68cc6ac6654b2cda8539474f2c67",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/quality-gate-design/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "1e6d03d32e0c605a94ddeb596af4e2f78d6bcf762ddbe55fcc2e2ba47d044b73",
+      "after_sha256": "6cf6f6a8a6be6e9758d211b2060e7980862b6a23b093eff863e925ea3c91331b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b6885f9ce4e75c43e460e97c567bf784c1b3b39cbced2383fcec458ac4c37631",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/quality-maturity-assessment/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "fe428cd4a2e6af82fa92284a0b86c3a706dd9983392294caff6eceb9bb1726f3",
+      "after_sha256": "95f3cc64d8d04c8f4bda63e879892c8db2db1c9c15393b4f131701e04851bd30",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "4c85fcfbd24cd99ad69e22927096203ed0bc15c5138312fdd05e236c789cea81",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/quality-metrics-design/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "eeb88dd548cd0833aacd153a1dbac134338c4c44100b703006e0db0f2de441cf",
+      "after_sha256": "86d6e3ec9e646a9ed5df58e3417530a0c7c86cf4e08f81568cb3f5b9e7fba7f6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fc651dcdfde187cac6c16aad13460d501cf1af32c3cd20fca1977a817fc954e6",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/quality-productivity-metrics/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "732d9384568fa817a679604c1c5880d3c7adb098206a24118ddf685027b29b23",
+      "after_sha256": "be8e479e545998ba618f38301ee02724314596a85b459c1faa94a04d43969341",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "09d7197eb6ab3b6b280b642b55b8ab8ae63dd2b7e41540e138e85ffef1f8372c",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/quality-risk-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "b78f45aad9608883e13e9056b7759830c1e29676abdd79f562bbed2a03b46978",
+      "after_sha256": "17262ea14626f75dbd5129b8e28aa310a8288a5b05dbab11e6b3ceaec9696ee6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0ea5a2fb693e7ca597b77f4a56944810d00eb11940800a3db9c77198f66cd930",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/rag-quality-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "9ec5076ba81f5e3dd5a750d4e8f0185906322841a12ac167dd0eacc14f779e06",
+      "after_sha256": "c8bf3b67162fb4b5ecb2b0806fcfbaa38b93973fb0b345e1b3566867044b3c4c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "311e7b327e88dcfeded556aeb05f2f38f1dc3683fcef08a76daed4a2a0a0c5d3",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/rag-retrieval-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "950d453fd2705bc3f80926aed9819f494b1d448ffc31734cfaf3da4f4445b8e9",
+      "after_sha256": "efdb97ba8d92534ee242f2942b53f3fea8dd578954a2e3ae2759dc8fdd039bb6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e4c79d3d4a011642a3b50ccfdf4ecbab95107d41b679eccd8e316cc09434936f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/recovery-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "24614c691514cc42455057c74fab1d5a13b0532f890ca7b404bd3707819ae892",
+      "after_sha256": "aaf4bb663dbb00430bef3d042393cc8248b21f45f9788a2eed289c6d96a62734",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "95dbebdb31fe3c38a74f031e7a7f107583dc7f3378675dd390c206a0e0b07097",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/recovery-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "3db7655ac790ffb481b3a97b36ecfd0c37ed7011132b1a72944640ec919cc7d8",
+      "after_sha256": "4639baf741644f1ac3e2f746f0b0ad4eb57c44ae4e703ce56939029c5ba3b948",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "66df93dfe91005289ed25f426db5cd332daae015d216d1751f9eed2572c8406c",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/regression-optimization/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "f92588acf38ece10c67c2a15100bded4fa8f4a74f74391a09bfe1213b29f44da",
+      "after_sha256": "67faa78c9b07a6a58932b4094176445f77f750483d01fafe0f31cf9136aa6eee",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "bb775a826c7886cfa24c5261327e793e5f0796e8be073d00c9281f1f004b5dbb",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/regression-scope-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "69329c05501ba6f758cec13963c66856e0a67b5dea339609d9c77ed3efe6b61c",
+      "after_sha256": "c8d935fad59f3bb074d6fc45c30953184471fc6c3a02647f66cf52cd1bd36359",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "bf93922eaf20f8603c6befb9fbb5611401d099bea64196e731343c083d91e29a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/reliability-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "9053e55496282de6778cac6a8078be29817e08d71f6b308f310ec1e9aac20dfd",
+      "after_sha256": "62ea881913946732b5f2f421bdf8bf42a92342583450e6f7a21300df6dd68aeb",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "52218fba0b409e656974c065211cbd28c3b8a20887458ec9d44876364b37361c",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/reliability-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "d7956e9f88ca2c7a3f40f788d6fc42bc71e2581093e691b5fed7af73b4aca76b",
+      "after_sha256": "96771d198caab6b7a5505f14f8270b45dd1a938adc2ee9497daeedbbd5350428",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "69dca4f1f9b9f4f490ecac78bb780141859d369f6e4ae7c12da89e9b0da72370",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/requirement-ambiguity-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "b513d8be1fc86c7b2649f3548bb689184ce724be5bc857e99530e7b4da9957fa",
+      "after_sha256": "8c12e6d1b251bc1c5d30f9a7c7337c3ff982f1abf32455d9609e69a223375803",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "912e396e22cddb4e158f862f89f3e37c51a210da1dac94e777f16011e3fd0d34",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/requirement-consistency-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "1f227e79511fc669c30bb8c0b139be6552acaccf2917c31b10d6a33c7a784ba6",
+      "after_sha256": "f9567fc6844b90d736ad9a39dce9f07b2dc3fa9a5206abf894b2024d2de04f86",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5ae8de3dfd636c927af43867cf77eabb32dbfad70af912c2708ca808d71750cc",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/requirement-gap-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "91073248dbae970bf125088a99e963c095b3ddab63ed02be5809fa7be47379f4",
+      "after_sha256": "1f7f7a59024cf1e1dffca347d9369843ebfdb6d579d5a4b0d6b66c1f8692afa8",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0ecebbfc86797fbdcdb97a2f253560b8ca057bf48e68587ac4a5bec835ad4d9c",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/requirement-traceability-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "af4feae244318f576b64c9f73334304a0e964a8e66928058834ab18c6862ec56",
+      "after_sha256": "aab50693e11bb9b348a412364d0608ec1c3f6965e2e0b360f1573b853f543897",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "896818f971978bad39fa8c8d811219481a1a3a29af8b13789c090ba4f6a6fb8a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/requirements-analysis-plus/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "fd878729a97549e838036cb29c50c124c670095b2ec38ada5bdb51be2ba7f4f9",
+      "after_sha256": "1756fdd937e2fd5af64cf276b320039fa5ac2b4625ac6b6c5542c3578983a7ab",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5f1f9ddfba2905a096be291c346525f3d233e41589ab191fffb09b75b3b10743",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/resilience-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "29fc33d86b727c074a4ef9fefb1c5183e66fa65e622ed4480e89aaaa87546c4f",
+      "after_sha256": "606592d8558e510b4e2f32d70875e999ab2b2afa108e9c8dea54487d9b9e0a33",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9b903c7236f14f2f34c44fc6f3c3dde13d2f2928f652be850735a0c489e5e443",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/resilience-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "27fc83cf3cde40cae80be253866955146494cd2a561f16d574a13d5b4081b443",
+      "after_sha256": "8f03f572fadbeb1de453912b720c7c31ce653b47d023d834f749c7baa3699f84",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0b4eaea8a52d2620393e564baedbe0dbba7cb5e37abd56a0cc97bfd37cbdd533",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/retry-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "33354b4d7f81bd87ca368ffa7b656a5b8e08f979508712b684b7847a6743b3ed",
+      "after_sha256": "1b760cb35e311a806286e0c889fee3aa06a47f3e16a68406776d691011b09b2d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "45452e984638979c461de332229418354426cc06be0c14899ac0bb9979eed6b4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/retry-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "12b8a01bc6643120ad7064a3d1212689f2fd5179ac255ad33fb6f421b4e71546",
+      "after_sha256": "d663f14f0e5b167b3f966eb36fcbaf9e0e261f9c0e279e3b98fc0fe5bc3dc4f6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0950cebd604e396196251c05a2a7f5d809f1ef65089aa887be97f73bcedbd5a4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/risk-based-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "6af8befbc2a68eded70f24b1a70758083e4fe8c837521a83ca57cba37c3a31de",
+      "after_sha256": "019b9c72e86bbd8b9e1f0458c11aef4050ae71d392b81fcd4ffbf657f49edc62",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "7997b94009bc930aa4964c4c1543cbb8a42b07045d3a75a80f98b08a0341bcd4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/secrets-exposure-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "af8a2ae1b2664265ea69b7b6dbd7a35ddd0808e12598d647f5b1f26963532edf",
+      "after_sha256": "fc5349e87d5e24d6eb8ae87c3086bdc00cbdea95daf16acada17bcef3ef8d233",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "333ebe0977496c6430891c99d1be47b3a26de05764a88d70436f26b0cff86442",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/secrets-exposure-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "74c1918b224df5b934f31199fd9da3b7444ee0c138f22abeee176d5bea51e348",
+      "after_sha256": "b2c44132ff0db2bf80642a9fc999bc59a44903d08fb26eae64a6bfc797d862b4",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "49dc5597b6e4ade1f87c6ce73191934a10d2021028d69d463a50ae935fdd5d0e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/security-requirement-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "618a5c368021e052715a8d736fac37669a00d31d02997a876b50f23c2179b3e3",
+      "after_sha256": "7e33d7a2c6e239f8bc66f6ef7cb5b0c1ec121fa6dafdfd6e66d75680d80a334c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c8218f40e2e00a55a930a250c8a09900aad6be3660fa9fb578617b7594aa3fed",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/security-requirement-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "dee61d2cc0f0cc1a2c4d1dbf6772e0ffc1784c61ecba05c952cc63dc2da7603a",
+      "after_sha256": "f9bb0fcef4091d51c3c8130af5d7920f27658252e719f548c1c592363ca2e7cb",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "81c65272b0418d87e1866e263c6e0540954b1fa367e5a31de2e338e460202030",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/security-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "2904d551a35b999774a255a14be29206bcb3ab6d3f52dfa77f506917b628be6f",
+      "after_sha256": "4e6a5d1e5722ef03bc1ae0fb070cbb31c85ba9d2a7fc7f48d73649d63bc74f47",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9f346c638feddca6acb966a8b0cecf4f79b530f8d33892f399ad8d2a3ef134a2",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/session-security-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "80d84d0682819851cc36db103a1b63fd50e7e9459fbbf77da7b20cab2835ed78",
+      "after_sha256": "d5236346056439386dc84bf937eace77df4dc77354e1a3018badac2a3eb79680",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9b3cb44d33c7a0c0731835258dd290ce5df1dbab7fd04b875ac81fd8635224cc",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/session-security-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "907f6a2a0c479741eabc33f8edc936fcfb87fba3a7b565bf08aac9cb374de257",
+      "after_sha256": "347b1c5db5f318ccca0864226d9d6d5cbe5375a1aa1a2d265ae760335b732542",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "dec5f90cbb0512b22a0c3089d4b982d522c3b81309273298049945ebf94e36ff",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/state-transition-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "25df8f41a760b00d800bcc88adb184b1dcb65eb992151ac3c7ea3743c6fb9668",
+      "after_sha256": "e2f8341942a813484d1db0473db8b91e4f5466ddd0ba676ee525cbacf19896e5",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "74c8c71f7face9e55002478d69e2d71daaabe32f9ba7df71af0ba1566bb57df7",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/state-transition-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "636c29712c8e0423afedaaacd0e4f73dccfc16507c8f29cd7ded4e2cc16e7a0a",
+      "after_sha256": "ea98f1a3f7dcff5eea49a9957975753ece466371494a9c29aff9cfaebd29faac",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "beb87cc928388fdf02516fc520d29b87a309ce0f2e1aa5ee5368a1e24b478531",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-case-reviewer-plus/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "411eeb6f9c158fff277bf91a4dc2f96eb70a38ae52a363c5ff52f759e16b36ed",
+      "after_sha256": "2dbda908b4a38b121391c21869728800643abb065ee7cfcd42c2e695c1fdde23",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "65c9f2b6ed37763a7d46877997818de6dcbcdaa6be8ddea519bc212ebff783b9",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-code-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "13642634d02813156e892c6557d5164709c94af23d8d9e60219a28491232e1ba",
+      "after_sha256": "aa4a084127983f449688957aa48f7a9471f482e84099d749ec8b302d44788bb6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e85495b2b11d40c1785620cfc33bd55cbc58c91cc3732deb82194c6342bc0a35",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-code-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "2eeb5ec24f22814f0c7b6cc586be8956ec500477bbca561aaa12eb0f00e7a175",
+      "after_sha256": "e8025b845b678d4dbe657638c87213321b638e481b09f7fe09cea808de005543",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fe841abdc2cdea2efa9ff83f6e534d01f5d25184cdae1418549a1c0750dd7c0e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-data-generation/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "fca7a78722e8b47b2a32859207f1851997fff3d7bd515c89c8985eef2c8a3580",
+      "after_sha256": "e6f34695e094f2881e994e7eaa8cc678ed6ae583b6b8078a86fbeb5f5fad5925",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b3e01888be7d7aeee4b35fe0b0c8b62b61497dc89a90f5808bcee9fee93d036f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-data-requirement-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "9f7f96a9fae2a5e2c0a57d45c2b5003f688123453f1ce7edaf223efaf9af053c",
+      "after_sha256": "6641a9ac7ba99da9f9872ba636d636b48e476f58beb0e2999d89acecca00784e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e5e5f6161ad672f6177ee618dd52cb716a28fbfe34f9de9bbf0e61b99b91bacf",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-effectiveness-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "854f3868d237294f08f89e5097d2f2888897255a6c54cc627ae1b58b2ce9dd39",
+      "after_sha256": "2d6373911c57bd3b1b2d712fb4f86016cccc3aff1be226ca6d77d9fab56f5648",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "f6108c2a0e0628e56a9c113e0f38a9a40082c20c530582d780bb0da32cb58869",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-maintenance-cost-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "057257b9db1a5fbee86bd1069b459f84278ed04512dee2c508af47bd7ffa902c",
+      "after_sha256": "d6388a16f3e7479b55061b42e50e9842e48b5ac3abaf4a1de1032b27f881b53c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "ee172cb1c73145a50dbb153f667d83e6314a8c09b1511e0ac59e504f2f92d55c",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-runtime-optimization/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "e115afa5d005f4e89c8e211aa1eca6904dc14c0db0cb3e06fe1156d5db7695db",
+      "after_sha256": "399f8eacbfc8c3b64b9c25e581a2dbea09f8f9fc850f01d093fc3d2c90eb0342",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0d557cb745373a4695f48dc909f499bfb506e65025c0c9d2cc1990e5d22e9f7b",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-scope-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "e510f788935e8c061481b536a7b7be5a563bb095a6dc6c1542c467fbf933fc90",
+      "after_sha256": "212777b973132de44b6f73864cde11ddbbc8c5d0c3897a2ba593b9374776348a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1cc54728a815624fc01e249216dff4809c2fea20027eff9be862a1bb5f4513ff",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-strategy-plus/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "0883db751017b4f3c8bff56eda652e3ae7342e8789d801f074454f62df2a66a0",
+      "after_sha256": "2d6d50873a74316e2c24aecbd4a4a036ac4bb53c5300a443fcdcc654b6869b90",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "78a507ba20b5bd7ea07c4d3a0ad7d6e5ea76d5479825cbc5bb45a91e9b5e6173",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-strategy/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "5db8507881347af2091f1d1b18ce7155ed7d0acf811376583420e16348496032",
+      "after_sha256": "a3a0d4da111846f1c377ed071152523278f111604cd2a436f66b49228e6655ab",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "22ad4705d4519f41b113a1ea101b23633c7c651f4b8a7d81c143eae18a7e4466",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-suite-health-analysis/evals/cases/domain-method-control.yaml",
+      "before_sha256": "224ef8ed949b925b76213584ac05595484a9e546d27a482b69599e37eb80b3fe",
+      "after_sha256": "f8e28da60d8b9f8c6199383aba7e7efeeb7f3f68af2aa645197dc59f706ad8ea",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "390df9cb387ad49039d98d493f86ab55c62726446fc7e5345b146787c108fcad",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/test-suite-health-analysis/evals/cases/domain-method-success.yaml",
+      "before_sha256": "38aecffbc12e66bf122d4fb85428f534c611fec8711c98c8e234df78fad41bd6",
+      "after_sha256": "6361cbf2aeea3b63c157aaa17870c5764a41e2f4d256a11a6330483e8dcf7c63",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "78a8ace5a98a8fb860f6e3e8c1aedb7ccc1c3afcf0bb7f88fd23013e80cbfbb8",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/testcase-writer-plus/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "b1b7ccbef05c4f1fc6897bc62a66bd304a310d7adc3b21cbf1bac8483567542b",
+      "after_sha256": "58161a8d2f942c85ba80095f0c04dce34739d6a4f276c8229dabf37fcb572533",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "2d9ef1f143eabe104fe43dc11b409e5f4940daec2b1332b6f87ff3827fe7351e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/testing-bottleneck-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "138c77f89a9d025f6d0aabd4846bbf14f747c2658312ff23a856309838eda21d",
+      "after_sha256": "04c88a83c800a4b905ea5df8768a62e76b93af2241db7467d293d2069c77d1ad",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fb6a68946d8af87bbeb3117bbdb6acb011c71212131e3ded9fbdfce3251bc007",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/threat-modeling/evals/cases/domain-method-control.yaml",
+      "before_sha256": "540e1c0072a6f5b02fa1bec75d98c4219013eede1c11a3b2ee0e67fd623d8422",
+      "after_sha256": "62a8fdf45e6f6783e08490f7c0430946d1d60db5dee295ffa7161f4eaa86ee62",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e4deb1c3370bf471123883fb079fa9479e1c18b01669df89989e41630f029621",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/threat-modeling/evals/cases/domain-method-success.yaml",
+      "before_sha256": "561dccd91bd0723cb9d2c04c3cab6797b8737e811c385a93506e7066aeafb055",
+      "after_sha256": "b553868402d4202ccf13ec606ef288c0e73575d8d9ea0fbc2fa59b715cd9f8e1",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5c3ec090c169a10b0ce3cb14cd200e572f0aa51619623b390a2d28e09b0bfa03",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/timeout-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "32da389bc134e38d23d1c1f197dd1db58d513c7391f8a92586dadaac599b6252",
+      "after_sha256": "f8a7b4a3dab4c93e87342c838a480d8ecaa846b11b9d92daf9ca55afc6a3de7e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b45b2a65529f5b32f57c07963af2a9c2760880c7e03574842b97a851149a78fd",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/timeout-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "e1b542284e54b03c9f2e058a32a18a014f704a4a79a6158f99e55ec8a56833cb",
+      "after_sha256": "d503652b3ab418c5a695e4c84ede4d7067bbd3707e9ddbb7e501f35ad6e9c9e3",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "02859b4441292bd541ad9dc07c8897a7a57c45b1506d495cf756862b05f870f7",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-cypress/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "56e2716c1454e5fe7923adec696acf14d143647d8dbf4e649e1c645a259c22ea",
+      "after_sha256": "3843d11d6da4d0d6b0a6024df2ed8a39b95b9c836935204396473b3b9925d897",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "ee62feec5795ca4139b2f5c0e5cb87e6d141fd6d97efe81ab3602837bf48d473",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-playwright/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "8ac6fa8f188686a18c418cbe73aaa608e3afdba1dc78cbe7cb83d76a4039749b",
+      "after_sha256": "87248a4f0916cb14a0e7cc937e9db91c652be77a302317ba06c5d1ff04e574a8",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fbf98a60b30e4dedd38af7f1ba58239a816de9d7e45e9b9da17249272349e7e9",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-puppeteer/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "6dcfb619e2a2425946c7c25be6f98855606f96c13bb70bd7b70959072d262747",
+      "after_sha256": "38e4fc225e6b828d443fa4e510bafed1678290ef5664030e76bb60ecb10d9991",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "85666ddab9c80b29223068f7dd3f03306b45a1b277d4fb0b71ab6f0de706410d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-selector-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "2bc30187e10f89145335b6fe9c3a70645c7b9e1912125293c177efab0a1ac545",
+      "after_sha256": "86ea72ae671b2eb3a08d6d7168b0dfe57e321b32aef35be822a66df592e8f878",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "4f6488859aee059068466653676b64a301563222b022fde746d43c202420c69e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-selector-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "60b7098d08def313db3e49bb45eeb7a6a14d043cfa4673c04898bb9acd9732b7",
+      "after_sha256": "1cc321661a22e1c77b7ef015a134505be2bc5e90eb3de39b59c6d85097622ee1",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "18f48bcbd26f8e8d89e38cd6c751efa53e488f9d0652a42e870902be21b32ada",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-selenium/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "f8c32052fb2ca865c67045b23045d6756378d8209168e0a44f837f6776725c9b",
+      "after_sha256": "117a397c2653acc5152f4ff6da056cb8c4724d68d27c50d3956f82d4ffeb39a5",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "064393be4b1b7a8938fbf090076f98b8c25049231d14238d2b0c93ec8f08ef30",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-strategy/evals/cases/domain-method-control.yaml",
+      "before_sha256": "1d969d82e158b344a1f64d11ed3175f017b9a26fa8b3b62ef281247ce453a753",
+      "after_sha256": "76e758bd2f0cabb81f2aaca0ae8881ca3f056f120c08374af78a8e4508122133",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "cafb8e4a5853970cfdce10cf40f4008f831eb648b662ce51d3756809aa5371b4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-strategy/evals/cases/domain-method-success.yaml",
+      "before_sha256": "a6641f9856f1d5da0803cf84c84028acb986e8d0da297c6270d8b28e3f2f2b3d",
+      "after_sha256": "0beab7897616a9702d198c56c6b8c1d4fdf8232064be2374e127c398460a1efc",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b760e1687db8cf9cce5e86689c6ce9c71da3242f7fb66a9e211e1c395181532f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-testcafe/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "fb48bae40260ab5fd0f919557eabeccc835ffcb23066cbc8af70f1c90545a83c",
+      "after_sha256": "d00e6f304a825071fe59e5d14238591b7d9ede898e87f0e18244c18a6d14905e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "08630bed7137abccd362c1b18e912293b9803ea8bf215482e11e317edc711151",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-wait-strategy-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "0e7a29b8353cce83fa0f8f543f0044eae071c9dad476b347e80adcfb808c2173",
+      "after_sha256": "3255e29a4029a39b4f3df3fd40dade70e0e9ff5b916ff0aa06166e3a065a162b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "f2dd2f94de85631d299b433d10c2543f9a6b7392f8b50e37bc6ebabd10d3505f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-wait-strategy-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "f4f7e93b564fed89669236d85fa176942934b706d9518a4d40fba51ec0df3d37",
+      "after_sha256": "8833bbd331112d05c041cbe2e2ba4d6b68869188b33d12cd154bbe6ca80550fd",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9b7689b1f125fac6255033f1b7629020a147ac7dfade7cee48801056d2dd336c",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/ui-test-webdriverio/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "16eb9668973b5f195cba341c47f17a06142ed40107e9ced873a4a2fc0b0b960b",
+      "after_sha256": "35a1d33014ca5cab996a7b3a47dac9dd77c5acc635e2fd790824e616b513e51b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "ef6df4ad36747ce73fb6b725e572110bffbcb43ae4f6f73a8b1a37dd4cefdb24",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/visual-regression-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "dd89a1d6d6c1d552ec9f4ff3e7516e97ad795ed6924b03ac151068e2c8b62872",
+      "after_sha256": "f8217a4ca27ab371067523218f4ae1ce25de47f6691245f29429c1955b121450",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "8c782cdb9b118e4de6d4042cc9f0d626ac66a5718c9c2815d678c52a9f240d10",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-types/visual-regression-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "0a23b02cfab675ca337471f1175db4452e9ec713901ea8aa55deb128414b5abf",
+      "after_sha256": "ae13b3e52158c5c35814071dace8ba1bbc08139caca142b6a0463d1dedb45d6d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "15483a399c84b34900c956892cafd9bf196f185cabb0900de33878eab693dd74",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-workflows/discover-testing/evals/cases/review-authn-neighbor.yaml",
+      "before_sha256": "2522b13cd534af2ef476a25649950fe5f32745085e4e3979884ac748d21fb190",
+      "after_sha256": "77895bda2598ebedbbcdfc3f32c2f324a4048cf57b3aadf9130d700e68b70006",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "041bb5be6ab1185566282834c82a2fd014934fa16ba3ca34e424ffb2463fb962",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-workflows/discover-testing/evals/cases/review-authz-neighbor.yaml",
+      "before_sha256": "6b6e9b2bb69a82be3e282a14979bd047d078e5e5327ff13b8f538b98fdd59683",
+      "after_sha256": "ea46e0f4ad72fcfd7070ee78a0c40d33947d98dcac37a65786a81c9ac6a01ac9",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "322bb9a096d2560381c328f3c9a606e5eafa7dd93849f35958caf5849c10501a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-workflows/discover-testing/evals/cases/review-rag-retrieval-neighbor.yaml",
+      "before_sha256": "09092ce5d450f77d95edfa99974f2ac912c6e605846e29491c9f0f67692333ce",
+      "after_sha256": "1ce1641cc8136cbe839094f2d7d8ac2e7bd1dd750dbdb02ba7d22b8738e47cf3",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "070f68d2d8029cf3855eb79954ac3c80d12f83b95245084240ede42aa61e6993",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-workflows/discover-testing/evals/cases/review-regression-selection-neighbor.yaml",
+      "before_sha256": "9b552225285e8db389177e1ded087cced1c8764296db14b59199fad8aab35b6d",
+      "after_sha256": "bf8460aa306c5340f06fec2f2629c12de39d89048ebd47aab86ba10b1bef481e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "aada098121dc123e52856076de02bf08f71736d6fb32be02db4d2003fc582a1f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/en/testing-workflows/release-testing-workflow/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "b610ff2009c2ba060e9f3ab97cc33f51e2b43ddefac47462a0b4aae3854412a6",
+      "after_sha256": "d0d20940b22cc1d65a4a07e45d687ab35262252c0adc7aa84f7c733f1c29a41b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "55c02bc70895667ddab9c5d62aecf339c7fcf0f6f292d8aaaa7228c26071f786",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-change-verification/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "830f7cb61b8e33fe74aaab9cedb5db5e20b1320deb33a1f386e3b392ca71bb17",
+      "after_sha256": "9e58d74eb2f8489fc953b243b5909112ee44f4b81c3f13a51c5940c9a2dfa2b7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1ae4b9692514abeb520440fd0f65b5c1ae9e9e1581c82c7a4e3ccd5991d0dd48",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/acceptance-criteria-review/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "4bd78f65734f1c4888df3d5c27b6e496b3a897088b084e35f2b3a266bae13397",
+      "after_sha256": "dbb091b039748e1632df3324a8a8d7df5d7f36d7207836c73f456c02c0c4bcb3",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "4ae365a1e2e648cac795a895ce97a56156c2fd6ad41d252189617062999bb35c",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/accessibility-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "a048059f6a51d038f7213a215cd6a7cd9d9b5270f5cf2594600e9a15b60f92e2",
+      "after_sha256": "ac23d2fdfe4c829ef110b5e35aeac666811fa099b1b0c726fefc01cdffd5a63f",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e5ce2ace36d193e099b03b4d17354de4d0d4cf8de9f9c147d3af1d2f95be4a66",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/agent-failure-recovery-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "01d3279ed8121e3d7bd14e9334e12b5b7d0f031ce49f2709c95511afc89f9fbd",
+      "after_sha256": "6590f85a66177ebfa54ba84ed094881781cc67e625b8e8290b8fceff516739ba",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0c3405f47eb7b4bb27a9efb39c82a1f871f1becb718e7b5ae6d738b55ad584a4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/agent-long-running-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "5c0dd8b016ca42a1c8fcb795b525510df88cccabe83688644a54bcec54cf5490",
+      "after_sha256": "84eba90920cc03c3833a53787a41aef525650c60b2f8b8f38570ec333eedd9fb",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "4f4ebd5394660b7f8c298a74ba5cc764bf24b1be26b29169aabfbb9114f08f21",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/agent-loop-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "55e4d3352f704e71c22c86917f8e3cf9407fe192e27c6692977b404bc2930e14",
+      "after_sha256": "005ccf32780cf272b3a4bc349711526c92dcc09a6f5e9daeb1c2ae8b42b75a7d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "dccb24907e08acc838e9df24773818fc6ce57b30349c9401636af87a4a298dea",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/agent-memory-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "692a190b68c60f3451207e46b37d1d6b938c721304d9ef8f64ce73ce4e1d2cf7",
+      "after_sha256": "5d412d5c96f9e9e969dfe7cd5700e1d9d3312adc6aa1e108008b612007503abe",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1844bd41e1ad06f1fc2893b20304c2893c0b188d34da21e137a5ea7a97983f5d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/agent-permission-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "c5fa0b42432ef107d168ba0ab3f43dce390b38bcbe4c37a4d6dac9dbe956c49d",
+      "after_sha256": "cb0fb8e0ef10270dd4fc1e8e2395d44ddacfb1e9f4bae8e6a5582161aab891e4",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "42d591c1e4cada4cb3b6735627a2ab5ddc4de41ab0055b81f1fb032c696bf92f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ai-agent-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "c69f7adf3c3d6f70afecbaeaa5a776406448848e849b3bd5a48be30bd5a817dd",
+      "after_sha256": "f20051cd9063f7b47ce9a3db127d83a3d0ecbbf4457825776451452aadfbca95",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e30e6421d8f716d20154492eec18c26fa70ea13fc96fd19ca368383ae56d2e95",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ai-assisted-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "4998c5ec6e7a3c450eecbc2c645a1579309c4a7bd663aaee0b82e8be7bdef40d",
+      "after_sha256": "05ceca4c3df451b7258cdd43072d1605d834688396b6a801c135ef2b53ab66fb",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "ecd4491a92b648407b69043bf2e7958be136ea0c1e84c761ccac501796039be9",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ai-feature-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "f3b8452c4693857ba26015f9587b9e48b67155e7aa2e165bf0b8ed3ff4c2bad6",
+      "after_sha256": "94bbfb622216489b50bd10ebe4aa243a8b9d09a615452391dae787ba7b8c1e66",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "2e07fc407ed800a500278f3f2394f069f474bcc1c6a43ab7cb26367d387ec3ff",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ai-generated-test-review/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "87c199a6561d515946b48a068932c8a782bc25bf168f2aea8757ddbbeaa84060",
+      "after_sha256": "296867a64559ba7403194ebd225af4e8e908f21a6719cb676a37a3ebb24ab583",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "21811e5ee2ac6824a50570f22d0be7b410e6212db9405548f91cd4867e315989",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ai-safety-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "8c7c2cb58991fbd7e6cb4eb073b91a8cb92d7859e30bd25ba9dbecb11542eb41",
+      "after_sha256": "07334f8e3bb3a5ebf601fdcfcd031cfbe76be6b3a75461ca93668d9d1cad944c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0e17fc6720107d259ef49cfcf443db1416e91da7220485e7e4cd8d3d0151e1bc",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-error-contract-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "322148ff3cbb31a323cac0a48186339758e1946bb8d46709f1a676328ee1d392",
+      "after_sha256": "56162a87193235ab5e8c2724b3ec13ddfad6fb93eb56e1f9f9e853acd215901d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e63160020375281bc5c1284d63388ad82499ec1f355d2fa148192a6010e74f85",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-error-contract-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "93ac88fb61a5fcf36693894ef820e7a4b3284021ab274ec69594743866702e93",
+      "after_sha256": "fa713485b49e40f9b16fd6d65b9fe74b928ff23a2735a6922119f47feed1fad6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "88899f6c45d3c6b197b2313db34758a39d8ed81a3617dadb0bd44ca40b8d0888",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-idempotency-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "67e3bab3227285e3e7797ae54fa68324aac484741d4f8305b0cfd9acae1da3fc",
+      "after_sha256": "36f8d2d5325f9e5804e6cb1d397752088bc8e7d14255d5aeff77064aac83d400",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "3c564633f6f853227fc5b9ec18e33d1c1698b0d7b51b7dd6c042d59062b73b7b",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-idempotency-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "9fac038afd75cc79f6025da83b32b5f65a7cacdef0909f3d8d16fa30fea5a488",
+      "after_sha256": "d70388a5187e4ee844d8a5c84a45c6be810b4ba40bc28f5b05b032dc2762a399",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "2c49cdfe936952a75b03910dabbcf214e33f47e8610ae6c88429388067172044",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-negative-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "e1235763da776e9b50064bf630f026fdd1a68d2304c9e671ac5863a678c3e123",
+      "after_sha256": "3c7f1d9ae1dcad84d537dbe373fb943a17b1976f600213ca3b0b92575ef96d39",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1c575e234fa7da56f3400883c7d651989b8bf9e4a2acf1823c27c2a220bbda07",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-negative-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "6603720c36b95a74630db8585f97fc44c464f5b35ce4a141ad2b83f98211aa14",
+      "after_sha256": "3509897ce7661237a16c2dde697a59cdd15c8c6a7c9c5960381d5b35b44a7f10",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "2d19835862eb1f70be81a32b03d2f44103c67f02a0f6d68927be00d818ca429d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-pagination-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "7ac1a6c591c8f3c97ed8299c481cc5f8b628628a25c887ba5d2b98c45062d449",
+      "after_sha256": "b5e61671e07a7c97b71b57f6cc9b38f8e4874b097054018729f06b057f10f485",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "153d4880c73ebe796837462fbbecd9935d6b43d6679000d47f8d23190e0d5155",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-pagination-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "cfe51fa8d30f4f743ecececec618291553d04312027c9f1128bec00a5fa12daf",
+      "after_sha256": "fd903f9cd12d1745d0ebfaae390f3c395109ea23cb221f2d13805e2f8a7b00c0",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9934c746ff6748f94ea4310fc59a093824aaa8bb1365fbfc5ab4bf297740940d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-rate-limit-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "93c347051c25b90a971dfa225f680b129e942ce2b8e102748bb2730fb745bc9d",
+      "after_sha256": "ef54f002741ef76bb0f10cb7e2ba305f65afb350e25e41996e794cd5e4f12793",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "f80476cd7fec2ff0fa742331d6ad7ce8a2048426db4c443d6107add4b68bfdcd",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-rate-limit-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "1288216f7e9a75f841e637a49e71e7fb90b32a30ab156e5db4d4b326a0af1560",
+      "after_sha256": "475a7ec966408498b03c325c00a8f734c7bb95d01a9bd04058a8c964bb778b95",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "36a45ae3bdd0a7abd8524ad6b6e68ffdb1d820baf154a97a6e9d1f9f781cd2bc",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-schema-validation/evals/cases/domain-method-control.yaml",
+      "before_sha256": "08e981325df2846eaeae79e5804673156f95a725b59f573a2b91e1a9441b3c4c",
+      "after_sha256": "0bfe77272f0a1ba6b0d21ccdcd378efdaed51a9996fb08c9218e85b60150504b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "a47e2d1fa9a887eca6f8f3f5b53188f88cb33bb023ce0d574849eb30bc0c6adb",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-schema-validation/evals/cases/domain-method-success.yaml",
+      "before_sha256": "dd6716fba969f0a8cec752e2558afd26bd24c3683e7cc7a7f9663d64fdd7cdb5",
+      "after_sha256": "4660355c553a9cfdc775f2c7f77db0a7b6691141a94b04a5e2331137fdd15405",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0e56631023bafb4296ca259dd9e808969f8298a80c2b85a0f48136af45103e9a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-security-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "623224d0bd7bf53f1c7df597ead3490eb3ac91ed7a512d84013ed9f9cea4950b",
+      "after_sha256": "3c3a175b08c4af3ba931e0d9b2e670f65810d6c68589a85ee43550d4656d9c0c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "cfda00eb6b3efe49f5bd30b261a9c64f4a98dd4907f56df757b0b7296a10321b",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-security-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "a8f7ca4ae135b956ceb8d6b8395caa0b4c1adbf129d7f6c7e48b58fda5794197",
+      "after_sha256": "45b7fb1b62fc3c63d424e5dab5fc05e5a8f9f28a8e0aaae647ab54c05df87be7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d56a7cde8dfe5acc9ddf1b37e3ae9706b17c32bfd5ee829152d0f75a2ad3d45e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-test-bruno/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "e2848da18977e25acad77c5c2b0d5ddf071786b6d823473a5806351c3cc70a98",
+      "after_sha256": "988a65226d53751882428d800ca93ccb0c475c92381310e9f3f0f2a5169e8148",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1f17eb9cdc8c4efd48311d89a162ddb11cb6b21730f1c15779e8288fbb9c56af",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-test-pytest/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "97904759ff12ba5f16553eb8ccc62e05f0a518d0d4458cb664f9dacb7fa3bc60",
+      "after_sha256": "ed62acc45f6a3b4a3d7e3bd4f95138d734e3312ceda2fc098bf70552ae6c8a58",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9a5f8872e35ea323011396e52be7cf21c3e2a604430fcebe5f720724e30312ec",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-test-restassure/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "d55a28eb203f360a71f6aa745364a09307f54e3f80950a5ed95fba94ef41dc8a",
+      "after_sha256": "e4aebf2f57d1758b5008368a95e0e66ad4b54b1774635c0f05145bd105f8af01",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9f353bb5aa3a8a2f7e4dfd70882c7b6ca6eb66b5c8aa54cc6dd5b94ffeef6530",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-test-supertest/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "886e760cb543237d891dd816e5b9211353177ff00e3fafbc3f390fd0f0895b2e",
+      "after_sha256": "982640ec8a029c1901a408e35d3a2777c37828b571e92570b59952cdb373c46e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "035e77ce573ce4e1f9eb41ed80902cbc8802a9eaf2a59af533e5e8c0305573d8",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "ed01ff6122ea9e02ef9f41fbbbaa994348eeff3ffcf7b475cd939d29e52aa62d",
+      "after_sha256": "8062deeaeea2092c8812852e6acf57461eaa70b599050b99daf594369d625537",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "29b54198c83dd81bd9be48835b995d6a0e89b2851ca316aff508902038ad96d2",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-version-compatibility-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "f3938005806ea46cb868cdef557f7de25824348f03d74d870ff391dc0d281ab2",
+      "after_sha256": "a37c0d0c4d7be77ff5d716b9aae6e3a493d00e1a19559c7237ca279d1bf17a55",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "3f602f27f52d46cb88aca8c0ddad318fce4626ff78a2ca75241cbbcd3cece165",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/api-version-compatibility-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "a60777e566f2bd863acef9ef0b78fb7f5a26d6a36863bfd965b19f7a959a0e41",
+      "after_sha256": "75a795c3b65eca5d2bb39f35939801252a6898befae3b888dc1db7696f3cdc8b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d6cb59d5a43c202e2b49b0a79e19da98d04b14c87995a0aa0f6112958f00bc84",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/authentication-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "d4727ba8e6b2ca311c1a00d28963f40d1a32efa4700885739015dd0fb7172d4d",
+      "after_sha256": "7be07dfe39749fbe4cf027a2bbbe9401b7a1c5a6d626acd3afd091d5b025ffd3",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "ea3b81d1dc8de282c0099033c732a8d949e8c21883759d0f0f6ef37ed9518de0",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/authentication-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "f69b2b4a60d741fc70a4a3c6b7d73a62970dc9c477d7bed5f17485f179126900",
+      "after_sha256": "cb7a2421b90602cba4d016af0920a5b447afe6500691f62387e6765e23956d71",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b2c8defcd692bb00d0216f3ea2867597de81acf55920d3421bda36323ed1957d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/authorization-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "c220069d6d9b4c2fbfc3829ee957906c70486ca42e17052576733c521533bfcc",
+      "after_sha256": "abae00e52981dc04756e9c736ae23dc022533f802143f54d3c384be1c4336bca",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "db8e69578cd42db7f2962c7802b443dad1b3069090fa03fc6d14993cfdae6dab",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/authorization-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "8985b51426b1131cf31b326c261db1d2ad6b39d5e94706a7a49662c9af991a09",
+      "after_sha256": "d98aba48c22ef8c359e1d3e968c0b5e0f896ad3819feebaf120a1d8de1fbfd23",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "a2fcfacc4a4b2aaee4de8dd6b601d25bebf412d5b344f5517d4e8eed6eb6a92e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/automation-roi-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "782d0569e5cd2f2596c9feeda17351ffe693f6bcdee8722bab1b547e320302a0",
+      "after_sha256": "b802dcc0ad98a3934b0bb6c01a7da33fe8ab7a2e82a92a66069fce2a29cb11c3",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "4085c3b34d57afca5291cbf7964befef2f45c72697bf50db9b94b13f1aacc3fc",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/automation-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "a6caf82d1e9cf5b13747e64919788e6b646cdd5d9c208e9325376c40bfb6eb3c",
+      "after_sha256": "75e6d76a401943d29890f21427615587fe7503f1ba0c604e022715a8219c2247",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c9048a9eaf9cecd2297bcf667a98abba4f1ab142b8f6335f740e9ec52dbc3d23",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/boundary-value-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "832806fa8f8f8b437c4f93f0ec8fd0faac229160072c140d4b09b7324cee187a",
+      "after_sha256": "b9f441a96be9c9fc9f1aab86968c7421027ebf332b967fb53798a345be00e9af",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5bc32d3bf885269b72578408addb827b6de54df208a1d5ab29d2e4b778c03db9",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/boundary-value-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "3516074798cd082f04a29c2053a02726118a9ee16ed70d68ce361894cc65c9df",
+      "after_sha256": "98f612a2828aab043e0ce7eb0a9be1c664ce2e793391db729b5b9f96b14f6f7e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "a5084fb776c1c92846aeaadba072291d2349f1cb7c896d2884ba5608aaccf828",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/capacity-planning-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "d79307af6b6ba60d974d65ef2a4301eaf160a4226d9476dadc8594328c5ca516",
+      "after_sha256": "7c774ae8b26d48e28a6089e447fa88eabbad2d2cdc2896c8aff1cdc487ed80f9",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9362f56e04406e19b8b81e0db34c9f3883db07400465a726119fcde6269c391e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/change-impact-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "571da765f17d580a31d02cdbc1744d9a3f19c8c2cc204824be7a0ef903a1c910",
+      "after_sha256": "956ff187ef3b115fd8704512b16ea1772ca921589d584ca9200e12ee84de7284",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "27997a410473e74beef2e7c3bf848f9557f89034d506da5a436422eb2261f8f5",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/chaos-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "2eb84aabf15b14c59129e58cd64b294bf5786488e4fa10e36ef43057a8daa8a0",
+      "after_sha256": "b20c9450ac11a3e8b82b2d00653b157009f40546a1d331fe220e7f09f236b627",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "ec14e1e3fd332a32718bb77cde99e9c58952cd42263757ed54979cb33487f6ea",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/chaos-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "5859ee20534cf5f322c7e69eaebbf5167ee21f7f6ccecfb6780874e36bf5a957",
+      "after_sha256": "1d951076f2c9ba94fcf0428d203c256d8956b306bbb5d50a5a29842c539ee54d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "061587ce911410cdcbb584c3515e2fb8cba43f66c99d791c6333fdd8a61c2d37",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ci-test-optimization/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "64129f6b1d7c409e4e30702d741d2998f1ca74183cb25ac0272e946cdaee0d76",
+      "after_sha256": "1c2ab2a02ca3e87b5c7341150ea97cbaf535f8f4c608d7d3f40d5df245beb0d8",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "73c3e8c8cee7bf9ccae44dfe1ffd6cff0f315461d2ecdd9a1464d079a1fecde1",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/circuit-breaker-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "13b9708bfa3187fc953bdc7ca65f886c1116f05ecf4240b3fc4e939272be36d9",
+      "after_sha256": "94a6eda28cd0434047f2bc9087426ae01413f3507c7ce35a51fe141ae2b9edc6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0fdb4f4bca1f5f7a8e87f18202b4830c975896de736d742aae18401b1544117f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/circuit-breaker-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "0e27ec8c5068eba76972fbb4e06e7b41fce56e0191e73f80fc3a08b21b8e4ab7",
+      "after_sha256": "c65943daa778aa16e532844ea6df381a9aba3b0ce3972c911f23454f5c8058ae",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5820703976c1ed020dc26b384237be4c1445112c8dc022c6e140ef9ad2a2c10a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/code-review/evals/cases/review-upstream-guard-control.yaml",
+      "before_sha256": "b75686cec49bbe6fe556bb01f429f78a262ed461cb36b28cb94a2163a0392260",
+      "after_sha256": "1245245cf9ce751a4d430e05dc7d5d8d15da179500df77c66e66399210ef2090",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "6f211bd7747d389435a1cd24242735b88f55f322a32dcf0c517cf28d5bcbafde",
+      "embedded_file_sha256_unchanged": {
+        "patch.diff": "05099b223e3a32632a81f892e5c3da61335d8fead98624f0eaad45afbc2b9432",
+        "items.py": "faa1f0d5f587cce530fee5df8bfa9d5e25ca6ed1880ab9db130457e3389ef03c",
+        "scope.md": "4877850740c5cd4282f9acc62dfa5a359e5f917c2c3643809df190b21731d702"
+      },
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/combinatorial-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "93944da355266da084a7709f493b0cc7766233de8972d323192df9a36710b4f4",
+      "after_sha256": "9d997c7a860ded2a8ac561e6281103258330d31863c208120d37b4e8b3957973",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "889b3bc3022f108c1a313130018c4bb1a6c062d9befc227a32ca364c55c7ee90",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/combinatorial-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "99f8fa63f76fda1eaf0747dc0f67584dbd5f7d666f3296a9addcb6f72c159b85",
+      "after_sha256": "8f324d2fb0320ad36560955e0602cfdeff73ec8bd2a13f28dbf6458c4eea474d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "67d2fdd848a207a796723366138723705cbe26c58fd8ca24ab6c044e14b0d587",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/cross-browser-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "28e336601cd6bc0f00751a399839e34b01ea40a4022aabfddd5104ff83aafb50",
+      "after_sha256": "b0216ea21d71aac8468e84417f2d8b51ab1a4ee264ac39af2d73fd04041377bf",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "962a6f37f48a5c6b25fa3764947f99054bf028225dd195e25052f59de8eacd68",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/cross-browser-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "3e2cb5550ebcb87b80f58ee7c9cfe684834b2a47f539ee9538c229b52a7b46b1",
+      "after_sha256": "84c0d4f4d4f3ae508ff417e529c288466eb43800fdab8c2151f7233ca63b2f87",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5769be8bb29f22c658e21398110aea47af56b0d50b10a11f72dac984c565d6b7",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/decision-table-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "16a5bd4ca17def3b2bb7fd8d1dfacc546bf0d8956b839c1f04c30df96f1b765a",
+      "after_sha256": "7b569cc89c411a655860154d77124363d4d70d180bfd50f275167679b5544ab7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d93e7776118eaaeaf0919481659ecae6d99a1d61971e2fec26b78e8c51fd827a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/decision-table-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "349bdd4d9b17bfd945b034c8f1103d580158f0b4ca5cf3e0a0d07bc732133de5",
+      "after_sha256": "e40145825879b5b924e192c2aba6315242c34c826f272bc3ad584531c2da9c47",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "a87fe88acc4ff1817255551cc9140de77556e23db501ad7b9057a5e67d548923",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/dependency-failure-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "5b3903eb95c482613d3ca9967b9569d873c85e0ec702f28345559129b0189d6f",
+      "after_sha256": "3b7ebb2fbf4cd951ca9154b3f847b4f50516e196a25cac5834711f3f6117b60d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "bb446096790ae5a24d9f6b8528e00a28136770251dfa96a2425c65ff58288b00",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/dependency-failure-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "3d2450dd7d4771663e07bb1c555c63b67608bc77aa6a03fd174d5764788aa8e8",
+      "after_sha256": "eeb43c1cfd4ea656e4a51c84bec455a2cfe2380cb2136c4b931f44056ed1b935",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "ac64031d2736a4661459e05b5d6e373badcbd0abd9e2d5f90d6ed54ca040a0f0",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/disaster-recovery-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "ec4df04440a925734b46da3eaa20458a4c9b9bd243296ad0bd6b20e6ad448ec0",
+      "after_sha256": "538ebf72ef9230fb1a8a27b2cbf369104dbb3bc88bb30e56868c94aff5b6a352",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "22c36b433852f6d55466fe6a8a6a014acb38f855cb3cee1947a784a0ae99b48a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/disaster-recovery-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "6014d8bb9d87a9dd7bb80eed3a6270167ba3aef8bf56728e742baea19f8e994b",
+      "after_sha256": "1641975f9865f71742fe0d368a69f17b379a4dfa83ea75c3869c546e834e956e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9476342afdf53aabc8f7641ba1610c97c6130ac34a1974c9fb2bf0e19e2c624c",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/distributed-trace-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "82d776125f5a89625cb7be73130946f0a7685da7c2861fc26b31a794c795e4f7",
+      "after_sha256": "1a37875a5b3f96a10d25afe6565418488cc34d60b88f39180882ec21346994fa",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "783554aaedc40586c2500ab9981956fab51461bd7879bd933f2710223dfac1b4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/equivalence-partitioning/evals/cases/domain-method-control.yaml",
+      "before_sha256": "f83727dcf9d1da5f78380122c5b1a3a9fd879cb319135995edccc747117995ab",
+      "after_sha256": "c8d30d98896261c2e3f03e4d0f53c365f10af8d250fcb3b205d06702f7874ce2",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "8372395235d0a712bf3ea18e4bc11cb1bf96a43cadff0488cd7eca736a61adc2",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/equivalence-partitioning/evals/cases/domain-method-success.yaml",
+      "before_sha256": "db582bdfed637334937c53b9ab6821f8e2835bc2daa8aafb9edbaf6c7b2ef33b",
+      "after_sha256": "fb618d2429847f8ab0367f3e7f1a383e58f286286808dc0a928b50cced68cb43",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "80c945b2c14f21c53b09b9ba33bf6f4157199b2f1917885c62d72c24774065ac",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/failover-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "02b6bcb6009393a190fabe9a35972eeab62cf2b4071c41bf15c81c3941cc8d95",
+      "after_sha256": "70915f70066f687df23fae809c4d033493159c60ea2e07f4b642152c456e58d6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "a4ac1aca8fe2afb6cc01e3768c59f575f23448497e191c34bf0a34478bee3f04",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/failover-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "1077b3e0a5bb983a3b88c1b20dcc34401eead3074e91caa2ecc70d9c21433d3e",
+      "after_sha256": "671a49263ee20183999d84dc3deb158b138df09bb382c7f8d72204385ebfbcc2",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "2397ad437fe5ec038cd0ecd6f6c527fb715665ee60621b035f5de2bc42868632",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "b8b818cf9cb1e4c9decb6e569e31c06f9623a95954a34c13e6280845da4182cc",
+      "after_sha256": "cc13d56d5bc2b3a1a92a4f3f7b8a69f23ac1c223746af692c2eca12f83ceefc0",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c6916150ac5909372949f27974a43a12f34f789d79d1ed92f6eebbb5c6a8197f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/llm-consistency-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "3d24da30829d8de12d69335599554b4b5a77c3dd75f9faa904b4d4b7ba9fac9d",
+      "after_sha256": "f0393940c2897930c320b04100685045549fcecd8cbf2d7fcb84b8b6687da7ec",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fc9ee4c0356bccbfd4ad4c839bedffeaeabf37d42ac431ee0be55f75d3f7098b",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/llm-hallucination-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "94c06094f3d6589431469b75a33a7d0c48c597ff7b851a3016ddf088d022a639",
+      "after_sha256": "bb08df75de85dd2b6fee266f4b2f279f97452bd2b0b3a63bd36da45da554a733",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "541ee8182b2e2a63065514c58daed64a79cb6795cb82b35b76f6831644903515",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/manual-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "361905d9ef3b5c5e718ab93b0f1723fbe63d5cac18fecc803aeb54556eb36b22",
+      "after_sha256": "76005f1cb805c0ec26c2b338d2a8668b4798d3021abf7b88394b7ef8b2ee4fd0",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d6171723db53500bcd4d43e594b34e4751fa0e60ed0bef28f0010714531ab25f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/metamorphic-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "a986910201e3a442332df2060a19e76c246bdc7bbaa1b756ff2538f9a5a41710",
+      "after_sha256": "a462c043712fb21f3108678c93085201a2d57f6f32ed08658235e10e14c92e5b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "dd28a0827bc2c2c4b0b5387d0d8d968297a83b5b4602a2345cbdf02fd3c796f3",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/metamorphic-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "44321b1f4b6a3805844f5d41de474faff11250a8836340f5f95af0f603963c30",
+      "after_sha256": "b42b5c0200823541bd65720de71b4591487902bee2e447a90bdd65472bd37320",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "41a006f380c971429d088ab0be2b277c410b83358e6a97152f7b61cd9e6f2206",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/mobile-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "c471ada3d8166f2852f1b112ca265d27c1ef2f537b3e322971b69fab87bf0501",
+      "after_sha256": "a4e1a0e14a8358b54341dbb42d38ee96e78292dcc3a0621c98cd1196f19df358",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "69fe45ada8793cb97e471c4e68cbc9f506854194fb6bb7569674b54fdfd98106",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/mock-quality-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "7161854fa7c6b7c597b1df6aa45315abc418a6d3a505cb91d2d18c18b7a32349",
+      "after_sha256": "25694f2ea71743fb22f74cc4361e070dbc5eba1508088e9cb289def8186bf9ac",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "a51441fdbe8be014e4c59107fd5c7dfdfe624c27aede7b2fd363c257167cab87",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/mock-quality-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "71948905b5f8f8fbacae761e5c1a0255918165158bfd6398ccde558cd765724d",
+      "after_sha256": "1d44539d3c3a75d26cfc179f782a2265e827824300fc823e842147b4c8ea537e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "387ea4b6609e91fe0cb8e76df9b6b368ca8d1395cbb4f40bf092bf738ea571be",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/model-based-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "6739ee71810085c9f159a93764d322cdbe87defd23805b28cbf89e8f0c3c313c",
+      "after_sha256": "f4e2a6d6e1c271cad52297038823296f9a317473790722133acf85a18b2fb2d3",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "7d495510d4a0622f5b2e72ce3c11523e11735903f6ba29d251e826fbe39dbf21",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/model-based-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "1c9baf9228b8ec58c2ab09e94817cf00b294b5bce0c8894a302e8344b2e61485",
+      "after_sha256": "292698eb73e0535d84b624dc162032f6711b5137102cc500a27b0df6ba75d144",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "afec4e0b17b178ccc9a232c9e17c1f5e2a6dbe6c801aa60a4c0e09b2b5f88071",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/multi-agent-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "84faed1edbb858109ba8e5a299bda465aa8a832447281af8bc4bfbe5526f2103",
+      "after_sha256": "68eea79d38816282bb61dcfa710798cbec30905304d8c69f68fd877e44204566",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e92611bc5380d8aafc1dc2c98c0cb458fe48f26842867cd4190f55a2a3ff9097",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/mutation-testing-analysis/evals/cases/domain-method-control.yaml",
+      "before_sha256": "60068dd699239dc54c0cd263c5884f8b152b9170407e1cf9baeca786377c9c3b",
+      "after_sha256": "a1306ceec13f8cc1c473471d421cb4bcccd87398b159a99f52caecfeb5d6eb70",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "f884e687ad9d1d5d9b000597b169c4083d612c3ca8c743589a80ff4d0e07323a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/mutation-testing-analysis/evals/cases/domain-method-success.yaml",
+      "before_sha256": "cc69392508f406161de946633116f0c5ae6df460ea30331698a89a213c99c95b",
+      "after_sha256": "33645b48a92ebdeaf866c3ea5d0f50e5cdb8f8c871409d845c8f5059572d9d6a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0e1f8217c461ace1e2fac285e007f9402976b2ea8b29f5e5eb3e62f77b489023",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/pairwise-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "0820888802fcd2df24ce0b4f7ed1b3be2ddc4ddb0f12ea95e49f4f374054f55a",
+      "after_sha256": "42b78127ba70f863e764e9027c07fb3cbf05f1a66fdfcf1337792be7ab427f52",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "2fd94414f96bfcd49ff7e35d09b208eb56785e73eb68ea5d0abdcf14f0fca549",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/pairwise-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "d3280277f473e71b87794908f2379516a9cbd111c0790a91acf22bfd2089718e",
+      "after_sha256": "de96e6a666d411d9fcc8414631fe4c10c647c871e3dcae65c0b16b6c16ebb1a1",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b7e8761d3d5b5b8af4082d6284d9f55e8fe9b557efac7f46f13e169356ec41c0",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/performance-test-gatling/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "6f23a122375ab30bc8f563bded50b92248b883fea26957ed4a7d5c7d65385783",
+      "after_sha256": "8240ba9797c586869dbb939c9cc6541e4986c5c81cbed760ce4fe592b55164b5",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e2df3fb33f2ccaab3d9b8f584afaf325cdc1e69bf9ac355a412207128959354a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/performance-test-jmeter/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "8bd28cbb424177f6ef501d85a776c4fcb413fca95535354078e0c2284f6cb6da",
+      "after_sha256": "95e8b6c82ddf709c6bd9436ebda05a2acc61e2ddfb9d8b4eff43a25a405222e7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "47b2e52915e2b87e36a13270dc5f359f98c47d1b1f5e1b38a96dbf6deaa03887",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "f5f9036b2916e51bc3394a73d15cfdcfe6b550dab0fb77bbdc037225d1ea3fdb",
+      "after_sha256": "06e1ad0b8f80597018b734d4004e753cab4fc28a72d2418f9be6e5d494322cb5",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "00841b59440b2ed1c7058b4b9d0ec38efa2d08eb365baa48b3916326aa3878dd",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/performance-workload-modeling/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "8f3ac42641df7308da6371f9b4db1a9b8dbb45107d0dcda246e6bf9c36d765f4",
+      "after_sha256": "1d534db5299f1288e1f07654942687627f333263e4518570e56d20e05af8ab7d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b3e18ddb638d061a3f87163a748fae85e46f775f9356548bb7d43fd7c9f7351a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/pr-test-impact-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "57c34332d0c186ad17c916b4704c369ee0fe6fac665f5218ec3608eb28b2ed03",
+      "after_sha256": "cb2aeba34f4a1e25924ea30de3432c09b0a43b63d0ec50b0fece274861931df8",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1be859320fce829529d8dfd742a77f6a93536ae72d0e1ab7f7182e017ee8bbd9",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/property-based-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "9cadb265ca1f2df683dca35b77885c5a0f5744b756bbf5acc29fdca43f8d6039",
+      "after_sha256": "5664de0c9bcdc4b9c85426199fea20373b663426022077fc70e314bcc076b0da",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "7c324e823638a2735a0ccc3ee13e8ea5c11c448e65ed1aa1bb1d199930278336",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/property-based-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "47361b0320a38b8fd76eeee17ad374170ee4abe0c9714be2eabb80cf5725cdf6",
+      "after_sha256": "13c0f3a229955696fedbf67d85584eeced858b5a1cf3fefeb7072d544dfb0e82",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "da5c3aeb45478755c08d8549d234371a2d1426543c84e39fc414c9f718c80d50",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/quality-dashboard-design/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "6470bd9a7ff9159eb8a394a6b56c31673aacb3704071193a83809a2d26221991",
+      "after_sha256": "7e56a045518c0a871d4772f654bae7457f65c346b71cd2985e6e9eaff5f17c82",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "dc3b10624286f492fa82eb33bcfcdef68520f287d9c3c834703cef41c8799d88",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/quality-debt-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "ef27ad7e7283a70a90a558e5f7a8e15e165d527cc1a9a808dba19e25194e5cb1",
+      "after_sha256": "8dcc23b5d6636f4dc0db8c7c5d22ff721a67ea336368bb2c8a8e21663d5a80ac",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1d359382b6bc314f3be6aa2bcde20d73b4ff68ede60ad8efc4da21845ecce1f0",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/quality-gate-design/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "8f3f7bf3b825e96be65b16c3a242689d14905f82d3e729d2e2a3afd908fb917b",
+      "after_sha256": "b82e454a3ef480823be57072d11086c07e1a7ae901403254a8f96030f6b9b8c4",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d37c32a85530efe3bfb9bde58fc34722b9c85361f2cb2f240544cf050ef5cdd7",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/quality-maturity-assessment/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "010d314d32233a710c5100879c9dcbaf66e026e22a76716976d29185365dea51",
+      "after_sha256": "87d7a6544942ec96267a8d5aa71f8921f1554cc1ec79be246152d41f24c415b0",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "eed463f4de1a3932bbe89571dada838b6edfe3375f09d58f20d5c495d977d723",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/quality-metrics-design/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "6edd24d34fbc2d0e7800b50c2ca4427c8a74d37383e4ec4ba0153049e4d8929d",
+      "after_sha256": "4061f3c471779dc4b5943bd391a70526e8b25cb630e6c07d8aa47e14af9dd79e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1d4419ad1108bda8f50e555ea001c02a498aa5e91be7c15197927f582e90783e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/quality-productivity-metrics/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "d67dadb528ce951389fe4f3932aa7c5898d94b20d21dc7dfbf59f009f6c3d146",
+      "after_sha256": "4b3e1f98791c2f020dca3cf60077842ad5dd6e66807322de39c565d57395ab8a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "20c3b8e91751d8a6936ccd09ec438a2b1861af8e1117a6423ed838ceca914294",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/quality-risk-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "e9a2b1a17b5afd45b744e188b54d59342d365e298ef33a2609c121b0ff00be0d",
+      "after_sha256": "6ec15eaf6a5e6fc821de504fc2ed9643fc3f3f7f02a3f1e011ce073dd48c790d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "2ab800b41b569b65f601ede1c9fcc798ab99508d0b527e1cca5d84f8de091b92",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/rag-quality-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "dd911414d1d9faa5a89fcef4160489c1b2b14e94ae21164aa5832641341239fc",
+      "after_sha256": "894fae10e5618aff0916df03b25450e82ecfdcf5429a18c4469cc50249b63bfb",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0dc02f2ffd4476f9de6cf14b676d2f31bae6256d9b92f8f99fc691e500bc4ad2",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/rag-retrieval-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "b06942054e4b2ba37e14a55f6f6e68577c83e9d277ced99faedce2609be76c53",
+      "after_sha256": "a49d7e531c4e6cade12555cb3b1617c851e4379d7256c9744bf5ed03cac4addb",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0d44906db5fe4300fcadabcde018b01bb7547a0c8cd2e0b0aff6c7fd683ffee6",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/recovery-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "11889140f6b2b50e5046c665fa18f9e596e2ea06c97e39a24be78560a21a6d48",
+      "after_sha256": "339c3687690e30d26b240e96ef938b609384f4d136c0c18783b53181dbff75ae",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d97f83b9605d1ec2e071796eb56b6e0f86a3647aa82478b87f83b732b78907ec",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/recovery-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "568758942f52e59accf8eee0a0fb902d09158ca747b6147023832790baf62c88",
+      "after_sha256": "26e4a602437a814b4c2466166cc7efe83e0404b762040661b14835405651c75e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "92b532d695808c7cd0dc15add6fc924a8b5285ce2bc368bd3d2773e0acff61be",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/regression-optimization/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "81743d0851513551653fd139383584bc0424ee412eba92f82d33f69912c5f4c4",
+      "after_sha256": "28ef443fc63bd1cd2485822d734392c586345d29e64b0845886a0c6b3832f0c5",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b4281cbab9d99b70d9d8b123c3fcb4f8a7e2d6eda344bf2fa277e534d4924343",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/regression-scope-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "1041b7b8bf56e90497b11fdcc5d7ee844940ea7733031983eae1a75c83db40d6",
+      "after_sha256": "2c77c47f9a7e3615bdd521170fd76ad9318f40137d13aeeb067a1f8cf04bc610",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "f981661b5b12e3b9506334868df9e9d2dee8989127e9bface1fa8d16a93c3e1a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/reliability-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "78aef7248132169b2c1a1d0951a917a3f72966f2ecffefff09b134093345c4e6",
+      "after_sha256": "4bba6799782108d24aabb3a56faae15ec0ac130b407b10cbd2d86aee7183227c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "95aa37bf0337fe40d6dd235d116bd94bd855dea0867e27f88b420a9da189cc19",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/reliability-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "26dfcf0e5ca243b56e079c9fe0b2ababb8bd4fd860a790693fd4bfef5cb46275",
+      "after_sha256": "bf011915bc7f911e9134aa3b0c0169aecab3cd4288f27f311aec8780312a6694",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "bda4d1bc4bf34b5e341b5af5abcee64f0a3920657af36d180db0de42a77e8237",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/requirement-ambiguity-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "76cafdfa019fbcedc77b6db826acb89689763180e09edde2a7bc4239ff6c7a42",
+      "after_sha256": "8711526e45386123e885f45acba797eb942cb940b18977be12717375a0c96d76",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "914d96a373f48055d2aff2743a0214b56e368ba7d31db37bf24a3c0b937461fd",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/requirement-consistency-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "fb4c4d454824738d0baeca1c069336fa3e56beed42577b71f52a629bb0868439",
+      "after_sha256": "0532628a98b8c54664a8d04088dcfc30da81ea10889d985a5f480263b7bd0aa9",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "de89c8d76f3db96411c06a7f75243c1f1f6ebec5f2c8850e440608b7445be7db",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/requirement-gap-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "fb20c715cc6149dac6aedf3f02d830fadd401322b670133c8d1d909e0802b000",
+      "after_sha256": "7ccdc776c359f7a1f1b9cbd4c94222b1a26090f65a2e0076c1a5ff7d4234be17",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "af0d75cf11f4124611306bf8a35994fbfdf43dc9716eb5e4bb59b94bfdff7c03",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/requirement-traceability-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "9ab2e549e4768c14050e2fe1e1cadcba8218b00dc0539f1b6e2349ae0bac5797",
+      "after_sha256": "7fa2811eaa79b2cb294e777f47cd4f4126252cdff103cd19cc7c01dbcc6da943",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "a573921778e2033079b52494c0a421b1d83b549d9dcb78ab5209618d3e322543",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/requirements-analysis-plus/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "74e968c8cc3521f6a5aab18289056922132a770962fe33b7783e5a8d42c341df",
+      "after_sha256": "dcaf87bd049e2a63eedba19c7bc1527cf930727c62777f4eae5b34c6048971de",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "cd85287877e36b1d264efae09cbb6b1bbff0958bdfcf7b6b511ac11ef49a6966",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/resilience-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "158572347e833b41bddb189e876cc03df72292338aea50a2edbabb9f4e208f3e",
+      "after_sha256": "d37f461bf85ad504ae08766af12817529e4d9dda65178a259ee160497aecb9e0",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "f8e6b86e89aef1c435dc211e71c0a47b1bd34ea9dab9e14a3296729bc80b36b9",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/resilience-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "1370ea9ebcc821cff37c17d375236df845701ea8dd9170b1ae77417ec6bc3525",
+      "after_sha256": "0f7f170d571b85559d923512d69b78d4a165cc63f4e7650ffd31f757d64c8cf1",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "9a25cb236e5834d5fc2c723d5d25b8d48314131e75c7ebd7434e17fa300a5910",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/retry-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "92306c84f41408f6dbe9005b1fcb957fdf020f614931761c9d3725a4af708d35",
+      "after_sha256": "42f42e46a8187d5cf324ad6385fabf0dd8b9a6e4994f16d7501ea4103877d7fa",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b5bb54eaea2b7d497d5461c09349c5dc2fe8c79e2c7b0632cccfa0dee4a45133",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/retry-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "796357f5bc13ae683102f52410434ebc17e5d991bd8fd89b0e5205d193288ca0",
+      "after_sha256": "0665dad86e6bd54aae2513cea5957c859c68f618e18f995c7f85a29319b15e72",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "38c56e07dd248f0fb672470abda762d044b88bd6209bc47efa0094cb76e1b61f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/risk-based-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "cdf1d2b0dde457df2786d927236736609f9d8db1b74d77e06e7646a4a87e1d39",
+      "after_sha256": "8c41b17f4a3036bd7cc27242de5ad9d065e4c2761aa141523df89805b4377d5e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1d1697dfe080e979ed588e469164e1f49aab86c6fc3f3c0dfe53efe52b59ca54",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/secrets-exposure-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "87ac37f5637c311384db6ce980035cf9a5095c86f2999db2dc2e0e8249648f6b",
+      "after_sha256": "6419eca87d3580d5b048f55979da76f5f727df32f0616330cd7e21f6ec82a85a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "8eb910880452cae87a9d6684013f9bed094afaf42834e5eefe39b8364e0f57e7",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/secrets-exposure-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "e7a0a4056b0ff49da3a674b42e17615ecc3415f2808e0f792ba7064a0b92927e",
+      "after_sha256": "713a8553231da3469b95c2fc3d011d4f694122d4d3533b4762d4dcd09f4ef943",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "7168943258b486c9204760f19104019195026330904b72d8116caa25e74534b9",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/security-requirement-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "09177f47bfc399ab495a4bbdffbc25b7ce785e88981c14cf713d089fb63e7902",
+      "after_sha256": "fefd0115255ac87da104d18cf507a6449feb62900e6caa60462e186a0d2e8028",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "efcbdbebbf5b5f46644f70fedd37c1bddc8fa570af3b0c1a1d6b315b5e3d45d5",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/security-requirement-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "a0c3db35aacc1967c477e35ffa474eafcde26c73f4ceaefc536d21b083563aa0",
+      "after_sha256": "1c1886c83864d4887a2c4acc04db345459012f31521e4d38ef7eeb4fd07a597e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "689de8ae6c02258ac2cdfa29c2ff8930bdf613285e8a29e23f1aa3fa1f9a3229",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/security-testing/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "7731829b216c9fbd9a7c1b863f6c772f604fab7e82a5dd754fa111bb23f856fb",
+      "after_sha256": "2b75dd68ec485079a9beddd50557251fd0bf4ada70b70150e0c455dd6655cf12",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "861c1b4730a04d0fd5219c851af1360be1e72549955fd7b92a1ebcc6ee20333b",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/session-security-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "45760b6661653911f480c99694556c5de5df00849437443bbac8ebf7b27f5aa9",
+      "after_sha256": "8b29f664341dadc70da29686f03bf0098617963fb0e0e7d73b6f11fdbbda2fc5",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "797a1c8a21fc37c0dc37642762f0fcc6bb43136afc63b6ab14606c056d018830",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/session-security-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "96077d232a008f89f63e2043fd8ebecb0c4934569b54dec8c72eb250332039fb",
+      "after_sha256": "5f618b8be4d53897ddc7f7cc4cfe5f7eee845bc05ce2abe847fe735c63e2911a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1e450377825fa16e1e708aa317625d2e922f3ccd56a5db61c3543ddb92cb92be",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/state-transition-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "fd35fe80367192da6f1aea1958258e8d8d2a3894554d365e5861b6da072e274f",
+      "after_sha256": "9f8bbf99ecbdf31b1a38086611f34c97fa318a7def760a819a953000907cb5df",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "06f092bc931142ca8d6503dd7738872a0a045699f09d1595592c6810d8fa1570",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/state-transition-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "811b63934ddfb2105cc9c753ebf8b29fe63310d272995098fffa9f2250e49f0c",
+      "after_sha256": "880dd33f35f1685375e3ddc1a4d813c891ed5e22537b2569f3a4b81db18ff57a",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e5a58251a6469b07fed224a22e0935bcc503d48ddb20c0d4376da41bf3e8fa13",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-case-reviewer-plus/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "5548cf2ec17ede8b02610d1c2c3a12b5176a0692642bc01d1378300c9d51ffc9",
+      "after_sha256": "49491837229b8a14881cfd46d1f3b21c815ec8385c68a3de68e95998e64cad86",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1da1807e02b56bee02ad0493b4acbaa5be3cb72a09156ec0e5884b4ce758a885",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-code-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "3974bd77b18e7a4e446150700e83bb05fae1e4feeb6a30805554eeef0f89af64",
+      "after_sha256": "08a031ecb1d48798ddf2b5bec4da9db5d7b5ac1eafcc3e342b1fc3985f32a990",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5969b15c6b704377b5a370dc138f22072254a4822e5a1a47406b54f4932a585d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-code-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "079908c76d21279012fd395783a20add03b7def2e4bc47ce3691398cbc5c2643",
+      "after_sha256": "8eb3ca00b59be5ae6a613ea3d65c0329350a5f2c0b122bdeb96caa963be212a6",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "bcbe8df64d5fe8cbeecf6d905cfc8ace08625d2dfa30bd0552d45a8c32a9329f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-data-generation/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "387051266af7860f88b988b442f2389d64978943c3d64f3eec176f6b56f09e65",
+      "after_sha256": "84f4e18a8ceaf3a357780f22808f17dbe6bfcef89b4a622247d5e3a860b43863",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "b8dae80377f4ac19492c210e1cf8b559a517a58f905a71fda2e53495399af16d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-data-requirement-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "14b27a7ab42a7c9dd018b6eefd55bffdc1fc9fe8a57de2d211cd390b5ec28299",
+      "after_sha256": "19a551c818d3568debda5074cbf4cdebafb569aecf2879cc6540bd11dca3cf62",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "45a1a69eaede45daedf1586ff85f032cb5ba9598418360f19f9755be2c4dcac4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-effectiveness-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "65a24995321d0eac3ed9399c4658c7e7e22a713e26d9775e2bd9fa005f2b4677",
+      "after_sha256": "e54ab0473f8827365d3a1cb1780046ad2ed05c4085b7de1c2934387f2e8c7549",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e5107bda44bfc50df67c44763531602e14879681a45597f8605cb53e7889de9b",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-maintenance-cost-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "d17dab2ce89d321843f457bb52cf193f83ff77bb11af8dab355cb4e2fb363d12",
+      "after_sha256": "9c95a99202aa0a00d6dba486c1f6bc3c41f26c5c86ab267a06993962667f790f",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "4f3666adbc10a00829721cdd1bfe528cf0656a8f8aaf6500529f61c732f81475",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-runtime-optimization/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "dd890430be052f2e2ba8935484edb2b99104a9012986e0c77ea6e603945e1991",
+      "after_sha256": "6988f80e1f06133a5ef8b362046e33353f0cb98cda4be4c4dbd4412ea5bd6afb",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "f048909160513e2145456d0e8bdeac353307a3b25252a01d6ab9b6187f0e48f7",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-scope-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "cb9d73feb0d0a303ee78d3a5f2b65b4a4ea551f01e73e9fba6a57c355162428d",
+      "after_sha256": "d22786c915a79fb40428a7498a80800bab59e86ceea83fcb16e2130d09f8d019",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5ec535cd09ce60cb74effa242993a5416e0954d996de2ae7946fd2b0bc64075f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-strategy-plus/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "869c85866627d94d326923f5fc39b29d47864605d1587ebf7050b2c6632b1750",
+      "after_sha256": "d2660016a2a55c347e9167e989f026bbe12bbe3a4d8f6f1015c7dd44c689266d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "2bb489059b9b6d74820eca0f9a12e1cf281935a4d2d3eb8ddcc301824586ef4a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-strategy/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "df0d3585fabb11336e92812b6edab4d4f587aad148f0dc234871de402473c29e",
+      "after_sha256": "a34b7121a6585b9dfa3e7e898f89fc14354cf39c8faefb306e82a9ef381f1eef",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e57a4c0e9995e6762201705f574722e05c2811a9e0dea9f2c230eae7b799a7e4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-suite-health-analysis/evals/cases/domain-method-control.yaml",
+      "before_sha256": "9c65ee1a9677cb07fca79e2f52bfb70429880a5f34cbd7931438879ec2583177",
+      "after_sha256": "21c832d282fb9816951ededcb5700104abd113398e5f0ddeccee448a1d8bf4ad",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "56b9614db7ccf815fcc2139a9d21be838fcf63d1275e22869381d2c0df00e4c1",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/test-suite-health-analysis/evals/cases/domain-method-success.yaml",
+      "before_sha256": "22838fa4e018c4f8f8944d40e8b5fa1cfe1997f3d498bd2051b2565d0fd1a300",
+      "after_sha256": "dfe341a4ad140f31dd1cce110f3b524e1c1ef05cf25efd3dd3d485148766b851",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "840f7fb1ce97a0d5e90b66c79a12a5e6c3ca7afb7c8455ce4789056f83203669",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/testcase-writer-plus/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "56839133fc7a552bf7351eef6bf41e1033fee254039eb62ffd36535356f3b3a3",
+      "after_sha256": "ce5af2025bdff59faae8333f47ccdfa9ee95602b8513b9f85fd067ba82c7a1f1",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "0721d8c4b93cd9ebef99c4564968232fb0d317dc04014bd5de59f99d1e3a1cde",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/testing-bottleneck-analysis/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "2ec80139d08cb1bce754762316b70ba830d4784efb1da95a1d30ab45959feae3",
+      "after_sha256": "e7c89139720f3c7ef5e3cef0aa75bf2ab9508ce61c3d4752137803b6c40ca518",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d86df3c25aadb267d0baf9704b1460b3fea41cfc1027af91016e36ef5a44da42",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/threat-modeling/evals/cases/domain-method-control.yaml",
+      "before_sha256": "c015151baa1d2000ec852327adad2e9893033f302535934af8a1332a7fd736cf",
+      "after_sha256": "3a2949b27b8eaaa7420be0f7167da898c07f2f0447b6ccea2ed3fc80a8b09b3e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "e51f7bd17f8df6eb2c75bc0cfa39b349da7d240b428e32bd96068b94eb255115",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/threat-modeling/evals/cases/domain-method-success.yaml",
+      "before_sha256": "2f5bc71491f97476736f4293e9ee4b2a095a5837645f3cb908d5b3ea199f8fb5",
+      "after_sha256": "1f6b2729eac72019766ea7fac71518f65b6973e7f9d7b2c10fd70117243aa0ec",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "04f432b6a3aedbbfcf908599d19449be004310c9a936f9847ad4f2c37c12c37d",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/timeout-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "b0c691f83ff2dcb854d4d6462fe4e6b4585422e61f34aef2e2bdb6675995bab2",
+      "after_sha256": "d81806d8c7edb4865a455cfcd7d2c1e1b809d518ba3d99b3ac845b12d26b95f5",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "2ef10c9a9b2bb2b565174af60a016879542e976a283cd51c4790037feb88d927",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/timeout-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "fda38b630d9633a7938ba20e198176fb93030d09f82bd88fc8f977d6b4cf9ada",
+      "after_sha256": "8142de6f71af3f40455891265094c60e14a8899bb24f951c309fc92e100a0c55",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "5d90c287073f5fe422b08463ee5f37d8f5547657ff831bb46cce5f8b9980cb5a",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-cypress/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "1811440c3f33d50407c2d3d7f0ef4c1ad4ada36c43c7c222c3fa3003fb199f7c",
+      "after_sha256": "5986713a635feed5792765978f7e48ad3d15e0ac92420ca1b85ca658940d60d5",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c80e57d3be5329053d43ff4448a22003e334c2f69183ac80c7dae71d54755137",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-playwright/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "519c6627577abdf4e83c4bbd1cfb437e108622b5f05f143e04fe4f312c18a20a",
+      "after_sha256": "6c4dcddd1c02ad1cf37bfe51335d69d654c085481e33c81ada329fb4689dbb15",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "79e6ac7226cb6aa2e5f92e4f277860f670ba4b10d48f53b25b772ae8b709e0bd",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-puppeteer/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "8d202f2f39eb0055cbc92530e00c0757522b9ed850327937fea50f04134da7c1",
+      "after_sha256": "043a0b1aae456e5729ea1fda5ddfb9155f779b3c080686eea2fd7a44545e66d8",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "020f9b3ba192e4bb1a6c53bbf3314c3202514791671f8f10e523a96509ee84e4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-selector-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "d989a02c54a5d49e7b5db5ef2757421c51dacb1d2a70de9c2a07f59e82b004c6",
+      "after_sha256": "eb08132a49bd252c929a20ee6dbc4d868e6a2ff58415409f5b1d166424fcc7c9",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1722499838faa8537178ba663124de5bd8f8fe19e7f07c7a0bb16f597ce3dc68",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-selector-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "ddc44e4298da230382bc8615fbd5b66cf9941078057e264a4af74ab2900a02f4",
+      "after_sha256": "85ff6df9edb9ab2ce66f682ce099fb30910f9d3b4a24f96720647ed10605eff0",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fd853213facc95d9532e16ba4e5248a4753b32eaa61946191f9fb32f387959b3",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-selenium/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "e2d01c242d3e836a12fbbd32c189223cf24dbaaa020f29f706c104ee35bad766",
+      "after_sha256": "a7fd486ec84a2b67ecf7a445c0aa452f82537fbca8f3fc55e326523bcadcf450",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "480d4b7ae85a8e55454099113b198bff8653cfdfb04ca870628982a0326e3be3",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-strategy/evals/cases/domain-method-control.yaml",
+      "before_sha256": "e45706a4d61ccc013fa20d3f9a58717da2af183ea3604a67bf1ff1174a7eb1c0",
+      "after_sha256": "fbd53c3aa47b643fc9b4be245d76d42e3ba41cb17c5b795d4c0a9bc361604a2c",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "1d9853cad4c56de68f22a2d9058800c9fab4d27418223d091a9c99d0707b747f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-strategy/evals/cases/domain-method-success.yaml",
+      "before_sha256": "3f0a1ca406310f6e8abcf55881a0d6ba5c5a1c8ff570d7f0f57dbd482664ffd0",
+      "after_sha256": "c474dbdedaa651ce432920548bb3ba039e7da0051980e56793d67a61256cb688",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "cdebed21069f0069ac25069f0a671d1fd599e406d8303e72179aa5cfc5902c60",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-testcafe/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "4d9512c5a69666b6f0e862204b1af0a8832c145f7bbea888407de260e4834524",
+      "after_sha256": "44a63e517eb530b42466360b513fcdaa399795563ce4c0b8da4abf392f6090c7",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "ed0bf20c95c2fd1b6c6cda7b712e238e9ff1bb4992e74822d0b5e261100cf114",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-wait-strategy-review/evals/cases/domain-method-control.yaml",
+      "before_sha256": "7f483e46a9ccfae0f208882a1529beed7d80f1716e02f152d42817e2828ea747",
+      "after_sha256": "729388a7b784fa80f5f3b1031748f2bd2241c2b769bdbc05e4f6eeb0bcf8c864",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "d2f7704a227a16ba2217705d696e677ae9242abe821d22c49be423f78d8785be",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-wait-strategy-review/evals/cases/domain-method-success.yaml",
+      "before_sha256": "e9168114ca1f90e8bbb6fd839b5de07a33b98fdaeaec011bc881ab20735c4ff3",
+      "after_sha256": "68657493138db1236a7be4f693998ec67079150a5806f930b7a1348e887a7d7d",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c1466aed21ab9fab782bf118a2273e846061ba954263891249766207578cc3b4",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/ui-test-webdriverio/evals/cases/domain-method-regression.yaml",
+      "before_sha256": "8112d05aee469f11c84dfec04a7196eadc8aacd1e3a01fc7b2ba39e969de2a01",
+      "after_sha256": "0e38dafe4dc78316e9b1b2e52b8ad8fa32ea0b3d87491209f21aeb2a403c198f",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "fe0da00682a88ccaaa67713ef37e7e8044e88c9953d51bc6e63d95d6710bfa7e",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/visual-regression-testing/evals/cases/domain-method-control.yaml",
+      "before_sha256": "6d634caacbd5eff35f3f173af279cb616fc0eee219378f1107a24be2790153b8",
+      "after_sha256": "52daaeeda57cf1070ca8b978251b6ec059b9bd69e856e8c101a39daf426c2cea",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "c1d5b712ac50d698bdeb0aea52144c7894a38771ab8e033eb285e668948dd48f",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-types/visual-regression-testing/evals/cases/domain-method-success.yaml",
+      "before_sha256": "a5c8ccc1568d20d6d69d028298d7d887fe5f80c8fe6b77428ada6c664f136ec0",
+      "after_sha256": "2d8c9667534c3a5599f98104d813b4bc094ce96162dea69b91ab69560493c442",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "cc23eb28a2a26ecec964d2843543220e1fd192b5e917a323a5ed9a4aca1ed323",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-workflows/discover-testing/evals/cases/review-authn-neighbor.yaml",
+      "before_sha256": "7ffca7ca11250d6fb5069b8217e3acdc1de6c477466a41e28f44260d5dbfeb69",
+      "after_sha256": "dfcc6493d4654d3667515a20130146357abc9f8505cc1c8f86cd4497a4588b2b",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "8a63b29ea0f8eb32f47118e1cab261eeb08019a9c24d71caba608f91136fb4f7",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-workflows/discover-testing/evals/cases/review-authz-neighbor.yaml",
+      "before_sha256": "979fc3b0f6454d7349f02820d04ba52331bce7351789b49a4ea32e793d80c792",
+      "after_sha256": "44a95bd7d8c175138de9d4c366fdcfe6cd450b07a86b5a78ecdef640fd901a3e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "87e3186652e820ea608da484025915cdb4531a98f52c3b4fadfa71f47039c53b",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-workflows/discover-testing/evals/cases/review-rag-retrieval-neighbor.yaml",
+      "before_sha256": "b69a84bc9d9d1110c40c1d735d6fe4d0f47a8efd3f9eca713649fd12c7e99aee",
+      "after_sha256": "9e2137400a835b7e32bdcb9fc998d435d014669e70ecd45110e55275c860d0c4",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "6fc839b4c0442c6708a3c791e3e03da072b3453e9e3c852ade5dfc3987230bed",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-workflows/discover-testing/evals/cases/review-regression-selection-neighbor.yaml",
+      "before_sha256": "a1bf91bb45d0c8c8728c13f635f02f5a7a88a5962bc2e761c2b388a81ccc1f18",
+      "after_sha256": "0d27fc3a92ea60a8765b21c94bd3ef1e8cec02ad0d13df72947ef0b2e4f32f24",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "7ec553ee10099b980eaaf965eb215db1b13776109e758b34c9158f42048ecbde",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    },
+    {
+      "path": "skills/zh/testing-workflows/release-testing-workflow/evals/cases/review-repair-regression.yaml",
+      "before_sha256": "0f310cae380d345e44f1cbf6981f50002f14131e9676d4db6e2479f3d2d2b581",
+      "after_sha256": "b2ce2b1b1707030d13579bbd5d9d23b03b20d85f672d5a755b084871d6790b4e",
+      "parsed_yaml_equal": true,
+      "parsed_yaml_sha256": "16649b8848d958208f3e6025d24d740889a4c3b2ccfc3cdd7fd45bfb335bf0bd",
+      "embedded_file_sha256_unchanged": {},
+      "change": "Removed indentation on empty lines only; no parsed config, input, judge or embedded file content changed."
+    }
+  ]
+}

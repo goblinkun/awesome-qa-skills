@@ -22,6 +22,8 @@ cases:
     - evals/cases/prompt-regression-basic-success.yaml
     - evals/cases/prompt-regression-missing-baseline.yaml
     - evals/cases/prompt-regression-scope-boundary.yaml
+    - evals/cases/review-paired-parser-semantic.yaml
+    - evals/cases/review-changed-model-control.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

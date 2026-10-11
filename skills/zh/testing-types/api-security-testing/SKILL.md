@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded api-security-testing 
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 从已给 API 清单建立 endpoint、主体、资源、动作、敏感字段和信任边界表，标身份来自服务端还是可控请求。
+- 每个风险必须具备已提供入口、主体/资源/动作、边界路径、适用安全义务和证据；静态候选不等于漏洞确认。
+- 形成领域候选时，必须读取并遵循 [prompts/api-security-testing.md](prompts/api-security-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析API 攻击面、输入边界、身份权限、错误泄露和安全合同，不登录系统、不调用真实 API、不读取凭据。

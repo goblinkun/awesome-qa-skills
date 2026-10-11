@@ -39,6 +39,14 @@ If critical input is absent, list `Working Assumptions` and `Open Questions`, th
 - Reuse the current toolchain and assets; avoid large code samples unless the user requests them.
 - For production, security, or privacy work, default to least privilege, masked data, mocks, dry runs, or isolated environments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix model, prompt, knowledge/evaluation data, product, and environment versions. Slice by product task×language×user group×risk, recording sample provenance/counts; aggregates cannot hide minority groups.
+2. Give Human rubric dimensions observable anchors, labelers, disagreement handling, and reference provenance. Calibrate examples before project-defined scores/weights; undefined scoring stays open.
+3. Separate task quality, safety/privacy, required refusal versus answerable controls, and fallback gates. Record source, denominator, and version for each gate; more refusal is not inherently safer.
+4. Missing slice samples or thresholds yield UNKNOWN/open questions. Release recommendations retain unresolved gates and Human decisions; static plans do not establish passed execution.
 ## Minimum Coverage Checklist
 
 Unless the user narrows the scope, cover at least:

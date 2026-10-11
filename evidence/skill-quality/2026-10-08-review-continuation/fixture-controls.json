@@ -1,0 +1,25 @@
+{
+  "scope": "Local fixture validation and mutation controls only; not model acceptance.",
+  "command": "python3 -m unittest scripts.tests.test_review_fixture_configs -v",
+  "test_source": "scripts/tests/test_review_fixture_configs.py",
+  "test_source_sha256": "fea13bb5a0bd74699ccbfab9a6169ded4c36ecdce6143de912517295b18cdb21",
+  "embedded_config_red": {
+    "status": "FAIL",
+    "failed_subtests": 8,
+    "source_sha256": "UNKNOWN; captured console log only"
+  },
+  "negative_resource_red": {
+    "status": "FAIL",
+    "failed_subtests": 2
+  },
+  "green": {
+    "status": "PASS",
+    "tests": 3,
+    "nested_configs": 10,
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "controls": "Corrupt inner YAML, wrong invoice results, duplicate JSON fields and edited invoice bytes are rejected."
+  }
+}

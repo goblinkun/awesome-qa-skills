@@ -24,11 +24,20 @@ Markdown by default unless the request explicitly asks for another format.
 
 ## Reference Files
 
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
+
 - `prompts/performance-test-jmeter.md`: main prompt for this skill.
 - `references/framework-spec.md`: tool-specific structure and coverage notes.
 - `references/setup-and-ci.md`: setup, execution, and CI notes.
 - `examples/sample-context.md`: sample request context.
 - `scripts/run-tests.sh`: lightweight local execution entry point.
+
+## Domain Execution Essentials
+
+1. Confirm project JMeter/JDK/plugins and JMX version. Check TestPlan/ThreadGroup/Sampler and adjacent hashTree structure, variables, and properties. Parseable XML proves structure only, not execution or SLO success.
+2. Standard ThreadGroup controls closed-loop threads. Target RPS needs declared think time/timers, throughput control, or an installed arrival-rate plugin; verify achieved throughput/counts rather than inferring RPS from threads.
+3. Record CSV path, encoding, columns, sharing, recycle/stopThread settings and consumption per thread/loop. For distributed runs check each injector's data/plugins/network and load allocation.
+4. Use non-GUI entry in authorized environments, preserving JTL/logs. Check business assertions, latency/error gates, and CI propagation separately. Missing thresholds are UNKNOWN; HTML reports or exit 0 cannot hide failed samples.
 
 ## Common Pitfalls
 
@@ -41,3 +50,5 @@ Markdown by default unless the request explicitly asks for another format.
 - Start from the prompt file, then add only the context that matters.
 - Keep the output risk-driven and executable.
 - If the request is incomplete, return a usable first version and mark gaps.
+
+- To check DSL/JMX assets and data-consumption boundaries, read [evals/fixtures/jmx/README.md](evals/fixtures/jmx/README.md); local examples calibrate assets and cannot establish acceptance without project gates.

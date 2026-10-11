@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, concern, source evidence, and 
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Identify the subject and external-collaborator boundary; map mock/stub version, fields, statuses, errors, timing and side effects to the real contract.
+2. Check whether the subject itself is replaced and assertions only confirm stub output/fixed interactions; mocks at a sound boundary are not defects merely for being mocks.
+3. Compare success/error paths, timeout/async order, required fields and data shapes, distinguishing deliberate simplification from risk-hiding drift.
+4. Trace differences to unprotected obligations and minimal integration/contract checks. Missing real contracts/versions permit drift hypotheses, not claims of actual service divergence.
+
+**Decision and deliverable:** Deliver contract/stub/protected-obligation differences with concrete missed paths; mock counts are not a quality oracle.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

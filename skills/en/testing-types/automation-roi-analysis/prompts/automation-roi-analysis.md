@@ -31,6 +31,14 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Fix candidate, window, and units. Separate Human time, machine occupancy, review, maintenance, and money; conversions need sourced rates.
+2. For one window, net saving = runs×(manual cost/run−automated cost/run)−maintenance−build cost. Define ROI numerator/denominator; absent monetary conversion, report labor only.
+3. If recurring net saving >0, break-even windows = build cost/recurring net saving, rounding up for whole execution windows. If <=0, no break-even under those assumptions.
+4. Vary frequency and change-driven maintenance in project-supplied low/base/high scenarios with sources and sign changes. Missing inputs yield formulas/conditional ranges, never precise invented returns or automatic adoption.
 ## Minimum Coverage Checklist
 
 - candidate scenario, build cost, run cost, maintenance cost, benefit assumption

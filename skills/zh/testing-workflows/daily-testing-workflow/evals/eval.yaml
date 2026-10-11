@@ -19,6 +19,9 @@ cases:
     - evals/cases/basic-success.yaml
     - evals/cases/edge-incomplete-input.yaml
     - evals/cases/edge-gates-handoff.yaml
+    - evals/cases/review-red-night-shift.yaml
+    - evals/cases/review-unstarted-p0.yaml
+    - evals/cases/review-unregistered-close-failure.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

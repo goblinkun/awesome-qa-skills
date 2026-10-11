@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded recovery-testing anal
 - Read evals/eval.yaml and the matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Separate service restart/readiness, recovered data point and business consistency; extract RTO/RPO definitions, failure/start and business-recovery/end plus acceptable loss.
+- Deliver service/business/data timelines, target calculations and reconciliation/compensation; partial restoration is not complete recovery.
+- When deriving domain candidates, read and follow [prompts/recovery-testing.md](prompts/recovery-testing.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only recovery point, recovery time, recovery steps, validation evidence, and human takeover; do not inject faults, access real dependencies, or call production systems.

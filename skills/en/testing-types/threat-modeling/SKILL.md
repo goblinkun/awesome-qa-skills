@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded threat-modeling analy
 - Read evals/eval.yaml and matching evals/cases/ when evaluating the Skill.
 - Read references/, examples/, scripts/, or output-formats.md only when the directory exists and the task needs it.
 
+## Domain Execution Essentials
+
+- Map supplied actors, entries, stores/flows and trust boundaries, listing assets, sensitive data and permitted actions; do not add unsupplied components.
+- Deliver sourced flows and path-specific threat cards with actual components/preconditions/assets; taxonomy names do not establish paths.
+- When deriving domain candidates, read and follow [prompts/threat-modeling.md](prompts/threat-modeling.md) for the domain procedure and oracle; retain valid controls, evidence gaps, and validation actions for each item.
+
 ## Core Constraints
 
 - Analyze only assets, trust boundaries, attack surface, threat scenarios, mitigations, and assumptions; do not log in, call real APIs, or read credentials.

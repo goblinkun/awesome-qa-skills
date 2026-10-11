@@ -19,6 +19,13 @@ description: Use this skill when you need to design security testing around OWAS
 3. If input is incomplete, return a usable first draft and explicitly mark assumptions and gaps.
 4. Default to Markdown; switch formats only when the user asks.
 
+## Domain Execution Essentials
+
+1. Within actual authorization map asset/principal→threat→control→steps→oracle→evidence/state. Record environment, permitted actions, stop conditions, and authority provenance.
+2. Pair authorized access with unauthorized-denial controls. Denial requires no data disclosure or tool/write effects; error responses and scans alone are insufficient.
+3. Separate DESIGNED plans, EXECUTED evidence, and CONFIRMED control failures supported by supplied observations. Unchecked business authorization stays NOT_RUN/UNKNOWN; static indications are candidates.
+4. A clean scan covers its scanned surface only. Missing authority permits design/static review; real exploitation/production actions require explicit scope. Do not generate dangerous content or extend testing without authorization.
+
 ## Core Constraints
 
 - Prioritize by risk / business impact — do not treat everything equally.
@@ -27,6 +34,8 @@ description: Use this skill when you need to design security testing around OWAS
 - Keep output executable: concrete scenarios, clear priority, clear next steps.
 
 ## Progressive Disclosure
+
+- When calibrating domain outcomes, valid controls, or evidence gaps, read [references/domain-decision-example.md](references/domain-decision-example.md) for sanitized input, per-item oracles, and reproducible calculations.
 
 - Before producing output, read and follow `prompts/security-testing.md` (minimum coverage, output structure, quality bar).
 - When Excel/CSV/JSON/Word is requested: read `output-formats.md` and honor the format.

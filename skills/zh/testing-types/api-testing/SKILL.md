@@ -19,6 +19,13 @@ description: Use this skill when you need to design API test plans or cases for 
 3. 信息不全时先给可用初版，并显式标出假设与信息缺口。
 4. 默认 Markdown；用户指定其他格式时再切换。
 
+## 领域执行要点
+
+1. 按已确认协议选择分支：REST 校验 method/status/schema/幂等；GraphQL 校验 data 与 errors、null 和字段权限；gRPC 校验 status/metadata/deadline/流终止；WebSocket 校验握手、消息 ID/顺序/重连；SOAP 校验 WSDL、namespace 与 Fault。未使用协议不强行覆盖。
+2. 将契约检查与跨请求业务后置条件分开：创建/更新→读回→权限视图→重复请求/下游效果；每步保留请求 ID、业务键、版本与证据。
+3. 状态码正确但读回余额、状态或关联错误仍为业务失败；响应可能异步时按项目一致性窗口等待，不自定窗口。
+4. 数据由隔离命名空间和唯一业务键准备，清理按依赖逆序执行并记录残留；未知授权或真实副作用限制保持 blocked。
+
 ## 核心约束
 
 - 按风险/业务影响排优先级，不要平均摊铺。
@@ -27,6 +34,8 @@ description: Use this skill when you need to design API test plans or cases for 
 - 结果必须可执行：场景具体、有优先级、能指导下一步。
 
 ## 按需加载
+
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
 
 - 产出前必须阅读并遵循 `prompts/api-testing.md`（最低覆盖清单、输出结构、质量要求）。
 - 需要 Excel/CSV/JSON/Word 等格式时：读 `output-formats.md`，并按用户格式要求输出。

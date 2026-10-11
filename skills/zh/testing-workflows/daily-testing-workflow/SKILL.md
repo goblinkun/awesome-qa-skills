@@ -23,6 +23,7 @@ description: Use this skill when you need a day-by-day QA routine including plan
 
 - 管阶段与门禁；完整用例/策略/报告交给类型 skill。
 - 按风险排优先级；门禁必须可检查。
+- 环境不可用或当前构建无法冒烟时，启动/环境就绪门禁保持红色；指定恢复负责人不能解除该阻塞。
 - 把「已确认事实」和「当前假设」分开写。
 - 不要编造用户未提供的细节；禁止相对路径链到其他 skill 文件。
 

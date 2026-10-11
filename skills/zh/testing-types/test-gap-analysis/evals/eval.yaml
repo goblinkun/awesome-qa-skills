@@ -15,6 +15,7 @@ cases:
     - evals/cases/basic-success.yaml
     - evals/cases/edge-incomplete-input.yaml
     - evals/cases/edge-scope-boundary.yaml
+    - evals/cases/review-obligation-evidence-states.yaml
   defaults:
     timeout_seconds: 180
     max_turns: 8

@@ -46,6 +46,8 @@
 
 必须把 `PASS`、`FAIL`、`BLOCKED`、`NOT_RUN`、`NOT_SCORED`、`UNASSESSED` 和 `INSUFFICIENT_EVIDENCE` 的含义写清。Quality Score 仍由既有治理契约负责。
 
+即使输入极少、没有可运行目标或没有原始 trace，也必须输出最小报告骨架，并为本次结果显式写出适用的 canonical evidence state（例如 `NOT_RUN`、`BLOCKED`、`UNASSESSED` 或 `INSUFFICIENT_EVIDENCE`）；不能只用“未验证”等自然语言替代状态。
+
 ## 质量要求
 
 - 每个结论都能追溯到输入、case、judge 和 evidence state。

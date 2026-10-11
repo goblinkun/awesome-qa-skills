@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, concern, source evidence, and 
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Build journey/business-state/platform cells mapped to risks, acceptance obligations and existing evidence without expanding unsupported platforms.
+2. Allocate a minimum effective combination of component, integration, E2E, visual and accessibility evidence: calculations/states, service interactions, cross-layer journeys and appearance/accessibility need suitable oracles.
+3. Explain each layer's detection scope/gaps, avoiding low-risk duplication and screenshots substituting for submission/permission/data checks.
+4. Connect retained high-risk end-to-end paths and lower-layer candidates to cost, environment dependencies and residual risk; without runs the strategy remains a plan.
+
+**Decision and deliverable:** Deliver coverage cells and obligation/layer/oracle/residual-risk mapping; minimum combinations protect key journeys without imposing fixed layer ratios.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

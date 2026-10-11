@@ -31,6 +31,15 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - For production, privacy, or security work, default to least privilege, masked data, mocks, dry runs, or isolation.
 - Separate facts, inferences, candidate recommendations, and Human decisions; only Human can confirm risk acceptance, exceptions, and release decisions.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Balance effort/cost, accepted output, defects/escapes and waiting/rework with explicit windows, team/task units, complexity and product risk.
+2. Deduplicate split or merged cases and verify acceptance. Case/commit counts do not equal value; missing quality/rework evidence prevents productivity claims.
+3. Compare only matched tasks, complexity, tools and windows. Different team work mixes cannot support direct ranking or personal performance evaluation; expose context and uncertainty.
+4. Check dropped hard tests, unreported defects, deferred time and rerun counts. Metrics trigger investigations and experiments, not automatic causal or reward decisions.
+
 ## Minimum Coverage Checklist
 
 - quality metric, delivery metric, denominator, attribution limit, gaming risk

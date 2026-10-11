@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded reliability-testing a
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录实际存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 明确 SLI 事件/时间口径、成功/失败定义、分母、排除、观测窗口和目标来源；请求成功率与时间可用性不能互换。
+- 交付带窗口/分母的 SLI 与故障时间表，任何目标比较或外推都须说明适用条件。
+- 形成领域候选时，必须读取并遵循 [prompts/reliability-testing.md](prompts/reliability-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析可用性目标、失败模式、暴露窗口和证据准备，不注入故障、不访问真实依赖、不调用生产系统。

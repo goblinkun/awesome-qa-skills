@@ -29,6 +29,17 @@ Each finding contains the subject, preconditions, behavior of concern, source ev
 
 - Shared output fields: object/rule (or the domain-equivalent subject), source, trigger or applicability, expected concern/rationale, evidence state, impact/priority, owner role, close condition, and validation method.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Identify OpenAPI/JSON Schema/GraphQL and its version/dialect, operation/direction, content type, reference root and resolution context. Suspend version-dependent decisions when unknown.
+2. For JSON Schema/OpenAPI schemas, separate required from nullability, types/ranges and additionalProperties, interpreting combinations/references under that version without mixing nullable syntax. For GraphQL use its input/output types and non-null rules, not JSON Schema keywords.
+3. Provide valid/invalid examples for absence, explicit null, extra fields and branches. Unresolved references cannot be treated as unconstrained success.
+4. Compare examples and supplied validation reports, citing schema paths/keywords. Samples do not establish the full contract or imply automatic default insertion.
+
+**Decision and deliverable:** Deliver dialect, reference-resolution status, and sample/constraint decisions; required presence and a null value must be assessed separately.
+
 ## Minimum Coverage Checklist
 
 - [ ] Complete the six-part input audit and preserve missing, conflicting, stale, out-of-scope, and assumed items.

@@ -25,6 +25,14 @@ Use AI in a controlled way to speed up testing work while keeping human verifica
 - Do not let AI-generated content skip validation, evidence, or risk review.
 - Call out where human confirmation is required before execution or sign-off.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Record input classification, sanitization, and allowed use. Replace identities, tokens, and personal data with non-reversible placeholders while retaining schema/business constraints.
+2. Trace input snapshot→model/prompt version→AI draft ID→Human review→adopted version ID→acceptance evidence. Drafts do not automatically become execution assets.
+3. Name the reviewers of business oracles, assertions, privacy, and high-risk tradeoffs. Unreviewed work remains draft, unexecuted work NOT_RUN; AI does not accept on behalf of Human.
+4. Compare equal tasks/complexity/windows: manual baseline versus AI generation+review+rework+acceptance time. Track defects/rework separately; generation time alone cannot prove productivity gains.
 ## Minimum Coverage Checklist
 
 Unless the user explicitly narrows the scope, make sure the result addresses these items:

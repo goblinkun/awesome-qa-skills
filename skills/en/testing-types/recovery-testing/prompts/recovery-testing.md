@@ -28,6 +28,17 @@ Start with an input audit and record known, missing, conflicting, stale, out_of_
 - Do not inject faults, access real dependencies, read credentials, or call production systems.
 - Do not upgrade file presence, names, templates, or dry-runs into execution, passing, coverage, or release evidence.
 
+## Domain Procedure and Oracle
+
+Apply these steps to supplied material as design or static comparison; model derivations, candidate sets, and fixture decisions are not evidence of a real execution.
+
+1. Separate service restart/readiness, recovered data point and business consistency; extract RTO/RPO definitions, failure/start and business-recovery/end plus acceptable loss.
+2. Join failure, backups/logs, recovery, dependency readiness and business-validation timelines; health probes do not automatically end business RTO.
+3. Reconcile IDs, amounts, references and duplicates against source ledgers and restored/replayed points, with missing intervals/compensation. An absent recovered point prevents RPO calculation.
+4. Compare timing goals and data invariants separately, proposing failed/partial recovery/late-message checks and close conditions; absent environment evidence permits material comparison only.
+
+**Decision and deliverable:** Deliver service/business/data timelines, target calculations and reconciliation/compensation; partial restoration is not complete recovery.
+
 ## Minimum Coverage Checklist
 
 - recovery objective and applicability

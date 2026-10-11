@@ -31,6 +31,12 @@ description: Use this skill when you need evidence-bounded resilience-testing an
 - 需要评测时读取 evals/eval.yaml 和匹配的 evals/cases/。
 - 只有目录实际存在且任务需要时，才读取 references/、examples/、scripts/ 或 output-formats.md。
 
+## 领域执行要点
+
+- 用业务合同定义扰动前/中/后功能与数据不变量，列正常、降级、不可用状态及允许的体验变化。
+- 交付阶段×功能/数据不变量与降级/恢复证据表，扰动中继续响应但恢复失败不能算完整韧性。
+- 形成领域候选时，必须读取并遵循 [prompts/resilience-testing.md](prompts/resilience-testing.md) 的领域操作与判定流程，逐项保留合法对照、证据缺口和验证动作。
+
 ## 核心约束
 
 - 只分析退化行为、隔离边界、恢复能力和剩余风险，不注入故障、不访问真实依赖、不调用生产系统。

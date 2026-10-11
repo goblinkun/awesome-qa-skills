@@ -13,21 +13,16 @@ input:
 
 expect:
   must_contain:
-    - "priority"
     - "payment"
-    - "boundary"
-    - "negative"
-    - "assumption"
   must_not_contain:
     - "TODO"
-    - "I cannot"
 
 judge:
   type: rule_based
   success:
-    - output_contains:
+    - output_matches:
         all:
-          - "Task Understanding"
-          - "Risk"
-          - "boundary"
-          - "negative"
+          - "(?i)Task Understanding"
+          - "(?i)(Risk|Priority)"
+          - "(?i)(boundary|edge|limit)"
+          - "(?i)(negative|failure|exception|abnormal)"

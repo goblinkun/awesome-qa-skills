@@ -1,0 +1,6 @@
+FAIL: test_defect_controls_keep_the_declared_resource_missing (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_defect_controls_keep_the_declared_resource_missing) (language='en', case='review-missing-prompt')
+AssertionError: 'sample/prompts/review.md' unexpectedly found in {'sample/package-contract.md': '# Sample package contract\nThe SKILL.md name is the canonical ID; metadata.key must use the same ID.\nsample/ is a fixture container; the standalone installed leaf uses the canonical ID.\nDeclared local resources resolve within that leaf; no runtime or  [fixture dump omitted]
+FAIL: test_defect_controls_keep_the_declared_resource_missing (scripts.tests.test_review_fixture_configs.ReviewFixtureConfigurationTests.test_defect_controls_keep_the_declared_resource_missing) (language='zh', case='review-missing-prompt')
+AssertionError: 'sample/prompts/review.md' unexpectedly found in {'sample/package-contract.md': '# 样例包契约\nSKILL.md 的 name 是 canonical ID；metadata.key 必须使用相同 ID。\nsample/ 是材料容器；独立安装的叶目录使用 canonical ID。\n声明的本地资源在该叶目录内解析；没有提供运行或业务验收证据。', 'sample/SKILL.md': '---\nname: sample-review\ndescription: Use this skill when reviewing invoices.\n---\n# Invoice  [fixture dump omitted]
+Ran 1 test in 0.036s
+FAILED (failures=2)

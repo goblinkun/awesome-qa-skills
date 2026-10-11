@@ -39,6 +39,14 @@ If critical input is absent, list `Working Assumptions` and `Open Questions`, th
 - Reuse the current toolchain and assets; avoid large code samples unless the user requests them.
 - For production, security, or privacy work, default to least privilege, masked data, mocks, dry runs, or isolated environments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. Define input sample ID, task-success oracle, allowed tools/resources, prohibited effects, and stopping conditions. Missing goals remain open.
+2. Check run/step order, permission, idempotency, isolation, recovery, and budget invariants. Judge outcome correctness and process compliance separately; either failure prevents an overall pass.
+3. Classify termination as success, goal failure, budget exhaustion, cancellation, safety block, or environment error. Missing terminal events do not prove completion.
+4. Record model/prompt/tool/data/environment versions, sample selection, and project-supplied repetitions. Report per-sample pass/fail counts and intermittent failures; a single trial establishes no stability claim.
 ## Minimum Coverage Checklist
 
 Unless the user narrows the scope, cover at least:

@@ -3,7 +3,7 @@ metadata:
   key: "decision-table-testing"
 interface:
   display_name: "决策表测试设计"
-  short_description: "Design evidence-backed test candidates without claiming execution."
+  short_description: "依据已提供证据设计决策表测试设计，明确来源、缺口与尚未执行的验证。"
   default_prompt: "Use the decision-table-testing skill to produce DTT-## findings without claiming execution."
 policy:
   allow_implicit_invocation: true

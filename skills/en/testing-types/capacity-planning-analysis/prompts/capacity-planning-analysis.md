@@ -40,6 +40,14 @@ If critical input is absent, list `Working Assumptions` and `Open Questions`, th
 - Reuse the current toolchain and assets; avoid large code samples unless the user requests them.
 - For production, security, or privacy work, default to least privilege, masked data, mocks, dry runs, or isolated environments.
 
+## Domain Procedure and Oracle
+
+Apply these steps as design or static comparison of supplied material. Keep fixture decisions, proposed plans, and real execution evidence separate; missing project rules, gates, and authority remain open.
+
+1. For each point record environment/config/instances, workload mix, arrival/completion throughput, latency percentiles, errors, CPU/memory/queues, and window. Trace measurement→SLO→candidate capacity.
+2. Estimate only within measured SLO-acceptable regions. CPU percentage cannot linearly predict throughput; unmeasured points remain candidates constrained by downstream saturation/scaling delay.
+3. Under supplied constant-rate/queue assumptions, scaling-wait backlog=max(0,arrivals−validated service rate)×wait seconds; check backlog latency/recovery, not only totals.
+4. Use measured or explicitly conditional capacity after project-specified instance/dependency failure. Missing failure data cannot establish adequate headroom; margin, growth, cost, and acceptance come from the project.
 ## Minimum Coverage Checklist
 
 Unless the user narrows the scope, cover at least:

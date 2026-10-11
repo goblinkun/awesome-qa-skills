@@ -27,9 +27,18 @@ description: Use this skill when you need evidence-bounded repeat inputs, versio
 
 ## 参考文件
 
+- 校准领域结果、正确对照或证据缺口时，读取 [references/domain-decision-example.md](references/domain-decision-example.md) 的脱敏输入、逐项预期与复算依据。
+
 - 每次执行必须读取 `prompts/llm-consistency-testing.md`；它是本 Skill 的完整执行规范。
 - 需要评测时读取 `evals/eval.yaml` 和 `evals/cases/` 下的匹配用例。
 - 只有目录实际存在且任务需要时，才读取 `references/`、`examples/`、`scripts/` 或 `output-formats.md`，不要假设不存在的资产。
+
+## 领域执行要点
+
+1. 固定样本 ID、模型/Prompt/工具/数据版本、temperature、seed（仅供应商支持时）和其他采样参数，记录项目指定重复次数；seed 相同不代表跨版本可复现。
+2. 先比 schema、必需字段、允许枚举和政策等结构不变量，再依据项目 rubric 比语义结论；同义表达或获准顺序变化不应报错。
+3. 逐样本报告重复分母、结构失败数、语义失败数与偶发失败；方差需明确数值变量、统计单位和算法，不将文本不同率冒充质量方差。
+4. 缺重复数据只报告单次观察，缺 rubric 则语义一致性 UNKNOWN；不同参数或版本分组比较，不混成稳定性证据。
 
 ## 核心约束
 

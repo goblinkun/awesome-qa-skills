@@ -158,3 +158,7 @@ Return in this order (keep the sections; fill concrete fields):
 - Prioritize by risk — do not spread evenly across every API and scenario type.
 - Separate confirmed facts from assumptions.
 - Avoid long full scripts unless the user asks for runnable files.
+
+## Load delivery and business postconditions
+
+Choose an arrival-rate executor for an independently specified arrival/RPS target and a closed VU model for supplied concurrent-user pacing. Report achieved load and dropped_iterations; planned arrival rate is not proof of delivery, and dropped work limits target conclusions. A check records a condition; it affects an exit gate only through the relevant threshold or configured failure rule. When contract body or business postconditions are supplied, assert them as well as HTTP status; do not invent unknown fields. Offline syntax/structure checks are not a k6 load run. The eval-only offline artifact grader requires Python 3 and Node.js.
