@@ -154,6 +154,28 @@ def _parse_openapi(obj, source):
             media = content.get(media_type,{})
             fields = {'format':'openapi','headers':{'Content-Type':media_type} if media_type else {},
                       'body_required':bool(request.get('required')), 'parameters':item.get('parameters',[]) + operation.get('parameters',[])}
+            if 'security' in operation:
+                security_requirements = operation['security']
+                security_scope = 'operation'
+            else:
+                security_requirements = obj.get('security', [])
+                security_scope = 'root'
+            if not isinstance(security_requirements, list):
+                fields['review_required'] = [f'malformed OpenAPI {security_scope} security must be an array']
+            elif security_requirements:
+                fields['security_requirements'] = security_requirements
+                if any(not isinstance(alternative, dict) for alternative in security_requirements) or any(
+                        not isinstance(name, str) or not isinstance(scopes, list) or any(not isinstance(scope, str) for scope in scopes)
+                        for alternative in security_requirements if isinstance(alternative, dict)
+                        for name, scopes in alternative.items()):
+                    fields['review_required'] = [f'malformed OpenAPI {security_scope} security requirements need review']
+                components = obj.get('components', {})
+                schemes = (components.get('securitySchemes', obj.get('securityDefinitions', {}))
+                           if isinstance(components, dict) else None)
+                if isinstance(schemes, dict):
+                    fields['security_schemes'] = {name: _resolve(scheme, obj) for name, scheme in schemes.items()}
+                else:
+                    fields['review_required'] = ['malformed OpenAPI securitySchemes must be an object']
             schema = _resolve(media.get('schema',{}),obj)
             if schema: fields['request_schema'] = schema
             if 'example' in media: fields.update(body=media['example'],body_encoding='json' if 'json' in media_type else 'raw')

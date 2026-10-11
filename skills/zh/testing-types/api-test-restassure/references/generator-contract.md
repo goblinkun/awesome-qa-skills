@@ -28,6 +28,10 @@
 
 凭据使用 `headers_env: {"Authorization": "TEST_AUTHORIZATION"}`，环境变量值包含完整头值（如 Bearer 前缀）。Python/Java 用 `BASE_URL`；Supertest 用 `API_BASE_URL` 或 `SUPERTEST_APP` 的显式绝对路径；Bruno 配置 `baseUrl` 环境变量。无通用 token、sample body 或固定 3 秒阈值。
 
+对受保护的 OpenAPI 操作，解析器会保留 `security_requirements` 与 `security_schemes`。只有 `headers_env` 为至少一个完整且受支持的安全方案映射了全部必需请求头，生成才可继续；query/cookie API key、mutualTLS、Basic/Bearer 之外的 HTTP 认证方案（如 Digest）、同一 AND 备选方案中重复使用凭据头的情况，以及未知方案都需要补充实现。若存在匿名备选方案，或操作级 `security: []` 覆盖全局认证，则不需要凭据。
+
+RestAssured 会将有来源的毫秒响应阈值换算为纳秒，保留小数毫秒精度。
+
 OpenAPI 只从已声明 2xx 提取默认成功状态；负向场景需显式声明预期状态。请求示例不证明业务成功，生成的 status-only smoke 也不能代表业务验收。复杂 schema 校验需 Agent 实现后才能执行。WSDL 保留 SOAP 服务地址，但 envelope 与响应断言需另行实现。YAML 解析需要 PyYAML，缺依赖报错。生成完成与实际测试通过分开报告。
 
 

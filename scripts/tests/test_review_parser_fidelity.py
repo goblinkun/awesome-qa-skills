@@ -92,6 +92,7 @@ class WorkbookFidelityTests(unittest.TestCase):
 
 class ApiParsingFidelityTests(unittest.TestCase):
     def modules(self):
+        yield 'canonical/resource', load(ROOT/'scripts/skill_resources/parse_api_sources.py')
         for lang in ('zh','en'):
             for name in API_NAMES:
                 yield lang+'/'+name,load(ROOT/'skills'/lang/'testing-types'/name/'scripts/parse_api_sources.py')
@@ -121,6 +122,40 @@ class ApiParsingFidelityTests(unittest.TestCase):
             with self.subTest(package=name):
                 ep=m._parse_openapi(obj,'fixture')[0]
                 self.assertEqual(ep['body'],{'qty':1});self.assertEqual(ep['expected_statuses'],[201]);self.assertTrue(ep['body_required'])
+
+    def test_openapi_preserves_inherited_and_operation_security(self):
+        bearer={'type':'http','scheme':'bearer'}
+        api_key={'type':'apiKey','in':'header','name':'X-API-Key'}
+        obj={'openapi':'3.0.3','security':[{'BearerAuth':[]}],
+             'components':{'securitySchemes':{'BearerAuth':bearer,'ApiKeyAuth':api_key}},
+             'paths':{'/inherited':{'get':{'responses':{'200':{'description':'OK'}}}},
+                      '/overridden':{'get':{'security':[{'ApiKeyAuth':[]}],'responses':{'200':{'description':'OK'}}}},
+                      '/anonymous':{'get':{'security':[],'responses':{'200':{'description':'OK'}}}}}}
+        for name,m in self.modules():
+            with self.subTest(package=name):
+                endpoints={ep['path']:ep for ep in m._parse_openapi(obj,'fixture')}
+                self.assertEqual(endpoints['/inherited']['security_requirements'],[{'BearerAuth':[]}])
+                self.assertEqual(endpoints['/inherited']['security_schemes']['BearerAuth'],bearer)
+                self.assertEqual(endpoints['/overridden']['security_requirements'],[{'ApiKeyAuth':[]}])
+                self.assertEqual(endpoints['/anonymous'].get('security_requirements',[]),[])
+
+    def test_malformed_openapi_security_is_marked_for_review(self):
+        obj={'openapi':'3.0.3','security':[{'BearerAuth':[]}],
+             'components':{'securitySchemes':{'BearerAuth':{'type':'http','scheme':'bearer'}}},
+             'paths':{'/null-operation':{'get':{'security':None,'responses':{'200':{'description':'OK'}}}},
+                      '/object-operation':{'get':{'security':{},'responses':{'200':{'description':'OK'}}}},
+                      '/malformed-alternative':{'get':{'security':[None,{}],'responses':{'200':{'description':'OK'}}}},
+                      '/valid-anonymous':{'get':{'security':[],'responses':{'200':{'description':'OK'}}}}}}
+        invalid_root={'openapi':'3.0.3','security':None,'components':obj['components'],
+                      'paths':{'/bad-root':{'get':{'responses':{'200':{'description':'OK'}}}}}}
+        for name,m in self.modules():
+            with self.subTest(package=name):
+                endpoints={ep['path']:ep for ep in m._parse_openapi(obj,'fixture')}
+                self.assertTrue(endpoints['/null-operation'].get('review_required'))
+                self.assertTrue(endpoints['/object-operation'].get('review_required'))
+                self.assertTrue(endpoints['/malformed-alternative'].get('review_required'))
+                self.assertEqual(endpoints['/valid-anonymous'].get('security_requirements',[]),[])
+                self.assertTrue(m._parse_openapi(invalid_root,'fixture')[0].get('review_required'))
 
     def test_wsdl_preserves_service_address_and_does_not_invent_rest_path(self):
         xml='<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"><binding><operation name="CreateOrder"><soap:operation soapAction="urn:CreateOrder"/></operation></binding><service><port><soap:address location="https://example.test/service"/></port></service></definitions>'

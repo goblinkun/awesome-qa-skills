@@ -2,6 +2,7 @@
 import argparse
 import json
 import re
+from decimal import Decimal
 from pathlib import Path
 from api_case_contract import contract_errors, endpoints_from, incomplete_message, fail_incomplete
 
@@ -18,7 +19,9 @@ def _invoke_line(method,path,ep=None):
         body=json.dumps(ep['body'],ensure_ascii=False) if ep.get('body_encoding','json')=='json' else ep['body']
         call+=f".body({json.dumps(body)})"
     call+=f".when().{method.lower()}({json.dumps(path)}).then().statusCode(anyOf("+', '.join(f'is({s})' for s in ep['expected_statuses'])+'))'
-    if ep.get('max_response_ms') is not None: call+=f".time(lessThanOrEqualTo({int(ep['max_response_ms'])}L))"
+    if ep.get('max_response_ms') is not None:
+        max_nanos = min(int(Decimal(str(ep['max_response_ms'])) * Decimal(1_000_000)), (1 << 63) - 1)
+        call+=f".time(lessThanOrEqualTo({max_nanos}L), java.util.concurrent.TimeUnit.NANOSECONDS)"
     if 'expected_json' not in ep: return call+';'
     return ('String actual = '+call+'.extract().asString();\n        '+
         'org.junit.jupiter.api.Assertions.assertEquals(new com.fasterxml.jackson.databind.ObjectMapper().readTree('+json.dumps(json.dumps(ep['expected_json'],ensure_ascii=False))+'), new com.fasterxml.jackson.databind.ObjectMapper().readTree(actual));')

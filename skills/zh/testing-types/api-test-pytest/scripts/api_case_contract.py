@@ -10,6 +10,80 @@ import re
 METHODS = {"GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"}
 
 
+def _openapi_security_error(endpoint):
+    if "security_requirements" not in endpoint:
+        return None
+    requirements = endpoint["security_requirements"]
+    if not isinstance(requirements, list):
+        return "review malformed OpenAPI security requirements"
+    if not requirements:
+        return None
+    if any(not isinstance(alternative, dict) for alternative in requirements):
+        return "review malformed OpenAPI security requirements"
+    if any(not isinstance(name, str) or not isinstance(scopes, list) or any(not isinstance(scope, str) for scope in scopes)
+           for alternative in requirements for name, scopes in alternative.items()):
+        return "review malformed OpenAPI security requirements"
+
+    schemes = endpoint.get("security_schemes", {})
+    headers_env = endpoint.get("headers_env", {})
+    configured_headers = {name.lower() for name in headers_env if isinstance(name, str)} if isinstance(headers_env, dict) else set()
+    static_headers = {name.lower() for name in endpoint.get("headers", {}) if isinstance(name, str)} if isinstance(endpoint.get("headers", {}), dict) else set()
+    supported_alternatives = []
+    anonymous_alternative = False
+    credential_collision = False
+    satisfied_alternative = False
+    duplicate_header_alternative = False
+
+    for alternative in requirements:
+        if not alternative:
+            anonymous_alternative = True
+            continue
+        required_headers = []
+        for scheme_name in alternative:
+            scheme = schemes.get(scheme_name) if isinstance(schemes, dict) else None
+            if not isinstance(scheme, dict):
+                break
+            scheme_type = scheme.get("type")
+            if scheme_type == "apiKey":
+                if scheme.get("in") != "header" or not isinstance(scheme.get("name"), str) or not scheme.get("name"):
+                    break
+                header = str(scheme["name"])
+                required_headers.append(header)
+            elif scheme_type == "http":
+                http_scheme = scheme.get("scheme")
+                if not isinstance(http_scheme, str) or http_scheme.lower() not in {"basic", "bearer"}:
+                    break
+                header = "Authorization"
+                required_headers.append(header)
+            elif scheme_type in ("basic", "oauth2", "openIdConnect"):
+                header = "Authorization"
+                required_headers.append(header)
+            else:
+                break
+            if header.lower() in static_headers:
+                credential_collision = True
+        else:
+            if len({name.lower() for name in required_headers}) != len(required_headers):
+                duplicate_header_alternative = True
+            elif all(name.lower() in configured_headers for name in required_headers):
+                satisfied_alternative = True
+                continue
+            else:
+                supported_alternatives.append(required_headers)
+
+    if credential_collision:
+        return "move OpenAPI credential headers from headers to headers_env"
+    if anonymous_alternative:
+        return None
+    if satisfied_alternative:
+        return None
+    if duplicate_header_alternative:
+        return "resolve OpenAPI AND security requirements that reuse a credential header"
+    if supported_alternatives:
+        return "OpenAPI security requires headers_env entries for a complete supported security alternative"
+    return "resolve unsupported OpenAPI security schemes before generating requests"
+
+
 def contract_errors(method, path, endpoint):
     errors = []
     if method.upper() not in METHODS:
@@ -25,6 +99,9 @@ def contract_errors(method, path, endpoint):
         errors.append("supply the required request body")
     if any(value for key,value in endpoint.items() if key.startswith('unresolved_')) or endpoint.get("review_required"):
         errors.append("resolve unsupported source fields")
+    security_error = _openapi_security_error(endpoint)
+    if security_error:
+        errors.append(security_error)
     if endpoint.get("parameters"):
         errors.append("resolve declared parameters into the path/body")
     if endpoint.get("response_schema"):
