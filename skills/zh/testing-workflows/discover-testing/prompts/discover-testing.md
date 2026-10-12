@@ -14,7 +14,7 @@
 
 ## 精确 ID 与 Host 可用性
 
-先读取 `references/skill-capability-inventory.json` 检查精确 canonical ID。该文件是 2026-10-06 目录快照，164 个 ID 的目录存在不等于当前 Host 已安装/可调用；安装证据缺失则 availability=`UNKNOWN`，用户明确未安装则 `UNAVAILABLE`。命中专项产出（认证 vs 授权、检索 vs 回答质量、影响范围 vs 回归选择）时优先匹配专项，只有意图相符才套通用 Composition 路线。仍只给一个主 Skill 和至多一个辅助；目标不可用时说明缺口与最小安装/交接动作，不宣称已调用。
+先读取 `references/skill-capability-inventory.json` 检查精确 canonical ID。该文件是 2026-10-12 目录快照，165 个 ID 的目录存在不等于当前 Host 已安装/可调用；安装证据缺失则 availability=`UNKNOWN`，用户明确未安装则 `UNAVAILABLE`。命中专项产出（认证 vs 授权、检索 vs 回答质量、影响范围 vs 回归选择）时优先匹配专项，只有意图相符才套通用 Composition 路线。仍只给一个主 Skill 和至多一个辅助；目标不可用时说明缺口与最小安装/交接动作，不宣称已调用。
 
 ## Composition 路由来源
 
@@ -56,7 +56,8 @@
 | 主要意图 | 主 skill |
 | --- | --- |
 | 理清需求/冲突/可测性 | `requirements-analysis`；多源冲突/要结构化决策字段 → `requirements-analysis-plus` |
-| 测试策略/范围深度/门禁 | `test-strategy`；要里程碑门槛与 Owner → `test-strategy-plus` |
+| 明确要求精简为一页的测试策略 | `one-page-test-strategy` |
+| 通用测试策略/范围/深度/质量门禁 | `test-strategy`；需要里程碑、Owner 和可检查门禁 → `test-strategy-plus` |
 | 编写用例 | `test-case-writing`；多源+追踪矩阵 → `testcase-writer-plus` |
 | 评审用例 | `test-case-reviewer`；要严重级别+补测顺序 → `test-case-reviewer-plus` |
 | 代码 / PR 审查 | `code-review` |
