@@ -4,7 +4,7 @@
 
 本目录是中文主语言 Skill 根目录，与 `skills/en` 使用相同 Skill 名和物理结构。
 
-每种语言共 **164** 个 Skill：10 workflows + 149 testing types + 5 Skill Engineering。完整项目说明见 [中文 README](../../README.md) 和 [English README](../../README_EN.md)；长期治理见 [治理路线图](../../docs/governance/SKILL_GOVERNANCE_ROADMAP.md) 与 [治理矩阵](../../docs/SKILL_MATRIX.md)。
+每种语言共 **165** 个 Skill：10 workflows + 150 testing types + 5 Skill Engineering。完整项目说明见 [中文 README](../../README.md) 和 [English README](../../README_EN.md)；长期治理见 [治理路线图](../../docs/governance/SKILL_GOVERNANCE_ROADMAP.md) 与 [治理矩阵](../../docs/SKILL_MATRIX.md)。
 
 ## 跨阶段工作流
 
@@ -49,6 +49,7 @@
 | Skill | 目录 |
 | --- | --- |
 | 测试策略（中文版） | [`test-strategy`](testing-types/test-strategy/) |
+| 一页纸测试策略 | [`one-page-test-strategy`](testing-types/one-page-test-strategy/) |
 | 测试策略加强版 | [`test-strategy-plus`](testing-types/test-strategy-plus/) |
 | 测试策略评审 | [`test-strategy-review`](testing-types/test-strategy-review/) |
 

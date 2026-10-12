@@ -14,7 +14,7 @@ description: Use this skill when you need to route a request to the right testin
 
 ## Full inventory and availability
 
-Read `references/skill-capability-inventory.json` to check exact canonical IDs. This 2026-10-06 snapshot catalogs 164 IDs; catalog existence does not prove installation or callability on the current Host. Missing installation evidence means availability=`UNKNOWN`; explicitly absent means `UNAVAILABLE`. Match explicit specialties (authentication vs authorization, retrieval vs answer quality, impact scope vs regression selection) before broad Composition routes. Keep one primary and at most one helper. For an unavailable target, state the gap and minimal installation/handoff action without claiming invocation.
+Read `references/skill-capability-inventory.json` to check exact canonical IDs. This 2026-10-12 snapshot catalogs 165 IDs; catalog existence does not prove installation or callability on the current Host. Missing installation evidence means availability=`UNKNOWN`; explicitly absent means `UNAVAILABLE`. Match explicit specialties (authentication vs authorization, retrieval vs answer quality, impact scope vs regression selection) before broad Composition routes. Keep one primary and at most one helper. For an unavailable target, state the gap and minimal installation/handoff action without claiming invocation.
 
 ## Workflow
 

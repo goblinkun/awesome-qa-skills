@@ -2342,6 +2342,42 @@
       ]
     },
     {
+      "slug": "one-page-test-strategy",
+      "section": "testing-types",
+      "zh_path": "skills/zh/testing-types/one-page-test-strategy",
+      "en_path": "skills/en/testing-types/one-page-test-strategy",
+      "virtual_domain": "D03",
+      "status": "Experimental",
+      "priority": "UNASSESSED: no roadmap priority is assigned",
+      "related": "Reviewed with limitation: complements full test-strategy capabilities with a concise visual discussion artifact; runtime semantic equivalence and team usage remain unassessed.",
+      "governance_evidence": "skills/zh/testing-types/one-page-test-strategy/SKILL.md",
+      "quality_score": {
+        "state": "NOT_SCORED",
+        "reason": "No reviewable nine-dimension Quality Score evidence is recorded."
+      },
+      "eval_execution": {
+        "state": "NOT_RUN",
+        "reason": "Bilingual rule-based Eval cases are configured; no real model or controlled target has been run."
+      },
+      "sdlc_stage": "UNASSESSED: no single workflow stage is assigned by reviewed source material",
+      "roles": [
+        "QA"
+      ],
+      "inputs": "skills/zh/testing-types/one-page-test-strategy/prompts/one-page-test-strategy.md#输入审计; skills/en/testing-types/one-page-test-strategy/prompts/one-page-test-strategy.md#Input Review",
+      "outputs": "One-page goal and function/performance/security scope; seven-stage lifecycle with shift-left/right; Q1-Q4 test quadrants; exploratory/API/unit lean layers; iteration-to-production feedback loop; open decisions.",
+      "workflow": "UNASSESSED: the artifact may summarize a strategy, but no single workflow placement is established",
+      "evidence_paths": [
+        "skills/zh/testing-types/one-page-test-strategy/SKILL.md",
+        "skills/en/testing-types/one-page-test-strategy/SKILL.md",
+        "skills/zh/testing-types/one-page-test-strategy/prompts/one-page-test-strategy.md",
+        "skills/en/testing-types/one-page-test-strategy/prompts/one-page-test-strategy.md",
+        "skills/zh/testing-types/one-page-test-strategy/evals/eval.yaml",
+        "skills/en/testing-types/one-page-test-strategy/evals/eval.yaml",
+        "skills/zh/testing-types/one-page-test-strategy/agents/openai.yaml",
+        "skills/en/testing-types/one-page-test-strategy/agents/openai.yaml"
+      ]
+    },
+    {
       "slug": "test-strategy",
       "section": "testing-types",
       "zh_path": "skills/zh/testing-types/test-strategy",
@@ -6322,6 +6358,39 @@
     }
   ],
   "candidates": [
+    {
+      "slug": "one-page-test-strategy",
+      "decision_state": "REVIEWED_WITH_LIMITATION",
+      "conclusion": "NEW",
+      "target": "one-page-test-strategy",
+      "scope": "Create a one-page visual strategy from supplied project goals and risks, explicitly covering function/performance/security scope, all seven lifecycle stages, shift-left/right, Q1-Q4 quadrants, exploratory/API/unit layers, and iteration-to-production feedback; distinguish facts, recommendations, and open decisions.",
+      "non_goals": "No full executable test plan, exhaustive test cases, invented release thresholds, production execution claims, risk acceptance, or release approval.",
+      "evidence": {
+        "name": "The user requested a Skill named one-page-test-strategy based on BY林子's One-Page Test Strategy article.",
+        "purpose": "The source article presents a visual one-page strategy to make key information clear, invite team discussion, and support adaptation.",
+        "inputs": "The bilingual prompts define project goals, lifecycle, risks, architecture, constraints, resources, and approved gates as inputs; missing information remains explicit.",
+        "outputs": "The bilingual prompts specify a compact seven-stage lifecycle, function/performance/security scope, Q1-Q4 quadrant map, exploratory/API/unit layers, iteration/release/production feedback loop, and open decisions.",
+        "decision_logic": "Select activities and investment by project goals, quality risks, lifecycle, architecture, and capacity; keep every diagram module visible while marking unsupported categories Open, and adapt quadrants and layers without fixed mandates, ratios, or unsupported gates.",
+        "workflow_role": "A testing-type Skill for a discussion-ready strategy artifact; it does not replace detailed planning, test-case generation, execution, or review."
+      },
+      "next_action": "Run the bilingual Skill-local Eval with a real model and gather team-use evidence before considering Stable; retain NOT_RUN and NOT_SCORED until then.",
+      "target_evidence_paths": [
+        "skills/zh/testing-types/one-page-test-strategy/SKILL.md",
+        "skills/en/testing-types/one-page-test-strategy/SKILL.md",
+        "skills/zh/testing-types/one-page-test-strategy/prompts/one-page-test-strategy.md",
+        "skills/en/testing-types/one-page-test-strategy/prompts/one-page-test-strategy.md"
+      ],
+      "candidate_source": "User request; https://www.bylinzi.com/2020/01/10/one-page-test-strategy/; comparison with existing bilingual test-strategy, test-strategy-plus, and test-strategy-review Skills.",
+      "capability_match": {
+        "decision": "NEW",
+        "existing_targets": [
+          "skills/zh/testing-types/test-strategy/SKILL.md",
+          "skills/zh/testing-types/test-strategy-plus/SKILL.md",
+          "skills/zh/testing-types/test-strategy-review/SKILL.md"
+        ],
+        "difference": "This Skill creates a concise visual discussion artifact organized around project-specific goals, risks, and lifecycle feedback; the existing Skills define full strategies, enhanced strategies, or review an existing strategy."
+      }
+    },
     {
       "slug": "requirement-change-impact-analysis",
       "decision_state": "REVIEWED_WITH_LIMITATION",

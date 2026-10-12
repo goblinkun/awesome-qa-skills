@@ -10,8 +10,8 @@ from scripts import generate_skill_governance_matrix as matrix
 from scripts.tests.v3_v4_skill_contracts import CARD_IDS as V34_CANDIDATE_SLUGS
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_LOGICAL_SKILL_COUNT = 164
-EXPECTED_CANDIDATE_COUNT = 100
+EXPECTED_LOGICAL_SKILL_COUNT = 165
+EXPECTED_CANDIDATE_COUNT = 101
 V20_CANDIDATE_SLUGS = {
     "decision-table-testing",
     "state-transition-testing",
@@ -281,6 +281,16 @@ class GovernanceMatrixTest(unittest.TestCase):
             "test-scope-analysis": "docs/superpowers/specs/2026-09-14-v1-1-following-five-quality-skills-design.md",
         }
         for candidate in registry.candidates:
+            if candidate["slug"] == "one-page-test-strategy":
+                self.assertEqual(candidate["decision_state"], "REVIEWED_WITH_LIMITATION")
+                self.assertEqual(candidate["conclusion"], "NEW")
+                self.assertIn("https://www.bylinzi.com/2020/01/10/one-page-test-strategy/", candidate["candidate_source"])
+                self.assertTrue(candidate.get("scope"))
+                self.assertTrue(candidate.get("non_goals"))
+                target_paths = candidate["target_evidence_paths"]
+                self.assertTrue(target_paths)
+                self.assertTrue(all((ROOT / path).is_file() for path in target_paths))
+                continue
             if candidate["decision_state"] == "PROPOSED":
                 self.assertIn(candidate["slug"], proposed_v1_1)
                 self.assertEqual(candidate["conclusion"], proposed_v1_1[candidate["slug"]])

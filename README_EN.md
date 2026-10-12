@@ -5,9 +5,9 @@
 A language-partitioned **AI testing skills library** (Agent Skills) for Codex, Cursor, Claude Code, Kiro, OpenCode, Trae, and similar tools. It ships independently installable, composable skills for testing workflows and testing types.
 
 [![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/License-PolyForm%20Noncommercial%201.0.0-blue.svg)](./LICENSE)
-[![Skills](https://img.shields.io/badge/skills-328%20(zh%2Ben)-0A7EA4)](./docs/catalog/skills-index_EN.md)
+[![Skills](https://img.shields.io/badge/skills-330%20(zh%2Ben)-0A7EA4)](./docs/catalog/skills-index_EN.md)
 [![Workflows](https://img.shields.io/badge/workflows-10-informational)](./skills/en/testing-workflows/)
-[![Testing types](https://img.shields.io/badge/testing%20types-149-informational)](./skills/en/testing-types/)
+[![Testing types](https://img.shields.io/badge/testing%20types-150-informational)](./skills/en/testing-types/)
 [![Skill engineering](https://img.shields.io/badge/skill%20engineering-5-informational)](./skills/en/skill-engineering/)
 [![skills.sh](https://skills.sh/b/naodeng/awesome-qa-skills)](https://skills.sh/naodeng/awesome-qa-skills)
 
@@ -149,7 +149,7 @@ Core QA Skills → Engineering QA Skills → Production Quality Skills → AI Na
 
 ## Complete Skill catalog
 
-Each language provides **164** Skills: 10 workflows, 149 testing types, and 5 Skill Engineering packages; **328** bilingual directories in total. Physical directories remain stable; the catalog below is logical navigation only.
+Each language provides **165** Skills: 10 workflows, 150 testing types, and 5 Skill Engineering packages; **330** bilingual directories in total. Physical directories remain stable; the catalog below is logical navigation only.
 
 ### Cross-phase workflows
 
@@ -198,6 +198,7 @@ Each testing-type Skill appears once; routers and workflows cover cross-phase co
 | Skill | Directory | Primary use |
 | --- | --- | --- |
 | Test Strategy <!-- data-skill:test-strategy --> | [`test-strategy`](skills/en/testing-types/test-strategy/) | Use this skill when you need to define a test strategy covering scope, methods, resources, risks, and quality gates; triggers include test strategy and QA plan… |
+| One-Page Test Strategy <!-- data-skill:one-page-test-strategy --> | [`one-page-test-strategy`](skills/en/testing-types/one-page-test-strategy/) | Show seven lifecycle stages, functionality/performance/security, test quadrants, lean layers, and iteration feedback on one page. |
 | Test Strategy Plus <!-- data-skill:test-strategy-plus --> | [`test-strategy-plus`](skills/en/testing-types/test-strategy-plus/) | Use this skill when you need a structured test strategy from requirement, analysis, tech, and plan docs; triggers include test strategy plus and advanced test… |
 | Test Strategy Review <!-- data-skill:test-strategy-review --> | [`test-strategy-review`](skills/en/testing-types/test-strategy-review/) | Review test strategy evidence, separate blockers from conditions, and leave the final decision to a Human |
 
@@ -535,7 +536,7 @@ Suggested pilots: `functional-testing`, `api-testing`, `api-test-bruno`, `bug-re
 | [skills-composition_EN.md](docs/catalog/skills-composition_EN.md) | v1.5.2 five structured routes, primary/optional Skills, and navigation relations |
 | [QA_SKILLS_EVOLUTION_ROADMAP_EN.md](docs/governance/QA_SKILLS_EVOLUTION_ROADMAP_EN.md) | Four-stage capability evolution and R&D/testing lifecycle map |
 | [DOCUMENTATION_POLICY_EN.md](docs/governance/DOCUMENTATION_POLICY_EN.md) | Chinese-first bilingual documentation policy |
-| [SKILL_GOVERNANCE_V1_EN.md](docs/governance/SKILL_GOVERNANCE_V1_EN.md) | v1.0 source-governance baseline and current 164-pair static-record entry point (earlier baseline: 79 pairs; not runtime quality) |
+| [SKILL_GOVERNANCE_V1_EN.md](docs/governance/SKILL_GOVERNANCE_V1_EN.md) | v1.0 source-governance baseline and current 165-pair static-record entry point (earlier baseline: 79 pairs; not runtime quality) |
 | [PHASE_0_V1_4_CLOSEOUT_EN.md](docs/governance/PHASE_0_V1_4_CLOSEOUT_EN.md) | Evidence closeout and version boundaries for all 35 v1.4 Project cards (not release approval) |
 | [BILINGUAL_CONSISTENCY_CONTRACT_EN.md](docs/governance/BILINGUAL_CONSISTENCY_CONTRACT_EN.md) | Contract for Chinese/English paths, entry points, Catalog, and links |
 | [QUALITY_SCORE_EVAL_CONTRACT_EN.md](docs/governance/QUALITY_SCORE_EVAL_CONTRACT_EN.md) | Nine-dimension scoring and minimum Eval artifact standard |

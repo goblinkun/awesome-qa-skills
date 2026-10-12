@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-10-06",
-  "source_revision": "c61f507f61711c3c0f0d1777136a5a4ff0e211b3",
+  "snapshot_date": "2026-10-12",
+  "source_revision": "3c97e86e0d144602c4485c93e4b19d84240c6523",
   "source": "awesome-qa-skills canonical catalog; update when names change",
   "installation_evidence": "UNKNOWN",
   "skills": [
@@ -441,6 +441,12 @@
       "name": "observability-design-review",
       "category": "testing-types",
       "capability": "可观测性设计评审",
+      "availability": "UNKNOWN"
+    },
+    {
+      "name": "one-page-test-strategy",
+      "category": "testing-types",
+      "capability": "一页纸测试策略",
       "availability": "UNKNOWN"
     },
     {
