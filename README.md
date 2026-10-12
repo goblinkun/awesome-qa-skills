@@ -5,9 +5,9 @@
 按语言分区的 **AI 测试辅助技能库**（Agent Skills）。面向 Codex、Cursor、Claude Code、Kiro、OpenCode、Trae 等工具，提供可独立安装、可组合调用的测试工作流与测试类型技能。
 
 [![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/License-PolyForm%20Noncommercial%201.0.0-blue.svg)](./LICENSE)
-[![Skills](https://img.shields.io/badge/skills-328%20(zh%2Ben)-0A7EA4)](./docs/catalog/skills-index.md)
+[![Skills](https://img.shields.io/badge/skills-330%20(zh%2Ben)-0A7EA4)](./docs/catalog/skills-index.md)
 [![Workflows](https://img.shields.io/badge/workflows-10-informational)](./skills/zh/testing-workflows/)
-[![Testing types](https://img.shields.io/badge/testing%20types-149-informational)](./skills/zh/testing-types/)
+[![Testing types](https://img.shields.io/badge/testing%20types-150-informational)](./skills/zh/testing-types/)
 [![Skill engineering](https://img.shields.io/badge/skill%20engineering-5-informational)](./skills/zh/skill-engineering/)
 [![skills.sh](https://skills.sh/b/naodeng/awesome-qa-skills)](https://skills.sh/naodeng/awesome-qa-skills)
 
@@ -149,7 +149,7 @@ Core QA Skills → Engineering QA Skills → Production Quality Skills → AI Na
 
 ## 完整技能目录
 
-每种语言共 **164** 个 Skill：10 个工作流、149 个测试类型和 5 个 Skill Engineering；中英文合计 **328** 个目录。物理目录保持稳定，下面只提供逻辑导航。
+每种语言共 **165** 个 Skill：10 个工作流、150 个测试类型和 5 个 Skill Engineering；中英文合计 **330** 个目录。物理目录保持稳定，下面只提供逻辑导航。
 
 ### 跨阶段工作流
 
@@ -198,6 +198,7 @@ Core QA Skills → Engineering QA Skills → Production Quality Skills → AI Na
 | 名称 | 目录 | 主要用途 |
 | --- | --- | --- |
 | 测试策略 <!-- data-skill:test-strategy --> | [`test-strategy`](skills/zh/testing-types/test-strategy/) | 定义测试范围、方法、资源、风险和质量门禁。 |
+| 一页纸测试策略 <!-- data-skill:one-page-test-strategy --> | [`one-page-test-strategy`](skills/zh/testing-types/one-page-test-strategy/) | 一页呈现七阶段生命周期、功能/性能/安全、测试象限、精益分层与迭代反馈。 |
 | 测试策略加强版 <!-- data-skill:test-strategy-plus --> | [`test-strategy-plus`](skills/zh/testing-types/test-strategy-plus/) | 基于需求、分析、技术和计划文档形成结构化测试策略。 |
 | 测试策略评审 <!-- data-skill:test-strategy-review --> | [`test-strategy-review`](skills/zh/testing-types/test-strategy-review/) | 基于证据评审测试策略，区分阻塞项与条件项并给出 Human 待决的 AI 建议 |
 
@@ -535,7 +536,7 @@ bash scripts/run_skill_eval.sh skills/zh/testing-types/functional-testing/evals/
 | [skills-composition.md](docs/catalog/skills-composition.md) | v1.5.2 五条结构化路由、主/辅 Skill 和导航关系 |
 | [QA_SKILLS_EVOLUTION_ROADMAP.md](docs/governance/QA_SKILLS_EVOLUTION_ROADMAP.md) | 四层能力演进与研发测试阶段地图 |
 | [DOCUMENTATION_POLICY.md](docs/governance/DOCUMENTATION_POLICY.md) | 中文优先的双语文档治理策略 |
-| [SKILL_GOVERNANCE_V1.md](docs/governance/SKILL_GOVERNANCE_V1.md) | v1.0 源代码治理基线与当前 164 对静态记录入口（早期基线 79 对；不代表运行质量） |
+| [SKILL_GOVERNANCE_V1.md](docs/governance/SKILL_GOVERNANCE_V1.md) | v1.0 源代码治理基线与当前 165 对静态记录入口（早期基线 79 对；不代表运行质量） |
 | [PHASE_0_V1_4_CLOSEOUT.md](docs/governance/PHASE_0_V1_4_CLOSEOUT.md) | v1.4 35 张 Project 卡的证据收口与版本边界（不代表发布批准） |
 | [BILINGUAL_CONSISTENCY_CONTRACT.md](docs/governance/BILINGUAL_CONSISTENCY_CONTRACT.md) | 中英文路径、入口、Catalog 与链接一致性契约 |
 | [QUALITY_SCORE_EVAL_CONTRACT.md](docs/governance/QUALITY_SCORE_EVAL_CONTRACT.md) | 九维评分与最低 Eval 工件标准 |
