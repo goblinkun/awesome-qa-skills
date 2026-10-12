@@ -13,7 +13,7 @@ A language-partitioned **AI testing skills library** (Agent Skills) for Codex, C
 
 **Online directory:** [https://inaodeng.com/qaskills/](https://inaodeng.com/qaskills/)
 
-**Quick links:** [Complete Skills index](docs/catalog/skills-index_EN.md) · [Composition Router catalog](docs/catalog/skills-composition_EN.md) · [Skill Quality Engineering Toolkit](docs/skill-quality-engineering/README_EN.md) · [Installation guide](scripts/INSTALL_SKILLS.md) · [Skills CLI integration guide](docs/integrations/SKILLS_CLI_INTEGRATION_EN.md) · [v1.4 governance closeout](docs/governance/PHASE_0_V1_4_CLOSEOUT_EN.md) · [Contributing](CONTRIBUTING_EN.md)
+**Quick links:** [Complete Skills index](docs/catalog/skills-index_EN.md) · [Composition Router catalog](docs/catalog/skills-composition_EN.md) · [Skill Quality Engineering Toolkit](docs/skill-quality-engineering/README_EN.md) · [Installation guide](scripts/INSTALL_SKILLS.md) · [Skills CLI integration guide](docs/integrations/SKILLS_CLI_INTEGRATION_EN.md) · [v1.4 governance closeout](docs/governance/PHASE_0_V1_4_CLOSEOUT_EN.md) · [Community-recommended external Skills](#community-recommended-external-skills) · [Contributing](CONTRIBUTING_EN.md)
 
 ---
 
@@ -549,6 +549,16 @@ Suggested pilots: `functional-testing`, `api-testing`, `api-test-bruno`, `bug-re
 | [FAQ_EN.md](FAQ_EN.md) | FAQ (English) |
 | [CONTRIBUTING_EN.md](CONTRIBUTING_EN.md) | Contribution guide (English) |
 | [skills-graph_EN.md](docs/catalog/skills-graph_EN.md) | Skill relationship graph (reference) |
+
+<a id="community-recommended-external-skills"></a>
+
+## Community-recommended external Skills
+
+This section lists community-submitted Skills hosted and maintained by external projects for discovery. Entries are excluded from this repository's own Skill catalog. License, version, and compatibility information follows the linked upstream source and includes a check date; a listing does not mean this repository has runtime-evaluated the Skill.
+
+| Skill | Type | Submitted by | Source | Upstream metadata (checked) |
+| --- | --- | --- | --- | --- |
+| [UIZZE anti-ui-slop](https://github.com/uizze/uizze/blob/main/skills/anti-ui-slop/SKILL.md) | Agent Skill / UX quality gate | [@samuelbushi](https://github.com/samuelbushi) | [upstream directory](https://github.com/uizze/uizze/tree/main/skills/anti-ui-slop) · [submission Issue #3](https://github.com/naodeng/awesome-qa-skills/issues/3) | Apache-2.0 · v1.3.1 · upstream lists Claude Code, Codex, Cursor, and GitHub Copilot (checked 2026-10-12) |
 
 ## Contributing
 
