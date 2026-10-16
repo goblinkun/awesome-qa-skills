@@ -2,7 +2,7 @@
 
 # Review and Reproduction
 
-Use this directory to review the executed Codex text Pilots. `packages/` contains current test snapshots, not new product Skills. Start with the [report](../README_EN.md). Reruns consume account quota and can differ; do not rerun indefinitely to obtain matching green results.
+Use this directory to review the executed Codex text Pilots. `packages/` contains current reproduction exports, including declared sanitization revisions, not new product Skills. Not every export is byte-identical to the historical snapshot. Start with the [report](../README_EN.md). Reruns consume account quota and can differ; do not rerun indefinitely to obtain matching green results.
 
 ## Offline Review First
 
@@ -11,6 +11,8 @@ Review [results.json](../results.json), [source-manifest.json](../source-manifes
 The initial portable adapter differed from the collected execution version only in finding `codex` through PATH instead of a local binary path. Their hashes are separate, not claimed identical. That initial portable version is now frozen at [snapshots/adapter-20261005.mjs](./snapshots/adapter-20261005.mjs), SHA256 `c193c5037be7c7986ff1823bed5e5972731fb209534664b25a115d920a23fedf`. Historical collection hashes still resolve to those original bytes; they do not prove the corrected adapter ran historically. `native-evals/` preserves original repository Claude configurations; `packages/*/evals/eval.yaml` overrides only Codex transport, installation target, model, and timeout. The safety-boundary judge-model override is recorded separately; that judge never ran.
 
 The 2026-10-16 delivery correction makes the current `adapter.mjs` probe `codex --version` before future calls, recording `null` / `unknown` on failure. Calibration delegation and test fixtures use `fileURLToPath` for spaces/Unicode. Historical metadata hardcoded `0.159.2`, not an independently measured per-call version. The 2026-10-05 `source-identity.json` establishes only the collection-time CLI version `0.160.0`; historical individual-call versions remain unknown. The corrected adapter has offline regression coverage only, not a new real-model smoke.
+
+The 2026-10-16 security-scan revision replaces one illustrative fixed login password in the Chinese performance-testing [tutorial](./packages/performance-testing-zh/tutorial.md) with `__ENV.TEST_PASSWORD`. Future execution requires an authorized dedicated test-account password supplied through the environment. `artifact-manifest.json` retains the original SHA256 and records the previous export hash, revised export hash, and `byte_identical: false`. The `runtime_snapshot_matches` values in `source-manifest.json` describe the collection-time comparison, not byte identity of the current sanitized export. This is a future-reproduction revision, not retrospective evidence of the historical runtime version. Native outputs, grading, usage, and historical verification logs are unchanged; no new model call or business HTTP request ran. The English archived tutorial did not trigger this fixed-password rule and retains its original bytes.
 
 The two archive-local `.gitattributes` files preserve whitespace/EOL bytes only for captured outputs, source snapshots, historical patches, and terminal logs. Formatting must not change their hashes. Curated reports, current adapters, and tests retain normal checks.
 
@@ -36,7 +38,7 @@ skill-up validate "$SQET_EVIDENCE/reproduction/packages/functional-testing-zh/ev
 
 These task-specific `SQET_*` variables do not repurpose HOME/CODEX_HOME or change Git configuration.
 
-The six adapter tests, four portability/version regressions, and two evidence-redaction regressions make no model calls. Redaction checks cover the captured ancestor probes and common local-path/credential patterns across the package; they are not a comprehensive security audit of every credential format.
+The six adapter tests, four portability/version regressions, and four evidence-redaction/provenance regressions make no model calls. Redaction checks cover the captured ancestor probes, common local-path/credential patterns across the package, the k6 login example above, and export hashes/original provenance; they are not a comprehensive security audit of every credential format.
 
 ## Authorized Rerun
 

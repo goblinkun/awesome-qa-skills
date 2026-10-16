@@ -2,7 +2,7 @@
 
 # 复核与复现
 
-用于复核本次已运行的 Codex 文本 Pilot。`packages/` 是当前测试快照，不是新产品 Skill 目录。入口报告见 [README](../README.md)。模型再次运行会消耗账户额度，并可能产生不同回答，不应为了追求同一绿灯无限重跑。
+用于复核本次已运行的 Codex 文本 Pilot。`packages/` 是当前复现导出，包含已声明的脱敏修订，不是新产品 Skill 目录，也不保证每份导出与历史快照逐字节一致。入口报告见 [README](../README.md)。模型再次运行会消耗账户额度，并可能产生不同回答，不应为了追求同一绿灯无限重跑。
 
 ## 先离线复核
 
@@ -11,6 +11,8 @@
 初始可移植适配器与实际调用收集版只有 Codex binary 定位差异：由本机安装路径变为 PATH 中的 `codex`；两版哈希分别记录，不声称字节相同。初始可移植版现冻结在 [snapshots/adapter-20261005.mjs](./snapshots/adapter-20261005.mjs)，SHA256 为 `c193c5037be7c7986ff1823bed5e5972731fb209534664b25a115d920a23fedf`。后续报告的采集哈希继续指向这些原始字节，不追认修正版曾用于历史运行。`native-evals/` 保留仓库原本的 Claude 配置；`packages/*/evals/eval.yaml` 仅覆盖本次 Codex 的传输、安装目标、模型与 timeout。安全边界的 judge-model override 单独记录，实际未执行 judge。
 
 2026-10-16 交付前修正：当前 `adapter.mjs` 在未来调用前用 `codex --version` 实际探测版本，失败时写 `null` / `unknown`；calibration 委派和测试 fixture 使用 `fileURLToPath` 处理空格/中文路径。历史 metadata 中的 `0.159.2` 是硬编码值，不能作为逐调用实测。2026-10-05 的 `source-identity.json` 只证明采集时 CLI 为 `0.160.0`；历史逐调用版本仍未知。修正版仅经过离线回归，未执行新的真实模型 smoke。
+
+2026-10-16 安全扫描修订：中文性能测试[教程](./packages/performance-testing-zh/tutorial.md)中的一处固定登录密码示例改为 `__ENV.TEST_PASSWORD`。未来执行该示例前须通过环境变量提供获授权的专用测试账户密码。`artifact-manifest.json` 保留原始 SHA256，记录修订前导出哈希、新导出哈希和 `byte_identical: false`。`source-manifest.json` 的 `runtime_snapshot_matches` 仍表示采集时的比较，不证明当前脱敏导出与历史源字节相同。修订只用于后续复现，不追认为历史运行版本；原生输出、判分、用量及历史验证日志均未改写，也未执行新的模型调用或业务 HTTP 请求。英文归档教程没有命中该固定密码规则，保留原字节。
 
 两批归档目录内的 `.gitattributes` 仅对捕获输出、源快照、历史 patch 和终端日志保留原始空白/行尾，不以格式化改变哈希。手写报告、当前适配器与测试不在该豁免范围内。
 
@@ -36,7 +38,7 @@ skill-up validate "$SQET_EVIDENCE/reproduction/packages/functional-testing-zh/ev
 
 `SQET_*` 是本任务专用变量，不改 HOME、CODEX_HOME 或 Git 配置。
 
-六条适配器测试、四条可移植性/版本回归与两条证据脱敏回归均不调用模型。脱敏回归覆盖已捕获的祖先目录探测及全包常见本机路径/凭据模式，但不是对所有凭据格式的完整安全审计。
+六条适配器测试、四条可移植性/版本回归与四条证据脱敏/溯源回归均不调用模型。脱敏回归覆盖已捕获的祖先目录探测、全包常见本机路径/凭据模式、上述 k6 登录示例及导出哈希/原始来源保留，但不是对所有凭据格式的完整安全审计。
 
 ## 经授权重跑
 

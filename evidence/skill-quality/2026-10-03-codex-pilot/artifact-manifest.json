@@ -1,6 +1,6 @@
 {
   "hash": "SHA256",
-  "sanitization": "Local user/runtime/snapshot paths replaced with symbolic markers. Provider/model/results and original errors retained. Original bytes stay private; these are sanitized exports, not universally byte-identical raw artifacts.",
+  "sanitization": "Local user/runtime/snapshot paths replaced with symbolic markers. One illustrative fixed password in a reproduction tutorial now uses an environment reference, with its original hash and delivery revision retained. Provider/model/results and original errors retained. Original bytes stay private; these are sanitized exports, not universally byte-identical raw artifacts.",
   "excluded_cohorts": [
     "smoke: pre-isolation diagnostic, superseded by smoke-final"
   ],
@@ -8003,9 +8003,15 @@
       "path": "reproduction/packages/performance-testing-zh/tutorial.md",
       "kind": "current_runtime_snapshot",
       "original_sha256": "3032eb32d7e797b16d38c74a36b72a4a91148a1316dbb13fe15b90c886710551",
-      "archived_sha256": "3032eb32d7e797b16d38c74a36b72a4a91148a1316dbb13fe15b90c886710551",
+      "archived_sha256": "1c33e728192cd599a5d736bcf08735429a24bc2844d0170076e89ff4c4651ffe",
       "sanitized_path_occurrences": 0,
-      "byte_identical": true
+      "sanitized_example_occurrences": 1,
+      "byte_identical": false,
+      "delivery_revision": {
+        "date": "2026-10-16",
+        "previous_archived_sha256": "3032eb32d7e797b16d38c74a36b72a4a91148a1316dbb13fe15b90c886710551",
+        "reason": "Replace one illustrative fixed login password with __ENV.TEST_PASSWORD in the reproduction export; retain original source identity. Native outputs, grading, usage, and historical verification records are unchanged. No new model run."
+      }
     },
     {
       "path": "reproduction/native-evals/performance-testing-zh/eval.yaml",
@@ -8893,9 +8899,10 @@
       "path": "reproduction/sanitization.test.mjs",
       "kind": "offline_evidence_regression_test",
       "original_sha256": "e0830bb056cb8de5d93e1a4377d6c37c43d81f81b495e27415edd937f100099d",
-      "archived_sha256": "e0830bb056cb8de5d93e1a4377d6c37c43d81f81b495e27415edd937f100099d",
+      "archived_sha256": "ec8b75440098358367296486716bc68b2ef37190a45ee9d8a55ac2edd6108dfe",
       "sanitized_path_occurrences": 0,
-      "byte_identical": true
+      "byte_identical": false,
+      "delivery_revision": "2026-10-16: add offline k6 example and export-provenance regressions; original test hash retained"
     },
     {
       "path": "verification/sanitization-red.log",

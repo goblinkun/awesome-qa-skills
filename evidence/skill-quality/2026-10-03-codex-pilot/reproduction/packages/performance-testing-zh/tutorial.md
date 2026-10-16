@@ -258,7 +258,7 @@ export default function () {
   group('用户登录', function () {
     const loginRes = http.post(`${baseUrl}/auth/token/login/`, {
       username: 'test_user',
-      password: 'test_password',
+      password: __ENV.TEST_PASSWORD,
     }, {
       tags: { scenario: 'login' },
     });

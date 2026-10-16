@@ -74,6 +74,8 @@ The 2026-10-04 closeout repaired missed macOS temporary ancestor paths in one tr
 
 The 2026-10-16 delivery review corrected CLI-version claims and reproduction under paths containing spaces/Unicode. The [original portable adapter](./reproduction/snapshots/adapter-20261005.mjs) is frozen at its original SHA256. The corrected adapter probes `--version` for future calls and records unknown when probing fails. Four added offline regressions passed red/green checks; no new model smoke ran, and the historical portable smoke applies only to the original adapter. Native results, grading, and usage are unchanged; see [reproduction](./reproduction/README_EN.md).
 
+The 2026-10-16 security-scan review replaces one illustrative fixed login password in the archived Chinese performance-testing tutorial with an environment reference and adds two offline regressions. Original source hashes remain; [artifact-manifest.json](./artifact-manifest.json) records the previous/revised export hashes and non-identical byte status. Current reproduction materials are not retrospective evidence of the historical runtime version. The English archived tutorial needs no change. Native model outputs, grading, usage, and historical verification records are unchanged; no new model call or business HTTP request ran. See [reproduction](./reproduction/README_EN.md).
+
 ## Remaining Acceptance
 
 Real evidence now supports engineering text checks and selected comparisons, but unconditional Pilot closure is not justified. Natural selection, the blocked safety case, broader difficult-input sampling, human judge calibration, Claude compatibility, real business acceptance, and acceptable cost remain unconfirmed. This report must not be promoted to business or release approval.
