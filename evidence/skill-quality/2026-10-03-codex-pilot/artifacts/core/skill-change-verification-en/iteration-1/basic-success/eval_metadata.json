@@ -1,0 +1,10 @@
+{
+  "eval_id": 0,
+  "eval_name": "Complete verification routing",
+  "prompt": "Select checks and distinguish skill-up validate from runtime validation.",
+  "assertions": [
+    "expect.must_contain",
+    "expect.exit_code",
+    "output_contains{all:[runtime]}"
+  ]
+}

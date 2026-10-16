@@ -1,0 +1,10 @@
+✔ ancestor AGENTS probes in the captured architecture trace are sanitized (0.837125ms)
+✔ the entire evidence package passes local-path and standard credential-pattern checks (185.362ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 294.694416

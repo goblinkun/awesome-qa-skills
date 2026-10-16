@@ -1,0 +1,118 @@
+本次以本地 **skill-evaluation** 为示例目标，交付评测设计与证据报告。已读取其 [SKILL.md](.agents/skills/skill-evaluation/SKILL.md) 和报告契约；未执行评测运行，未读取评测断言或 evaluator 输入文件，未调用外部服务或写入文件。
+
+**评测范围**
+
+目标 Skill 的契约是：在设计、运行或解释 Skill 评测时使用，输入包括目标行为、case、trace、工件和运行信息，输出包含证据状态、失败分类、benchmark、regression 与推荐行动的报告。
+
+本次覆盖 Outcome、Process、Style/Quality；Efficiency 仅设计采集方法。重点验证：
+
+- 正确选择 case 和 judge，给出可观察断言。
+- 区分触发证据、静态检查和运行效果。
+- 缺少证据时保留未知状态，不编造结果。
+- 区分 benchmark 与版本回归，不自动修改 Skill。
+
+目标 Skill 的既有评测集、历史失败、历史版本和运行 trace 未提供。
+
+**Run Metadata**
+
+| 字段 | 本次记录 |
+|---|---|
+| 活动 | 本地契约阅读与评测设计 |
+| runtime `run_id` | `unknown`，未创建运行 |
+| Skill | `skill-evaluation` |
+| Skill / Eval 版本 | `unknown` / 未落盘的设计草案 |
+| `skill-up` 版本 | `unknown`，未运行 |
+| engine / provider / model | `unknown` |
+| judge | 下表为计划配置，尚未执行 |
+| environment | 当前本地工作区；仅 shell 读取 |
+| timestamp | 2026-10-03；精确运行时间 `unknown` |
+| 限制 | 无运行目标配置、原始 trace、基线或历史失败证据 |
+
+**配置与覆盖范围 / Case Results**
+
+以下都是**待执行 case**，表内断言是评测设计，不是已观察结果。
+
+| ID / 类型 | 测试输入或场景 | 可观察断言 | Judge | 当前状态 |
+|---|---|---|---|---|
+| C1 HAPPY | 提供完整 Skill 契约、trace、工件及 metadata，要求报告 | 结论能对应 case、judge 和原始证据；metadata 完整；无越界结论 | `rule_based`＋校准后 `agent_judge` | `NOT_RUN` |
+| C2 INCOMPLETE | 仅要求“评测这个 Skill”，不提供目标或 trace | 仍输出最小报告；未知值明确；不虚构运行、成功率或版本 | `rule_based`＋`agent_judge` | `NOT_RUN` |
+| C3 EXPLICIT_TRIGGER | “使用 skill-evaluation 设计 Skill 评测” | selection trace 明确记录选择该 Skill；随后完成请求 | 事件字段 `rule_based` | `NOT_RUN`；触发证据 `BLOCKED` |
+| C4 IMPLICIT_TRIGGER | “设计 Skill 正负用例并选择 judge” | selection trace 记录目标 Skill；报告覆盖相关行为 | `rule_based`＋`agent_judge` | `NOT_RUN`；触发证据 `BLOCKED` |
+| C5 CONTEXTUAL_TRIGGER | 上文讨论 Skill 改动，随后说“补充回归验证方案” | 依据上下文选择该 Skill，并设计 previous/current 对照 | `rule_based`＋`agent_judge` | `NOT_RUN`；触发证据 `BLOCKED` |
+| C6 NEGATIVE_TRIGGER | “计算普通分类器的 precision 和 recall”，无 Skill 上下文 | 完整 selection 记录支持未选择目标 Skill；任务仍正确完成 | `rule_based` | `NOT_RUN`；触发证据 `BLOCKED` |
+| C7 BOUNDARY | 仅提供 validate 成功，要求宣称业务有效并自动优化 Skill | 报告限定为静态证据；不宣称运行有效；不修改 Skill | `rule_based`＋`agent_judge` | `NOT_RUN` |
+| C8 REGRESSION | 重放一个经根因确认的历史失败 | 原始输入、证据和失败原因可追溯；修复版满足同一预期 | 依失败行为选择 judge | `NOT_RUN`；历史失败 `INSUFFICIENT_EVIDENCE` |
+
+C8 是待补充的设计位置；在确认真实失败根因前，不把假设问题登记为正式 regression case。
+
+**Judge 选择**
+
+优先用 `rule_based` 检查必需字段、合法状态、selection 事件和明确的禁止行为。若交付可执行或机器可读工件，再用既有引擎支持的 `script` judge 检查解析、schema 或执行结果。
+
+只有语义问题使用 `agent_judge`，例如“结论是否得到证据支持”“是否把静态检查夸大成业务效果”。Rubric 应要求逐项指出结论及其证据；成为 gate 前，用人工标注的正确、错误和边界样本校准，记录分歧。当前校准状态为 `UNASSESSED`。
+
+**Summary 与状态词**
+
+本次完成了契约阅读和评测设计，运行效果为 `NOT_RUN`，没有可报告的通过率或质量分。
+
+| 状态 | 含义 |
+|---|---|
+| `PASS` | 已执行，足够证据支持断言成立 |
+| `FAIL` | 已执行，足够证据支持断言不成立 |
+| `BLOCKED` | 必需证据或条件缺失，无法判断该检查 |
+| `NOT_RUN` | 尚未执行 |
+| `NOT_SCORED` | 未计算评分 |
+| `UNASSESSED` | 尚未进行对应分析或判断 |
+| `INSUFFICIENT_EVIDENCE` | 证据不足以支持所要求的结论 |
+
+**Trigger / Process / Outcome / Artifact / Semantic Evidence**
+
+| 证据维度 | 当前状态与边界 |
+|---|---|
+| Trigger | `BLOCKED`：没有 observed `skill.selection` trace；不能根据报告内容相似推断触发，也不能认定未触发 |
+| Process | `UNASSESSED`：无评测运行过程记录；本次本地阅读记录不能替代被测运行 |
+| Outcome | `NOT_RUN`：未执行目标 case |
+| Artifact | `NOT_RUN`：未生成被测运行工件 |
+| Semantic | `UNASSESSED`：未执行、未校准语义 judge |
+| Efficiency | `NOT_SCORED`：无耗时、token、工具调用数据 |
+
+**Benchmark Results**
+
+状态：`NOT_RUN`。
+
+设计 **with Skill / without Skill** 成对运行，保持模型、输入、工具权限、预算和环境一致，仅改变目标 Skill 的可用性。两组使用相同 judge；覆盖正向与负向场景，并记录每次运行的 selection evidence、结果及成本。报告配对差异、重复运行波动和样本限制，不从单次成功推广业务收益。
+
+**Regression Findings**
+
+状态：`NOT_RUN`；版本可比性为 `UNASSESSED`。
+
+设计 **previous / current** 对照，固定 case、judge、模型和环境，记录两个 Skill 版本及其他配置差异。若模型或 judge 同时变化，应单独说明混杂因素，不能把结果差异直接归因于 Skill 版本。
+
+**Flaky / Blocked / Infrastructure Errors**
+
+Flaky 为 `UNASSESSED`：没有重复运行。触发判断因缺少 selection trace 为 `BLOCKED`。未观察到引擎或服务运行错误，不能据此声称基础设施正常。
+
+失败归因规则：
+
+| 分类 | 判定依据 |
+|---|---|
+| Skill Defect | case 和运行有效，Skill 行为违反契约 |
+| Eval Defect | case 预期错误、fixture 不适用、断言或 judge 有误 |
+| Infrastructure Defect | 引擎、依赖、服务或采集链路故障导致无效运行 |
+| Unknown | 根因证据不足；保留 `UNKNOWN`，不强行归类 |
+
+**Eval Validity Findings**
+
+当前只有设计审阅，效度为 `UNASSESSED`。执行前需检查 case 是否真实、预期是否来自契约、fixtures 是否适用、judge 是否校准，以及对照运行是否可比。
+
+`skill-up` 作为主 Eval Engine；`validate` 只能提供配置或静态证据，不能证明运行语义。trace checks 用于补充深层证据，不另建 Engine、Benchmark 或 Quality Score。
+
+**Limitations 与推荐行动**
+
+本报告可用于准备评测，尚不能支持“Skill 有效”“没有回归”或发布结论。
+
+1. 补齐目标版本、既有 `evals/`、fixtures、历史失败及运行配置。
+2. 先执行 `skill-up validate`，单独记录静态结果。
+3. 在允许运行的环境中执行上述 case，保存 metadata、原始 trace、judge 结果和工件。
+4. 校准语义 judge，再开展 benchmark 和版本回归。
+5. 对真实失败确认根因后，添加对应 regression case；持续保留证据不足项的原状态。

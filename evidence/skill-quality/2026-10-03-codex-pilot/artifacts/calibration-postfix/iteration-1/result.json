@@ -1,0 +1,120 @@
+{
+  "skill_name": "sqet-judge-calibration",
+  "schema_version": "v1alpha1",
+  "engine_name": "codex_judge_calibration",
+  "model_name": "openai/gpt-6-sol",
+  "requested_configuration": {
+    "role": "runner",
+    "engine": "codex_judge_calibration",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6-sol"
+  },
+  "applied_configuration": {
+    "role": "runner",
+    "engine": "codex_judge_calibration",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6-sol"
+  },
+  "start_time": "2026-10-03T19:33:06.302782+08:00",
+  "end_time": "2026-10-03T19:33:39.609762+08:00",
+  "case_results": [
+    {
+      "case_id": "functional-testing-positive",
+      "title": "正向金样（期望 PASS）",
+      "status": "PASS",
+      "duration_ms": 92,
+      "turns": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "judge_duration_ms": 32926,
+      "judge_input_tokens": 16674,
+      "judge_output_tokens": 980,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+            "passed": true,
+            "evidence": "final_message 区分“已知事实”和“待确认”事项，明确接口字段、权限矩阵、终态、幂等及退款规则待确认，并写明“不假设字段或状态名”。"
+          },
+          {
+            "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+            "passed": true,
+            "evidence": "final_message 覆盖登录、购物车、下单、支付的正常闭环，以及同一支付回调发送两次、失败回调和重试。; final_message 还要求检查数量与金额边界、订单归属及未授权访问。"
+          },
+          {
+            "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+            "passed": true,
+            "evidence": "final_message 将正常支付闭环、重复回调和支付失败列为 P0，将数量、金额边界及权限列为 P1；执行顺序从正常闭环开始，再验证重复回调和失败场景。; final_message 写明“30 分钟内优先两项 P0，其余记录为延后”，并指出延后退款和多渠道验证可能漏掉账务不一致或渠道差异。"
+          },
+          {
+            "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+            "passed": true,
+            "evidence": "final_message 为正常闭环列出隔离账号、可售商品和批准规则作为前置条件，列出下单支付操作、金额与支付结果的预期，并要求保存请求、查询结果及关联日志。; final_message 为重复回调、失败回调和权限检查列出操作、待核对结果及资金、日志或订单归属证据；未知边界规则时阻塞相应断言。"
+          },
+          {
+            "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+            "passed": true,
+            "evidence": "final_message 明确“上述是设计，尚未执行测试，不能声称业务或发布通过”。; final_message 规定遇到真实资金、重复扣款或数据隔离失效时停止并升级负责人，并列出补充规则、确认隔离环境、执行测试和保存证据的下一步。"
+          }
+        ],
+        "summary": {
+          "passed": 6,
+          "failed": 0,
+          "total": 6,
+          "pass_rate": 1
+        },
+        "judge_context": {
+          "profile": "standard",
+          "materialized_dir": "judge/context",
+          "manifest": {
+            "profile": "standard",
+            "materialized_dir": "judge/context",
+            "materials": [
+              {
+                "key": "final_message",
+                "mode": "include",
+                "path": "judge/context/final_message.txt",
+                "bytes": 1943,
+                "original_bytes": 1943
+              },
+              {
+                "key": "transcript",
+                "mode": "file_ref",
+                "path": "judge/context/transcript.json",
+                "bytes": 2530,
+                "original_bytes": 2530
+              },
+              {
+                "key": "workspace_diff",
+                "mode": "omit",
+                "bytes": 0
+              },
+              {
+                "key": "generated_files",
+                "mode": "omit",
+                "bytes": 0
+              }
+            ]
+          },
+          "prompt_bytes": 5262
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "为电商登录、购物车、下单、支付流程设计可执行的功能测试初版。发布验证只有 30 分钟，已知支付回调可能重复到达；接口字段、角色权限矩阵和支付最终状态规则尚未提供。请列出事实与假设、P0/P1 风险及取舍、正常/异常/边界场景、每项的前置条件、操作、预期判断和证据，以及停止条件、未验证风险和下一步。不要声称已经执行测试。",
+      "response": "已知事实：登录、购物车、下单、支付；验证窗口 30 分钟；支付回调可能重复。接口字段、权限矩阵、终态、幂等及退款规则待确认，不假设字段或状态名。P0：正常下单至支付闭环、重复回调引发重复资金效果、支付失败与订单不一致；P1：数量/金额边界、授权角色访问。前置条件：授权隔离环境和可恢复测试数据，已确认业务与幂等契约。先执行正常闭环，再发送同一回调两次，核对支付侧权威记录、订单终态和关联日志，预期资金效果及状态符合已确认契约。失败回调场景核对失败处理和恢复证据。按相同格式验证允许/不允许角色及边界数量，规则未确认则阻塞该断言。30 分钟内优先两项 P0，其余记录为延后；未覆盖退款及多渠道差异。遇到真实资金、重复扣款或数据隔离失效时停止并升级负责人。上述是设计，尚未执行测试，不能声称业务或发布通过。下一步由产品/支付负责人补充终态、权限和幂等规则，QA 确认隔离环境后执行并保存请求、日志与资金证据。 正常闭环：前置为隔离账号、可售商品及批准的状态规则；登录加入购物车下单并支付，预期订单金额符合批准的价格规则、支付成功时恰好一笔有效资金记录、订单与权威支付结果一致，保存下单请求、订单/支付查询和关联日志。失败回调：模拟支付失败，预期无成功资金效果且订单不显示已支付，重试按批准契约不产生重复效果。权限：已授权账号可访问自身订单，未授权账号应被拒；记录鉴权和订单归属证据。数量/金额边界按产品明确规则判断，未知规则则阻塞断言。延后退款和多渠道留下退款账务不一致或渠道回调差异未发现的风险，不能由主渠道通过推出全渠道可用。"
+    }
+  ],
+  "total_tokens": 0,
+  "judge_tokens": 17654,
+  "overall_tokens": 17654
+}

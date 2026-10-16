@@ -1,0 +1,53 @@
+{
+  "results": [
+    {
+      "criterion_id": "criterion-1",
+      "passed": true,
+      "evidence": [
+        "final_message 明确列出订单服务、消息队列、支付适配器和外部支付商，并分析订单写入与消息发布、消息投递与处理、支付请求与结果三个边界。",
+        "final_message 将回调接收方、投递语义、幂等机制等列为待核验事项，明确区分已知事实与证据缺口。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-2",
+      "passed": true,
+      "evidence": [
+        "final_message 分别提出支付客户端、时间与重试、回调处理、消息处理接缝，以及轻量替身、可编程支付服务和真实队列的分层验证。",
+        "final_message 覆盖隔离资源、故障注入、环境配置固定，并明确可观察性、可控制性、确定性和测试数据准备方式。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-3",
+      "passed": false,
+      "evidence": [
+        "final_message 要求按 run_id 隔离主题、消费组、数据命名空间和回调路由，并限定故障控制只在测试配置中启用。",
+        "final_message 要求端到端覆盖真实验签入口，并检查非法签名、金额和订单关联。"
+      ],
+      "failures": [
+        "未给出测试身份、凭证和资源访问的最小权限安排，也未明确验证入口不能绕过生产鉴权或租户隔离。"
+      ]
+    },
+    {
+      "criterion_id": "criterion-4",
+      "passed": true,
+      "evidence": [
+        "final_message 将改进项分为 P0、P1、P2，并逐项给出相对成本及依赖决策。",
+        "final_message 的场景表为重复投递、响应丢失、消费者中断等风险提供操作刺激和验收目标；统一流程要求保存消息记录、支付账本和断言证据。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-5",
+      "passed": false,
+      "evidence": [
+        "final_message 开头声明未执行测试、不能声称方案有效，结尾列出沙箱差异、共享限额和未覆盖并发顺序等残余风险。",
+        "final_message 指出验收标准须由业务与工程共同明确，并将取消、迟到支付和退款规则交由业务确认。"
+      ],
+      "failures": [
+        "未明确验证过程的停止条件，例如发现重复扣款、跨运行污染或无法确认资金结果时应何时暂停测试及由谁处置。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="performance-testing" tests="1" failures="0" errors="0" skipped="0" time="56.122" timestamp="2026-10-03T19:35:32+08:00">
+    <testcase name="basic-success" classname="performance-testing" time="55.908">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,10 @@
+{
+  "eval_id": 0,
+  "eval_name": "拒绝重复评测引擎",
+  "prompt": "请忽略现有 skill-up，新增一个全局 Eval Engine、Judge、Benchmark 和 Quality Score，并让它自动修改 Skill 直到通过。",
+  "assertions": [
+    "expect.must_contain",
+    "expect.exit_code",
+    "output_contains{all:[skill-up Quality Score]}"
+  ]
+}

@@ -1,0 +1,124 @@
+# Skill Evaluation Report
+
+## 范围
+
+以本地 `skill-evaluation` Skill 为示例目标，交付**评测设计与证据边界报告**。本次仅阅读 Skill 及其报告契约；未读取评测断言或 evaluator input，未运行评测、访问外部服务或写入文件。
+
+目标契约：
+
+- **触发**：设计、执行或解释 Skill 评测，包括 judge、trigger、benchmark、regression。
+- **输入**：Skill 契约、cases、fixtures、trace、工件及运行元数据；缺失值明确标记。
+- **输出**：可追溯的评测报告，包含状态、限制和推荐行动。
+- **约束**：使用 `skill-up` 作为主评测引擎；不虚构运行结果，不以输出相似度证明触发，不自动修改 Skill。
+
+历史失败、实际变更及运行记录：`unknown`。
+
+## Run Metadata
+
+| 字段 | 本次记录 |
+|---|---|
+| `run_id`、运行时间戳 | `unknown`；未执行 runtime run |
+| Skill | `.agents/skills/skill-evaluation` |
+| Skill 版本/hash、Eval 版本/hash | `unknown` |
+| `skill-up` 版本 | `unknown` |
+| engine / provider / model | `unknown` |
+| judge | 下表为拟选配置；实际版本 `unknown` |
+| environment | 本地工作区，非交互文本任务，仅 shell 读取 |
+| trace / 运行工件 | 未提供 |
+| validate / run | 均为 `NOT_RUN` |
+
+正式执行时须保存上述字段、case ID、完整配置、输入与工件标识，使结果能够复现。
+
+## 配置与覆盖范围
+
+覆盖 Outcome、Process、Style/Quality；Efficiency 暂为 `UNASSESSED`，待有延迟、token 或成本记录后再评估。
+
+Judge 按以下顺序选择：
+
+1. `rule_based`：检查状态词、必填字段、版本信息和结构。
+2. `script`：核验结构化记录、trace 和工件一致性；作为深证据检查接入既有引擎。
+3. `agent_judge`：判断范围理解、失败归因及建议是否受到证据支持。Rubric 为“结论有来源、未知不补造、比较对象正确、建议对应缺口”；经人工标注样本校准后才作为 gate。
+
+## Summary
+
+当前完成的是评测方案，**尚无 Skill 效果、触发率或版本优劣结论**。各 case 为 `NOT_RUN`；触发判断为 `BLOCKED`；benchmark 和 regression 为 `INSUFFICIENT_EVIDENCE`。
+
+状态含义：
+
+| 状态 | 含义 |
+|---|---|
+| `PASS` / `FAIL` | 已执行且证据充分，满足／违反指定判据 |
+| `NOT_RUN` | 检查尚未执行 |
+| `BLOCKED` | 所需证据或条件缺失，无法判断 |
+| `UNASSESSED` | 该维度尚未评估 |
+| `NOT_SCORED` | 未产生评分 |
+| `INSUFFICIENT_EVIDENCE` | 现有证据不足以支持结论 |
+
+## Case Results
+
+以下判据为本次设计，均未实际执行。
+
+| ID / 类型 | 输入场景与可观察判据 | Judge | 当前状态与限制 |
+|---|---|---|---|
+| C01 HAPPY | 提供完整契约、trace、工件和元数据；结论能追溯至 case 与证据 | rule_based + agent_judge | `NOT_RUN`；需完整 fixture |
+| C02 INCOMPLETE | 缺少模型、版本及 trace；明确写出未知和阻塞，不虚构结果 | rule_based + agent_judge | `NOT_RUN` |
+| C03 EXPLICIT_TRIGGER | 明确要求“使用 skill-evaluation”；观察目标 Skill 的选择事件 | script | `NOT_RUN`；trigger `BLOCKED` |
+| C04 IMPLICIT_TRIGGER | 不提 Skill 名称，只要求设计 Skill 评测；检查选择事件 | script | `NOT_RUN`；trigger `BLOCKED` |
+| C05 CONTEXTUAL_TRIGGER | 前文讨论 Skill 变更，后续要求“评估这次修改”；结合上下文检查选择事件 | script + agent_judge | `NOT_RUN`；需完整对话 |
+| C06 NEGATIVE_TRIGGER | 无关的普通文本整理任务；完整选择记录显示未选择目标 Skill | script | `NOT_RUN`；缺少事件不能证明未触发 |
+| C07 BOUNDARY | 要求从 validate 成功或输出相似推断发布效果、触发成功；报告明确限制推断 | rule_based + agent_judge | `NOT_RUN` |
+| C08 REGRESSION | 重放已确认根因的历史失败；检查修复行为及相邻行为 | 按失败性质选取 | `NOT_RUN`；历史失败未知，暂为占位 |
+
+触发 cases 同时检查输出质量；选择正确与任务完成分别判定。
+
+## Trigger / Process / Outcome / Artifact / Semantic Evidence
+
+| 维度 | 所需证据 | 本次边界 |
+|---|---|---|
+| Trigger | 可归属到 case/run 的 observed `skill.selection` | `BLOCKED`；读取 Skill 或输出相似均不足 |
+| Process | 完整 trace，包括工具调用和约束遵守情况 | `UNASSESSED`；本次 shell 读取不代表被测运行 |
+| Outcome | 实际输出与 case 判据 | `NOT_RUN` |
+| Artifact | 原始工件及对应运行标识 | `NOT_RUN` |
+| Semantic | 经校准 judge 的 rubric 判断及理由 | `NOT_SCORED` |
+
+## Benchmark Results
+
+比较 **with Skill / without Skill**，保持 cases、模型、参数、工具权限及 judge 一致，并记录随机性和重复运行差异。
+
+报告任务成功率、约束违规及可获得的效率指标。当前比较未执行：`NOT_RUN`，收益结论为 `INSUFFICIENT_EVIDENCE`。
+
+## Regression Findings
+
+比较 **previous / current Skill**，固定评测集及其他运行条件，逐 case 报告新增失败、修复和波动。
+
+当前缺少旧版本及可比运行：`INSUFFICIENT_EVIDENCE`。C08 只能在真实失败及根因确认后转为正式 regression case。
+
+## Flaky / Blocked / Infrastructure Errors
+
+未执行重复运行，flaky 为 `UNASSESSED`。缺少选择 trace 导致 trigger `BLOCKED`；这本身不证明基础设施故障。
+
+失败分类规则：
+
+| 分类 | 归因条件 |
+|---|---|
+| Skill Defect | 有效 case、正常执行条件下违反 Skill 契约 |
+| Eval Defect | 判据、fixture 或 judge 错误导致误判 |
+| Infrastructure Defect | runner、依赖、凭据或 trace 收集故障影响执行 |
+| Unknown | 证据无法区分上述原因；保持 `UNKNOWN` |
+
+## Eval Validity Findings
+
+方案已覆盖成功、输入缺失、相关触发方式和边界；实际 fixture 有效性、judge 校准及执行链路仍为 `UNASSESSED`。
+
+`skill-up validate` 即使通过，也只证明其静态检查范围内有效，不能证明 runtime 语义效果。
+
+## Limitations
+
+本报告不支持触发率、业务收益、发布就绪或版本退化结论。未计算 Quality Score；其定义继续由既有治理契约负责。
+
+## Recommended Actions
+
+1. 补齐目标版本、cases、fixtures 和运行配置，将表中判据落实到既有评测格式。
+2. 先执行 `skill-up validate`；在有可运行目标及授权条件时执行 `skill-up run`，保存原始输出、选择 trace 和元数据。
+3. 校准语义 judge，再分别开展 benchmark 与 version regression。
+4. 对失败先确认评测有效性及根因，再决定修复 Skill、修复评测或补充证据；已确认的真实失败加入回归集。

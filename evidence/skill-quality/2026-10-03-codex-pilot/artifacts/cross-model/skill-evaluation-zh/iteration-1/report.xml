@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="skill-evaluation" tests="1" failures="1" errors="0" skipped="0" time="98.867" timestamp="2026-10-03T19:36:37+08:00">
+    <testcase name="basic-success" classname="skill-evaluation" time="98.658">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case basic-success failed" type="AssertionFailure">- expect.must_contain: output does not contain &#34;评测范围&#34;; output does not contain &#34;推荐行动&#34;</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

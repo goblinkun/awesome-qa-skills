@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "skill_name": "skill-evaluation",
+    "skill_path": "<SKILL_SNAPSHOT>/skill-evaluation-zh",
+    "timestamp": "2026-10-03T11:38:16Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "设计完整 Skill 评测",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 1,
+        "failed": 1,
+        "total": 2,
+        "time_seconds": 98.658,
+        "tokens": 87511,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": false,
+          "evidence": "output does not contain \"评测范围\"; output does not contain \"推荐行动\""
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.5,
+        "stddev": 0,
+        "min": 0.5,
+        "max": 0.5
+      },
+      "time_seconds": {
+        "mean": 98.658,
+        "stddev": 0,
+        "min": 98.658,
+        "max": 98.658
+      },
+      "tokens": {
+        "mean": 87511,
+        "stddev": 0,
+        "min": 87511,
+        "max": 87511
+      }
+    },
+    "without_skill": null,
+    "delta": null
+  }
+}

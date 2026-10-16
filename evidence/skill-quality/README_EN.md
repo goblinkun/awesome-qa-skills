@@ -2,7 +2,12 @@
 
 # Skill Quality Evidence
 
-This directory is for reviewed or runner-generated Skill quality evidence guidance and report assets. This change creates the directory boundary only: it does not create an Evidence Report instance or claim any runtime result.
+This directory stores reviewed or runner-generated Skill quality guidance and report assets. Each report must state its own runtime scope, models, versions, unrun checks, and supported claims; one Pilot cannot establish repository-wide acceptance.
+
+## Available Reports
+
+- [2026-10-05 Codex Benchmark repeated sampling](./2026-10-05-codex-benchmark-repeat/README_EN.md): two more pairs per existing Chinese task, three samples per variant including the original; interrupted calls/costs retained separately, not business acceptance or statistical uplift.
+- [2026-10-03 Codex SQET Pilot](./2026-10-03-codex-pilot/README_EN.md): five Skills' bilingual text core runs, three selected single-trial Benchmarks, second-model sampling, cost, and native evidence. Natural triggers, the blocked safety boundary, Claude, and business acceptance retain the report's unverified states.
 
 ## Minimum record fields
 

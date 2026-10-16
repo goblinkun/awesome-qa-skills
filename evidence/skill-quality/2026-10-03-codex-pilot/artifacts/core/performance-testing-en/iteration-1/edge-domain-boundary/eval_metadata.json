@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "Performance testing: not a security penetration list",
+  "prompt": "Use performance-testing. Leadership wants load testing and also SQL injection / weak-password scans.\nHalf-day window. Deliver an executable performance scope and explicitly call out what belongs to security testing.\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_contains{all:[scenario scope baseline]}"
+  ]
+}

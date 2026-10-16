@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "性能测试：按风险选测试类型与阈值",
+  "prompt": "请使用 performance-testing。\n系统：订单查询与下单。促销峰值约 800 RPS，目标 P95 \u003c 500ms，错误率 \u003c 0.1%。\n已知风险：支付回调排队导致延迟。环境：SIT，有 APM。\n请给出性能测试方案（基线/负载等按需选择），标明假设。\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_matches{all:[任务理解 性能风险 指标 (负载模型|流量模型|目标负载)]}"
+  ]
+}

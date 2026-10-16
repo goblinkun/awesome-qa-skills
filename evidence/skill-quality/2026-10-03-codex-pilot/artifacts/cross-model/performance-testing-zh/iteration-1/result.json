@@ -1,0 +1,76 @@
+{
+  "skill_name": "performance-testing",
+  "schema_version": "v1alpha1",
+  "engine_name": "codex_no_daemon_isolated",
+  "model_name": "openai/gpt-6-sol",
+  "requested_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6-sol"
+  },
+  "applied_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6-sol"
+  },
+  "observed_configuration": {
+    "model": "gpt-6-sol"
+  },
+  "start_time": "2026-10-03T19:35:32.392322+08:00",
+  "end_time": "2026-10-03T19:36:28.514319+08:00",
+  "case_results": [
+    {
+      "case_id": "basic-success",
+      "title": "性能测试：按风险选测试类型与阈值",
+      "status": "PASS",
+      "duration_ms": 55908,
+      "turns": 1,
+      "input_tokens": 49782,
+      "output_tokens": 1805,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[任务理解 性能风险 指标 (负载模型|流量模型|目标负载)]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[任务理解 性能风险 指标 (负载模型|流量模型|目标负载)])"
+          }
+        ],
+        "summary": {
+          "passed": 4,
+          "failed": 0,
+          "total": 4,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "请使用 performance-testing。\n系统：订单查询与下单。促销峰值约 800 RPS，目标 P95 \u003c 500ms，错误率 \u003c 0.1%。\n已知风险：支付回调排队导致延迟。环境：SIT，有 APM。\n请给出性能测试方案（基线/负载等按需选择），标明假设。\n",
+      "response": "## 1. 任务理解\n\n**已确认：**测试范围是订单查询与下单；促销峰值约 **800 RPS**；目标为 **P95 \u003c 500 ms、错误率 \u003c 0.1%**；已知风险是支付回调排队；环境为 SIT，具备 APM。\n\n**当前假设：**800 RPS 是查询与下单的合计入口流量，暂按查询 80%、下单 20% 配比，即 640/160 RPS。该比例需用业务预测或历史流量替换。P95 和错误率暂按两个交易**分别**验收，避免查询表现掩盖下单问题。\n\n## 2. 性能风险和优先级\n\n1. **P0｜回调积压：**高峰下回调处理速度可能低于到达速度，导致订单状态更新延迟。重点看队列深度、最老消息等待时间、消费速率及积压恢复时间。\n2. **P0｜下单链路：**写入、库存或支付相关依赖可能在峰值下变慢或报错。\n3. **P1｜订单查询：**高频查询可能放大数据库、缓存或连接池压力，并影响下单。\n\n## 3. 建议测试类型\n\n| 类型 | 目的 | 建议负载 |\n|---|---|---|\n| 基线 | 建立单交易与混合交易的正常耗时、资源和队列水平 | 先分别测查询、下单，再以混合流量运行约 100 RPS |\n| 目标负载 | 验证促销峰值目标 | 逐级升至 800 RPS，稳定运行至少 30 分钟 |\n| 突增与恢复 | 验证瞬时流量和回调积压后的恢复能力 | 从 800 突增至暂定 1200 RPS、持续 2 分钟，再回到 800 RPS |\n| 稳定性 | 观察持续排队、资源增长和性能漂移 | 800 RPS 持续至少 2 小时 |\n\n1200 RPS 和时长是**测试假设**，应在获得促销峰值曲线后调整。若还需要确定最大承载量，再增加逐级压力测试；当前目标首先是验证 800 RPS。\n\n## 4. 场景方案\n\n使用固定到达率发压，并确认**实际完成的吞吐量**达到设定值，避免客户端因响应变慢而自行降速。目标负载按 100 → 400 → 800 RPS 逐级爬升，每级观察稳定后再提高。\n\n准备足量、分布合理的订单和用户数据；下单数据需避免重复请求被业务校验直接拒绝。按预期下单完成量注入支付回调，并覆盖正常、重复及延迟到达的回调。另做一次受控的回调消费变慢或短时暂停实验，观察积压形成、恢复和最终订单状态。回调速率与每单回调次数目前未知，须在执行前确认，不能直接把 160 RPS 当作真实回调速率。\n\n## 5. 指标和退出标准\n\n- **入口交易：**在实际达到 800 RPS 且稳定 30 分钟的窗口内，订单查询和下单各自 P95 \u003c 500 ms、错误率 \u003c 0.1%；记录每分钟指标，排查短时尖峰被总窗口掩盖的情况。\n- **回调链路：**无回调丢失；重复回调不造成重复业务结果；积压在流量恢复后能够持续下降并清空。**回调完成时限尚无业务目标，不能据此宣布完整通过**，需补充允许的支付状态延迟和积压恢复时限。\n- **监控：**用 APM 对照入口耗时、依赖调用和慢事务；同步采集实际 RPS、错误分类、数据库与连接池、CPU/内存、回调队列深度、最老消息等待时间、生产及消费速率。\n- **结果解释：**报告每个阶段的实际流量、各交易 P95/错误率、回调积压曲线、瓶颈证据和恢复耗时。若 SIT 的资源规格或依赖行为与生产不同，结论限定为 SIT 验证结果，不直接推算生产容量。\n\n## 6. 执行备注\n\n执行前优先确认三项信息：**真实查询/下单比例、回调到达模型与允许延迟、SIT 与生产的资源及依赖差异**。测试期间固定版本和数据规模，记录压测机资源，确保瓶颈不在发压端。",
+      "observed_model": "gpt-6-sol"
+    }
+  ],
+  "total_tokens": 51587,
+  "judge_tokens": 0,
+  "overall_tokens": 51587
+}

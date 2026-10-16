@@ -1,0 +1,18 @@
+{
+  "phase": "judge",
+  "case_id": null,
+  "variant": null,
+  "started_at": "2026-10-05T02:46:51.898Z",
+  "completed_at": "2026-10-05T02:47:13.180Z",
+  "requested_model": "openai/gpt-6-sol",
+  "observed_model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "codex_version": "0.159.2",
+  "exit_code": 0,
+  "input_tokens": 19356,
+  "output_tokens": 762,
+  "provider_errors": [],
+  "installed_skill_files": [],
+  "disabled_global_skill_count": 291,
+  "skill_catalog": null
+}

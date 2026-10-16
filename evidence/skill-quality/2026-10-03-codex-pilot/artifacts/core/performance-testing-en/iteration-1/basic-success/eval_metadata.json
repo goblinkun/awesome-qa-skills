@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "Performance testing: choose types and thresholds by risk",
+  "prompt": "Use performance-testing.\nSystem: order query and checkout. Promo peak ~800 RPS; target P95 \u003c 500ms; error rate \u003c 0.1%.\nKnown risk: payment-callback queueing adds latency. Env: SIT with APM.\nPropose a performance plan (baseline/load as needed) and mark assumptions.\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_matches{all:[(?i)Task Understanding (?i)Performance Risk (?i)(metric|measurement) (?i)(load model|traffic model|scenario plan|workload)]}"
+  ]
+}

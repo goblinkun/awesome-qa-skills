@@ -1,0 +1,677 @@
+
+│
+●   codex  Agent detected — installing non-interactively
+[?25l│
+◇  Source: <USER_HOME>/awsomeCode/awesome-qa-skills
+[?25h[?25l│
+◇  Local path validated
+[?25h[?25l│
+◇  Found 164 skills
+[?25h
+│
+◇  Available Skills
+│
+│    skill-change-verification
+│
+│      Use this skill when selecting and reporting verification for Skill changes; triggers include Skill change verification, quality gates, and evidence levels.
+│
+│    skill-evaluation
+│
+│      Use this skill when designing, running, interpreting, or reporting Agent Skill evaluations, selecting cases or judges, and analyzing trigger, benchmark, or regression evidence; triggers include Skill evaluation and evaluation design.
+│
+│    skill-prose-review
+│
+│      Use this skill when reviewing the contract completeness of Skills, Prompts, metadata, or QA documentation; triggers include Skill prose review, Prompt review, and contract audit.
+│
+│    skill-prose-trim
+│
+│      Use this skill when auditing or trimming process residue from Skills, Prompts, comments, or docs; triggers include process prose cleanup, review residue, and current-state rewriting.
+│
+│    skill-quality-review
+│
+│      Use this skill when reviewing a complete Skill package for architecture, scope, triggers, independent installation, bilingual consistency, Eval readiness, and evidence boundaries; triggers include Skill quality review and package review.
+│
+│    acceptance-criteria-review
+│
+│      Use this skill when you need to review acceptance criteria for ambiguity, missing rules, and verifiability; triggers include acceptance criteria review.
+│
+│    accessibility-testing
+│
+│      Use this skill when you need to design accessibility testing against WCAG, keyboard navigation, and assistive technology scenarios; triggers include accessibility testing and a11y testing.
+│
+│    agent-failure-recovery-testing
+│
+│      Use this skill when you need evidence-bounded failure classification, retry/fallback/escalation, state consistency, user notice, and recovery evidence; triggers include Agent 故障恢复 and Agent failure recovery.
+│
+│    agent-long-running-testing
+│
+│      Use this skill when you need evidence-bounded checkpoints, heartbeats, resume, cancellation, duplicate submission, timeouts, and resource lifecycle; triggers include 长运行 Agent and long-running Agent.
+│
+│    agent-loop-testing
+│
+│      Use this skill when you need evidence-bounded loop state, plan/action/observation cycles, stop conditions, budgets, repetition, and trace evidence; triggers include Agent 循环 and Agent loop.
+│
+│    agent-memory-testing
+│
+│      Use this skill when you need evidence-bounded memory write/read/update/delete, retention, contamination, isolation, provenance, and forgetting behavior; triggers include Agent 记忆 and Agent memory.
+│
+│    agent-permission-testing
+│
+│      Use this skill when you need evidence-bounded Agent identity, tool/resource scope, approval, denial, escalation, and side-effect boundaries; triggers include Agent 权限 and Agent permission.
+│
+│    agent-tool-testing
+│
+│      Use this skill when you need to test AI agent tool-call contracts, authorization, failures, and side-effect boundaries; triggers include agent tool testing.
+│
+│    ai-agent-testing
+│
+│      Use this skill when you need to test AI agent goals, state, planning, recovery, and safety boundaries; triggers include ai agent testing.
+│
+│    ai-assisted-testing
+│
+│      Use this skill when you need AI-assisted testing workflows such as test data generation, root-cause analysis, and prioritization; triggers include AI-assisted testing and AI for QA.
+│
+│    ai-feature-testing
+│
+│      Use this skill when you need to test an AI-enabled product feature for behavior, safety, and user-impact boundaries; triggers include AI feature testing.
+│
+│    ai-generated-test-review
+│
+│      Use this skill when reviewing AI-generated unit, functional, API, or end-to-end tests for false confidence, weak assertions, missing risks, or unsafe test behavior; triggers include AI-generated test review and functional test review.
+│
+│    ai-safety-testing
+│
+│      Use this skill when you need evidence-bounded safety policy, abuse categories, refusal/redirect behavior, privacy, escalation, and Human risk decisions; triggers include AI 安全 and AI safety.
+│
+│    api-contract-testing
+│
+│      Use this skill when you need to verify API contract compatibility, consumer expectations, and schema change risk; triggers include API contract testing.
+│
+│    api-design-quality-review
+│
+│      Use this skill when an API, OpenAPI, or consumer contract needs a quality review before implementation or versioning; triggers include API design review, contract readiness review, and consumer compatibility audit.
+│
+│    api-error-contract-testing
+│
+│      Use this skill when you need to review API error shape, status, code, and disclosure behavior against sourced contracts; triggers include API 错误契约测试 and API error contract testing.
+│
+│    api-idempotency-testing
+│
+│      Use this skill when you need to assess API retry and duplicate-request behavior against sourced side-effect evidence; triggers include API 幂等性测试 and API idempotency testing.
+│
+│    api-negative-testing
+│
+│      Use this skill when you need to design evidence-bounded API failure and rejection scenarios; triggers include API 负向测试 and API negative testing.
+│
+│    api-pagination-testing
+│
+│      Use this skill when you need to design API pagination scenarios from ordered data and cursor or offset evidence; triggers include API 分页测试 and API pagination testing.
+│
+│    api-rate-limit-testing
+│
+│      Use this skill when you need to design evidence-bounded API quota, burst, and recovery scenarios; triggers include API 限流测试 and API rate limit testing.
+│
+│    api-schema-validation
+│
+│      Use this skill when you need to compare API schemas with sourced request and response evidence; triggers include API Schema 校验 and API schema validation.
+│
+│    api-security-testing
+│
+│      Use this skill when you need evidence-bounded api-security-testing analysis and validation preparation; triggers include API 安全测试 and api-security-testing.
+│
+│    api-test-bruno
+│
+│      Use this skill when you need to parse multi-format API definitions and generate Bruno collections for executable regression; triggers include Bruno collections and Bruno API testing.
+│
+│    api-test-postman
+│
+│      Use this skill when you need to design Postman collections, environments, scripts, and Newman-ready API regression plans; triggers include Postman API testing, API testing, and api-test-postman.
+│
+│    api-test-pytest
+│
+│      Use this skill when you need to parse multi-format API definitions and generate Pytest API automation; triggers include Pytest API tests and API automation with Pytest.
+│
+│    api-test-restassure
+│
+│      Use this skill when you need to parse multi-format API definitions and generate Rest Assured Java test classes; triggers include Rest Assured, RestAssured, and Java API automation.
+│
+│    api-test-supertest
+│
+│      Use this skill when you need to parse multi-format API definitions and generate executable Supertest scripts; triggers include Supertest, Node.js API testing, and Supertest automation.
+│
+│    api-testing
+│
+│      Use this skill when you need to design API test plans or cases for REST, GraphQL, or gRPC interfaces; triggers include API testing and API test cases.
+│
+│    api-version-compatibility-testing
+│
+│      Use this skill when you need to assess API version compatibility from old-client, new-server, and deprecation evidence; triggers include API 版本兼容性测试 and API version compatibility testing.
+│
+│    authentication-testing
+│
+│      Use this skill when you need evidence-bounded authentication-testing analysis and validation preparation; triggers include 身份认证测试 and authentication-testing.
+│
+│    authorization-testing
+│
+│      Use this skill when you need evidence-bounded authorization-testing analysis and validation preparation; triggers include 授权测试 and authorization-testing.
+│
+│    automation-roi-analysis
+│
+│      Use this skill when you need evidence-bounded automation candidates, build/run/maintenance costs, benefit assumptions, time horizon, and sensitivity; triggers include 自动化投资回报 and automation ROI.
+│
+│    automation-testing
+│
+│      Use this skill when you need to design automation testing approaches using patterns like POM, data-driven testing, or BDD; triggers include automation testing and test automation strategy.
+│
+│    boundary-value-testing
+│
+│      Use this skill when you need to select boundary and near-boundary candidates from sourced value, length, time, and resource constraints; triggers include 边界值分析 and boundary value test design.
+│
+│    bug-reporting
+│
+│      Use this skill when you need to write clear, reproducible bug reports with steps, environment details, and evidence; triggers include bug reporting and defect reporting.
+│
+│    business-rule-extraction
+│
+│      Use this skill when requirements, policies, contracts, or workflows need traceable business rules extracted before design or testing; triggers include business rule extraction, policy rule inventory, and atomic rule analysis.
+│
+│    capacity-planning-analysis
+│
+│      Use this skill when you need to assess capacity demand, headroom, constraints, and planning assumptions; triggers include capacity planning analysis.
+│
+│    change-impact-analysis
+│
+│      Use this skill when you need to analyze how a code, configuration, or requirement change affects quality scope; triggers include change impact analysis.
+│
+│    chaos-testing
+│
+│      Use this skill when you need evidence-bounded chaos-testing analysis and validation preparation; triggers include 混沌测试 and chaos-testing.
+│
+│    ci-test-optimization
+│
+│      Use this skill when you need evidence-bounded pipeline stages, feedback latency, resources, flakiness, caching/sharding, and rollback boundaries; triggers include CI 测试流水线 and CI test pipeline.
+│
+│    circuit-breaker-testing
+│
+│      Use this skill when you need evidence-bounded circuit-breaker-testing analysis and validation preparation; triggers include 熔断器测试 and circuit-breaker-testing.
+│
+│    code-review
+│
+│      Use this skill when you need a risk-driven code review of a PR/diff with severity-ranked findings and actionable fixes; triggers include code review, PR review,.
+│
+│    combinatorial-testing
+│
+│      Use this skill when you need to select high-risk multi-factor combinations after factors, values, and constraints are explicit; triggers include 组合测试 and combinatorial test design.
+│
+│    cross-browser-testing
+│
+│      Use this skill when you need to select evidence-backed browser, engine, device, and version coverage; triggers include 跨浏览器测试 and cross-browser testing.
+│
+│    database-design-quality-review
+│
+│      Use this skill when an ERD, DDL, ORM schema, or migration plan needs an evidence-bounded database design review before implementation; triggers include database design review, migration readiness review, and schema quality audit.
+│
+│    decision-table-testing
+│
+│      Use this skill when you need to turn conditions, rules, actions, and outcomes into an auditable set of rule combinations; triggers include 决策表测试设计 and decision table test design.
+│
+│    dependency-failure-testing
+│
+│      Use this skill when you need evidence-bounded dependency-failure-testing analysis and validation preparation; triggers include 依赖故障测试 and dependency-failure-testing.
+│
+│    disaster-recovery-testing
+│
+│      Use this skill when you need evidence-bounded disaster-recovery-testing analysis and validation preparation; triggers include 灾备测试 and disaster-recovery-testing.
+│
+│    distributed-trace-analysis
+│
+│      Use this skill when you need to analyze distributed traces for call paths, latency, errors, and evidence gaps; triggers include distributed trace analysis.
+│
+│    edge-case-discovery
+│
+│      Use this skill when you need to discover boundary, rare, limit, ordering, or combination scenarios from product and test evidence; triggers include edge case discovery.
+│
+│    equivalence-partitioning
+│
+│      Use this skill when you need to partition inputs into evidence-backed valid, invalid, and unknown classes based on constraints, rules, and response differences; triggers include 等价类划分 and equivalence partitioning test design.
+│
+│    error-handling-design-review
+│
+│      Use this skill when error taxonomy, retries, timeouts, fallback, or recovery design needs an evidence-bounded review before implementation; triggers include error handling design review, failure-path review, and recovery readiness review.
+│
+│    failover-testing
+│
+│      Use this skill when you need evidence-bounded failover-testing analysis and validation preparation; triggers include 故障切换测试 and failover-testing.
+│
+│    flaky-test-analysis
+│
+│      Use this skill when you need to investigate intermittent test failures from run history and evidence; triggers include flaky test analysis.
+│
+│    functional-testing
+│
+│      Use this skill when you need to design functional test plans or cases for business flows, UI, data, and integrations; triggers include functional testing and functional test cases.
+│
+│    llm-consistency-testing
+│
+│      Use this skill when you need evidence-bounded repeat inputs, version/model/prompt factors, invariants, variance evidence, and comparison boundaries; triggers include LLM 一致性 and LLM consistency.
+│
+│    llm-evaluation-design
+│
+│      Use this skill when you need to design LLM evaluation datasets, judges, metrics, and human-review boundaries; triggers include llm evaluation design.
+│
+│    llm-hallucination-testing
+│
+│      Use this skill when you need evidence-bounded claim-to-source relations, unsupported assertions, abstention, uncertainty, and evidence review; triggers include LLM 幻觉 and LLM hallucination.
+│
+│    llm-testing
+│
+│      Use this skill when you need to test LLM behavior, failure modes, and evidence-based quality boundaries; triggers include llm testing.
+│
+│    log-analysis
+│
+│      Use this skill when you need to analyze logs into evidence, timelines, anomalies, and follow-up hypotheses; triggers include log analysis.
+│
+│    manual-testing
+│
+│      Use this skill when you need to plan manual or exploratory testing with charters, heuristics, and session records; triggers include manual testing and exploratory testing.
+│
+│    metamorphic-testing
+│
+│      Use this skill when you need to derive test candidates from input transformations and expected relations when a direct oracle is limited; triggers include 变形测试 and metamorphic test design.
+│
+│    metrics-anomaly-analysis
+│
+│      Use this skill when you need to identify, contextualize, and investigate metric anomalies from observability evidence; triggers include metrics anomaly analysis.
+│
+│    mobile-testing
+│
+│      Use this skill when you need to design mobile test plans for iOS or Android covering functionality, compatibility, performance, network, and security; triggers include mobile testing and app testing.
+│
+│    mock-quality-review
+│
+│      Use this skill when you need to review mock fidelity, contract alignment, over-mocking, and drift evidence; triggers include Mock 质量评审 and mock quality review.
+│
+│    model-based-testing
+│
+│      Use this skill when you need to derive test-path candidates from sourced behavior, state, or process models; triggers include 基于模型的测试 and model-based test design.
+│
+│    multi-agent-testing
+│
+│      Use this skill when you need evidence-bounded delegation, coordination, shared state, conflicts, ownership, termination, and traceability; triggers include 多 Agent 协作 and multi-agent coordination.
+│
+│    mutation-testing-analysis
+│
+│      Use this skill when you need to interpret mutation operators, killed and survived mutants, and evidence limits; triggers include 变异测试分析 and mutation testing analysis.
+│
+│    negative-scenario-discovery
+│
+│      Use this skill when you need to discover invalid, denied, failed, degraded, or unsafe-recovery scenarios from product evidence; triggers include negative scenario discovery.
+│
+│    observability-design-review
+│
+│      Use this skill when logging, metrics, tracing, alerting, or SLO design needs an evidence-bounded review before implementation; triggers include observability design review, telemetry readiness review, and alert actionability audit.
+│
+│    pairwise-testing
+│
+│      Use this skill when you need to identify interactions that need at least pairwise coverage after factors, values, and constraints are explicit; triggers include 成对测试 and pairwise test design.
+│
+│    performance-bottleneck-analysis
+│
+│      Use this skill when you need to form evidence-based performance bottleneck hypotheses and validation steps; triggers include performance bottleneck analysis.
+│
+│    performance-regression-analysis
+│
+│      Use this skill when you need to compare performance evidence across versions and assess regression risk; triggers include performance regression analysis.
+│
+│    performance-result-analysis
+│
+│      Use this skill when you need to interpret performance results, evidence quality, and risk without inventing conclusions; triggers include performance result analysis.
+│
+│    performance-test-gatling
+│
+│      Use this skill when you need Gatling performance scope, simulations, or runnable entry points; triggers include Gatling, Gatling simulations, and Gatling performance testing.
+│
+│    performance-test-jmeter
+│
+│      Use this skill when you need to design JMeter test plans with Thread Groups, samplers, data sets, assertions, timers, CLI runs, and HTML reports; triggers include JMeter performance testing, performance testing, and performance-test-jmeter.
+│
+│    performance-test-k6
+│
+│      Use this skill when you need k6 load/stress/spike/soak scope, scripts, or runnable entry points; triggers include k6, k6 scripts, and k6 performance testing.
+│
+│    performance-testing
+│
+│      Use this skill when you need to design performance testing for load, stress, spike, endurance, or capacity objectives; triggers include performance testing and load testing.
+│
+│    performance-workload-modeling
+│
+│      Use this skill when you need to model realistic performance workload, traffic, and acceptance assumptions; triggers include performance workload modeling.
+│
+│    pr-test-impact-analysis
+│
+│      Use this skill when you need to determine test impact from a pull request or code diff; triggers include PR test impact analysis.
+│
+│    production-incident-analysis
+│
+│      Use this skill when you need to analyze production-incident evidence, impact, and follow-up actions; triggers include production incident analysis.
+│
+│    production-verification
+│
+│      Use this skill when you need to plan or assess evidence-based production verification after a release; triggers include production verification.
+│
+│    prompt-injection-testing
+│
+│      Use this skill when you need to design safe prompt-injection tests for AI systems and tool boundaries; triggers include prompt injection testing.
+│
+│    prompt-testing
+│
+│      Use this skill when you need to test prompt behavior, regression risk, and output boundaries across versions; triggers include prompt testing and prompt-regression.
+│
+│    property-based-testing
+│
+│      Use this skill when you need to turn invariants, generation domains, and shrinking strategies into reviewable property-test candidates; triggers include 基于属性的测试 and property-based test design.
+│
+│    quality-dashboard-design
+│
+│      Use this skill when you need evidence-bounded quality dashboard audiences, decision questions, panels, drill-downs, freshness, and alert boundaries; triggers include 质量仪表盘 and quality dashboard.
+│
+│    quality-debt-analysis
+│
+│      Use this skill when you need evidence-bounded quality-debt items, origins, impact, age, priority, ownership, and paydown tradeoffs; triggers include 质量债务 and quality debt.
+│
+│    quality-gate-design
+│
+│      Use this skill when you need evidence-bounded entry criteria, evidence requirements, owners, and exception paths for a delivery or release gate; triggers include 质量门禁 and quality gate.
+│
+│    quality-maturity-assessment
+│
+│      Use this skill when you need evidence-bounded quality-practice maturity dimensions, rubric anchors, evidence sufficiency, and improvement gaps; triggers include 质量成熟度 and quality maturity.
+│
+│    quality-metrics-design
+│
+│      Use this skill when you need evidence-bounded quality metric definitions, calculation rules, data sources, freshness, and anti-gaming boundaries; triggers include 质量指标 and quality metric.
+│
+│    quality-productivity-metrics
+│
+│      Use this skill when you need evidence-bounded quality and delivery metrics, denominators, attribution limits, gaming risk, and the Human-use boundary; triggers include 质量生产力 and quality productivity.
+│
+│    quality-risk-analysis
+│
+│      Use this skill when you need to identify and prioritize quality risks from product, change, and evidence inputs; triggers include quality risk analysis.
+│
+│    rag-quality-testing
+│
+│      Use this skill when you need evidence-bounded grounding, relevance, completeness, citation support, abstention, and answer-level evidence in RAG outputs; triggers include RAG 质量 and RAG quality.
+│
+│    rag-retrieval-testing
+│
+│      Use this skill when you need evidence-bounded query variants, chunking, filters, recall/precision proxies, ranking, freshness, and retrieval evidence; triggers include 检索结果 and retrieval result.
+│
+│    recovery-testing
+│
+│      Use this skill when you need evidence-bounded recovery-testing analysis and validation preparation; triggers include 恢复测试 and recovery-testing.
+│
+│    regression-optimization
+│
+│      Use this skill when you need evidence-bounded tradeoffs among regression selection, ordering, parallelism, caching, and risk preservation; triggers include 回归范围 and regression scope.
+│
+│    regression-scope-analysis
+│
+│      Use this skill when you need to define risk-based regression scope after a change or release; triggers include regression scope analysis.
+│
+│    regression-test-selection
+│
+│      Use this skill when you need to select an executable regression test set from known test assets; triggers include regression test selection.
+│
+│    reliability-testing
+│
+│      Use this skill when you need evidence-bounded reliability-testing analysis and validation preparation; triggers include 可靠性测试 and reliability-testing.
+│
+│    requirement-ambiguity-analysis
+│
+│      Use this skill when requirement wording has unclear actors, references, scope, quantities, conditions, timing, states, or acceptance criteria; triggers include requirement ambiguity, unclear requirements, and ambiguity analysis.
+│
+│    requirement-conflict-detection
+│
+│      Use this skill when multiple requirement, policy, contract, or acceptance sources may contain mutually exclusive rules or constraints; triggers include requirement conflict detection, conflicting requirements, and mutually exclusive requirements.
+│
+│    requirement-consistency-analysis
+│
+│      Use this skill when multiple requirement artifacts may disagree on terminology, identifiers, formats, states, rules, or behavior; triggers include requirement consistency, cross-document consistency, and consistency analysis.
+│
+│    requirement-gap-analysis
+│
+│      Use this skill when you need to find missing, conflicting, or untestable requirement information; triggers include requirement gap analysis.
+│
+│    requirement-quality-review
+│
+│      Use this skill when a requirement, acceptance-criteria set, or change brief needs an evidence-bounded quality review before design or testing; triggers include requirement quality review, requirements quality gate, and requirement completeness review.
+│
+│    requirement-traceability-analysis
+│
+│      Use this skill when requirements, acceptance criteria, design, code, tests, defects, or evidence must be mapped bidirectionally and coverage gaps made explicit; triggers include requirement traceability, traceability analysis, and traceability matrix.
+│
+│    requirements-analysis
+│
+│      Use this skill when you need to analyze requirements, identify test points, boundaries, dependencies, and risks before test design; triggers include requirements analysis and test point analysis.
+│
+│    requirements-analysis-plus
+│
+│      Use this skill when you need to parse Word/HTML/JSON/Markdown/Excel requirements and produce a structured analysis; triggers include requirements analysis plus and requirement document parsing.
+│
+│    resilience-testing
+│
+│      Use this skill when you need evidence-bounded resilience-testing analysis and validation preparation; triggers include 韧性测试 and resilience-testing.
+│
+│    retry-testing
+│
+│      Use this skill when you need evidence-bounded retry-testing analysis and validation preparation; triggers include 重试测试 and retry-testing.
+│
+│    risk-based-testing
+│
+│      Use this skill when you need to turn quality risks into prioritized test objectives, depth, methods, and scope tradeoffs; triggers include risk-based testing.
+│
+│    root-cause-analysis
+│
+│      Use this skill when you need to form and verify evidence-based root-cause hypotheses; triggers include root cause analysis.
+│
+│    secrets-exposure-review
+│
+│      Use this skill when you need evidence-bounded secrets-exposure-review analysis and validation preparation; triggers include 敏感信息暴露审查 and secrets-exposure-review.
+│
+│    security-requirement-review
+│
+│      Use this skill when you need evidence-bounded security-requirement-review analysis and validation preparation; triggers include 安全需求审查 and security-requirement-review.
+│
+│    security-testing
+│
+│      Use this skill when you need to design security testing around OWASP risks, vulnerability scanning, and penetration scenarios; triggers include security testing and vulnerability testing.
+│
+│    session-security-testing
+│
+│      Use this skill when you need evidence-bounded session-security-testing analysis and validation preparation; triggers include 会话安全测试 and session-security-testing.
+│
+│    state-transition-testing
+│
+│      Use this skill when you need to derive test candidates for reachable, unreachable, and abnormal transitions from states, events, guards, and actions; triggers include 状态迁移测试 and state transition test design.
+│
+│    technical-design-quality-review
+│
+│      Use this skill when an architecture note, ADR, component design, or technical proposal needs an evidence-bounded quality review before implementation; triggers include technical design review, design readiness review, and non-functional design audit.
+│
+│    test-case-reviewer
+│
+│      Use this skill when you need to review test cases for completeness, clarity, maintainability, and missing scenarios; triggers include test case review and test case QA.
+│
+│    test-case-reviewer-plus
+│
+│      Use this skill when you need structured test-case review findings from requirements, strategy, and case docs; triggers include test case reviewer plus and advanced test case review.
+│
+│    test-case-writing
+│
+│      Use this skill when you need to create high-quality test cases with normal, exception, and boundary scenarios; triggers include test case writing and test design.
+│
+│    test-code-review
+│
+│      Use this skill when you need to review test code for assertions, isolation, determinism, fixtures, and maintainability; triggers include 测试代码评审 and test code review.
+│
+│    test-data-generation
+│
+│      Use this skill when you need to design safe, representative test data from stated constraints; triggers include test data generation.
+│
+│    test-data-requirement-analysis
+│
+│      Use this skill when you need to analyze test-data prerequisites, relationships, privacy, lifecycle, and environment blockers before test design or generation; triggers include test data requirement analysis.
+│
+│    test-effectiveness-analysis
+│
+│      Use this skill when you need evidence-bounded the relationship between test signals and defects or risks, missed-detection limits, false signals, and validation plans; triggers include 测试有效性 and test effectiveness.
+│
+│    test-gap-analysis
+│
+│      Use this skill when you need to identify missing or weak test obligations from requirements, risks, changes, defects, and test evidence; triggers include test gap analysis.
+│
+│    test-maintenance-cost-analysis
+│
+│      Use this skill when you need evidence-bounded change frequency, repair effort, flaky cost, ownership, maintainability, and confidence; triggers include 维护成本 and maintenance cost.
+│
+│    test-report-review
+│
+│      Use this skill when a test report needs an evidence-consistency review before Human approval; triggers include test report review, quality report audit, test evidence review..
+│
+│    test-reporting
+│
+│      Use this skill when you need to generate test reports with summary, metrics, defect analysis, and risk assessment; triggers include test reporting and QA status report.
+│
+│    test-runtime-optimization
+│
+│      Use this skill when you need evidence-bounded slow tests, profiling evidence, setup/teardown, parallelism, isolation, and baselines; triggers include 测试运行时间 and test runtime.
+│
+│    test-scope-analysis
+│
+│      Use this skill when a test activity, iteration, release, or risk review needs explicit inclusion, exclusion, depth, and expansion boundaries before execution; triggers include test scope analysis, test boundary review, and release test scoping.
+│
+│    test-strategy
+│
+│      Use this skill when you need to define a test strategy covering scope, methods, resources, risks, and quality gates; triggers include test strategy and QA planning.
+│
+│    test-strategy-plus
+│
+│      Use this skill when you need a structured test strategy from requirement, analysis, tech, and plan docs; triggers include test strategy plus and advanced test strategy.
+│
+│    test-strategy-review
+│
+│      Use this skill when a proposed test strategy needs evidence-based review before Human approval; triggers include test strategy review, strategy approval review..
+│
+│    test-suite-health-analysis
+│
+│      Use this skill when you need to assess test-suite health from duration, flakiness, duplication, quarantine, and maintenance evidence; triggers include 测试套件健康分析 and test suite health analysis.
+│
+│    testability-analysis
+│
+│      Use this skill when you need to assess whether a requirement or design can be efficiently and reliably tested; triggers include testability analysis.
+│
+│    testcase-writer-plus
+│
+│      Use this skill when you need high-quality test cases from requirements and analysis artifacts; triggers include testcase writer plus and advanced test case writing.
+│
+│    testing-bottleneck-analysis
+│
+│      Use this skill when you need evidence-bounded queues, dependencies, capacity, handoffs, and evidence for testing constraints; triggers include 测试瓶颈 and testing bottleneck.
+│
+│    threat-modeling
+│
+│      Use this skill when you need evidence-bounded threat-modeling analysis and validation preparation; triggers include 威胁建模 and threat-modeling.
+│
+│    timeout-testing
+│
+│      Use this skill when you need evidence-bounded timeout-testing analysis and validation preparation; triggers include 超时测试 and timeout-testing.
+│
+│    ui-test-cypress
+│
+│      Use this skill when you need to design Cypress e2e and component testing plans with commands, fixtures, network stubbing, and CI reporting; triggers include Cypress UI testing, UI automation testing, and ui-test-cypress.
+│
+│    ui-test-playwright
+│
+│      Use this skill when you need to design Playwright Test suites with fixtures, projects, traces, screenshots, API plus UI coverage, and CI reporting; triggers include Playwright UI testing, UI automation testing, and ui-test-playwright.
+│
+│    ui-test-puppeteer
+│
+│      Use this skill when you need to design Puppeteer automation for Chromium-driven checks, screenshots, PDFs, network interception, and CDP use cases; triggers include Puppeteer UI testing, UI automation testing, and ui-test-puppeteer.
+│
+│    ui-test-selector-review
+│
+│      Use this skill when you need to review UI automation selectors for stability, semantics, and maintainability using source evidence; triggers include UI 测试选择器评审 and UI test selector review.
+│
+│    ui-test-selenium
+│
+│      Use this skill when you need to design Selenium WebDriver UI automation plans with stable locators, waits, Page Objects, Grid, and CI execution; triggers include Selenium UI testing, UI automation testing, and ui-test-selenium.
+│
+│    ui-test-strategy
+│
+│      Use this skill when you need to define an evidence-bounded UI test strategy across journeys, states, platforms, and risks; triggers include UI 测试策略 and UI test strategy.
+│
+│    ui-test-testcafe
+│
+│      Use this skill when you need to design TestCafe UI automation with fixtures, selectors, roles, browser matrix execution, and reports; triggers include TestCafe UI testing, UI automation testing, and ui-test-testcafe.
+│
+│    ui-test-wait-strategy-review
+│
+│      Use this skill when you need to review asynchronous UI waits, polling conditions, and timeout evidence; triggers include UI 测试等待策略评审 and UI test wait strategy review.
+│
+│    ui-test-webdriverio
+│
+│      Use this skill when you need to design WebdriverIO suites with config, services, runner behavior, Page Objects, capabilities, and reporters; triggers include WebdriverIO UI testing, UI automation testing, and ui-test-webdriverio.
+│
+│    visual-regression-testing
+│
+│      Use this skill when you need to define evidence-bounded visual regression candidates, baselines, and comparison conditions; triggers include 视觉回归测试 and visual regression testing.
+│
+│    daily-testing-workflow
+│
+│      Use this skill when you need a day-by-day QA routine including planning, execution, bug reporting, and end-of-day wrap-up; triggers include daily testing workflow and daily QA routine.
+│
+│    discover-testing
+│
+│      Use this skill when you need to route a request to the right testing skill before execution; triggers include discover testing, testing skill router, and which testing skill.
+│
+│    multi-role-quality-synthesis
+│
+│      Use this skill when multiple role reports for one quality stage must be combined into a traceable synthesis; triggers include multi-role quality synthesis, role report consolidation, disagreement summary..
+│
+│    product-quality-perspective
+│
+│      Use this skill when product-quality responsibility is needed across requirements, strategy, review, test-case, or reporting stages; triggers include product quality perspective, product quality review..
+│
+│    project-delivery-perspective
+│
+│      Use this skill when project delivery constraints or action tracking are needed for test strategy, test strategy review, or test report review; triggers include project delivery perspective, delivery planning, schedule and capacity..
+│
+│    qa-quality-perspective
+│
+│      Use this skill when QA quality perspective is needed for requirements, strategy, review, test cases, or reports; triggers include QA quality perspective.
+│
+│    release-testing-workflow
+│
+│      Use this skill when you need release-phase QA workflow from T-14 planning to go/no-go and post-release monitoring; triggers include release testing workflow and go/no-go QA.
+│
+│    sprint-testing-workflow
+│
+│      Use this skill when you need a sprint-based QA workflow from planning through review and retrospective; triggers include sprint testing workflow and iteration QA workflow.
+│
+│    technical-quality-perspective
+│
+│      Use this skill when a technical quality perspective is needed for requirements, strategy, code, test cases, or reports; triggers include technical quality review, architecture review, and code review.
+│
+│    ux-quality-perspective
+│
+│      Use this skill when a quality stage needs a UX perspective on information architecture, interaction states, consistency, responsive behavior, or accessibility; triggers include UX quality perspective, UX review..
+
+│
+└  Use --skill <name> to install specific skills
+
+npm notice
+npm notice New major version of npm available! 11.19.1 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

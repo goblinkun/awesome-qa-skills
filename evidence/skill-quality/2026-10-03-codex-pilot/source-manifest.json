@@ -1,0 +1,1364 @@
+{
+  "base_commit": "c61f507f61711c3c0f0d1777136a5a4ff0e211b3",
+  "dirty_worktree": true,
+  "snapshot_identity": "base commit + source-changes.patch + per-file SHA256; not HEAD alone",
+  "historical_eval_versions": "The current snapshot is sealed; superseded Eval prompts/assertions remain in native reports. Exact historical file hashes were not captured.",
+  "files": [
+    {
+      "path": "skills/zh/testing-types/functional-testing/README.md",
+      "sha256": "9c1fc1a8fef9625d962c03019d0ae0472caf9eaaeb7f6160b3be0af68a00d5b9",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/SKILL.md",
+      "sha256": "42dc8ed1a0f81c8aa7bb14459dcf7367772c1335cb8330598ae47f74cb7db84d",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/agents/openai.yaml",
+      "sha256": "292c08d13b47b4cf217b5b27435b9aa8cba30f6221697047d7caa100ed914f2f",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/evals/cases/basic-success.yaml",
+      "sha256": "7e8166f26a5b6909e1acbb6752843e7aea2091e4b732feeb6492fb9e8de44585",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "f93d7d959e65a72418a3d2bd6f5926f747a2d927d387a0d0b63107ec3907b732",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/evals/cases/edge-risk-priority.yaml",
+      "sha256": "3532c9d6f1e672899078fe4fe134f9fcd2080e9ea0db815aec0c711efc62efcd",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/evals/eval.yaml",
+      "sha256": "63c9fd06f5735c519d1ef2bcef1e0ed41ccfa4129cbbef8e166dc70d94f17409",
+      "runtime_snapshot_matches": false,
+      "exception": "engine/model/install-target/timeout transport override"
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/cypress-e2e/README.md",
+      "sha256": "216e69aca6efb19ed310b090f36173569ad39199eadb98a1ac64a0fb352dfb42",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/cypress-e2e/cypress.config.js",
+      "sha256": "e255b874847e47421b99bf8f37cfadcbfec2eb0bd70c8b6159ab7a791be20134",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/cypress-e2e/cypress/e2e/advanced-api-mocking.cy.js",
+      "sha256": "7514c5d28245d8dd09fddd660e46f42d8f73e05afa93ce15449def72fb4dfed3",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/cypress-e2e/cypress/e2e/api-mocking.cy.js",
+      "sha256": "a1da18f8def3b508fc972534fc57d9b077808f07a82423ba87068ffd933b0a63",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/cypress-e2e/cypress/e2e/login.cy.js",
+      "sha256": "308e1eac5c9d06dd4b6ab399b7098fb176d2dd59f534bcb6d91cd0525a2e0966",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/cypress-e2e/cypress/e2e/screenshots-videos.cy.js",
+      "sha256": "f1f63d0957e8290ad28d124702013c8709b2794f40930d757dae481e65719450",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/cypress-e2e/package.json",
+      "sha256": "074b6414207a1882899615e29c7232081ddb3229a10a4461bfd4a6a004e7c251",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/playwright-login/README.md",
+      "sha256": "fcfcb0b6aabdc1fb2c621f2ad409b6d2f5ed2257288c2ab004336636a7a16678",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/playwright-login/package.json",
+      "sha256": "6a864e19787808ed87556da68f0d1d8c3c3526be8938fd1cf2606b85c71e8652",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/playwright-login/playwright.config.ts",
+      "sha256": "73c2d4de278eaa3d1432188e2fba85daa9f55bc855d056ce6a1e5ffb3384fc22",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/examples/playwright-login/tests/login.spec.ts",
+      "sha256": "068ffe04231e450014c7a25580bdf1aa856928d5835e9fffdd547b58f670d8e2",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/output-formats.md",
+      "sha256": "1b6d97592a30f9c8b0653e3f711dfc0f7dfb8d4c4da07b569c8088a9891ed3c9",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/output-templates/template-csv.csv",
+      "sha256": "c0fa0b4caf31917f6244804c43cf6ff26d519db6db8edc6f4cbe3f7daa1d663e",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/output-templates/template-excel.tsv",
+      "sha256": "b56d42077bdd6d4a20bf829e24af6480a78d154d3edb8cfa8a9b8831d91ab9b8",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/output-templates/template-json.json",
+      "sha256": "e8a23ed407852bb18743fd247d786a389a2c493836ecb9ff064e49f57e7fc7e1",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/output-templates/template-markdown.md",
+      "sha256": "759397b86a268d18d41b171117b42b0ac8abfdb430d85d5c003a9f220df3b6b9",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/output-templates/template-word.md",
+      "sha256": "6ca8ac61b58b14c5d29597149725ba64dcba781140e30a49ec07826de3195b8d",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/output-templates/template-xmind.md",
+      "sha256": "338e5c99b61b15352bcf4f369603f3b2ecdb667552844152d7a044a820cbf259",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/prompts/functional-testing.md",
+      "sha256": "a0e4630070e01efe0a02b0b9bf3c12f550598f391c54e3fd7180d954b1cf919a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/quick-start.md",
+      "sha256": "cc8ba43bd1b5b49e91dd2a42bf4ac2919d604b477f577fbb1796710d79955996",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/references/local/FAQ.md",
+      "sha256": "e342897ed00c5296a6cb0e636012a5c29f9c859056626e4fa9a03516c7c20a51",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/references/local/Users-nao.deng-awsomeCode-awesome-qa-skills-skills-testing-types-automation-testing.md",
+      "sha256": "59238cfb0a6a510d5c56364404a75a626b9fbf2af2bfd5cabe973a87ef6bdc65",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/references/local/Users-nao.deng-awsomeCode-awesome-qa-skills-skills-testing-types-requirements-analysis.md",
+      "sha256": "59238cfb0a6a510d5c56364404a75a626b9fbf2af2bfd5cabe973a87ef6bdc65",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/references/local/Users-nao.deng-awsomeCode-awesome-qa-skills-skills-testing-types-test-case-writing.md",
+      "sha256": "59238cfb0a6a510d5c56364404a75a626b9fbf2af2bfd5cabe973a87ef6bdc65",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/references/local/Users-nao.deng-awsomeCode-awesome-qa-skills-skills-testing-types-test-strategy.md",
+      "sha256": "59238cfb0a6a510d5c56364404a75a626b9fbf2af2bfd5cabe973a87ef6bdc65",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/references/local/testing-types-api-testing-tutorial.md",
+      "sha256": "df322d78af1ce62a453975e31f324d31f0a82aba5a7c4fc82364ef6b4abace83",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/references/local/testing-types-automation-testing-tutorial.md",
+      "sha256": "df322d78af1ce62a453975e31f324d31f0a82aba5a7c4fc82364ef6b4abace83",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/references/local/testing-types-performance-testing-tutorial.md",
+      "sha256": "df322d78af1ce62a453975e31f324d31f0a82aba5a7c4fc82364ef6b4abace83",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/references/output-formats.md",
+      "sha256": "5c91aa41d38edb3a17fb37b7ffaf0ef10e59cbdca056bcb3ccbfe19b6fe6a8f5",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/references/troubleshooting.md",
+      "sha256": "0a50adcf16875cf4d653cc8ba02bb2e7f1741a4e9542362a63099cf0e4a5888a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/batch_convert_templates.py",
+      "sha256": "684da9402f83b574fde7d83ac925a8e9cdf5bbdb21b5b2e455350f2cb6fcb7de",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/convert_formats.py",
+      "sha256": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/convert_output_formats.py",
+      "sha256": "1a342175d86c0e4ec54d159187342b2937eb5b8037cafc353da32ed1f55b4636",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/convert_to_csv.py",
+      "sha256": "3a6a4eb7602a1e22f7c68384d6ec6657048aacc6759888d782be55e1d90ebbb2",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/convert_to_excel.py",
+      "sha256": "099660b5ff64789c9ae487493e677a5eb4fe809016acb66d9ff4d7b6964f4b67",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/convert_to_json.py",
+      "sha256": "908213dbc61580212f3a6c260924fd62c74a17266a2937e3af6d07595cf0cf0a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/convert_to_markdown.py",
+      "sha256": "75e341d47ae9acd6eb906b24d575836134bddb0538a7eeddf0a483440e56ace6",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/convert_to_word.py",
+      "sha256": "0d707d388fa1b4225fceec2c46ba340a8c6d548f808a6ff07ff34136af7e4b53",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/convert_to_xmind.py",
+      "sha256": "140f65accb4b84d691b78738ab9ea6511dff258ff9bb9702d6468ce404decebb",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/parse_csv.py",
+      "sha256": "4aeb40ddd6b3257d49e098595138180c61a4286cdb5f55e86ac7dd39a4cd3fc6",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/parse_excel.py",
+      "sha256": "8386ec28598a5ce7227d9a34e95df332849ec0c22b4751526945773f15251eee",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/parse_formats.py",
+      "sha256": "564dc3bafce784a3f6937bd820167f79c17eb8c14fbd9a3e62303915b9de1ab4",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/parse_json.py",
+      "sha256": "16cfeb034a40557196f5d928ebb24d5e3ac0daecd6e9f47f24cfc13e5a591d5d",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/parse_markdown.py",
+      "sha256": "e36e44fb6703311492a7b181b04b212e86cfcb8783f3a00c3fdf8388db68042f",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/parse_output_formats.py",
+      "sha256": "416d583e14a9d759586967bab8c6b6f2b6fa42e97c58cbf62ffdb43993228e1a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/parse_word.py",
+      "sha256": "bb95b04ad69d0f7b1c805c5a88555b4206743d8dbeec6a939b851c3331e6af2b",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/scripts/parse_xmind.py",
+      "sha256": "6067668b4fd8d14d235b0641f7b2d2ecdd50622101e82735909f50c5e4674121",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/functional-testing/tutorial.md",
+      "sha256": "960aa724f27e11a7cdff38eec9ffabf39e8aac951ed41b00ee35c8d86e73902f",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/README.md",
+      "sha256": "79e38192da33d68acd42d27ac4999a89fa4c80adf518cd099bcb7f06e82d4b17",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/SKILL.md",
+      "sha256": "ad79290d47945a52489461ab7e7997ed785ff087db38eafd1fc46b63b6421a2a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/agents/openai.yaml",
+      "sha256": "f39488e346c0379676f2e3f67e7c5878bb63d11d6732196a505a4ae6bc4c9831",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/evals/cases/basic-success.yaml",
+      "sha256": "9da2eef51e3845957665ee7c34ca58ff50fe03c492db2e8c20a833f5aab66509",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "f6c3d1003413b1ce7e680524bbcf16b5c69eb4b1724854b5eef5bf1e319cfcf5",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/evals/cases/edge-risk-priority.yaml",
+      "sha256": "91069f712dbae3a26979bd899adbf5512d3baf218c5f317844b107683f901d80",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/evals/eval.yaml",
+      "sha256": "63c9fd06f5735c519d1ef2bcef1e0ed41ccfa4129cbbef8e166dc70d94f17409",
+      "runtime_snapshot_matches": false,
+      "exception": "engine/model/install-target/timeout transport override"
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/output-formats.md",
+      "sha256": "f29ccb92315d028213c67544778f702cbc77d47fcd2a8ca395bb94efbe597f7b",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/output-templates/template-csv.csv",
+      "sha256": "c0fa0b4caf31917f6244804c43cf6ff26d519db6db8edc6f4cbe3f7daa1d663e",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/output-templates/template-excel.tsv",
+      "sha256": "b56d42077bdd6d4a20bf829e24af6480a78d154d3edb8cfa8a9b8831d91ab9b8",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/output-templates/template-json.json",
+      "sha256": "e8a23ed407852bb18743fd247d786a389a2c493836ecb9ff064e49f57e7fc7e1",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/output-templates/template-markdown.md",
+      "sha256": "184b7ca60bb231aacf7db4b7019229a0a34bdb1f5b09a26b067706358fed828a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/output-templates/template-word.md",
+      "sha256": "f3ad093fad4228d80e0e7835f9996a3b9a41778ae9825c4d620185a90ab03256",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/output-templates/template-xmind.md",
+      "sha256": "8af5868922dc575699cc6a80de776dbf9aee723617d0815fb7d86c634a6283e0",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/prompts/functional-testing.md",
+      "sha256": "e4882b8965cba1c8f03bcd0d97a1718ce9fd38bae2e5c40695260e5a667748a2",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/quick-start.md",
+      "sha256": "3fb53d73f481fcfa7ca12c6e48c85043d6b885b8f65172c2deeab4183e052c0b",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/references/local/FAQ.md",
+      "sha256": "9d83e3ac51033f3ae41cbca10da840723c0cbdbd071d1559468572e0186f532a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/references/local/Users-nao.deng-awsomeCode-awesome-qa-skills-skills-testing-types-functional-testing-examples-playwright-login.md",
+      "sha256": "002338b0413d84c86659a105000a979d0e14a9712161180ce33c7da3c19a3429",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/references/local/Users-nao.deng-awsomeCode-awesome-qa-skills-skills-testing-types-functional-testing-examples.md",
+      "sha256": "002338b0413d84c86659a105000a979d0e14a9712161180ce33c7da3c19a3429",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/references/output-formats.md",
+      "sha256": "e45c08db66b517282a801178dd34b111c7aaa565cb4ff3365da1a19ba6e49faa",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/references/troubleshooting.md",
+      "sha256": "5f9b649e750e299bdaa80e8fc66ad7c3d6448c43e45f4cba78e228f3ddb1c66a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/batch_convert_templates.py",
+      "sha256": "684da9402f83b574fde7d83ac925a8e9cdf5bbdb21b5b2e455350f2cb6fcb7de",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/convert_formats.py",
+      "sha256": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/convert_output_formats.py",
+      "sha256": "1a342175d86c0e4ec54d159187342b2937eb5b8037cafc353da32ed1f55b4636",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/convert_to_csv.py",
+      "sha256": "3a6a4eb7602a1e22f7c68384d6ec6657048aacc6759888d782be55e1d90ebbb2",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/convert_to_excel.py",
+      "sha256": "099660b5ff64789c9ae487493e677a5eb4fe809016acb66d9ff4d7b6964f4b67",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/convert_to_json.py",
+      "sha256": "908213dbc61580212f3a6c260924fd62c74a17266a2937e3af6d07595cf0cf0a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/convert_to_markdown.py",
+      "sha256": "75e341d47ae9acd6eb906b24d575836134bddb0538a7eeddf0a483440e56ace6",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/convert_to_word.py",
+      "sha256": "0d707d388fa1b4225fceec2c46ba340a8c6d548f808a6ff07ff34136af7e4b53",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/convert_to_xmind.py",
+      "sha256": "140f65accb4b84d691b78738ab9ea6511dff258ff9bb9702d6468ce404decebb",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/parse_csv.py",
+      "sha256": "4aeb40ddd6b3257d49e098595138180c61a4286cdb5f55e86ac7dd39a4cd3fc6",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/parse_excel.py",
+      "sha256": "8386ec28598a5ce7227d9a34e95df332849ec0c22b4751526945773f15251eee",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/parse_formats.py",
+      "sha256": "564dc3bafce784a3f6937bd820167f79c17eb8c14fbd9a3e62303915b9de1ab4",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/parse_json.py",
+      "sha256": "16cfeb034a40557196f5d928ebb24d5e3ac0daecd6e9f47f24cfc13e5a591d5d",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/parse_markdown.py",
+      "sha256": "e36e44fb6703311492a7b181b04b212e86cfcb8783f3a00c3fdf8388db68042f",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/parse_output_formats.py",
+      "sha256": "416d583e14a9d759586967bab8c6b6f2b6fa42e97c58cbf62ffdb43993228e1a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/parse_word.py",
+      "sha256": "bb95b04ad69d0f7b1c805c5a88555b4206743d8dbeec6a939b851c3331e6af2b",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/scripts/parse_xmind.py",
+      "sha256": "6067668b4fd8d14d235b0641f7b2d2ecdd50622101e82735909f50c5e4674121",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/functional-testing/tutorial.md",
+      "sha256": "e0f7178d8250adb612bc5e3e6c9351b5e82838b4ac33f655ed8c50383ed45434",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/SKILL.md",
+      "sha256": "0ec2965b77647d32ed75439fc98c44746eee4b51242e4e67b87dceecfe7987b9",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/agents/openai.yaml",
+      "sha256": "b6c972134ac83a536c7e30cb49a479ac9017709acadb552145728798d80db791",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/evals/cases/architecture-incomplete-input.yaml",
+      "sha256": "67895fdfc195732b66d37f0fc65906b39d38f57ca6dee68fde831c0a662798da",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/evals/cases/architecture-success.yaml",
+      "sha256": "12159d70262f8d75c68b5ca90fd257f44818734813baeaecd77b9186cc475555",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/evals/cases/architecture-unsafe-seam-boundary.yaml",
+      "sha256": "84584c6f8712954bc112d688eb0b5592d53e419a1073800f1c7dee9c2c463906",
+      "runtime_snapshot_matches": false,
+      "exception": "judge-model-only override; no judge executed because provider blocked the runner"
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/evals/cases/basic-success.yaml",
+      "sha256": "1e60b694389d3b1bc358ade222211d08037fe7a654143be65b8b369008edf031",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "db65c9a25bf934d4b8f5330031d8a68f4e0bbf1d68731847dc8c041da7f33968",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/evals/cases/edge-risk-priority.yaml",
+      "sha256": "362cd2462baae21627585a904db7f62761ea2e5e871b666879f119305e92ca39",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/evals/eval.yaml",
+      "sha256": "f86fa893a2876d61f398fc4bb571af2193f1e8267e7010349f8fc820806b04bc",
+      "runtime_snapshot_matches": false,
+      "exception": "engine/model/install-target/timeout transport override"
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/evals/local-rules.json",
+      "sha256": "3680309c73b18dc3ff8bc44838d99b1997fde2ee6d15e36593fffb0eb06a8c73",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/evals/trigger-prompts.csv",
+      "sha256": "633117b59465bba0d36ed12e00db0f58bd6f8ad8bfe1cbd6b46c55f935049bdc",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/testability-analysis/prompts/testability-analysis.md",
+      "sha256": "0d1ac816010453267c6deafdca29e41d8f1869731b6d8d380e4c4140be212e8f",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/SKILL.md",
+      "sha256": "0a7ac799877eab54f4b81eef9b66e9b2ecb210c1566a22b35529cbeddb31846d",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/agents/openai.yaml",
+      "sha256": "6f6fe0bba36368818454c4b011daf4cb8c55f2e099e9a929772e61538f7679f7",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/evals/cases/architecture-incomplete-input.yaml",
+      "sha256": "c77cb05fb2584c087ac2f5dd86dc96d631c499e0f9949b2ae616d10d4978ef1c",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/evals/cases/architecture-success.yaml",
+      "sha256": "b243ea8c87a5ee849198e89a8e5bedba5168659695bcb3a64efcabcaede9b93e",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/evals/cases/architecture-unsafe-seam-boundary.yaml",
+      "sha256": "a04ee3693ae05a836da8a55ffd9444cd0da1d60a662da5f69f833376a3d2c13e",
+      "runtime_snapshot_matches": false,
+      "exception": "judge-model-only override; no judge executed because provider blocked the runner"
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/evals/cases/basic-success.yaml",
+      "sha256": "522920a8e671239139f2557dbb04e77a0f8688c2927d7c9e6efce82d09f7b243",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "53a4cc8e1b9b5a7ae6d9868113e9a72d5530ff36406192325b33d053984241dc",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/evals/cases/edge-risk-priority.yaml",
+      "sha256": "1f3ca435fdf7dff711a61d213cad9519c87bf635b695776a1453374968497379",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/evals/eval.yaml",
+      "sha256": "f86fa893a2876d61f398fc4bb571af2193f1e8267e7010349f8fc820806b04bc",
+      "runtime_snapshot_matches": false,
+      "exception": "engine/model/install-target/timeout transport override"
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/evals/local-rules.json",
+      "sha256": "3680309c73b18dc3ff8bc44838d99b1997fde2ee6d15e36593fffb0eb06a8c73",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/evals/trigger-prompts.csv",
+      "sha256": "970f1bf03ea39c218f1e80747fbf85ab83d08c694c579a055e6df7b7cb0f74af",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/testability-analysis/prompts/testability-analysis.md",
+      "sha256": "985375a1026d5c18d7979888b6acebd99e1f71635bfd112511dd978ec12321bd",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/README.md",
+      "sha256": "7d34db7c5ae2b51769c26b798fa8c7d31232e09221acc6a10d3d2c17606a3b89",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/SKILL.md",
+      "sha256": "af9243e9bb64863cca7da38e502f8d1a26e4d17b629734d8b9fcab8d6fccb346",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/agents/openai.yaml",
+      "sha256": "8b86dd2d05a3b3971217701f9ee35fd499f0d52cd86b2d6f91c5343e24187cd9",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/evals/cases/basic-success.yaml",
+      "sha256": "bffe383b78619a8416c4ed8df9217364f598c45e8d1e1ab3edc9fb295f681f69",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/evals/cases/edge-domain-boundary.yaml",
+      "sha256": "4ff77d326c67b853b665f308814d98e3fa698bb75b2cb9811c44aebac40d71b8",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "f491e1917a3ca93163da9c6f96f9109a84694420635eb8c611d7e402ac666284",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/evals/eval.yaml",
+      "sha256": "e08030df9f60da5334b958a574b8e575711f984e0c6e01112a08b5212abc12f8",
+      "runtime_snapshot_matches": false,
+      "exception": "engine/model/install-target/timeout transport override"
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/examples/k6-load-testing/README.md",
+      "sha256": "c9addd4da7d231a115b355a6f19d66ce36a4392a2fd99e1194f29465997a73c8",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/examples/k6-load-testing/run-tests.sh",
+      "sha256": "da3dfa9c561d3370fbe1c1d5c2e4d014f4c5c46cbe30eb30f690a6c5f0aa1c27",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/examples/k6-load-testing/scripts/api-test.js",
+      "sha256": "11d3e28f9f01bb77bd877320322b6c280cc3b68a8df540f6a989fe672ba5fd49",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/examples/k6-load-testing/scripts/load-test.js",
+      "sha256": "d50d5cf2f57764f482458306ad3b8762cf31152f74440e52f1d98926daa6f99e",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/examples/k6-load-testing/scripts/spike-test.js",
+      "sha256": "569e8d4c72fbe0f88f58fd445fba28c41e7ac3c0ca18b2de8e764989e4744a51",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/examples/k6-load-testing/scripts/stress-test.js",
+      "sha256": "24529dfc6ba920eb09cfb58e51f82e0c5056a8e4de4e1b5336e3115fe4dd991f",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/output-formats.md",
+      "sha256": "28deeea88a0247d09a6919d23f98ac2036b95cfe4df59816a20fb8a82bfc1b69",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/output-templates/template-csv.csv",
+      "sha256": "c0fa0b4caf31917f6244804c43cf6ff26d519db6db8edc6f4cbe3f7daa1d663e",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/output-templates/template-excel.tsv",
+      "sha256": "b56d42077bdd6d4a20bf829e24af6480a78d154d3edb8cfa8a9b8831d91ab9b8",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/output-templates/template-json.json",
+      "sha256": "e8a23ed407852bb18743fd247d786a389a2c493836ecb9ff064e49f57e7fc7e1",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/output-templates/template-markdown.md",
+      "sha256": "759397b86a268d18d41b171117b42b0ac8abfdb430d85d5c003a9f220df3b6b9",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/output-templates/template-word.md",
+      "sha256": "6ca8ac61b58b14c5d29597149725ba64dcba781140e30a49ec07826de3195b8d",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/output-templates/template-xmind.md",
+      "sha256": "338e5c99b61b15352bcf4f369603f3b2ecdb667552844152d7a044a820cbf259",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/prompts/performance-testing.md",
+      "sha256": "354b6c9fe5278a1e7c85b36d44514a03a7b2ee03a78b0bdd1e0cf9bcdad6acb4",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/quick-start.md",
+      "sha256": "1303be508413d3896d9644a5fb3c0ab724f0d2aca8c8c3086e88b659ecb7d03c",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/references/local/testing-types-accessibility-testing-SKILL.md",
+      "sha256": "d6d7941be5f36f30f4f02e35230d3c862ea5fc6e3635a85846621e5e19b8e651",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/references/local/testing-types-mobile-testing-tutorial.md",
+      "sha256": "fc8d4722cfed820ec48ba5ad3c8a90c01ebdd635df79e39d6b18561ba25db7da",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/references/local/testing-types-security-testing-SKILL.md",
+      "sha256": "8b103ee6c882f9571c5e434302023278b9a0fb463ac2bac3fa4f185e2c1032ab",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/references/troubleshooting.md",
+      "sha256": "e0a8f35f436e011084edc6083a6da76f17dfff10190af72a6d46ccb108c3b918",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/batch_convert_templates.py",
+      "sha256": "684da9402f83b574fde7d83ac925a8e9cdf5bbdb21b5b2e455350f2cb6fcb7de",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/convert_formats.py",
+      "sha256": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/convert_output_formats.py",
+      "sha256": "1a342175d86c0e4ec54d159187342b2937eb5b8037cafc353da32ed1f55b4636",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/convert_to_csv.py",
+      "sha256": "3a6a4eb7602a1e22f7c68384d6ec6657048aacc6759888d782be55e1d90ebbb2",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/convert_to_excel.py",
+      "sha256": "099660b5ff64789c9ae487493e677a5eb4fe809016acb66d9ff4d7b6964f4b67",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/convert_to_json.py",
+      "sha256": "908213dbc61580212f3a6c260924fd62c74a17266a2937e3af6d07595cf0cf0a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/convert_to_markdown.py",
+      "sha256": "75e341d47ae9acd6eb906b24d575836134bddb0538a7eeddf0a483440e56ace6",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/convert_to_word.py",
+      "sha256": "0d707d388fa1b4225fceec2c46ba340a8c6d548f808a6ff07ff34136af7e4b53",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/convert_to_xmind.py",
+      "sha256": "140f65accb4b84d691b78738ab9ea6511dff258ff9bb9702d6468ce404decebb",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/parse_csv.py",
+      "sha256": "4aeb40ddd6b3257d49e098595138180c61a4286cdb5f55e86ac7dd39a4cd3fc6",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/parse_excel.py",
+      "sha256": "8386ec28598a5ce7227d9a34e95df332849ec0c22b4751526945773f15251eee",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/parse_formats.py",
+      "sha256": "564dc3bafce784a3f6937bd820167f79c17eb8c14fbd9a3e62303915b9de1ab4",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/parse_json.py",
+      "sha256": "16cfeb034a40557196f5d928ebb24d5e3ac0daecd6e9f47f24cfc13e5a591d5d",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/parse_markdown.py",
+      "sha256": "e36e44fb6703311492a7b181b04b212e86cfcb8783f3a00c3fdf8388db68042f",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/parse_output_formats.py",
+      "sha256": "416d583e14a9d759586967bab8c6b6f2b6fa42e97c58cbf62ffdb43993228e1a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/parse_word.py",
+      "sha256": "bb95b04ad69d0f7b1c805c5a88555b4206743d8dbeec6a939b851c3331e6af2b",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/scripts/parse_xmind.py",
+      "sha256": "6067668b4fd8d14d235b0641f7b2d2ecdd50622101e82735909f50c5e4674121",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/testing-types/performance-testing/tutorial.md",
+      "sha256": "3032eb32d7e797b16d38c74a36b72a4a91148a1316dbb13fe15b90c886710551",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/README.md",
+      "sha256": "9476275040a082d0d98d46c8150827fa4e7db3b860a213eaf2675ccb78c8cec1",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/SKILL.md",
+      "sha256": "0c3b69f37f6fd342367dedc6c25c326e1c64565e7c4aa88bbc85ff117892fa9c",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/agents/openai.yaml",
+      "sha256": "e90ad76192161b3afb61ec4b22b8d9cb6ea6eeb5df7fc545ae056a3a50a783df",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/evals/cases/basic-success.yaml",
+      "sha256": "8f8dc2a22f5218cf3c7643037d8be72148f9717b23c6144abbf41f59114f8617",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/evals/cases/edge-domain-boundary.yaml",
+      "sha256": "2ada7f7d32c2ca1d81eb956faefd5b4fb18db922dbf6bc618b13af1f3a09b8e6",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "5aa4a172c2ab854ae363b71e4ebbff0707ce9dc20469a6700fd291d287bff19d",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/evals/eval.yaml",
+      "sha256": "e08030df9f60da5334b958a574b8e575711f984e0c6e01112a08b5212abc12f8",
+      "runtime_snapshot_matches": false,
+      "exception": "engine/model/install-target/timeout transport override"
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/output-formats.md",
+      "sha256": "55cc3fbe08c5430dc4896b5f942771d21f7977b8acf529a068effa70a66f70cf",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/output-templates/template-csv.csv",
+      "sha256": "c0fa0b4caf31917f6244804c43cf6ff26d519db6db8edc6f4cbe3f7daa1d663e",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/output-templates/template-excel.tsv",
+      "sha256": "b56d42077bdd6d4a20bf829e24af6480a78d154d3edb8cfa8a9b8831d91ab9b8",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/output-templates/template-json.json",
+      "sha256": "e8a23ed407852bb18743fd247d786a389a2c493836ecb9ff064e49f57e7fc7e1",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/output-templates/template-markdown.md",
+      "sha256": "184b7ca60bb231aacf7db4b7019229a0a34bdb1f5b09a26b067706358fed828a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/output-templates/template-word.md",
+      "sha256": "f3ad093fad4228d80e0e7835f9996a3b9a41778ae9825c4d620185a90ab03256",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/output-templates/template-xmind.md",
+      "sha256": "8af5868922dc575699cc6a80de776dbf9aee723617d0815fb7d86c634a6283e0",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/prompts/performance-testing.md",
+      "sha256": "a15851ef65a4219439dbee8553e9e9a4f855255f4127123fcf83590c26098720",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/quick-start.md",
+      "sha256": "11ca64d5c865872f43ebc29f5330c04ae6b7126a2ebef7ed3231f3bd73f74775",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/references/local/testing-types-performance-testing-examples-k6-load-testing-README.md",
+      "sha256": "c3702f0194c896c1d9c745492d3acf22dcff45fda836ed89d36bc180916b0840",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/references/troubleshooting.md",
+      "sha256": "7e146c0931cedb35c00f08ffcdc914fa5ed60069fd259393c0c3ba782f6d9115",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/batch_convert_templates.py",
+      "sha256": "684da9402f83b574fde7d83ac925a8e9cdf5bbdb21b5b2e455350f2cb6fcb7de",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/convert_formats.py",
+      "sha256": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/convert_output_formats.py",
+      "sha256": "1a342175d86c0e4ec54d159187342b2937eb5b8037cafc353da32ed1f55b4636",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/convert_to_csv.py",
+      "sha256": "3a6a4eb7602a1e22f7c68384d6ec6657048aacc6759888d782be55e1d90ebbb2",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/convert_to_excel.py",
+      "sha256": "099660b5ff64789c9ae487493e677a5eb4fe809016acb66d9ff4d7b6964f4b67",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/convert_to_json.py",
+      "sha256": "908213dbc61580212f3a6c260924fd62c74a17266a2937e3af6d07595cf0cf0a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/convert_to_markdown.py",
+      "sha256": "75e341d47ae9acd6eb906b24d575836134bddb0538a7eeddf0a483440e56ace6",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/convert_to_word.py",
+      "sha256": "0d707d388fa1b4225fceec2c46ba340a8c6d548f808a6ff07ff34136af7e4b53",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/convert_to_xmind.py",
+      "sha256": "140f65accb4b84d691b78738ab9ea6511dff258ff9bb9702d6468ce404decebb",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/parse_csv.py",
+      "sha256": "4aeb40ddd6b3257d49e098595138180c61a4286cdb5f55e86ac7dd39a4cd3fc6",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/parse_excel.py",
+      "sha256": "8386ec28598a5ce7227d9a34e95df332849ec0c22b4751526945773f15251eee",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/parse_formats.py",
+      "sha256": "564dc3bafce784a3f6937bd820167f79c17eb8c14fbd9a3e62303915b9de1ab4",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/parse_json.py",
+      "sha256": "16cfeb034a40557196f5d928ebb24d5e3ac0daecd6e9f47f24cfc13e5a591d5d",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/parse_markdown.py",
+      "sha256": "e36e44fb6703311492a7b181b04b212e86cfcb8783f3a00c3fdf8388db68042f",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/parse_output_formats.py",
+      "sha256": "416d583e14a9d759586967bab8c6b6f2b6fa42e97c58cbf62ffdb43993228e1a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/parse_word.py",
+      "sha256": "bb95b04ad69d0f7b1c805c5a88555b4206743d8dbeec6a939b851c3331e6af2b",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/scripts/parse_xmind.py",
+      "sha256": "6067668b4fd8d14d235b0641f7b2d2ecdd50622101e82735909f50c5e4674121",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/testing-types/performance-testing/tutorial.md",
+      "sha256": "3898b8a51da92bf6960d8ada232e4a4ce49dd3addba1a1507e922a40d72ec8af",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-evaluation/SKILL.md",
+      "sha256": "91fb3f2ac853c6dc63ed8ac646b9b901ba46d539a616f70ea978990426f6d8cf",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-evaluation/agents/openai.yaml",
+      "sha256": "0f026e3239ae29558a124e843f943911d84151ecf812c84b9ab7a8925356430f",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-evaluation/evals/cases/basic-success.yaml",
+      "sha256": "c3817bc971898871c984b866877d0f23de362564a658aa0534221e105ae5cf54",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-evaluation/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "357eda3b5d52137e66740c45a5a95005186a30adf4435493aee6d23b7e30bd08",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-evaluation/evals/cases/edge-no-second-engine.yaml",
+      "sha256": "78154e21b44e7623d786bb303935940433da43bcb3b986617c2b6da1f601547a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-evaluation/evals/eval.yaml",
+      "sha256": "2878103e8a4c034d297265a9966749cb6713a9248644684325ee724271f16874",
+      "runtime_snapshot_matches": false,
+      "exception": "engine/model/install-target/timeout transport override"
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-evaluation/prompts/skill-evaluation.md",
+      "sha256": "52d49894336c644c56014751caa879bcb02474fa2d8c85a48ffef3b2e7191270",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-evaluation/SKILL.md",
+      "sha256": "c2d9a15bc783606cc4fd6d722c148b4dcfe4196aa8004e099ab2024c1148f3f7",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-evaluation/agents/openai.yaml",
+      "sha256": "c04cf0f50b12a023588d0e254f9f9f624d9cf94e441786514aff5c92f82e0ba6",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-evaluation/evals/cases/basic-success.yaml",
+      "sha256": "24d530a03394c8da28838cc6663d7b77802516e509c29ac5d6ba9fa54bff017a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-evaluation/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "67c79cdfb1a64062a9fcc695f361a2700e700d791613986f2678c21b43d6322a",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-evaluation/evals/cases/edge-no-second-engine.yaml",
+      "sha256": "162b6f3065b423d3ebf3ffd7fc060202a8003b104f18c5d18aa998be7f72b39b",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-evaluation/evals/eval.yaml",
+      "sha256": "2878103e8a4c034d297265a9966749cb6713a9248644684325ee724271f16874",
+      "runtime_snapshot_matches": false,
+      "exception": "engine/model/install-target/timeout transport override"
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-evaluation/prompts/skill-evaluation.md",
+      "sha256": "dd63bd81529fe5616483aa9f6604f08f7fdd9287a3012a68a567ca5a758151c2",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-change-verification/SKILL.md",
+      "sha256": "e27a04a136a70ac492a4d40e6d63361e4d9c8494174140906a72244656307c6e",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-change-verification/agents/openai.yaml",
+      "sha256": "f1f194daa52b253b8045f3f1f1a5502d08f914f890e80b847880916a27bce560",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-change-verification/evals/cases/basic-success.yaml",
+      "sha256": "5078920f50c603aaed9f24f65e113fb535694cb0138fb2482f99ffed93fc4cbd",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-change-verification/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "9acce60c566a5bb72a02bc57c0848bf7bfa4772416dd4daab3b61ba9898d5da9",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-change-verification/evals/cases/edge-scope-risk.yaml",
+      "sha256": "c83e1e52c55020ad1e0a0f901e6b6db66d0f8099c18c4a3c2cac040054c3f04c",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-change-verification/evals/eval.yaml",
+      "sha256": "9f6a8d035a342221c2c944a0890ea9f139e0b93e6b54d1c7c5a851ab61a97593",
+      "runtime_snapshot_matches": false,
+      "exception": "engine/model/install-target/timeout transport override"
+    },
+    {
+      "path": "skills/zh/skill-engineering/skill-change-verification/prompts/skill-change-verification.md",
+      "sha256": "ced1c841dbf13c10d329a2c56878d90298278213c71eacde90d795ebb9b816da",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-change-verification/SKILL.md",
+      "sha256": "864f5713a0f4d13c97b31848f9686a099a3167c11b7e1a6f8d43c34675fbd575",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-change-verification/agents/openai.yaml",
+      "sha256": "49f0db084edf5f573a2e589f3d6f72c3b9f86ac6dea1031b49b6efe1dfb7793d",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-change-verification/evals/cases/basic-success.yaml",
+      "sha256": "21d74aed2c2b28c236388e8b8ec54662292549d063a0942a82f2a7ac7f252f81",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-change-verification/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "f278f45c05f63a086ee04d30176e1f3fe4ac29e44731712556a66855a40aeab7",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-change-verification/evals/cases/edge-scope-risk.yaml",
+      "sha256": "aecb1d3296bcc71a7c9b10708e16ad132137ab03771bd8c035cfea963bc322e4",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-change-verification/evals/eval.yaml",
+      "sha256": "2b23ddcb23218a4fe542e4599d9f2520a8600134bcde24a14e4d345bf1c9f193",
+      "runtime_snapshot_matches": false,
+      "exception": "engine/model/install-target/timeout transport override"
+    },
+    {
+      "path": "skills/en/skill-engineering/skill-change-verification/prompts/skill-change-verification.md",
+      "sha256": "37576fba07079b8c9111f3cba54beebd30ab8472ce0f249d19b04908e87d5027",
+      "runtime_snapshot_matches": true,
+      "exception": null
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+schema_version: v1alpha1
+environment: {type: none}
+skills: []
+engine:
+  name: codex_judge_calibration
+  model: {provider: openai, name: gpt-6-sol}
+  custom:
+    transport: local
+    response_format: session_result
+    local:
+      command: node
+      args: ["${SQET_CALIBRATION_ADAPTER}", "${input_file}"]
+cases:
+  files:
+    - evals/cases/functional-testing-positive.yaml
+    - evals/cases/functional-testing-negative.yaml
+    - evals/cases/testability-analysis-positive.yaml
+    - evals/cases/testability-analysis-negative.yaml
+    - evals/cases/skill-evaluation-positive.yaml
+    - evals/cases/skill-evaluation-negative.yaml
+    - evals/cases/skill-evaluation-canonical-near-miss.yaml
+  defaults: {timeout_seconds: 900, max_turns: 8, expect: {exit_code: 0}}
+report: {formats: [json, junit]}

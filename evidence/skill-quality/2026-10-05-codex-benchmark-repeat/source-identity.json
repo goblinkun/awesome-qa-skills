@@ -1,0 +1,430 @@
+{
+  "collected_at": "2026-10-05T02:48:05.174Z",
+  "identity_scope": "Post-execution copies and binaries; per-invocation adapter/Node hashes were not captured and remain unknown",
+  "base_commit": "c61f507f61711c3c0f0d1777136a5a4ff0e211b3",
+  "dirty_worktree": true,
+  "source_snapshot": "../2026-10-03-codex-pilot/source-manifest.json",
+  "configuration_and_source_unchanged": true,
+  "files": [
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/README.md",
+      "sha256": "9c1fc1a8fef9625d962c03019d0ae0472caf9eaaeb7f6160b3be0af68a00d5b9",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/SKILL.md",
+      "sha256": "42dc8ed1a0f81c8aa7bb14459dcf7367772c1335cb8330598ae47f74cb7db84d",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/agents/openai.yaml",
+      "sha256": "292c08d13b47b4cf217b5b27435b9aa8cba30f6221697047d7caa100ed914f2f",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/evals/benchmark.yaml",
+      "sha256": "92aea8276e085d23405a9f4bac986b328ccaf14460d2a37ed420208c19e22efc",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/evals/cases/basic-success.yaml",
+      "sha256": "7e8166f26a5b6909e1acbb6752843e7aea2091e4b732feeb6492fb9e8de44585",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/evals/cases/benchmark-neutral.yaml",
+      "sha256": "5e674a3da18fdf22c97a8558ab8c0b0743b16e3744f8e84a7d5f776440b98886",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "f93d7d959e65a72418a3d2bd6f5926f747a2d927d387a0d0b63107ec3907b732",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/evals/cases/edge-risk-priority.yaml",
+      "sha256": "3532c9d6f1e672899078fe4fe134f9fcd2080e9ea0db815aec0c711efc62efcd",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/evals/eval.yaml",
+      "sha256": "51c8f2c8df8ae826427603faccc0e173226350053920be9c9fb9005ef0fb0bf0",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/cypress-e2e/README.md",
+      "sha256": "216e69aca6efb19ed310b090f36173569ad39199eadb98a1ac64a0fb352dfb42",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/cypress-e2e/cypress.config.js",
+      "sha256": "e255b874847e47421b99bf8f37cfadcbfec2eb0bd70c8b6159ab7a791be20134",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/cypress-e2e/cypress/e2e/advanced-api-mocking.cy.js",
+      "sha256": "7514c5d28245d8dd09fddd660e46f42d8f73e05afa93ce15449def72fb4dfed3",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/cypress-e2e/cypress/e2e/api-mocking.cy.js",
+      "sha256": "a1da18f8def3b508fc972534fc57d9b077808f07a82423ba87068ffd933b0a63",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/cypress-e2e/cypress/e2e/login.cy.js",
+      "sha256": "308e1eac5c9d06dd4b6ab399b7098fb176d2dd59f534bcb6d91cd0525a2e0966",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/cypress-e2e/cypress/e2e/screenshots-videos.cy.js",
+      "sha256": "f1f63d0957e8290ad28d124702013c8709b2794f40930d757dae481e65719450",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/cypress-e2e/package.json",
+      "sha256": "074b6414207a1882899615e29c7232081ddb3229a10a4461bfd4a6a004e7c251",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/playwright-login/README.md",
+      "sha256": "fcfcb0b6aabdc1fb2c621f2ad409b6d2f5ed2257288c2ab004336636a7a16678",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/playwright-login/package.json",
+      "sha256": "6a864e19787808ed87556da68f0d1d8c3c3526be8938fd1cf2606b85c71e8652",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/playwright-login/playwright.config.ts",
+      "sha256": "73c2d4de278eaa3d1432188e2fba85daa9f55bc855d056ce6a1e5ffb3384fc22",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/examples/playwright-login/tests/login.spec.ts",
+      "sha256": "068ffe04231e450014c7a25580bdf1aa856928d5835e9fffdd547b58f670d8e2",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/output-formats.md",
+      "sha256": "1b6d97592a30f9c8b0653e3f711dfc0f7dfb8d4c4da07b569c8088a9891ed3c9",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/output-templates/template-csv.csv",
+      "sha256": "c0fa0b4caf31917f6244804c43cf6ff26d519db6db8edc6f4cbe3f7daa1d663e",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/output-templates/template-excel.tsv",
+      "sha256": "b56d42077bdd6d4a20bf829e24af6480a78d154d3edb8cfa8a9b8831d91ab9b8",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/output-templates/template-json.json",
+      "sha256": "e8a23ed407852bb18743fd247d786a389a2c493836ecb9ff064e49f57e7fc7e1",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/output-templates/template-markdown.md",
+      "sha256": "759397b86a268d18d41b171117b42b0ac8abfdb430d85d5c003a9f220df3b6b9",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/output-templates/template-word.md",
+      "sha256": "6ca8ac61b58b14c5d29597149725ba64dcba781140e30a49ec07826de3195b8d",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/output-templates/template-xmind.md",
+      "sha256": "338e5c99b61b15352bcf4f369603f3b2ecdb667552844152d7a044a820cbf259",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/prompts/functional-testing.md",
+      "sha256": "a0e4630070e01efe0a02b0b9bf3c12f550598f391c54e3fd7180d954b1cf919a",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/quick-start.md",
+      "sha256": "cc8ba43bd1b5b49e91dd2a42bf4ac2919d604b477f577fbb1796710d79955996",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/references/local/FAQ.md",
+      "sha256": "e342897ed00c5296a6cb0e636012a5c29f9c859056626e4fa9a03516c7c20a51",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/references/local/Users-nao.deng-awsomeCode-awesome-qa-skills-skills-testing-types-automation-testing.md",
+      "sha256": "59238cfb0a6a510d5c56364404a75a626b9fbf2af2bfd5cabe973a87ef6bdc65",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/references/local/Users-nao.deng-awsomeCode-awesome-qa-skills-skills-testing-types-requirements-analysis.md",
+      "sha256": "59238cfb0a6a510d5c56364404a75a626b9fbf2af2bfd5cabe973a87ef6bdc65",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/references/local/Users-nao.deng-awsomeCode-awesome-qa-skills-skills-testing-types-test-case-writing.md",
+      "sha256": "59238cfb0a6a510d5c56364404a75a626b9fbf2af2bfd5cabe973a87ef6bdc65",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/references/local/Users-nao.deng-awsomeCode-awesome-qa-skills-skills-testing-types-test-strategy.md",
+      "sha256": "59238cfb0a6a510d5c56364404a75a626b9fbf2af2bfd5cabe973a87ef6bdc65",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/references/local/testing-types-api-testing-tutorial.md",
+      "sha256": "df322d78af1ce62a453975e31f324d31f0a82aba5a7c4fc82364ef6b4abace83",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/references/local/testing-types-automation-testing-tutorial.md",
+      "sha256": "df322d78af1ce62a453975e31f324d31f0a82aba5a7c4fc82364ef6b4abace83",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/references/local/testing-types-performance-testing-tutorial.md",
+      "sha256": "df322d78af1ce62a453975e31f324d31f0a82aba5a7c4fc82364ef6b4abace83",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/references/output-formats.md",
+      "sha256": "5c91aa41d38edb3a17fb37b7ffaf0ef10e59cbdca056bcb3ccbfe19b6fe6a8f5",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/references/troubleshooting.md",
+      "sha256": "0a50adcf16875cf4d653cc8ba02bb2e7f1741a4e9542362a63099cf0e4a5888a",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/batch_convert_templates.py",
+      "sha256": "684da9402f83b574fde7d83ac925a8e9cdf5bbdb21b5b2e455350f2cb6fcb7de",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/convert_formats.py",
+      "sha256": "9ca6e9f12ec1d6522d99e51b896d6cf7f018b80f30f7a1417b1d61b183cebbf3",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/convert_output_formats.py",
+      "sha256": "1a342175d86c0e4ec54d159187342b2937eb5b8037cafc353da32ed1f55b4636",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/convert_to_csv.py",
+      "sha256": "3a6a4eb7602a1e22f7c68384d6ec6657048aacc6759888d782be55e1d90ebbb2",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/convert_to_excel.py",
+      "sha256": "099660b5ff64789c9ae487493e677a5eb4fe809016acb66d9ff4d7b6964f4b67",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/convert_to_json.py",
+      "sha256": "908213dbc61580212f3a6c260924fd62c74a17266a2937e3af6d07595cf0cf0a",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/convert_to_markdown.py",
+      "sha256": "75e341d47ae9acd6eb906b24d575836134bddb0538a7eeddf0a483440e56ace6",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/convert_to_word.py",
+      "sha256": "0d707d388fa1b4225fceec2c46ba340a8c6d548f808a6ff07ff34136af7e4b53",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/convert_to_xmind.py",
+      "sha256": "140f65accb4b84d691b78738ab9ea6511dff258ff9bb9702d6468ce404decebb",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/parse_csv.py",
+      "sha256": "4aeb40ddd6b3257d49e098595138180c61a4286cdb5f55e86ac7dd39a4cd3fc6",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/parse_excel.py",
+      "sha256": "8386ec28598a5ce7227d9a34e95df332849ec0c22b4751526945773f15251eee",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/parse_formats.py",
+      "sha256": "564dc3bafce784a3f6937bd820167f79c17eb8c14fbd9a3e62303915b9de1ab4",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/parse_json.py",
+      "sha256": "16cfeb034a40557196f5d928ebb24d5e3ac0daecd6e9f47f24cfc13e5a591d5d",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/parse_markdown.py",
+      "sha256": "e36e44fb6703311492a7b181b04b212e86cfcb8783f3a00c3fdf8388db68042f",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/parse_output_formats.py",
+      "sha256": "416d583e14a9d759586967bab8c6b6f2b6fa42e97c58cbf62ffdb43993228e1a",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/parse_word.py",
+      "sha256": "bb95b04ad69d0f7b1c805c5a88555b4206743d8dbeec6a939b851c3331e6af2b",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/scripts/parse_xmind.py",
+      "sha256": "6067668b4fd8d14d235b0641f7b2d2ecdd50622101e82735909f50c5e4674121",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/functional-testing-zh/tutorial.md",
+      "sha256": "960aa724f27e11a7cdff38eec9ffabf39e8aac951ed41b00ee35c8d86e73902f",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/SKILL.md",
+      "sha256": "0ec2965b77647d32ed75439fc98c44746eee4b51242e4e67b87dceecfe7987b9",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/agents/openai.yaml",
+      "sha256": "b6c972134ac83a536c7e30cb49a479ac9017709acadb552145728798d80db791",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/benchmark.yaml",
+      "sha256": "7268351b3a95040ca74874e78daf675d9d5d7d6c2c5a148b867400c4bc3872ea",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/cases/architecture-incomplete-input.yaml",
+      "sha256": "67895fdfc195732b66d37f0fc65906b39d38f57ca6dee68fde831c0a662798da",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/cases/architecture-success.yaml",
+      "sha256": "12159d70262f8d75c68b5ca90fd257f44818734813baeaecd77b9186cc475555",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/cases/architecture-unsafe-seam-boundary.yaml",
+      "sha256": "36f47cdf451fe2e613b72680d96fc8c121f3f7a5c225956f962bfa349c66b089",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/cases/basic-success.yaml",
+      "sha256": "1e60b694389d3b1bc358ade222211d08037fe7a654143be65b8b369008edf031",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/cases/benchmark-neutral.yaml",
+      "sha256": "1b939b0cb52f9b133a438125d70be5a5c33500dfbd24ff6289adf1fe389ca1be",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "db65c9a25bf934d4b8f5330031d8a68f4e0bbf1d68731847dc8c041da7f33968",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/cases/edge-risk-priority.yaml",
+      "sha256": "362cd2462baae21627585a904db7f62761ea2e5e871b666879f119305e92ca39",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/eval.yaml",
+      "sha256": "f87d0d2dd980480627f316bf686d5a425037a0c450d6964022eb1868c42ff45d",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/local-rules.json",
+      "sha256": "3680309c73b18dc3ff8bc44838d99b1997fde2ee6d15e36593fffb0eb06a8c73",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/evals/trigger-prompts.csv",
+      "sha256": "633117b59465bba0d36ed12e00db0f58bd6f8ad8bfe1cbd6b46c55f935049bdc",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/testability-analysis-zh/prompts/testability-analysis.md",
+      "sha256": "0d1ac816010453267c6deafdca29e41d8f1869731b6d8d380e4c4140be212e8f",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/skill-evaluation-zh/SKILL.md",
+      "sha256": "91fb3f2ac853c6dc63ed8ac646b9b901ba46d539a616f70ea978990426f6d8cf",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/skill-evaluation-zh/agents/openai.yaml",
+      "sha256": "0f026e3239ae29558a124e843f943911d84151ecf812c84b9ab7a8925356430f",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/skill-evaluation-zh/evals/benchmark.yaml",
+      "sha256": "8e5a463c30aaa371748a0517863ab68a5ac23cdc9ccebd2d971b1ad08fe90a36",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/skill-evaluation-zh/evals/cases/basic-success.yaml",
+      "sha256": "c3817bc971898871c984b866877d0f23de362564a658aa0534221e105ae5cf54",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/skill-evaluation-zh/evals/cases/benchmark-neutral.yaml",
+      "sha256": "3714c7b04f2fd8b0da1bd9d0cdce4323b358d2a4f7431db881e31e64218be2cf",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/skill-evaluation-zh/evals/cases/edge-incomplete-input.yaml",
+      "sha256": "357eda3b5d52137e66740c45a5a95005186a30adf4435493aee6d23b7e30bd08",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/skill-evaluation-zh/evals/cases/edge-no-second-engine.yaml",
+      "sha256": "78154e21b44e7623d786bb303935940433da43bcb3b986617c2b6da1f601547a",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/skill-evaluation-zh/evals/eval.yaml",
+      "sha256": "969a3aa622046227a26610617f1f4e7d6993d3a97dfe13a53e46fb5820a523fb",
+      "retry_matches_parent_snapshot": true
+    },
+    {
+      "source": "../2026-10-03-codex-pilot/reproduction/packages/skill-evaluation-zh/prompts/skill-evaluation.md",
+      "sha256": "52d49894336c644c56014751caa879bcb02474fa2d8c85a48ffef3b2e7191270",
+      "retry_matches_parent_snapshot": true
+    }
+  ],
+  "adapter": {
+    "source": "../2026-10-03-codex-pilot/reproduction/snapshots/adapter-20261005.mjs",
+    "original_collected_source": "../2026-10-03-codex-pilot/reproduction/adapter.mjs",
+    "delivery_path_note": "2026-10-16: original portable bytes frozen before correcting future version probing; the collected SHA256 is unchanged",
+    "sha256": "c193c5037be7c7986ff1823bed5e5972731fb209534664b25a115d920a23fedf"
+  },
+  "runtime": {
+    "skill_up": "skill-up version 0.12.0",
+    "codex": "codex-cli 0.160.0",
+    "codex_identity_scope": "Post-execution collection-time version only; historical adapter metadata hardcoded 0.159.2 and does not establish individual-call versions",
+    "node": "v26.10.0",
+    "node_binary": "<HOMEBREW>/Cellar/node/26.10.0_2/bin/node",
+    "node_binary_sha256": "832eaf52cafa7ff1364c2ca378451db14fb043d8d23a5cfd18a0a103d66226fc",
+    "os": "darwin arm64 25.6.0",
+    "reasoning_effort": "high",
+    "primary_model": "gpt-6.1-sol",
+    "judge_model": "gpt-6-sol",
+    "order": "with_skill then without_skill",
+    "parallelism": "one per group; three independent groups launched concurrently"
+  }
+}

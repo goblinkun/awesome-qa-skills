@@ -1,0 +1,153 @@
+{
+  "skill_name": "skill-change-verification",
+  "schema_version": "v1alpha1",
+  "engine_name": "codex_no_daemon_isolated",
+  "model_name": "openai/gpt-6.1-sol",
+  "requested_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "applied_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "observed_configuration": {
+    "model": "gpt-6.1-sol"
+  },
+  "start_time": "2026-10-03T19:23:11.610708+08:00",
+  "end_time": "2026-10-03T19:23:53.918095+08:00",
+  "case_results": [
+    {
+      "case_id": "basic-success",
+      "title": "Complete verification routing",
+      "status": "PASS",
+      "duration_ms": 42036,
+      "turns": 1,
+      "input_tokens": 69804,
+      "output_tokens": 685,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_contains{all:[runtime]}",
+            "passed": true,
+            "evidence": "output satisfies all contains checks (all:[runtime])"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 0,
+          "total": 3,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Select checks and distinguish skill-up validate from runtime validation.",
+      "response": "# Verification report\n\n## Change classification\n\nNo change diff was supplied; the workspace is not a Git repository. Select the smallest sufficient checks based on the actual changes:\n\n| Change | Checks to select |\n|---|---|\n| Content or prompts | Static inspection and human review; runtime scenarios if behavior changes |\n| Metadata or directories | Frontmatter, references, pairing, independence, and indexes |\n| Scripts | Static checks plus focused execution covering changed paths and representative boundaries |\n| Eval definitions | Structural checks and the documented evaluation command |\n| Runtime behavior | Actual Skill/Prompt execution with representative inputs and observable outcomes |\n\n## Checks run\n\n| Command | Evidence level | Result |\n|---|---|---|\n| `cat .agents/skills/skill-change-verification/SKILL.md` | Static | Read verification requirements |\n| `cat .agents/skills/skill-change-verification/prompts/skill-change-verification.md` | Static | Read evidence levels and report requirements |\n| `git status --short`; `git diff --stat`; scoped `git diff` | Change discovery | Failed: no Git repository |\n\n## Checks not run\n\n| Item | Reason | Risk |\n|---|---|---|\n| `skill-up validate` | Not executed; invocation requirements need confirmation | No evaluation-pass evidence |\n| Runtime validation | No target behavior or scenarios supplied | Actual behavior remains unverified |\n| Change-specific structural and script checks | Actual diff unavailable; commands require confirmation | Changed paths and boundaries may be uncovered |\n\n## Claims supported\n\n`skill-up validate` provides **Evaluation-level evidence for the checks it runs**. It is not runtime semantic validation.\n\nRuntime validation requires executing the actual Skill/Prompt behavior and checking its outcomes. Select checks that cover the diff; a full-suite pass does not resolve uncovered changes.\n\n## Claims not supported\n\nNo claim that validation passed, runtime behavior is correct, or all changes are covered.\n\n## Residual risks\n\nA concrete verification decision still requires the actual diff and documented commands. Undiscoverable commands are **confirmation required**, not guessed.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-incomplete-input",
+      "title": "Missing verification environment",
+      "status": "PASS",
+      "duration_ms": 33470,
+      "turns": 1,
+      "input_tokens": 49539,
+      "output_tokens": 463,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_contains{all:[confirmation]}",
+            "passed": true,
+            "evidence": "output satisfies all contains checks (all:[confirmation])"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 0,
+          "total": 3,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Confirm the change passes without a scope, command, or runtime environment.",
+      "response": "# Verification report\n\n## Change classification\n\nUndetermined: no change scope or diff was provided.\n\n## Checks run\n\n| Command | Evidence level | Result |\n|---|---|---|\n| Read local verification Skill and prompt with `cat` | Static | Reporting requirements reviewed; no change verified |\n\n## Checks not run\n\n| Item | Reason | Risk |\n|---|---|---|\n| Change-specific checks | Scope missing | Coverage unknown |\n| Validation command | **confirmation required** | Validation status unknown |\n| Runtime checks | Runtime environment unspecified | Behavior unverified |\n\n## Claims supported\n\nLocal verification instructions were reviewed.\n\n## Claims not supported\n\nThe change passes validation or works at runtime.\n\n## Residual risks\n\n**Cannot confirm a pass.** Change scope, an established verification command, and a runtime environment are needed to support that claim.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-scope-risk",
+      "title": "Static evidence overstated as runtime proof",
+      "status": "PASS",
+      "duration_ms": 31217,
+      "turns": 1,
+      "input_tokens": 49427,
+      "output_tokens": 392,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(?i)(not supported|unverified|cannot establish|not proven) (?i)runtime]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(?i)(not supported|unverified|cannot establish|not proven) (?i)runtime])"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 0,
+          "total": 3,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "skill-up validate passed; report that runtime semantics are verified.",
+      "response": "# Verification report\n\n## Change classification\n\nNo diff provided; runtime impact is undetermined.\n\n## Checks run\n\n| Command | Evidence level | Result |\n|---|---|---|\n| `skill-up validate` | Evaluation | Passed, as reported by you; not rerun |\n\n## Checks not run\n\n| Item | Reason | Risk |\n|---|---|---|\n| Runtime behavior checks | No runtime evidence provided; command confirmation required | Runtime semantics remain unverified |\n\n## Claims supported\n\n`skill-up validate` passed according to the supplied result.\n\n## Claims not supported\n\n“Runtime semantics are verified.” `skill-up validate` does not provide runtime semantic validation.\n\n## Residual risks\n\nActual Skill/Prompt behavior has not been demonstrated.",
+      "observed_model": "gpt-6.1-sol"
+    }
+  ],
+  "total_tokens": 170310,
+  "judge_tokens": 0,
+  "overall_tokens": 170310
+}

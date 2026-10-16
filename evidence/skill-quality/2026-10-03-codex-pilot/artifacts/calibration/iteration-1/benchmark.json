@@ -1,0 +1,319 @@
+{
+  "metadata": {
+    "skill_name": "sqet-judge-calibration",
+    "skill_path": "<REPRO_ROOT>/calibration",
+    "timestamp": "2026-10-03T11:28:05Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "正向金样（期望 PASS）",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6666666666666666,
+        "passed": 4,
+        "failed": 2,
+        "total": 6,
+        "time_seconds": 0.109,
+        "tokens": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+          "passed": true,
+          "evidence": "final_message 将登录、购物车、下单、支付、30 分钟窗口和可能重复的支付回调列为已知事实。; final_message 明确将接口字段、权限矩阵、终态、幂等及退款规则列为待确认信息，并说明不假设字段或状态名。"
+        },
+        {
+          "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+          "passed": true,
+          "evidence": "final_message 将正常下单至支付闭环、重复回调导致重复资金效果、支付失败与订单不一致列为 P0。; final_message 还列出数量和金额边界、允许与不允许角色的访问验证，以及隔离环境和测试数据条件。"
+        },
+        {
+          "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+          "passed": false,
+          "evidence": "final_message 规定先执行正常闭环，再验证重复回调，并在 30 分钟内优先两项 P0。; final_message 将其余项目延后，并注明未覆盖退款及多渠道差异。 | Failures: 仅列出未覆盖范围，没有解释退款和多渠道差异未验证会留下什么具体风险。"
+        },
+        {
+          "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+          "passed": false,
+          "evidence": "final_message 给出隔离环境、可恢复测试数据和已确认契约等前置条件。; 重复回调项写明发送同一回调两次，并核对支付侧权威记录、订单终态和关联日志。 | Failures: 正常闭环和失败回调项未写出可判定通过或失败的具体预期；“符合已确认契约”和“核对失败处理和恢复证据”仍不足以作为明确验收标准。; 角色与数量边界项只说按相同格式验证，缺少各自可核验的预期和证据。"
+        },
+        {
+          "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+          "passed": true,
+          "evidence": "final_message 明确说明方案尚未执行测试，不能声称业务或发布通过。; final_message 规定遇到真实资金、重复扣款或数据隔离失效时停止并升级负责人，并列出补充规则、确认环境及保存证据的下一步。"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "反向金样（期望 FAIL）",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.16666666666666666,
+        "passed": 1,
+        "failed": 5,
+        "total": 6,
+        "time_seconds": 0.11,
+        "tokens": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+          "passed": false,
+          "evidence": "final_message 仅称“所有流程已全部测试通过，没有风险，不需要补充资料”，没有区分已知事实、假设和待确认信息。 | Failures: 未说明断言的依据，也未标明待确认信息。"
+        },
+        {
+          "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+          "passed": false,
+          "evidence": "final_message 未提及支付流程、失败或重复回调、边界条件、权限或数据条件。 | Failures: 未覆盖关键支付闭环及相关异常场景。"
+        },
+        {
+          "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+          "passed": false,
+          "evidence": "final_message 未提及 30 分钟约束、优先级或执行顺序，并直接断言“没有风险”。 | Failures: 未给出优先级、延后范围及残余风险。"
+        },
+        {
+          "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+          "passed": false,
+          "evidence": "final_message 只有测试通过和发布的笼统结论，没有具体执行项或可核验结果。 | Failures: 缺少前置条件、操作、验收标准和证据。"
+        },
+        {
+          "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+          "passed": false,
+          "evidence": "final_message 声称“所有流程已全部测试通过”并建议“直接发布即可”，未说明未验证事项或停止条件。 | Failures: 未明确未执行或未验证范围、停止或升级条件及下一步，且报告了未经材料支持的通过结论。"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "正向金样（期望 PASS）",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333333333333334,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 0.11,
+        "tokens": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+          "passed": true,
+          "evidence": "final_message 将订单→消息队列→支付适配器→外部支付商列为输入事实，并指出回调模拟器、缺少故障注入入口和隔离主题能力。; final_message 将幂等、回调接收者、消费者路由及存储边界明确列为待确认事项。"
+        },
+        {
+          "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+          "passed": true,
+          "evidence": "final_message 指定支付商客户端接口和消费者处理入口为接缝，提出契约驱动替身、回调模拟器及受理后响应丢失的故障刺激。; final_message 覆盖隔离主题、消费组、数据命名空间、回调路由、测试账户，以及关联日志、权威状态查询、固定时钟、数据初始化与环境参数记录。"
+        },
+        {
+          "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+          "passed": false,
+          "evidence": "final_message 要求在授权隔离环境验证，使用测试账户，不改生产鉴权或租户边界，并在发现真实资金影响时停止。; final_message 未规定测试身份、支付商凭据或队列访问权限的最小授权范围。 | Failures: 缺少可执行的最小权限安排，例如限定测试凭据和隔离主题的访问范围。"
+        },
+        {
+          "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+          "passed": true,
+          "evidence": "final_message 将重复资金效果列为 P0 候选风险，将支付商客户端及消费者接缝列为 P1 改进，并标注控制成功、失败与延迟的价值及中等成本。; final_message 给出受理后响应丢失的验证刺激、重试须符合幂等契约的判断，以及请求标识、状态迁移、资金记录和注入结果等证据。"
+        },
+        {
+          "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+          "passed": true,
+          "evidence": "final_message 明确称所有方案尚未验证，故障注入能力也尚未验证，并列出替身偏差及共享队列资源竞争的残余风险。; final_message 规定隔离未确认或发现真实资金影响时停止，分配架构、支付、平台和 QA 的确认与证据保存职责，要求再决定是否通过。"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "反向金样（期望 FAIL）",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.16666666666666666,
+        "passed": 1,
+        "failed": 5,
+        "total": 6,
+        "time_seconds": 0.085,
+        "tokens": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+          "passed": false,
+          "evidence": "final_message 只声称“使用流行的自动化框架即可解决全部可测试性问题”，未分析任何具体架构。 | Failures: 未判断组件边界、异步拓扑及现有或缺失能力；未区分事实、假设和证据缺口。"
+        },
+        {
+          "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+          "passed": false,
+          "evidence": "final_message 仅提到“有模拟器”，没有说明模拟器如何使用或验证。 | Failures: 未覆盖接缝、替身、隔离、故障注入和环境复现，也未说明可观察性、可控制性、确定性及数据准备。"
+        },
+        {
+          "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+          "passed": false,
+          "evidence": "final_message 明确称“无需证据、隔离检查”。 | Failures: 未提出隔离且最小权限的验证方案；未说明如何保护生产鉴权、租户隔离和资金安全。"
+        },
+        {
+          "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+          "passed": false,
+          "evidence": "final_message 只给出使用自动化框架的笼统建议，并称“无需证据”。 | Failures: 改进项缺少风险优先级、价值与成本、验证刺激、预期判断和可追踪证据。"
+        },
+        {
+          "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+          "passed": false,
+          "evidence": "final_message 称“因为有模拟器，所以架构已经通过验证”，并表示“无需证据、隔离检查或人类决策”。 | Failures: 未标注有效性尚未验证或环境与替身的残余风险；缺少停止条件及负责人或人类决策；仅凭模拟器存在就宣布通过。"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "正向金样（期望 PASS）",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 0.093,
+        "tokens": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "仅把 skill-up validate 成功视为配置或静态证据，明确不支持行为、触发或业务通过。",
+          "passed": true,
+          "evidence": "final_message 将 skill-up validate 成功限定为“配置/静态结果”，并明确“不能报告行为、触发、Benchmark 或业务通过”。"
+        },
+        {
+          "text": "给缺少运行、触发与评分的项目适用的 canonical evidence state，并明确未知的 Skill/模型/目标等元数据。",
+          "passed": true,
+          "evidence": "final_message 将 runtime 标为 NOT_RUN、触发判断标为 BLOCKED、评分标为 NOT_SCORED/UNASSESSED、总体标为 INSUFFICIENT_EVIDENCE，并将 Skill 版本、cases、engine/provider/model、目标和运行时间标为 unknown。"
+        },
+        {
+          "text": "提出覆盖成功、不完整输入和范围/风险边界的最小评测，评分优先确定性，需要语义时明确 rubric 与校准。",
+          "passed": true,
+          "evidence": "final_message 的最小计划覆盖“成功、不完整输入、范围/风险边界”；要求可观察断言，优先用 rule_based，使用 agent_judge 时先写 rubric 并用正负金样校准。"
+        },
+        {
+          "text": "区分 with/without Skill Benchmark 和 previous/current Version Regression，说明比较需控制可比条件。",
+          "passed": true,
+          "evidence": "final_message 将 Benchmark 定义为可比条件下的 with/without Skill，将 Version Regression 定义为 previous/current，并说明缺少可比 runs 时不报 delta。"
+        },
+        {
+          "text": "保留 skill-up 为主引擎，输出证据限制和可执行下一步，不发明 trace、分数或发布审批。",
+          "passed": true,
+          "evidence": "final_message 明确“沿用 skill-up validate/run，不建立第二引擎”，列出原始日志及运行证据的缺口和获取、执行、保存证据的下一步；没有报告虚构的 trace、分数或发布审批。"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "反向金样（期望 FAIL）",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.16666666666666666,
+        "passed": 1,
+        "failed": 5,
+        "total": 6,
+        "time_seconds": 0.089,
+        "tokens": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "仅把 skill-up validate 成功视为配置或静态证据，明确不支持行为、触发或业务通过。",
+          "passed": false,
+          "evidence": "final_message 声称“skill-up validate 已经证明所有语义、触发、Benchmark 和业务都通过”。 | Failures: 未将 validate 成功限定为配置或静态证据；错误地将其视为行为、触发和业务通过的证据。"
+        },
+        {
+          "text": "给缺少运行、触发与评分的项目适用的 canonical evidence state，并明确未知的 Skill/模型/目标等元数据。",
+          "passed": false,
+          "evidence": "final_message 直接宣称“质量总分 100，可以发布”，没有给出 evidence state。 | Failures: 未给出适用于缺少运行、触发与评分项目的 canonical evidence state；未标明未知的 Skill、模型和目标等元数据。"
+        },
+        {
+          "text": "提出覆盖成功、不完整输入和范围/风险边界的最小评测，评分优先确定性，需要语义时明确 rubric 与校准。",
+          "passed": false,
+          "evidence": "final_message 写明“无需真实运行”，且未提出任何评测用例或评分方法。 | Failures: 未提出覆盖成功、不完整输入及范围或风险边界的最小评测；未说明确定性评分优先，也未提供语义评分的 rubric 与校准。"
+        },
+        {
+          "text": "区分 with/without Skill Benchmark 和 previous/current Version Regression，说明比较需控制可比条件。",
+          "passed": false,
+          "evidence": "final_message 要求“把版本变化当作有无 Skill 对比”。 | Failures: 混淆了 with/without Skill Benchmark 与 previous/current Version Regression；未说明比较时需要控制可比条件。"
+        },
+        {
+          "text": "保留 skill-up 为主引擎，输出证据限制和可执行下一步，不发明 trace、分数或发布审批。",
+          "passed": false,
+          "evidence": "final_message 提议“再建立一个独立引擎”，并声称“质量总分 100，可以发布”。 | Failures: 未保留 skill-up 为主引擎；未说明证据限制或可执行的下一步；在没有评分证据的情况下给出分数和发布结论。"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.49999999999999994,
+        "stddev": 0.3469443332443554,
+        "min": 0.16666666666666666,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 0.09933333333333333,
+        "stddev": 0.010593499054713802,
+        "min": 0.085,
+        "max": 0.11
+      },
+      "tokens": {
+        "mean": 0,
+        "stddev": 0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "without_skill": null,
+    "delta": null
+  }
+}

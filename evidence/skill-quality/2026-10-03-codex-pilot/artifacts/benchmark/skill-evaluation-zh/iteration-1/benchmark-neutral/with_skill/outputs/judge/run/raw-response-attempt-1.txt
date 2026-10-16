@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "criterion_id": "criterion-1",
+      "passed": true,
+      "evidence": [
+        "final_message 将 `skill-up validate` 成功限定为用户报告的静态校验结果，并明确表示不能据此证明运行行为、触发、Benchmark 或业务效果通过。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-2",
+      "passed": true,
+      "evidence": [
+        "final_message 的 Summary 为未运行、受阻、未评分和证据不足的项目分别使用 `NOT_RUN`、`BLOCKED`、`NOT_SCORED`、`INSUFFICIENT_EVIDENCE` 等状态，并解释其含义。",
+        "final_message 将目标 Skill 契约及 run_id、版本、engine/provider/model、judge、环境和时间戳明确标为 `unknown`。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-3",
+      "passed": true,
+      "evidence": [
+        "final_message 的 Case Results 提出 HAPPY、INCOMPLETE、BOUNDARY 三类最小候选用例，分别覆盖成功、缺少必要信息和范围或风险边界。",
+        "final_message 要求优先使用确定性断言；仅在需要语义判断时使用 `agent_judge`，先定义可观察 rubric，并用人工标注样本校准。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-4",
+      "passed": true,
+      "evidence": [
+        "final_message 明确将 Benchmark 定义为 with Skill / without Skill 比较，将 Version Regression 定义为 previous / current Skill 比较，且指出回归的两组均使用 Skill。",
+        "final_message 要求控制任务、fixtures、模型、runtime、工具权限、生成参数和预算等可比条件，并分别报告两类比较。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-5",
+      "passed": true,
+      "evidence": [
+        "final_message 明确沿用 `skill-up` 主评测引擎及已有 `evals/`，并列出补齐契约、实例化用例、运行评测、保存证据和开展对照的步骤。",
+        "final_message 明确声明没有 runtime trace、真实输出或评分证据，不能给出行为通过率、触发率、Benchmark 分数、业务效果或发布结论。"
+      ],
+      "failures": []
+    }
+  ]
+}

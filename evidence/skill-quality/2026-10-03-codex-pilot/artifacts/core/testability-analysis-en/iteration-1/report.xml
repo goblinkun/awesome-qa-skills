@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="testability-analysis" tests="5" failures="2" errors="0" skipped="0" time="204.330" timestamp="2026-10-03T19:24:54+08:00">
+    <testcase name="basic-success" classname="testability-analysis" time="96.277">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-incomplete-input" classname="testability-analysis" time="93.127">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case edge-incomplete-input failed" type="AssertionFailure">- expect.must_contain: output does not contain &#34;Working Assumptions&#34;; output does not contain &#34;Open Questions&#34;</failure>
+    </testcase>
+    <testcase name="edge-risk-priority" classname="testability-analysis" time="105.852">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="architecture-success" classname="testability-analysis" time="110.604">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case architecture-success failed" type="AssertionFailure">- output_matches.all: missing [(?i)Input Audit]: output does not match required regex patterns: [(?i)Input Audit]</failure>
+    </testcase>
+    <testcase name="architecture-incomplete-input" classname="testability-analysis" time="78.620">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+  </testsuite>
+</testsuites>

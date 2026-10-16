@@ -1,0 +1,77 @@
+{
+  "expectations": [
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "仅把 skill-up validate 成功视为配置或静态证据，明确不支持行为、触发或业务通过。",
+      "passed": true,
+      "evidence": "final_message 将 `skill-up validate` 成功限定为用户报告的静态校验结果，并明确表示不能据此证明运行行为、触发、Benchmark 或业务效果通过。"
+    },
+    {
+      "text": "给缺少运行、触发与评分的项目适用的 canonical evidence state，并明确未知的 Skill/模型/目标等元数据。",
+      "passed": true,
+      "evidence": "final_message 的 Summary 为未运行、受阻、未评分和证据不足的项目分别使用 `NOT_RUN`、`BLOCKED`、`NOT_SCORED`、`INSUFFICIENT_EVIDENCE` 等状态，并解释其含义。; final_message 将目标 Skill 契约及 run_id、版本、engine/provider/model、judge、环境和时间戳明确标为 `unknown`。"
+    },
+    {
+      "text": "提出覆盖成功、不完整输入和范围/风险边界的最小评测，评分优先确定性，需要语义时明确 rubric 与校准。",
+      "passed": true,
+      "evidence": "final_message 的 Case Results 提出 HAPPY、INCOMPLETE、BOUNDARY 三类最小候选用例，分别覆盖成功、缺少必要信息和范围或风险边界。; final_message 要求优先使用确定性断言；仅在需要语义判断时使用 `agent_judge`，先定义可观察 rubric，并用人工标注样本校准。"
+    },
+    {
+      "text": "区分 with/without Skill Benchmark 和 previous/current Version Regression，说明比较需控制可比条件。",
+      "passed": true,
+      "evidence": "final_message 明确将 Benchmark 定义为 with Skill / without Skill 比较，将 Version Regression 定义为 previous / current Skill 比较，且指出回归的两组均使用 Skill。; final_message 要求控制任务、fixtures、模型、runtime、工具权限、生成参数和预算等可比条件，并分别报告两类比较。"
+    },
+    {
+      "text": "保留 skill-up 为主引擎，输出证据限制和可执行下一步，不发明 trace、分数或发布审批。",
+      "passed": true,
+      "evidence": "final_message 明确沿用 `skill-up` 主评测引擎及已有 `evals/`，并列出补齐契约、实例化用例、运行评测、保存证据和开展对照的步骤。; final_message 明确声明没有 runtime trace、真实输出或评分证据，不能给出行为通过率、触发率、Benchmark 分数、业务效果或发布结论。"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1
+  },
+  "judge_context": {
+    "profile": "standard",
+    "materialized_dir": "judge/context",
+    "manifest": {
+      "profile": "standard",
+      "materialized_dir": "judge/context",
+      "materials": [
+        {
+          "key": "final_message",
+          "mode": "include",
+          "path": "judge/context/final_message.txt",
+          "bytes": 5856,
+          "original_bytes": 5856
+        },
+        {
+          "key": "transcript",
+          "mode": "file_ref",
+          "path": "judge/context/transcript.json",
+          "bytes": 14693,
+          "original_bytes": 14693
+        },
+        {
+          "key": "workspace_diff",
+          "mode": "omit",
+          "bytes": 0
+        },
+        {
+          "key": "generated_files",
+          "mode": "file_ref",
+          "path": "judge/context/generated_files.txt",
+          "bytes": 470,
+          "original_bytes": 470
+        }
+      ]
+    },
+    "prompt_bytes": 9455
+  }
+}

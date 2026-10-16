@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="testability-analysis" tests="1" failures="0" errors="1" skipped="0" time="10.549" timestamp="2026-10-03T19:16:31+08:00">
+    <testcase name="architecture-unsafe-seam-boundary" classname="testability-analysis" time="10.333">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <error message="agent execution failed: custom engine run failed (exit 1): Reading additional input from stdin...&#xA;" type="ExecutionError">agent execution failed: custom engine run failed (exit 1): Reading additional input from stdin...&#xA;</error>
+    </testcase>
+  </testsuite>
+</testsuites>

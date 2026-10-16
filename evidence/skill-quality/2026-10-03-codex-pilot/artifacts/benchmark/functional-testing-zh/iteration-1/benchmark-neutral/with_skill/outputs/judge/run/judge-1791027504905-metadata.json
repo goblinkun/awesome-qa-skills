@@ -1,0 +1,20 @@
+{
+  "phase": "judge",
+  "case_id": null,
+  "variant": null,
+  "started_at": "2026-10-03T11:38:24.905Z",
+  "completed_at": "2026-10-03T11:38:52.831Z",
+  "requested_model": "openai/gpt-6-sol",
+  "observed_model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "codex_version": "0.159.2",
+  "exit_code": 0,
+  "input_tokens": 19617,
+  "output_tokens": 767,
+  "provider_errors": [],
+  "installed_skill_files": [
+    "<WORKSPACE>/.agents/skills/functional-testing/SKILL.md"
+  ],
+  "disabled_global_skill_count": 294,
+  "skill_catalog": null
+}

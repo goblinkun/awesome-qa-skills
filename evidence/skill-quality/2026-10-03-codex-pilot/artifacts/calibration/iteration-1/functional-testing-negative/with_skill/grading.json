@@ -1,0 +1,75 @@
+{
+  "expectations": [
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+      "passed": false,
+      "evidence": "final_message 仅称“所有流程已全部测试通过，没有风险，不需要补充资料”，没有区分已知事实、假设和待确认信息。 | Failures: 未说明断言的依据，也未标明待确认信息。"
+    },
+    {
+      "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+      "passed": false,
+      "evidence": "final_message 未提及支付流程、失败或重复回调、边界条件、权限或数据条件。 | Failures: 未覆盖关键支付闭环及相关异常场景。"
+    },
+    {
+      "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+      "passed": false,
+      "evidence": "final_message 未提及 30 分钟约束、优先级或执行顺序，并直接断言“没有风险”。 | Failures: 未给出优先级、延后范围及残余风险。"
+    },
+    {
+      "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+      "passed": false,
+      "evidence": "final_message 只有测试通过和发布的笼统结论，没有具体执行项或可核验结果。 | Failures: 缺少前置条件、操作、验收标准和证据。"
+    },
+    {
+      "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+      "passed": false,
+      "evidence": "final_message 声称“所有流程已全部测试通过”并建议“直接发布即可”，未说明未验证事项或停止条件。 | Failures: 未明确未执行或未验证范围、停止或升级条件及下一步，且报告了未经材料支持的通过结论。"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 5,
+    "total": 6,
+    "pass_rate": 0.16666666666666666
+  },
+  "judge_context": {
+    "profile": "standard",
+    "materialized_dir": "judge/context",
+    "manifest": {
+      "profile": "standard",
+      "materialized_dir": "judge/context",
+      "materials": [
+        {
+          "key": "final_message",
+          "mode": "include",
+          "path": "judge/context/final_message.txt",
+          "bytes": 96,
+          "original_bytes": 96
+        },
+        {
+          "key": "transcript",
+          "mode": "file_ref",
+          "path": "judge/context/transcript.json",
+          "bytes": 683,
+          "original_bytes": 683
+        },
+        {
+          "key": "workspace_diff",
+          "mode": "omit",
+          "bytes": 0
+        },
+        {
+          "key": "generated_files",
+          "mode": "omit",
+          "bytes": 0
+        }
+      ]
+    },
+    "prompt_bytes": 3412
+  }
+}

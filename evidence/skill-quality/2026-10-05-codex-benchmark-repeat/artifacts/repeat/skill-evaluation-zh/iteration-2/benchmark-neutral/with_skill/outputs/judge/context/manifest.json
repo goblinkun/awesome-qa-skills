@@ -1,0 +1,32 @@
+{
+  "profile": "standard",
+  "materialized_dir": "judge/context",
+  "materials": [
+    {
+      "key": "final_message",
+      "mode": "include",
+      "path": "judge/context/final_message.txt",
+      "bytes": 7075,
+      "original_bytes": 7075
+    },
+    {
+      "key": "transcript",
+      "mode": "file_ref",
+      "path": "judge/context/transcript.json",
+      "bytes": 16509,
+      "original_bytes": 16509
+    },
+    {
+      "key": "workspace_diff",
+      "mode": "omit",
+      "bytes": 0
+    },
+    {
+      "key": "generated_files",
+      "mode": "file_ref",
+      "path": "judge/context/generated_files.txt",
+      "bytes": 470,
+      "original_bytes": 470
+    }
+  ]
+}

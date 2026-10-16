@@ -1,0 +1,4 @@
+📋 Loading configuration...
+level=INFO msg="Config: loading eval.yaml from evidence/skill-quality/2026-10-03-codex-pilot/reproduction/packages/skill-evaluation-zh/evals/eval.yaml"
+✅ Loaded 1 case(s) | engine: codex_no_daemon_isolated | model: openai/gpt-6.1-sol
+Error: invalid --event-log path "<RUN_ROOT>/portable-smoke/events.jsonl": parent directory: stat <RUN_ROOT>/portable-smoke: no such file or directory

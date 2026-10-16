@@ -1,0 +1,7 @@
+# Immutable captured data: retain byte identity, including whitespace/EOLs.
+# Curated reports, current adapters and tests retain normal Git checks.
+artifacts/** -text -whitespace
+verification/*.log -text -whitespace
+source-changes.patch -text -whitespace
+reproduction/packages/** -text -whitespace
+reproduction/snapshots/** -text -whitespace

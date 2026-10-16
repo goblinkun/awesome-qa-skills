@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "expect.must_contain",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "output_matches{all:[(?i)(information gaps|missing|nothing has been run|no .* provided|insufficient[_ ]evidence|not[_ ]run|blocked) NOT_RUN]}",
+      "passed": true,
+      "evidence": "output satisfies all regex checks (all:[(?i)(information gaps|missing|nothing has been run|no .* provided|insufficient[_ ]evidence|not[_ ]run|blocked) NOT_RUN])"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1
+  }
+}

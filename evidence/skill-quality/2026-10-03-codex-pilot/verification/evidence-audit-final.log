@@ -1,0 +1,12 @@
+{
+  "state": "PASS",
+  "hashed_artifacts": 1105,
+  "current_core_cases": 34,
+  "second_model_cases": 5,
+  "observed_target_file_reads": 39,
+  "calibration_expected_labels": 7,
+  "portable_smoke": "PASS",
+  "curated_bilingual_documents": 22,
+  "cost_calls": 85,
+  "note": "Catalog/file reads checked separately, not canonical skill.selection evidence"
+}

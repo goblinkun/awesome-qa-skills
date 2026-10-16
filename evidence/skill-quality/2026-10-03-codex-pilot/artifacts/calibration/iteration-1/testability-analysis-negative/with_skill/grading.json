@@ -1,0 +1,75 @@
+{
+  "expectations": [
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+      "passed": false,
+      "evidence": "final_message 只声称“使用流行的自动化框架即可解决全部可测试性问题”，未分析任何具体架构。 | Failures: 未判断组件边界、异步拓扑及现有或缺失能力；未区分事实、假设和证据缺口。"
+    },
+    {
+      "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+      "passed": false,
+      "evidence": "final_message 仅提到“有模拟器”，没有说明模拟器如何使用或验证。 | Failures: 未覆盖接缝、替身、隔离、故障注入和环境复现，也未说明可观察性、可控制性、确定性及数据准备。"
+    },
+    {
+      "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+      "passed": false,
+      "evidence": "final_message 明确称“无需证据、隔离检查”。 | Failures: 未提出隔离且最小权限的验证方案；未说明如何保护生产鉴权、租户隔离和资金安全。"
+    },
+    {
+      "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+      "passed": false,
+      "evidence": "final_message 只给出使用自动化框架的笼统建议，并称“无需证据”。 | Failures: 改进项缺少风险优先级、价值与成本、验证刺激、预期判断和可追踪证据。"
+    },
+    {
+      "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+      "passed": false,
+      "evidence": "final_message 称“因为有模拟器，所以架构已经通过验证”，并表示“无需证据、隔离检查或人类决策”。 | Failures: 未标注有效性尚未验证或环境与替身的残余风险；缺少停止条件及负责人或人类决策；仅凭模拟器存在就宣布通过。"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 5,
+    "total": 6,
+    "pass_rate": 0.16666666666666666
+  },
+  "judge_context": {
+    "profile": "standard",
+    "materialized_dir": "judge/context",
+    "manifest": {
+      "profile": "standard",
+      "materialized_dir": "judge/context",
+      "materials": [
+        {
+          "key": "final_message",
+          "mode": "include",
+          "path": "judge/context/final_message.txt",
+          "bytes": 168,
+          "original_bytes": 168
+        },
+        {
+          "key": "transcript",
+          "mode": "file_ref",
+          "path": "judge/context/transcript.json",
+          "bytes": 857,
+          "original_bytes": 857
+        },
+        {
+          "key": "workspace_diff",
+          "mode": "omit",
+          "bytes": 0
+        },
+        {
+          "key": "generated_files",
+          "mode": "omit",
+          "bytes": 0
+        }
+      ]
+    },
+    "prompt_bytes": 3572
+  }
+}

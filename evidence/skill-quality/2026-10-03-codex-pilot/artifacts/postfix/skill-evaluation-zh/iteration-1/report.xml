@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="skill-evaluation" tests="3" failures="1" errors="0" skipped="0" time="91.539" timestamp="2026-10-03T19:46:08+08:00">
+    <testcase name="basic-success" classname="skill-evaluation" time="91.144">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-incomplete-input" classname="skill-evaluation" time="37.945">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-no-second-engine" classname="skill-evaluation" time="65.356">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case edge-no-second-engine failed" type="AssertionFailure">- expect.must_contain: output does not contain &#34;skill-up&#34;</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

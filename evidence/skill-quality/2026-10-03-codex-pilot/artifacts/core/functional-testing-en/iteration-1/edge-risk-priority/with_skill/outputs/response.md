@@ -1,0 +1,63 @@
+**1. Task Understanding**
+
+This is a **critical-path release test plan**, not full regression coverage. Scope: login, search, checkout, payment, coupons, points, tickets, and admin reports.
+
+Assumptions: half-day means four hours with one tester; a nonproduction test environment and payment sandbox are available. “Tickets” provisionally means purchased or redeemable tickets. No tests have been executed.
+
+**2. Risk and Priority**
+
+- **P0 — release blockers:** users cannot purchase; incorrect totals; duplicate charges or deductions; paid orders lose tickets; unauthorized access to orders or reports.
+- **P1 — required smoke checks:** search finds a known purchasable item; valid login works; coupons and points follow configured rules; a key admin report reconciles with the tested transaction.
+- Defer broad variations before cutting checks for money, access, or fulfillment.
+
+**3. Core Functional Coverage**
+
+Execute one connected journey:
+
+**Login → search → checkout → apply coupon/points → pay → receive ticket → verify admin report.**
+
+Add targeted failure checks around authentication, payment, deductions, fulfillment, and permissions. Use known eligible and ineligible items, sufficient and insufficient points, valid and expired coupons, a customer account, and an authorized admin account.
+
+**4. Key Scenario List**
+
+| Priority | Critical scenario and action | Expected result |
+|---|---|---|
+| P1 | Log in with valid credentials; repeat with invalid credentials. | Valid user reaches their account; invalid attempt grants no access. |
+| P0 | While signed out, open a protected order; as another customer, attempt to view that order. | Protected data remains inaccessible to unauthorized users. |
+| P1 | Search for a known available item and open it; search for a term with no matches. | Correct item can enter checkout; empty results are clear and usable. |
+| P0 | Complete a baseline checkout without discounts. | Item, quantity, fees, payable amount, payment amount, and order confirmation agree under configured rules. |
+| P0 | Apply a valid coupon, then an expired or ineligible coupon; check exactly at its configured minimum-spend boundary. | Eligible discount is calculated correctly; invalid coupon has no financial effect; threshold behavior matches requirements. |
+| P0 | Redeem permitted points; attempt redemption above balance or the configured limit. Combine with a coupon if supported. | Redemption and remaining balance are correct; excess use is rejected; stacking follows configured rules. |
+| P0 | Complete successful sandbox payment; repeat submission or refresh confirmation. | One charge, one paid order, and one set of deductions/entitlements result. |
+| P0 | Trigger declined payment and an interrupted or delayed payment response; retry after checking final status. | Order reflects the eventual payment result; no duplicate charge, ticket, or permanent unearned deduction occurs. |
+| P0 | Verify a paid order issues the correct ticket and an unpaid order does not. If redeemable, redeem once and attempt reuse. | Fulfillment matches payment and quantity; reuse follows ticket rules and cannot exceed entitlement. |
+| P0/P1 | Customer attempts admin-report access; authorized admin checks the tested paid and failed transactions. | Customer access is denied **(P0)**; report inclusion, totals, and status match configured reporting rules **(P1)**. |
+
+**5. Execution Notes**
+
+| Time budget | Work |
+|---|---|
+| 20 min | Confirm rules, accounts, fixtures, sandbox controls, and evidence capture. |
+| 30 min | Login, access checks, search, and baseline checkout. |
+| 70 min | Payment success, decline, interruption, duplicate submission, and ticket fulfillment. |
+| 40 min | Coupon and points calculations, limits, and stacking. |
+| 30 min | Ticket redemption, report permissions, and transaction reconciliation. |
+| 50 min | Investigate failures, retest fixes, and record the release decision. |
+
+For each case, record actual result, order/payment reference, relevant balances, evidence, and pass/fail/blocked status. Observe integrations through available test controls: authentication, payment, coupon/points accounting, ticket issuance, and reporting.
+
+Release only with all P0 cases passing, no unresolved critical defects, and explicit disposition of P1 failures. An unexecuted P0 remains an evidence gap.
+
+**Can be deferred:**
+
+- Search ranking, extensive filters, and large query datasets: retain basic discoverability.
+- Full coupon/points combinations: retain rules used in this release, invalid eligibility, and financial boundaries.
+- Broad browser/device coverage and cosmetic issues: retain the primary supported purchase setup.
+- Report exports, formatting, and exhaustive filters: retain permissions and transaction reconciliation.
+- Rare ticket variants: retain issuance and redemption for the main released type.
+
+Promote any deferred area if this release changes it directly or it has a known serious defect.
+
+**6. Open Questions**
+
+Before execution, confirm ticket meaning, coupon/points stacking and reversal rules, report refresh timing, payment methods changed in this release, and known defects. If tickets mean support tickets, replace fulfillment checks with customer submission → authorized handling → customer-visible status, including cross-customer access denial.

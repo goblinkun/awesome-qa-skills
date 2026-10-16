@@ -1,0 +1,53 @@
+{
+  "results": [
+    {
+      "criterion_id": "criterion-1",
+      "passed": true,
+      "evidence": [
+        "final_message 第1节将订单服务、消息队列、支付适配器、外部支付商及沙箱回调模拟器列为输入事实，并将重复、延迟、乱序和超时后扣款标为待核验失败模型。",
+        "final_message 第1节列出结果返回路径、状态机、确认时机、幂等机制等证据缺口；第3节逐一分析组件边界和异步接缝。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-2",
+      "passed": true,
+      "evidence": [
+        "final_message 第3节分别提出发布接口、真实隔离队列、支付客户端替身、回调模拟器和持久化故障接缝。",
+        "final_message 第4节覆盖可观察性、可控制性、故障注入、隔离、确定性、数据准备和环境复现，并给出验收证据。",
+        "final_message 第5节列出重复投递、响应丢失、回调异常、持久化失败及并行隔离的具体实验。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-3",
+      "passed": true,
+      "evidence": [
+        "final_message 第4节要求按测试运行隔离主题、消费组、数据命名空间、回调路由和支付标识。",
+        "final_message 第4节限定故障入口只在专用测试部署或受限组件中使用，具备最小权限、作用范围、次数限制和自动失效机制，并要求证明生产无法启用。",
+        "final_message 第5节要求非法回调经正常入口接受验签和金额校验，且用支付商交易记录核查重复扣款。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-4",
+      "passed": true,
+      "evidence": [
+        "final_message 第2节按资金影响及可探测性给出 P1 至 P3 优先级，并说明缺少历史数据，不能判断发生概率。",
+        "final_message 第3、4节为接缝和改进项列出价值、成本、限制及验收证据。",
+        "final_message 第5节逐项给出前置条件、故障刺激、预期判断和需保存的交易、事件、状态及故障命中记录。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-5",
+      "passed": true,
+      "evidence": [
+        "final_message 开头明确方案没有执行记录，不能声称改进有效或架构已通过验证；第3节指出模拟器存在不等于回调验证充分。",
+        "final_message 第6节指定架构、支付、平台和测试负责人及需要人类决定的业务规则与风险接受事项。",
+        "final_message 第6节规定隔离或故障范围未确认时停止实验，缺少资金侧证据时不得批准支付正确性，并说明沙箱差异、替身漂移和真实并发时序等残余风险。"
+      ],
+      "failures": []
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "expect.must_contain",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "expect.must_not_contain",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "output_matches{all:[(输入审计|输入证据|证据与边界|证据基础) 风险 P0 (预期|判断标准|验收标准|成功标准)]}",
+      "passed": true,
+      "evidence": "output satisfies all regex checks (all:[(输入审计|输入证据|证据与边界|证据基础) 风险 P0 (预期|判断标准|验收标准|成功标准)])"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1
+  }
+}

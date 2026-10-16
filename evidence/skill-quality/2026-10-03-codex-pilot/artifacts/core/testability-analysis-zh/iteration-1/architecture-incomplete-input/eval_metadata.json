@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "架构可测试性评审：架构材料不完整",
+  "prompt": "使用 testability-analysis 的 architecture-testability-review 模式。唯一材料是“订单服务调用支付系统”。没有架构图、依赖、异步链路、数据、配置、环境、替身或故障注入资料。\n请区分 known、missing、assumptions 和待确认问题，不要凭框架或服务名断言可测试性。\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_matches{all:[输入审计 (待确认|信息缺口|开放问题) (证据|依据)]}"
+  ]
+}

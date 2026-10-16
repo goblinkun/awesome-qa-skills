@@ -1,0 +1,85 @@
+1. **Task understanding and scope**
+
+Assess whether the three-service async refund flow can support reliable P0/P1 verification within half a day, producing traceable evidence and explicit decision gates.
+
+Scope: refund correctness, duplicate handling, asynchronous completion, and recovery at service boundaries. Exclude destructive production actions, production fault injection, broad regression, and infrastructure redesign. This is a bounded assessment and execution plan; no refund tests have been executed.
+
+2. **Input audit**
+
+**Confirmed facts:** the flow spans three services, has plain logs, and lacks a correlation ID, sandbox callback, and status query. The available window is half a day. These facts come from the supplied scenario; no implementation or runtime evidence was provided.
+
+**Working assumptions:** refund execution may involve retries and delayed responses. These are failure-model assumptions to verify, not confirmed behavior. Any execution requires an explicitly isolated environment and synthetic data.
+
+**Open questions:** what identifies a refund today; what defines authoritative completion; what retry and idempotency guarantees apply; what completion deadline is agreed; and whether safe test data, dependency substitutes, and read-only evidence access exist.
+
+Evidence quality is sufficient to identify testability gaps, but insufficient to establish refund correctness, failure frequency, or release readiness.
+
+3. **Risks and priorities**
+
+| Priority | Risk to verify | Basis and rationale |
+|---|---|---|
+| P0 | Duplicate financial effect after resubmission or retry | Potential direct financial loss. Retry behavior is unknown, and missing correlation makes duplicate effects harder to investigate. |
+| P0 | Reported success without authoritative completion, or an incorrect refund amount | Potential financial or customer harm. There is no status query, and the authoritative outcome source is unspecified. |
+| P0 | Partial completion followed by unsafe retry or reconciliation | Three service boundaries create possible ambiguous outcomes. Recovery behavior remains a hypothesis to verify. |
+| P1 | Delayed, duplicate, missing, or out-of-order completion signals leave the refund inconsistent | Callback behavior cannot currently be controlled through a sandbox callback. Likelihood is unknown. |
+| P1 | Rejected or failed refunds cannot be diagnosed and resolved | Plain logs without established cross-service linkage limit detection and evidence quality. |
+
+Sequence: establish safe isolation and an outcome oracle first; then P0 checks; then representative P1 checks. Defer P2/P3 breadth and performance testing.
+
+4. **Core analysis and execution items**
+
+| Dimension | Current assessment | Minimum verification needed |
+|---|---|---|
+| Observability | Inadequate evidence for cross-service attribution | Determine whether existing identifiers join all three services; plain timestamps alone are insufficient under concurrency. |
+| Controllability | Callback control unavailable; other controls unknown | Confirm safe submission, replay, and dependency-response controls outside production. |
+| Isolation | Unknown; execution gate | Prove credentials, data, queues, and financial destinations cannot reach production. |
+| Determinism | Unestablished | Fix inputs and dependency responses; agree a bounded observation deadline. |
+| Data setup | Unknown | Obtain synthetic refundable transactions with known amounts and documented initial states. |
+| Fault injection | Unestablished | Confirm isolated seams for failures before and after an external effect. |
+| Environment parity | Unknown | Record versions and relevant queue, retry, timeout, and callback configuration differences. |
+| Automation interfaces | Status query absent; remaining interfaces unknown | Identify a supported submission interface and authoritative read-only outcome source. |
+
+The following scenarios are **conditional execution items**. If a prerequisite is missing, record the scenario as blocked.
+
+| Priority / scenario | Preconditions | Stimulus | Expected result / decision criterion | Required evidence |
+|---|---|---|---|---|
+| P0: successful refund | Isolated synthetic transaction, agreed amount and completion contract, authoritative outcome access | Submit one refund | Financial effect and terminal outcome match the agreed contract and amount within its deadline | Linked evidence across three services plus authoritative financial outcome |
+| P0: duplicate submission | Defined idempotency contract and safe replay | Repeat the same logical refund, including concurrent repetition if supported | No duplicate financial effect; responses comply with the contract | Both submissions, identity linkage, and authoritative effect count |
+| P0: ambiguous response after effect | Isolated substitute can apply an effect and then lose its response | Cause response loss, then exercise the documented retry path | Recovery preserves the correct financial result; no unsupported success claim or duplicate effect | Substitute effect record, retry evidence, and final authoritative result |
+| P0: service-boundary failure | Safe injection at each identified boundary and agreed recovery behavior | Fail one boundary at a time | State remains explainable and recovery follows the contract without duplicate effects | Boundary-specific failure, persisted outcome evidence, and recovery record |
+| P1: abnormal completion signals | Isolated callback replay/delay facility | Deliver duplicate, delayed, or out-of-order signals; separately withhold a signal | Behavior follows the agreed ordering, deduplication, and timeout contract | Delivery records, transition evidence, and authoritative final outcome |
+| P1: rejection or dependency failure | Defined rejection rules and safe dependency substitute | Submit a documented invalid request or return a dependency rejection | No unintended financial effect; failure is diagnosable | Request, rejection evidence, and authoritative absence of an effect |
+
+**Minimum improvements**, using existing facilities where possible:
+
+| Improvement | Value | Cost / boundary |
+|---|---|---|
+| Propagate a stable refund identifier through all three services and logs | Makes causality and duplicate investigation traceable | Cross-service logging/interface changes; feasibility within half a day is unknown |
+| Provide an authorized read-only outcome lookup or reconciliation view | Supplies a reliable completion oracle | Requires access design and an authoritative data source |
+| Add an isolated callback/dependency substitute with replay and failure controls | Enables repeatable asynchronous and recovery tests | Requires integration work and isolated routing; must retain normal authorization controls |
+| Prepare synthetic fixtures and record relevant configuration | Makes results reproducible and exposes parity limits | Requires environment and data-owner support |
+
+These changes are proposals, not assumed deliverables within the time window. A substitute validates application behavior under its model; it does not prove real provider integration.
+
+5. **Blockers and residual risk**
+
+**Stop execution** if isolation cannot be demonstrated, production credentials or destinations appear, a test needs unauthorized writes, or evidence cannot uniquely attribute a financial effect. Preserve masked evidence and hand off to the relevant owner; do not attempt production compensation or cleanup.
+
+**Escalate immediately** for duplicate effects, amount mismatches, success inconsistent with the authoritative outcome, or unexplained partial completion. These are P0 findings if observed.
+
+**Stop waiting at the agreed observation deadline.** Classify an unresolved outcome as inconclusive and escalate for reconciliation; elapsed time alone proves neither success nor failure.
+
+**Stop at the half-day limit.** Deliver observed results, blocked scenarios, and evidence gaps. Without traceability and an authoritative oracle, P0 end-to-end correctness remains unverified and cannot support a positive release recommendation.
+
+Residual risk includes real callback integration, concurrency, long-tail delays, recovery beyond the observation window, and environment differences. Any acceptance requires an explicit accountable release/business owner and recorded mitigation; test non-execution is not risk acceptance.
+
+6. **Next actions and open questions**
+
+Allocate roughly the first quarter of the window to prerequisites and contracts, the next half to executable P0 checks, and the remainder to P1 sampling and evidence review. If prerequisites fail, use the remaining time for local artifact review and a concrete blocker handoff.
+
+Suggested owners:
+
+- **Service owners:** identify existing refund linkage, authoritative outcomes, retry/idempotency rules, and recovery contracts.
+- **Environment owner:** establish isolation, synthetic data, and dependency-control feasibility.
+- **QA:** execute eligible scenarios, retain reproducible evidence, and separate passed, failed, blocked, and inconclusive results.
+- **Release/business owner:** resolve outstanding P0 uncertainty and explicitly decide whether residual risk is acceptable.

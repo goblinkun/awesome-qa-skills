@@ -1,0 +1,77 @@
+[
+  {
+    "role": "user",
+    "content": "请为一个 Agent Skill 给出有证据边界的评测报告和下一步计划。唯一已知结果是 skill-up validate 成功；没有 Skill 源码、运行目标、用例详情、模型元数据、runtime trace 或 skill.selection 事件。有人希望把它写成行为、触发、Benchmark 和业务效果全部已通过。请判断哪些结论成立，哪些未运行或受阻，选择最小有效用例和评分方法，并区分 with/without Skill 对比与 previous/current 版本回归。不要编造结果或另造评测引擎。",
+    "turn": 1
+  },
+  {
+    "role": "assistant",
+    "content": "我会按 skill-evaluation 的流程核对证据边界，只读取本地 Skill 说明，再给出报告和最小评测计划。",
+    "turn": 1
+  },
+  {
+    "role": "tool_call",
+    "turn": 1,
+    "tool_call": {
+      "id": "item_1",
+      "name": "shell",
+      "arguments": {
+        "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'CLAUDE.md' -g 'GEMINI.md' -g 'SKILL.md' -g 'README*' -g '\"'!**/eval*/**'\"' -g '\"'!**/*assert*'\"' -g '\"'!**/*input*'\"'\""
+      }
+    }
+  },
+  {
+    "role": "tool_result",
+    "turn": 1,
+    "tool_result": {
+      "call_id": "item_1",
+      "status": "error",
+      "content": "<WORKSPACE>\n"
+    }
+  },
+  {
+    "role": "tool_call",
+    "turn": 1,
+    "tool_call": {
+      "id": "item_2",
+      "name": "shell",
+      "arguments": {
+        "command": "/bin/zsh -lc 'cat .agents/skills/skill-evaluation/SKILL.md'"
+      }
+    }
+  },
+  {
+    "role": "tool_result",
+    "turn": 1,
+    "tool_result": {
+      "call_id": "item_2",
+      "status": "success",
+      "content": "---\nname: skill-evaluation\ndescription: Use this skill when designing, running, interpreting, or reporting Agent Skill evaluations, selecting cases or judges, and analyzing trigger, benchmark, or regression evidence; triggers include Skill 评测、评测设计、回归评测。\n---\n\n# Skill 评测\n\n## 何时使用\n\n- 需要为一个 Skill 设计 realistic eval cases、positive/negative trigger 或 regression case。\n- 需要用 `skill-up` 验证/运行评测并解释结果和限制。\n- 需要选择 deterministic、script 或 semantic judge，或区分 benchmark 与 version regression。\n\n## 输出格式选项\n\n- 默认输出简洁的 Markdown 评测报告，用表格呈现 case 结果和 evidence state。\n- 下游脚本需要机器可读结果时才输出 JSON；仍使用同一套证据词汇并保留限制。\n\n## 如何使用\n\n1. 读取 Skill 契约、已有 `evals/`、历史失败和本次变更范围。\n2. 识别关键行为与证据维度：Outcome、Process、Style/Quality、Efficiency；只选择有意义的维度。\n3. 设计 HAPPY、INCOMPLETE、EXPLICIT_TRIGGER、IMPLICIT_TRIGGER、CONTEXTUAL_TRIGGER、NEGATIVE_TRIGGER、BOUNDARY 或 REGRESSION 用例。\n4. 按确定性优先选择 `rule_based`；可执行工件使用 `script`；只有需要语义判断时使用校准后的 `agent_judge`。\n5. 运行 `skill-up validate`；有授权凭据和目标时再运行 `skill-up run` 或本地 trace runner。记录 run metadata、trace、judge、产物和限制。\n6. 判断 Eval validity，区分 Skill Defect、Eval Defect、Infrastructure Defect 和 Unknown。\n7. 按固定报告结构输出结果、证据状态、benchmark/regression 结论、blocked checks 和推荐行动；真实失败经根因确认后才添加 regression case。\n\n## 核心约束\n\n- `skill-up` 是主 Eval Engine；trace checks 只是深证据层，不得再造 Engine、Judge、Benchmark 或 Quality Score。\n- 不能把输出相似度写成 observed trigger；缺少 `skill.selection` trace 时标记 `BLOCKED`。\n- `skill-up validate` 不是 runtime 语义验证；静态、CLI smoke、Project Done 和单次语义观察不能自动升级为发布或业务结论。\n- 不自动修改 Skill，不自动无限优化；不把 Benchmark（with/without Skill）和 Version Regression（previous/current）混为一谈。\n- 值未知时写 `unknown`；证据不足保留 `NOT_RUN`、`UNASSESSED`、`BLOCKED` 或 `INSUFFICIENT_EVIDENCE`。\n- 即使输入极少、没有可运行目标或没有原始 trace，也先输出最小报告骨架，并显式写出本次适用的 canonical evidence state；不能只写“未验证”等自然语言替代 `NOT_RUN`、`BLOCKED`、`UNASSESSED` 或 `INSUFFICIENT_EVIDENCE`。\n\n## 参考文件\n\n- 完整执行和报告契约见 `prompts/skill-evaluation.md`。\n- 选择 judge 前先读取目标 Skill 的 `evals/` 和 fixtures。\n- 仓库治理契约与 trace rules 只作为可选深资料，复制后的 Skill 不得依赖其私有路径。\n\n## 常见误区\n\n- 把 `skill-up validate` 或 dry-run 当成 runtime 或语义效果证据。\n- 缺少 trigger 事件时写成未触发，而不是 `BLOCKED`。\n- 把 with/without Skill 的 benchmark 与 previous/current 的版本回归混为一谈。\n\n## 最佳实践\n\n- 从能够证明目标行为的最小确定性 case 开始。\n- 记录准确的 run identity、judge、environment、未获得的证据和限制。\n- 只有确认真实失败根因后才转成 regression case，并保留原始证据。\n\n## 按需加载\n\n- 产出前读取 `prompts/skill-evaluation.md`。\n- 先读取目标 Skill 自己的 `evals/`，再按需读取 fixtures、examples 和脚本。\n- 仓库级 Evaluation Contract 或 local trace rules 只作为可选深资料；独立安装的 Skill 不得硬依赖它们。\n\n## 交付前自检\n\n- [ ] 每个结论对应具体 case、judge 和 evidence state\n- [ ] run metadata、环境、模型和未执行项明确\n- [ ] Skill/Eval/Infrastructure/Unknown 分类没有被混淆\n- [ ] trigger、benchmark、regression 和 Quality Score 边界清楚\n"
+    }
+  },
+  {
+    "role": "tool_call",
+    "turn": 1,
+    "tool_call": {
+      "id": "item_3",
+      "name": "shell",
+      "arguments": {
+        "command": "/bin/zsh -lc 'cat .agents/skills/skill-evaluation/prompts/skill-evaluation.md'"
+      }
+    }
+  },
+  {
+    "role": "tool_result",
+    "turn": 1,
+    "tool_result": {
+      "call_id": "item_3",
+      "status": "success",
+      "content": "# Skill 评测 Prompt\n\n你是 Skill 评测设计与证据解释员。你负责设计、运行和解释评测，不自动修改 Skill，不发明运行结果，也不代替发布或风险审批。\n\n## 输入\n\n提供 Skill 路径和语言、评测范围、目标行为与 trigger 声明、相关 `evals/` 文件、可用 trace 或工件以及 run metadata。缺少的输入必须明确标记。\n\n## 你要做的事\n\n设计或解释最小有效评测集，选择 judge，判断证据并报告已证明、阻塞、未评估和未知内容；不得自动修改 Skill。\n\n## 执行规则\n\n1. 先引用 Skill 的触发、输入、输出、约束和目标行为；列出历史失败或信息缺口。\n2. 选择有意义的 case 类型：成功、不完整、显式/隐式/上下文触发、负向、边界和回归。不要用 case 数量代替质量。\n3. 优先 deterministic `rule_based`；验证可执行文件使用 `script`；语义 judge 必须写可观察 rubric，并在成为 gate 前校准。\n4. 触发结论需要 observed `skill.selection` evidence；缺少事件时输出 `BLOCKED`，不推断未触发。\n5. 每次有意义的 run 记录 `run_id`、Skill/Eval 版本、`skill-up`、engine/provider/model、judge、environment、timestamp 和限制；未知写 `unknown`。\n6. 失败必须判断是 Skill Defect、Eval Defect、Infrastructure Defect 还是 Unknown；证据不够时保持 `UNKNOWN`。\n7. 把 with/without Skill 写成 Benchmark，把 previous/current 写成 Version Regression；只有可比运行才提出强回归结论。\n\n## 最低覆盖清单\n\n- 覆盖成功、不完整信息和范围或风险边界用例。\n- 覆盖相关 trigger mode，并在涉及时区分 benchmark 与 version regression。\n- 每个 case 都定义可观察断言、judge、evidence state 和限制。\n\n## 输出\n\n```markdown\n# Skill Evaluation Report\n## 范围\n## Run Metadata\n## 配置与覆盖范围\n## Summary\n## Case Results\n## Trigger / Process / Outcome / Artifact / Semantic Evidence\n## Benchmark Results\n## Regression Findings\n## Flaky / Blocked / Infrastructure Errors\n## Eval Validity Findings\n## Limitations\n## Recommended Actions\n```\n\n必须把 `PASS`、`FAIL`、`BLOCKED`、`NOT_RUN`、`NOT_SCORED`、`UNASSESSED` 和 `INSUFFICIENT_EVIDENCE` 的含义写清。Quality Score 仍由既有治理契约负责。\n\n即使输入极少、没有可运行目标或没有原始 trace，也必须输出最小报告骨架，并为本次结果显式写出适用的 canonical evidence state（例如 `NOT_RUN`、`BLOCKED`、`UNASSESSED` 或 `INSUFFICIENT_EVIDENCE`）；不能只用“未验证”等自然语言替代状态。\n\n## 质量要求\n\n- 每个结论都能追溯到输入、case、judge 和 evidence state。\n- 不发明 runtime、模型、目标或业务证据；未知使用 `unknown` 或适当的未完成状态。\n- 分开判断 Skill、Eval、Infrastructure 和 Unknown，并保留可复现的 run metadata。\n"
+    }
+  },
+  {
+    "role": "assistant",
+    "content": "# Skill Evaluation Report\n\n## 范围\n\n本次仅解释已有证据并制定计划，没有执行运行时评测。唯一已知结果是：**`skill-up validate` 成功**。\n\n这支持“该次静态校验通过”，不能支持“行为、触发、Benchmark、业务效果全部通过”。没有源码和运行证据，也不能反向判定 Skill 存在缺陷。\n\n## Run Metadata\n\n| 项目 | 已知值 |\n|---|---|\n| validate 结果 | 成功，由题述提供；未独立复跑 |\n| run_id、timestamp、原始日志 | `unknown` |\n| Skill / Eval 版本、`skill-up` 版本 | `unknown` |\n| engine / provider / model、运行环境 | `unknown` |\n| runtime judge、运行目标、用例详情 | `unknown` |\n| runtime trace、产物、`skill.selection` | 未提供 |\n\n## 配置与覆盖范围\n\nSkill 的触发声明、输入、输出、约束和目标行为均为 `unknown`。因此，下列用例是**待绑定契约的最小设计**，不能当作已配置或已执行的测试。\n\n状态含义：\n\n| 状态 | 含义 |\n|---|---|\n| `PASS` | 对应检查已执行并通过，仅适用于该检查范围 |\n| `FAIL` | 有有效执行证据证明断言不满足 |\n| `NOT_RUN` | 未执行 |\n| `BLOCKED` | 必要条件或证据缺失，无法完成检查 |\n| `NOT_SCORED` | 尚未评分 |\n| `UNASSESSED` | 尚未开展相应评估 |\n| `INSUFFICIENT_EVIDENCE` | 现有证据不足以支持所述结论 |\n\n## Summary\n\n| 结论 | 状态 | 证据边界 |\n|---|---|---|\n| 本次 validate 成功 | `PASS` | 仅有题述结果，具体校验范围未知 |\n| 目标行为正确 | `NOT_RUN` | 无运行目标、用例和输出 |\n| 实际触发正确 | `BLOCKED` | 缺少 `skill.selection` 事件 |\n| Benchmark 已通过 | `NOT_RUN` | 无 with/without Skill 配对运行 |\n| 版本无回归 | `NOT_RUN` | 无 previous/current 可比运行 |\n| 业务效果达标 | `UNASSESSED` | 无业务指标、基线或观测数据 |\n| “全部已通过” | `INSUFFICIENT_EVIDENCE` | validate 无法覆盖上述结论 |\n\n## Case Results\n\n先选择能直接证明契约行为的最小用例；触发模式只覆盖 Skill 实际声明的模式。\n\n| 待执行用例 | 最小输入与可观察断言 | 拟用 judge | 当前状态与限制 |\n|---|---|---|---|\n| HAPPY | 一个完整、典型任务；检查必需输出及可核验结果 | 优先 `rule_based`；可执行产物用 `script` | `NOT_RUN`；目标行为未知 |\n| INCOMPLETE | 删除一个关键输入；检查是否按契约澄清或处理缺失，是否编造缺失值 | `rule_based`；必要时语义判定 | `NOT_RUN`；缺失处理契约未知 |\n| BOUNDARY | 一个最关键的范围或风险边界；检查是否遵守约束 | `rule_based`，必要时检查 trace | `NOT_RUN`；边界未知 |\n| EXPLICIT_TRIGGER | 明确点名 Skill 的有效请求；检查 selection 是否选中目标 Skill | trace 规则检查 | 执行 `NOT_RUN`；触发判定 `BLOCKED` |\n| IMPLICIT_TRIGGER | 不点名但符合描述的请求；检查 selection 是否选中 | trace 规则检查 | 同上；仅在声明支持时纳入 |\n| CONTEXTUAL_TRIGGER | 依赖上下文才符合范围的请求；检查 selection 是否选中 | trace 规则检查 | 同上；仅在声明支持时纳入 |\n| NEGATIVE_TRIGGER | 含相近词但不属于范围的请求；检查完整 selection 记录是否排除目标 Skill | trace 规则检查 | 同上；不能以日志缺失判定未触发 |\n\n上述用例均为 `NOT_SCORED`。没有具体契约和 fixtures，当前不能给出有效的实际分数。\n\n## Trigger / Process / Outcome / Artifact / Semantic Evidence\n\n- **Trigger：`BLOCKED`。** 输出相似或符合 Skill 风格，不等于观测到触发；缺少事件也不等于“未触发”。\n- **Process：`BLOCKED`。** 无 runtime trace，无法判断步骤、工具使用和约束遵守。\n- **Outcome / Artifact：`NOT_RUN`。** 无实际任务结果或产物可检查。\n- **Semantic：`UNASSESSED`，`NOT_SCORED`。** 未定义并校准语义 rubric。\n- **Efficiency：`UNASSESSED`。** 缺少耗时、调用次数、token 等记录；仅在目标要求时纳入。\n\n评分采用既有 `skill-up` 能力：确定性断言优先 `rule_based`，可执行产物用 `script`；仅对确定性检查无法覆盖的语义要求使用校准后的 `agent_judge`。语义 rubric 必须写清可观察的完成度、正确性和约束遵守标准，成为 gate 前先校准。\n\n缺证据项不得计作通过或失败，也不得另造综合 Quality Score。\n\n## Benchmark Results\n\n**`NOT_RUN`；执行准备 `BLOCKED`。**\n\nBenchmark 比较 **with Skill / without Skill**。最小起点是同一个 HAPPY 用例的配对运行，固定模型、任务、工具权限、环境和 judge，仅改变 Skill 是否可用，并记录实际 selection。\n\n一对运行只能提供个案观察；要声称稳定增益，需要根据随机性重复运行并扩大代表性覆盖。任务表现增益仍不能自动升级为业务效果结论。\n\n## Regression Findings\n\n**`NOT_RUN`；执行准备 `BLOCKED`。**\n\nVersion Regression 比较 **previous / current Skill**。应固定 Eval 版本、输入、模型、工具、环境和 judge，对两个 Skill 版本运行同一用例集。\n\n它回答“版本变化是否造成退化”，与 with/without Benchmark 回答的问题不同。目前没有版本对或历史失败证据，不能声称无回归，也不应新增所谓“已确认失败回归用例”。\n\n## Flaky / Blocked / Infrastructure Errors\n\n阻塞条件包括：缺少目标 Skill 契约、可运行目标、具体用例、模型元数据和 trace。\n\n波动性为 `UNASSESSED`。没有证据证明发生了基础设施错误；“材料缺失”不能直接归类为 Infrastructure Defect。\n\n## Eval Validity Findings\n\n运行时评测有效性为 `UNASSESSED`；“全部通过”的汇报存在证据越界。\n\n没有已证实的运行失败，故无法归因于 Skill Defect、Eval Defect 或 Infrastructure Defect，根因分类保持 **`UNKNOWN`**。\n\n## Limitations\n\n当前只能报告题述的 validate 成功。无法确认校验对象、复现该运行，或判断运行时正确性、触发、增益、回归和业务效果。\n\n## Recommended Actions\n\n1. **先补契约和可复现信息：** Skill 版本、触发声明、目标行为、运行目标及 validate 日志。\n2. **绑定最小用例：** HAPPY、INCOMPLETE、关键 BOUNDARY，加上适用的正向触发和一个负向触发；明确断言与 judge。\n3. **使用现有 `skill-up` 执行：** 条件具备后运行，记录 run identity、版本、模型、环境、judge、输出与 trace；不另造评测引擎。\n4. **分别开展两种比较：** with/without 做 Benchmark；previous/current 做版本回归。真实失败须先确认根因，再保留证据并添加回归用例。\n5. **单独验证业务效果：** 明确指标、基线、观测窗口和归因方法后再评估。\n\n可直接采用的结论是：**“`skill-up validate` 成功；运行时行为与对比评测尚未执行，触发证据受阻，业务效果尚未评估。当前不足以宣称全部通过。”**",
+    "turn": 1
+  }
+]

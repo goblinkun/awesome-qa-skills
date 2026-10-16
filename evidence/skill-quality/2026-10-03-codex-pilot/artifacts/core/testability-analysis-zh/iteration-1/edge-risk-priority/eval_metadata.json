@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "可测试性分析：高风险边界与取舍",
+  "prompt": "请使用 testability-analysis Skill 分析：异步退款流程跨三个服务，当前只有普通日志，没有关联 ID、沙箱回调或状态查询接口。执行窗口只有半天，且不允许真实生产破坏性操作。请限定范围，按 P0/P1 排序，并说明剩余风险和停止或升级条件。\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_contains{all:[P0 P1 剩余风险]}"
+  ]
+}

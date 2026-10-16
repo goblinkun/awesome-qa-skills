@@ -96,14 +96,12 @@ The attachment's packaging README will not be copied to the repository root. The
 
 ### 6.1 Status mapping
 
-The integrated core documents will use the repository's existing status semantics:
+The integrated core documents create no new repository-level status and do not redefine status semantics; runtime results directly reference the [Skill Evaluation Contract](../../governance/SKILL_EVALUATION_CONTRACT_EN.md). This section records only how attachment wording is adapted to that primary contract:
 
 | Attachment wording | Integrated handling |
 | --- | --- |
-| `PASS` / `FAIL` / `BLOCKED` / `NOT_RUN` / `INSUFFICIENT_EVIDENCE` | Preserve and follow the existing Evidence Contract |
-| `NOT_SCORED` | Preserve for cases without valid Quality Score evidence |
-| `UNASSESSED` | Preserve for dimensions outside the current assessment |
-| `PARTIAL` | Do not create a new repository-level status; rewrite it as `INSUFFICIENT_EVIDENCE`, `UNASSESSED`, or an itemized report according to the evidence |
+| Existing Evidence States | Reference the primary contract as-is; do not redefine them in this spec |
+| `PARTIAL` | Do not import it as a repository-level status; report item by item according to the primary contract and actual evidence |
 
 This preserves the attachment's risk and evidence model without creating a second repository state machine.
 
@@ -119,7 +117,7 @@ skill-evaluation-design
 skill-change-verification
 ```
 
-In this integration they are the “SQEM methodology Pilot candidate set,” used to test whether the quality model is understandable, executable, and maintainable. They do not replace the repository's existing:
+The attachment method name `skill-evaluation-design` maps to the existing canonical repository Skill `skill-evaluation` (`skills/{zh,en}/skill-engineering/skill-evaluation/`); this integration creates no alias directory. In this integration they are the “SQEM methodology Pilot candidate set,” used to test whether the quality model is understandable, executable, and maintainable. They do not replace the repository's existing:
 
 - `requirements-analysis` analysis Pilot;
 - `ui-test-playwright` executable Pilot;
@@ -145,8 +143,8 @@ Preserve the attachment's main structure, with repository-specific notes that:
 
 - quality claims are bounded by available evidence;
 - Quality Score is not redefined inside SQEM;
-- structured Router `skill.selection`, `selected_skills`, and missing-evidence `BLOCKED` semantics remain governed by the existing Evaluation Contract;
-- `PARTIAL` is not added to the repository status set;
+- Router behavior and evidence handling remain governed solely by the existing Evaluation Contract; this spec does not restate its fields or verdict rules;
+- the attachment's `PARTIAL` is not imported as a repository-level status;
 - benchmark, compatibility, runtime, and real-world claims require real, reviewable evidence.
 
 ### 7.3 Pilot
@@ -154,7 +152,7 @@ Preserve the attachment's main structure, with repository-specific notes that:
 Preserve the five candidates, stages, metrics, exit criteria, and four possible decisions, while adding that:
 
 - this is a SQEM methodology Pilot, not a replacement for the existing executable or router Pilots;
-- Pilot stages 6-8 must remain `NOT_RUN` / `BLOCKED` / `INSUFFICIENT_EVIDENCE` without real Agents, target environments, cross-model evidence, or business-acceptance evidence;
+- Pilot stages 6-8 must follow the existing Evaluation Contract's evidence boundaries without real Agents, target environments, cross-model evidence, or business-acceptance evidence;
 - the candidate list must not be written as completed profiles, benchmarks, or compatibility conclusions.
 
 ### 7.4 Root Eval / Evidence READMEs
@@ -180,7 +178,7 @@ After written approval of this spec, implementation will proceed as follows:
 - Chinese/English core entries and all three core document pairs have bidirectional switch links.
 - The five templates are independently usable and contain no credentials or local machine paths.
 - The Toolkit entry makes the boundaries between SQEM, the Eval Contract, the existing Evidence Contract, Quality Score, and Quality Loop traceable.
-- `PARTIAL` is not a new repository-level verdict; `NOT_SCORED`, `UNASSESSED`, and `INSUFFICIENT_EVIDENCE` retain their existing meanings.
+- The attachment's `PARTIAL` is not imported; status semantics and verdict rules remain exclusively owned by the existing Evaluation Contract.
 - The five SQEM candidates and the existing three Pilot categories are explicitly distinguished; no existing Pilot is deleted or overwritten.
 - No unexecuted PASS, benchmark, runtime, compatibility, production, or release claim is added.
 - `bash scripts/check_skills_quality.sh`, `python3 scripts/check_docs_bilingual.py --repo-root .`, and `git diff --check` pass.
@@ -195,7 +193,7 @@ After written approval of this spec, implementation will proceed as follows:
 | Pilot names imply existing runtime evidence | Distinguish the methodology candidate set from the existing executable/router Pilots |
 | New bilingual files are not guarded | Register the new project-document pairs in `check_docs_bilingual.py` |
 | External reference families are mistaken for compatibility proof | Keep them non-normative and do not turn the list into compatibility evidence |
-| Future runtime work needs high cost or external permissions | Keep `NOT_RUN` / `BLOCKED` until separately authorized and recorded with run metadata |
+| Future runtime work needs high cost or external permissions | Follow the existing Evaluation Contract's evidence boundaries until separately authorized and recorded with run metadata |
 
 ## 11. Follow-up work outside this integration
 

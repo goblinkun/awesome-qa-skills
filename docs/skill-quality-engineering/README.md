@@ -13,6 +13,8 @@ SQET 是 Awesome QA Skills 的 Skill 质量工程方法层，用于设计、评�
 - [Skill Quality Evaluation Model（SQEM）](./SKILL_QUALITY_EVALUATION_MODEL.md)：七个质量域、L1-L4 验证层级、E1-E4 证据层级和 Quality Claim Gate。
 - [Skill Eval Contract](./SKILL_EVAL_CONTRACT.md)：Case 类型、Judge、运行元数据、失败分类和证据状态。
 - [SQEM Pilot](./SKILL_QUALITY_PILOT.md)：五个 SQEM 方法论 Pilot 候选及阶段、指标和退出条件。
+- [2026-10-03 Codex Pilot 证据](../../evidence/skill-quality/2026-10-03-codex-pilot/README.md)：双语真实文本运行、选定单次 Benchmark、第二模型采样及明确的未验证项；不代表业务或发布批准。
+- [2026-10-05 Benchmark 重复采样](../../evidence/skill-quality/2026-10-05-codex-benchmark-repeat/README.md)：三个既有中文任务各补两轮，保留逐样本差异、中断成本和未完成验收项。
 
 ### 模板
 
@@ -25,7 +27,7 @@ SQET 是 Awesome QA Skills 的 Skill 质量工程方法层，用于设计、评�
 ## 与仓库其他层的关系
 
 - `skills/{zh,en}/skill-engineering/` 存放可被 Agent 调用的 Skill；SQET 文档只描述质量方法和标准，不替代这些 Skill。
-- `evals/` 存放各 Skill 自己的 Eval 配置和用例；SQET 不创建全仓库共享的第二个 Case 仓库。
+- `skills/{zh,en}/.../evals/` 存放各 Skill 自己的 Eval 配置和用例；根级 `evals/` 只提供导航和未来适配资产边界，SQET 不创建全仓库共享的第二个 Case 仓库。
 - `evidence/skill-quality/` 存放经过审阅或由 runner 生成的质量证据；没有运行证据时保持 `NOT_RUN`、`BLOCKED`、`UNASSESSED`、`NOT_SCORED` 或 `INSUFFICIENT_EVIDENCE`。
 - 站点文章属于网站内容，不作为本 Toolkit 的方法论入口。
 

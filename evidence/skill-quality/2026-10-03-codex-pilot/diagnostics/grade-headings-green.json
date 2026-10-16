@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "turns_executed": 1,
+  "turns_total": 1,
+  "assertion_results": [
+    {
+      "text": "output_matches{all:[(?i)task understanding (?i)input audit (?i)risks? P0 (?i)(expected|decision criterion|acceptance)]}",
+      "passed": true,
+      "evidence": "output satisfies all regex checks (all:[(?i)task understanding (?i)input audit (?i)risks? P0 (?i)(expected|decision criterion|acceptance)])"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 0,
+    "total": 1,
+    "pass_rate": 1
+  }
+}

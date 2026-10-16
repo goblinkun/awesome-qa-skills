@@ -1,0 +1,28 @@
+这是设计草案，未创建全局组件、运行评测或修改 Skill。替换 `skill-up` 属于你的明确要求，但“自动修改直到通过”需要停止条件，否则可能只是在迎合测试。
+
+建议采用以下契约：
+
+| 组件 | 职责与边界 |
+|---|---|
+| Eval Engine | 执行固定用例，保存版本、配置、trace 和产物，支持重放 |
+| Judge | 优先确定性规则，其次脚本；语义判断需明确 rubric，并在作为门槛前完成校准 |
+| Benchmark | 比较有／无 Skill 的效果；previous／current 单独作为版本回归 |
+| Quality Score | 保留各维度结果、权重和证据覆盖率；缺失证据不得计为通过，总分不得覆盖关键失败 |
+
+自动修改流程应是：冻结验收集 → 运行 → 判断失败根因 → 仅针对确认的 Skill 缺陷生成候选修改 → 执行回归和独立保留集 → 达标后停止。测试与评分规则不能随候选修改一起调整；达到预设迭代或成本上限、连续无改善、出现基础设施阻塞时也必须停止，并报告未通过项。
+
+当前最小评测报告：
+
+| 项目 | 状态 | 依据或缺口 |
+|---|---|---|
+| 范围与运行元数据 | `unknown` | 未指定目标 Skill、版本、模型、环境和验收门槛 |
+| 配置、覆盖与 Case Results | `NOT_RUN` | 未提供用例，未执行运行 |
+| Trigger Evidence | `BLOCKED` | 缺少 `skill.selection` trace |
+| Process／Outcome／Artifact／Semantic | `UNASSESSED` | 无运行产物可评估 |
+| Benchmark／Regression | `INSUFFICIENT_EVIDENCE` | 无可比运行 |
+| Quality Score | `NOT_SCORED` | 权重、校准和证据均未建立 |
+| 失败归因与评测有效性 | `UNASSESSED` | 无法区分 Skill、Eval 或基础设施缺陷 |
+
+状态含义：`PASS`／`FAIL` 表示有证据支持通过／失败；`BLOCKED` 表示缺少必要条件；`NOT_RUN` 表示未执行；`NOT_SCORED` 表示未评分；`UNASSESSED` 表示未评估；`INSUFFICIENT_EVIDENCE` 表示证据不足。
+
+下一步应先确定一个目标 Skill、固定验收标准和有限优化预算，验证这套设计后再推广为全局体系。当前不能声称新体系有效或 Skill 已通过。

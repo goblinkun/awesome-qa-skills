@@ -1,0 +1,11 @@
+评测结论：`INSUFFICIENT_EVIDENCE`（证据不足），不能报告“已经通过”。
+
+| 项目 | 状态与说明 |
+|---|---|
+| 运行记录 | `unknown`：未提供 |
+| 用例执行 | `NOT_RUN`：本次未运行 |
+| 触发验证 | `BLOCKED`：缺少 `skill.selection` trace |
+| 效果、Benchmark、Regression | `UNASSESSED`：未评估 |
+| 评分 | `NOT_SCORED`：未评分 |
+
+`PASS` 表示有证据支持通过，`FAIL` 表示有证据支持失败；当前均无法判定。需提供评测对象、用例、目标及可追溯运行证据后，才能形成有效结论。

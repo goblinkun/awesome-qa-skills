@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "criterion_id": "criterion-1",
+      "passed": false,
+      "evidence": ["final_message 仅称“所有流程已全部测试通过，没有风险，不需要补充资料”，没有区分已知事实、假设和待确认信息。"],
+      "failures": ["未说明断言的依据，也未标明待确认信息。"]
+    },
+    {
+      "criterion_id": "criterion-2",
+      "passed": false,
+      "evidence": ["final_message 未提及支付流程、失败或重复回调、边界条件、权限或数据条件。"],
+      "failures": ["未覆盖关键支付闭环及相关异常场景。"]
+    },
+    {
+      "criterion_id": "criterion-3",
+      "passed": false,
+      "evidence": ["final_message 未提及 30 分钟约束、优先级或执行顺序，并直接断言“没有风险”。"],
+      "failures": ["未给出优先级、延后范围及残余风险。"]
+    },
+    {
+      "criterion_id": "criterion-4",
+      "passed": false,
+      "evidence": ["final_message 只有测试通过和发布的笼统结论，没有具体执行项或可核验结果。"],
+      "failures": ["缺少前置条件、操作、验收标准和证据。"]
+    },
+    {
+      "criterion_id": "criterion-5",
+      "passed": false,
+      "evidence": ["final_message 声称“所有流程已全部测试通过”并建议“直接发布即可”，未说明未验证事项或停止条件。"],
+      "failures": ["未明确未执行或未验证范围、停止或升级条件及下一步，且报告了未经材料支持的通过结论。"]
+    }
+  ]
+}

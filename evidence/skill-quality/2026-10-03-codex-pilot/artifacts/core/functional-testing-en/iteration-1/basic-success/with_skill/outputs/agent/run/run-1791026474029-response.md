@@ -1,0 +1,91 @@
+### 1. Task Understanding
+
+**Draft SIT functional test plan; tests have not been executed.**
+
+Confirmed context: ecommerce **place order → pay → ship**, roles **buyer, seller ops, warehouse**, and known risk **payment callback timeouts**.
+
+Scope includes order creation, payment outcomes and recovery, shipment eligibility, role permissions, and consistency across the three stages.
+
+**Assumptions requiring confirmation:**
+
+- A shipment requires confirmed payment and a valid, fulfillable order.
+- Repeated requests or callbacks must not create duplicate orders, charges, payment records, or shipments.
+- Seller ops and warehouse access is restricted to their authorized orders and actions.
+- SIT supports controlled payment outcomes and callback fault injection.
+
+Exact status names, timing limits, retry rules, and recovery mechanisms are unknown. Expected results below describe business outcomes rather than invented implementation details.
+
+### 2. Risk and Priority
+
+| Priority | Risk | Business impact |
+|---|---|---|
+| P0 | Payment succeeds but callback times out | Buyer charged while order remains unpaid or cannot ship |
+| P0 | Callback retries repeat processing | Duplicate payment effects, fulfillment, or shipment |
+| P0 | Shipment released without confirmed payment | Goods dispatched without payment |
+| P0 | Late or conflicting events overwrite a valid outcome | Incorrect order/payment status or shipment eligibility |
+| P1 | Invalid orders, inventory conflicts, or permission failures | Incorrect totals, unfulfillable orders, unauthorized actions |
+| P1 | UI and downstream records disagree | Buyer confusion and incorrect operational decisions |
+
+P0 scenarios run first and block release if failed or unverified. These priorities and the release gate are proposed.
+
+### 3. Core Functional Coverage
+
+| Business flow | Coverage |
+|---|---|
+| Place order | Valid checkout; totals and quantities; invalid input; unavailable stock; repeated submission; inventory boundaries |
+| Pay and recover | Success, failure, pending outcome; callback timeout; delayed, duplicate, and conflicting callbacks; approved recovery |
+| Release shipment | Paid and fulfillable order; unpaid/pending/failed order blocked; repeated release; competing actions |
+| Role access | Buyer ownership; seller ops scope; warehouse scope; unauthorized attempts leave business data unchanged |
+| Cross-system consistency | Checkout → order; payment service → payment/order; order/payment → warehouse/shipment; inventory transitions where applicable |
+
+Inspect both user-visible results and available persisted records. Verify amounts, quantities, related identifiers, and resulting business effects.
+
+### 4. Key Scenario List
+
+Use isolated SIT orders for each scenario. “Recovery” means the mechanism approved by the product requirements; its availability is a gap.
+
+| ID | Priority | Setup and action | Expected result / evidence |
+|---|---|---|---|
+| O1 | P0 | Buyer places a valid in-stock order, pays successfully; authorized warehouse user releases shipment. | Correct total and quantity; payment linked to the correct order; one authorized shipment; consistent buyer and operations views. |
+| O2 | P1 | Submit missing required checkout input, invalid quantity, and unavailable stock. | Clear validation; no payable invalid order or unintended payment/fulfillment effects. Exact validation rules need confirmation. |
+| O3 | P1 | Test quantities at the permitted minimum/maximum and immediately outside them; submit two orders competing for the last available unit. | Valid boundaries accepted; invalid boundaries rejected; stock allocation follows policy without over-allocation. Limits and reservation policy are gaps. |
+| O4 | P0 | Repeat order submission after a slow response or apparent timeout. | One intended order; retry behavior is understandable; no unintended duplicate downstream effects. |
+| P1 | P0 | Payment succeeds externally; prevent the success callback from reaching processing until it times out. Attempt shipment, then restore delivery or invoke recovery. | No premature shipment; payment is eventually reflected within the agreed recovery limit; buyer is not instructed to pay again while outcome is unresolved. |
+| P2 | P0 | Payment callback is durably applied, but its acknowledgment is lost or delayed; deliver the resulting retry. | Already-applied success remains correct; retry causes no duplicate payment or fulfillment effects. Requires controlled acknowledgment failure. |
+| P3 | P0 | Deliver the same success callback repeatedly and concurrently for one payment. | Exactly one business effect; order/payment amounts and shipment eligibility remain consistent. |
+| P4 | P0 | Delay success until just before, at, and just after the configured payment/order expiry boundary. | Outcome follows the approved late-payment policy; no invalid shipment or stranded successful payment. Boundary and policy are unresolved. |
+| P5 | P0 | Deliver pending/failure events after success; also deliver success after an earlier pending/failure event. | Authoritative payment outcome is preserved; status transitions follow approved rules; valid success is not incorrectly undone. |
+| P6 | P1 | Simulate payment rejection, buyer interruption, and prolonged pending payment. Refresh and revisit the order. | Accurate outcome displayed; shipment blocked where payment is unconfirmed; retry does not cause an unintended second charge. |
+| P7 | P0 | Deliver a callback with an unknown reference, wrong amount/currency, or invalid authenticity evidence, where supported. | Callback is rejected or routed to the approved exception process; no incorrect order update or shipment eligibility. Contract and validation rules need confirmation. |
+| S1 | P0 | Attempt shipment for unpaid, failed, pending, and canceled orders; then for a confirmed paid, fulfillable order. | Ineligible orders blocked without shipment side effects; eligible order can ship. Cancellation rules require confirmation. |
+| S2 | P0 | Repeat shipment release after a timeout; have two authorized warehouse sessions release the same order concurrently. | One intended shipment and inventory effect; retries show a consistent result. |
+| R1 | P1 | Buyer accesses another buyer’s order; seller ops accesses an unauthorized seller’s order; warehouse attempts payment changes or unauthorized shipment release. | Unauthorized actions denied through supported interfaces; no business-data mutation. Exact permission matrix is a gap. |
+| X1 | P0 | After callback timeout, duplicate delivery, and shipment retry, compare payment evidence, order state, inventory, shipment records, and role-visible views. | Correct relationships and quantities; no duplicate effects; discrepancies resolve within agreed limits or enter a visible exception process. |
+
+### 5. Execution Notes
+
+Prepare buyer accounts with separate ownership, seller ops accounts with distinct access scopes, and warehouse accounts. Data should include available/unavailable stock, a last-unit item, and orders covering each payment outcome.
+
+Before execution, establish:
+
+- A SIT payment simulator or sandbox with controllable callback delay, loss, duplicates, and ordering.
+- Approved timeout, expiry, retry, and recovery limits.
+- Read access to order, payment, shipment, and applicable inventory evidence.
+- A permitted way to correlate events without exposing payment secrets.
+
+Run the happy path first, then P0 callback failures and shipment safeguards, followed by P1 coverage. Record case ID, order/payment references, injected fault, timestamps, actual outcome, and evidence.
+
+**Proposed release gate:** all P0 cases pass, no unresolved critical defects, and timeout recovery plus duplicate handling are demonstrated end to end. Missing fault-injection or evidence access means affected cases remain **blocked/unverified**, not passed.
+
+Performance, security penetration testing, and production execution are outside this plan. Functional concurrency and role checks remain in scope.
+
+### 6. Open Questions
+
+1. What confirms payment authoritatively, and how is a timed-out callback recovered?
+2. What are the timeout, retry, expiry, and recovery limits? How are late payments handled after cancellation or expiry?
+3. What callback validation, event-ordering, and duplicate-processing rules apply?
+4. What are the exact shipment prerequisites, role permissions, and inventory reservation rules?
+5. Which payment methods, currencies, split shipments, cancellations, and refunds belong to this release?
+6. Can SIT simulate failures both before callback processing and after processing but before acknowledgment?
+
+These gaps must be resolved to finalize timing assertions, exception outcomes, and release coverage.

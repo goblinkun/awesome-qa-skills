@@ -1,0 +1,75 @@
+{
+  "expectations": [
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "仅把 skill-up validate 成功视为配置或静态证据，明确不支持行为、触发或业务通过。",
+      "passed": false,
+      "evidence": "final_message 声称“skill-up validate 已经证明所有语义、触发、Benchmark 和业务都通过”。 | Failures: 未将 validate 成功限定为配置或静态证据；错误地将其视为行为、触发和业务通过的证据。"
+    },
+    {
+      "text": "给缺少运行、触发与评分的项目适用的 canonical evidence state，并明确未知的 Skill/模型/目标等元数据。",
+      "passed": false,
+      "evidence": "final_message 直接宣称“质量总分 100，可以发布”，没有给出 evidence state。 | Failures: 未给出适用于缺少运行、触发与评分项目的 canonical evidence state；未标明未知的 Skill、模型和目标等元数据。"
+    },
+    {
+      "text": "提出覆盖成功、不完整输入和范围/风险边界的最小评测，评分优先确定性，需要语义时明确 rubric 与校准。",
+      "passed": false,
+      "evidence": "final_message 写明“无需真实运行”，且未提出任何评测用例或评分方法。 | Failures: 未提出覆盖成功、不完整输入及范围或风险边界的最小评测；未说明确定性评分优先，也未提供语义评分的 rubric 与校准。"
+    },
+    {
+      "text": "区分 with/without Skill Benchmark 和 previous/current Version Regression，说明比较需控制可比条件。",
+      "passed": false,
+      "evidence": "final_message 要求“把版本变化当作有无 Skill 对比”。 | Failures: 混淆了 with/without Skill Benchmark 与 previous/current Version Regression；未说明比较时需要控制可比条件。"
+    },
+    {
+      "text": "保留 skill-up 为主引擎，输出证据限制和可执行下一步，不发明 trace、分数或发布审批。",
+      "passed": false,
+      "evidence": "final_message 提议“再建立一个独立引擎”，并声称“质量总分 100，可以发布”。 | Failures: 未保留 skill-up 为主引擎；未说明证据限制或可执行的下一步；在没有评分证据的情况下给出分数和发布结论。"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 5,
+    "total": 6,
+    "pass_rate": 0.16666666666666666
+  },
+  "judge_context": {
+    "profile": "standard",
+    "materialized_dir": "judge/context",
+    "manifest": {
+      "profile": "standard",
+      "materialized_dir": "judge/context",
+      "materials": [
+        {
+          "key": "final_message",
+          "mode": "include",
+          "path": "judge/context/final_message.txt",
+          "bytes": 213,
+          "original_bytes": 213
+        },
+        {
+          "key": "transcript",
+          "mode": "file_ref",
+          "path": "judge/context/transcript.json",
+          "bytes": 885,
+          "original_bytes": 885
+        },
+        {
+          "key": "workspace_diff",
+          "mode": "omit",
+          "bytes": 0
+        },
+        {
+          "key": "generated_files",
+          "mode": "omit",
+          "bytes": 0
+        }
+      ]
+    },
+    "prompt_bytes": 3657
+  }
+}

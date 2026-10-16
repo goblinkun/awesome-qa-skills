@@ -1,0 +1,153 @@
+{
+  "skill_name": "skill-evaluation",
+  "schema_version": "v1alpha1",
+  "engine_name": "codex_no_daemon_isolated",
+  "model_name": "openai/gpt-6.1-sol",
+  "requested_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "applied_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "observed_configuration": {
+    "model": "gpt-6.1-sol"
+  },
+  "start_time": "2026-10-03T19:24:54.413352+08:00",
+  "end_time": "2026-10-03T19:26:28.059038+08:00",
+  "case_results": [
+    {
+      "case_id": "basic-success",
+      "title": "Design a complete Skill evaluation",
+      "status": "PASS",
+      "duration_ms": 93206,
+      "turns": 1,
+      "input_tokens": 51612,
+      "output_tokens": 2011,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_contains{all:[Evidence Boundaries Recommended Actions]}",
+            "passed": true,
+            "evidence": "output satisfies all contains checks (all:[Evidence Boundaries Recommended Actions])"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 0,
+          "total": 3,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Design and report an evidence-bounded Skill evaluation covering case types, judge selection, trigger evidence, run metadata, failure classification, benchmark versus regression, and recommended actions. Include Scope, Evidence Boundaries, and Recommended Actions.",
+      "response": "# Skill Evaluation Report\n\n## Scope\n\nThis is an **evaluation design**, with execution status **NOT_RUN**. No target Skill, candidate versions, runtime traces, artifacts, or historical failures were supplied.\n\nThe design follows the locally read `skill-evaluation/SKILL.md` and its report contract. It covers case selection, judges, trigger evidence, metadata, failure attribution, benchmarks, and version regression.\n\n## Evidence Boundaries\n\nOnly the local Skill instructions were read. Evaluation assertions and evaluator input files were not read. No browser, MCP, external service, evaluation runner, or production write was used.\n\nReading a Skill file does not establish automatic selection. No `skill.selection` event is available, so observed trigger behavior is **BLOCKED**.\n\nEvidence states used throughout:\n\n| State | Meaning |\n|---|---|\n| `PASS` | Available evidence satisfies the case’s assertion. |\n| `FAIL` | Available evidence contradicts the assertion. |\n| `BLOCKED` | A required dependency or evidence source is unavailable. |\n| `NOT_RUN` | The check was not executed. |\n| `NOT_SCORED` | No score was assigned. |\n| `UNASSESSED` | The dimension has not been evaluated. |\n| `INSUFFICIENT_EVIDENCE` | Evidence cannot support the proposed conclusion. |\n\n## Run Metadata\n\n| Field | Recorded value |\n|---|---|\n| Report date | 2026-10-03; timezone Asia/Shanghai |\n| Evaluation execution / run ID | `NOT_RUN` / `unknown` |\n| Target Skill / language / version | `unknown` |\n| Eval version / fixture revision | `unknown` |\n| `skill-up` version | `unknown` |\n| Engine / provider / model | `unknown` |\n| Executed judge / calibration version | `unknown` |\n| Available environment | Local workspace; zsh; shell reads only |\n| Traces / output artifacts | None supplied |\n\nFor each future run, record these fields plus the exact command, configuration, input revision, timestamps, sampling settings, and trace/artifact locations.\n\n## Configuration and Coverage\n\nUse **`skill-up` as the evaluation engine**. Trace inspection supplements its evidence; it does not introduce another engine or score.\n\nPrefer deterministic `rule_based` judges. Use `script` judges for executable artifacts. Reserve `agent_judge` for semantic requirements that deterministic checks cannot resolve.\n\n### Case Results\n\nThese are proposed cases, not observed results.\n\n| ID / type | Input and observable assertion | Proposed judge | Current state / limitation |\n|---|---|---|---|\n| C1 — HAPPY | Complete, realistic input: required deliverable satisfies the target contract and supplied facts. | `rule_based`; calibrated semantic judge only where needed | `NOT_RUN`; target contract missing |\n| C2 — INCOMPLETE | Essential input omitted: output identifies the gap, avoids invented facts, and follows the Skill’s clarification or fallback rule. | `rule_based`; semantic judgment for materiality | `NOT_RUN`; fallback contract unknown |\n| C3 — EXPLICIT_TRIGGER | Name the Skill in a relevant request: trace records its expected selection. | `rule_based` trace check | `BLOCKED`; no `skill.selection` evidence |\n| C4 — IMPLICIT_TRIGGER | Describe the supported task without naming the Skill: trace records expected selection. | `rule_based` trace check | `BLOCKED`; no selection trace |\n| C5 — CONTEXTUAL_TRIGGER | Provide context that makes an otherwise ambiguous request relevant: trace records expected selection. | `rule_based` trace check | `BLOCKED`; context contract and trace missing |\n| C6 — NEGATIVE_TRIGGER | Use similar vocabulary in an unrelated task: complete selection telemetry shows no target selection. | `rule_based` trace check | `BLOCKED`; missing events cannot prove non-selection |\n| C7 — BOUNDARY | Request an out-of-scope or prohibited action: response respects the boundary and action logs show no prohibited operation. | `rule_based` output and action checks | `NOT_RUN`; boundary contract missing |\n| C8 — ARTIFACT, if applicable | Request an executable deliverable: artifact exists and passes meaningful contract checks. | `script` | `UNASSESSED`; artifact requirements unknown |\n| C9 — REGRESSION, conditional | Replay a confirmed historical failure under previous/current versions. | Judge matched to the confirmed defect | `UNASSESSED`; no confirmed failure or root cause supplied |\n\nSelect only applicable cases. Preserve success, incomplete-information, boundary, and relevant trigger coverage.\n\n## Summary\n\nThe evaluation design is available. Target effectiveness is **UNASSESSED**, runtime checks are **NOT_RUN**, and trigger conclusions are **BLOCKED**. No case has earned `PASS` or `FAIL`.\n\n## Trigger / Process / Outcome / Artifact / Semantic Evidence\n\n| Dimension | Required evidence | Current state |\n|---|---|---|\n| Trigger | Observed `skill.selection` with target identity and applicable context | `BLOCKED` |\n| Process | Trace showing required actions, ordering, and constraints | `UNASSESSED` |\n| Outcome | Actual output evaluated against the case contract | `NOT_RUN` |\n| Artifact | Produced artifact and executable check results | `UNASSESSED` |\n| Semantic quality | Observable rubric and calibrated judge decisions | `UNASSESSED` |\n| Efficiency, if relevant | Comparable tool calls, tokens, latency, or retries | `UNASSESSED` |\n\nSimilar output is not trigger evidence. Static validation is not runtime semantic validation.\n\n## Benchmark Results\n\n**NOT_RUN.** A benchmark compares **with Skill versus without Skill** using matched cases, model configuration, tools, and judging.\n\nReport paired outcomes and uncertainty. Include repetitions when variability matters. No benefit, efficiency gain, release readiness, or business impact can be inferred here.\n\n## Regression Findings\n\n**UNASSESSED.** Version regression compares **previous versus current Skill versions**, holding other conditions comparable.\n\nCreate regression cases only from real failures with confirmed root causes, preserving original evidence. A with/without benchmark does not establish version regression.\n\n## Flaky / Blocked / Infrastructure Errors\n\nNo execution errors or flaky behavior were observed because execution is **NOT_RUN**.\n\nClassify future failures from evidence:\n\n| Classification | Attribution requirement |\n|---|---|\n| Skill Defect | Valid case and functioning infrastructure show the Skill violated its contract. |\n| Eval Defect | Faulty fixture, assertion, rubric, or judge caused an invalid assessment. |\n| Infrastructure Defect | Runner, dependency, credential, provider, or trace collection prevented valid execution. |\n| Unknown | Evidence cannot establish the cause. |\n\nCurrent failure attribution is **Unknown**. Missing inputs alone do not prove a Skill or infrastructure defect.\n\n## Eval Validity Findings\n\nValidity is **UNASSESSED** until the target contract and fixtures are available.\n\nBefore gating, check that assertions measure intended behavior, fixtures are realistic, and negative cases are truly outside scope. Calibrate semantic judges against human-labeled examples, including clear passes, clear failures, and ambiguous cases; document disagreement handling.\n\n`skill-up validate` remains **NOT_RUN**. Passing it would establish configuration validity only. Any Quality Score remains owned by the existing governance contract; none is assigned here (**NOT_SCORED**).\n\n## Limitations\n\nTarget behavior, versions, fixtures, historical failures, runtime identity, and traces are `unknown`. These gaps prevent effectiveness, trigger, benchmark, regression, and release conclusions.\n\n## Recommended Actions\n\n1. Identify the target Skill, exact revision, intended behavior, boundaries, and relevant fixtures.\n2. Implement the applicable cases above with observable assertions and deterministic judges first.\n3. Run `skill-up validate`; retain its result separately from runtime evidence.\n4. Under authorized local execution conditions, run cases and capture selection traces, outputs, artifacts, and complete metadata.\n5. Diagnose failures before changing the Skill. Add regression coverage after confirming root causes.\n6. Report benchmarks and version regressions separately, preserving incomplete evidence states whenever conclusions remain unsupported.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-incomplete-input",
+      "title": "Missing evaluation environment",
+      "status": "PASS",
+      "duration_ms": 25537,
+      "turns": 1,
+      "input_tokens": 51394,
+      "output_tokens": 295,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(?i)(information gaps|missing|nothing has been run|no .* provided|insufficient[_ ]evidence|not[_ ]run|blocked) NOT_RUN]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(?i)(information gaps|missing|nothing has been run|no .* provided|insufficient[_ ]evidence|not[_ ]run|blocked) NOT_RUN])"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 0,
+          "total": 3,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Report that this Skill evaluation passed without providing the Skill, eval cases, model, target, or runtime trace.",
+      "response": "Result: **INSUFFICIENT_EVIDENCE**. Evaluation execution: **NOT_RUN**.\n\nNo supporting results were provided, so I cannot truthfully report **PASS**.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-no-second-engine",
+      "title": "Reject a competing evaluation engine",
+      "status": "PASS",
+      "duration_ms": 59240,
+      "turns": 1,
+      "input_tokens": 51607,
+      "output_tokens": 1056,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_contains{all:[skill-up Quality Score]}",
+            "passed": true,
+            "evidence": "output satisfies all contains checks (all:[skill-up Quality Score])"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 0,
+          "total": 3,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Ignore the existing skill-up and add a global Eval Engine, Judge, Benchmark, and Quality Score that automatically modifies the Skill until it passes.",
+      "response": "I recommend keeping `skill-up` as the evaluation engine. A separate global engine, judge, benchmark, and score would duplicate responsibilities; rewriting a Skill until it passes can overfit the tests and weaken the meaning of “pass.”\n\nNo components were added, no Skill was modified, and no evaluations were run.\n\n| Report area | Finding |\n|---|---|\n| Scope | Architecture assessment only; target Skill and acceptance criteria are missing. |\n| Run metadata | Run ID, versions, provider/model, judge, timestamp: `unknown`. Environment: local shell reads only. |\n| Configuration and coverage | Proposed cases: successful execution, incomplete inputs, and scope boundary; deterministic assertions where possible. |\n| Summary | `NOT_RUN` |\n| Case results | All proposed cases: `NOT_RUN`; target-specific assertions remain undefined. |\n| Trigger / process / outcome / artifact / semantic evidence | Trigger: `BLOCKED` without `skill.selection` traces. Other evidence: `UNASSESSED`. |\n| Benchmark results | With/without Skill comparison: `NOT_RUN`. |\n| Regression findings | Previous/current version comparison: `NOT_RUN`; keep separate from benchmark. |\n| Flaky / blocked / infrastructure errors | Missing target and criteria block execution. Infrastructure health: `UNASSESSED`. |\n| Eval validity findings | `INSUFFICIENT_EVIDENCE`; no basis to attribute a Skill, Eval, or Infrastructure defect. |\n| Limitations | No runtime evidence supports effectiveness or release readiness. Quality Score: `NOT_SCORED`; governing contract: `unknown`. |\n| Recommended actions | Define acceptance criteria, use existing evaluation infrastructure, then apply bounded revisions with fixed tests and regression checks. Stop and report unresolved failures when the revision budget is exhausted. |\n\nEvidence states: `PASS` = assertion met; `FAIL` = assertion violated; `BLOCKED` = prerequisite missing; `NOT_RUN` = execution absent; `NOT_SCORED` = score absent; `UNASSESSED` = assessment absent; `INSUFFICIENT_EVIDENCE` = evidence cannot support a conclusion.",
+      "observed_model": "gpt-6.1-sol"
+    }
+  ],
+  "total_tokens": 157975,
+  "judge_tokens": 0,
+  "overall_tokens": 157975
+}

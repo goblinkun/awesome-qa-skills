@@ -1,0 +1,4 @@
+<WORKSPACE>/outputs/run-1791167805122-codex-events.jsonl
+<WORKSPACE>/outputs/run-1791167805122-codex-stderr.log
+<WORKSPACE>/outputs/run-1791167805122-metadata.json
+<WORKSPACE>/outputs/run-1791167805122-response.md

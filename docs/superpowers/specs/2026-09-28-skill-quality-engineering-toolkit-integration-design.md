@@ -96,14 +96,12 @@ evidence/skill-quality/
 
 ### 6.1 状态映射
 
-集成后的核心文档采用仓库已有状态语义：
+集成后的核心文档不创建新的仓库级状态，也不重复定义状态语义；运行结果直接引用 [Skill Evaluation Contract](../../governance/SKILL_EVALUATION_CONTRACT.md)。本节只记录附件表达如何适配到该主契约：
 
 | 附件表达 | 集成后的处理 |
 | --- | --- |
-| `PASS` / `FAIL` / `BLOCKED` / `NOT_RUN` / `INSUFFICIENT_EVIDENCE` | 保留，并遵循现有 Evidence Contract |
-| `NOT_SCORED` | 保留，专用于没有合法 Quality Score 证据的场景 |
-| `UNASSESSED` | 保留，表示当前范围没有评估该维度 |
-| `PARTIAL` | 不作为新的仓库级状态；按证据情况改写为 `INSUFFICIENT_EVIDENCE`、`UNASSESSED` 或逐项报告 |
+| 现有 Evidence State | 按主契约原样引用，不在本 spec 重定义 |
+| `PARTIAL` | 不导入为仓库级状态；按主契约和实际证据逐项报告 |
 
 这样既保留附件的风险和证据思想，也不会让读者误以为仓库存在第二套状态机。
 
@@ -119,7 +117,7 @@ skill-evaluation-design
 skill-change-verification
 ```
 
-它们在本次集成中被定义为“SQEM 方法论 Pilot 候选集”，用于验证质量模型是否可理解、可执行、可维护；它们不替换仓库现有的：
+其中，附件方法名 `skill-evaluation-design` 映射到仓库现有 canonical Skill `skill-evaluation`（`skills/{zh,en}/skill-engineering/skill-evaluation/`）；本次不创建别名目录。它们在本次集成中被定义为“SQEM 方法论 Pilot 候选集”，用于验证质量模型是否可理解、可执行、可维护；它们不替换仓库现有的：
 
 - `requirements-analysis` analysis Pilot；
 - `ui-test-playwright` executable Pilot；
@@ -145,8 +143,8 @@ skill-change-verification
 
 - 质量声明必须受可用证据约束；
 - Quality Score 不在 SQEM 内重新定义；
-- Router 的结构化 `skill.selection`、`selected_skills` 和缺失证据的 `BLOCKED` 语义继续服从现有 Evaluation Contract；
-- `PARTIAL` 不进入仓库级状态集合；
+- Router 行为和证据处理继续完全服从现有 Evaluation Contract，本 spec 不重复其字段或判定规则；
+- 附件的 `PARTIAL` 不导入为仓库级状态；
 - benchmark、compatibility、runtime、real-world 仍需真实且可复核的证据。
 
 ### 7.3 Pilot
@@ -154,7 +152,7 @@ skill-change-verification
 保留五个候选 Skill、阶段、指标、退出条件和四种决策，但补充：
 
 - 它是 SQEM 方法论 Pilot，不是现有 executable Pilot 的替代物；
-- Pilot 阶段 6-8 在没有真实 Agent、目标环境、跨模型或业务验收证据时必须保持 `NOT_RUN` / `BLOCKED` / `INSUFFICIENT_EVIDENCE`；
+- Pilot 阶段 6-8 在没有真实 Agent、目标环境、跨模型或业务验收证据时，必须遵循现有 Evaluation Contract 的证据边界；
 - 不把候选清单写成已经完成的质量档案、benchmark 或兼容性结论。
 
 ### 7.4 根级 Eval / Evidence README
@@ -180,7 +178,7 @@ skill-change-verification
 - 中文/英文核心入口和三组核心文档均有双向切换链接。
 - `templates/` 五个文件可独立作为模板使用，不含真实凭据或本机路径。
 - SQEM、Eval Contract、现有 Evidence Contract、Quality Score 和 Quality Loop 的职责边界在入口文档中可追溯。
-- `PARTIAL` 不会成为新的仓库级判定状态；`NOT_SCORED`、`UNASSESSED` 和 `INSUFFICIENT_EVIDENCE` 的语义保持一致。
+- 不导入附件的 `PARTIAL` 状态；状态语义和判定规则继续由现有 Evaluation Contract 独占。
 - 五个 SQEM Pilot 候选与现有三类 Pilot 均被明确区分；没有删除或覆盖既有 Pilot。
 - 没有新增未经执行的 PASS、benchmark、runtime、compatibility、production 或 release claim。
 - 通过 `bash scripts/check_skills_quality.sh`、`python3 scripts/check_docs_bilingual.py --repo-root .` 和 `git diff --check`。
@@ -195,7 +193,7 @@ skill-change-verification
 | Pilot 名称让读者误以为已有运行证据 | 明确“方法论 Pilot 候选集”与现有 executable/router Pilot 的差异 |
 | 双语文档新增后未被守护 | 把新项目级文档加入 `check_docs_bilingual.py` 的显式配对表 |
 | 外部参考体系被误读为已验证兼容性 | 保留为非规范性参考族，不把名称列表升级成兼容性证明 |
-| 未来真实运行需要高成本或外部权限 | 先保留 `NOT_RUN` / `BLOCKED`，另行授权和记录 run metadata |
+| 未来真实运行需要高成本或外部权限 | 遵循现有 Evaluation Contract 的证据边界，另行授权和记录 run metadata |
 
 ## 11. 后续工作（不属于本次集成）
 

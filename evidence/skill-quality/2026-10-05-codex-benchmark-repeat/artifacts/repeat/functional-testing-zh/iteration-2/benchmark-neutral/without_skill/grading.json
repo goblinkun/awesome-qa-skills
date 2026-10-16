@@ -1,0 +1,77 @@
+{
+  "expectations": [
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+      "passed": true,
+      "evidence": "final_message 的“事实与假设”表将已知范围、重复回调风险，与测试环境、证据访问及临时验收假设分别标明。; final_message 明确指出接口字段、角色权限矩阵和支付最终状态规则缺失；F08 和 F12 对缺少规则时的结论标为待确认。"
+    },
+    {
+      "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+      "passed": true,
+      "evidence": "final_message 的 F05–F11 覆盖下单、金额篡改、正常支付、失败或未知结果、重复成功回调及不可信回调。; F04 检查数量和库存边界，F12 检查跨账号资源访问，F10 要求核对重复回调前后的业务副作用次数。"
+    },
+    {
+      "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+      "passed": true,
+      "evidence": "final_message 按 0–30 分钟列出准备、登录购物车、下单、支付回调、权限隔离及证据整理的执行顺序。; 风险表区分 P0 与后移的 P1，并说明支付时序等变更涉及的 P1 项应提升优先级；“未验证风险与下一步”列出并发、长延迟、多渠道和优惠组合的覆盖缺口。"
+    },
+    {
+      "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+      "passed": true,
+      "evidence": "final_message 的 P0 用例表为 F01–F12 逐项提供“前置条件”“操作”“预期判断”“证据”列。; 例如 F10 要求具备成功支付及有效回调原文，重复发送同一事件，核对副作用次数，并保存回调响应、处理日志及前后计数。"
+    },
+    {
+      "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+      "passed": true,
+      "evidence": "final_message 开头明确写明“尚未执行任何测试”，结尾再次说明全部实际结果未知。; “停止条件与发布判断”规定 P0 失败或阻塞的处理、到第 28 分钟停止新增测试，以及只有必测 P0 实际通过且证据完整才支持有限范围放行。; “未验证风险与下一步”要求先补齐契约和规则、准备测试数据及证据查询，再执行 P0 并逐项记录结果。"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1
+  },
+  "judge_context": {
+    "profile": "standard",
+    "materialized_dir": "judge/context",
+    "manifest": {
+      "profile": "standard",
+      "materialized_dir": "judge/context",
+      "materials": [
+        {
+          "key": "final_message",
+          "mode": "include",
+          "path": "judge/context/final_message.txt",
+          "bytes": 11802,
+          "original_bytes": 11802
+        },
+        {
+          "key": "transcript",
+          "mode": "file_ref",
+          "path": "judge/context/transcript.json",
+          "bytes": 14419,
+          "original_bytes": 14419
+        },
+        {
+          "key": "workspace_diff",
+          "mode": "omit",
+          "bytes": 0
+        },
+        {
+          "key": "generated_files",
+          "mode": "file_ref",
+          "path": "judge/context/generated_files.txt",
+          "bytes": 474,
+          "original_bytes": 474
+        }
+      ]
+    },
+    "prompt_bytes": 15278
+  }
+}

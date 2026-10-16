@@ -1,0 +1,20 @@
+✔ Codex stdin is closed and user configuration cannot leak into a run (0.637791ms)
+✔ without-skill and judge invocations cannot load locally installed run Skills (0.169833ms)
+✔ Codex usage and shell reads are retained as real evidence (0.2065ms)
+✔ missing usage is unknown rather than measured zero (0.0615ms)
+✔ nested fixture Skills are disabled alongside their parent Skill (0.78025ms)
+✔ provider errors in JSONL are retained even when stderr is uninformative (0.556083ms)
+✔ ancestor AGENTS probes in the captured architecture trace are sanitized (1.39475ms)
+✔ the entire evidence package passes local-path and standard credential-pattern checks (209.304458ms)
+✔ export hashes, source-copy identity, and manifest uniqueness are valid (16.734ms)
+✔ paired summaries match original/native reports without turning skipped semantics into a score (1.833541ms)
+✔ unique call ledger preserves native usage and actual Skill catalog isolation (3.652542ms)
+✔ package redaction and curated bilingual links remain valid (22.006667ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 312.796542

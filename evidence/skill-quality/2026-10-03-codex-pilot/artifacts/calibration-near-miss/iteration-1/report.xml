@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="sqet-judge-calibration" tests="1" failures="1" errors="0" skipped="0" time="0.120" timestamp="2026-10-03T19:48:04+08:00">
+    <testcase name="skill-evaluation-canonical-near-miss" classname="sqet-judge-calibration" time="0.092">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case skill-evaluation-canonical-near-miss failed" type="AssertionFailure">- expect.must_contain: output does not contain &#34;NOT_RUN&#34;; output does not contain &#34;BLOCKED&#34;</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

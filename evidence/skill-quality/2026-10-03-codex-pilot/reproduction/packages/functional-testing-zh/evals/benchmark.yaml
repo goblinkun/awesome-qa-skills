@@ -1,0 +1,17 @@
+schema_version: v1alpha1
+environment: {type: none}
+skills: [{source: local_path, path: ., target: .agents/skills/functional-testing}]
+engine:
+  name: codex_no_daemon_isolated
+  model: {provider: openai, name: gpt-6.1-sol}
+  custom:
+    transport: local
+    response_format: session_result
+    local:
+      command: node
+      args: ["${SQET_ADAPTER}", "${input_file}"]
+cases:
+  files: [evals/cases/benchmark-neutral.yaml]
+  defaults: {timeout_seconds: 900, max_turns: 8, expect: {exit_code: 0}}
+benchmark: {enabled: true}
+report: {formats: [json, junit]}

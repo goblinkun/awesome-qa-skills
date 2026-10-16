@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "criterion_id": "criterion-1",
+      "passed": true,
+      "evidence": [
+        "final_message 将 `skill-up validate` 成功限定为“该次静态校验通过”，明确表示不能据此认定行为、触发、Benchmark 或业务效果通过。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-2",
+      "passed": true,
+      "evidence": [
+        "final_message 定义了 PASS、NOT_RUN、BLOCKED、NOT_SCORED、UNASSESSED 和 INSUFFICIENT_EVIDENCE，并用这些状态标注缺少运行和评分证据的项目。",
+        "Run Metadata 将 Skill/Eval 版本、模型、运行目标、用例详情等列为 unknown，并说明 runtime trace 与 `skill.selection` 未提供。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-3",
+      "passed": true,
+      "evidence": [
+        "Case Results 提出 HAPPY、INCOMPLETE 和 BOUNDARY 三类最小用例，分别覆盖典型成功任务、关键输入缺失及范围或风险边界。",
+        "final_message 要求确定性断言优先使用 `rule_based`，可执行产物使用 `script`；语义要求使用写明完成度、正确性和约束标准且经过校准的 rubric。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-4",
+      "passed": true,
+      "evidence": [
+        "Benchmark Results 明确比较 with Skill / without Skill，并要求固定模型、任务、工具权限、环境和 judge。",
+        "Regression Findings 明确比较 previous / current Skill，要求固定 Eval 版本、输入、模型、工具、环境和 judge，并区分其与 Benchmark 的目的。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-5",
+      "passed": true,
+      "evidence": [
+        "Recommended Actions 要求使用现有 `skill-up` 执行评测，并明确“不另造评测引擎”。",
+        "final_message 将 trace、实际分数和业务效果列为缺失或未评估，明确不得另造综合 Quality Score；全文未声称已有发布审批。"
+      ],
+      "failures": []
+    }
+  ]
+}

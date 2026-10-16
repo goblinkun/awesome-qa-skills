@@ -1,0 +1,77 @@
+{
+  "expectations": [
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+      "passed": true,
+      "evidence": "final_message 的“输入审计”将订单服务、消息队列、支付适配器和外部支付商列为已知拓扑，并明确回调接收方、结果回传路径和持久化位置未知。; final_message 将 F1–F4 标为未经独立核验的输入事实，分别说明已知能力及投递语义、模拟器能力和链路隔离等证据缺口。"
+    },
+    {
+      "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+      "passed": true,
+      "evidence": "final_message 的“核心分析与执行项”逐项覆盖支付客户端接缝与替身、主题及消费组等隔离边界、故障注入、链路证据、确定性等待、环境复现和数据准备。; final_message 的场景表为响应丢失、确认前退出、重复与乱序回调等故障规定刺激、预期判断和留存证据。"
+    },
+    {
+      "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+      "passed": true,
+      "evidence": "final_message 将方案限定在本地或隔离测试环境，要求隔离主题、消费组、数据命名空间、账号、凭据和回调路由。; final_message 明确故障机制只部署在隔离环境、通过受限配置控制，不得绕过鉴权或增加生产公共后门；无法证明外部账号、凭据及回调路由隔离时停止真实外部调用测试。"
+    },
+    {
+      "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+      "passed": true,
+      "evidence": "final_message 的风险表按 P0–P3 排序，并说明依据是业务影响与当前可探测性。; final_message 的改进表逐项列出最小实现与价值、相对成本、负责人建议和验证证据；场景表进一步列出具体刺激、预期结果和必须保留的证据。"
+    },
+    {
+      "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+      "passed": true,
+      "evidence": "final_message 开头明确未运行系统测试，不能认定改进有效或架构已通过；替身分层部分也指出模拟器成功不能证明真实支付协议兼容。; final_message 列出沙箱差异、替身契约漂移及长尾时序等残余风险，并规定跨环境流量、重复支付副作用或超过收敛期限时停止场景、保留证据并人工接管。; final_message 指定架构、支付、平台、测试及业务或发布负责人需要确认的契约、隔离、发布门槛和风险接受事项。"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1
+  },
+  "judge_context": {
+    "profile": "standard",
+    "materialized_dir": "judge/context",
+    "manifest": {
+      "profile": "standard",
+      "materialized_dir": "judge/context",
+      "materials": [
+        {
+          "key": "final_message",
+          "mode": "include",
+          "path": "judge/context/final_message.txt",
+          "bytes": 10966,
+          "original_bytes": 10966
+        },
+        {
+          "key": "transcript",
+          "mode": "file_ref",
+          "path": "judge/context/transcript.json",
+          "bytes": 20998,
+          "original_bytes": 20998
+        },
+        {
+          "key": "workspace_diff",
+          "mode": "omit",
+          "bytes": 0
+        },
+        {
+          "key": "generated_files",
+          "mode": "file_ref",
+          "path": "judge/context/generated_files.txt",
+          "bytes": 470,
+          "original_bytes": 470
+        }
+      ]
+    },
+    "prompt_bytes": 14528
+  }
+}

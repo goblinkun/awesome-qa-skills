@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "criterion_id": "criterion-1",
+      "passed": true,
+      "evidence": [
+        "final_message 将订单→消息队列→支付适配器→外部支付商列为输入事实，并指出回调模拟器、缺少故障注入入口和隔离主题能力。",
+        "final_message 将幂等、回调接收者、消费者路由及存储边界明确列为待确认事项。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-2",
+      "passed": true,
+      "evidence": [
+        "final_message 指定支付商客户端接口和消费者处理入口为接缝，提出契约驱动替身、回调模拟器及受理后响应丢失的故障刺激。",
+        "final_message 覆盖隔离主题、消费组、数据命名空间、回调路由、测试账户，以及关联日志、权威状态查询、固定时钟、数据初始化与环境参数记录。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-3",
+      "passed": false,
+      "evidence": [
+        "final_message 要求在授权隔离环境验证，使用测试账户，不改生产鉴权或租户边界，并在发现真实资金影响时停止。",
+        "final_message 未规定测试身份、支付商凭据或队列访问权限的最小授权范围。"
+      ],
+      "failures": [
+        "缺少可执行的最小权限安排，例如限定测试凭据和隔离主题的访问范围。"
+      ]
+    },
+    {
+      "criterion_id": "criterion-4",
+      "passed": true,
+      "evidence": [
+        "final_message 将重复资金效果列为 P0 候选风险，将支付商客户端及消费者接缝列为 P1 改进，并标注控制成功、失败与延迟的价值及中等成本。",
+        "final_message 给出受理后响应丢失的验证刺激、重试须符合幂等契约的判断，以及请求标识、状态迁移、资金记录和注入结果等证据。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-5",
+      "passed": true,
+      "evidence": [
+        "final_message 明确称所有方案尚未验证，故障注入能力也尚未验证，并列出替身偏差及共享队列资源竞争的残余风险。",
+        "final_message 规定隔离未确认或发现真实资金影响时停止，分配架构、支付、平台和 QA 的确认与证据保存职责，要求再决定是否通过。"
+      ],
+      "failures": []
+    }
+  ]
+}

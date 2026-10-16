@@ -1,0 +1,75 @@
+{
+  "expectations": [
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+      "passed": true,
+      "evidence": "final_message 将订单→消息队列→支付适配器→外部支付商列为输入事实，并指出回调模拟器、缺少故障注入入口和隔离主题能力。; final_message 将幂等、回调接收者、消费者路由及存储边界明确列为待确认事项。"
+    },
+    {
+      "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+      "passed": true,
+      "evidence": "final_message 指定支付商客户端接口和消费者处理入口为接缝，提出契约驱动替身、回调模拟器及受理后响应丢失的故障刺激。; final_message 覆盖隔离主题、消费组、数据命名空间、回调路由、测试账户，以及关联日志、权威状态查询、固定时钟、数据初始化与环境参数记录。"
+    },
+    {
+      "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+      "passed": false,
+      "evidence": "final_message 要求在授权隔离环境验证，使用测试账户，不改生产鉴权或租户边界，并在发现真实资金影响时停止。; final_message 未规定测试身份、支付商凭据或队列访问权限的最小授权范围。 | Failures: 缺少可执行的最小权限安排，例如限定测试凭据和隔离主题的访问范围。"
+    },
+    {
+      "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+      "passed": true,
+      "evidence": "final_message 将重复资金效果列为 P0 候选风险，将支付商客户端及消费者接缝列为 P1 改进，并标注控制成功、失败与延迟的价值及中等成本。; final_message 给出受理后响应丢失的验证刺激、重试须符合幂等契约的判断，以及请求标识、状态迁移、资金记录和注入结果等证据。"
+    },
+    {
+      "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+      "passed": true,
+      "evidence": "final_message 明确称所有方案尚未验证，故障注入能力也尚未验证，并列出替身偏差及共享队列资源竞争的残余风险。; final_message 规定隔离未确认或发现真实资金影响时停止，分配架构、支付、平台和 QA 的确认与证据保存职责，要求再决定是否通过。"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333333333333334
+  },
+  "judge_context": {
+    "profile": "standard",
+    "materialized_dir": "judge/context",
+    "manifest": {
+      "profile": "standard",
+      "materialized_dir": "judge/context",
+      "materials": [
+        {
+          "key": "final_message",
+          "mode": "include",
+          "path": "judge/context/final_message.txt",
+          "bytes": 1393,
+          "original_bytes": 1393
+        },
+        {
+          "key": "transcript",
+          "mode": "file_ref",
+          "path": "judge/context/transcript.json",
+          "bytes": 2082,
+          "original_bytes": 2082
+        },
+        {
+          "key": "workspace_diff",
+          "mode": "omit",
+          "bytes": 0
+        },
+        {
+          "key": "generated_files",
+          "mode": "omit",
+          "bytes": 0
+        }
+      ]
+    },
+    "prompt_bytes": 4801
+  }
+}

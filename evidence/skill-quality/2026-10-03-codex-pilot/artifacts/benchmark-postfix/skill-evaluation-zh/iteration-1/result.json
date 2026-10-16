@@ -1,0 +1,167 @@
+{
+  "skill_name": "skill-evaluation",
+  "schema_version": "v1alpha1",
+  "engine_name": "codex_no_daemon_isolated",
+  "model_name": "openai/gpt-6.1-sol",
+  "requested_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "applied_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "observed_configuration": {
+    "model": "gpt-6.1-sol"
+  },
+  "start_time": "2026-10-03T19:48:09.663789+08:00",
+  "end_time": "2026-10-03T19:51:40.030072+08:00",
+  "case_results": [
+    {
+      "case_id": "benchmark-neutral",
+      "title": "受控任务对比（不以 Skill 专用标题作为质量标准）",
+      "status": "PASS",
+      "duration_ms": 93166,
+      "turns": 1,
+      "input_tokens": 52240,
+      "output_tokens": 2067,
+      "judge_duration_ms": 22008,
+      "judge_input_tokens": 17852,
+      "judge_output_tokens": 604,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "仅把 skill-up validate 成功视为配置或静态证据，明确不支持行为、触发或业务通过。",
+            "passed": true,
+            "evidence": "final_message 开头明确说现有证据只支持 skill-up validate 成功，不能据此宣布行为、触发、Benchmark 或业务效果通过。; Summary 将行为标为 NOT_RUN、触发标为 BLOCKED、业务效果标为 INSUFFICIENT_EVIDENCE。"
+          },
+          {
+            "text": "给缺少运行、触发与评分的项目适用的 canonical evidence state，并明确未知的 Skill/模型/目标等元数据。",
+            "passed": true,
+            "evidence": "final_message 的 Run Metadata 将 Skill/Eval 版本、engine/provider/model、judge 和运行环境等列为 unknown。; Summary 和状态含义区分 PASS、NOT_RUN、BLOCKED、NOT_SCORED、UNASSESSED 与 INSUFFICIENT_EVIDENCE，并说明各状态的证据边界。"
+          },
+          {
+            "text": "提出覆盖成功、不完整输入和范围/风险边界的最小评测，评分优先确定性，需要语义时明确 rubric 与校准。",
+            "passed": true,
+            "evidence": "final_message 的最小候选集包含完整有效输入、缺少必要输入、范围或风险边界，以及正向和负向触发用例。; 评分部分优先逐断言的确定性判断；使用 agent_judge 时要求先定义可观察 rubric，并用人工确认样例校准。"
+          },
+          {
+            "text": "区分 with/without Skill Benchmark 和 previous/current Version Regression，说明比较需控制可比条件。",
+            "passed": true,
+            "evidence": "final_message 将 Benchmark 定义为 with Skill / without Skill 比较，并要求控制任务集、模型、运行参数、环境、工具、预算和 judge。; Regression Findings 将版本回归定义为 previous / current Skill 比较，说明两组都使用 Skill、条件须可比，且两种比较不能互相证明结论。"
+          },
+          {
+            "text": "保留 skill-up 为主引擎，输出证据限制和可执行下一步，不发明 trace、分数或发布审批。",
+            "passed": true,
+            "evidence": "final_message 的 Recommended Actions 要求使用既有 skill-up 引擎运行用例并保存证据。; 全文明确没有运行评测、runtime trace、评分或业务测量数据，并将 Quality Score 标为 NOT_SCORED；没有声称发布获批。"
+          }
+        ],
+        "summary": {
+          "passed": 7,
+          "failed": 0,
+          "total": 7,
+          "pass_rate": 1
+        },
+        "judge_context": {
+          "profile": "standard",
+          "materialized_dir": "judge/context",
+          "manifest": {
+            "profile": "standard",
+            "materialized_dir": "judge/context",
+            "materials": [
+              {
+                "key": "final_message",
+                "mode": "include",
+                "path": "judge/context/final_message.txt",
+                "bytes": 6065,
+                "original_bytes": 6065
+              },
+              {
+                "key": "transcript",
+                "mode": "file_ref",
+                "path": "judge/context/transcript.json",
+                "bytes": 15525,
+                "original_bytes": 15525
+              },
+              {
+                "key": "workspace_diff",
+                "mode": "omit",
+                "bytes": 0
+              },
+              {
+                "key": "generated_files",
+                "mode": "file_ref",
+                "path": "judge/context/generated_files.txt",
+                "bytes": 474,
+                "original_bytes": 474
+              }
+            ]
+          },
+          "prompt_bytes": 9667
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "请为一个 Agent Skill 给出有证据边界的评测报告和下一步计划。唯一已知结果是 skill-up validate 成功；没有 Skill 源码、运行目标、用例详情、模型元数据、runtime trace 或 skill.selection 事件。有人希望把它写成行为、触发、Benchmark 和业务效果全部已通过。请判断哪些结论成立，哪些未运行或受阻，选择最小有效用例和评分方法，并区分 with/without Skill 对比与 previous/current 版本回归。不要编造结果或另造评测引擎。",
+      "response": "现有证据只支持“`skill-up validate` 成功”。不能据此宣布行为、触发、Benchmark 或业务效果通过。以下是证据报告与待执行方案；本次没有运行评测。\n\n## 范围\n\n目标 Skill 的源码、契约、运行目标和用例均未提供，因此触发条件、输入输出、约束和目标行为全部为 `unknown`。本报告判断证据边界，不判断 Skill 实际质量。\n\n## Run Metadata\n\n已知：用户提供 `skill-up validate` 成功这一结果。\n\n以下均为 `unknown`：`run_id`、Skill/Eval 版本、`skill-up` 版本、engine/provider/model、judge、运行环境、时间戳。没有原始日志、工件、runtime trace 或 `skill.selection` 事件；该结果未由本次独立复核。\n\n## 配置与覆盖范围\n\n最小候选集如下。须先读取目标 Skill 契约、已有 `evals/` 和 fixtures，才能把这些模板落实为有效用例、确定评分规则。\n\n| 用例 | 最小可观察断言 | 拟用 judge | 当前状态与限制 |\n|---|---|---|---|\n| HAPPY：完整有效输入 | 达成一个核心目标；满足输出格式和必需约束 | 优先 `rule_based`；可执行工件用 `script` | `NOT_RUN`；核心目标未知 |\n| INCOMPLETE：缺少一个必要输入 | 按契约澄清或处理缺失信息；不编造输入 | 优先 `rule_based` | `NOT_RUN`；必要输入未知 |\n| BOUNDARY：一个范围或风险边界 | 按契约处理边界；不执行禁止行为 | 输出用规则，过程用 trace 检查 | `NOT_RUN`；边界未知 |\n| 正向触发：每种相关模式各一个 | `skill.selection` 明确记录目标 Skill 被选择 | 确定性事件检查 | `NOT_RUN`；当前触发证据 `BLOCKED` |\n| NEGATIVE_TRIGGER：一个近似但不适用输入 | 完整选择记录明确证明未选择目标 Skill | 确定性事件检查 | `NOT_RUN`；不能以事件缺失代替负向证据 |\n\n正向模式只覆盖契约实际声明的显式、隐式、上下文触发；目前无法确定哪些适用。允许一个用例同时验证行为和触发，以减少重复，但分别评分。\n\n## Summary\n\n| 主张 | 证据状态 | 可成立的结论 |\n|---|---|---|\n| `skill-up validate` 成功 | `PASS`，依据用户报告 | 该次 validate 被报告成功；具体检查范围未知 |\n| 行为符合契约 | `NOT_RUN` | 没有行为运行结果 |\n| 已正确触发或未触发 | `BLOCKED` | 缺少 `skill.selection`，无法判断 |\n| Benchmark 全部通过或有收益 | `NOT_RUN` | 没有 with/without Skill 对比 |\n| 当前版本没有回归 | `NOT_RUN` | 没有 previous/current 对比 |\n| 业务效果已通过 | `INSUFFICIENT_EVIDENCE` | 没有业务指标或测量数据 |\n| 评测有效性 | `UNASSESSED` | 无契约、用例与 judge 可供审查 |\n| Quality Score | `NOT_SCORED` | 未评分，也不另造总分 |\n\n状态含义：\n\n- `PASS` / `FAIL`：已执行检查有证据满足／违反明确断言。\n- `NOT_RUN`：没有执行对应评测。\n- `BLOCKED`：必要输入、目标或证据缺失，无法完成判断。\n- `NOT_SCORED`：没有产生评分。\n- `UNASSESSED`：尚未评估该事项。\n- `INSUFFICIENT_EVIDENCE`：现有证据不足以支持所提结论。\n\n## Case Results\n\n唯一已知检查是 validate 成功；它不属于上述行为用例的通过证据。所有候选用例均未执行，没有可报告的成功率、耗时或语义评分。\n\n## Trigger / Process / Outcome / Artifact / Semantic Evidence\n\n- **Trigger：`BLOCKED`**。输出相似、提到 Skill 名称或表现符合预期，都不能替代选择事件。\n- **Process：`BLOCKED`**。没有 runtime trace，不能判断实际步骤或过程约束。\n- **Outcome / Artifact / Semantic：`NOT_RUN`**。没有运行输出、产物或 judge 结果。\n\n评分优先采用逐断言的确定性通过／失败，保留阻塞状态。只有规则和脚本无法判断的语义质量才使用 `agent_judge`：先定义可观察 rubric，再用人工确认样例校准，校准前不作为通过门槛。总质量分遵循既有治理契约。\n\n## Benchmark Results\n\n**`NOT_RUN`**。Benchmark 比较 **with Skill / without Skill**：使用同一任务集，控制模型、运行参数、环境、工具、预算及 judge，并记录差异。\n\n最小配对运行可以检查流程是否可行；它不能证明稳定收益或业务效果。重复次数和样本规模应由波动及结论用途决定。\n\n## Regression Findings\n\n**`NOT_RUN`**。版本回归比较 **previous / current Skill**，两组都使用 Skill，并保持评测条件可比。\n\nBenchmark 收益不能证明没有版本回归；版本回归通过也不能证明 Skill 相对不用 Skill 有收益。目前没有历史失败，不创建虚构的 regression case。确认真实失败根因后，再保留原始证据并添加回归用例。\n\n## Flaky / Blocked / Infrastructure Errors\n\n运行评测受阻于源码、契约和运行目标缺失；触发判断另受阻于选择事件缺失。Flaky 情况为 `UNASSESSED`；没有证据表明发生基础设施错误。\n\n## Eval Validity Findings\n\n**`UNASSESSED`**。尚不能判断断言是否符合契约、judge 是否有效、覆盖是否充分。\n\nSkill Defect、Eval Defect、Infrastructure Defect 均不能确认；根因分类保持 **`UNKNOWN`**。证据缺失不能直接归因为 Skill 缺陷。\n\n## Limitations\n\nvalidate 成功不能升级为 runtime 语义、发布准备度或业务成效结论。“全部已通过”超出了现有证据边界。\n\n## Recommended Actions\n\n1. 补齐目标 Skill、契约、已有 `evals/`、fixtures、运行目标和元数据；将候选模板落实为具体断言。\n2. 使用既有 **`skill-up`** 引擎运行最小用例集，保存 judge、输出、工件与 trace；不另造评测引擎。\n3. 为触发检查取得完整 `skill.selection` 证据；无法取得时继续标为 `BLOCKED`。\n4. 分别执行 with/without Benchmark 和 previous/current 回归，独立报告结论。\n5. 如需业务效果结论，先定义业务指标、基线和测量方法；在获得实际数据前保留 `INSUFFICIENT_EVIDENCE`。",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "benchmark-neutral",
+      "title": "受控任务对比（不以 Skill 专用标题作为质量标准）",
+      "status": "FAIL",
+      "duration_ms": 94581,
+      "turns": 1,
+      "input_tokens": 65397,
+      "output_tokens": 1698,
+      "grading": {
+        "status": "FAIL",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": false,
+            "evidence": "output does not contain \"NOT_RUN\"; output does not contain \"BLOCKED\""
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          }
+        ],
+        "summary": {
+          "passed": 1,
+          "failed": 1,
+          "total": 2,
+          "pass_rate": 0.5
+        }
+      },
+      "configuration": "without_skill",
+      "prompt": "请为一个 Agent Skill 给出有证据边界的评测报告和下一步计划。唯一已知结果是 skill-up validate 成功；没有 Skill 源码、运行目标、用例详情、模型元数据、runtime trace 或 skill.selection 事件。有人希望把它写成行为、触发、Benchmark 和业务效果全部已通过。请判断哪些结论成立，哪些未运行或受阻，选择最小有效用例和评分方法，并区分 with/without Skill 对比与 previous/current 版本回归。不要编造结果或另造评测引擎。",
+      "response": "目前只能报告：**据已提供的信息，`skill-up validate` 成功；行为、触发、Benchmark 和业务效果尚无通过证据。** 将它们全部写成“已通过”不成立。本次未执行新增评测，也未发现可读取的本地 Skill 说明。\n\n| 评测项 | 当前状态 | 可成立的结论与证据边界 |\n|---|---|---|\n| `validate` | 已报告成功 | 仅支持该命令所覆盖的检查通过。缺少输出、工具版本及被检版本，无法确认具体检查范围或独立复核 |\n| 行为正确性 | 未运行，执行受阻 | 缺少 Skill 源码、运行目标和用例，不能判断是否完成任务、遵守约束或处理异常 |\n| 自动触发／选择 | 未运行，观察受阻 | 缺少 `skill.selection` 事件及相关 trace，不能证明应触发时触发、不应触发时不触发；缺失事件也不等于未触发 |\n| Benchmark | 未运行，比较受阻 | 缺少用例、基线、模型元数据和运行记录，无法报告通过率、增益、延迟或成本 |\n| 业务效果 | 未评估 | 缺少业务指标、基线和观测数据，无法推断收益 |\n\n**未运行、受阻与失败必须分开记录。** 当前没有行为失败的证据，也没有行为通过的证据；缺失项目记为“未评估”，不能填零分或算作通过。\n\n恢复评测后，先采用最小有效用例集，不急于扩大 Benchmark：\n\n| 用例 | 选择方法 | 主要验收点 |\n|---|---|---|\n| 核心正例 | Skill 声称支持的一项典型任务，使用最小真实输入 | 完成主要目标，产物可检查，必要约束满足 |\n| 边界例 | 最接近支持边界、容易误判的一项任务 | 正确处理缺失输入、范围边界或必要澄清 |\n| 明确反例 | 与 Skill 表面相似但明确不属于其范围的任务 | 不错误选择 Skill，结果符合预定处理方式 |\n\n三例是起步集，不能据此宣称覆盖完整。具体输入和期望结果须在取得源码、目标及适用范围后确定。涉及外部写入时使用本地可检查产物或隔离环境。\n\n评分优先采用现有评测流程中的**明确断言**：每项记通过／失败；未运行或不可观察单列。执行前固定断言、关键项和通过门槛，关键项失败则该用例失败。确有主观质量要求时，补充带示例锚点的简短量表并盲评，不能只凭一句“表现良好”给分。报告逐例结果、已执行数量及分母；三例通过只能表述为“这三例通过”。\n\n两种对比回答不同问题：\n\n- **with／without Skill**：比较同一任务启用与禁用 Skill 的结果，用于判断 Skill 是否带来增益。固定模型及配置、输入、工具权限、环境和评分规则，采用配对运行。\n- **previous／current**：两组均启用 Skill，只切换 Skill 版本，用于判断更新是否引入回归或改善。固定同一用例集和其他运行条件。没有旧版本就无法进行版本回归。\n\n强制加载 Skill 可以测试其行为，**不能证明自动选择正确**。触发测试必须走正常选择路径，保存 `skill.selection` 及足以确认实际执行情况的 trace。输出改善也不能直接替代业务收益证据。\n\n下一步按依赖顺序执行：\n\n1. 保存 `validate` 输出、工具版本和被检 Skill 的版本或哈希，使现有结论可追溯。\n2. 获取源码、运行目标、适用范围及运行环境，确定上述三例和验收规则。\n3. 使用项目现有评测入口运行并保存输入、输出、模型元数据和 trace；不另造评测引擎。若现有入口不支持某项，明确记录限制。\n4. 分别开展 with／without 增益比较和 previous／current 回归；存在随机性时预先约定重复次数并报告波动。\n5. 待技术评测具备证据后，再按预先定义的业务指标开展独立效果评估。\n\n可直接采用的报告结论是：**“已报告 `skill-up validate` 成功。行为、自动触发、Benchmark 及业务效果尚未评估；现有证据不足以支持这些项目已通过。”**",
+      "observed_model": "gpt-6.1-sol"
+    }
+  ],
+  "total_tokens": 121402,
+  "judge_tokens": 18456,
+  "overall_tokens": 139858
+}

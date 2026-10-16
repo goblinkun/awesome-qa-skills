@@ -1,0 +1,141 @@
+{
+  "verified_at": "2026-10-04T12:22:47.090Z",
+  "scope": "Repository/evidence validation; not business or release approval",
+  "checks": [
+    {
+      "command": "bash scripts/check_skills_quality.sh",
+      "state": "PASS",
+      "skills_scanned": 328,
+      "repository_tests": 191,
+      "log": "verification/quality-closeout-20261004.log"
+    },
+    {
+      "command": "node --test reproduction/adapter.test.mjs reproduction/sanitization.test.mjs",
+      "state": "PASS",
+      "tests": 8,
+      "log": "verification/offline-tests-closeout-20261004.log",
+      "adapter_tests": 6,
+      "sanitization_tests": 2
+    },
+    {
+      "command": "skill-up validate, SQET_* transport paths set",
+      "state": "PASS",
+      "configurations": 14,
+      "log": "verification/config-validation-closeout-20261004.log"
+    },
+    {
+      "command": "git diff --check",
+      "state": "PASS"
+    },
+    {
+      "command": "Artifact SHA256, selected native cases, cost totals, curated bilingual links",
+      "state": "PASS",
+      "curated_documents": 22,
+      "log": "verification/evidence-audit-closeout-20261004.log",
+      "checked_artifacts_before_closeout_logs": 1114
+    },
+    {
+      "command": "npx --yes skills@1.7.0 add <current checkout> --list; add <current checkout> --skill functional-testing -a codex -y --copy",
+      "state": "PASS",
+      "representative_skills": 7,
+      "installed_language": "en",
+      "target": "isolated temporary local Codex target",
+      "home_override": false,
+      "note": "Equivalent local discovery/install sampling; the global-target shell gate was not invoked",
+      "logs": [
+        "verification/cli-discovery.log",
+        "verification/cli-install.log"
+      ]
+    }
+  ],
+  "portable_smoke": {
+    "state": "PASS",
+    "native_report": "artifacts/portable-smoke/iteration-1/result.json",
+    "preflight_failure": "verification/portable-preflight-failed.log",
+    "note": "Event-log parent creation repaired before model invocation; smoke counted separately from core cases"
+  },
+  "git": {
+    "base_commit": "c61f507f61711c3c0f0d1777136a5a4ff0e211b3",
+    "branch": "develop",
+    "commit_created": false,
+    "push_performed": false,
+    "dirty_worktree": true
+  },
+  "logs": [
+    {
+      "path": "verification/quality-final.log",
+      "sha256": "5443477a59cfbe843ccaa64628cb8db46928ab1110e1d0d45707494ed6c55107"
+    },
+    {
+      "path": "verification/adapter-unit-final.log",
+      "sha256": "fb9247a78885ace9bee76e52f019cfdfa8fe23bb0601be3d84fab9356b48a785"
+    },
+    {
+      "path": "verification/config-validation-final.log",
+      "sha256": "d26ca7c2c3570b3939909766eab029ae6b33a8f41812114b68f44523b1ecbecc"
+    },
+    {
+      "path": "verification/evidence-audit-final.log",
+      "sha256": "10d64d87a49befba016f152aef49cb87535a95048c1d1d72426c76be1a294d3f"
+    },
+    {
+      "path": "verification/cli-discovery.log",
+      "sha256": "5f840df0439643e00dba214c13917b47cf0e239b58fa5ab415c3aebbbe2b3643"
+    },
+    {
+      "path": "verification/cli-install.log",
+      "sha256": "566b54d83b1d895813b007ce82be02440a04f43d0b07b1c0a0394ac1920b4822"
+    },
+    {
+      "path": "verification/portable-preflight-failed.log",
+      "sha256": "fb4983177fb176f3187a6f827bf653d14c1178728e78233d75ff23c59b14523a"
+    },
+    {
+      "path": "verification/quality-closeout-20261004.log",
+      "sha256": "50f96010091422f55770a2d447aa2b7063f4ac1b14400069c059a37436dfa589"
+    },
+    {
+      "path": "verification/offline-tests-closeout-20261004.log",
+      "sha256": "ed56918b02c1d468514ed3083039f359e9bba1d22b1aca23d6079248ae49de71"
+    },
+    {
+      "path": "verification/config-validation-closeout-20261004.log",
+      "sha256": "d26ca7c2c3570b3939909766eab029ae6b33a8f41812114b68f44523b1ecbecc"
+    },
+    {
+      "path": "verification/evidence-audit-closeout-20261004.log",
+      "sha256": "d447e7d9df0de472cfa8320ad2e9e241809f91451733a07a25eb9610ac6de859"
+    },
+    {
+      "path": "verification/sanitization-green.log",
+      "sha256": "f7718a1dbc5864bd0038080a7a6b0eca119755fa63ef4e3becca03021c2d407a"
+    }
+  ],
+  "limitations": [
+    "Provider safety boundary remains BLOCKED/NOT_RUN",
+    "Canonical selection event unavailable",
+    "Claude and business acceptance not run",
+    "Single-trial Benchmarks are not statistical effectiveness evidence"
+  ],
+  "closeout": {
+    "date": "2026-10-04",
+    "state": "PASS",
+    "scope": "Offline evidence redaction repair and repository validation; not additional model or business runs",
+    "repaired_artifact": "artifacts/core/testability-analysis-zh/iteration-1/architecture-success/with_skill/outputs/agent/run/run-1791027004408-codex-events.jsonl",
+    "changed_command_events": 2,
+    "original_sha256": "61dfe7becc26e0571534ce3aa1d1d35d03c85d908d95d1b15e413ef3a272e773",
+    "exported_sha256": "7d8e137161af1d6e4c12778ac6a4be422d801723b7efb81da3d9677276ea20ee",
+    "original_sha256_preserved": true,
+    "native_results_and_cost_unchanged": true,
+    "redaction_regressions": {
+      "state": "PASS",
+      "tests": 2,
+      "expected_pre_repair_failure": "verification/sanitization-red.log",
+      "post_repair_log": "verification/sanitization-green.log",
+      "limitation": "Common local-path and credential patterns only, not exhaustive credential security review"
+    },
+    "manifest_files_after_closeout_logs": 1119,
+    "commit_created": false,
+    "push_performed": false
+  }
+}

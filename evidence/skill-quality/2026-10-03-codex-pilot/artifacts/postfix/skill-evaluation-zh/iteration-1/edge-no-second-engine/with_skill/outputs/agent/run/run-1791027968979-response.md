@@ -1,0 +1,22 @@
+本次未新增全局组件或修改 Skill：你限定了本地读取和文本交付，且没有提供目标 Skill、运行环境和通过标准。以下是替换方案草案，尚未实现。
+
+| 组件 | 职责 | 当前证据状态 |
+|---|---|---|
+| Eval Engine | 执行固定用例，保存版本、运行信息与原始 trace | `NOT_RUN` |
+| Judge | 优先确定性断言；语义判断需明确 rubric 并校准 | `UNASSESSED` |
+| Benchmark | 比较相同条件下 with/without Skill 的表现 | `NOT_RUN` |
+| Quality Score | 按预先固定的指标汇总；缺失证据不能算通过 | `NOT_SCORED` |
+
+“自动修改直到通过”需要改为**有预算上限的修复循环**：先确认失败来自 Skill，再修改目标 Skill 并运行固定评测；禁止通过放宽断言或降低门槛获得通过。预算耗尽仍未通过时，保留失败与修改记录。
+
+最小评测报告：
+
+- **范围与运行信息**：目标 Skill、版本、模型、环境、judge 均为 `unknown`。
+- **覆盖与结果**：用例尚未定义，运行 `NOT_RUN`，有效性 `UNASSESSED`。
+- **触发证据**：缺少 `skill.selection` trace，结论 `BLOCKED`。
+- **Benchmark 与版本回归**：分别比较 with/without、previous/current；当前均 `NOT_RUN`。
+- **失败归因与限制**：`INSUFFICIENT_EVIDENCE`，无法判定 Skill、评测或基础设施缺陷。
+
+状态含义：`PASS`／`FAIL` 表示有效证据支持通过／失败；`BLOCKED` 表示必要条件缺失；`NOT_RUN` 表示未执行；`NOT_SCORED` 表示未评分；`UNASSESSED` 表示未评估；`INSUFFICIENT_EVIDENCE` 表示证据不足。
+
+落地仍缺目标 Skill、固定验收标准和允许写入的位置；目前没有可报告的运行或通过结果。

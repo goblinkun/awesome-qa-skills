@@ -1,0 +1,16 @@
+📋 Loading configuration...
+level=INFO msg="Config: loading eval.yaml from <SKILL_SNAPSHOT>/skill-change-verification-zh/evals/eval.yaml"
+✅ Loaded 1 case(s) | engine: codex_no_daemon_isolated | model: openai/gpt-6-sol
+
+🔑 Loading credentials...
+✅ Credentials ready
+
+🚀 Running evaluation (1 cases)
+   ⏳ [1/1] basic-success: 完整变更验证路由...
+   ✅ [1/1] basic-success: PASS (100.0%)
+
+📊 Generating reports...
+✅ Reports saved to <RUN_ROOT>/cross-model/skill-change-verification-zh/iteration-1
+
+────────────────────────────────────────
+📋 Results: 1 passed, 0 failed, 0 errors

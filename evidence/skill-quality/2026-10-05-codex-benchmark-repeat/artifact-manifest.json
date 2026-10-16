@@ -1,0 +1,1961 @@
+{
+  "hash": "SHA256",
+  "sanitization": "Symbolic local paths; original hashes retained; private raw bytes are not all identical to exported artifacts",
+  "file_count": 244,
+  "files": [
+    {
+      "path": "artifacts/repeat/functional-testing-zh/console.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "67ce5af2711064871bee831fab29069228a7c29c1d2a4d171c50aec2a0c3dca7",
+      "archived_sha256": "4451e2effd093798025a8a3816be6fcc62306cb80905da6ac50f66cf4d4559c1",
+      "sanitized_path_occurrences": 7,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "8bcd55617ae48e401f203b41f194b63d01db0c845b366000fa3d6a4b21417a9e",
+      "archived_sha256": "8bcd55617ae48e401f203b41f194b63d01db0c845b366000fa3d6a4b21417a9e",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/eval_metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "c2798cc176c00aba05dca926eef5dd5828fb74269818553c339f16112d05eb46",
+      "archived_sha256": "c2798cc176c00aba05dca926eef5dd5828fb74269818553c339f16112d05eb46",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "ebadbe44c1a1cbe71a943d9067d0d644974e2618ff4c50e5112a4f29e767a0e1",
+      "archived_sha256": "ebadbe44c1a1cbe71a943d9067d0d644974e2618ff4c50e5112a4f29e767a0e1",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167804397-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "796ff37ed32dfdf5aa01e887a5e1f77b51bb097c8b12ea390d35cb1db4a717be",
+      "archived_sha256": "13ff5f54523febdce26514aa32614d7d5e9c72defdd694a9b2a1dc7632c3c3ed",
+      "sanitized_path_occurrences": 5,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167804397-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167804397-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "d747a6d850fc66c0bf6a17e7016d1bfb7788e792dd52a3f4b0912e0bbbd25ece",
+      "archived_sha256": "d51efd1e1c8cfa1cc6aaec12c50013220ee08192a479fcc376d922e761773ce0",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167804397-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "0b754855e7d6e353c5dfb640fdd5ba94bea60b4a2e4c621caecc72153cfb4eff",
+      "archived_sha256": "0b754855e7d6e353c5dfb640fdd5ba94bea60b4a2e4c621caecc72153cfb4eff",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/final_message.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "0b754855e7d6e353c5dfb640fdd5ba94bea60b4a2e4c621caecc72153cfb4eff",
+      "archived_sha256": "0b754855e7d6e353c5dfb640fdd5ba94bea60b4a2e4c621caecc72153cfb4eff",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/generated_files.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "2ebde30de1eea6727d18a04b7002ebb0f8d5c6352a433d6ed36772262395bdc5",
+      "archived_sha256": "e4517cd343d8516b9f54be45403432d276ba64944f13599ef915b33e098fc69f",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/manifest.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "53ceb98863ad6198b0528cbe15881a8cfd485b3d40495bb68160ce56b13d396f",
+      "archived_sha256": "53ceb98863ad6198b0528cbe15881a8cfd485b3d40495bb68160ce56b13d396f",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/transcript.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "2df7e76870a2578de5f225fee418062b831f12985e352905aa41176dbd6b105b",
+      "archived_sha256": "464426c4507214bd6e3caf26a04fb908bc7398a47add125cbda15ed80b245bc0",
+      "sanitized_path_occurrences": 3,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167935276-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "0af18d1927a9e3c82c7d1b0ab62607974d43fd9f0f042fec81c1a5e5515ffe14",
+      "archived_sha256": "0af18d1927a9e3c82c7d1b0ab62607974d43fd9f0f042fec81c1a5e5515ffe14",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167935276-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167935276-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1d93781573aa66fad96c94620cafe4f4fb38e07d540127b62ce34be4b3026f0b",
+      "archived_sha256": "4713b5b41f18deb2622b2671fab871d3a4504a8a7fd81300b2eaaca15d88d9c3",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167935276-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "d04977ae06264fc4c7f8f2904115952e40310707b9ec072b1929a30e69fb754e",
+      "archived_sha256": "d04977ae06264fc4c7f8f2904115952e40310707b9ec072b1929a30e69fb754e",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/raw-response-attempt-1.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "d04977ae06264fc4c7f8f2904115952e40310707b9ec072b1929a30e69fb754e",
+      "archived_sha256": "d04977ae06264fc4c7f8f2904115952e40310707b9ec072b1929a30e69fb754e",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "ea9bfe03739a045b7ce230890d6d5deb49630975b1ef63010a97714d368bd578",
+      "archived_sha256": "ea9bfe03739a045b7ce230890d6d5deb49630975b1ef63010a97714d368bd578",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "6f029ef1085140f022cc6d469629a2ecc9508157e478872e4e82aa7844078c70",
+      "archived_sha256": "6f029ef1085140f022cc6d469629a2ecc9508157e478872e4e82aa7844078c70",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167957044-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "f549a38db704bcf466c672ea84864a0d64af4c6d33ce32a13ba2f1790d60250b",
+      "archived_sha256": "d8054100139aaf1841caa9683758613e62edcf6e53660de3479fc3a0535c713d",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167957044-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167957044-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "949e23121129a115e9a142f01d65759215ad23d97506b1e081050629cd988e85",
+      "archived_sha256": "949e23121129a115e9a142f01d65759215ad23d97506b1e081050629cd988e85",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167957044-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "492457cca34c36afeb51428674abbdbb784dcd9a14f122cbc7d98c168d8726a6",
+      "archived_sha256": "492457cca34c36afeb51428674abbdbb784dcd9a14f122cbc7d98c168d8726a6",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/context/final_message.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "492457cca34c36afeb51428674abbdbb784dcd9a14f122cbc7d98c168d8726a6",
+      "archived_sha256": "492457cca34c36afeb51428674abbdbb784dcd9a14f122cbc7d98c168d8726a6",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/context/generated_files.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "89b52e5457c0deb487db9a3d07e8f9467727655dd78e4b9132d49dcacb0b9d74",
+      "archived_sha256": "0a28de542d525e6be7c06e7ee7ad6c79aab4cc31f63d42bbe81f387f7ed2078c",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/context/manifest.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "bab12aaccdfeca1e461917b49dd600b2e1f805f9839aa92c00306b54451a3e16",
+      "archived_sha256": "bab12aaccdfeca1e461917b49dd600b2e1f805f9839aa92c00306b54451a3e16",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/context/transcript.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "8508e9e78f0cb60fbb6b7494dd2aaed000ba8b158be40fb6e274fbcd1b7a48ee",
+      "archived_sha256": "5333aa9547a9cd94e9bd3eba420a02e82c57c6901dfca3bf379f24fa6b7673a8",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168080801-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "0e6eb2f3f9e40277802ebfb9bc0a4a0e4c9964a6de4f29617bbe90d64dcb64be",
+      "archived_sha256": "0e6eb2f3f9e40277802ebfb9bc0a4a0e4c9964a6de4f29617bbe90d64dcb64be",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168080801-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168080801-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "3d8b492188216a8b6d2e0774223825ce4627578e9b22722128fe39bc7aa49544",
+      "archived_sha256": "3d8b492188216a8b6d2e0774223825ce4627578e9b22722128fe39bc7aa49544",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168080801-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a310af5855e754112513f850f61fda633f91ebf99724aff9b68a3d7f0c98736b",
+      "archived_sha256": "a310af5855e754112513f850f61fda633f91ebf99724aff9b68a3d7f0c98736b",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/run/raw-response-attempt-1.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a310af5855e754112513f850f61fda633f91ebf99724aff9b68a3d7f0c98736b",
+      "archived_sha256": "a310af5855e754112513f850f61fda633f91ebf99724aff9b68a3d7f0c98736b",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "5fe92058c1a69570a38c4541a094ac1cd63fbc84dc7a0d37dc61a0e0933b44e6",
+      "archived_sha256": "5fe92058c1a69570a38c4541a094ac1cd63fbc84dc7a0d37dc61a0e0933b44e6",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "532faf6d20d6fbac5408b09d0edac0019967ce9456aba53009b4c21c84e26a08",
+      "archived_sha256": "29d851a7652e5fb63c1c90bf7b5151d625bf2da9bbef5b5b18e1a33647fdba2e",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/benchmark.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "67c3d601ea76f042219ec63acfa0c730a4f2202466c75ed79686117b13ecc6f4",
+      "archived_sha256": "67c3d601ea76f042219ec63acfa0c730a4f2202466c75ed79686117b13ecc6f4",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/report.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "43cbb82fd1a2363bb9cfc3d36a52225df6113c0e75bce8989251053a3711f117",
+      "archived_sha256": "43cbb82fd1a2363bb9cfc3d36a52225df6113c0e75bce8989251053a3711f117",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/report.xml",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "96bf37eb187bc9524e0d2952279a21f664011d2988ad1b2d4b440594c0ee7315",
+      "archived_sha256": "96bf37eb187bc9524e0d2952279a21f664011d2988ad1b2d4b440594c0ee7315",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-1/result.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "43cbb82fd1a2363bb9cfc3d36a52225df6113c0e75bce8989251053a3711f117",
+      "archived_sha256": "43cbb82fd1a2363bb9cfc3d36a52225df6113c0e75bce8989251053a3711f117",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/eval_metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "c2798cc176c00aba05dca926eef5dd5828fb74269818553c339f16112d05eb46",
+      "archived_sha256": "c2798cc176c00aba05dca926eef5dd5828fb74269818553c339f16112d05eb46",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "8d8ef97704e90861bf4c8a7e4748c3f717f31d234694f369067c18a655d70bf8",
+      "archived_sha256": "8d8ef97704e90861bf4c8a7e4748c3f717f31d234694f369067c18a655d70bf8",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791168105150-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "39d03561ee997d4720a0f8dac0b7314e4f6c24e372561e766cb1d1b227f51a6c",
+      "archived_sha256": "9219af621e7e4c723a3680ed135790982ca7a877ba9997a8f58a1f862daa3e0a",
+      "sanitized_path_occurrences": 3,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791168105150-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791168105150-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "9c07cedc31ff80c7e0697592501d0d96a3c3a517c075ecb60918e3bc975c686a",
+      "archived_sha256": "105b9bc320463610d03b7a5b0beed4b0fe634a70fff81058119e9aebc54645d1",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791168105150-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e98207387f488ce8cf7f555987824a38b8a6420ba59207e7df3628640dd1e788",
+      "archived_sha256": "e98207387f488ce8cf7f555987824a38b8a6420ba59207e7df3628640dd1e788",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/final_message.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e98207387f488ce8cf7f555987824a38b8a6420ba59207e7df3628640dd1e788",
+      "archived_sha256": "e98207387f488ce8cf7f555987824a38b8a6420ba59207e7df3628640dd1e788",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/generated_files.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "31195570352fda48cd8eb37d6425be15c5a057a3f226492a55924d16b8f36ca6",
+      "archived_sha256": "87e737b7b6627fe45e92bb583a72316579bde3ec53ff48acd868257a9452a670",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/manifest.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "f3b9ca0b45cad5307d50928184b6ea4f86c2f6c653b9eeaf82a0d1e86bc11736",
+      "archived_sha256": "f3b9ca0b45cad5307d50928184b6ea4f86c2f6c653b9eeaf82a0d1e86bc11736",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/transcript.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "6c6d43169d9461a0ec0030ed066bb1de8a802318c1c05b3a27a9ecc7ce9826bd",
+      "archived_sha256": "24eebb7d93d8d5b3f2693b1e978ffc75754f804300837676ad3249c95ff0d463",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168255576-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "20673e9b5682912bdbb781450cd89bfadcaa7727eb008092efab20f403613f2e",
+      "archived_sha256": "20673e9b5682912bdbb781450cd89bfadcaa7727eb008092efab20f403613f2e",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168255576-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168255576-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e1867eabb66ab33c5103bcc32e6ed233dd611549c9aa0a117b73c7d3a53b6058",
+      "archived_sha256": "3371b244a20e2bd3469145255d126cd25890899c080a4d283fc0c009da0565fd",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168255576-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "776b490abb7432f2a387c3b4e540125449f714c9ef82f25b86a38461bde1fb55",
+      "archived_sha256": "776b490abb7432f2a387c3b4e540125449f714c9ef82f25b86a38461bde1fb55",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/raw-response-attempt-1.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "776b490abb7432f2a387c3b4e540125449f714c9ef82f25b86a38461bde1fb55",
+      "archived_sha256": "776b490abb7432f2a387c3b4e540125449f714c9ef82f25b86a38461bde1fb55",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "11f9d8cdef779c93d906fa722ebfc00bad470d12c488afe7b13e8b60b92f2162",
+      "archived_sha256": "11f9d8cdef779c93d906fa722ebfc00bad470d12c488afe7b13e8b60b92f2162",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "183b80300491a35727a47c08523d74aa531a3593cef01cb547e6f8f65f5dcb50",
+      "archived_sha256": "183b80300491a35727a47c08523d74aa531a3593cef01cb547e6f8f65f5dcb50",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168278530-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e7a9c28d80b65ab388abddff6d90f25f0629adb33faad0e995dfd7d68fd12833",
+      "archived_sha256": "6e1a7caa6bdb9949dac628416a717c9baf02eb8196bafcd6f2688612fd34e6e7",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168278530-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168278530-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "38b6b3546eb56f9541450d06a5603b8e9616fb3a2c763b756d2165ff75fbc940",
+      "archived_sha256": "38b6b3546eb56f9541450d06a5603b8e9616fb3a2c763b756d2165ff75fbc940",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168278530-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "38d5d420fdb0eaefaa5126d201ae37ec899381ddb0bbd130f445fb6bbd9f21bf",
+      "archived_sha256": "38d5d420fdb0eaefaa5126d201ae37ec899381ddb0bbd130f445fb6bbd9f21bf",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/context/final_message.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "38d5d420fdb0eaefaa5126d201ae37ec899381ddb0bbd130f445fb6bbd9f21bf",
+      "archived_sha256": "38d5d420fdb0eaefaa5126d201ae37ec899381ddb0bbd130f445fb6bbd9f21bf",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/context/generated_files.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "c1136c0735c24a45db2212a3f7b367f0ec30030d95e529edd262f55001280fb6",
+      "archived_sha256": "3dea462dac4a5410ff486a0d876bc756c1f530da8c2cf208d611c6f704b7f304",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/context/manifest.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "ede92d2f82ed586eb3a562dcfcf15f7f0b4c1471d1e2e2e2c73233adeb2dfd1f",
+      "archived_sha256": "ede92d2f82ed586eb3a562dcfcf15f7f0b4c1471d1e2e2e2c73233adeb2dfd1f",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/context/transcript.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "03761aa4fc7cfab795d36c44a7e0911d84f944e66b1bf5c70d270f3f984bb3fb",
+      "archived_sha256": "3d43e5800689a5203c9e09227ad6b5d06ed67657ab00a1746c6f54148b8ab589",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168411898-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "7ba6d8a63e798e4aaea36385e0584d952150ae31bc7cfeb1fd0296858a07f73a",
+      "archived_sha256": "7ba6d8a63e798e4aaea36385e0584d952150ae31bc7cfeb1fd0296858a07f73a",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168411898-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "71333f16ce77c9fa3731a695c11fb8a873c1f70d25bfa8213689bc4d7c963c09",
+      "archived_sha256": "71333f16ce77c9fa3731a695c11fb8a873c1f70d25bfa8213689bc4d7c963c09",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168411898-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "3717066c2c4cfab10f14f107d3ff8bb2e39b77c1a9b7f03ce282bd7f5b77a346",
+      "archived_sha256": "3717066c2c4cfab10f14f107d3ff8bb2e39b77c1a9b7f03ce282bd7f5b77a346",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168411898-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "38800cead3578d67cbea6c9ed9ec1d68bc6f196ef187ea6c49c7e4987ce63d45",
+      "archived_sha256": "38800cead3578d67cbea6c9ed9ec1d68bc6f196ef187ea6c49c7e4987ce63d45",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/run/raw-response-attempt-1.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "38800cead3578d67cbea6c9ed9ec1d68bc6f196ef187ea6c49c7e4987ce63d45",
+      "archived_sha256": "38800cead3578d67cbea6c9ed9ec1d68bc6f196ef187ea6c49c7e4987ce63d45",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "c9bc87cf178b336be970dd42aa1d9c99848cbe1ae13e697cd216ab31c350d727",
+      "archived_sha256": "c9bc87cf178b336be970dd42aa1d9c99848cbe1ae13e697cd216ab31c350d727",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "90e6dbf098117600d5a4bede91ea9f926cb7b5f18146abccf38b39a97bb04826",
+      "archived_sha256": "384d7579247975f807af02fc31f9cd79b5687df40ffd24fcf779d0056d8c4bae",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/benchmark.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "f1ac1dd96d59f8e9d15cb11fdecaf15aa98f310bdd967325c1ba51997ccc3a25",
+      "archived_sha256": "f1ac1dd96d59f8e9d15cb11fdecaf15aa98f310bdd967325c1ba51997ccc3a25",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/report.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "326cb82e1ee132763e51b1d1925d464f8d50b406754c28b5db4de7dc9e8174d7",
+      "archived_sha256": "326cb82e1ee132763e51b1d1925d464f8d50b406754c28b5db4de7dc9e8174d7",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/report.xml",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "ec639befca95d97375d5d5833a5a7ea33d4b16d4837249998d874c45d0696b7a",
+      "archived_sha256": "ec639befca95d97375d5d5833a5a7ea33d4b16d4837249998d874c45d0696b7a",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/functional-testing-zh/iteration-2/result.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "326cb82e1ee132763e51b1d1925d464f8d50b406754c28b5db4de7dc9e8174d7",
+      "archived_sha256": "326cb82e1ee132763e51b1d1925d464f8d50b406754c28b5db4de7dc9e8174d7",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/console.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "af6dcdb35bcab13dbab82f4adb6410827d55d30ffc881a6eb67dd8fc3f21150f",
+      "archived_sha256": "64d693807ede1e850adb1fb7f6ffe966903013174d4667eff907f7ab60bd4c4a",
+      "sanitized_path_occurrences": 5,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "f9ef60ac459df55cde4e6da1501862b3b0b333ce5e492a101fc868ead14b4677",
+      "archived_sha256": "f9ef60ac459df55cde4e6da1501862b3b0b333ce5e492a101fc868ead14b4677",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/eval_metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a2cc2de33adb437320d29986012d511234e8ed33accde340c8cf4a04bee04f40",
+      "archived_sha256": "a2cc2de33adb437320d29986012d511234e8ed33accde340c8cf4a04bee04f40",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "d1406110e6b693d0a4c627a2093f5683c3852dcb710c7c21039ed10401674f77",
+      "archived_sha256": "d1406110e6b693d0a4c627a2093f5683c3852dcb710c7c21039ed10401674f77",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167805122-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "5871954c42f075d51b9a54d4952cba5bbc08051ec5141c9a44a66c1b82555789",
+      "archived_sha256": "0198bd71760d8f9fc7237ec53ca1ab6bbe46c611985ce0ba9e1e101f4c0f45e5",
+      "sanitized_path_occurrences": 5,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167805122-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167805122-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "8c8945264d13005dd370d7ad24e7745dd67245c6fbd7db50816b10f928cedd8e",
+      "archived_sha256": "763b098932f30f25cb26be214e5d5574c9954771fddfe107b4b7a710a909ef1c",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167805122-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "ff77352a5b9bb1086d88a080631f3ac7fbc4eac4e84df5b9ff7bf5f2c43490c7",
+      "archived_sha256": "ff77352a5b9bb1086d88a080631f3ac7fbc4eac4e84df5b9ff7bf5f2c43490c7",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/final_message.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "ff77352a5b9bb1086d88a080631f3ac7fbc4eac4e84df5b9ff7bf5f2c43490c7",
+      "archived_sha256": "ff77352a5b9bb1086d88a080631f3ac7fbc4eac4e84df5b9ff7bf5f2c43490c7",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/generated_files.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e5fcbbf215d7e7720211c913ccdbad748e5fafaa343820524e4eb1c1c530fbf5",
+      "archived_sha256": "b6dbbfa17e8832d1509aac1a8b26b32bbd2740a9e69274c943975e1b16648a33",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/manifest.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "143b9c83a7c8e1973109e4547a526acf3b465c4d4f57665250854dbe4b81bf87",
+      "archived_sha256": "143b9c83a7c8e1973109e4547a526acf3b465c4d4f57665250854dbe4b81bf87",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/transcript.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "cfe36e3577f53ec6cc91567c257493822b79f0e64d7d6301bd6892879c394298",
+      "archived_sha256": "2105896907ecd93fd335e12c203adfa2a5811d2db87505e068cfa1d964eee212",
+      "sanitized_path_occurrences": 3,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167883616-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "b9570cbb751a93f8e9bb8ca6f5b6f713d98d72e0e7f85ff7fa30ff94d0643439",
+      "archived_sha256": "b9570cbb751a93f8e9bb8ca6f5b6f713d98d72e0e7f85ff7fa30ff94d0643439",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167883616-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167883616-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "854e8765cbf72cbf4d8adc6c6b172773c4dadb2a73a8a15ee8e76a0384dd0ab9",
+      "archived_sha256": "dc1b9943f5230c989c9942b8acf9339b353d70aeb4f2ce6d451cd04c206c3717",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167883616-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "563adb1d7ad920bb4d25ae71535e30308c47f86fd27d6bead2a1c9ef02efb338",
+      "archived_sha256": "563adb1d7ad920bb4d25ae71535e30308c47f86fd27d6bead2a1c9ef02efb338",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/raw-response-attempt-1.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "563adb1d7ad920bb4d25ae71535e30308c47f86fd27d6bead2a1c9ef02efb338",
+      "archived_sha256": "563adb1d7ad920bb4d25ae71535e30308c47f86fd27d6bead2a1c9ef02efb338",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "61e4083d7510f6829b8126666a2d572004eac49f649cdaf664c7afc14024bb46",
+      "archived_sha256": "61e4083d7510f6829b8126666a2d572004eac49f649cdaf664c7afc14024bb46",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/without_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "002f0b4cb66e603549d8cdb02d330d0045f6acbc829afc9aa08b0a1048b05a75",
+      "archived_sha256": "002f0b4cb66e603549d8cdb02d330d0045f6acbc829afc9aa08b0a1048b05a75",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167901821-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "bfafee793f9063f6863b66a6428787206761f47a14ba12c83ca3a17dc204c67f",
+      "archived_sha256": "80be39b20b165059f8227e010d2d894106a94efcdc962d7bd6a571881c6c3a64",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167901821-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167901821-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "f583be9d0d9961dda0bf957101a779445194c58aa3749579a1bcb328fb2c0a88",
+      "archived_sha256": "f583be9d0d9961dda0bf957101a779445194c58aa3749579a1bcb328fb2c0a88",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167901821-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a56ff0d572706a5019b3b4c694dc3ccbe1b33ee01ce16bb1b430fe17bfdcf185",
+      "archived_sha256": "a56ff0d572706a5019b3b4c694dc3ccbe1b33ee01ce16bb1b430fe17bfdcf185",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark-neutral/without_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "60188c3908a2fb1528dcbd01525cec6d73a3ede7bd9493cb17de3892d117fa6d",
+      "archived_sha256": "60188c3908a2fb1528dcbd01525cec6d73a3ede7bd9493cb17de3892d117fa6d",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1299a91db0dccaf7db313b46ba38ed9ff06ebd713bc9ecd46bb11d1920ded6b7",
+      "archived_sha256": "011969e75b79f23583b9a86a664f0f1feb6897e16e89f615708e9ff6f5899866",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/benchmark.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "5b73fe6513b6389ba9d0507f27473221a7afc92cd2ce23dcaac4102d0a009093",
+      "archived_sha256": "5b73fe6513b6389ba9d0507f27473221a7afc92cd2ce23dcaac4102d0a009093",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/report.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a376fda75864ed8a8badab673548af0620efa3b85d16b7ee1b6b9c18afe12e3d",
+      "archived_sha256": "a376fda75864ed8a8badab673548af0620efa3b85d16b7ee1b6b9c18afe12e3d",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/report.xml",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "9f5995b5cafcee90325d19105900f98b0a1b6d908280792174cbed729127c066",
+      "archived_sha256": "9f5995b5cafcee90325d19105900f98b0a1b6d908280792174cbed729127c066",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-1/result.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a376fda75864ed8a8badab673548af0620efa3b85d16b7ee1b6b9c18afe12e3d",
+      "archived_sha256": "a376fda75864ed8a8badab673548af0620efa3b85d16b7ee1b6b9c18afe12e3d",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/eval_metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a2cc2de33adb437320d29986012d511234e8ed33accde340c8cf4a04bee04f40",
+      "archived_sha256": "a2cc2de33adb437320d29986012d511234e8ed33accde340c8cf4a04bee04f40",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "633a554f22c091ff593edb1aeb90dcf0f91b5621e73019eb6714e5471114e958",
+      "archived_sha256": "633a554f22c091ff593edb1aeb90dcf0f91b5621e73019eb6714e5471114e958",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791167967024-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "55c9a474dfe392fb0a84a26496b385c77bc8d532a9086ace3aa414437dfcf407",
+      "archived_sha256": "b3aa5823f400457d332982c951ff32d43c3a20c0927948de54e78d1cff466ca3",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791167967024-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791167967024-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "cb08c34a9ad967264e8168f8f0b893d5f98b72a45d46b669eb13f2a4f6c17567",
+      "archived_sha256": "ceb30b29094e470df4433702da75195948abbb74cbfc79a02dcbb6b0606b495f",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791167967024-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e38e7d6fc8099fa84e7acfbeb9becb6b344470701350996c3528c1942de45c8e",
+      "archived_sha256": "e38e7d6fc8099fa84e7acfbeb9becb6b344470701350996c3528c1942de45c8e",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/final_message.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e38e7d6fc8099fa84e7acfbeb9becb6b344470701350996c3528c1942de45c8e",
+      "archived_sha256": "e38e7d6fc8099fa84e7acfbeb9becb6b344470701350996c3528c1942de45c8e",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/generated_files.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "9020745acb676d2c1c4e4694d23f4c38dee938a2ef9f2bb32159183ec432f8b2",
+      "archived_sha256": "6c779398992c8fd18252a8905736101878a5852d34a423543893da4ef7507da4",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/manifest.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "70158d6b4182bebbf0747169de55037f040bd9a58097a6f0101d9dcb4c3caee8",
+      "archived_sha256": "70158d6b4182bebbf0747169de55037f040bd9a58097a6f0101d9dcb4c3caee8",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/transcript.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a6f3731851e7855a4049281322d22d989f4d9d475689cd4a5029c0d3a5308b0e",
+      "archived_sha256": "e4fa5ce89f4f659573f2c63bdf81c3920445b2d6aed8798e5bf017bae4edefa7",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168052648-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "10c0392452a3f611f3fd7fe330509d32fb3ff952e661dad80e39edf978af6aad",
+      "archived_sha256": "10c0392452a3f611f3fd7fe330509d32fb3ff952e661dad80e39edf978af6aad",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168052648-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168052648-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "438bd2a808065766e7e217ba0afbc99f3ef1e0a6ea758d6187a8866bac78e0e5",
+      "archived_sha256": "26116b47d46ec2ded3464fc812d97a9265f2ae027a4d7b62b3b76ffe7b8d6e77",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168052648-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "73483830842d2e0cd3bb1afc75dc93e96835b0d44c8543236aebff9c543e3922",
+      "archived_sha256": "73483830842d2e0cd3bb1afc75dc93e96835b0d44c8543236aebff9c543e3922",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/raw-response-attempt-1.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "73483830842d2e0cd3bb1afc75dc93e96835b0d44c8543236aebff9c543e3922",
+      "archived_sha256": "73483830842d2e0cd3bb1afc75dc93e96835b0d44c8543236aebff9c543e3922",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/with_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a7c8acd375ec7dc423ec5e7352c98a9ff785f3a6313645817be89b22a7f21df1",
+      "archived_sha256": "a7c8acd375ec7dc423ec5e7352c98a9ff785f3a6313645817be89b22a7f21df1",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/without_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "002f0b4cb66e603549d8cdb02d330d0045f6acbc829afc9aa08b0a1048b05a75",
+      "archived_sha256": "002f0b4cb66e603549d8cdb02d330d0045f6acbc829afc9aa08b0a1048b05a75",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168071711-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "f9690f984bd465f1aef9af0f55a5f1859d1fb272ba865fe23adb4a31d9b6e6a4",
+      "archived_sha256": "31cc4d5facc0269bab08a72ea96824c2bc3f7626827c5f2cabad267572e280b9",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168071711-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168071711-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "75483f1f9439185bc654db15a18764b2f0f4b6a8f058be5e8bf163c579a555f0",
+      "archived_sha256": "75483f1f9439185bc654db15a18764b2f0f4b6a8f058be5e8bf163c579a555f0",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168071711-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1c00fbae78574bb8de69563ee91d7c26f8c606105efe6ff15f9d21f855305028",
+      "archived_sha256": "1c00fbae78574bb8de69563ee91d7c26f8c606105efe6ff15f9d21f855305028",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark-neutral/without_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "2036efd55c9c2720ad8dac98118933b2962baa65b6dc69365c69c44c54aa7311",
+      "archived_sha256": "2036efd55c9c2720ad8dac98118933b2962baa65b6dc69365c69c44c54aa7311",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "0f09952b6f7753ce9648cecf1c315ca7a33184ca4ec0f1d62c15fcfbe953b0d7",
+      "archived_sha256": "31fa4ee65a9d1b35fe2feba8ab1d225b9d9dc8879f173c6a24476996e13fcfc6",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/benchmark.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a5370d872bae9028c30cdb21dd14d5f0e2108494bdc804d70294f7b548405784",
+      "archived_sha256": "a5370d872bae9028c30cdb21dd14d5f0e2108494bdc804d70294f7b548405784",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/report.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "40934b9e0e160854bdda42b243ac77e72fcfb4e506aeb77ee0eb7bc3e636195e",
+      "archived_sha256": "40934b9e0e160854bdda42b243ac77e72fcfb4e506aeb77ee0eb7bc3e636195e",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/report.xml",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "9fddfba65142d83b14f084c8d08153480a06d26f2dff6380c6d4c3744e94fa49",
+      "archived_sha256": "9fddfba65142d83b14f084c8d08153480a06d26f2dff6380c6d4c3744e94fa49",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/skill-evaluation-zh/iteration-2/result.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "40934b9e0e160854bdda42b243ac77e72fcfb4e506aeb77ee0eb7bc3e636195e",
+      "archived_sha256": "40934b9e0e160854bdda42b243ac77e72fcfb4e506aeb77ee0eb7bc3e636195e",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/console.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "012316b7545907fca9fceb8a382938057d7c6133c4e41a4a7a4e30fd77c56e8d",
+      "archived_sha256": "25439c220cdc2c8b0711c8e25a0f7071e393ab14ac5592696533b1b9f671c804",
+      "sanitized_path_occurrences": 7,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "99e78e9b92642cd28ec1123efda339854dd00305bc6e6a9bfd0d350c910822a5",
+      "archived_sha256": "99e78e9b92642cd28ec1123efda339854dd00305bc6e6a9bfd0d350c910822a5",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/eval_metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "47b27e961b607f10d0be525f3366c129607a02c343efc7126d2c13ee33502876",
+      "archived_sha256": "47b27e961b607f10d0be525f3366c129607a02c343efc7126d2c13ee33502876",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "ca6da0b2137229d85af5d68810e898f06e255a0e7a910c26b4ed78f6f9776983",
+      "archived_sha256": "ca6da0b2137229d85af5d68810e898f06e255a0e7a910c26b4ed78f6f9776983",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167802748-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "106f1e58d01ec20c2c871a447731a243650e009357296f46249ea510c7db2b1a",
+      "archived_sha256": "fc5b631c3f652691f22e55f9366b6a00d9b69eeef45cd7ea32d669dc0d48455e",
+      "sanitized_path_occurrences": 5,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167802748-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167802748-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "f0a9f9fd346f7076c0e2e6f1b19b9087cbc1e5c431cae5e3d82abb0e3442f8dd",
+      "archived_sha256": "a7a31c9caec12b4e6c81da35cf866d1b242a3ba0e611eea386dd44a973a46b53",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167802748-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "3463c2d85efb8987fc77c9c24790d4c40ad585b89b9db9ad8830eb706ef65d67",
+      "archived_sha256": "3463c2d85efb8987fc77c9c24790d4c40ad585b89b9db9ad8830eb706ef65d67",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/final_message.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "3463c2d85efb8987fc77c9c24790d4c40ad585b89b9db9ad8830eb706ef65d67",
+      "archived_sha256": "3463c2d85efb8987fc77c9c24790d4c40ad585b89b9db9ad8830eb706ef65d67",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/generated_files.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "60214fda5ae6d33a7c99f91c09c946cf2d940cad4cc91fc8c6e8aa8083df5d59",
+      "archived_sha256": "9d8051abce4f84434eea0a24615661a22d1e60b1b040f4768dd858e463519616",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/manifest.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "5bf88200b130fe8407468555fa4aec985bb147afcbcbe552fc45419543f6a493",
+      "archived_sha256": "5bf88200b130fe8407468555fa4aec985bb147afcbcbe552fc45419543f6a493",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/transcript.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a04fd568e394581f9b9d7923446b1802e6adb9a6fd4ed2b1164920d863abee15",
+      "archived_sha256": "c0c89c863845074e29f44ab34ac78efe8f06714a277c595ea0b5a7a08fb70bc7",
+      "sanitized_path_occurrences": 3,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167923164-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "734a6e1b920b252b5ff8b51836c5692efb759bb6dad0854ad30fbac41a077626",
+      "archived_sha256": "734a6e1b920b252b5ff8b51836c5692efb759bb6dad0854ad30fbac41a077626",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167923164-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167923164-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "38ff5ebde98d791877efb50cf05e651fdc8a1d35ce52cc9bf67fb8a12d7089fc",
+      "archived_sha256": "b567203b42f765d336c8d317dbcf64c1b53632f7ae46bc06d983e28bdcf3bcdc",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/judge-1791167923164-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "14ed0ab077849a3f0fd6614ed6556fe513a95b7cdd66f49c1698da6b66ce8d4a",
+      "archived_sha256": "14ed0ab077849a3f0fd6614ed6556fe513a95b7cdd66f49c1698da6b66ce8d4a",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/run/raw-response-attempt-1.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "14ed0ab077849a3f0fd6614ed6556fe513a95b7cdd66f49c1698da6b66ce8d4a",
+      "archived_sha256": "14ed0ab077849a3f0fd6614ed6556fe513a95b7cdd66f49c1698da6b66ce8d4a",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/with_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "42c9d6e24d05b5436404615b49ca8bc7ec3f243df3dd6f9916bdbd4b8a44b3de",
+      "archived_sha256": "42c9d6e24d05b5436404615b49ca8bc7ec3f243df3dd6f9916bdbd4b8a44b3de",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "987f9010906da34266a7c4e45800648e42de460d530cf99c4559d0d292fdd03d",
+      "archived_sha256": "987f9010906da34266a7c4e45800648e42de460d530cf99c4559d0d292fdd03d",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167946976-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "9b1bd5734fea516b0b84d82507343565569cc1651d10e6df8ffef17fe12ac020",
+      "archived_sha256": "0de3798937ace08095e31774d3cac6909580d028993c8bbe9ccb8c620737ceb6",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167946976-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167946976-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "083139dce5d5bff85bc0c2512cb64afec88b5cf1ce67631df6095fcc1d2821e4",
+      "archived_sha256": "083139dce5d5bff85bc0c2512cb64afec88b5cf1ce67631df6095fcc1d2821e4",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/agent/run/run-1791167946976-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e51a963361a738f37d0441298b3d6cc63891493d26c6d15b704ca077827a07d8",
+      "archived_sha256": "e51a963361a738f37d0441298b3d6cc63891493d26c6d15b704ca077827a07d8",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/context/final_message.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e51a963361a738f37d0441298b3d6cc63891493d26c6d15b704ca077827a07d8",
+      "archived_sha256": "e51a963361a738f37d0441298b3d6cc63891493d26c6d15b704ca077827a07d8",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/context/generated_files.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "c6340e63b8add3d9fca8a3180ddcd77fccd1db26ef9d4001fb91e811f876d0a7",
+      "archived_sha256": "77a467e71d95ca099d6487fb97dee7c00b9d83a54f6e99b3700d20d18c8c4525",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/context/manifest.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "ab8b9055dccf77b6ebbd45a21933f7920a83c48d6d3189d53d280da88d5ea864",
+      "archived_sha256": "ab8b9055dccf77b6ebbd45a21933f7920a83c48d6d3189d53d280da88d5ea864",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/context/transcript.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "c8d71449c8f35a675ce10d59e6b89a040ebbcd1b001cbc5cd08ed4d21ae9b1e3",
+      "archived_sha256": "d2f1199a027fce00629890cf6ad4d3de900dd2da4cd406a78ddf32a97c444e5b",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168055406-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "5dfd7698afd15e3a193b3d1ca04e7e91a9cee393d61a949d2b8b64fb797a1f1d",
+      "archived_sha256": "5dfd7698afd15e3a193b3d1ca04e7e91a9cee393d61a949d2b8b64fb797a1f1d",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168055406-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168055406-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "a41d3cd72fe2a992921b01fb1b159d4cedf49dc85d9d70d98d8b08ab1aa1b8ec",
+      "archived_sha256": "a41d3cd72fe2a992921b01fb1b159d4cedf49dc85d9d70d98d8b08ab1aa1b8ec",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168055406-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "6388f5db2b458e5f7575b255568bd2f437d9531f212ffe1d8de7b6dfa695afb2",
+      "archived_sha256": "6388f5db2b458e5f7575b255568bd2f437d9531f212ffe1d8de7b6dfa695afb2",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/run/raw-response-attempt-1.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "6388f5db2b458e5f7575b255568bd2f437d9531f212ffe1d8de7b6dfa695afb2",
+      "archived_sha256": "6388f5db2b458e5f7575b255568bd2f437d9531f212ffe1d8de7b6dfa695afb2",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark-neutral/without_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "890820c2dbe341c56433218f3653da0316a7fce36885f81d97cde358fab5bfd9",
+      "archived_sha256": "890820c2dbe341c56433218f3653da0316a7fce36885f81d97cde358fab5bfd9",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "3a04a05f08b2f0c421662bdeb2fa6e254b91f627b903eeb02252028f08cf0e80",
+      "archived_sha256": "6a0b39d6e4ea000879c2b9a6c531662eda7d0dc8096d82d65bc5db9114b4ca73",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/benchmark.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "b16acea0ae0db510b277e74a9f313d953653bb3d3179ef87e3fdf109130a95a4",
+      "archived_sha256": "b16acea0ae0db510b277e74a9f313d953653bb3d3179ef87e3fdf109130a95a4",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/report.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "45c93db0ba9ce8771d0434bf571852364583939768625717ec6e92fafb1a2a7b",
+      "archived_sha256": "45c93db0ba9ce8771d0434bf571852364583939768625717ec6e92fafb1a2a7b",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/report.xml",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "91c628da2e564cbdc8efc8856595544734bfdbd76d4c646a2e00f099ddd88ad6",
+      "archived_sha256": "91c628da2e564cbdc8efc8856595544734bfdbd76d4c646a2e00f099ddd88ad6",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-1/result.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "45c93db0ba9ce8771d0434bf571852364583939768625717ec6e92fafb1a2a7b",
+      "archived_sha256": "45c93db0ba9ce8771d0434bf571852364583939768625717ec6e92fafb1a2a7b",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/eval_metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "47b27e961b607f10d0be525f3366c129607a02c343efc7126d2c13ee33502876",
+      "archived_sha256": "47b27e961b607f10d0be525f3366c129607a02c343efc7126d2c13ee33502876",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "872f3c927f2ef7c6e2482bc7878c6011dfce88ac3f331bf875f70e9b6522dba3",
+      "archived_sha256": "872f3c927f2ef7c6e2482bc7878c6011dfce88ac3f331bf875f70e9b6522dba3",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791168086898-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "90bc88fb7161fcc2ef3d7900eab51ddb7ca651c5c5bbc1632c19118989e7c9f3",
+      "archived_sha256": "c10324b8526b3b55943cacac4cdcc8ed3799ec5453b8d619b8a9c107c0c9f62b",
+      "sanitized_path_occurrences": 3,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791168086898-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791168086898-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "05c6bc3dda305ce5b6af5ae0070cd046ada6d8dccaa744b5e268540e8cad9262",
+      "archived_sha256": "3692fdda2377290a46ff6dd02286a6d158b710b662a4e973ae498576db7c10c1",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/agent/run/run-1791168086898-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "af4e46b9a818c1eb4bdf16ac0e88de61433eba2cc782bf8d62120b10109515c3",
+      "archived_sha256": "af4e46b9a818c1eb4bdf16ac0e88de61433eba2cc782bf8d62120b10109515c3",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/final_message.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "af4e46b9a818c1eb4bdf16ac0e88de61433eba2cc782bf8d62120b10109515c3",
+      "archived_sha256": "af4e46b9a818c1eb4bdf16ac0e88de61433eba2cc782bf8d62120b10109515c3",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/generated_files.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "5634c7bca14c7bde18b1ad0bf5df91553cdce65f0764f0e45aacca453f677e0f",
+      "archived_sha256": "300766f02463cafdf61ad151f03b378132a7f9f7d2c91ff456b0f52f1f73590d",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/manifest.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "4b0daee2b133e63fb3a3bf1688d0ad63f72fceb4b1399a0faf1a84d04fc037ae",
+      "archived_sha256": "4b0daee2b133e63fb3a3bf1688d0ad63f72fceb4b1399a0faf1a84d04fc037ae",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context/transcript.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "3ef923b3dd2418ef5a560b9dbc98cae3095ef18af84e0c2b8d72c33db30c4174",
+      "archived_sha256": "965224eec5042b130b99cf4de71b4443837f65d059ac2c77036910b10e1a6201",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168207237-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e50ccd016865e8fe0900d43af032a8977baa688956b0695a90c088af06cd8a35",
+      "archived_sha256": "e50ccd016865e8fe0900d43af032a8977baa688956b0695a90c088af06cd8a35",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168207237-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168207237-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "591ffa2ac57ed76df456d4c803c6e334e77ef025caf7ac7c33abdc3f25f5e1ae",
+      "archived_sha256": "fcd54a78aaeecf41a60079ff798830491438e0a79a89c9869f58a5e5544671d1",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/judge-1791168207237-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "c10837650b10a6f9f6466e21ab6b7f0c52e6249a624734003b190132d48de58a",
+      "archived_sha256": "c10837650b10a6f9f6466e21ab6b7f0c52e6249a624734003b190132d48de58a",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/run/raw-response-attempt-1.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "c10837650b10a6f9f6466e21ab6b7f0c52e6249a624734003b190132d48de58a",
+      "archived_sha256": "c10837650b10a6f9f6466e21ab6b7f0c52e6249a624734003b190132d48de58a",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/with_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "688b035bc3c555a0761aa6154b4fd8ca3c996b4e8784216e3d7bd1f8db12043a",
+      "archived_sha256": "688b035bc3c555a0761aa6154b4fd8ca3c996b4e8784216e3d7bd1f8db12043a",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/grading.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "8db838422c246c975b1db87bf5d7f00e60eab9cb0af73ba41a228e28211b54af",
+      "archived_sha256": "8db838422c246c975b1db87bf5d7f00e60eab9cb0af73ba41a228e28211b54af",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168229380-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "2eaee56ec8089b0bf31ea90a8141e01237aefdca36e35d45d596218f9aef6565",
+      "archived_sha256": "9321e1737c5b1d60919fedd42b47ef2195ac691936b6b4eda8013f6871004197",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168229380-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168229380-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "431b784e8994f2c89c9a78c5b7d8d9364bf363ee9a96495cc5bdce8928bf1474",
+      "archived_sha256": "431b784e8994f2c89c9a78c5b7d8d9364bf363ee9a96495cc5bdce8928bf1474",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/agent/run/run-1791168229380-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "8f66308bd6553c0566bc0e8ac14438023ba1afea88554aea951abbb735dd1c15",
+      "archived_sha256": "8f66308bd6553c0566bc0e8ac14438023ba1afea88554aea951abbb735dd1c15",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/context/final_message.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "8f66308bd6553c0566bc0e8ac14438023ba1afea88554aea951abbb735dd1c15",
+      "archived_sha256": "8f66308bd6553c0566bc0e8ac14438023ba1afea88554aea951abbb735dd1c15",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/context/generated_files.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "3906077e8a5a02744cfb58e07c731b74f252b4091020de53a61eca5fe528c6fe",
+      "archived_sha256": "2403f321ba2d6004d0bef77e1a34af6cd3456eb8064ab92a63d7e74a6c91cdce",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/context/manifest.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "15a45b7bd9d90c11291c7dfdd775c501aed552ac655c0cbd183c212d29539070",
+      "archived_sha256": "15a45b7bd9d90c11291c7dfdd775c501aed552ac655c0cbd183c212d29539070",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/context/transcript.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "06b2c95cc9839951c0babfe6597438aff2a83a126e1bf64b2409b049b482f3ba",
+      "archived_sha256": "9fe8a92a2ac790bb63d128a452e2e6cc1642d03066d7dfba3f3d307084bb5b08",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168329919-codex-events.jsonl",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "04fabcd398b3f1bbc5441579b1c1c99737710eecd1092c77be1fd49f6ebd1ce9",
+      "archived_sha256": "04fabcd398b3f1bbc5441579b1c1c99737710eecd1092c77be1fd49f6ebd1ce9",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168329919-codex-stderr.log",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "1f0e0a268cd8469dfbffadc3030fc7a9bd6a14bb2208872ef48078c079b0aae0",
+      "archived_sha256": "1f0e0a268cd8469dfbffadc3030fc7a9bd6a14bb2208872ef48078c079b0aae0",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168329919-metadata.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "5ae88d08d80dadc1d5c23c25276e755c301d354c26a485e788d396f0540b1bf4",
+      "archived_sha256": "5ae88d08d80dadc1d5c23c25276e755c301d354c26a485e788d396f0540b1bf4",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/run/judge-1791168329919-response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "cf0cdaade8c5acd93788f09ca22ae3b219297dc64df1fae30e44b4dde21edf04",
+      "archived_sha256": "cf0cdaade8c5acd93788f09ca22ae3b219297dc64df1fae30e44b4dde21edf04",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/run/raw-response-attempt-1.txt",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "cf0cdaade8c5acd93788f09ca22ae3b219297dc64df1fae30e44b4dde21edf04",
+      "archived_sha256": "cf0cdaade8c5acd93788f09ca22ae3b219297dc64df1fae30e44b4dde21edf04",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark-neutral/without_skill/outputs/response.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "e44bd1703330ce2486910f20446116c97141ec66c80f2b1a3186729590656af3",
+      "archived_sha256": "e44bd1703330ce2486910f20446116c97141ec66c80f2b1a3186729590656af3",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "eeb696d90dfd7ee1670a9f1fe7bbd2ab415fe17b86417ba74ac691deee34df49",
+      "archived_sha256": "d674ceb2be79aa9f4732d525490ca9fbbb41a67ac7b9f76bd6ea6b83d33817a0",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/benchmark.md",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "c302a1efdc00df272b0380dfed156f5cd607fd4be036c2483bb0efdcf734a71e",
+      "archived_sha256": "c302a1efdc00df272b0380dfed156f5cd607fd4be036c2483bb0efdcf734a71e",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/report.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "8515cadb04c6694fe222ce97f643350e45081d46ce5e3e9272ab0a436a93a756",
+      "archived_sha256": "8515cadb04c6694fe222ce97f643350e45081d46ce5e3e9272ab0a436a93a756",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/report.xml",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "530b6c0ee51b2b96f265ebd5958f05c2ad26e8dc8b1cd2137e29a8e3d34e886c",
+      "archived_sha256": "530b6c0ee51b2b96f265ebd5958f05c2ad26e8dc8b1cd2137e29a8e3d34e886c",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/repeat/testability-analysis-zh/iteration-2/result.json",
+      "kind": "native_repeated_benchmark",
+      "original_sha256": "8515cadb04c6694fe222ce97f643350e45081d46ce5e3e9272ab0a436a93a756",
+      "archived_sha256": "8515cadb04c6694fe222ce97f643350e45081d46ce5e3e9272ab0a436a93a756",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/results/functional-testing-zh/console.log",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "83e7067c4547d078fb0057a82b239853bdc50149d1f57e646099ecee156eccd6",
+      "archived_sha256": "0740060999a48dbf183339beb112e2d58983eddd98532ff7da731c7959955ed6",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/results/functional-testing-zh/events.jsonl",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "71839b6b7e05162781b1b5e6e140cea72107511c185575562e8d627de6c3b655",
+      "archived_sha256": "71839b6b7e05162781b1b5e6e140cea72107511c185575562e8d627de6c3b655",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/results/skill-evaluation-zh/console.log",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "b445c12110c0fc2671c9f8e46c0bf639326edae6e62af00371623d007a9a6737",
+      "archived_sha256": "c08cc159dcb620d36153af797eec2725ab1fbe332ad6f327320e1586d26337d7",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/results/skill-evaluation-zh/events.jsonl",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "47a06c1e49ef611256d0efda2c2f52587231f5c733dfa4043a9e17ae213462a6",
+      "archived_sha256": "47a06c1e49ef611256d0efda2c2f52587231f5c733dfa4043a9e17ae213462a6",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/results/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167302540-codex-events.jsonl",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "6bcb9fee5aa6734b32c37c4d4ef67bbe42e739aa0021d6f2e77c235becdf114b",
+      "archived_sha256": "cc396032172ce86ebd68fe1c945ef0b172279eca8e0cad015ea669b0b17780e1",
+      "sanitized_path_occurrences": 5,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/results/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167302540-codex-stderr.log",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/results/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167302540-metadata.json",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "b0426bc37613780e78b314edd93d3f45616b68c843bd74854460d0e1d7d3be69",
+      "archived_sha256": "6b207a608c260a7421fa687d752ba3ce7a48c7b7dfd0ba6173822cb649840baa",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/results/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/agent/run/run-1791167302540-response.md",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "0b0f571453fae565f9d01c97736df849540b5398deb3edc7bbe5c96c6d211617",
+      "archived_sha256": "0b0f571453fae565f9d01c97736df849540b5398deb3edc7bbe5c96c6d211617",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/results/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/final_message.txt",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "0b0f571453fae565f9d01c97736df849540b5398deb3edc7bbe5c96c6d211617",
+      "archived_sha256": "0b0f571453fae565f9d01c97736df849540b5398deb3edc7bbe5c96c6d211617",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/results/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/generated_files.txt",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "62ffc5651dd6d06c8c999645b4245e9c45ab3682c80a04f7aa3083011b9342e8",
+      "archived_sha256": "5b0b8cb163cfde5f35a85d86e61be0b38312a2a6f948f1fdaf3794f23c40b47d",
+      "sanitized_path_occurrences": 4,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/results/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/manifest.json",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "b6affbfed6380b9ef4fde4ab3fd12e295c889806a351052b19f6d99cc3c16a6c",
+      "archived_sha256": "b6affbfed6380b9ef4fde4ab3fd12e295c889806a351052b19f6d99cc3c16a6c",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/results/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context/transcript.json",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "be5a75280b1ef23fd2bd6ec4bff1aa55e3c02a4e184ddd0113729d0372b21183",
+      "archived_sha256": "28251234c13e019a5662342f5b722a60cb9e24f9263aa7c37f5139e144ea9247",
+      "sanitized_path_occurrences": 3,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/results/testability-analysis-zh/console.log",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "64c1917141368ad8eed313b7e20d8eaea3e93ff1e8ff2fa50c20e3200845565b",
+      "archived_sha256": "81d4eda29e4336f44aa2afca0820aaaebc0ae64d4392f2a9d1ae5bb812073abe",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/results/testability-analysis-zh/events.jsonl",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "9e470c495dc7d1351acdc9470eeeef4f9c72126accdc157375f13427850dc85d",
+      "archived_sha256": "9e470c495dc7d1351acdc9470eeeef4f9c72126accdc157375f13427850dc85d",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/functional-testing-zh/run-1791167296841-codex-events.jsonl",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "0a3d03b4deeca88c3cc366bcf7c64e5ffbf37b819257af238f958073f8e0f14e",
+      "archived_sha256": "40b1e7abc7064d9cd87b6c474185938bb6efa91826321456410ca9ce8f71f2a5",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/functional-testing-zh/run-1791167296841-codex-stderr.log",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/functional-testing-zh/run-1791167296841-metadata.json",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "16379d80f566073466410c6f01949c4be344e3311ce637b6e2e41e729028c571",
+      "archived_sha256": "132b85c97a47365d1cfe2f5f6660e4e78f0137d9ecfc742f5877677b9095019f",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/functional-testing-zh/run-1791167296841-response.md",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "80e432e6b842a0c1d4971b3444c6e806677c3ade0f6e8e0f59b98e3499efd18f",
+      "archived_sha256": "80e432e6b842a0c1d4971b3444c6e806677c3ade0f6e8e0f59b98e3499efd18f",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/skill-evaluation-zh/judge-1791167385387-codex-events.jsonl",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "7c5005678bdd7f3fc55021e2dcaa4a102b091611067440949b8d5a11b923c247",
+      "archived_sha256": "7c5005678bdd7f3fc55021e2dcaa4a102b091611067440949b8d5a11b923c247",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/skill-evaluation-zh/judge-1791167385387-codex-stderr.log",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/skill-evaluation-zh/judge-1791167385387-metadata.json",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "a1ea45a5b22d08507a47f83a08538d1c00d6395899eec6def6e4c2facf78e912",
+      "archived_sha256": "10074d0050f5276a1761286dc699c87693ed6a0070dddd21dc7fad666d1e1e54",
+      "sanitized_path_occurrences": 1,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/skill-evaluation-zh/judge-1791167385387-response.md",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "b17d88a4b61fc62dd0a6461f5291c4716134c68747de0bbe810e894a540aa3bf",
+      "archived_sha256": "b17d88a4b61fc62dd0a6461f5291c4716134c68747de0bbe810e894a540aa3bf",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/skill-evaluation-zh/run-1791167302540-codex-events.jsonl",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "6bcb9fee5aa6734b32c37c4d4ef67bbe42e739aa0021d6f2e77c235becdf114b",
+      "archived_sha256": "cc396032172ce86ebd68fe1c945ef0b172279eca8e0cad015ea669b0b17780e1",
+      "sanitized_path_occurrences": 5,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/skill-evaluation-zh/run-1791167302540-codex-stderr.log",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/skill-evaluation-zh/run-1791167302540-metadata.json",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "b0426bc37613780e78b314edd93d3f45616b68c843bd74854460d0e1d7d3be69",
+      "archived_sha256": "6b207a608c260a7421fa687d752ba3ce7a48c7b7dfd0ba6173822cb649840baa",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/skill-evaluation-zh/run-1791167302540-response.md",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "0b0f571453fae565f9d01c97736df849540b5398deb3edc7bbe5c96c6d211617",
+      "archived_sha256": "0b0f571453fae565f9d01c97736df849540b5398deb3edc7bbe5c96c6d211617",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/testability-analysis-zh/run-1791167297324-codex-events.jsonl",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "003a9d485db642686870a9783ac9a4782c3996420cd2fc55e9028e03fbd0225d",
+      "archived_sha256": "3fa5ac81ffd9f0d01ed0606dd384b1e9e499be0bb6932c6110e7d6d256b90d50",
+      "sanitized_path_occurrences": 5,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/testability-analysis-zh/run-1791167297324-codex-stderr.log",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "archived_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/testability-analysis-zh/run-1791167297324-metadata.json",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "ba1894088a8c96e26b0009b0076e3062d4c5f5a0f438b2e1ff26d4ba522766fc",
+      "archived_sha256": "529a7df03c371f7ea03bfc13ba449ea5ec93d1ac46cf1206840571fbe3be4548",
+      "sanitized_path_occurrences": 2,
+      "byte_identical": false
+    },
+    {
+      "path": "artifacts/interrupted/recovered-native/testability-analysis-zh/run-1791167297324-response.md",
+      "kind": "interrupted_not_complete_benchmark",
+      "original_sha256": "186deb1426abe14c0396f045b84a236dfc0ec162281f3c46ac26fbaa4055c688",
+      "archived_sha256": "186deb1426abe14c0396f045b84a236dfc0ec162281f3c46ac26fbaa4055c688",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/auth-preflight.jsonl",
+      "kind": "preflight_or_recovery_record",
+      "original_sha256": "34c06ed2f28052115fc6404152fc6a40415589f542795fae0930978366d8b246",
+      "archived_sha256": "34c06ed2f28052115fc6404152fc6a40415589f542795fae0930978366d8b246",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "artifacts/interrupted/recovery-manifest.json",
+      "kind": "preflight_or_recovery_record",
+      "original_sha256": "a51508c16ebc0da376b4ce79ea65b16350fd05d36d33f973ed64a464276410bd",
+      "archived_sha256": "b5771b2d4a35aba4842e1823355154f5e5b4f3f9f3cf2e304b28ce7e5ae102da",
+      "sanitized_path_occurrences": 16,
+      "byte_identical": false
+    },
+    {
+      "path": "verification/auth-preflight-final.jsonl",
+      "kind": "credential_presence_only_preflight",
+      "original_sha256": "34c06ed2f28052115fc6404152fc6a40415589f542795fae0930978366d8b246",
+      "archived_sha256": "34c06ed2f28052115fc6404152fc6a40415589f542795fae0930978366d8b246",
+      "byte_identical": true,
+      "sanitized_path_occurrences": 0
+    },
+    {
+      "path": "verify-evidence.test.mjs",
+      "kind": "offline_evidence_regression_test",
+      "original_sha256": "f0ccb30089046688664df0c8172eeba0cb8a3a5eb30b3789354247546f96e175",
+      "archived_sha256": "f0ccb30089046688664df0c8172eeba0cb8a3a5eb30b3789354247546f96e175",
+      "byte_identical": true,
+      "sanitized_path_occurrences": 0
+    },
+    {
+      "path": "README.md",
+      "kind": "curated_evidence_report",
+      "original_sha256": "c6c87be9a7d4bdd24439a87f4e682f07f8daddcd0cf8908a38607871b8cd50d3",
+      "archived_sha256": "4704e278c26a3bc170ec5adec31e72fed4acee046922a5f758dfa71e01ccd171",
+      "byte_identical": false,
+      "delivery_revision": "2026-10-16: corrected CLI provenance; original report hash and native artifacts retained",
+      "sanitized_path_occurrences": 0
+    },
+    {
+      "path": "README_EN.md",
+      "kind": "curated_evidence_report",
+      "original_sha256": "1711e98e59ddcb15fc20970c41ea649c435de9f74a5cae40661bcedfe4cd41c3",
+      "archived_sha256": "d68ad2c933e3514d2fea603d4d0396769da731509b3ed396560067129540ef8f",
+      "byte_identical": false,
+      "delivery_revision": "2026-10-16: corrected CLI provenance; original report hash and native artifacts retained",
+      "sanitized_path_occurrences": 0
+    },
+    {
+      "path": "verification/quality-closeout-20261005.log",
+      "kind": "offline_validation_log",
+      "original_sha256": "23d87f1698597c3bcaf0093cc7c08121bcf04b06a7b9e539b8c45db47d4ac578",
+      "archived_sha256": "23d87f1698597c3bcaf0093cc7c08121bcf04b06a7b9e539b8c45db47d4ac578",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "verification/offline-tests-closeout-20261005.log",
+      "kind": "offline_validation_log",
+      "original_sha256": "676f9f377673eda87a425b985825d86c759fb01c21dcb56de28705e6554e332f",
+      "archived_sha256": "676f9f377673eda87a425b985825d86c759fb01c21dcb56de28705e6554e332f",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "verification/parent-evidence-audit-20261005.log",
+      "kind": "offline_validation_log",
+      "original_sha256": "94b5fc00ac93f6276cf95e0e48a9cb374d51e04a00b5b4ad9664bb6459554fea",
+      "archived_sha256": "94b5fc00ac93f6276cf95e0e48a9cb374d51e04a00b5b4ad9664bb6459554fea",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    },
+    {
+      "path": "verification/config-validation-20261005.log",
+      "kind": "offline_validation_log",
+      "original_sha256": "26ee2da766faaf61a507630dae511176d80802dda733eef74c246e6c3f3863d5",
+      "archived_sha256": "26ee2da766faaf61a507630dae511176d80802dda733eef74c246e6c3f3863d5",
+      "sanitized_path_occurrences": 0,
+      "byte_identical": true
+    }
+  ]
+}

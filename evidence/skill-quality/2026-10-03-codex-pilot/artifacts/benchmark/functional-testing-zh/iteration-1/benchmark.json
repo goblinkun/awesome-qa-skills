@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "skill_name": "functional-testing",
+    "skill_path": "<SKILL_SNAPSHOT>/functional-testing-zh",
+    "timestamp": "2026-10-03T11:42:43Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "受控任务对比（不以 Skill 专用标题作为质量标准）",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 177.407,
+        "tokens": 55484,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+          "passed": true,
+          "evidence": "final_message 第 1 节分别列出已确认事实和当前假设，并明确接口字段、角色权限矩阵、支付最终状态规则尚未提供。; 第 1 节明确不预设状态名、接口字段、错误码或状态迁移规则；R4 用例规定规则缺失时记为阻塞。"
+        },
+        {
+          "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+          "passed": true,
+          "evidence": "final_message 第 4 节的 L1、C1、O1、P1 覆盖登录、购物车、下单、支付及服务端结果。; P2 覆盖支付失败或超时；R1、R2 覆盖串行与并发重复回调；R3、R4 覆盖无效、迟到和乱序通知。; A1 检查未登录及 A/B 用户越权，O2、B1、B2 检查重复下单、数量、库存和价格边界。"
+        },
+        {
+          "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+          "passed": true,
+          "evidence": "final_message 第 2 节将风险分为 P0/P1，并给出从 0–3 分钟准备到 28–30 分钟汇总的执行顺序。; 第 2 节规定 P0 超时占用 P1 时间，30 分钟到点仍有 P0 未验证时报告验证不充分；第 5 节列出抽样后仍未验证的风险。"
+        },
+        {
+          "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+          "passed": true,
+          "evidence": "final_message 第 4 节场景表逐项设置前置条件、操作、预期判断和证据列。; R1 要求先保存处理前基线，再重放同一有效通知两次，以三次处理记录、前后状态和业务效果次数核验幂等；P1 要求用沙箱交易、回调、订单及支付记录核验正常支付。"
+        },
+        {
+          "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+          "passed": true,
+          "evidence": "final_message 开头明确方案待执行、未执行测试且不代表发布通过；第 5 节再次声明所有用例均未执行。; 第 5 节列明环境、契约、严重缺陷及 30 分钟到点时的停止或阻塞条件，并要求 P0 缺陷登记及未运行项标记为未执行。; 第 6 节列出待确认信息和下一步，明确缺少支付最终状态规则及必要契约时无法给出完整通过结论。"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "受控任务对比（不以 Skill 专用标题作为质量标准）",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 202.515,
+        "tokens": 69496,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+          "passed": true,
+          "evidence": "final_message 的“事实、假设与缺口”表分别列出已知事实、待确认假设、拟定约束和待提供规则。; final_message 明确说明接口字段、角色权限矩阵和支付最终状态规则未提供，因此不预设字段、错误码或最终状态断言。"
+        },
+        {
+          "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+          "passed": true,
+          "evidence": "final_message 的 F01、F03、F05、F08 覆盖登录、购物车、下单到沙箱支付的关键链路。; F09、F10 检查顺序及并发重复回调的业务效果；F11、F12、F16 涵盖支付中断、迟到或乱序事件以及取消或失败。; F04、F13、F14、F15 覆盖数量、跨用户访问、库存竞争及商品数据变化等边界。"
+        },
+        {
+          "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+          "passed": true,
+          "evidence": "final_message 将风险标为 P0/P1，并给出 0–4、4–9、9–16、16–25、25–28、28–30 分钟的执行顺序和产出。; final_message 将多角色、多浏览器、优惠组合及复杂并发延期，并说明准备时间占用窗口时须减少覆盖。; final_message 的“未验证风险与下一步”列出并发库存、长期迟到事件和支付状态收敛等剩余风险。"
+        },
+        {
+          "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+          "passed": true,
+          "evidence": "final_message 的用例表为 F01–F16 分别列出前置条件、操作、预期判断和应保留证据。; F09 要求在首次处理后重放同一支付事件，并以订单、支付记录及业务动作前后计数核验是否重复处理。; F13 使用 A/B 独立会话尝试跨用户访问，并要求保存目标资源前后状态以核验拒绝访问且无副作用。"
+        },
+        {
+          "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+          "passed": true,
+          "evidence": "final_message 开头声明初版尚未执行任何测试，结尾再次说明全部用例均未执行，且不能据此认定支付通过或可以发布。; “停止条件与发布判断”明确列出真实扣款、生产环境、重复扣款、金额错误、越权及关键断言受阻等停止或暂停放行条件。; “未验证风险与下一步”依次要求补齐契约与规则、准备隔离环境和证据、执行验证并补跑受阻及延期用例。"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1,
+        "stddev": 0,
+        "min": 1,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 177.407,
+        "stddev": 0,
+        "min": 177.407,
+        "max": 177.407
+      },
+      "tokens": {
+        "mean": 55484,
+        "stddev": 0,
+        "min": 55484,
+        "max": 55484
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 1,
+        "stddev": 0,
+        "min": 1,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 202.515,
+        "stddev": 0,
+        "min": 202.515,
+        "max": 202.515
+      },
+      "tokens": {
+        "mean": 69496,
+        "stddev": 0,
+        "min": 69496,
+        "max": 69496
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.00",
+      "time_seconds": "-25.1",
+      "tokens": "-14012.0"
+    }
+  }
+}

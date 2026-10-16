@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "expect.must_contain",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "output_matches{all:[(不能声称|不能据此报告|不可宣称|不能报告) 运行时]}",
+      "passed": true,
+      "evidence": "output satisfies all regex checks (all:[(不能声称|不能据此报告|不可宣称|不能报告) 运行时])"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1
+  }
+}

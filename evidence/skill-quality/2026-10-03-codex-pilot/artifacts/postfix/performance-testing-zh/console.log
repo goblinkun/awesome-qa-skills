@@ -1,0 +1,20 @@
+📋 Loading configuration...
+level=INFO msg="Config: loading eval.yaml from <SKILL_SNAPSHOT>/performance-testing-zh/evals/eval.yaml"
+✅ Loaded 3 case(s) | engine: codex_no_daemon_isolated | model: openai/gpt-6.1-sol
+
+🔑 Loading credentials...
+✅ Credentials ready
+
+🚀 Running evaluation (3 cases)
+   ⏳ [3/3] edge-domain-boundary: 性能测试：不要做成安全渗透清单...
+   ⏳ [1/3] basic-success: 性能测试：按风险选测试类型与阈值...
+   ⏳ [2/3] edge-incomplete-input: 性能测试：无 SLA/流量仍给初版...
+   ✅ [3/3] edge-domain-boundary: PASS (100.0%)
+   ✅ [2/3] edge-incomplete-input: PASS (100.0%)
+   ✅ [1/3] basic-success: PASS (100.0%)
+
+📊 Generating reports...
+✅ Reports saved to <RUN_ROOT>/postfix/performance-testing-zh/iteration-1
+
+────────────────────────────────────────
+📋 Results: 3 passed, 0 failed, 0 errors

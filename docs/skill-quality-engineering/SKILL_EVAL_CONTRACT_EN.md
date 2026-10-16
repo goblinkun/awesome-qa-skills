@@ -13,9 +13,7 @@ It is runner-independent. Implementations may map it to Skill-Up, OpenAI evaluat
 
 ## Repository alignment boundary
 
-Within this repository, the contract reuses the [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT_EN.md) for evidence states, failure classification, and report structure. Quality Score ownership remains with the [Quality Score and minimum Eval contract](../governance/QUALITY_SCORE_EVAL_CONTRACT_EN.md). This contract introduces neither a second scoring system nor a replacement for the existing `skill-up` evaluation engine.
-
-For Router cases, observed selection must come from a structured `skill.selection` trace or an explicit trace adapter that provides `route`, `primary`, `optional`, and `selected_skills`. `selected_skills` must be exactly one primary Skill plus at most one optional Skill; missing or invalid fields are `BLOCKED`, while mismatches or extra selections are `FAIL`. Plain-text recommendations, Composition Recipes, or static configuration alone do not prove a real selection.
+Within this repository, `expected_selection`, observed selection traces, evidence states, failure classification, and report structure for Router cases are governed solely by the [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT_EN.md). Quality Score ownership remains with the [Quality Score and minimum Eval contract](../governance/QUALITY_SCORE_EVAL_CONTRACT_EN.md). This portable contract defines Case intent without duplicating repository-level verdict rules or replacing the existing `skill-up` evaluation engine.
 
 ## 2. Eval Case Model
 
@@ -36,6 +34,12 @@ context:
 
 expected:
   trigger: true
+
+# Router cases additionally fill this repository-defined structure.
+expected_selection:
+  route: route-id
+  primary: canonical-skill-name
+  optional: null
 
 behavior:
   must: []
@@ -60,7 +64,7 @@ evidence:
     - artifacts
 ```
 
-Not every field is required for every case.
+Not every field is required for every case. Router cases must fill `expected_selection` according to the repository contract and capture observed selection through a supported trace.
 
 ## 3. Case Types
 
@@ -136,12 +140,10 @@ task:
     Review this requirement and determine whether it is testable
     before functional test design begins.
 
-expected:
-  preferred_skill:
-    - testability-analysis
-
-  unexpected_skill:
-    - functional-testing
+expected_selection:
+  route: testability-analysis-boundary
+  primary: testability-analysis
+  optional: null
 ```
 
 ## 7. Behavior Case
@@ -326,31 +328,19 @@ Recommended conceptual result:
 
 ```yaml
 result:
-  status: PASS
-  evidence_level: E2
+  status: NOT_RUN
+  evidence_level: E1
 
   checks:
-    trigger: PASS
-    behavior: PASS
-    artifacts: PASS
+    trigger: NOT_RUN
+    behavior: NOT_RUN
+    artifacts: NOT_RUN
 
   observations: []
   limitations: []
 ```
 
-Allowed statuses:
-
-```text
-PASS
-FAIL
-NOT_RUN
-BLOCKED
-NOT_SCORED
-UNASSESSED
-INSUFFICIENT_EVIDENCE
-```
-
-`NOT_SCORED` means that no valid Quality Score exists, `UNASSESSED` means that the dimension was outside the current evaluation scope, and `INSUFFICIENT_EVIDENCE` means that some trace exists but does not support a strong claim. None is a passing state.
+Repository result states, semantics, and verdict rules are owned by the [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT_EN.md). This contract adds no repository-level state.
 
 ## 16. Eval Quality
 

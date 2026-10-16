@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "Functional testing: executable plan with context",
+  "prompt": "Use the functional-testing skill.\nContext: ecommerce place-order → pay → ship release.\nEnv: SIT; roles: buyer, seller ops, warehouse.\nKnown risk: payment callback timeouts.\nProduce a risk-focused functional test plan and mark assumptions/gaps.\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_matches{all:[(?i)Task Understanding (?i)(Risk|Priority) (?i)(boundary|edge|limit) (?i)(negative|failure|exception|abnormal)]}"
+  ]
+}

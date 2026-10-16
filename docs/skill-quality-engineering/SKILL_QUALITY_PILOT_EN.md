@@ -30,10 +30,12 @@ Type: Domain-specific QA Skill<br>
 Target: L2 Verified + selected L3 evaluation<br>
 Focus: Behavior, domain correctness, model sensitivity.
 
-### P4 - skill-evaluation-design
+### P4 - skill-evaluation-design (repository target: skill-evaluation)
 Type: Skill Engineering<br>
 Target: L3 Evaluated<br>
 Focus: Behavior Contract, Eval design, Judge usage, risk-based selection.
+
+Repository mapping: the attachment method name `skill-evaluation-design` maps to the existing canonical Skill `skills/{zh,en}/skill-engineering/skill-evaluation/`; no alias directory is created.
 
 ### P5 - skill-change-verification
 Type: Skill Engineering / Regression<br>
@@ -100,7 +102,7 @@ This is guidance, not a universal quota.
 
 Run selected Evals in at least one real supported Agent environment. Capture trigger, output, useful trajectory, artifacts, failures, and runtime metadata.
 
-When a real Agent, target environment, cross-model matrix, or business-acceptance evidence is unavailable, keep the result at `NOT_RUN`, `BLOCKED`, `NOT_SCORED`, or `INSUFFICIENT_EVIDENCE`. Static checks and `skill-up validate` must not be used as substitutes for runtime conclusions.
+When a real Agent, target environment, cross-model matrix, or business-acceptance evidence is unavailable, report according to the evidence boundaries in the [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT_EN.md). Static checks and `skill-up validate` must not be used as substitutes for runtime conclusions.
 
 ### Stage 7 - Benchmark
 
@@ -109,7 +111,7 @@ For selected Pilot Skills:
 ```text
 functional-testing
 testability-analysis
-skill-evaluation-design
+skill-evaluation
 ```
 
 compare Without Skill vs With Skill under controlled conditions.
@@ -123,7 +125,7 @@ Do not test every combination. Use representative environments.
 | functional-testing | Required | Recommended | Optional |
 | testability-analysis | Required | Recommended | Optional |
 | performance-testing | Required | Optional | Optional |
-| skill-evaluation-design | Required | Recommended | Optional |
+| skill-evaluation | Required | Recommended | Optional |
 | skill-change-verification | Required | Recommended | Optional |
 
 Exact environments depend on available runtime support.

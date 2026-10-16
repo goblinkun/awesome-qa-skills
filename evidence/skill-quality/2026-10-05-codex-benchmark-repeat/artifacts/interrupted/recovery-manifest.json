@@ -1,0 +1,102 @@
+{
+  "recovered_at": "2026-10-05T02:38:51.558Z",
+  "scope": "Only temporaries created for the interrupted three-case Benchmark window, verified case_id and variant; no grading reconstructed",
+  "files": [
+    {
+      "path": "recovered-native/functional-testing-zh/run-1791167296841-codex-events.jsonl",
+      "source_sha256": "0a3d03b4deeca88c3cc366bcf7c64e5ffbf37b819257af238f958073f8e0f14e",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/functional-testing-zh/run-1791167296841-codex-stderr.log",
+      "source_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/functional-testing-zh/run-1791167296841-metadata.json",
+      "source_sha256": "16379d80f566073466410c6f01949c4be344e3311ce637b6e2e41e729028c571",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/functional-testing-zh/run-1791167296841-response.md",
+      "source_sha256": "80e432e6b842a0c1d4971b3444c6e806677c3ade0f6e8e0f59b98e3499efd18f",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/testability-analysis-zh/run-1791167297324-codex-events.jsonl",
+      "source_sha256": "003a9d485db642686870a9783ac9a4782c3996420cd2fc55e9028e03fbd0225d",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/testability-analysis-zh/run-1791167297324-codex-stderr.log",
+      "source_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/testability-analysis-zh/run-1791167297324-metadata.json",
+      "source_sha256": "ba1894088a8c96e26b0009b0076e3062d4c5f5a0f438b2e1ff26d4ba522766fc",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/testability-analysis-zh/run-1791167297324-response.md",
+      "source_sha256": "186deb1426abe14c0396f045b84a236dfc0ec162281f3c46ac26fbaa4055c688",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/skill-evaluation-zh/judge-1791167385387-codex-events.jsonl",
+      "source_sha256": "7c5005678bdd7f3fc55021e2dcaa4a102b091611067440949b8d5a11b923c247",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/skill-evaluation-zh/judge-1791167385387-codex-stderr.log",
+      "source_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/skill-evaluation-zh/judge-1791167385387-metadata.json",
+      "source_sha256": "a1ea45a5b22d08507a47f83a08538d1c00d6395899eec6def6e4c2facf78e912",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/skill-evaluation-zh/judge-1791167385387-response.md",
+      "source_sha256": "b17d88a4b61fc62dd0a6461f5291c4716134c68747de0bbe810e894a540aa3bf",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/skill-evaluation-zh/run-1791167302540-codex-events.jsonl",
+      "source_sha256": "6bcb9fee5aa6734b32c37c4d4ef67bbe42e739aa0021d6f2e77c235becdf114b",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/skill-evaluation-zh/run-1791167302540-codex-stderr.log",
+      "source_sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/skill-evaluation-zh/run-1791167302540-metadata.json",
+      "source_sha256": "b0426bc37613780e78b314edd93d3f45616b68c843bd74854460d0e1d7d3be69",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    },
+    {
+      "path": "recovered-native/skill-evaluation-zh/run-1791167302540-response.md",
+      "source_sha256": "0b0f571453fae565f9d01c97736df849540b5398deb3edc7bbe5c96c6d211617",
+      "source_workspace": "<WORKSPACE>",
+      "kind": "interrupted_native_execution_not_complete_benchmark"
+    }
+  ]
+}
