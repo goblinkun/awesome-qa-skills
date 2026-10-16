@@ -13,6 +13,8 @@ SQET is the Skill quality-engineering methodology layer for Awesome QA Skills. I
 - [Skill Quality Evaluation Model (SQEM)](./SKILL_QUALITY_EVALUATION_MODEL_EN.md): seven quality domains, L1-L4 validation levels, E1-E4 evidence levels, and the Quality Claim Gate.
 - [Skill Eval Contract](./SKILL_EVAL_CONTRACT_EN.md): case types, judges, run metadata, failure classification, and evidence states.
 - [SQEM Pilot](./SKILL_QUALITY_PILOT_EN.md): five SQEM methodology Pilot candidates, stages, metrics, and exit criteria.
+- [2026-10-03 Codex Pilot evidence](../../evidence/skill-quality/2026-10-03-codex-pilot/README_EN.md): real bilingual text runs, selected single-trial Benchmarks, second-model sampling, and explicit unverified items; not business or release approval.
+- [2026-10-05 Benchmark repeated sampling](../../evidence/skill-quality/2026-10-05-codex-benchmark-repeat/README_EN.md): two more pairs per existing Chinese task, retaining per-sample differences, interrupted costs, and unfinished acceptance.
 
 ### Templates
 
@@ -25,7 +27,7 @@ SQET is the Skill quality-engineering methodology layer for Awesome QA Skills. I
 ## Relationship to other repository layers
 
 - `skills/{zh,en}/skill-engineering/` contains callable Agent Skills. SQET describes quality methods and standards; it does not replace those Skills.
-- `evals/` contains each Skill's Eval configuration and cases. SQET does not create a second repository-wide case store.
+- `skills/{zh,en}/.../evals/` contains each Skill's Eval configuration and cases. The root `evals/` directory provides navigation and future adapter-asset boundaries only; SQET does not create a second repository-wide case store.
 - `evidence/skill-quality/` contains reviewed or runner-generated quality evidence. Without runtime evidence, keep results at `NOT_RUN`, `BLOCKED`, `UNASSESSED`, `NOT_SCORED`, or `INSUFFICIENT_EVIDENCE`.
 - Website articles are site content, not Toolkit methodology entrypoints.
 

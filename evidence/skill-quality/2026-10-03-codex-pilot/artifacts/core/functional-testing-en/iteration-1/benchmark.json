@@ -1,0 +1,148 @@
+{
+  "metadata": {
+    "skill_name": "functional-testing",
+    "skill_path": "<SKILL_SNAPSHOT>/functional-testing-en",
+    "timestamp": "2026-10-03T11:23:02Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "Functional testing: executable plan with context",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 108.018,
+        "tokens": 52530,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(?i)Task Understanding (?i)(Risk|Priority) (?i)(boundary|edge|limit) (?i)(negative|failure|exception|abnormal)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(?i)Task Understanding (?i)(Risk|Priority) (?i)(boundary|edge|limit) (?i)(negative|failure|exception|abnormal)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Functional testing: draft despite missing docs",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 91.404,
+        "tokens": 52069,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(?i)(assumption|assumptions|assumed|working assumptions|\\[assumption\\]) (?i)(open questions|information gaps|missing information|gaps|what I need|must-have information)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(?i)(assumption|assumptions|assumed|working assumptions|\\[assumption\\]) (?i)(open questions|information gaps|missing information|gaps|what I need|must-have information)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Functional testing: cut scope for a short window",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 78.371,
+        "tokens": 51892,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[P0 (?i)(critical path|critical scenario|core flow|release gate) (?i)(defer|deferred|deferral|out of scope|not in this pass) (?i)risk]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[P0 (?i)(critical path|critical scenario|core flow|release gate) (?i)(defer|deferred|deferral|out of scope|not in this pass) (?i)risk])"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1,
+        "stddev": 0,
+        "min": 1,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 92.59766666666667,
+        "stddev": 12.132732100488425,
+        "min": 78.371,
+        "max": 108.018
+      },
+      "tokens": {
+        "mean": 52163.666666666664,
+        "stddev": 268.92667319467506,
+        "min": 51892,
+        "max": 52530
+      }
+    },
+    "without_skill": null,
+    "delta": null
+  }
+}

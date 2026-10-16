@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "skill_name": "testability-analysis",
+    "skill_path": "<SKILL_SNAPSHOT>/testability-analysis-zh",
+    "timestamp": "2026-10-03T11:32:20Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "可测试性分析：领域完整场景",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 128.326,
+        "tokens": 54985,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(输入审计|输入证据|证据与边界|证据基础) 风险 P0 (预期|判断标准|验收标准|成功标准)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(输入审计|输入证据|证据与边界|证据基础) 风险 P0 (预期|判断标准|验收标准|成功标准)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "可测试性分析：信息不完整时的受限初版",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 104.935,
+        "tokens": 54395,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_contains{all:[当前假设 信息缺口 待确认]}",
+          "passed": true,
+          "evidence": "output satisfies all contains checks (all:[当前假设 信息缺口 待确认])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "可测试性分析：高风险边界与取舍",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 117.356,
+        "tokens": 54520,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_contains{all:[P0 P1 剩余风险]}",
+          "passed": true,
+          "evidence": "output satisfies all contains checks (all:[P0 P1 剩余风险])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "架构可测试性评审：接缝与环境复现",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 136.482,
+        "tokens": 55412,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(输入审计|输入证据|证据与边界|证据基础) 隔离 验证]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(输入审计|输入证据|证据与边界|证据基础) 隔离 验证])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "架构可测试性评审：架构材料不完整",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 102.114,
+        "tokens": 53956,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[输入审计 (待确认|信息缺口|开放问题) (证据|依据)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[输入审计 (待确认|信息缺口|开放问题) (证据|依据)])"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1,
+        "stddev": 0,
+        "min": 1,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 117.84259999999999,
+        "stddev": 13.202732165729937,
+        "min": 102.114,
+        "max": 136.482
+      },
+      "tokens": {
+        "mean": 54653.6,
+        "stddev": 501.27142348232854,
+        "min": 53956,
+        "max": 55412
+      }
+    },
+    "without_skill": null,
+    "delta": null
+  }
+}

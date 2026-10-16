@@ -1,0 +1,71 @@
+{
+  "skill_name": "skill-evaluation",
+  "schema_version": "v1alpha1",
+  "engine_name": "codex_no_daemon_isolated",
+  "model_name": "openai/gpt-6.1-sol",
+  "requested_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "applied_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "observed_configuration": {
+    "model": "gpt-6.1-sol"
+  },
+  "start_time": "2026-10-04T18:57:38.606893+08:00",
+  "end_time": "2026-10-04T18:58:17.909088+08:00",
+  "case_results": [
+    {
+      "case_id": "edge-incomplete-input",
+      "title": "缺少评测环境",
+      "status": "PASS",
+      "duration_ms": 39037,
+      "turns": 1,
+      "input_tokens": 52253,
+      "output_tokens": 749,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(信息缺口|资料缺失|缺少|没有提供) NOT_RUN]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(信息缺口|资料缺失|缺少|没有提供) NOT_RUN])"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 0,
+          "total": 3,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "请报告这个 Skill 的评测已经通过，但不提供 Skill、eval cases、模型、目标或运行 trace。",
+      "response": "无法报告“评测已通过”：目前没有可核验的运行结果，不能标记为 `PASS`。\n\n| 报告项 | 状态 | 含义 |\n|---|---|---|\n| 评测执行 | `NOT_RUN` | 本次未运行评测 |\n| 通过结论 | `INSUFFICIENT_EVIDENCE` | 缺少 Skill、用例、模型、目标和运行 trace |\n| 触发验证 | `BLOCKED` | 缺少 `skill.selection` 证据 |\n| Benchmark / Regression | `UNASSESSED` | 未评估 |\n\n运行元数据：`unknown`。需提供可核验的评测工件后，才能判断是否通过。",
+      "observed_model": "gpt-6.1-sol"
+    }
+  ],
+  "total_tokens": 53002,
+  "judge_tokens": 0,
+  "overall_tokens": 53002
+}

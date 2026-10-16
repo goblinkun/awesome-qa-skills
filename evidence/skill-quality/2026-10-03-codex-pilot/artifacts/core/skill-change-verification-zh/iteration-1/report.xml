@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="skill-change-verification" tests="3" failures="0" errors="0" skipped="0" time="59.565" timestamp="2026-10-03T19:23:11+08:00">
+    <testcase name="basic-success" classname="skill-change-verification" time="59.317">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-incomplete-input" classname="skill-change-verification" time="40.823">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-scope-risk" classname="skill-change-verification" time="31.015">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+  </testsuite>
+</testsuites>

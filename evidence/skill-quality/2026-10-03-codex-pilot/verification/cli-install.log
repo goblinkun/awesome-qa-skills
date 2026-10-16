@@ -1,0 +1,33 @@
+
+│
+●   codex  Agent detected — installing non-interactively
+[?25l│
+◇  Source: <USER_HOME>/awsomeCode/awesome-qa-skills
+[?25h[?25l│
+◇  Local path validated
+[?25h[?25l│
+◒  Discovering skills…[1G[J◇  Found 164 skills
+[?25h│
+●  Selected 1 skill: functional-testing
+
+│
+◇  Installation Summary ────────────────╮
+│                                       │
+│  ./.agents/skills/functional-testing  │
+│    copy → Codex                       │
+│                                       │
+├───────────────────────────────────────╯
+[?25l│
+[1G[J◇  Installation complete
+[?25h
+│
+◇  Installed 1 skill ───────────────────────╮
+│                                           │
+│  ✓ functional-testing (copied)            │
+│    → ./.agents/skills/functional-testing  │
+│                                           │
+├───────────────────────────────────────────╯
+
+│
+└  Done!  Review skills before use; they run with full agent permissions.
+

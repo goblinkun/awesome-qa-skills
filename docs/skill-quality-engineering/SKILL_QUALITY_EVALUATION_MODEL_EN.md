@@ -481,7 +481,7 @@ Adversarial
 Benchmark
 Compatibility
 Trajectory
-Side-effect
+side_effect
 ```
 
 Selection:
@@ -498,7 +498,7 @@ Selection:
 | Benchmark | Effectiveness claim |
 | Compatibility | Compatibility claim |
 | Trajectory | Process matters |
-| Side-effect | State can change |
+| side_effect | State can change |
 
 ## 9. Evaluation Pyramid
 
@@ -571,32 +571,20 @@ If baseline and Skill both score 100%, the Skill may provide no uplift or the Ev
 
 ## 13. Status Model
 
-Use:
-
-```text
-PASS
-FAIL
-NOT_RUN
-BLOCKED
-NOT_SCORED
-UNASSESSED
-INSUFFICIENT_EVIDENCE
-```
-
-This repository does not treat `PARTIAL` as a separate canonical Evidence State: use `INSUFFICIENT_EVIDENCE` when some execution or review trace exists but only a limited claim is supported; use `UNASSESSED` for a dimension not evaluated in the current scope; and use `NOT_SCORED` when there is no valid Quality Score. Do not convert "no observed failure" into PASS without sufficient evidence.
+The repository's canonical Evidence State set, semantics, and verdict rules are owned solely by the [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT_EN.md). SQEM does not create a second state machine; this document does not redefine statuses.
 
 ## 14. Quality Profile
 
 SQEM does not require an overall numeric quality score.
 
-Recommended format:
+The following is a placeholder format example only. It does not represent an executed assessment or current quality conclusion for any real Skill; real profiles must link to an Evidence Report.
 
 ```text
 Skill Quality Profile
 ────────────────────────────────────
 
 Skill:
-functional-testing
+example-skill
 
 Version:
 x.y.z
@@ -605,25 +593,24 @@ Target Test Level:
 L3 Evaluated
 
 Current Test Level:
-L2 Verified
+L1 Valid
 
-Q1 Specification       PASS
-Q2 Design              PASS
-Q3 Package             PASS
-Q4 Behavior            PASS
+Q1 Specification       NOT_RUN
+Q2 Design              NOT_RUN
+Q3 Package             NOT_RUN
+Q4 Behavior            NOT_RUN
 Q5 Effectiveness       NOT_RUN
-Q6 Compatibility       INSUFFICIENT_EVIDENCE
-Q7 Evidence/Evolution  PASS
+Q6 Compatibility       NOT_RUN
+Q7 Evidence/Evolution  NOT_RUN
 
 Evidence Level:
-E2 Eval
+E1 Static
 
 Known Gaps:
-- Benchmark not executed
-- Cross-model evidence incomplete
-- Real-project evidence limited
+- Runtime Eval not executed
+- Cross-model and real-project evidence not established
 
-`INSUFFICIENT_EVIDENCE` means that some execution or review trace exists but is not sufficient for a complete compatibility claim; it is not a passing state.
+Status semantics and limited claims must follow the [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT_EN.md); this placeholder does not constitute a passing conclusion.
 
 Next Validation:
 - Run with/without Skill benchmark
@@ -736,13 +723,13 @@ Validate SQEM through representative Pilot Skills before repository-wide deep ad
 functional-testing
 testability-analysis
 performance-testing
-skill-evaluation-design
+skill-evaluation
 skill-change-verification
 ```
 
 The Pilot should measure both Skill quality and SQEM practicality. Pilot results should feed into SQEM v1.1.
 
-These five candidates are SQEM methodology Pilots. They do not replace the repository's existing `requirements-analysis`, `ui-test-playwright`, and `discover-testing` Pilot records; their execution status remains governed by the [existing Pilot contract](../governance/SKILL_EVALUATION_PILOTS_EN.md).
+The attachment method name `skill-evaluation-design` maps to the existing canonical repository Skill `skill-evaluation`; no alias directory is created. These five candidates are SQEM methodology Pilots. They do not replace the repository's existing `requirements-analysis`, `ui-test-playwright`, and `discover-testing` Pilot records; their execution status remains governed by the [existing Pilot contract](../governance/SKILL_EVALUATION_PILOTS_EN.md).
 
 ## 19. Reference Families
 

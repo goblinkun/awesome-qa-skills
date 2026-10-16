@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "性能测试：无 SLA/流量仍给初版",
+  "prompt": "用 performance-testing。产品只说「测一下性能」，没有 SLA、没有历史流量。\n系统是积分兑换。请给初版方案，并把数字目标标成假设，列出缺口。\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_matches{all:[(假设|当前假设) (信息缺口|待确认|缺口)]}"
+  ]
+}

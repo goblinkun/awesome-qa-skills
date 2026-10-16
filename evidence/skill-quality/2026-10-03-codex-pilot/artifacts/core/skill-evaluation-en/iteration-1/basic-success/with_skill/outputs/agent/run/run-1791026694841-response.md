@@ -1,0 +1,130 @@
+# Skill Evaluation Report
+
+## Scope
+
+This is an **evaluation design**, with execution status **NOT_RUN**. No target Skill, candidate versions, runtime traces, artifacts, or historical failures were supplied.
+
+The design follows the locally read `skill-evaluation/SKILL.md` and its report contract. It covers case selection, judges, trigger evidence, metadata, failure attribution, benchmarks, and version regression.
+
+## Evidence Boundaries
+
+Only the local Skill instructions were read. Evaluation assertions and evaluator input files were not read. No browser, MCP, external service, evaluation runner, or production write was used.
+
+Reading a Skill file does not establish automatic selection. No `skill.selection` event is available, so observed trigger behavior is **BLOCKED**.
+
+Evidence states used throughout:
+
+| State | Meaning |
+|---|---|
+| `PASS` | Available evidence satisfies the case’s assertion. |
+| `FAIL` | Available evidence contradicts the assertion. |
+| `BLOCKED` | A required dependency or evidence source is unavailable. |
+| `NOT_RUN` | The check was not executed. |
+| `NOT_SCORED` | No score was assigned. |
+| `UNASSESSED` | The dimension has not been evaluated. |
+| `INSUFFICIENT_EVIDENCE` | Evidence cannot support the proposed conclusion. |
+
+## Run Metadata
+
+| Field | Recorded value |
+|---|---|
+| Report date | 2026-10-03; timezone Asia/Shanghai |
+| Evaluation execution / run ID | `NOT_RUN` / `unknown` |
+| Target Skill / language / version | `unknown` |
+| Eval version / fixture revision | `unknown` |
+| `skill-up` version | `unknown` |
+| Engine / provider / model | `unknown` |
+| Executed judge / calibration version | `unknown` |
+| Available environment | Local workspace; zsh; shell reads only |
+| Traces / output artifacts | None supplied |
+
+For each future run, record these fields plus the exact command, configuration, input revision, timestamps, sampling settings, and trace/artifact locations.
+
+## Configuration and Coverage
+
+Use **`skill-up` as the evaluation engine**. Trace inspection supplements its evidence; it does not introduce another engine or score.
+
+Prefer deterministic `rule_based` judges. Use `script` judges for executable artifacts. Reserve `agent_judge` for semantic requirements that deterministic checks cannot resolve.
+
+### Case Results
+
+These are proposed cases, not observed results.
+
+| ID / type | Input and observable assertion | Proposed judge | Current state / limitation |
+|---|---|---|---|
+| C1 — HAPPY | Complete, realistic input: required deliverable satisfies the target contract and supplied facts. | `rule_based`; calibrated semantic judge only where needed | `NOT_RUN`; target contract missing |
+| C2 — INCOMPLETE | Essential input omitted: output identifies the gap, avoids invented facts, and follows the Skill’s clarification or fallback rule. | `rule_based`; semantic judgment for materiality | `NOT_RUN`; fallback contract unknown |
+| C3 — EXPLICIT_TRIGGER | Name the Skill in a relevant request: trace records its expected selection. | `rule_based` trace check | `BLOCKED`; no `skill.selection` evidence |
+| C4 — IMPLICIT_TRIGGER | Describe the supported task without naming the Skill: trace records expected selection. | `rule_based` trace check | `BLOCKED`; no selection trace |
+| C5 — CONTEXTUAL_TRIGGER | Provide context that makes an otherwise ambiguous request relevant: trace records expected selection. | `rule_based` trace check | `BLOCKED`; context contract and trace missing |
+| C6 — NEGATIVE_TRIGGER | Use similar vocabulary in an unrelated task: complete selection telemetry shows no target selection. | `rule_based` trace check | `BLOCKED`; missing events cannot prove non-selection |
+| C7 — BOUNDARY | Request an out-of-scope or prohibited action: response respects the boundary and action logs show no prohibited operation. | `rule_based` output and action checks | `NOT_RUN`; boundary contract missing |
+| C8 — ARTIFACT, if applicable | Request an executable deliverable: artifact exists and passes meaningful contract checks. | `script` | `UNASSESSED`; artifact requirements unknown |
+| C9 — REGRESSION, conditional | Replay a confirmed historical failure under previous/current versions. | Judge matched to the confirmed defect | `UNASSESSED`; no confirmed failure or root cause supplied |
+
+Select only applicable cases. Preserve success, incomplete-information, boundary, and relevant trigger coverage.
+
+## Summary
+
+The evaluation design is available. Target effectiveness is **UNASSESSED**, runtime checks are **NOT_RUN**, and trigger conclusions are **BLOCKED**. No case has earned `PASS` or `FAIL`.
+
+## Trigger / Process / Outcome / Artifact / Semantic Evidence
+
+| Dimension | Required evidence | Current state |
+|---|---|---|
+| Trigger | Observed `skill.selection` with target identity and applicable context | `BLOCKED` |
+| Process | Trace showing required actions, ordering, and constraints | `UNASSESSED` |
+| Outcome | Actual output evaluated against the case contract | `NOT_RUN` |
+| Artifact | Produced artifact and executable check results | `UNASSESSED` |
+| Semantic quality | Observable rubric and calibrated judge decisions | `UNASSESSED` |
+| Efficiency, if relevant | Comparable tool calls, tokens, latency, or retries | `UNASSESSED` |
+
+Similar output is not trigger evidence. Static validation is not runtime semantic validation.
+
+## Benchmark Results
+
+**NOT_RUN.** A benchmark compares **with Skill versus without Skill** using matched cases, model configuration, tools, and judging.
+
+Report paired outcomes and uncertainty. Include repetitions when variability matters. No benefit, efficiency gain, release readiness, or business impact can be inferred here.
+
+## Regression Findings
+
+**UNASSESSED.** Version regression compares **previous versus current Skill versions**, holding other conditions comparable.
+
+Create regression cases only from real failures with confirmed root causes, preserving original evidence. A with/without benchmark does not establish version regression.
+
+## Flaky / Blocked / Infrastructure Errors
+
+No execution errors or flaky behavior were observed because execution is **NOT_RUN**.
+
+Classify future failures from evidence:
+
+| Classification | Attribution requirement |
+|---|---|
+| Skill Defect | Valid case and functioning infrastructure show the Skill violated its contract. |
+| Eval Defect | Faulty fixture, assertion, rubric, or judge caused an invalid assessment. |
+| Infrastructure Defect | Runner, dependency, credential, provider, or trace collection prevented valid execution. |
+| Unknown | Evidence cannot establish the cause. |
+
+Current failure attribution is **Unknown**. Missing inputs alone do not prove a Skill or infrastructure defect.
+
+## Eval Validity Findings
+
+Validity is **UNASSESSED** until the target contract and fixtures are available.
+
+Before gating, check that assertions measure intended behavior, fixtures are realistic, and negative cases are truly outside scope. Calibrate semantic judges against human-labeled examples, including clear passes, clear failures, and ambiguous cases; document disagreement handling.
+
+`skill-up validate` remains **NOT_RUN**. Passing it would establish configuration validity only. Any Quality Score remains owned by the existing governance contract; none is assigned here (**NOT_SCORED**).
+
+## Limitations
+
+Target behavior, versions, fixtures, historical failures, runtime identity, and traces are `unknown`. These gaps prevent effectiveness, trigger, benchmark, regression, and release conclusions.
+
+## Recommended Actions
+
+1. Identify the target Skill, exact revision, intended behavior, boundaries, and relevant fixtures.
+2. Implement the applicable cases above with observable assertions and deterministic judges first.
+3. Run `skill-up validate`; retain its result separately from runtime evidence.
+4. Under authorized local execution conditions, run cases and capture selection traces, outputs, artifacts, and complete metadata.
+5. Diagnose failures before changing the Skill. Add regression coverage after confirming root causes.
+6. Report benchmarks and version regressions separately, preserving incomplete evidence states whenever conclusions remain unsupported.

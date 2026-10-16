@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "Testability Analysis: high-risk boundary and tradeoffs",
+  "prompt": "Use the testability-analysis skill for: an async refund flow spans three services with plain logs but no correlation ID, sandbox callback, or status query. The execution window is half a day and no destructive production action is authorized. Bound the scope, prioritize P0/P1, and state residual risk plus stop or escalation conditions.\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_matches{all:[P0 P1 (?i)(residual risk|remaining risk|unverified.*risk)]}"
+  ]
+}

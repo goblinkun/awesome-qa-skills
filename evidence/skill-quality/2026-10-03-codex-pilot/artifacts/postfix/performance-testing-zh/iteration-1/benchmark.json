@@ -1,0 +1,148 @@
+{
+  "metadata": {
+    "skill_name": "performance-testing",
+    "skill_path": "<SKILL_SNAPSHOT>/performance-testing-zh",
+    "timestamp": "2026-10-03T11:30:42Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "性能测试：按风险选测试类型与阈值",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 112.716,
+        "tokens": 53860,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[任务理解 性能风险 指标 (负载模型|流量模型|目标负载)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[任务理解 性能风险 指标 (负载模型|流量模型|目标负载)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "性能测试：无 SLA/流量仍给初版",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 104.135,
+        "tokens": 52866,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(假设|当前假设) (信息缺口|待确认|缺口)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(假设|当前假设) (信息缺口|待确认|缺口)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "性能测试：不要做成安全渗透清单",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 81.46,
+        "tokens": 52630,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_contains{all:[场景 范围 基线]}",
+          "passed": true,
+          "evidence": "output satisfies all contains checks (all:[场景 范围 基线])"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1,
+        "stddev": 0,
+        "min": 1,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 99.437,
+        "stddev": 13.185542259105867,
+        "min": 81.46,
+        "max": 112.716
+      },
+      "tokens": {
+        "mean": 53118.666666666664,
+        "stddev": 532.9823845327556,
+        "min": 52630,
+        "max": 53860
+      }
+    },
+    "without_skill": null,
+    "delta": null
+  }
+}

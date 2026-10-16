@@ -1,0 +1,71 @@
+### 1. Task Understanding
+
+Validate order query and checkout in SIT against the promo peak of **~800 RPS**, with **P95 < 500 ms** and **error rate < 0.1%**. Use APM to investigate the known payment-callback queueing risk.
+
+**Assumptions requiring confirmation:**
+
+- 800 RPS means combined incoming order-query and checkout traffic; callback traffic is additional.
+- Start with an **80% query / 20% checkout** mix: 640 / 160 RPS at peak. Replace this with observed promo traffic.
+- Apply the latency and error targets to each transaction separately and to the combined workload.
+- Test durations below are proposed. Callback completion SLA, expected callback delay/retry patterns, and SIT-to-production capacity differences remain unknown.
+
+### 2. Performance Risks and Priorities
+
+| Priority | Risk | What to verify |
+|---|---|---|
+| P0 | Callback arrivals exceed processing capacity | Queue depth, oldest-message age, processing throughput and recovery |
+| P0 | Checkout slows or fails at peak | Checkout latency, business success and dependency timing |
+| P0 | Payment completion becomes delayed despite fast checkout responses | Trace checkout through callback processing to final order state |
+| P1 | Order queries compete with checkout/callback processing | Compare isolated transactions with mixed traffic; inspect shared resource contention |
+| P1 | SIT results overstate production capacity | Document topology, configuration, data volume and dependency differences |
+
+Queueing is a known risk; its underlying cause is not yet established.
+
+### 3. Recommended Test Types
+
+- **Baseline:** Measure healthy transaction and callback timing at low load.
+- **Load:** Establish whether the realistic mix sustains 800 RPS.
+- **Spike and recovery:** Exercise sudden promo traffic and callback bursts.
+- **Endurance:** Detect accumulating queue delay, resource leaks or gradual degradation.
+- **Stress/capacity, optional:** After target-load testing, increase traffic to find the sustainable limit and limiting dependency.
+
+### 4. Scenario Plan
+
+All rates and durations below are **proposed test settings**.
+
+| Scenario | Workload | Measurements / purpose |
+|---|---|---|
+| Baseline | Query and checkout separately, then mixed; 20–50 RPS; 10 minutes after warm-up | Healthy latency, throughput, callback timing and resource usage |
+| Target load | Mixed traffic at 200, 400, 600 and 800 RPS; hold intermediate stages 10 minutes and peak 30 minutes | Find the point where latency, errors or queue age begin rising |
+| Callback sensitivity | Hold mixed traffic at 800 RPS; compare normal callback delivery with controlled delays, bursts and retries | Attribute checkout/final-state delay; verify retry and duplicate handling |
+| Spike/recovery | Rise from 200 to 800 RPS within 30 seconds; hold 10 minutes; return to 200 RPS and observe until recovery | Measure queue buildup, drain time and latency recovery |
+| Endurance | Hold 800 RPS for 2 hours after the load test passes | Detect growing backlog, memory growth, connection exhaustion or performance drift |
+| Optional capacity | Increase above 800 RPS in 100-RPS steps | Identify highest sustainable rate; stop at agreed SIT resource limits |
+
+Use valid business flows with distinct orders and representative query access patterns. Generate callbacks according to the actual payment flow; do not assume one callback per checkout without confirmation.
+
+### 5. Metrics and Exit Criteria
+
+**Target-load acceptance:**
+
+- Sustained **800 RPS actually delivered**, with no load-generator saturation or unreported dropped requests.
+- **P95 < 500 ms** and **errors < 0.1%**, separately for query and checkout and for the combined workload during the steady peak window.
+- Count timeouts, unexpected responses and failed valid business operations. Report original attempts and retries separately.
+- Report time-window trends as well as whole-run statistics so short failure periods remain visible.
+- Callback queue depth and oldest-message age must not grow continuously under steady load. After the spike, the backlog must drain and latency must return to baseline.
+- Reconcile orders and callbacks: no unexplained lost processing, duplicate payment effects or incorrect final states.
+
+Measure client latency, P50/P95/P99, achieved throughput and errors alongside APM traces, dependency latency, CPU/memory, database waits, connection pools, queue depth, message age, enqueue/dequeue rates and retries.
+
+**Callback completion SLA and acceptable recovery time must be confirmed before judging those outcomes.** A fast checkout response alone does not establish timely payment completion.
+
+### 6. Execution Notes
+
+1. Record SIT topology, resource limits, autoscaling, queue/consumer configuration, dependency behavior and representative data volume.
+2. Use SIT payment integration or a controlled simulator with realistic timing and failure behavior; keep all writes within isolated test data.
+3. Use an arrival-rate load model so slower responses do not silently reduce offered RPS. Derive concurrency from measured response time and the actual journey.
+4. Correlate load-generator timestamps with APM and queue telemetry. Verify generator capacity before the peak run.
+5. Run baseline → load → callback/spike → endurance. If a stage fails, inspect traces and queue trends, change one relevant variable, and repeat the failing stage.
+6. Deliver results with workload, environment, acceptance outcomes, bottleneck evidence and limitations. SIT results demonstrate SIT capacity; production readiness requires accounting for environment differences.
+
+This is a proposed plan; no performance tests have been executed.

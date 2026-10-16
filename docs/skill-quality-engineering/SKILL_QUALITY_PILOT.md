@@ -36,10 +36,12 @@ Pilot 不假设 SQEM v1.0 已经正确。**SQEM 自己也是被测试对象。**
 目标：L2 Verified + 部分 L3<br>
 重点：Behavior、领域正确性、Model Sensitivity。
 
-### P4 - skill-evaluation-design
+### P4 - skill-evaluation-design（仓库目标：skill-evaluation）
 类型：Skill Engineering<br>
 目标：L3 Evaluated<br>
 重点：Behavior Contract、Eval Design、Judge Usage、Risk-based Selection。
+
+仓库映射：附件方法名 `skill-evaluation-design` 映射到现有 canonical Skill `skills/{zh,en}/skill-engineering/skill-evaluation/`；不创建别名目录。
 
 ### P5 - skill-change-verification
 类型：Skill Engineering / Regression<br>
@@ -106,7 +108,7 @@ Failure Detectability
 
 至少选择一个真实支持的 Agent Runtime 执行代表性 Eval，并记录 Trigger、Output、必要的 Trajectory、Artifacts、Failures 和 Runtime Metadata。
 
-如果真实 Agent、目标环境、跨模型矩阵或业务验收不可用，保持 `NOT_RUN`、`BLOCKED`、`NOT_SCORED` 或 `INSUFFICIENT_EVIDENCE`，不得用静态检查或 `skill-up validate` 替代运行时结论。
+如果真实 Agent、目标环境、跨模型矩阵或业务验收不可用，应按 [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT.md) 的证据边界报告，不得用静态检查或 `skill-up validate` 替代运行时结论。
 
 ### Stage 7 - Benchmark
 
@@ -115,7 +117,7 @@ Failure Detectability
 ```text
 functional-testing
 testability-analysis
-skill-evaluation-design
+skill-evaluation
 ```
 
 执行受控的 Without Skill vs With Skill 对比。
@@ -129,7 +131,7 @@ skill-evaluation-design
 | functional-testing | Required | Recommended | Optional |
 | testability-analysis | Required | Recommended | Optional |
 | performance-testing | Required | Optional | Optional |
-| skill-evaluation-design | Required | Recommended | Optional |
+| skill-evaluation | Required | Recommended | Optional |
 | skill-change-verification | Required | Recommended | Optional |
 
 实际环境取决于可用 Runtime。

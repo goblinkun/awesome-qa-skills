@@ -2,7 +2,12 @@
 
 # Skill Quality Evidence
 
-本目录用于存放经过审阅或由 runner 生成的 Skill 质量证据说明和报告资产。本阶段只建立目录边界，不创建任何 Evidence Report 实例，也不声称已有 runtime 结果。
+本目录用于存放经过审阅或由 runner 生成的 Skill 质量证据说明和报告资产。每份报告的运行范围、模型、版本、未执行项和可支持声明必须单独明确，不能从一个 Pilot 推断全仓库通过。
+
+## 已有报告
+
+- [2026-10-05 Codex Benchmark 重复采样](./2026-10-05-codex-benchmark-repeat/README.md)：三个既有中文任务各补两轮；连同原单轮每侧三个样本，中断调用及成本独立保留；不代表业务验收或统计增益。
+- [2026-10-03 Codex SQET Pilot](./2026-10-03-codex-pilot/README.md)：五个 Skill 的双语文本核心运行、三个选定单次 Benchmark、第二模型代表采样、成本和原生证据。自然触发、受阻安全边界、Claude 与业务验收仍按报告的未验证状态保留。
 
 ## 最低记录字段
 

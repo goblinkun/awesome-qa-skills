@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="performance-testing" tests="3" failures="0" errors="0" skipped="0" time="113.025" timestamp="2026-10-03T19:28:49+08:00">
+    <testcase name="basic-success" classname="performance-testing" time="112.716">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-incomplete-input" classname="performance-testing" time="104.135">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-domain-boundary" classname="performance-testing" time="81.460">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+  </testsuite>
+</testsuites>

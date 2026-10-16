@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "skill_name": "skill-evaluation",
+    "skill_path": "<SKILL_SNAPSHOT>/skill-evaluation-en",
+    "timestamp": "2026-10-03T11:26:28Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "Design a complete Skill evaluation",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 93.206,
+        "tokens": 53623,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_contains{all:[Evidence Boundaries Recommended Actions]}",
+          "passed": true,
+          "evidence": "output satisfies all contains checks (all:[Evidence Boundaries Recommended Actions])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Missing evaluation environment",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 25.537,
+        "tokens": 51689,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(?i)(information gaps|missing|nothing has been run|no .* provided|insufficient[_ ]evidence|not[_ ]run|blocked) NOT_RUN]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(?i)(information gaps|missing|nothing has been run|no .* provided|insufficient[_ ]evidence|not[_ ]run|blocked) NOT_RUN])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Reject a competing evaluation engine",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 59.24,
+        "tokens": 52663,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_contains{all:[skill-up Quality Score]}",
+          "passed": true,
+          "evidence": "output satisfies all contains checks (all:[skill-up Quality Score])"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1,
+        "stddev": 0,
+        "min": 1,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 59.327666666666666,
+        "stddev": 27.625823116947828,
+        "min": 25.537,
+        "max": 93.206
+      },
+      "tokens": {
+        "mean": 52658.333333333336,
+        "stddev": 789.559089337559,
+        "min": 51689,
+        "max": 53623
+      }
+    },
+    "without_skill": null,
+    "delta": null
+  }
+}

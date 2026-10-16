@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "expect.must_contain",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "expect.must_not_contain",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "output_matches{all:[任务理解 (风险|优先级) (边界|极值|限制) (异常|负向|失败)]}",
+      "passed": true,
+      "evidence": "output satisfies all regex checks (all:[任务理解 (风险|优先级) (边界|极值|限制) (异常|负向|失败)])"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1
+  }
+}

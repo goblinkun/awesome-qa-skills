@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "skill_name": "testability-analysis",
+    "skill_path": "<SKILL_SNAPSHOT>/testability-analysis-en",
+    "timestamp": "2026-10-03T11:36:41Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "Testability Analysis: domain-complete scenario",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 115.478,
+        "tokens": 70099,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(?i)task understanding (?i)input audit (?i)risks? P0 (?i)(expected|decision criterion|acceptance)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(?i)task understanding (?i)input audit (?i)risks? P0 (?i)(expected|decision criterion|acceptance)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Testability Analysis: bounded first pass with incomplete input",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 96.21,
+        "tokens": 53561,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(?i)working assumptions (?i)open questions (?i)evidence (?i)(next actions|next steps|immediate requests|smallest next actions)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(?i)working assumptions (?i)open questions (?i)evidence (?i)(next actions|next steps|immediate requests|smallest next actions)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Testability Analysis: high-risk boundary and tradeoffs",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 88.275,
+        "tokens": 53541,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[P0 P1 (?i)(residual risk|remaining risk|unverified.*risk)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[P0 P1 (?i)(residual risk|remaining risk|unverified.*risk)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Architecture testability review: seams and environment reproduction",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 121.308,
+        "tokens": 53672,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(?i)(input audit|input evidence|evidence (basis|quality)|evidence is limited|confirmed facts) (?i)isolation (?i)(validation|verification|verify)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(?i)(input audit|input evidence|evidence (basis|quality)|evidence is limited|confirmed facts) (?i)isolation (?i)(validation|verification|verify)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Architecture testability review: incomplete architecture material",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 77.551,
+        "tokens": 52967,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(?i)Input Audit (?i)(open questions|missing|gaps) (?i)evidence]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(?i)Input Audit (?i)(open questions|missing|gaps) (?i)evidence])"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1,
+        "stddev": 0,
+        "min": 1,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 99.7644,
+        "stddev": 16.42631509012292,
+        "min": 77.551,
+        "max": 121.308
+      },
+      "tokens": {
+        "mean": 56768,
+        "stddev": 6670.033823002699,
+        "min": 52967,
+        "max": 70099
+      }
+    },
+    "without_skill": null,
+    "delta": null
+  }
+}

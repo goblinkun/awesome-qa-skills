@@ -1,0 +1,168 @@
+{
+  "skill_name": "functional-testing",
+  "schema_version": "v1alpha1",
+  "engine_name": "codex_no_daemon_isolated",
+  "model_name": "openai/gpt-6.1-sol",
+  "requested_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "applied_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "observed_configuration": {
+    "model": "gpt-6.1-sol"
+  },
+  "start_time": "2026-10-03T19:21:13.360019+08:00",
+  "end_time": "2026-10-03T19:23:02.059718+08:00",
+  "case_results": [
+    {
+      "case_id": "basic-success",
+      "title": "Functional testing: executable plan with context",
+      "status": "PASS",
+      "duration_ms": 108018,
+      "turns": 1,
+      "input_tokens": 50544,
+      "output_tokens": 1986,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(?i)Task Understanding (?i)(Risk|Priority) (?i)(boundary|edge|limit) (?i)(negative|failure|exception|abnormal)]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(?i)Task Understanding (?i)(Risk|Priority) (?i)(boundary|edge|limit) (?i)(negative|failure|exception|abnormal)])"
+          }
+        ],
+        "summary": {
+          "passed": 4,
+          "failed": 0,
+          "total": 4,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use the functional-testing skill.\nContext: ecommerce place-order → pay → ship release.\nEnv: SIT; roles: buyer, seller ops, warehouse.\nKnown risk: payment callback timeouts.\nProduce a risk-focused functional test plan and mark assumptions/gaps.\n",
+      "response": "### 1. Task Understanding\n\n**Draft SIT functional test plan; tests have not been executed.**\n\nConfirmed context: ecommerce **place order → pay → ship**, roles **buyer, seller ops, warehouse**, and known risk **payment callback timeouts**.\n\nScope includes order creation, payment outcomes and recovery, shipment eligibility, role permissions, and consistency across the three stages.\n\n**Assumptions requiring confirmation:**\n\n- A shipment requires confirmed payment and a valid, fulfillable order.\n- Repeated requests or callbacks must not create duplicate orders, charges, payment records, or shipments.\n- Seller ops and warehouse access is restricted to their authorized orders and actions.\n- SIT supports controlled payment outcomes and callback fault injection.\n\nExact status names, timing limits, retry rules, and recovery mechanisms are unknown. Expected results below describe business outcomes rather than invented implementation details.\n\n### 2. Risk and Priority\n\n| Priority | Risk | Business impact |\n|---|---|---|\n| P0 | Payment succeeds but callback times out | Buyer charged while order remains unpaid or cannot ship |\n| P0 | Callback retries repeat processing | Duplicate payment effects, fulfillment, or shipment |\n| P0 | Shipment released without confirmed payment | Goods dispatched without payment |\n| P0 | Late or conflicting events overwrite a valid outcome | Incorrect order/payment status or shipment eligibility |\n| P1 | Invalid orders, inventory conflicts, or permission failures | Incorrect totals, unfulfillable orders, unauthorized actions |\n| P1 | UI and downstream records disagree | Buyer confusion and incorrect operational decisions |\n\nP0 scenarios run first and block release if failed or unverified. These priorities and the release gate are proposed.\n\n### 3. Core Functional Coverage\n\n| Business flow | Coverage |\n|---|---|\n| Place order | Valid checkout; totals and quantities; invalid input; unavailable stock; repeated submission; inventory boundaries |\n| Pay and recover | Success, failure, pending outcome; callback timeout; delayed, duplicate, and conflicting callbacks; approved recovery |\n| Release shipment | Paid and fulfillable order; unpaid/pending/failed order blocked; repeated release; competing actions |\n| Role access | Buyer ownership; seller ops scope; warehouse scope; unauthorized attempts leave business data unchanged |\n| Cross-system consistency | Checkout → order; payment service → payment/order; order/payment → warehouse/shipment; inventory transitions where applicable |\n\nInspect both user-visible results and available persisted records. Verify amounts, quantities, related identifiers, and resulting business effects.\n\n### 4. Key Scenario List\n\nUse isolated SIT orders for each scenario. “Recovery” means the mechanism approved by the product requirements; its availability is a gap.\n\n| ID | Priority | Setup and action | Expected result / evidence |\n|---|---|---|---|\n| O1 | P0 | Buyer places a valid in-stock order, pays successfully; authorized warehouse user releases shipment. | Correct total and quantity; payment linked to the correct order; one authorized shipment; consistent buyer and operations views. |\n| O2 | P1 | Submit missing required checkout input, invalid quantity, and unavailable stock. | Clear validation; no payable invalid order or unintended payment/fulfillment effects. Exact validation rules need confirmation. |\n| O3 | P1 | Test quantities at the permitted minimum/maximum and immediately outside them; submit two orders competing for the last available unit. | Valid boundaries accepted; invalid boundaries rejected; stock allocation follows policy without over-allocation. Limits and reservation policy are gaps. |\n| O4 | P0 | Repeat order submission after a slow response or apparent timeout. | One intended order; retry behavior is understandable; no unintended duplicate downstream effects. |\n| P1 | P0 | Payment succeeds externally; prevent the success callback from reaching processing until it times out. Attempt shipment, then restore delivery or invoke recovery. | No premature shipment; payment is eventually reflected within the agreed recovery limit; buyer is not instructed to pay again while outcome is unresolved. |\n| P2 | P0 | Payment callback is durably applied, but its acknowledgment is lost or delayed; deliver the resulting retry. | Already-applied success remains correct; retry causes no duplicate payment or fulfillment effects. Requires controlled acknowledgment failure. |\n| P3 | P0 | Deliver the same success callback repeatedly and concurrently for one payment. | Exactly one business effect; order/payment amounts and shipment eligibility remain consistent. |\n| P4 | P0 | Delay success until just before, at, and just after the configured payment/order expiry boundary. | Outcome follows the approved late-payment policy; no invalid shipment or stranded successful payment. Boundary and policy are unresolved. |\n| P5 | P0 | Deliver pending/failure events after success; also deliver success after an earlier pending/failure event. | Authoritative payment outcome is preserved; status transitions follow approved rules; valid success is not incorrectly undone. |\n| P6 | P1 | Simulate payment rejection, buyer interruption, and prolonged pending payment. Refresh and revisit the order. | Accurate outcome displayed; shipment blocked where payment is unconfirmed; retry does not cause an unintended second charge. |\n| P7 | P0 | Deliver a callback with an unknown reference, wrong amount/currency, or invalid authenticity evidence, where supported. | Callback is rejected or routed to the approved exception process; no incorrect order update or shipment eligibility. Contract and validation rules need confirmation. |\n| S1 | P0 | Attempt shipment for unpaid, failed, pending, and canceled orders; then for a confirmed paid, fulfillable order. | Ineligible orders blocked without shipment side effects; eligible order can ship. Cancellation rules require confirmation. |\n| S2 | P0 | Repeat shipment release after a timeout; have two authorized warehouse sessions release the same order concurrently. | One intended shipment and inventory effect; retries show a consistent result. |\n| R1 | P1 | Buyer accesses another buyer’s order; seller ops accesses an unauthorized seller’s order; warehouse attempts payment changes or unauthorized shipment release. | Unauthorized actions denied through supported interfaces; no business-data mutation. Exact permission matrix is a gap. |\n| X1 | P0 | After callback timeout, duplicate delivery, and shipment retry, compare payment evidence, order state, inventory, shipment records, and role-visible views. | Correct relationships and quantities; no duplicate effects; discrepancies resolve within agreed limits or enter a visible exception process. |\n\n### 5. Execution Notes\n\nPrepare buyer accounts with separate ownership, seller ops accounts with distinct access scopes, and warehouse accounts. Data should include available/unavailable stock, a last-unit item, and orders covering each payment outcome.\n\nBefore execution, establish:\n\n- A SIT payment simulator or sandbox with controllable callback delay, loss, duplicates, and ordering.\n- Approved timeout, expiry, retry, and recovery limits.\n- Read access to order, payment, shipment, and applicable inventory evidence.\n- A permitted way to correlate events without exposing payment secrets.\n\nRun the happy path first, then P0 callback failures and shipment safeguards, followed by P1 coverage. Record case ID, order/payment references, injected fault, timestamps, actual outcome, and evidence.\n\n**Proposed release gate:** all P0 cases pass, no unresolved critical defects, and timeout recovery plus duplicate handling are demonstrated end to end. Missing fault-injection or evidence access means affected cases remain **blocked/unverified**, not passed.\n\nPerformance, security penetration testing, and production execution are outside this plan. Functional concurrency and role checks remain in scope.\n\n### 6. Open Questions\n\n1. What confirms payment authoritatively, and how is a timed-out callback recovered?\n2. What are the timeout, retry, expiry, and recovery limits? How are late payments handled after cancellation or expiry?\n3. What callback validation, event-ordering, and duplicate-processing rules apply?\n4. What are the exact shipment prerequisites, role permissions, and inventory reservation rules?\n5. Which payment methods, currencies, split shipments, cancellations, and refunds belong to this release?\n6. Can SIT simulate failures both before callback processing and after processing but before acknowledgment?\n\nThese gaps must be resolved to finalize timing assertions, exception outcomes, and release coverage.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-incomplete-input",
+      "title": "Functional testing: draft despite missing docs",
+      "status": "PASS",
+      "duration_ms": 91404,
+      "turns": 1,
+      "input_tokens": 50343,
+      "output_tokens": 1726,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(?i)(assumption|assumptions|assumed|working assumptions|\\[assumption\\]) (?i)(open questions|information gaps|missing information|gaps|what I need|must-have information)]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(?i)(assumption|assumptions|assumed|working assumptions|\\[assumption\\]) (?i)(open questions|information gaps|missing information|gaps|what I need|must-have information)])"
+          }
+        ],
+        "summary": {
+          "passed": 4,
+          "failed": 0,
+          "total": 4,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use functional-testing.\nRequirement: new release adds points redemption. No prototype or API docs.\nGive a usable first draft and list must-have information.\n",
+      "response": "### 1. Task Understanding\n\n**First draft for review and refinement.** Confirmed: the new release adds points redemption; no prototype or API documentation is available.\n\nWorking assumption: a user selects an eligible reward, confirms redemption, spends points, and receives a redemption record or benefit. Reward type, eligibility, deductions, fulfillment, and reversal rules remain unconfirmed.\n\nScope: eligibility → reward selection → confirmation → points deduction → fulfillment → history, including failures and relevant regression.\n\n### 2. Risk and Priority\n\n| Priority | Risk | Testing focus |\n|---|---|---|\n| P0 | Lost points, duplicate redemption, unauthorized access | Accounting consistency, retries, concurrency, ownership |\n| P1 | Incorrect eligibility or redemption decisions | Balance boundaries, expired points, limits, availability |\n| P2 | Confusing or inconsistent presentation | Confirmation details, messages, history display |\n\nP0 failures should block release. Final release criteria need agreement with the team.\n\n### 3. Core Functional Coverage\n\n- **Eligibility and selection:** eligible/ineligible users, available/unavailable rewards, valid/expired points.\n- **Confirmation and redemption:** displayed cost, successful redemption, insufficient balance, changed cost or availability.\n- **Accounting and fulfillment:** deduction accuracy, duplicate protection, simultaneous requests, dependency failures.\n- **Access and history:** authentication, account ownership, consistent balance and redemption status.\n- **Regression:** existing earning, expiry, balance, and history behavior.\n- **Conditional scope:** cancellation, refunds, stock, vouchers, shipping, and mixed cash/points payments require confirmation.\n\n### 4. Key Scenario List\n\nUse `C` for the confirmed redemption cost and `δ` for the smallest supported points unit. Expected outcomes below are **proposed acceptance criteria**, subject to business-rule confirmation.\n\n| ID / Priority | Preconditions and action | Expected result / evidence |\n|---|---|---|\n| R01 / P0 | Eligible account with spendable balance `B ≥ C`; select reward, review details, confirm once. | One redemption; balance becomes `B − C`; deduction and benefit/fulfillment record agree. |\n| R02 / P1 | Inspect confirmation before submitting; then exit without confirming. | Reward and cost are clear; exiting causes no deduction or redemption. |\n| R03 / P1 | Repeat redemption with balances `C − δ`, `C`, and `C + δ`. | Insufficient balance is rejected without deduction; exact balance succeeds and leaves zero; above-cost balance leaves `δ`. |\n| R04 / P1 | Account has zero points, or total points ≥ `C` but spendable points \u003c `C` because some are expired/restricted. | Decision uses the approved spendable-points rule; rejected attempts change nothing. |\n| R05 / P0 | Double-click confirmation or repeat the same submission during processing. | A single redemption intent produces at most one deduction and one benefit. |\n| R06 / P0 | Submit concurrently from two sessions when balance covers only one redemption. | At most one succeeds; balance never becomes negative; records match the final result. |\n| R07 / P0 | In an approved test environment, interrupt the response after submission; retry or reload. | Original outcome remains discoverable; retry creates no duplicate; no ambiguous permanent deduction. |\n| R08 / P0 | Simulate fulfillment failure after redemption is accepted. | Approved recovery rule applies: a traceable pending/retry state or compensation. No unexplained lost points or duplicate benefit. |\n| R09 / P0 | Attempt redemption while signed out or after session expiry. Using supported test tooling, attempt access to another account’s redemption. | Unauthorized actions/access are rejected; neither account’s balance or benefits change. |\n| R10 / P1 | Use an account excluded by the confirmed role, membership, region, or other eligibility rule. | Redemption is rejected with an understandable reason and no deduction. |\n| R11 / P1 | Change balance, eligibility, reward cost, or availability between selection and confirmation. | Submission revalidates relevant state; no unapproved cost is charged; failure leaves consistent records. |\n| R12 / P1 | If stock or redemption limits exist, test the limit, one beyond it, and concurrent attempts for the last available reward. | Approved limits hold under concurrency; unsuccessful attempts deduct nothing. |\n| R13 / P1 | Complete successful, rejected, and pending redemptions; refresh and sign in again. | Balance and history remain consistent; each outcome is distinguishable; fulfillment status follows the approved timing. |\n| R14 / P1 | If reversal exists, cancel/refund an eligible redemption; repeat the reversal action. | Points and benefit are adjusted once according to policy; repeated reversal has no additional effect. |\n| R15 / P1 | Exercise existing earning and expiry flows before/after redemption, including the expiry cutoff. | Existing behavior remains correct; redemption uses the approved timing and deduction-order rules. |\n\n### 5. Execution Notes\n\nPrepare controlled accounts with exact, insufficient, excess, expired, and restricted balances; eligible/ineligible users; and two sessions for one account. Add limited-stock or reversible rewards only if supported.\n\nRun R01 and P0 cases first, then boundaries and regression. For each accounting case, capture before/after spendable balance, redemption reference/status, deduction evidence, and fulfillment outcome through approved test interfaces.\n\nConcurrency and failure cases need a controlled test environment and a way to inspect records or simulate dependency failures. Without those capabilities, mark them **blocked**, not passed. These cases have not been executed; no release-readiness claim is made.\n\n### 6. Open Questions\n\n**Must-have information to finalize and execute:**\n\n1. **Business flow:** What can be redeemed, by whom, through which entry point, and what counts as successful fulfillment?\n2. **Points rules:** Cost, spendable-balance definition, precision, expiry cutoff/timezone, deduction order, minimums, maximums, and redemption limits.\n3. **Failure rules:** Duplicate/retry behavior, concurrent submissions, pending states, fulfillment timeout, compensation, cancellation, and refunds.\n4. **Access rules:** Authentication requirements, eligibility differences, record visibility, and any administrator permissions.\n5. **Observable outcomes:** Expected confirmation/history content, statuses, error messages, and a way to reconcile deductions with benefits.\n6. **Execution resources:** Test build/environment, accounts and data, dependency test facilities, and integration documentation or equivalent behavior walkthrough.\n7. **Release boundaries:** Supported clients, affected existing flows, known defects, and agreed acceptance criteria.\n\nA prototype and API documentation are not prerequisites for this draft. Confirmed behavior and an accessible test build are needed to turn it into executable, release-specific cases.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-risk-priority",
+      "title": "Functional testing: cut scope for a short window",
+      "status": "PASS",
+      "duration_ms": 78371,
+      "turns": 1,
+      "input_tokens": 50429,
+      "output_tokens": 1463,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[P0 (?i)(critical path|critical scenario|core flow|release gate) (?i)(defer|deferred|deferral|out of scope|not in this pass) (?i)risk]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[P0 (?i)(critical path|critical scenario|core flow|release gate) (?i)(defer|deferred|deferral|out of scope|not in this pass) (?i)risk])"
+          }
+        ],
+        "summary": {
+          "passed": 4,
+          "failed": 0,
+          "total": 4,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use functional-testing. Features: login, search, checkout, payment, coupons, points, tickets, admin reports.\nHalf-day release window. Keep only critical paths and explain what can be deferred.\n",
+      "response": "**1. Task Understanding**\n\nThis is a **critical-path release test plan**, not full regression coverage. Scope: login, search, checkout, payment, coupons, points, tickets, and admin reports.\n\nAssumptions: half-day means four hours with one tester; a nonproduction test environment and payment sandbox are available. “Tickets” provisionally means purchased or redeemable tickets. No tests have been executed.\n\n**2. Risk and Priority**\n\n- **P0 — release blockers:** users cannot purchase; incorrect totals; duplicate charges or deductions; paid orders lose tickets; unauthorized access to orders or reports.\n- **P1 — required smoke checks:** search finds a known purchasable item; valid login works; coupons and points follow configured rules; a key admin report reconciles with the tested transaction.\n- Defer broad variations before cutting checks for money, access, or fulfillment.\n\n**3. Core Functional Coverage**\n\nExecute one connected journey:\n\n**Login → search → checkout → apply coupon/points → pay → receive ticket → verify admin report.**\n\nAdd targeted failure checks around authentication, payment, deductions, fulfillment, and permissions. Use known eligible and ineligible items, sufficient and insufficient points, valid and expired coupons, a customer account, and an authorized admin account.\n\n**4. Key Scenario List**\n\n| Priority | Critical scenario and action | Expected result |\n|---|---|---|\n| P1 | Log in with valid credentials; repeat with invalid credentials. | Valid user reaches their account; invalid attempt grants no access. |\n| P0 | While signed out, open a protected order; as another customer, attempt to view that order. | Protected data remains inaccessible to unauthorized users. |\n| P1 | Search for a known available item and open it; search for a term with no matches. | Correct item can enter checkout; empty results are clear and usable. |\n| P0 | Complete a baseline checkout without discounts. | Item, quantity, fees, payable amount, payment amount, and order confirmation agree under configured rules. |\n| P0 | Apply a valid coupon, then an expired or ineligible coupon; check exactly at its configured minimum-spend boundary. | Eligible discount is calculated correctly; invalid coupon has no financial effect; threshold behavior matches requirements. |\n| P0 | Redeem permitted points; attempt redemption above balance or the configured limit. Combine with a coupon if supported. | Redemption and remaining balance are correct; excess use is rejected; stacking follows configured rules. |\n| P0 | Complete successful sandbox payment; repeat submission or refresh confirmation. | One charge, one paid order, and one set of deductions/entitlements result. |\n| P0 | Trigger declined payment and an interrupted or delayed payment response; retry after checking final status. | Order reflects the eventual payment result; no duplicate charge, ticket, or permanent unearned deduction occurs. |\n| P0 | Verify a paid order issues the correct ticket and an unpaid order does not. If redeemable, redeem once and attempt reuse. | Fulfillment matches payment and quantity; reuse follows ticket rules and cannot exceed entitlement. |\n| P0/P1 | Customer attempts admin-report access; authorized admin checks the tested paid and failed transactions. | Customer access is denied **(P0)**; report inclusion, totals, and status match configured reporting rules **(P1)**. |\n\n**5. Execution Notes**\n\n| Time budget | Work |\n|---|---|\n| 20 min | Confirm rules, accounts, fixtures, sandbox controls, and evidence capture. |\n| 30 min | Login, access checks, search, and baseline checkout. |\n| 70 min | Payment success, decline, interruption, duplicate submission, and ticket fulfillment. |\n| 40 min | Coupon and points calculations, limits, and stacking. |\n| 30 min | Ticket redemption, report permissions, and transaction reconciliation. |\n| 50 min | Investigate failures, retest fixes, and record the release decision. |\n\nFor each case, record actual result, order/payment reference, relevant balances, evidence, and pass/fail/blocked status. Observe integrations through available test controls: authentication, payment, coupon/points accounting, ticket issuance, and reporting.\n\nRelease only with all P0 cases passing, no unresolved critical defects, and explicit disposition of P1 failures. An unexecuted P0 remains an evidence gap.\n\n**Can be deferred:**\n\n- Search ranking, extensive filters, and large query datasets: retain basic discoverability.\n- Full coupon/points combinations: retain rules used in this release, invalid eligibility, and financial boundaries.\n- Broad browser/device coverage and cosmetic issues: retain the primary supported purchase setup.\n- Report exports, formatting, and exhaustive filters: retain permissions and transaction reconciliation.\n- Rare ticket variants: retain issuance and redemption for the main released type.\n\nPromote any deferred area if this release changes it directly or it has a known serious defect.\n\n**6. Open Questions**\n\nBefore execution, confirm ticket meaning, coupon/points stacking and reversal rules, report refresh timing, payment methods changed in this release, and known defects. If tickets mean support tickets, replace fulfillment checks with customer submission → authorized handling → customer-visible status, including cross-customer access denial.",
+      "observed_model": "gpt-6.1-sol"
+    }
+  ],
+  "total_tokens": 156491,
+  "judge_tokens": 0,
+  "overall_tokens": 156491
+}

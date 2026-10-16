@@ -1,0 +1,43 @@
+# Verification report
+
+## Change classification
+
+No change diff was supplied; the workspace is not a Git repository. Select the smallest sufficient checks based on the actual changes:
+
+| Change | Checks to select |
+|---|---|
+| Content or prompts | Static inspection and human review; runtime scenarios if behavior changes |
+| Metadata or directories | Frontmatter, references, pairing, independence, and indexes |
+| Scripts | Static checks plus focused execution covering changed paths and representative boundaries |
+| Eval definitions | Structural checks and the documented evaluation command |
+| Runtime behavior | Actual Skill/Prompt execution with representative inputs and observable outcomes |
+
+## Checks run
+
+| Command | Evidence level | Result |
+|---|---|---|
+| `cat .agents/skills/skill-change-verification/SKILL.md` | Static | Read verification requirements |
+| `cat .agents/skills/skill-change-verification/prompts/skill-change-verification.md` | Static | Read evidence levels and report requirements |
+| `git status --short`; `git diff --stat`; scoped `git diff` | Change discovery | Failed: no Git repository |
+
+## Checks not run
+
+| Item | Reason | Risk |
+|---|---|---|
+| `skill-up validate` | Not executed; invocation requirements need confirmation | No evaluation-pass evidence |
+| Runtime validation | No target behavior or scenarios supplied | Actual behavior remains unverified |
+| Change-specific structural and script checks | Actual diff unavailable; commands require confirmation | Changed paths and boundaries may be uncovered |
+
+## Claims supported
+
+`skill-up validate` provides **Evaluation-level evidence for the checks it runs**. It is not runtime semantic validation.
+
+Runtime validation requires executing the actual Skill/Prompt behavior and checking its outcomes. Select checks that cover the diff; a full-suite pass does not resolve uncovered changes.
+
+## Claims not supported
+
+No claim that validation passed, runtime behavior is correct, or all changes are covered.
+
+## Residual risks
+
+A concrete verification decision still requires the actual diff and documented commands. Undiscoverable commands are **confirmation required**, not guessed.

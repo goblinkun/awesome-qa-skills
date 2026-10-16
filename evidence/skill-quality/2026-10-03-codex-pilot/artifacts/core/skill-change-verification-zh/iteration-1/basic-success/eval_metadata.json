@@ -1,0 +1,10 @@
+{
+  "eval_id": 0,
+  "eval_name": "完整变更验证路由",
+  "prompt": "请为一个 Prompt 和 eval.yaml 的变更选择验证，并区分 skill-up validate 与运行时验证。",
+  "assertions": [
+    "expect.must_contain",
+    "expect.exit_code",
+    "output_contains{all:[运行时]}"
+  ]
+}

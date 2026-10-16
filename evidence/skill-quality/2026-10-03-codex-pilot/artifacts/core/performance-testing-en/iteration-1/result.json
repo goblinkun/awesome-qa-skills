@@ -1,0 +1,168 @@
+{
+  "skill_name": "performance-testing",
+  "schema_version": "v1alpha1",
+  "engine_name": "codex_no_daemon_isolated",
+  "model_name": "openai/gpt-6.1-sol",
+  "requested_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "applied_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "observed_configuration": {
+    "model": "gpt-6.1-sol"
+  },
+  "start_time": "2026-10-03T19:21:13.411829+08:00",
+  "end_time": "2026-10-03T19:22:48.15671+08:00",
+  "case_results": [
+    {
+      "case_id": "basic-success",
+      "title": "Performance testing: choose types and thresholds by risk",
+      "status": "PASS",
+      "duration_ms": 86709,
+      "turns": 1,
+      "input_tokens": 50662,
+      "output_tokens": 1610,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(?i)Task Understanding (?i)Performance Risk (?i)(metric|measurement) (?i)(load model|traffic model|scenario plan|workload)]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(?i)Task Understanding (?i)Performance Risk (?i)(metric|measurement) (?i)(load model|traffic model|scenario plan|workload)])"
+          }
+        ],
+        "summary": {
+          "passed": 4,
+          "failed": 0,
+          "total": 4,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use performance-testing.\nSystem: order query and checkout. Promo peak ~800 RPS; target P95 \u003c 500ms; error rate \u003c 0.1%.\nKnown risk: payment-callback queueing adds latency. Env: SIT with APM.\nPropose a performance plan (baseline/load as needed) and mark assumptions.\n",
+      "response": "### 1. Task Understanding\n\nValidate order query and checkout in SIT against the promo peak of **~800 RPS**, with **P95 \u003c 500 ms** and **error rate \u003c 0.1%**. Use APM to investigate the known payment-callback queueing risk.\n\n**Assumptions requiring confirmation:**\n\n- 800 RPS means combined incoming order-query and checkout traffic; callback traffic is additional.\n- Start with an **80% query / 20% checkout** mix: 640 / 160 RPS at peak. Replace this with observed promo traffic.\n- Apply the latency and error targets to each transaction separately and to the combined workload.\n- Test durations below are proposed. Callback completion SLA, expected callback delay/retry patterns, and SIT-to-production capacity differences remain unknown.\n\n### 2. Performance Risks and Priorities\n\n| Priority | Risk | What to verify |\n|---|---|---|\n| P0 | Callback arrivals exceed processing capacity | Queue depth, oldest-message age, processing throughput and recovery |\n| P0 | Checkout slows or fails at peak | Checkout latency, business success and dependency timing |\n| P0 | Payment completion becomes delayed despite fast checkout responses | Trace checkout through callback processing to final order state |\n| P1 | Order queries compete with checkout/callback processing | Compare isolated transactions with mixed traffic; inspect shared resource contention |\n| P1 | SIT results overstate production capacity | Document topology, configuration, data volume and dependency differences |\n\nQueueing is a known risk; its underlying cause is not yet established.\n\n### 3. Recommended Test Types\n\n- **Baseline:** Measure healthy transaction and callback timing at low load.\n- **Load:** Establish whether the realistic mix sustains 800 RPS.\n- **Spike and recovery:** Exercise sudden promo traffic and callback bursts.\n- **Endurance:** Detect accumulating queue delay, resource leaks or gradual degradation.\n- **Stress/capacity, optional:** After target-load testing, increase traffic to find the sustainable limit and limiting dependency.\n\n### 4. Scenario Plan\n\nAll rates and durations below are **proposed test settings**.\n\n| Scenario | Workload | Measurements / purpose |\n|---|---|---|\n| Baseline | Query and checkout separately, then mixed; 20–50 RPS; 10 minutes after warm-up | Healthy latency, throughput, callback timing and resource usage |\n| Target load | Mixed traffic at 200, 400, 600 and 800 RPS; hold intermediate stages 10 minutes and peak 30 minutes | Find the point where latency, errors or queue age begin rising |\n| Callback sensitivity | Hold mixed traffic at 800 RPS; compare normal callback delivery with controlled delays, bursts and retries | Attribute checkout/final-state delay; verify retry and duplicate handling |\n| Spike/recovery | Rise from 200 to 800 RPS within 30 seconds; hold 10 minutes; return to 200 RPS and observe until recovery | Measure queue buildup, drain time and latency recovery |\n| Endurance | Hold 800 RPS for 2 hours after the load test passes | Detect growing backlog, memory growth, connection exhaustion or performance drift |\n| Optional capacity | Increase above 800 RPS in 100-RPS steps | Identify highest sustainable rate; stop at agreed SIT resource limits |\n\nUse valid business flows with distinct orders and representative query access patterns. Generate callbacks according to the actual payment flow; do not assume one callback per checkout without confirmation.\n\n### 5. Metrics and Exit Criteria\n\n**Target-load acceptance:**\n\n- Sustained **800 RPS actually delivered**, with no load-generator saturation or unreported dropped requests.\n- **P95 \u003c 500 ms** and **errors \u003c 0.1%**, separately for query and checkout and for the combined workload during the steady peak window.\n- Count timeouts, unexpected responses and failed valid business operations. Report original attempts and retries separately.\n- Report time-window trends as well as whole-run statistics so short failure periods remain visible.\n- Callback queue depth and oldest-message age must not grow continuously under steady load. After the spike, the backlog must drain and latency must return to baseline.\n- Reconcile orders and callbacks: no unexplained lost processing, duplicate payment effects or incorrect final states.\n\nMeasure client latency, P50/P95/P99, achieved throughput and errors alongside APM traces, dependency latency, CPU/memory, database waits, connection pools, queue depth, message age, enqueue/dequeue rates and retries.\n\n**Callback completion SLA and acceptable recovery time must be confirmed before judging those outcomes.** A fast checkout response alone does not establish timely payment completion.\n\n### 6. Execution Notes\n\n1. Record SIT topology, resource limits, autoscaling, queue/consumer configuration, dependency behavior and representative data volume.\n2. Use SIT payment integration or a controlled simulator with realistic timing and failure behavior; keep all writes within isolated test data.\n3. Use an arrival-rate load model so slower responses do not silently reduce offered RPS. Derive concurrency from measured response time and the actual journey.\n4. Correlate load-generator timestamps with APM and queue telemetry. Verify generator capacity before the peak run.\n5. Run baseline → load → callback/spike → endurance. If a stage fails, inspect traces and queue trends, change one relevant variable, and repeat the failing stage.\n6. Deliver results with workload, environment, acceptance outcomes, bottleneck evidence and limitations. SIT results demonstrate SIT capacity; production readiness requires accounting for environment differences.\n\nThis is a proposed plan; no performance tests have been executed.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-incomplete-input",
+      "title": "Performance testing: draft without SLA/traffic",
+      "status": "PASS",
+      "duration_ms": 91353,
+      "turns": 1,
+      "input_tokens": 50500,
+      "output_tokens": 1543,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(?i)(assumption|working assumptions) (?i)(gap|gaps|open questions|missing|what I need)]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(?i)(assumption|working assumptions) (?i)(gap|gaps|open questions|missing|what I need)])"
+          }
+        ],
+        "summary": {
+          "passed": 4,
+          "failed": 0,
+          "total": 4,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use performance-testing. Product only says 'please performance test' with no SLA or traffic history.\nSystem: points redemption. Draft a plan; mark numeric targets as assumptions; list gaps.\n",
+      "response": "### 1. Task Understanding\n\n**Draft plan using the performance-testing skill.** Confirmed scope: points redemption. No SLA, traffic history, architecture, or environment details are available.\n\nObjectives: measure redemption latency and throughput, find saturation and recovery behavior, and verify that concurrent requests preserve balances and redemption outcomes.\n\n**All numeric workloads, durations, and thresholds below are assumptions for initial testing, not agreed acceptance criteria.** This plan does not establish production readiness.\n\n### 2. Performance Risks and Priorities\n\n| Priority | Risk | What to verify |\n|---|---|---|\n| Critical | Concurrent redemptions overspend a balance | Successful redemptions remain consistent with available points |\n| Critical | Retries or duplicate submissions deduct points twice | Confirm the retry contract; verify each logical redemption has the intended single effect |\n| Critical | Failure leaves inconsistent state | Reconcile balances, deductions, and redemption records after timeouts and partial failures |\n| High | Contention on popular rewards or shared accounts | Compare distributed traffic with concentrated traffic; check inventory if supported |\n| High | Slow dependencies exhaust resources | Measure timeout handling, resource saturation, and recovery |\n| Medium | Sustained traffic causes degradation | Track latency drift, memory growth, connection usage, and backlog |\n\nThese are risks to investigate, not confirmed defects or architectural facts.\n\n### 3. Recommended Test Types\n\n| Type | Purpose | Assumed initial profile |\n|---|---|---|\n| Baseline | Establish low-load behavior and validate measurements | 1 redemption attempt/second for 10 minutes |\n| Load | Measure steady-state performance | 10, 25, then 50 attempts/second; 15 minutes per stage |\n| Stress | Find the saturation point and failure behavior | Increase offered rate by 25% per stage until a stop condition |\n| Spike | Test abrupt demand and recovery | Jump from 10 to 100 attempts/second for 2 minutes, then return to baseline |\n| Endurance | Detect accumulated degradation | 4 hours at the highest stable load-test rate |\n| Capacity | Identify sustainable throughput under provisional criteria | Refine the boundary between the highest passing and first failing rates |\n\nRun baseline and load first. Use their findings to adjust later profiles.\n\n### 4. Scenario Plan\n\n- **Ordinary redemption:** unique accounts and logical requests, sufficient balances, varied rewards where supported.\n- **Concentrated demand:** repeat the workload against a popular reward; separately exercise concurrent requests against shared accounts.\n- **Duplicates and retries:** repeat a logical request during concurrent submission and after an ambiguous timeout. Use the system’s documented identity and retry mechanism.\n- **Business rejection:** exercise insufficient points and unavailable rewards, where supported. Verify rejection latency and absence of unintended deductions.\n- **Dependency degradation:** in an isolated environment, introduce supported delay or failure injection; observe timeouts, backlog, and recovery.\n\n**Assumed starting mix:** 80% ordinary attempts, 10% duplicates/retries, and 10% business rejections. Run contention and dependency scenarios separately so their effects are attributable.\n\nUse an arrival-rate workload: count logical redemption arrivals separately from retries and downstream requests. Measure actual concurrency and generator shortfalls; do not equate users with requests per second.\n\n### 5. Metrics and Exit Criteria\n\nCollect offered and achieved throughput; p50/p95/p99 latency; technical errors; business rejections; timeouts; retries; and redemption completion time. If processing is asynchronous, measure acceptance and final completion separately.\n\nObserve CPU, memory, connections, database waits, and queues where those components exist.\n\n**Provisional numeric targets—assumptions:**\n\n- Synchronous redemption p95 ≤ 1 second and p99 ≤ 2 seconds.\n- Unexpected technical failures ≤ 0.1% of attempts; report expected business rejections separately.\n- Achieved logical throughput ≥ 95% of offered throughput.\n- After a spike, baseline latency and backlog recover within 5 minutes.\n\nProposed correctness gates: no duplicate deductions, unauthorized overspending, or unreconciled redemption outcomes. Confirm these against the business rules.\n\nReport each profile’s results and the first limiting resource. A threshold breach identifies a boundary for investigation; it does not prove a root cause.\n\n### 6. Execution Notes\n\nUse an isolated test environment with representative configuration and synthetic accounts, balances, and rewards. Prepare enough data to avoid accidental depletion during ordinary-load tests. Record configuration, dataset size, dependency behavior, and generator capacity.\n\nValidate scripts at low load, capture a baseline, execute profiles, and reconcile records after each run. Stop on integrity violations, environment health limits, or failure to recover. Preserve measurements and diagnostic evidence.\n\n**Gaps to resolve:**\n\n- Business SLA and release acceptance criteria.\n- Normal and peak arrival rates, bursts, retry patterns, and workload mix.\n- Redemption flow, synchronous versus asynchronous completion, and duplicate-request contract.\n- Balance, inventory, reservation, rollback, and reconciliation rules.\n- Architecture, dependency limits, scaling behavior, and observability.\n- Test-environment fidelity, data volume, permitted fault injection, and operational stop limits.\n\nReplace assumptions with agreed inputs before formal acceptance. Deliver per-profile results, integrity findings, bottleneck evidence, and capacity conclusions limited to the tested configuration.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-domain-boundary",
+      "title": "Performance testing: not a security penetration list",
+      "status": "PASS",
+      "duration_ms": 94115,
+      "turns": 1,
+      "input_tokens": 50559,
+      "output_tokens": 1831,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_contains{all:[scenario scope baseline]}",
+            "passed": true,
+            "evidence": "output satisfies all contains checks (all:[scenario scope baseline])"
+          }
+        ],
+        "summary": {
+          "passed": 4,
+          "failed": 0,
+          "total": 4,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use performance-testing. Leadership wants load testing and also SQL injection / weak-password scans.\nHalf-day window. Deliver an executable performance scope and explicitly call out what belongs to security testing.\n",
+      "response": "### 1. Task Understanding\n\nDeliver a **four-hour performance test runbook** for the highest-impact user journeys. SQL injection and weak-password checks belong to **security testing** and require a separate scope.\n\nThis is an executable first draft; no tests or scans were run. The system, traffic, tooling, and SLA were not supplied, so the parameters below must be filled before execution.\n\n### 2. Performance Risks and Priorities\n\n| Priority | Focus | Risk to investigate |\n|---|---|---|\n| P0 | Most business-critical transaction | Failed or slow completion under expected peak traffic |\n| P0 | Highest-volume transaction | Queue growth, connection exhaustion, throughput shortfall |\n| P1 | Most expensive transaction, if different | Database contention, CPU or memory saturation |\n| P1 | Sudden traffic increase | Timeouts and failure to recover |\n\nSelect actual transactions from existing usage evidence. Do not invent endpoints or equally weight every journey.\n\n**Security testing boundary:**\n\n- **SQL injection:** assess whether untrusted input can alter database queries, bypass authorization, or expose data.\n- **Weak passwords:** assess password policy, default credentials, and resistance to password guessing using separately authorized methods and accounts.\n- Normal login throughput and authentication latency are performance concerns. Password guessing and injection payloads are security checks.\n- Keep security scans out of performance measurement windows; they change the workload and make results harder to interpret.\n\nThe half-day scope includes a security handoff, not a completed security assessment.\n\n### 3. Recommended Test Types\n\nRun **baseline, expected-peak load, and a short spike/recovery test**.\n\nDefer stress-to-failure, sustained endurance, and capacity certification. A half-day run cannot establish long-term stability or maximum sustainable capacity.\n\n### 4. Scenario Plan\n\nBefore running, bind these parameters:\n\n| Parameter | Required value |\n|---|---|\n| `TARGET` | Isolated nonproduction environment |\n| `T1–T3` | Selected transactions with business-success assertions |\n| `P` | Expected peak arrival rate, requests or journeys/second |\n| `MIX` | Transaction proportions totaling 100% |\n| `DATA` | Sufficient valid test accounts and representative records |\n| `LIMITS` | Latency, error, recovery, and environment stop thresholds |\n\nUse recorded traffic where available. If unavailable, label `P` and `MIX` as exploratory assumptions; results cannot demonstrate production readiness.\n\n| Time | Activity | Execution |\n|---|---|---|\n| 0–30 min | Scope and security handoff | Fill parameters; identify owners, environment limits, and security backlog |\n| 30–75 min | Prepare and validate | Configure the existing load tool; verify each journey with one user, business assertions, telemetry, and data |\n| 75–95 min | Baseline | 5-minute warm-up, 10-minute low-load measurement, 5-minute settle |\n| 95–140 min | Load | Ramp to `0.5P` for 5 minutes; hold 10; ramp to `P` for 5; hold 20; settle 5 |\n| 140–165 min | Spike/recovery | Hold `P` for 5 minutes; spike to `1.5P` for 5; return to `P` for 10; settle 5 |\n| 165–200 min | Investigate and repeat | Repeat the most informative failed or uncertain stage with identical workload and data conditions |\n| 200–240 min | Report | Summarize evidence, limitations, bottleneck candidates, and security handoff |\n\n`1.5P` is a **provisional spike assumption**, subject to environment limits. Skip the spike if peak load already breaches stop criteria.\n\nUse an arrival-rate workload when supported. For user-based workloads, derive concurrency from journey duration plus realistic think time; record achieved traffic rather than assuming configured users equal throughput.\n\n### 5. Metrics and Exit Criteria\n\nCapture per transaction:\n\n- p50/p95/p99 latency, achieved throughput, errors, timeouts, and business-success rate.\n- CPU, memory, restarts, connection pools, queues, database latency, locks, and slow queries.\n- Load-generator utilization and dropped or delayed arrivals.\n\nUse existing SLAs first. If none exist, these are **provisional triage thresholds**, not release acceptance:\n\n- Business-success rate ≥99%.\n- Peak-load p95 ≤2× low-load baseline for each transaction.\n- Achieved throughput ≥95% of requested traffic.\n- No continuously growing queue, exhausted pool, or service restart.\n- Latency and queues recover within 5 minutes after the spike.\n\nStop on data corruption or unexpected environment impact. Also provisionally stop if failures exceed 5% for 2 consecutive minutes or an agreed resource limit is breached.\n\n### 6. Execution Notes\n\nUse representative synthetic data, distinct accounts where required, production-like configuration, synchronized timestamps, and existing monitoring. Record build, infrastructure sizing, cache state, workload, and deviations.\n\nReport each scenario as **pass, fail, or inconclusive**. Missing telemetry, generator saturation, or unrepresentative infrastructure makes the affected conclusion inconclusive. Support bottleneck findings with correlated measurements; latency alone does not establish a database root cause.\n\nThe final deliverable is the workload configuration, run results, metric exports, prioritized findings, and a separate security-testing scope for SQL injection and weak-password assessment.",
+      "observed_model": "gpt-6.1-sol"
+    }
+  ],
+  "total_tokens": 156705,
+  "judge_tokens": 0,
+  "overall_tokens": 156705
+}

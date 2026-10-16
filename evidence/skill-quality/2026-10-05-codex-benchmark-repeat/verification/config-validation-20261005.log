@@ -1,0 +1,3 @@
+{"skill":"functional-testing-zh","status":0,"stdout":"✓ eval.yaml is valid (loaded 1 case(s))\n","stderr":""}
+{"skill":"testability-analysis-zh","status":0,"stdout":"✓ eval.yaml is valid (loaded 1 case(s))\n","stderr":""}
+{"skill":"skill-evaluation-zh","status":0,"stdout":"✓ eval.yaml is valid (loaded 1 case(s))\n","stderr":""}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "expect.must_contain",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "expect.must_not_contain",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "output_matches{all:[(?i)(assumption|assumptions|assumed|working assumptions|\\[assumption\\]) (?i)(open questions|information gaps|missing information|gaps|what I need|must-have information)]}",
+      "passed": true,
+      "evidence": "output satisfies all regex checks (all:[(?i)(assumption|assumptions|assumed|working assumptions|\\[assumption\\]) (?i)(open questions|information gaps|missing information|gaps|what I need|must-have information)])"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1
+  }
+}

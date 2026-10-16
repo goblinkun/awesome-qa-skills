@@ -1,0 +1,14 @@
+✔ Codex stdin is closed and user configuration cannot leak into a run (0.562125ms)
+✔ without-skill and judge invocations cannot load locally installed run Skills (0.134625ms)
+✔ Codex usage and shell reads are retained as real evidence (0.185292ms)
+✔ missing usage is unknown rather than measured zero (0.054791ms)
+✔ nested fixture Skills are disabled alongside their parent Skill (1.068458ms)
+✔ provider errors in JSONL are retained even when stderr is uninformative (0.695834ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 99.689834

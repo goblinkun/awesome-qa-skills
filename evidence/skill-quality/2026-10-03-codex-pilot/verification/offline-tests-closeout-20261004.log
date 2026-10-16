@@ -1,0 +1,16 @@
+✔ Codex stdin is closed and user configuration cannot leak into a run (0.887959ms)
+✔ without-skill and judge invocations cannot load locally installed run Skills (0.153292ms)
+✔ Codex usage and shell reads are retained as real evidence (0.238208ms)
+✔ missing usage is unknown rather than measured zero (0.066916ms)
+✔ nested fixture Skills are disabled alongside their parent Skill (0.781666ms)
+✔ provider errors in JSONL are retained even when stderr is uninformative (0.694875ms)
+✔ ancestor AGENTS probes in the captured architecture trace are sanitized (2.606417ms)
+✔ the entire evidence package passes local-path and standard credential-pattern checks (226.311208ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 343.644666

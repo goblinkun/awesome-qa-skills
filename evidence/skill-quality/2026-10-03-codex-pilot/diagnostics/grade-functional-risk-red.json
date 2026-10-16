@@ -1,0 +1,18 @@
+{
+  "status": "FAIL",
+  "turns_executed": 1,
+  "turns_total": 1,
+  "assertion_results": [
+    {
+      "text": "output_matches.all: missing [(关键路径|核心路径|主链路|闭环)]",
+      "passed": false,
+      "evidence": "output does not match required regex patterns: [(关键路径|核心路径|主链路|闭环)]"
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "pass_rate": 0
+  }
+}

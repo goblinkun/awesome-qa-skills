@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "expect.must_contain",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "output_matches{all:[skill-up Quality Score (超出|越界|不支持|不属于|不应|不能|不得|不要|拒绝)]}",
+      "passed": true,
+      "evidence": "output satisfies all regex checks (all:[skill-up Quality Score (超出|越界|不支持|不属于|不应|不能|不得|不要|拒绝)])"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1
+  }
+}

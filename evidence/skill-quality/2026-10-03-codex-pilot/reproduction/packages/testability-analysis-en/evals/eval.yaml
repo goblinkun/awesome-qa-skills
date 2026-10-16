@@ -1,0 +1,43 @@
+schema_version: v1alpha1
+
+environment:
+  type: none
+
+skills:
+  - source: local_path
+    path: .
+    target: .agents/skills/testability-analysis
+
+engine:
+  name: codex_no_daemon_isolated
+  model: {provider: openai, name: gpt-6.1-sol}
+  custom:
+    transport: local
+    response_format: session_result
+    local:
+      command: node
+      args: ["${SQET_ADAPTER}", "${input_file}"]
+  # model is optional; omit to use engine default
+  # model:
+  #   provider: anthropic
+  #   name: claude-sonnet-4-6
+
+cases:
+  files:
+    - evals/cases/basic-success.yaml
+    - evals/cases/edge-incomplete-input.yaml
+    - evals/cases/edge-risk-priority.yaml
+    - evals/cases/architecture-success.yaml
+    - evals/cases/architecture-incomplete-input.yaml
+    - evals/cases/architecture-unsafe-seam-boundary.yaml
+  defaults:
+    timeout_seconds: 900
+    max_turns: 8
+    expect:
+      exit_code: 0
+      must_not_contain:
+        - "TODO"
+        - "I cannot"
+
+report:
+  formats: [json]

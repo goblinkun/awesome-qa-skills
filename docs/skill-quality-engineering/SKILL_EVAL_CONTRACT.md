@@ -13,9 +13,7 @@ Skill Eval Contract 用于定义一个 Agent Skill 应该如何被评测的可�
 
 ## 仓库对齐边界
 
-本契约在仓库内复用 [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT.md) 的 Evidence State、Failure Classification 和报告结构；Quality Score 继续由 [Quality Score 与最低 Eval 契约](../governance/QUALITY_SCORE_EVAL_CONTRACT.md) 负责。本契约不新增评分体系，也不替换现有 `skill-up` 评测引擎。
-
-Router case 的 observed selection 必须由结构化的 `skill.selection` trace 或明确的 trace adapter 提供 `route`、`primary`、`optional` 和 `selected_skills`。`selected_skills` 必须严格等于唯一主 Skill 加至多一个辅助 Skill；缺少或非法字段为 `BLOCKED`，值不匹配或多选为 `FAIL`。普通文本推荐、Composition Recipe 或静态配置不能单独证明真实选择。
+仓库内 Router case 的 `expected_selection`、observed selection trace、Evidence State、Failure Classification 和报告结构，以 [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT.md) 为唯一主来源；Quality Score 继续由 [Quality Score 与最低 Eval 契约](../governance/QUALITY_SCORE_EVAL_CONTRACT.md) 负责。本契约只定义可移植的 Case 意图，不复制这些仓库级判定规则，也不替换现有 `skill-up` 评测引擎。
 
 ## 2. Eval Case 模型
 
@@ -36,6 +34,12 @@ context:
 
 expected:
   trigger: true
+
+# Router cases additionally fill this repository-defined structure.
+expected_selection:
+  route: route-id
+  primary: canonical-skill-name
+  optional: null
 
 behavior:
   must: []
@@ -60,7 +64,7 @@ evidence:
     - artifacts
 ```
 
-不是每个 Case 都必须填写全部字段。
+不是每个 Case 都必须填写全部字段；Router case 必须按仓库主契约填写 `expected_selection`，并用受支持的 trace 记录 observed selection。
 
 ## 3. Case 类型
 
@@ -135,12 +139,10 @@ task:
   input: |
     在开始功能测试设计前，评审这个需求是否已经具备可测试条件。
 
-expected:
-  preferred_skill:
-    - testability-analysis
-
-  unexpected_skill:
-    - functional-testing
+expected_selection:
+  route: testability-analysis-boundary
+  primary: testability-analysis
+  optional: null
 ```
 
 ## 7. Behavior Case
@@ -324,31 +326,19 @@ runs:
 
 ```yaml
 result:
-  status: PASS
-  evidence_level: E2
+  status: NOT_RUN
+  evidence_level: E1
 
   checks:
-    trigger: PASS
-    behavior: PASS
-    artifacts: PASS
+    trigger: NOT_RUN
+    behavior: NOT_RUN
+    artifacts: NOT_RUN
 
   observations: []
   limitations: []
 ```
 
-允许状态：
-
-```text
-PASS
-FAIL
-NOT_RUN
-BLOCKED
-NOT_SCORED
-UNASSESSED
-INSUFFICIENT_EVIDENCE
-```
-
-`NOT_SCORED` 仅表示没有合法 Quality Score，`UNASSESSED` 表示当前范围未评估该维度，`INSUFFICIENT_EVIDENCE` 表示已有痕迹但不足以支持强结论；它们都不是通过状态。
+仓库运行结果状态、语义和判定规则以 [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT.md) 为唯一主来源。本契约不新增仓库级状态。
 
 ## 16. Eval Quality
 

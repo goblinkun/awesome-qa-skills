@@ -1,0 +1,20 @@
+📋 Loading configuration...
+level=INFO msg="Config: loading eval.yaml from <SKILL_SNAPSHOT>/functional-testing-zh/evals/benchmark.yaml"
+✅ Loaded 1 case(s) | engine: codex_no_daemon_isolated | model: openai/gpt-6.1-sol
+
+🔑 Loading credentials...
+✅ Credentials ready
+
+🚀 Running evaluation (1 cases)
+   ⏳ [1/2] benchmark-neutral: 受控任务对比（不以 Skill 专用标题作为质量标准）...
+level=INFO msg="judge context materialized profile=standard dir=<RUN_ROOT>/benchmark/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context"
+   ✅ [1/2] benchmark-neutral: PASS (100.0%)
+   ⏳ [2/2] benchmark-neutral: 受控任务对比（不以 Skill 专用标题作为质量标准）...
+level=INFO msg="judge context materialized profile=standard dir=<RUN_ROOT>/benchmark/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/context"
+   ✅ [2/2] benchmark-neutral: PASS (100.0%)
+
+📊 Generating reports...
+✅ Reports saved to <RUN_ROOT>/benchmark/functional-testing-zh/iteration-1
+
+────────────────────────────────────────
+📋 Results: 2 passed, 0 failed, 0 errors

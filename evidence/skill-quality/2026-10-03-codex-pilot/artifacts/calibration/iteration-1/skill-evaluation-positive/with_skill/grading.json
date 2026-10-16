@@ -1,0 +1,75 @@
+{
+  "expectations": [
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "仅把 skill-up validate 成功视为配置或静态证据，明确不支持行为、触发或业务通过。",
+      "passed": true,
+      "evidence": "final_message 将 skill-up validate 成功限定为“配置/静态结果”，并明确“不能报告行为、触发、Benchmark 或业务通过”。"
+    },
+    {
+      "text": "给缺少运行、触发与评分的项目适用的 canonical evidence state，并明确未知的 Skill/模型/目标等元数据。",
+      "passed": true,
+      "evidence": "final_message 将 runtime 标为 NOT_RUN、触发判断标为 BLOCKED、评分标为 NOT_SCORED/UNASSESSED、总体标为 INSUFFICIENT_EVIDENCE，并将 Skill 版本、cases、engine/provider/model、目标和运行时间标为 unknown。"
+    },
+    {
+      "text": "提出覆盖成功、不完整输入和范围/风险边界的最小评测，评分优先确定性，需要语义时明确 rubric 与校准。",
+      "passed": true,
+      "evidence": "final_message 的最小计划覆盖“成功、不完整输入、范围/风险边界”；要求可观察断言，优先用 rule_based，使用 agent_judge 时先写 rubric 并用正负金样校准。"
+    },
+    {
+      "text": "区分 with/without Skill Benchmark 和 previous/current Version Regression，说明比较需控制可比条件。",
+      "passed": true,
+      "evidence": "final_message 将 Benchmark 定义为可比条件下的 with/without Skill，将 Version Regression 定义为 previous/current，并说明缺少可比 runs 时不报 delta。"
+    },
+    {
+      "text": "保留 skill-up 为主引擎，输出证据限制和可执行下一步，不发明 trace、分数或发布审批。",
+      "passed": true,
+      "evidence": "final_message 明确“沿用 skill-up validate/run，不建立第二引擎”，列出原始日志及运行证据的缺口和获取、执行、保存证据的下一步；没有报告虚构的 trace、分数或发布审批。"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1
+  },
+  "judge_context": {
+    "profile": "standard",
+    "materialized_dir": "judge/context",
+    "manifest": {
+      "profile": "standard",
+      "materialized_dir": "judge/context",
+      "materials": [
+        {
+          "key": "final_message",
+          "mode": "include",
+          "path": "judge/context/final_message.txt",
+          "bytes": 1161,
+          "original_bytes": 1161
+        },
+        {
+          "key": "transcript",
+          "mode": "file_ref",
+          "path": "judge/context/transcript.json",
+          "bytes": 1833,
+          "original_bytes": 1833
+        },
+        {
+          "key": "workspace_diff",
+          "mode": "omit",
+          "bytes": 0
+        },
+        {
+          "key": "generated_files",
+          "mode": "omit",
+          "bytes": 0
+        }
+      ]
+    },
+    "prompt_bytes": 4607
+  }
+}

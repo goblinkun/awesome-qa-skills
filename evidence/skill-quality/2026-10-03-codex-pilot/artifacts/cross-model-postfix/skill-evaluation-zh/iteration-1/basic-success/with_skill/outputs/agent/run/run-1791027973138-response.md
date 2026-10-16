@@ -1,0 +1,68 @@
+# Skill Evaluation Report
+
+## 范围
+
+本报告以工作区中唯一可见的 [skill-evaluation Skill](<WORKSPACE>/.agents/skills/skill-evaluation/SKILL.md) 为评测对象。其目标行为是设计和解释 Skill 评测，正确选择 judge，并守住 trigger、benchmark、regression 的证据边界。工作区未提供该 Skill 的 `evals/`、历史失败或运行 trace；因此以下是**评测设计和静态证据报告**，不是效果结论。
+
+## Run Metadata
+
+| 字段 | 本次记录 |
+|---|---|
+| run_id | `unknown`；未运行评测 |
+| Skill 版本 / Eval 版本 | `unknown` / `unknown` |
+| Engine / provider / model | `unknown` |
+| Judge | 下表为拟采用配置，尚未执行 |
+| Environment | 当前本地工作区；无 Git 仓库 |
+| Timestamp | 2026-10-03（环境日期） |
+| 已执行 | 读取 Skill 契约、评测说明和入口配置；查看 `skill-up validate --help` |
+| 未执行 | `skill-up validate`、runtime、trace runner |
+
+## 配置与覆盖范围
+
+建议建立最小 case 集，并为每例保存输入、期望断言、原始输出、trace 和 judge 结果。选择顺序是：可精确检查的字段用 `rule_based`；可执行配置或工件用 `script`；“建议是否合理”等语义质量用带可观察 rubric、经校准的 `agent_judge`。
+
+## Summary 与 Case Results
+
+| Case | 类型与输入要点 | 可观察断言及 judge | 当前状态 |
+|---|---|---|---|
+| C1 | HAPPY：提供目标 Skill、目标行为、`evals/` 和 trace | 报告逐项对应 case、judge、证据状态；`rule_based` 检查结构，校准后的 `agent_judge` 评估解释是否受证据支持 | `NOT_RUN` |
+| C2 | INCOMPLETE：只说“评测这个 Skill” | 缺失 metadata 写 `unknown`，输出最小报告及未执行状态；`rule_based` | `NOT_RUN` |
+| C3 | EXPLICIT_TRIGGER：明确要求“Skill 评测” | 路由 trace 中有该 Skill 的 `skill.selection`；`rule_based` | `BLOCKED` |
+| C4 | IMPLICIT_TRIGGER：询问如何为 Agent Skill 选择 judge，未点名 Skill | 同上，并核对所选 Skill；`rule_based` | `BLOCKED` |
+| C5 | CONTEXTUAL_TRIGGER：上文讨论该 Skill，随后要求比较前后版本 | 同上；报告将比较标为 version regression；`rule_based` | `BLOCKED` |
+| C6 | NEGATIVE_TRIGGER：普通函数单元测试请求 | 完整路由记录支持未选择该 Skill；`rule_based` | `BLOCKED` |
+| C7 | BOUNDARY：没有 trace，却要求断言“已触发且有效” | 拒绝推断触发；trigger 为 `BLOCKED`，效果为 `INSUFFICIENT_EVIDENCE`；`rule_based` | `NOT_RUN` |
+| C8 | REGRESSION 候选：提供经确认的历史失败及前后版本 | 固定输入、judge 和环境后比较；`rule_based` 加必要的语义 judge | `NOT_RUN` |
+
+## Trigger / Process / Outcome / Artifact / Semantic Evidence
+
+本次只有本地文件所载的**预期契约**；没有 `skill.selection`、执行过程、结果工件或语义评分。Trigger 为 `BLOCKED`，过程和结果为 `UNASSESSED`，效果主张为 `INSUFFICIENT_EVIDENCE`。输出措辞相似不能代替 observed trigger。
+
+## Benchmark Results
+
+`NOT_RUN`。计划在相同 case、模型、环境和 judge 下比较 **with Skill / without Skill**，分别记录结果与成本；目前没有可比数据，不能给出提升幅度或 Quality Score。
+
+## Regression Findings
+
+`INSUFFICIENT_EVIDENCE`。版本回归应比较 **previous / current Skill**，固定 Eval 版本及运行条件。当前既无前版结果，也无已确认历史失败；C8 只能保留为候选，待根因确认后再纳入回归集。
+
+## Flaky / Blocked / Infrastructure Errors
+
+未观察到失败或波动。C3–C6 因缺路由 trace 而 `BLOCKED`，不能归为 Skill 缺陷或“未触发”。尚无依据判断 Infrastructure Defect。
+
+## Eval Validity Findings
+
+未运行 case，失败分类均为 `UNKNOWN`；后续需分别核查 Skill Defect、Eval Defect、Infrastructure Defect 和 Unknown。`skill-up validate` 目前缺少 `eval.yaml`，即使将来通过，也只证明配置静态有效。
+
+状态含义：`PASS`／`FAIL` 是 judge 基于实际证据作出的通过／失败判断；`BLOCKED` 是必要证据或执行条件缺失；`NOT_RUN` 是 case 未执行；`NOT_SCORED` 是已运行但未评分；`UNASSESSED` 是该维度尚未评估；`INSUFFICIENT_EVIDENCE` 是现有材料不足以支持结论。本次没有 `PASS` 或 `FAIL`。
+
+## Limitations
+
+用户限定了本次为非交互文本评测，禁止外部服务与生产写入；也未提供其他目标 Skill。未读取评测断言或 evaluator 输入文件，未运行 runtime，因此无法报告实际触发率、成功率、benchmark 差值或版本回归结果。
+
+## Recommended Actions
+
+1. 为目标 Skill 准备 `evals/eval.yaml`、代表性输入和明确断言，先运行本地 `skill-up validate`。
+2. 在允许的隔离环境中运行 case，保存完整 `skill.selection` trace、输出、judge 结果及 run metadata。
+3. 校准语义 judge 后再将其用于门禁；对确认根因的真实失败补充 regression case。
+4. 若目标并非此处的 `skill-evaluation` Skill，提供目标 Skill 路径后按同一证据框架替换具体 case。

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="sqet-judge-calibration" tests="6" failures="4" errors="0" skipped="0" time="61.880" timestamp="2026-10-03T19:27:03+08:00">
+    <testcase name="functional-testing-positive" classname="sqet-judge-calibration" time="0.109">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case functional-testing-positive failed" type="AssertionFailure">- 按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。: final_message 规定先执行正常闭环，再验证重复回调，并在 30 分钟内优先两项 P0。; final_message 将其余项目延后，并注明未覆盖退款及多渠道差异。 | Failures: 仅列出未覆盖范围，没有解释退款和多渠道差异未验证会留下什么具体风险。&#xA;- 关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。: final_message 给出隔离环境、可恢复测试数据和已确认契约等前置条件。; 重复回调项写明发送同一回调两次，并核对支付侧权威记录、订单终态和关联日志。 | Failures: 正常闭环和失败回调项未写出可判定通过或失败的具体预期；“符合已确认契约”和“核对失败处理和恢复证据”仍不足以作为明确验收标准。; 角色与数量边界项只说按相同格式验证，缺少各自可核验的预期和证据。</failure>
+    </testcase>
+    <testcase name="functional-testing-negative" classname="sqet-judge-calibration" time="0.110">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case functional-testing-negative failed" type="AssertionFailure">- 区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。: final_message 仅称“所有流程已全部测试通过，没有风险，不需要补充资料”，没有区分已知事实、假设和待确认信息。 | Failures: 未说明断言的依据，也未标明待确认信息。&#xA;- 覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。: final_message 未提及支付流程、失败或重复回调、边界条件、权限或数据条件。 | Failures: 未覆盖关键支付闭环及相关异常场景。&#xA;- 按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。: final_message 未提及 30 分钟约束、优先级或执行顺序，并直接断言“没有风险”。 | Failures: 未给出优先级、延后范围及残余风险。&#xA;- 关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。: final_message 只有测试通过和发布的笼统结论，没有具体执行项或可核验结果。 | Failures: 缺少前置条件、操作、验收标准和证据。&#xA;- 明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。: final_message 声称“所有流程已全部测试通过”并建议“直接发布即可”，未说明未验证事项或停止条件。 | Failures: 未明确未执行或未验证范围、停止或升级条件及下一步，且报告了未经材料支持的通过结论。</failure>
+    </testcase>
+    <testcase name="testability-analysis-positive" classname="sqet-judge-calibration" time="0.110">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="testability-analysis-negative" classname="sqet-judge-calibration" time="0.085">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case testability-analysis-negative failed" type="AssertionFailure">- 判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。: final_message 只声称“使用流行的自动化框架即可解决全部可测试性问题”，未分析任何具体架构。 | Failures: 未判断组件边界、异步拓扑及现有或缺失能力；未区分事实、假设和证据缺口。&#xA;- 覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。: final_message 仅提到“有模拟器”，没有说明模拟器如何使用或验证。 | Failures: 未覆盖接缝、替身、隔离、故障注入和环境复现，也未说明可观察性、可控制性、确定性及数据准备。&#xA;- 使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。: final_message 明确称“无需证据、隔离检查”。 | Failures: 未提出隔离且最小权限的验证方案；未说明如何保护生产鉴权、租户隔离和资金安全。&#xA;- 改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。: final_message 只给出使用自动化框架的笼统建议，并称“无需证据”。 | Failures: 改进项缺少风险优先级、价值与成本、验证刺激、预期判断和可追踪证据。&#xA;- 标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。: final_message 称“因为有模拟器，所以架构已经通过验证”，并表示“无需证据、隔离检查或人类决策”。 | Failures: 未标注有效性尚未验证或环境与替身的残余风险；缺少停止条件及负责人或人类决策；仅凭模拟器存在就宣布通过。</failure>
+    </testcase>
+    <testcase name="skill-evaluation-positive" classname="sqet-judge-calibration" time="0.093">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="skill-evaluation-negative" classname="sqet-judge-calibration" time="0.089">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case skill-evaluation-negative failed" type="AssertionFailure">- 仅把 skill-up validate 成功视为配置或静态证据，明确不支持行为、触发或业务通过。: final_message 声称“skill-up validate 已经证明所有语义、触发、Benchmark 和业务都通过”。 | Failures: 未将 validate 成功限定为配置或静态证据；错误地将其视为行为、触发和业务通过的证据。&#xA;- 给缺少运行、触发与评分的项目适用的 canonical evidence state，并明确未知的 Skill/模型/目标等元数据。: final_message 直接宣称“质量总分 100，可以发布”，没有给出 evidence state。 | Failures: 未给出适用于缺少运行、触发与评分项目的 canonical evidence state；未标明未知的 Skill、模型和目标等元数据。&#xA;- 提出覆盖成功、不完整输入和范围/风险边界的最小评测，评分优先确定性，需要语义时明确 rubric 与校准。: final_message 写明“无需真实运行”，且未提出任何评测用例或评分方法。 | Failures: 未提出覆盖成功、不完整输入及范围或风险边界的最小评测；未说明确定性评分优先，也未提供语义评分的 rubric 与校准。&#xA;- 区分 with/without Skill Benchmark 和 previous/current Version Regression，说明比较需控制可比条件。: final_message 要求“把版本变化当作有无 Skill 对比”。 | Failures: 混淆了 with/without Skill Benchmark 与 previous/current Version Regression；未说明比较时需要控制可比条件。&#xA;- 保留 skill-up 为主引擎，输出证据限制和可执行下一步，不发明 trace、分数或发布审批。: final_message 提议“再建立一个独立引擎”，并声称“质量总分 100，可以发布”。 | Failures: 未保留 skill-up 为主引擎；未说明证据限制或可执行的下一步；在没有评分证据的情况下给出分数和发布结论。</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

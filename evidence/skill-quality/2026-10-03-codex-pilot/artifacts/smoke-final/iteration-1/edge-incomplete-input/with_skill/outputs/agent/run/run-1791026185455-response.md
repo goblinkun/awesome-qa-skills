@@ -1,0 +1,14 @@
+无法据此报告“评测已通过”：缺少评测输入和运行证据，不能将未知结果写成 `PASS`。
+
+| 报告项 | 状态 | 说明 |
+|---|---|---|
+| 评测执行 | `NOT_RUN` | 本次未运行评测 |
+| Skill、用例、模型、目标、run metadata | `unknown` | 未提供 |
+| 触发验证 | `BLOCKED` | 缺少 `skill.selection` trace |
+| 总体结论 | `INSUFFICIENT_EVIDENCE` | 无法判断通过或失败 |
+| Benchmark / 版本回归 | `UNASSESSED` | 无可比运行 |
+| 评分 | `NOT_SCORED` | 未评分 |
+
+`PASS` 表示证据证明通过；`FAIL` 表示证据证明失败；其余状态分别表示阻塞、未运行、未知、证据不足、未评估和未评分。
+
+下一步需提供目标 Skill、评测用例与目标，以及运行结果和 trace，才能形成可核实的通过结论。

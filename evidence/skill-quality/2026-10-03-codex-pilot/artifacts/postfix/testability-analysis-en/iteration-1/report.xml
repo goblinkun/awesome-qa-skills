@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="testability-analysis" tests="5" failures="0" errors="0" skipped="0" time="210.095" timestamp="2026-10-03T19:33:11+08:00">
+    <testcase name="basic-success" classname="testability-analysis" time="115.478">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-incomplete-input" classname="testability-analysis" time="96.210">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-risk-priority" classname="testability-analysis" time="88.275">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="architecture-success" classname="testability-analysis" time="121.308">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="architecture-incomplete-input" classname="testability-analysis" time="77.551">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+  </testsuite>
+</testsuites>

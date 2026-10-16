@@ -1,0 +1,808 @@
+{
+  "run_id": "2026-10-05-codex-benchmark-repeat",
+  "execution_completed": true,
+  "original_samples_per_variant": 1,
+  "additional_complete_samples_per_variant": 2,
+  "total_samples_per_variant": 3,
+  "new_complete_pairs": 6,
+  "native_model_identity_source": "Client turn_context; server-confirmed model remains unknown",
+  "interrupted_native_calls": 4,
+  "interrupted_complete_pairs": 0,
+  "benchmarks": [
+    {
+      "skill": "functional-testing",
+      "language": "zh",
+      "case_id": "benchmark-neutral",
+      "comparison": "with_skill vs without_skill, not version regression",
+      "case_sha256": "5e674a3da18fdf22c97a8558ab8c0b0743b16e3744f8e84a7d5f776440b98886",
+      "samples_per_variant": 3,
+      "samples": [
+        {
+          "ordinal": 1,
+          "cohort": "2026-10-03 selected original",
+          "report": "../2026-10-03-codex-pilot/artifacts/benchmark/functional-testing-zh/iteration-1/result.json",
+          "trials": [
+            {
+              "configuration": "with_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+                  "passed": true,
+                  "evidence": "final_message 第 1 节分别列出已确认事实和当前假设，并明确接口字段、角色权限矩阵、支付最终状态规则尚未提供。; 第 1 节明确不预设状态名、接口字段、错误码或状态迁移规则；R4 用例规定规则缺失时记为阻塞。"
+                },
+                {
+                  "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+                  "passed": true,
+                  "evidence": "final_message 第 4 节的 L1、C1、O1、P1 覆盖登录、购物车、下单、支付及服务端结果。; P2 覆盖支付失败或超时；R1、R2 覆盖串行与并发重复回调；R3、R4 覆盖无效、迟到和乱序通知。; A1 检查未登录及 A/B 用户越权，O2、B1、B2 检查重复下单、数量、库存和价格边界。"
+                },
+                {
+                  "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+                  "passed": true,
+                  "evidence": "final_message 第 2 节将风险分为 P0/P1，并给出从 0–3 分钟准备到 28–30 分钟汇总的执行顺序。; 第 2 节规定 P0 超时占用 P1 时间，30 分钟到点仍有 P0 未验证时报告验证不充分；第 5 节列出抽样后仍未验证的风险。"
+                },
+                {
+                  "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+                  "passed": true,
+                  "evidence": "final_message 第 4 节场景表逐项设置前置条件、操作、预期判断和证据列。; R1 要求先保存处理前基线，再重放同一有效通知两次，以三次处理记录、前后状态和业务效果次数核验幂等；P1 要求用沙箱交易、回调、订单及支付记录核验正常支付。"
+                },
+                {
+                  "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+                  "passed": true,
+                  "evidence": "final_message 开头明确方案待执行、未执行测试且不代表发布通过；第 5 节再次声明所有用例均未执行。; 第 5 节列明环境、契约、严重缺陷及 30 分钟到点时的停止或阻塞条件，并要求 P0 缺陷登记及未运行项标记为未执行。; 第 6 节列出待确认信息和下一步，明确缺少支付最终状态规则及必要契约时无法给出完整通过结论。"
+                }
+              ]
+            },
+            {
+              "configuration": "without_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+                  "passed": true,
+                  "evidence": "final_message 的“事实、假设与缺口”表分别列出已知事实、待确认假设、拟定约束和待提供规则。; final_message 明确说明接口字段、角色权限矩阵和支付最终状态规则未提供，因此不预设字段、错误码或最终状态断言。"
+                },
+                {
+                  "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+                  "passed": true,
+                  "evidence": "final_message 的 F01、F03、F05、F08 覆盖登录、购物车、下单到沙箱支付的关键链路。; F09、F10 检查顺序及并发重复回调的业务效果；F11、F12、F16 涵盖支付中断、迟到或乱序事件以及取消或失败。; F04、F13、F14、F15 覆盖数量、跨用户访问、库存竞争及商品数据变化等边界。"
+                },
+                {
+                  "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+                  "passed": true,
+                  "evidence": "final_message 将风险标为 P0/P1，并给出 0–4、4–9、9–16、16–25、25–28、28–30 分钟的执行顺序和产出。; final_message 将多角色、多浏览器、优惠组合及复杂并发延期，并说明准备时间占用窗口时须减少覆盖。; final_message 的“未验证风险与下一步”列出并发库存、长期迟到事件和支付状态收敛等剩余风险。"
+                },
+                {
+                  "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+                  "passed": true,
+                  "evidence": "final_message 的用例表为 F01–F16 分别列出前置条件、操作、预期判断和应保留证据。; F09 要求在首次处理后重放同一支付事件，并以订单、支付记录及业务动作前后计数核验是否重复处理。; F13 使用 A/B 独立会话尝试跨用户访问，并要求保存目标资源前后状态以核验拒绝访问且无副作用。"
+                },
+                {
+                  "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+                  "passed": true,
+                  "evidence": "final_message 开头声明初版尚未执行任何测试，结尾再次说明全部用例均未执行，且不能据此认定支付通过或可以发布。; “停止条件与发布判断”明确列出真实扣款、生产环境、重复扣款、金额错误、越权及关键断言受阻等停止或暂停放行条件。; “未验证风险与下一步”依次要求补齐契约与规则、准备隔离环境和证据、执行验证并补跑受阻及延期用例。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "cohort": "2026-10-05 complete retry",
+          "report": "artifacts/repeat/functional-testing-zh/iteration-1/result.json",
+          "trials": [
+            {
+              "configuration": "with_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+                  "passed": true,
+                  "evidence": "final_message 第1节分别列出已确认事实、当前假设和待确认信息，并明确接口字段、角色权限矩阵、支付最终状态规则尚未提供。; final_message 第1节说明“成功、失败、处理中”只是业务含义，不是接口状态枚举。"
+                },
+                {
+                  "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+                  "passed": true,
+                  "evidence": "final_message 的 C01 覆盖登录、加购、下单、支付成功和订单刷新；C02 覆盖同一有效回调的串行重放及并发到达。; final_message 的 C03–C06 覆盖越权、非法数量与库存、延迟回调、无效验签及金额或归属不匹配；C11–C12 补充支付失败重试和乱序回调。"
+                },
+                {
+                  "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+                  "passed": true,
+                  "evidence": "final_message 第2节按 P0/P1 排序，第5节将 30 分钟分配给准备、C01–C06 和结果汇总。; final_message 明确 C07–C13 不计入首轮窗口，并列出持续高并发、多渠道、退款对账等未验证风险。"
+                },
+                {
+                  "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+                  "passed": true,
+                  "evidence": "final_message 第4节的 C01–C06 表格逐项列有前置条件、操作、预期判断和必留证据。; 例如 C02 要求独立订单及可重放回调，执行串行三次和并发两次发送，并核对前后记账、库存、履约记录，不能只凭接口返回成功判通过。"
+                },
+                {
+                  "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+                  "passed": true,
+                  "evidence": "final_message 明确本次仅设计方案、全部用例均未执行，且 P0 阻塞、待确认或未执行时不能给出验证通过结论。; final_message 第5节列出生产环境、真实资金影响、重复资金处理等停止或升级条件；第6节列出待补信息及下一步执行顺序。"
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [
+                "functional-testing"
+              ],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 51438,
+              "output_tokens": 3806,
+              "duration_ms": 130711
+            },
+            {
+              "configuration": "without_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+                  "passed": true,
+                  "evidence": "final_message 的“事实、假设与缺口”表分别列出已知事实、工作假设和待确认规则。; final_message 明确写明接口字段、角色权限矩阵和支付最终状态规则未提供，并声明不自行指定字段名、状态名或错误码。"
+                },
+                {
+                  "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+                  "passed": true,
+                  "evidence": "final_message 的 T01 覆盖登录、加购、下单、沙箱支付、回调和订单查询。; T03、T04 覆盖顺序及并发重复回调；T07、T08 覆盖延迟、超时及状态乱序。; T05、T06、T09、T10 分别覆盖重复提交、金额篡改、订单归属隔离和非法回调。"
+                },
+                {
+                  "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+                  "passed": true,
+                  "evidence": "final_message 将风险分为 P0/P1，并给出 0–30 分钟的分段执行顺序。; final_message 明确将 P1 留待有余量时执行，将超出窗口的 T07/T08 标为未验证的 P0，并说明生产支付、长期补偿及其他场景仍有风险。"
+                },
+                {
+                  "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+                  "passed": true,
+                  "evidence": "final_message 的用例表为每个 T01–T15 列出前置条件、操作、预期判断和关键证据。; 例如 T03 要求已有合法支付和可重放事件，规定连续发送同一回调、检查无重复业务副作用，并保留响应、日志及快照。"
+                },
+                {
+                  "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+                  "passed": true,
+                  "evidence": "final_message 开头声明测试尚未执行，结尾再次说明当前所有用例均未执行。; final_message 列出重复扣款、越权成功等停止条件，以及规则缺失、环境不明和时间到期时的处理方式。; final_message 要求先补齐契约和权限规则，再补测 P0；未声称业务或发布验证已经通过。"
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 65103,
+              "output_tokens": 3603,
+              "duration_ms": 123589
+            }
+          ]
+        },
+        {
+          "ordinal": 3,
+          "cohort": "2026-10-05 complete retry",
+          "report": "artifacts/repeat/functional-testing-zh/iteration-2/result.json",
+          "trials": [
+            {
+              "configuration": "with_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+                  "passed": true,
+                  "evidence": "final_message 将 30 分钟窗口和回调可能重复列为已确认事实，将沙箱、测试账号和日志查询能力列为执行前假设。; final_message 明确接口字段、权限矩阵和支付最终状态规则尚未提供，并说明订单标识等只是业务概念，不预设字段名、状态枚举或错误码。"
+                },
+                {
+                  "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+                  "passed": true,
+                  "evidence": "final_message 的 T01 覆盖登录、购物车、下单、支付及金额、库存和订单交易关联核对。; final_message 的 T05、T06、T11、T12、T13 覆盖顺序及并发重复回调、非法通知、超时、失败取消和乱序通知。; final_message 的 T07、T08、T09 覆盖跨账号访问、金额篡改和库存竞争。"
+                },
+                {
+                  "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+                  "passed": true,
+                  "evidence": "final_message 给出 0–30 分钟分段执行表，按 T01、T02、T04、T05、T06、T07 和对账整理排序。; final_message 明确 T03、T08–T14 默认留待补测，并要求其中未验证的 P0 列入发布风险。; final_message 说明 30 分钟冒烟无法排除并发竞争、最终一致性、库存竞争、长时重试和生产配置风险。"
+                },
+                {
+                  "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+                  "passed": true,
+                  "evidence": "final_message 的关键场景表逐项列出前置条件、操作、预期判断和证据；例如 T05 要求有效通知和可重放入口，依次投递及并发投递，并核对业务效果数量和状态历史。; final_message 的 T06 规定每次只改变一个非法通知条件，并以脱敏通知、响应、日志及业务状态前后对比作为证据。; final_message 规定只有操作完成、验收规则已确认且证据充分时，才可将用例记为通过。"
+                },
+                {
+                  "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+                  "passed": true,
+                  "evidence": "final_message 开头明确这是尚未执行任何测试的初版，后文再次声明所有场景均未执行。; final_message 列明重复扣款、越权、错误金额、环境误连生产及关键契约缺失时的停止或阻止放行条件。; final_message 的下一步要求补齐接口契约、支付状态规则、权限矩阵和环境条件，再确认 P0 验收标准并执行验证；未宣称业务或发布已通过。"
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [
+                "functional-testing"
+              ],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 51356,
+              "output_tokens": 4433,
+              "duration_ms": 150249
+            },
+            {
+              "configuration": "without_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+                  "passed": true,
+                  "evidence": "final_message 的“事实与假设”表将已知范围、重复回调风险，与测试环境、证据访问及临时验收假设分别标明。; final_message 明确指出接口字段、角色权限矩阵和支付最终状态规则缺失；F08 和 F12 对缺少规则时的结论标为待确认。"
+                },
+                {
+                  "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+                  "passed": true,
+                  "evidence": "final_message 的 F05–F11 覆盖下单、金额篡改、正常支付、失败或未知结果、重复成功回调及不可信回调。; F04 检查数量和库存边界，F12 检查跨账号资源访问，F10 要求核对重复回调前后的业务副作用次数。"
+                },
+                {
+                  "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+                  "passed": true,
+                  "evidence": "final_message 按 0–30 分钟列出准备、登录购物车、下单、支付回调、权限隔离及证据整理的执行顺序。; 风险表区分 P0 与后移的 P1，并说明支付时序等变更涉及的 P1 项应提升优先级；“未验证风险与下一步”列出并发、长延迟、多渠道和优惠组合的覆盖缺口。"
+                },
+                {
+                  "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+                  "passed": true,
+                  "evidence": "final_message 的 P0 用例表为 F01–F12 逐项提供“前置条件”“操作”“预期判断”“证据”列。; 例如 F10 要求具备成功支付及有效回调原文，重复发送同一事件，核对副作用次数，并保存回调响应、处理日志及前后计数。"
+                },
+                {
+                  "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+                  "passed": true,
+                  "evidence": "final_message 开头明确写明“尚未执行任何测试”，结尾再次说明全部实际结果未知。; “停止条件与发布判断”规定 P0 失败或阻塞的处理、到第 28 分钟停止新增测试，以及只有必测 P0 实际通过且证据完整才支持有限范围放行。; “未验证风险与下一步”要求先补齐契约和规则、准备测试数据及证据查询，再执行 P0 并逐项记录结果。"
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 65203,
+              "output_tokens": 3961,
+              "duration_ms": 133039
+            }
+          ]
+        }
+      ],
+      "pass_counts": {
+        "with_skill": 3,
+        "without_skill": 3
+      }
+    },
+    {
+      "skill": "testability-analysis",
+      "language": "zh",
+      "case_id": "benchmark-neutral",
+      "comparison": "with_skill vs without_skill, not version regression",
+      "case_sha256": "1b939b0cb52f9b133a438125d70be5a5c33500dfbd24ff6289adf1fe389ca1be",
+      "samples_per_variant": 3,
+      "samples": [
+        {
+          "ordinal": 1,
+          "cohort": "2026-10-03 selected original",
+          "report": "../2026-10-03-codex-pilot/artifacts/benchmark/testability-analysis-zh/iteration-1/result.json",
+          "trials": [
+            {
+              "configuration": "with_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+                  "passed": true,
+                  "evidence": "final_message 的“输入审计”将订单服务→消息队列→支付适配器→外部支付商及沙箱回调模拟器列为题述事实，并明确注明“未独立核验”。; final_message 将回调接收组件、回传方式和状态存储标为待确认，并列出投递语义、确认时机、幂等范围等证据缺口。"
+                },
+                {
+                  "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+                  "passed": true,
+                  "evidence": "final_message 的“核心分析与执行项”逐一提出发布端、队列消费者、支付客户端、回调和时钟接缝，并区分组件替身、真实队列集成测试与支付商沙箱。; final_message 覆盖受控崩溃、响应丢失、重复及乱序回调等故障刺激，并要求关联标识、权威状态、显式处理屏障、测试数据准备和环境版本清单。"
+                },
+                {
+                  "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+                  "passed": true,
+                  "evidence": "final_message 要求独立主题、消费者组、数据库记录、缓存键、支付凭据及回调路由的完整隔离，并将清理范围限定为本次运行数据。; final_message 明确规定故障控制只用于独立测试部署、采用最小权限，不得绕过鉴权或开放生产后门；非法回调仍须经过真实校验路径。"
+                },
+                {
+                  "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+                  "passed": true,
+                  "evidence": "final_message 的风险表按 P1 至 P3 排序并说明业务影响与可探测性；接缝表为改进项列出价值、成本级别和负责人。; final_message 的场景表为响应丢失、消费者崩溃、重复投递等项目分别列出刺激、预期判定和消息、外部受理记录、权威状态等所需证据。"
+                },
+                {
+                  "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+                  "passed": true,
+                  "evidence": "final_message 开头明确表示没有执行记录、不能认定方案有效，并指出模拟器和隔离主题不足以证明支付链路可可靠测试。; final_message 列出暂停外部调用和故障注入等阻塞条件，说明替身语义漂移与沙箱差异等残余风险，并将幂等范围、未决支付处置及发布风险接受交由相应负责人决定。"
+                }
+              ]
+            },
+            {
+              "configuration": "without_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+                  "passed": true,
+                  "evidence": "final_message 将订单持久化、消息发布、队列消费、支付商调用、回调和订单状态更新列为组件与异步边界。; final_message 分表区分输入事实与待核验判断，并为发布一致性、确认时机、幂等和隔离范围列出所需证据。"
+                },
+                {
+                  "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+                  "passed": true,
+                  "evidence": "final_message 提出支付客户端接缝、有状态支付商替身、真实队列与数据库集成测试，以及网络和进程故障注入。; final_message 规定按运行隔离资源、记录关联标识和结构化事件，并使用可注入时钟、固定随机种子、事件屏障及可重放的测试数据。"
+                },
+                {
+                  "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+                  "passed": true,
+                  "evidence": "final_message 要求核验主题之外的消费组、重试与死信路径、数据库、缓存、回调路由和沙箱账户隔离。; final_message 将测试控制面限定在需认证的测试环境，要求防止其作用于真实支付端点，并禁止记录凭证及完整敏感支付数据。"
+                },
+                {
+                  "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+                  "passed": true,
+                  "evidence": "final_message 按 P0、P1、P2 排列改进项，逐项给出相对成本与依赖，并说明缺少可靠工期依据。; final_message 的验证步骤指定重复投递、响应丢失、乱序、崩溃和并行隔离等刺激，要求检查交易记录、状态不变量与收敛结果，并保存配置、时间线、日志、快照及队列证据。"
+                },
+                {
+                  "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+                  "passed": true,
+                  "evidence": "final_message 明确方案尚未执行，不能据此宣称有效；沙箱成功也不能证明生产环境行为。; final_message 要求每个场景预先写明截止时间和清理条件，列出沙箱差异、共享资源干扰及未覆盖事件组合等残余风险，并指出需由人类决定的持续时间、介入阈值和重复扣款处置。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "cohort": "2026-10-05 complete retry",
+          "report": "artifacts/repeat/testability-analysis-zh/iteration-1/result.json",
+          "trials": [
+            {
+              "configuration": "with_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+                  "passed": true,
+                  "evidence": "final_message 的“输入审计”将订单服务、消息队列、支付适配器和外部支付商列为已知拓扑，并明确回调接收方、结果回传路径和持久化位置未知。; final_message 将 F1–F4 标为未经独立核验的输入事实，分别说明已知能力及投递语义、模拟器能力和链路隔离等证据缺口。"
+                },
+                {
+                  "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+                  "passed": true,
+                  "evidence": "final_message 的“核心分析与执行项”逐项覆盖支付客户端接缝与替身、主题及消费组等隔离边界、故障注入、链路证据、确定性等待、环境复现和数据准备。; final_message 的场景表为响应丢失、确认前退出、重复与乱序回调等故障规定刺激、预期判断和留存证据。"
+                },
+                {
+                  "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+                  "passed": true,
+                  "evidence": "final_message 将方案限定在本地或隔离测试环境，要求隔离主题、消费组、数据命名空间、账号、凭据和回调路由。; final_message 明确故障机制只部署在隔离环境、通过受限配置控制，不得绕过鉴权或增加生产公共后门；无法证明外部账号、凭据及回调路由隔离时停止真实外部调用测试。"
+                },
+                {
+                  "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+                  "passed": true,
+                  "evidence": "final_message 的风险表按 P0–P3 排序，并说明依据是业务影响与当前可探测性。; final_message 的改进表逐项列出最小实现与价值、相对成本、负责人建议和验证证据；场景表进一步列出具体刺激、预期结果和必须保留的证据。"
+                },
+                {
+                  "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+                  "passed": true,
+                  "evidence": "final_message 开头明确未运行系统测试，不能认定改进有效或架构已通过；替身分层部分也指出模拟器成功不能证明真实支付协议兼容。; final_message 列出沙箱差异、替身契约漂移及长尾时序等残余风险，并规定跨环境流量、重复支付副作用或超过收敛期限时停止场景、保留证据并人工接管。; final_message 指定架构、支付、平台、测试及业务或发布负责人需要确认的契约、隔离、发布门槛和风险接受事项。"
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [
+                "testability-analysis"
+              ],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 52469,
+              "output_tokens": 3519,
+              "duration_ms": 120244
+            },
+            {
+              "configuration": "without_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+                  "passed": true,
+                  "evidence": "final_message 列出订单服务、消息队列、支付适配器和外部支付商的已知链路，并指出异步消息边界与外部依赖边界。; final_message 将回调入口、状态机、结果回传路径等列为待核验信息，明确不将其当作既有事实。"
+                },
+                {
+                  "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+                  "passed": true,
+                  "evidence": "final_message 为消息消费、支付客户端、回调和结果落库提出测试接缝与替身，并区分替身测试和真实队列验证。; final_message 覆盖隔离主题与消费者组、定向故障注入、固定种子和触发点、关联记录，以及版本配置和种子数据的环境复现。"
+                },
+                {
+                  "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+                  "passed": false,
+                  "evidence": "final_message 将故障注入限定于测试部署，提出隔离主题、消费者组和沙箱商户，并声明不涉及生产写入。; final_message 要求验证非法签名回调不会更新状态，且复现包不得包含密钥。 | Failures: 未明确限定测试账号、服务凭据和故障注入入口的最小权限。; 未明确验证租户授权与租户间数据隔离；run_id 和测试资源隔离不能替代该检查。"
+                },
+                {
+                  "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+                  "passed": true,
+                  "evidence": "final_message 按 P0、P1、P2 标出改进优先级和相对成本，并将支付重复受理、异步恢复和积压等风险对应到改进项。; final_message 的场景表逐项给出触发方式、建议断言和必须保存的证据，包括幂等键、受理记录、重投记录及状态转换。"
+                },
+                {
+                  "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+                  "passed": true,
+                  "evidence": "final_message 明确本次未执行系统测试，模拟器能力和协议真实性仍需核验，不能据此宣布方案有效。; final_message 要求预先约定重复次数、最长等待时间和恢复目标，并列出业务及支付负责人需要决定的状态转换、补偿和幂等规则。; final_message 指出替身与真实支付商、沙箱与生产环境及容量差异带来的残余风险。"
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 82134,
+              "output_tokens": 2753,
+              "duration_ms": 107837
+            }
+          ]
+        },
+        {
+          "ordinal": 3,
+          "cohort": "2026-10-05 complete retry",
+          "report": "artifacts/repeat/testability-analysis-zh/iteration-2/result.json",
+          "trials": [
+            {
+              "configuration": "with_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+                  "passed": true,
+                  "evidence": "final_message 第1节将订单服务、消息队列、支付适配器、外部支付商及沙箱回调模拟器列为输入事实，并将重复、延迟、乱序和超时后扣款标为待核验失败模型。; final_message 第1节列出结果返回路径、状态机、确认时机、幂等机制等证据缺口；第3节逐一分析组件边界和异步接缝。"
+                },
+                {
+                  "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+                  "passed": true,
+                  "evidence": "final_message 第3节分别提出发布接口、真实隔离队列、支付客户端替身、回调模拟器和持久化故障接缝。; final_message 第4节覆盖可观察性、可控制性、故障注入、隔离、确定性、数据准备和环境复现，并给出验收证据。; final_message 第5节列出重复投递、响应丢失、回调异常、持久化失败及并行隔离的具体实验。"
+                },
+                {
+                  "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+                  "passed": true,
+                  "evidence": "final_message 第4节要求按测试运行隔离主题、消费组、数据命名空间、回调路由和支付标识。; final_message 第4节限定故障入口只在专用测试部署或受限组件中使用，具备最小权限、作用范围、次数限制和自动失效机制，并要求证明生产无法启用。; final_message 第5节要求非法回调经正常入口接受验签和金额校验，且用支付商交易记录核查重复扣款。"
+                },
+                {
+                  "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+                  "passed": true,
+                  "evidence": "final_message 第2节按资金影响及可探测性给出 P1 至 P3 优先级，并说明缺少历史数据，不能判断发生概率。; final_message 第3、4节为接缝和改进项列出价值、成本、限制及验收证据。; final_message 第5节逐项给出前置条件、故障刺激、预期判断和需保存的交易、事件、状态及故障命中记录。"
+                },
+                {
+                  "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+                  "passed": true,
+                  "evidence": "final_message 开头明确方案没有执行记录，不能声称改进有效或架构已通过验证；第3节指出模拟器存在不等于回调验证充分。; final_message 第6节指定架构、支付、平台和测试负责人及需要人类决定的业务规则与风险接受事项。; final_message 第6节规定隔离或故障范围未确认时停止实验，缺少资金侧证据时不得批准支付正确性，并说明沙箱差异、替身漂移和真实并发时序等残余风险。"
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [
+                "testability-analysis"
+              ],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 52441,
+              "output_tokens": 3482,
+              "duration_ms": 120126
+            },
+            {
+              "configuration": "without_skill",
+              "status": "FAIL",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "判断引用输入中的组件边界、异步拓扑和现有/缺失能力，区分事实、假设与证据缺口。",
+                  "passed": true,
+                  "evidence": "final_message 明确列出订单服务、消息队列、支付适配器和外部支付商，并分析订单写入与消息发布、消息投递与处理、支付请求与结果三个边界。; final_message 将回调接收方、投递语义、幂等机制等列为待核验事项，明确区分已知事实与证据缺口。"
+                },
+                {
+                  "text": "覆盖接缝、替身、隔离、故障注入和环境复现，并保留可观察性、可控制性、确定性和数据准备。",
+                  "passed": true,
+                  "evidence": "final_message 分别提出支付客户端、时间与重试、回调处理、消息处理接缝，以及轻量替身、可编程支付服务和真实队列的分层验证。; final_message 覆盖隔离资源、故障注入、环境配置固定，并明确可观察性、可控制性、确定性和测试数据准备方式。"
+                },
+                {
+                  "text": "使用隔离和最小权限的验证方案，不削弱生产鉴权、租户隔离或资金安全。",
+                  "passed": false,
+                  "evidence": "final_message 要求按 run_id 隔离主题、消费组、数据命名空间和回调路由，并限定故障控制只在测试配置中启用。; final_message 要求端到端覆盖真实验签入口，并检查非法签名、金额和订单关联。 | Failures: 未给出测试身份、凭证和资源访问的最小权限安排，也未明确验证入口不能绕过生产鉴权或租户隔离。"
+                },
+                {
+                  "text": "改进项具有风险优先级、价值/成本、验证刺激、预期判断和可追踪证据。",
+                  "passed": true,
+                  "evidence": "final_message 将改进项分为 P0、P1、P2，并逐项给出相对成本及依赖决策。; final_message 的场景表为重复投递、响应丢失、消费者中断等风险提供操作刺激和验收目标；统一流程要求保存消息记录、支付账本和断言证据。"
+                },
+                {
+                  "text": "标注有效性未验证、环境/替身残余风险、停止条件及负责人或人类决策，不凭模拟器存在宣布通过。",
+                  "passed": false,
+                  "evidence": "final_message 开头声明未执行测试、不能声称方案有效，结尾列出沙箱差异、共享限额和未覆盖并发顺序等残余风险。; final_message 指出验收标准须由业务与工程共同明确，并将取消、迟到支付和退款规则交由业务确认。 | Failures: 未明确验证过程的停止条件，例如发现重复扣款、跨运行污染或无法确认资金结果时应何时暂停测试及由谁处置。"
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 65238,
+              "output_tokens": 2751,
+              "duration_ms": 100342
+            }
+          ]
+        }
+      ],
+      "pass_counts": {
+        "with_skill": 3,
+        "without_skill": 2
+      }
+    },
+    {
+      "skill": "skill-evaluation",
+      "language": "zh",
+      "case_id": "benchmark-neutral",
+      "comparison": "with_skill vs without_skill, not version regression",
+      "case_sha256": "3714c7b04f2fd8b0da1bd9d0cdce4323b358d2a4f7431db881e31e64218be2cf",
+      "samples_per_variant": 3,
+      "samples": [
+        {
+          "ordinal": 1,
+          "cohort": "2026-10-03 selected original",
+          "report": "../2026-10-03-codex-pilot/artifacts/benchmark-postfix/skill-evaluation-zh/iteration-1/result.json",
+          "trials": [
+            {
+              "configuration": "with_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "仅把 skill-up validate 成功视为配置或静态证据，明确不支持行为、触发或业务通过。",
+                  "passed": true,
+                  "evidence": "final_message 开头明确说现有证据只支持 skill-up validate 成功，不能据此宣布行为、触发、Benchmark 或业务效果通过。; Summary 将行为标为 NOT_RUN、触发标为 BLOCKED、业务效果标为 INSUFFICIENT_EVIDENCE。"
+                },
+                {
+                  "text": "给缺少运行、触发与评分的项目适用的 canonical evidence state，并明确未知的 Skill/模型/目标等元数据。",
+                  "passed": true,
+                  "evidence": "final_message 的 Run Metadata 将 Skill/Eval 版本、engine/provider/model、judge 和运行环境等列为 unknown。; Summary 和状态含义区分 PASS、NOT_RUN、BLOCKED、NOT_SCORED、UNASSESSED 与 INSUFFICIENT_EVIDENCE，并说明各状态的证据边界。"
+                },
+                {
+                  "text": "提出覆盖成功、不完整输入和范围/风险边界的最小评测，评分优先确定性，需要语义时明确 rubric 与校准。",
+                  "passed": true,
+                  "evidence": "final_message 的最小候选集包含完整有效输入、缺少必要输入、范围或风险边界，以及正向和负向触发用例。; 评分部分优先逐断言的确定性判断；使用 agent_judge 时要求先定义可观察 rubric，并用人工确认样例校准。"
+                },
+                {
+                  "text": "区分 with/without Skill Benchmark 和 previous/current Version Regression，说明比较需控制可比条件。",
+                  "passed": true,
+                  "evidence": "final_message 将 Benchmark 定义为 with Skill / without Skill 比较，并要求控制任务集、模型、运行参数、环境、工具、预算和 judge。; Regression Findings 将版本回归定义为 previous / current Skill 比较，说明两组都使用 Skill、条件须可比，且两种比较不能互相证明结论。"
+                },
+                {
+                  "text": "保留 skill-up 为主引擎，输出证据限制和可执行下一步，不发明 trace、分数或发布审批。",
+                  "passed": true,
+                  "evidence": "final_message 的 Recommended Actions 要求使用既有 skill-up 引擎运行用例并保存证据。; 全文明确没有运行评测、runtime trace、评分或业务测量数据，并将 Quality Score 标为 NOT_SCORED；没有声称发布获批。"
+                }
+              ]
+            },
+            {
+              "configuration": "without_skill",
+              "status": "FAIL",
+              "semantic_judge_executed": false,
+              "semantic_assertions": []
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "cohort": "2026-10-05 complete retry",
+          "report": "artifacts/repeat/skill-evaluation-zh/iteration-1/result.json",
+          "trials": [
+            {
+              "configuration": "with_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "仅把 skill-up validate 成功视为配置或静态证据，明确不支持行为、触发或业务通过。",
+                  "passed": true,
+                  "evidence": "final_message 将 `skill-up validate` 成功限定为该次校验通过，并明确指出它不能证明行为、实际触发、Benchmark 或业务效果。"
+                },
+                {
+                  "text": "给缺少运行、触发与评分的项目适用的 canonical evidence state，并明确未知的 Skill/模型/目标等元数据。",
+                  "passed": true,
+                  "evidence": "final_message 使用 PASS、NOT_RUN、BLOCKED、NOT_SCORED、UNASSESSED 和 INSUFFICIENT_EVIDENCE 标记各项证据状态。; final_message 将 Skill 路径与版本、模型、目标行为、运行日志和 selection 记录列为未知或未提供。"
+                },
+                {
+                  "text": "提出覆盖成功、不完整输入和范围/风险边界的最小评测，评分优先确定性，需要语义时明确 rubric 与校准。",
+                  "passed": true,
+                  "evidence": "final_message 提出 HAPPY、INCOMPLETE 和 BOUNDARY 三类待运行用例，并为每类写明可观察断言。; final_message 优先使用 rule_based 和 script；仅在需要语义判断时使用 agent_judge，并要求明确通过条件及校准。"
+                },
+                {
+                  "text": "区分 with/without Skill Benchmark 和 previous/current Version Regression，说明比较需控制可比条件。",
+                  "passed": true,
+                  "evidence": "final_message 将 with/without Skill 定义为增量效果比较，将 previous/current 定义为版本退化比较。; final_message 要求比较时控制任务、模型、环境和评分标准，并披露用例或环境变化。"
+                },
+                {
+                  "text": "保留 skill-up 为主引擎，输出证据限制和可执行下一步，不发明 trace、分数或发布审批。",
+                  "passed": true,
+                  "evidence": "final_message 明确要求使用既有 `skill-up` 体系，并给出取得契约与日志、运行用例、采集 selection 证据及开展两类比较的后续步骤。; final_message 将 trace 和评分标为缺失或未评分，且明确不能据此得出业务收益或发布就绪结论。"
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "expect.must_contain",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                },
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [
+                "skill-evaluation"
+              ],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 52264,
+              "output_tokens": 2150,
+              "duration_ms": 78265
+            },
+            {
+              "configuration": "without_skill",
+              "status": "FAIL",
+              "semantic_judge_executed": false,
+              "semantic_assertions": [],
+              "preconditions": [
+                {
+                  "text": "expect.must_contain",
+                  "passed": false,
+                  "evidence": "output does not contain \"NOT_RUN\"; output does not contain \"BLOCKED\""
+                },
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 48826,
+              "output_tokens": 1662,
+              "duration_ms": 64994
+            }
+          ]
+        },
+        {
+          "ordinal": 3,
+          "cohort": "2026-10-05 complete retry",
+          "report": "artifacts/repeat/skill-evaluation-zh/iteration-2/result.json",
+          "trials": [
+            {
+              "configuration": "with_skill",
+              "status": "PASS",
+              "semantic_judge_executed": true,
+              "semantic_assertions": [
+                {
+                  "text": "仅把 skill-up validate 成功视为配置或静态证据，明确不支持行为、触发或业务通过。",
+                  "passed": true,
+                  "evidence": "final_message 将 `skill-up validate` 成功限定为“该次静态校验通过”，明确表示不能据此认定行为、触发、Benchmark 或业务效果通过。"
+                },
+                {
+                  "text": "给缺少运行、触发与评分的项目适用的 canonical evidence state，并明确未知的 Skill/模型/目标等元数据。",
+                  "passed": true,
+                  "evidence": "final_message 定义了 PASS、NOT_RUN、BLOCKED、NOT_SCORED、UNASSESSED 和 INSUFFICIENT_EVIDENCE，并用这些状态标注缺少运行和评分证据的项目。; Run Metadata 将 Skill/Eval 版本、模型、运行目标、用例详情等列为 unknown，并说明 runtime trace 与 `skill.selection` 未提供。"
+                },
+                {
+                  "text": "提出覆盖成功、不完整输入和范围/风险边界的最小评测，评分优先确定性，需要语义时明确 rubric 与校准。",
+                  "passed": true,
+                  "evidence": "Case Results 提出 HAPPY、INCOMPLETE 和 BOUNDARY 三类最小用例，分别覆盖典型成功任务、关键输入缺失及范围或风险边界。; final_message 要求确定性断言优先使用 `rule_based`，可执行产物使用 `script`；语义要求使用写明完成度、正确性和约束标准且经过校准的 rubric。"
+                },
+                {
+                  "text": "区分 with/without Skill Benchmark 和 previous/current Version Regression，说明比较需控制可比条件。",
+                  "passed": true,
+                  "evidence": "Benchmark Results 明确比较 with Skill / without Skill，并要求固定模型、任务、工具权限、环境和 judge。; Regression Findings 明确比较 previous / current Skill，要求固定 Eval 版本、输入、模型、工具、环境和 judge，并区分其与 Benchmark 的目的。"
+                },
+                {
+                  "text": "保留 skill-up 为主引擎，输出证据限制和可执行下一步，不发明 trace、分数或发布审批。",
+                  "passed": true,
+                  "evidence": "Recommended Actions 要求使用现有 `skill-up` 执行评测，并明确“不另造评测引擎”。; final_message 将 trace、实际分数和业务效果列为缺失或未评估，明确不得另造综合 Quality Score；全文未声称已有发布审批。"
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "expect.must_contain",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                },
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [
+                "skill-evaluation"
+              ],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 52194,
+              "output_tokens": 2395,
+              "duration_ms": 85079
+            },
+            {
+              "configuration": "without_skill",
+              "status": "FAIL",
+              "semantic_judge_executed": false,
+              "semantic_assertions": [],
+              "preconditions": [
+                {
+                  "text": "expect.must_contain",
+                  "passed": false,
+                  "evidence": "output does not contain \"NOT_RUN\"; output does not contain \"BLOCKED\""
+                },
+                {
+                  "text": "expect.exit_code",
+                  "passed": true,
+                  "evidence": "all checks passed"
+                }
+              ],
+              "catalog": [],
+              "observed_model": "gpt-6.1-sol",
+              "input_tokens": 32529,
+              "output_tokens": 1642,
+              "duration_ms": 70395
+            }
+          ]
+        }
+      ],
+      "pass_counts": {
+        "with_skill": 3,
+        "without_skill": 0
+      }
+    }
+  ],
+  "claims": {
+    "formal_test_level": "UNASSESSED",
+    "quality_score": "NOT_SCORED",
+    "business_acceptance": "NOT_RUN",
+    "claude": "NOT_RUN",
+    "natural_selection": "BLOCKED",
+    "difficult_input_generalization": "INSUFFICIENT_EVIDENCE",
+    "statistical_effectiveness": "INSUFFICIENT_EVIDENCE"
+  },
+  "limitations": [
+    "One unchanged task per Skill, Chinese only, three samples including the original date",
+    "With Skill always precedes without Skill; not randomized or blinded",
+    "Existing synthetic judge calibration is not independently confirmed by a business reviewer",
+    "Homebrew Node was transiently unavailable before user interruption and restored externally; exact original-run binary hash was not captured",
+    "Runtime text comparison does not establish business benefit, production readiness, natural selection, or version regression"
+  ]
+}

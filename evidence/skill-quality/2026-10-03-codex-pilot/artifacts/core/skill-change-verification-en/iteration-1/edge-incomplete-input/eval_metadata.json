@@ -1,0 +1,10 @@
+{
+  "eval_id": 0,
+  "eval_name": "Missing verification environment",
+  "prompt": "Confirm the change passes without a scope, command, or runtime environment.",
+  "assertions": [
+    "expect.must_contain",
+    "expect.exit_code",
+    "output_contains{all:[confirmation]}"
+  ]
+}

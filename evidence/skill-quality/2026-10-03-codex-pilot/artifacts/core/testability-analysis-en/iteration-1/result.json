@@ -1,0 +1,255 @@
+{
+  "skill_name": "testability-analysis",
+  "schema_version": "v1alpha1",
+  "engine_name": "codex_no_daemon_isolated",
+  "model_name": "openai/gpt-6.1-sol",
+  "requested_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "applied_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "observed_configuration": {
+    "model": "gpt-6.1-sol"
+  },
+  "start_time": "2026-10-03T19:24:54.533209+08:00",
+  "end_time": "2026-10-03T19:28:18.873183+08:00",
+  "case_results": [
+    {
+      "case_id": "basic-success",
+      "title": "Testability Analysis: domain-complete scenario",
+      "status": "PASS",
+      "duration_ms": 96277,
+      "turns": 1,
+      "input_tokens": 51386,
+      "output_tokens": 1863,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(?i)task understanding (?i)input audit (?i)risks? P0 (?i)(expected|decision criterion|acceptance)]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(?i)task understanding (?i)input audit (?i)risks? P0 (?i)(expected|decision criterion|acceptance)])"
+          }
+        ],
+        "summary": {
+          "passed": 4,
+          "failed": 0,
+          "total": 4,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use the testability-analysis skill for this scenario: an async refund flow spans three services with plain logs but no correlation ID, sandbox callback, or status query. The basic scope is available. Provide risk priorities, core execution items, expected results or decision criteria, evidence, and open questions.\n",
+      "response": "### 1. Task Understanding and Scope\n\nAssess whether the three-service asynchronous refund flow can be tested reliably, prioritizing financial correctness and producing reproducible evidence of completion, failure, and recovery.\n\nThis is a bounded design assessment. No system tests, external calls, or production writes were performed.\n\n### 2. Input Audit\n\n**Confirmed facts — E1:** The supplied scenario describes three services, asynchronous processing, plain logs, and no correlation ID, sandbox callback, or status query.\n\n**Evidence quality:** E1 supports identifying testability gaps. No architecture, contracts, log samples, implementation, environment version, or execution results were supplied; actual failure rates and refund behavior remain unverified.\n\n**Working assumptions:**\n\n- The basic scope is sufficient to select refund scenarios, but detailed state transitions and acceptance thresholds still need confirmation.\n- Improvements and execution would use an isolated test environment with synthetic data.\n- Duplicate delivery, retries, and partial completion are **hypotheses to verify**, not demonstrated defects.\n\n### 3. Risks and Priorities\n\nPriorities below rank investigation and mitigation; they do not assert existing defects.\n\n| Priority | Risk | Impact and rationale | Evidence basis / next action |\n|---|---|---|---|\n| P0 | Duplicate financial effect following retries or repeated callbacks | Potential financial loss; investigate first because asynchronous repetition may be difficult to detect | Hypothesis to verify: obtain retry and idempotency contracts, then exercise duplicate delivery |\n| P0 | Refund recorded as successful despite missing or inconsistent downstream completion | Could produce incorrect balances or customer outcomes | Hypothesis to verify: agree the authoritative success criterion and reconcile each service’s durable outcome |\n| P1 | Cannot trace one refund across all three services | Blocks reliable diagnosis and weakens end-to-end evidence | E1: introduce propagated operation identity |\n| P1 | Cannot deliberately exercise callback outcomes | Success, rejection, delay, and recovery paths cannot be reproduced reliably | E1: establish an isolated callback substitute |\n| P1 | Cannot determine terminal outcome through an automation interface | Tests cannot distinguish completion, failure, and continued processing reliably | E1: provide an authorized read-only outcome interface |\n| P2 | Unknown data isolation, timing behavior, and environment parity | Results may be flaky or unrepresentative | Evidence gap: document fixtures, configuration, and differences from production |\n| P3 | Reporting and tooling convenience | Improves efficiency after reliable assertions exist | Reuse existing tools; defer cosmetic improvements |\n\n### 4. Core Analysis and Execution Items\n\nThe scorecard uses qualitative judgments because no execution evidence supports numerical scores.\n\n| Dimension | Current assessment |\n|---|---|\n| Observability | Inadequate for reliable cross-service attribution; plain logs may still support local diagnosis |\n| Controllability | Callback control is absent; other control points are unknown |\n| Isolation | Unverified |\n| Determinism | Unverified; delays, clocks, retries, and ordering need explicit control |\n| Data setup | Unverified; repeatable eligible and ineligible fixtures are needed |\n| Fault injection | No callback mechanism supplied; other injection points are unknown |\n| Environment parity | Unverified |\n| Automation interfaces | No status query; other outcome interfaces are unknown |\n\nEach item below is proposed work, not an implemented capability. Expected behavior must be grounded in approved requirements before execution.\n\n| Core item | Preconditions and stimulus | Expected result / decision criterion | Required evidence | Value / cost |\n|---|---|---|---|---|\n| **Trace one refund** | In an isolated environment, propagate a stable operation ID through all three services; execute one refund | Every relevant transition and attempt is attributable to the same operation; concurrent refunds remain distinguishable | Correlated, masked events from all services, with service/version and attempt information | Enables diagnosis; cross-service instrumentation cost |\n| **Observe completion** | Agree the authoritative outcome and timing limit; expose an authorized read-only query or test snapshot; execute a valid refund | Completion is observable within the agreed bound, and authoritative records match the requested refund | Outcome history plus authoritative financial records, if such records exist | Establishes a dependable assertion; interface and access-control cost |\n| **Control callbacks** | Use an isolated substitute at the actual callback boundary, preserving applicable validation; send valid, failed, malformed, and delayed callbacks | Each input produces the contract-defined transition; invalid inputs cannot create success | Callback inputs, validation results, transition history, final outcome | Makes asynchronous paths reproducible; substitute setup and maintenance cost |\n| **Check duplicate effects** | Prepare a repeatable refund fixture; repeat the same request or callback and inject a timeout around an acknowledgement boundary | Repetition produces no additional financial effect for the same operation; outcome follows the approved idempotency contract | Delivery/attempt history, deduplication evidence, authoritative reconciliation | Addresses P0 loss risk; fixture and boundary-injection cost |\n| **Check interrupted recovery** | Identify durable boundaries and approved recovery behavior; interrupt each service before and after persistence | Recovery reaches the defined outcome without lost or extra financial effects; unresolved work is explicitly detectable | Persistence evidence, restart/retry history, final reconciliation | Addresses P0 inconsistency risk; controlled restart/injection cost |\n| **Control time and ordering** | Confirm timeout, retry, and ordering rules; use controlled scheduling where supported; delay, omit, and reorder callbacks | Transitions follow the contract; late messages cannot incorrectly reverse a terminal outcome; tests use bounded polling | Delivery timeline, timing configuration, state history | Reduces flaky results; scheduling and clock-seam cost |\n| **Reproduce safely** | Create synthetic fixtures and document deployed versions/configuration; repeat runs, including concurrent refunds | Runs are reproducible, fixtures do not interfere, and environment differences are recorded | Fixture definitions, isolation checks, run manifest, masked artifacts | Makes results independently reviewable; environment and fixture maintenance cost |\n\nMinimum hooks are propagated operation identity, read-only outcome visibility, and isolated callback/failure controls. Test controls must preserve authorization and validation rather than introduce production bypasses.\n\n### 5. Blockers and Residual Risk\n\nReliable end-to-end qualification is currently blocked by missing cross-service attribution, callback control, and an authoritative outcome interface. Component and contract analysis can still proceed.\n\nStop a test run if data isolation fails. Escalate any unexplained extra financial effect or disagreement between reported success and authoritative records. For a release decision, require evidence for both P0 scenarios or explicit risk acceptance by the accountable owner.\n\nEven after adding hooks, substitutes cannot alone establish external-provider compatibility. Environment differences and untested timing combinations remain residual risks requiring separate evidence or documented acceptance.\n\n### 6. Next Actions and Open Questions\n\nSuggested owners and smallest next steps:\n\n- **QA and service owners:** map one refund across the three services, identifying asynchronous and persistence boundaries.\n- **Product/domain owner:** define authoritative success, failure, reconciliation, and completion timing criteria.\n- **Service owners:** establish operation identity and read-only outcome visibility.\n- **Integration/environment owner:** provide isolated callback controls, fixtures, and a versioned environment manifest.\n- **QA:** execute normal completion, duplicate delivery, and interrupted recovery first; retain reproducible evidence.\n\nOpen questions:\n\n- What are the allowed states and transitions, including partial refunds and compensation?\n- Which record establishes financial truth?\n- What retry, idempotency, ordering, and timeout guarantees exist?\n- How are callbacks authenticated and validated?\n- What isolated environment, data fixtures, and read-only evidence sources are available?\n- Who owns reconciliation, unresolved refunds, and acceptance of residual risk?",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-incomplete-input",
+      "title": "Testability Analysis: bounded first pass with incomplete input",
+      "status": "FAIL",
+      "duration_ms": 93127,
+      "turns": 1,
+      "input_tokens": 51186,
+      "output_tokens": 1790,
+      "grading": {
+        "status": "FAIL",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": false,
+            "evidence": "output does not contain \"Working Assumptions\"; output does not contain \"Open Questions\""
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          }
+        ],
+        "summary": {
+          "passed": 2,
+          "failed": 1,
+          "total": 3,
+          "pass_rate": 0.6666666666666666
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use the testability-analysis skill. The only known fact is: an async refund flow spans three services with plain logs but no correlation ID, sandbox callback, or status query. No environment, version, or supporting evidence is available. Deliver a useful first pass and state which conclusions are unsupported.\n",
+      "response": "**1. Task understanding and scope**\n\nAssess whether the async refund flow can be tested reliably across three services, and identify the smallest changes and evidence needed to verify completion and failure handling. This is a first-pass assessment; no tests or system inspection were performed.\n\n**2. Input audit**\n\n**Confirmed facts, from your statement:** the flow is asynchronous, spans three services, and has plain logs but no correlation ID, sandbox callback, or status query.\n\n**Working assumptions:** proposed tests would use an isolated, nonproduction environment and synthetic refund data. Any assertions below are proposed acceptance criteria requiring agreement, not established product requirements.\n\n**Open questions:** service responsibilities, transport and retry behavior, refund state model, completion deadline, idempotency contract, existing log fields, test environment, and authoritative financial outcome source.\n\nEvidence is limited to the supplied description. No environment, version, artifacts, timestamps, or execution results establish recency or reproducibility.\n\n**3. Risks and priorities**\n\nPriorities reflect potential impact and difficulty detecting failure; likelihood is unknown.\n\n| Priority | Risk | Evidence and conclusion boundary |\n|---|---|---|\n| P1 | A test cannot reliably attribute events across all three services. | No correlation ID is confirmed. **Hypothesis to Verify:** existing identifiers may still support reliable joins; inspect representative logs. |\n| P1 | A test cannot establish authoritative refund completion. | No status query is confirmed. **Hypothesis to Verify:** another outcome source may exist; identify and validate it. |\n| P1 | Duplicate, missing, or incorrectly reported refunds escape detection. | These are plausible financial failure modes, **not observed defects**. Verify delivery semantics, idempotency, and reconciliation behavior. |\n| P2 | Callback timing and failure tests are difficult to reproduce. | No sandbox callback is confirmed. **Hypothesis to Verify:** other controlled injection or replay mechanisms may exist. |\n| P2 | Results cannot be reproduced across environments. | Environment and version information are absent. Actual environment mismatch is unsupported. |\n\nAddress attribution and outcome evidence first: they determine whether subsequent scenario results can be trusted. There is no evidence supporting a P0 incident.\n\n**4. Core analysis and execution items**\n\nNo numeric testability score is defensible from this input.\n\n| Dimension | First-pass assessment | Smallest verification |\n|---|---|---|\n| Observability | Cross-service attribution and terminal outcome evidence are unproven. | Trace one sample operation through logs and an authoritative outcome source. |\n| Controllability | A sandbox callback is unavailable; other controls are unknown. | Inventory ways to trigger success, failure, delay, and retry. |\n| Isolation | Unknown. | Confirm tests cannot affect real refunds or other test runs. |\n| Determinism | Async ordering and timing guarantees are unknown. | Obtain retry rules and an agreed completion deadline. |\n| Data setup | Unknown. | Establish synthetic refundable records and repeatable setup/cleanup. |\n| Fault injection | Unknown beyond the missing sandbox callback. | Identify controlled failure points at service boundaries. |\n| Environment parity | Unassessable. | Record versions, configuration, topology, and material differences. |\n| Automation interfaces | Status polling and sandbox callbacks are absent; alternatives are unknown. | Find an authenticated trigger and a machine-readable outcome oracle. |\n\nRecommended minimum improvements, after checking for existing equivalents:\n\n| Improvement | Value | Cost/tradeoff |\n|---|---|---|\n| Propagate an operation identifier through all three services and async boundaries; include it in logs. | Makes attribution and missing-hop investigation reliable. | Changes propagation and logging across services; avoid sensitive data in identifiers. |\n| Provide an authoritative outcome interface, such as a scoped status query or durable completion event. | Enables automated terminal-state assertions. | Requires state ownership, consistency semantics, and access controls. |\n| Provide an isolated callback simulator or replay interface, if callbacks drive the flow. | Enables repeatable delay, duplication, and failure tests. | Requires contract maintenance and strict nonproduction isolation. |\n| Create synthetic fixtures and record run configuration. | Makes reproduction and financial assertions dependable. | Requires setup, cleanup, and environment maintenance. |\n\nThese hooks must preserve normal authorization and data isolation.\n\nThe following scenarios are **execution-ready only after their preconditions are satisfied**:\n\n| Scenario | Preconditions | Stimulus | Proposed acceptance criterion | Required evidence |\n|---|---|---|---|---|\n| Successful refund | Isolated environment, valid synthetic refundable record, agreed deadline, attribution and outcome oracle | Submit one refund through the normal entry point. | Exactly one intended refund occurs; the reported terminal outcome agrees with the authoritative result within the deadline. | Initial/final financial record, attributed service events, terminal outcome, run configuration. |\n| Duplicate delivery | Confirmed retry/idempotency contract and controlled duplicate-delivery mechanism | Repeat the same logical refund request or callback. | Duplicate handling follows the contract and creates no additional financial effect. | Delivery attempts, operation identity, processing decisions, final financial result. |\n| Delayed or absent callback | Callback dependency confirmed, controlled timing mechanism, documented timeout policy | Delay beyond the agreed threshold, or withhold delivery. | State and recovery follow policy; success is not reported without authoritative evidence. | Delivery schedule, timed state observations, timeout/retry events, final outcome. |\n| Service-boundary failure and recovery | Isolated fault injection, identified boundary, documented recovery contract | Fail one handoff, restore it, and exercise the supported recovery path. | The operation reaches the documented outcome without an extra refund or unexplained disagreement between service state and financial result. | Injected fault, handoff/retry events, state transitions, final financial result. |\n\n**5. Blockers and residual risk**\n\nExecution is blocked by missing environment access, contracts, fixtures, and a demonstrated attribution/outcome method. This blocks a defensible end-to-end correctness claim; it does **not** prove the system is untestable.\n\nA release readiness judgment is unsupported. Reliability, idempotency, recovery correctness, isolation, and environment parity all remain unverified.\n\nFor future execution, stop if tests may affect real funds or shared data. Hand contradictory outcome evidence or unresolved refunds to the responsible service owner; do not improvise recovery writes. Any acceptance of remaining uncertainty needs an explicit owner and documented scope.\n\n**6. Next actions and open questions**\n\n1. **Flow owner:** supply a sequence diagram, service responsibilities, state model, and delivery/retry contracts.\n2. **Service owners:** provide a masked sample trace and identify the authoritative refund outcome source. Attempt attribution before adding instrumentation.\n3. **QA/environment owner:** document an isolated environment, versions, synthetic fixtures, and available injection controls.\n4. **Product/financial owner:** agree completion deadlines and duplicate, timeout, and recovery expectations.\n5. Run the successful-refund scenario first. Proceed to fault scenarios only when attribution and outcome assertions are reliable.\n\nThe strongest supported conclusion is that the stated interfaces leave important test evidence gaps. Claims of actual refund defects, failure frequency, root cause, or release safety remain unsupported.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-risk-priority",
+      "title": "Testability Analysis: high-risk boundary and tradeoffs",
+      "status": "PASS",
+      "duration_ms": 105852,
+      "turns": 1,
+      "input_tokens": 51645,
+      "output_tokens": 1949,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[P0 P1 (?i)(residual risk|remaining risk|unverified.*risk)]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[P0 P1 (?i)(residual risk|remaining risk|unverified.*risk)])"
+          }
+        ],
+        "summary": {
+          "passed": 4,
+          "failed": 0,
+          "total": 4,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use the testability-analysis skill for: an async refund flow spans three services with plain logs but no correlation ID, sandbox callback, or status query. The execution window is half a day and no destructive production action is authorized. Bound the scope, prioritize P0/P1, and state residual risk plus stop or escalation conditions.\n",
+      "response": "**1. Task understanding and scope**\n\nAssess whether the three-service asynchronous refund flow can be tested safely and credibly within half a day. Success means identifying financial-risk checks, usable evidence, execution blockers, and clear stop conditions—not claiming end-to-end correctness without evidence.\n\nInclude contract review, available local tests and fixtures, and a bounded verification plan. Exclude production writes, real refunds, destructive fault injection, and building a complete test environment. This assessment used only the supplied description and local skill instructions; no flow tests were executed.\n\n**2. Input audit**\n\n- **Confirmed:** Three services; asynchronous processing; plain logs; no correlation ID, sandbox callback, or status query; half-day budget; no destructive production authorization.\n- **Working assumptions:** Existing contracts, code, or local fixtures may be available. Refund invariants below are proposed acceptance criteria requiring confirmation.\n- **Open questions:** What constitutes terminal success? What are the retry, deduplication, ordering, and timeout contracts? Are isolated test data and local service substitutes available? Do logs contain an existing identifier shared across services?\n- **Evidence quality:** The description establishes testability gaps, but provides no versioned contracts, execution traces, or demonstrated failures. Financial failure modes below are hypotheses, not observed defects.\n\n**3. Risks and priorities**\n\n| Priority | Risk or gap | Basis and rationale | Next owner/action |\n|---|---|---|---|\n| P0 | Duplicate refund after retry or repeated callback | **Hypothesis to verify:** monetary loss; asynchronous boundaries create opportunities for repeated delivery, but actual delivery semantics are unknown | Refund engineering: establish deduplication contract and test evidence |\n| P0 | Reported success without a completed refund, or inconsistent amount | **Hypothesis to verify:** financial/customer impact; no status query and uncorrelated logs impede detection | Engineering + QA: define authoritative outcome and amount oracle |\n| P0 gate | Execution could reach real payment systems or shared financial data | Isolation is unconfirmed; production financial mutation is outside scope | Environment owner: prove isolation before any execution |\n| P1 | Cannot reliably associate events across three services | Confirmed lack of correlation ID; existing business identifiers might provide a limited alternative | Service owners: inspect masked sample logs and establish traceability |\n| P1 | Cannot reproduce callbacks, delays, failures, or completion | Confirmed missing sandbox callback/status interfaces; local seams are unknown | Engineering: identify existing substitutes and read-only outcome evidence |\n\nP0 checks come first because financial effects are severe and difficult to detect. P1 work supplies the controls and evidence those checks need. Broad coverage and a new test framework are deferred.\n\n**4. Core analysis and execution items**\n\n| Dimension | Current assessment | Minimum improvement; value and cost |\n|---|---|---|\n| Observability | Cross-service association unproven | First inspect existing identifiers; later propagate a correlation ID. Improves attribution; inspection is small, propagation requires coordinated changes |\n| Controllability | Callback control absent | Reuse a local stub or authenticated test-environment simulator. Enables repeatable stimuli; moderate effort if no seam exists |\n| Isolation | Unknown | Confirm test-only endpoints, credentials, queues and data. Prevents real financial effects; setup effort unknown |\n| Determinism | Timing/retry rules unknown | Use scripted delivery and controllable clocks where supported. Reproduces races; depends on existing seams |\n| Data setup | Fixtures unknown | Use synthetic orders/refunds with explicit initial state. Enables reliable assertions; small if factories exist |\n| Fault injection | Safe entry points unknown | Inject timeout/failure through local dependency substitutes. Tests recovery; potentially moderate setup |\n| Environment parity | Unknown | Record versions, configuration, transport semantics and substitute differences. Bounds conclusions; small review effort |\n| Automation interfaces | No status query or sandbox callback | Use existing local APIs/tests and authorized read-only state inspection, if available. Enables outcome assertions; a new interface is outside the half-day commitment |\n\nMinimum proposed scenarios:\n\n| Priority / scenario | Preconditions and stimulus | Expected behavior / decision criterion | Required evidence |\n|---|---|---|---|\n| P0: Baseline refund | Proven isolated environment, synthetic eligible transaction, approved success definition; submit once and deliver the documented success event | Terminal outcome and amount agree with the approved contract | Linked evidence from all three services plus authoritative simulated financial effect and terminal state |\n| P0: Duplicate delivery/retry | Baseline setup plus a controllable local seam; repeat the same logical request/event | At most one financial effect; outcome remains consistent | Effect count, deduplication evidence and associated state transitions |\n| P0: Ambiguous completion | Safe substitute can complete an effect then lose its acknowledgement; trigger timeout and retry | Recovery creates no second effect; success requires authoritative evidence | Substitute effect record, retry history and resulting state |\n| P1: Failed, missing or late callback | Controllable local event delivery; inject each condition separately | Behavior follows approved failure, timeout and ordering rules; no unsupported success | Event sequence, relevant timing/configuration and authoritative outcome |\n\nIf a scenario lacks isolation, a stimulus seam, an approved oracle, or required evidence, mark it **blocked**. A request acknowledgement or scattered log lines do not establish completed refund correctness.\n\nUse the half-day approximately as follows: 15% for contracts/isolation, 25% for evidence and seams, 45% for executable P0 checks, and 15% for findings and handoff. Reuse available assets; do not let infrastructure construction consume the window.\n\n**5. Blockers and residual risk**\n\n- **Stop execution immediately** if endpoints, credentials or data may reach production, or an action could create a real financial effect.\n- **Stop the affected scenario** when stimuli cannot be controlled or outcomes cannot be attributed. Preserve partial evidence; do not label it passed.\n- **Escalate to service/environment owners** if isolation, authoritative outcome evidence, or callback control cannot be established during the initial discovery allocation.\n- **Escalate a release decision** if a P0 invariant fails or remains unverifiable. This assessment cannot support release clearance; the accountable release owner must explicitly decide how unresolved risk is handled.\n- **At the deadline**, deliver completed results, blocked scenarios, evidence gaps and owners. Do not extend into unauthorized production experiments.\n\nResidual risks include real-provider behavior, broker redelivery/order, long-running retries, concurrent refunds, reconciliation and configuration differences. Local substitutes can verify selected logic but cannot establish those production properties. Track each unresolved risk with an owner and follow-up evidence requirement.\n\n**6. Next actions and open questions**\n\nQA and service owners should first collect the refund/state-transition contracts, retry policy, masked example logs, environment map and existing local test assets. Confirm the financial invariants and authoritative success evidence with the refund owner.\n\nThen establish isolation and run whichever P0 scenarios have sufficient controls and evidence. If none do, the usable half-day deliverable is a blocked testability assessment with concrete hook requirements—not a refund-flow pass.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "architecture-success",
+      "title": "Architecture testability review: seams and environment reproduction",
+      "status": "FAIL",
+      "duration_ms": 110604,
+      "turns": 1,
+      "input_tokens": 51587,
+      "output_tokens": 2226,
+      "grading": {
+        "status": "FAIL",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches.all: missing [(?i)Input Audit]",
+            "passed": false,
+            "evidence": "output does not match required regex patterns: [(?i)Input Audit]"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 1,
+          "total": 4,
+          "pass_rate": 0.75
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use testability-analysis in architecture-testability-review mode.\nThe architecture shows Order Service calling a payment adapter through a message queue; the adapter depends on an external provider. A sandbox has a callback simulator but no fault-injection entry point; the queue supports isolated topics. Analyze component boundaries, test seams, substitute strategy, isolation, fault injection, environment reproduction, and evidence gaps while retaining observability, controllability, and determinism.\n",
+      "response": "The architecture offers useful isolation and callback simulation, but **does not yet demonstrate testability of payment failures or asynchronous recovery**. This review assesses Order Service → queue → payment adapter → external provider. Success means reproducible tests with controlled stimuli, observable outcomes, and evidence across component boundaries. No tests or external actions were performed.\n\nThe evidence is limited to your architecture description:\n\n- **A1:** Order Service communicates with the payment adapter through a message queue; the adapter depends on an external provider.\n- **A2:** The sandbox provides a callback simulator but no fault-injection entry point.\n- **A3:** The queue supports isolated topics.\n\nThese establish topology and available facilities, not their implementation or effectiveness. No versioned diagram, contracts, configuration, deployment manifests, or execution evidence were supplied.\n\n**Working assumptions:** tests can run in a nonproduction environment; payment requests and callbacks can be correlated; substituting the provider is a candidate design change, not an existing capability.\n\n**Open questions:** callback routing and authentication; ownership of payment state; delivery, ordering, retry, and dead-letter semantics; provider idempotency and reconciliation contracts; shared databases, consumers, credentials, and runtime configuration.\n\nPriority reflects potential financial impact and difficulty detecting asynchronous failures; likelihood cannot be estimated from this evidence.\n\n| Priority | Risk | Evidence and rationale |\n|---|---|---|\n| P1 | Provider accepts a payment, but its response is lost; a retry could create another charge | A1 establishes the external boundary; A2 provides no demonstrated way to reproduce ambiguous outcomes. Financial impact warrants early verification. |\n| P1 | Duplicate, delayed, or reordered messages/callbacks could produce inconsistent payment and order states | A1 establishes asynchronous communication; handling guarantees are unknown. **Hypothesis to Verify**, using controlled replay and state evidence. |\n| P1 | Tests could affect other runs through shared consumers, storage, callbacks, or provider resources | A3 isolates topics only. Wider isolation is unproven. |\n| P2 | Failures cannot be localized or reproduced reliably | A1 spans several boundaries; tracing, timing controls, and environment configuration are unspecified. |\n| P3 | A broader simulation library may improve coverage | Expand after the financial-risk paths and contracts are verified. |\n\nThe following scorecard assesses architectural capability, rather than assigning an unsupported numeric score.\n\n| Area | Assessment tied to evidence | Improvement, value, and cost |\n|---|---|---|\n| Component boundaries and seams | A1 identifies queue and provider boundaries. Request/response contracts, callback ingress, and persistence boundaries remain unknown. | Document contracts and state ownership; verify that the provider client can be replaced without changing business behavior. **Value:** localized tests and failures. **Cost:** low for documentation; implementation cost depends on coupling. |\n| Substitute strategy | A2 supports callback stimuli. It does not establish control over outbound provider calls or queue delivery. | Use a scripted provider substitute for repeatable adapter tests, a real isolated queue for integration tests, and the sandbox for provider compatibility checks. **Value:** controlled coverage plus realism. **Cost:** medium; substitute contracts require maintenance. |\n| Observability | No evidence of correlation or state visibility across A1. | Propagate a test-run identifier and correlation identifiers through messages, provider requests, callbacks, and state records; collect masked transition and retry evidence. **Value:** diagnosable assertions. **Cost:** medium. |\n| Controllability and fault injection | A2 explicitly lacks a fault-injection entry point. Callback generation alone does not prove control of transport failures or provider outcomes. | Add a nonproduction provider endpoint override and scripted outcomes; use isolated broker/process controls for delivery and crash experiments. **Value:** exercises recovery paths. **Cost:** medium. |\n| Isolation and data setup | A3 is a useful queue isolation boundary, but end-to-end isolation is unproven. | Bind producers and consumers to run-specific topics; namespace stored data, callback routing, and provider resources where supported. Supply synthetic orders and scoped cleanup. **Value:** prevents interference. **Cost:** medium. |\n| Determinism | Asynchronous timing in A1 is unspecified. | Control application clocks and retry scheduling where feasible; use seeded inputs and bounded, condition-based waits. Retain real broker timing in integration tests and record it. **Value:** repeatable failures. **Cost:** medium. |\n| Environment reproduction | A2 establishes a sandbox, not parity with deployed behavior. | Version service artifacts, broker settings, schemas, timeouts, retry configuration, callback authentication, and network assumptions. **Value:** reproducible environments. **Cost:** low to medium. |\n| Automation interfaces | Simulator APIs and programmatic reset/result collection are unknown. | Provide test-only setup, stimulus, evidence collection, and cleanup interfaces. **Value:** unattended execution. **Cost:** low if existing APIs suffice; otherwise medium. |\n\nMinimum hooks should operate within an isolated test deployment and preserve normal authorization, callback verification, and data boundaries. They should not introduce publicly reachable fault controls or payment-success overrides.\n\nThe scenarios below are proposed acceptance gates. Their exact state transitions and retry rules must come from approved contracts.\n\n| Scenario and preconditions | Stimulus | Expected result / decision criterion | Required evidence |\n|---|---|---|---|\n| **Baseline flow:** isolated topics, synthetic order, known initial state, scripted successful provider result | Submit the order; deliver the corresponding callback through its actual ingress | Order and payment reach the contract-defined states within the agreed bound; identifiers connect every boundary | Queue publication/consumption, adapter request, callback validation, state transitions |\n| **Ambiguous provider outcome:** substitute records acceptance before dropping the response; retry/idempotency contract defined | Trigger payment, lose its response, then allow recovery | Recovery follows the contract without an additional charge. If the contract cannot ensure this, the gate fails | Substitute transaction ledger, request identities/idempotency keys, retry trace, reconciliation and final state |\n| **Callback disorder:** simulator capabilities verified; transition rules defined | Send duplicate, delayed, and reordered valid callbacks; separately send an invalidly authenticated callback | Duplicates do not repeat effects; state follows allowed transitions; invalid callbacks cause no authorized state change | Callback receipts, validation decisions, transition history, effect counts |\n| **Consumer interruption:** real isolated queue; acknowledgement and persistence boundaries identified | Stop the adapter before and after provider acceptance, then restart; replay a message | Delivery and recovery follow the approved contract without lost work or repeated charging | Broker delivery/acknowledgement evidence, provider ledger, persisted state, restart trace |\n| **Provider failure and timeout:** scripted transport failures and retry policy available | Inject refusal, timeout, and contract-defined retryable/nonretryable responses | Retries, terminal handling, and user-visible state match the contract; recovery remains bounded | Attempt timing/counts, error classification, state history, dead-letter evidence if applicable |\n| **Isolation and reproduction:** run-specific resources and captured configuration | Execute two runs concurrently with overlapping business identifiers, then recreate one environment and replay its stimuli | No cross-run consumption, callback routing, or state mutation; equivalent stimuli reproduce the contract-level outcome | Resource mappings, consumer configuration, storage queries, callback routes, configuration/artifact versions |\n\n**The current blocker is evidence for failure-path execution:** A2 gives no demonstrated mechanism for controlling provider failures, and the missing contracts prevent definitive outcome assertions. Topic isolation alone cannot support an isolation pass. Neither a simulator nor a successful sandbox run establishes production compatibility.\n\nStop a test if resource mappings point outside its isolated environment, callback routing crosses runs, or uncontrolled external payment activity is detected. Route undefined financial outcomes to the payment-domain owner before treating them as accepted behavior. Residual sandbox/provider differences and real network timing should be documented and explicitly accepted by the release owner.\n\nNext actions, in order:\n\n1. **Architecture and payment owners:** supply the versioned flow, callback route, state ownership, and retry/idempotency contracts. These determine assertions and safe injection locations.\n2. **Adapter owner:** verify the provider substitution seam with the smallest ambiguous-outcome experiment.\n3. **Platform owner:** demonstrate isolation across topics, consumers, storage, callbacks, and provider resources using two concurrent runs.\n4. **QA and service owners:** execute the scenarios above, attach reproducible evidence, and distinguish contract validation with substitutes from compatibility validation with the sandbox.\n\nUntil those checks are evidenced, the supported conclusion is **partial testability with useful existing assets and unresolved payment-recovery coverage**.",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "architecture-incomplete-input",
+      "title": "Architecture testability review: incomplete architecture material",
+      "status": "PASS",
+      "duration_ms": 78620,
+      "turns": 1,
+      "input_tokens": 51550,
+      "output_tokens": 1494,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.must_not_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(?i)Input Audit (?i)(open questions|missing|gaps) (?i)evidence]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(?i)Input Audit (?i)(open questions|missing|gaps) (?i)evidence])"
+          }
+        ],
+        "summary": {
+          "passed": 4,
+          "failed": 0,
+          "total": 4,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "Use testability-analysis in architecture-testability-review mode. The only material is \"Order Service calls the payment system.\" No diagram, dependencies, asynchronous flow, data, configuration, environment, substitute, or fault-injection material is supplied.\nSeparate known, missing, assumptions, and open questions without asserting testability from a framework or service name.\n",
+      "response": "1. **Scope and conclusion**\n\n   Review the Order Service → payment system interaction for architecture testability. Success means identifying what the evidence supports and what must be verified before testing can proceed reliably.\n\n   **Testability is undetermined.** The supplied sentence establishes a stated interaction, but does not demonstrate a test seam, isolation, observability, or reproducibility.\n\n2. **Input audit**\n\n   - **Known:** The sole source, “Order Service calls the payment system,” states a caller and a payment-system dependency.\n   - **Missing:** Architecture diagram, interface contract, dependency topology, synchronous/asynchronous boundaries, data stores, configuration, deployment environments, substitution strategy, fault-injection mechanisms, and execution evidence.\n   - **Working assumptions:** None about implementation or behavior. Candidate checks below are conditional proposals.\n   - **Open questions:** What does the call do? How is it invoked? What constitutes success or failure? What downstream effects can occur? Where can tests safely control and observe the interaction?\n   - **Evidence quality:** A brief textual assertion. Its version, recency, and correspondence to the deployed architecture are unknown. No corroborating artifacts exist in the supplied material.\n\n   Service or framework names provide no additional testability evidence.\n\n3. **Risks and priorities**\n\n   | Priority | Finding | Basis and rationale |\n   |---|---|---|\n   | P1 | Architecture-testability conclusions are blocked | The sentence provides no evidence of safe seams, substitutes, isolation, or environment reproduction. Resolving this prevents unsupported approval. |\n   | P1 | Expected outcomes are unspecified | No contract defines an oracle for the payment interaction. Tests could run without establishing correctness. |\n   | P2 | Repeatable automation is unsubstantiated | Data preparation, configuration, reset procedures, and automation interfaces are missing. Their absence from the material does not prove absence from the system. |\n\n   These priorities sequence evidence collection; they are not established defect severities. Business impact and failure likelihood remain unknown.\n\n4. **Core analysis and verification items**\n\n   Every dimension is **unassessed**, not passed or failed.\n\n   | Dimension | Minimum evidence and decision criterion |\n   |---|---|\n   | Observability | Interface contract plus representative traces or equivalent records showing how the call, outcome, and relevant effects can be correlated and asserted. |\n   | Controllability / test seams | Component and configuration artifacts identifying how a test invokes the path and controls dependency responses through a bounded interface. |\n   | Isolation / substitutes | Dependency topology and routing evidence demonstrating that a substitute covers relevant interactions and prevents unintended real-system effects. |\n   | Determinism / asynchronous flow | Execution-flow evidence identifying timing, retries, concurrency, or background work **if present**, with a repeatable completion criterion. |\n   | Data setup | Required state, fixtures, ownership boundaries, and reset procedure sufficient to reproduce the same starting conditions. |\n   | Fault injection | A documented injection entry point and evidence that the intended fault reaches the payment boundary without weakening authorization or isolation. |\n   | Environment parity | Configuration and deployment comparison identifying relevant differences and how a test environment can be reproduced. |\n   | Automation interfaces | Supported invocation, assertion, completion, and cleanup interfaces demonstrated by an independently repeatable run. |\n\n   Two conditional verification scenarios can begin once prerequisites exist:\n\n   - **Contracted response:** Preconditions: agreed interface contract, isolated environment, prepared data, verified seam, and observability. Stimulus: invoke the documented Order Service path with a controlled payment response. Expected result: precisely the outcome and effects specified by the contract. Evidence: invocation record, correlated response, relevant state observations, and cleanup result.\n   - **Dependency fault — Hypothesis to Verify:** Preconditions: a contract defining behavior for a selected fault, verified isolation, and a documented fault-injection point. Stimulus: introduce that fault at the payment boundary. Expected result: contract-defined behavior; no timeout, retry, compensation, or order-state behavior is assumed here. Evidence: proof the fault was delivered, observed handling, relevant effects, and cleanup result.\n\n5. **Blockers and residual risk**\n\n   The material supports a bounded review but cannot support executable test cases or architecture-testability approval. Missing evidence is an assessment blocker, not proof that the architecture is defective.\n\n   Stop a proposed execution if dependency routing or data isolation cannot be verified. Request architecture and contract evidence before accepting the unresolved assessment. Any release implication requires release criteria that have not been supplied.\n\n6. **Next actions and open questions**\n\n   | Suggested owner and action | Value | Cost |\n   |---|---|---|\n   | Architecture owner: supply the call path, dependency map, environment boundaries, and existing seams | Establishes where control, observation, substitution, and faults are possible | Artifact collection and review; effort unknown |\n   | Service/payment owners: define outcomes, effects, and applicable failure behavior | Supplies test oracles | Contract clarification; effort unknown |\n   | Test/environment owner: demonstrate one isolated, repeatable invocation using existing interfaces | Tests the proposed seam, substitute, fixtures, and observability together | Environment setup and evidence capture; effort unknown |\n\n   First resolve: the call’s purpose and contract, whether asynchronous work exists, how dependencies are routed in tests, and how state and configuration are reproduced. Add test hooks only if these checks reveal a specific gap.",
+      "observed_model": "gpt-6.1-sol"
+    }
+  ],
+  "total_tokens": 266676,
+  "judge_tokens": 0,
+  "overall_tokens": 266676
+}

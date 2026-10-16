@@ -1,0 +1,74 @@
+{
+  "metadata": {
+    "skill_name": "performance-testing",
+    "skill_path": "<SKILL_SNAPSHOT>/performance-testing-zh",
+    "timestamp": "2026-10-03T11:36:28Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "性能测试：按风险选测试类型与阈值",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 55.908,
+        "tokens": 51587,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[任务理解 性能风险 指标 (负载模型|流量模型|目标负载)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[任务理解 性能风险 指标 (负载模型|流量模型|目标负载)])"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1,
+        "stddev": 0,
+        "min": 1,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 55.908,
+        "stddev": 0,
+        "min": 55.908,
+        "max": 55.908
+      },
+      "tokens": {
+        "mean": 51587,
+        "stddev": 0,
+        "min": 51587,
+        "max": 51587
+      }
+    },
+    "without_skill": null,
+    "delta": null
+  }
+}

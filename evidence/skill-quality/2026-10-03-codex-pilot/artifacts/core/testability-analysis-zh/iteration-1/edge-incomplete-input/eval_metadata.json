@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "可测试性分析：信息不完整时的受限初版",
+  "prompt": "请使用 testability-analysis Skill。当前只知道：异步退款流程跨三个服务，当前只有普通日志，没有关联 ID、沙箱回调或状态查询接口。没有更多环境、版本或证据，请先给出可用初版，并明确哪些结论不能成立。\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_contains{all:[当前假设 信息缺口 待确认]}"
+  ]
+}

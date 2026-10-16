@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "功能测试：完整上下文产出可执行方案",
+  "prompt": "请使用 functional-testing 技能。\n背景：电商「下单→支付→发货」即将发版。\n环境：SIT；角色：买家、卖家运营、仓配。\n已知风险：支付回调偶发超时。\n请给出聚焦高风险路径的功能测试方案，并标明假设与信息缺口。\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_matches{all:[任务理解 (风险|优先级) (边界|极值|限制) (异常|负向|失败)]}"
+  ]
+}

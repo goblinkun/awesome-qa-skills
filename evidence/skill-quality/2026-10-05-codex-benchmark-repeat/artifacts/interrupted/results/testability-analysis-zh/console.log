@@ -1,0 +1,9 @@
+📋 Loading configuration...
+level=INFO msg="Config: loading eval.yaml from <INTERRUPTED_ROOT>/packages/testability-analysis-zh/evals/benchmark.yaml"
+✅ Loaded 1 case(s) | engine: codex_no_daemon_isolated | model: openai/gpt-6.1-sol
+
+🔑 Loading credentials...
+✅ Credentials ready
+
+🚀 Running evaluation (1 cases)
+   ⏳ [1/2] benchmark-neutral: 受控任务对比（不以 Skill 专用标题作为质量标准）...

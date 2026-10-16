@@ -1,0 +1,66 @@
+**1. Task understanding and scope**
+
+Assess whether the three-service asynchronous refund flow can be tested safely and credibly within half a day. Success means identifying financial-risk checks, usable evidence, execution blockers, and clear stop conditions—not claiming end-to-end correctness without evidence.
+
+Include contract review, available local tests and fixtures, and a bounded verification plan. Exclude production writes, real refunds, destructive fault injection, and building a complete test environment. This assessment used only the supplied description and local skill instructions; no flow tests were executed.
+
+**2. Input audit**
+
+- **Confirmed:** Three services; asynchronous processing; plain logs; no correlation ID, sandbox callback, or status query; half-day budget; no destructive production authorization.
+- **Working assumptions:** Existing contracts, code, or local fixtures may be available. Refund invariants below are proposed acceptance criteria requiring confirmation.
+- **Open questions:** What constitutes terminal success? What are the retry, deduplication, ordering, and timeout contracts? Are isolated test data and local service substitutes available? Do logs contain an existing identifier shared across services?
+- **Evidence quality:** The description establishes testability gaps, but provides no versioned contracts, execution traces, or demonstrated failures. Financial failure modes below are hypotheses, not observed defects.
+
+**3. Risks and priorities**
+
+| Priority | Risk or gap | Basis and rationale | Next owner/action |
+|---|---|---|---|
+| P0 | Duplicate refund after retry or repeated callback | **Hypothesis to verify:** monetary loss; asynchronous boundaries create opportunities for repeated delivery, but actual delivery semantics are unknown | Refund engineering: establish deduplication contract and test evidence |
+| P0 | Reported success without a completed refund, or inconsistent amount | **Hypothesis to verify:** financial/customer impact; no status query and uncorrelated logs impede detection | Engineering + QA: define authoritative outcome and amount oracle |
+| P0 gate | Execution could reach real payment systems or shared financial data | Isolation is unconfirmed; production financial mutation is outside scope | Environment owner: prove isolation before any execution |
+| P1 | Cannot reliably associate events across three services | Confirmed lack of correlation ID; existing business identifiers might provide a limited alternative | Service owners: inspect masked sample logs and establish traceability |
+| P1 | Cannot reproduce callbacks, delays, failures, or completion | Confirmed missing sandbox callback/status interfaces; local seams are unknown | Engineering: identify existing substitutes and read-only outcome evidence |
+
+P0 checks come first because financial effects are severe and difficult to detect. P1 work supplies the controls and evidence those checks need. Broad coverage and a new test framework are deferred.
+
+**4. Core analysis and execution items**
+
+| Dimension | Current assessment | Minimum improvement; value and cost |
+|---|---|---|
+| Observability | Cross-service association unproven | First inspect existing identifiers; later propagate a correlation ID. Improves attribution; inspection is small, propagation requires coordinated changes |
+| Controllability | Callback control absent | Reuse a local stub or authenticated test-environment simulator. Enables repeatable stimuli; moderate effort if no seam exists |
+| Isolation | Unknown | Confirm test-only endpoints, credentials, queues and data. Prevents real financial effects; setup effort unknown |
+| Determinism | Timing/retry rules unknown | Use scripted delivery and controllable clocks where supported. Reproduces races; depends on existing seams |
+| Data setup | Fixtures unknown | Use synthetic orders/refunds with explicit initial state. Enables reliable assertions; small if factories exist |
+| Fault injection | Safe entry points unknown | Inject timeout/failure through local dependency substitutes. Tests recovery; potentially moderate setup |
+| Environment parity | Unknown | Record versions, configuration, transport semantics and substitute differences. Bounds conclusions; small review effort |
+| Automation interfaces | No status query or sandbox callback | Use existing local APIs/tests and authorized read-only state inspection, if available. Enables outcome assertions; a new interface is outside the half-day commitment |
+
+Minimum proposed scenarios:
+
+| Priority / scenario | Preconditions and stimulus | Expected behavior / decision criterion | Required evidence |
+|---|---|---|---|
+| P0: Baseline refund | Proven isolated environment, synthetic eligible transaction, approved success definition; submit once and deliver the documented success event | Terminal outcome and amount agree with the approved contract | Linked evidence from all three services plus authoritative simulated financial effect and terminal state |
+| P0: Duplicate delivery/retry | Baseline setup plus a controllable local seam; repeat the same logical request/event | At most one financial effect; outcome remains consistent | Effect count, deduplication evidence and associated state transitions |
+| P0: Ambiguous completion | Safe substitute can complete an effect then lose its acknowledgement; trigger timeout and retry | Recovery creates no second effect; success requires authoritative evidence | Substitute effect record, retry history and resulting state |
+| P1: Failed, missing or late callback | Controllable local event delivery; inject each condition separately | Behavior follows approved failure, timeout and ordering rules; no unsupported success | Event sequence, relevant timing/configuration and authoritative outcome |
+
+If a scenario lacks isolation, a stimulus seam, an approved oracle, or required evidence, mark it **blocked**. A request acknowledgement or scattered log lines do not establish completed refund correctness.
+
+Use the half-day approximately as follows: 15% for contracts/isolation, 25% for evidence and seams, 45% for executable P0 checks, and 15% for findings and handoff. Reuse available assets; do not let infrastructure construction consume the window.
+
+**5. Blockers and residual risk**
+
+- **Stop execution immediately** if endpoints, credentials or data may reach production, or an action could create a real financial effect.
+- **Stop the affected scenario** when stimuli cannot be controlled or outcomes cannot be attributed. Preserve partial evidence; do not label it passed.
+- **Escalate to service/environment owners** if isolation, authoritative outcome evidence, or callback control cannot be established during the initial discovery allocation.
+- **Escalate a release decision** if a P0 invariant fails or remains unverifiable. This assessment cannot support release clearance; the accountable release owner must explicitly decide how unresolved risk is handled.
+- **At the deadline**, deliver completed results, blocked scenarios, evidence gaps and owners. Do not extend into unauthorized production experiments.
+
+Residual risks include real-provider behavior, broker redelivery/order, long-running retries, concurrent refunds, reconciliation and configuration differences. Local substitutes can verify selected logic but cannot establish those production properties. Track each unresolved risk with an owner and follow-up evidence requirement.
+
+**6. Next actions and open questions**
+
+QA and service owners should first collect the refund/state-transition contracts, retry policy, masked example logs, environment map and existing local test assets. Confirm the financial invariants and authoritative success evidence with the refund owner.
+
+Then establish isolation and run whichever P0 scenarios have sufficient controls and evidence. If none do, the usable half-day deliverable is a blocked testability assessment with concrete hook requirements—not a refund-flow pass.

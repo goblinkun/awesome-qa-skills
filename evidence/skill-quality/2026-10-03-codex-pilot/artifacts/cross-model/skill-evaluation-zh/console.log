@@ -1,0 +1,17 @@
+📋 Loading configuration...
+level=INFO msg="Config: loading eval.yaml from <SKILL_SNAPSHOT>/skill-evaluation-zh/evals/eval.yaml"
+✅ Loaded 1 case(s) | engine: codex_no_daemon_isolated | model: openai/gpt-6-sol
+
+🔑 Loading credentials...
+✅ Credentials ready
+
+🚀 Running evaluation (1 cases)
+   ⏳ [1/1] basic-success: 设计完整 Skill 评测...
+   ❌ [1/1] basic-success: FAIL (50.0%)
+
+📊 Generating reports...
+✅ Reports saved to <RUN_ROOT>/cross-model/skill-evaluation-zh/iteration-1
+
+────────────────────────────────────────
+📋 Results: 0 passed, 1 failed, 0 errors
+Error: one or more cases failed

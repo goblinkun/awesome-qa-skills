@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "Performance testing: draft without SLA/traffic",
+  "prompt": "Use performance-testing. Product only says 'please performance test' with no SLA or traffic history.\nSystem: points redemption. Draft a plan; mark numeric targets as assumptions; list gaps.\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_matches{all:[(?i)(assumption|working assumptions) (?i)(gap|gaps|open questions|missing|what I need)]}"
+  ]
+}

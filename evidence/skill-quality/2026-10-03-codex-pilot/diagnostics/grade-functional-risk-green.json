@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "turns_executed": 1,
+  "turns_total": 1,
+  "assertion_results": [
+    {
+      "text": "output_matches{all:[P0 降级 (关键路径|核心路径|主链路|闭环|登录[^\\n]*下单[^\\n]*支付)]}",
+      "passed": true,
+      "evidence": "output satisfies all regex checks (all:[P0 降级 (关键路径|核心路径|主链路|闭环|登录[^\\n]*下单[^\\n]*支付)])"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 0,
+    "total": 1,
+    "pass_rate": 1
+  }
+}

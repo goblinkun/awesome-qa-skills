@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="functional-testing" tests="3" failures="1" errors="0" skipped="0" time="117.660" timestamp="2026-10-03T19:21:13+08:00">
+    <testcase name="basic-success" classname="functional-testing" time="116.982">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-incomplete-input" classname="functional-testing" time="98.549">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-risk-priority" classname="functional-testing" time="75.081">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case edge-risk-priority failed" type="AssertionFailure">- output_matches.all: missing [(关键路径|核心路径|主链路|闭环)]: output does not match required regex patterns: [(关键路径|核心路径|主链路|闭环)]</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

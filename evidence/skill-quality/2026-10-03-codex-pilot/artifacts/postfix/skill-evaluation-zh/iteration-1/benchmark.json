@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "skill_name": "skill-evaluation",
+    "skill_path": "<SKILL_SNAPSHOT>/skill-evaluation-zh",
+    "timestamp": "2026-10-03T11:47:40Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "设计完整 Skill 评测",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "time_seconds": 91.144,
+        "tokens": 54325,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(?i)(评测范围|## 范围|## Scope) (证据边界|证据分别判断|证据约束|证据状态) (?i)(推荐行动|Recommended Actions|下一步)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(?i)(评测范围|## 范围|## Scope) (证据边界|证据分别判断|证据约束|证据状态) (?i)(推荐行动|Recommended Actions|下一步)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "缺少评测环境",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 37.945,
+        "tokens": 52211,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(信息缺口|资料缺失|缺少|没有提供) NOT_RUN]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(信息缺口|资料缺失|缺少|没有提供) NOT_RUN])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "拒绝重复评测引擎",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 1,
+        "failed": 1,
+        "total": 2,
+        "time_seconds": 65.356,
+        "tokens": 53241,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": false,
+          "evidence": "output does not contain \"skill-up\""
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.8333333333333334,
+        "stddev": 0.23570226039551584,
+        "min": 0.5,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 64.815,
+        "stddev": 21.721769587213654,
+        "min": 37.945,
+        "max": 91.144
+      },
+      "tokens": {
+        "mean": 53259,
+        "stddev": 863.1307355590268,
+        "min": 52211,
+        "max": 54325
+      }
+    },
+    "without_skill": null,
+    "delta": null
+  }
+}

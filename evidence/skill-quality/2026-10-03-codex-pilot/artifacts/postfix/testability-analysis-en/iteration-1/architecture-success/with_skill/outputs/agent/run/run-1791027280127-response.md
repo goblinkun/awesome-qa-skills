@@ -1,0 +1,102 @@
+## 1. Task Understanding and Scope
+
+Assess whether the asynchronous payment path can be tested reliably across component boundaries, with observable outcomes, controlled inputs, isolated state, and repeatable failures.
+
+Scope: Order Service → message queue → payment adapter → external provider, plus the sandbox callback simulator. This is a bounded architecture review; no implementation or runtime validation was performed.
+
+## 2. Input Audit
+
+**Confirmed facts from the supplied description:**
+
+- **E1:** Order Service communicates with the payment adapter through a message queue; the adapter depends on an external provider.
+- **E2:** The sandbox has a callback simulator but no fault-injection entry point.
+- **E3:** The queue supports isolated topics.
+
+These facts establish the topology and available facilities. No versioned diagram, interface contract, configuration, deployment manifest, or execution evidence was supplied, so implementation readiness remains unproven.
+
+**Working assumptions:** Proposed tests can use a nonproduction deployment and synthetic payment data. Callback routing, payment-state ownership, retry policies, and persistence boundaries are unknown.
+
+**Open questions:** What delivery guarantees does the queue provide? Where do callbacks enter? Which component owns payment state, deduplication, and recovery? Can provider endpoints and test credentials be configured independently?
+
+## 3. Risks and Priorities
+
+P1 means a potential payment-integrity issue or a blocker to proving critical behavior. P2 means a supporting evidence or reproducibility gap. No P0 incident is established.
+
+| Priority | Risk and evidence basis | Why it matters |
+|---|---|---|
+| P1 | An ambiguous provider outcome cannot currently be induced through a documented entry point. **E1–E2** | A provider may accept a payment while its response is lost. Duplicate charging or unresolved orders are **hypotheses to verify**, not observed defects. |
+| P1 | Duplicate, delayed, or reordered messages and callbacks have no supplied handling contract. **E1–E2** | Repeated processing or conflicting state transitions could affect payment integrity; asynchronous delivery can make these failures hard to detect. |
+| P1 | Topic isolation does not establish isolation of consumers, storage, credentials, or callbacks. **E3** | Shared resources could contaminate results or affect other test runs. Actual sharing is unknown. |
+| P2 | Cross-component correlation, controlled time, and environment parity are undocumented. **Evidence gaps across E1–E3** | Failures may be difficult to attribute, reproduce, or distinguish from timing noise. |
+
+Resolve outcome handling and isolation first, then prove failure coverage and reproducibility.
+
+## 4. Core Analysis and Execution Items
+
+### Testability scorecard
+
+| Dimension | Current assessment | Required architecture evidence |
+|---|---|---|
+| Component boundaries and seams | The queue and provider connection are candidate seams. **E1** | Producer/consumer contracts, adapter interface, state ownership, callback route, configuration showing substitution points. |
+| Substitute strategy | Callback simulation provides a partial substitute. **E2** | Supported callback cases and proof that callbacks traverse the real validation and processing path. |
+| Isolation | Isolated topics are available; broader isolation is unproven. **E3** | Topic bindings, consumer identities, storage namespaces, callback routing, credentials, and cleanup behavior. |
+| Observability | Unproven. | Correlation across order, message, adapter attempt, provider request, callback, and resulting state; sensitive data must remain masked. |
+| Controllability and fault injection | No sandbox fault-injection entry point is supplied. **E2** | Controlled message/callback delivery and a nonproduction provider substitute or transport fault facility. |
+| Determinism | Unproven. | Controllable scheduling/time where needed, reproducible fault scripts, and observable completion conditions. |
+| Data setup | Unspecified. | Synthetic fixtures for agreed starting states, scoped identifiers, reset procedures, and state inspection. |
+| Environment reproduction | Unspecified. | Pinned service versions, broker configuration, retry/time-out settings, schemas, routing, and documented provider differences. |
+| Automation interfaces | Unspecified. | Scriptable setup, stimulus, completion detection, assertions, evidence collection, and cleanup. |
+
+### Substitute strategy by boundary
+
+- **Order Service boundary:** Replace the adapter consumer with a contract-compatible queue peer. This tests order publication and response handling, but supplies no evidence about the real adapter.
+- **Adapter boundary:** Run the real adapter against a scripted provider substitute through its normal configured interface. This can exercise request construction, response handling, and transport failures.
+- **Callback boundary:** Reuse the simulator for the cases it demonstrably supports. Callback simulation alone cannot establish behavior when an outbound provider request fails or its outcome is uncertain.
+- **Provider integration boundary:** Use the real sandbox for contract compatibility. Its behavior does not establish production failure behavior or full environment parity.
+
+### Improvements and minimum hooks
+
+These are proposed capabilities; their availability must be verified.
+
+| Improvement | Value | Cost and decision gate |
+|---|---|---|
+| Configurable provider substitute in an isolated deployment | Exercises the real adapter with scripted responses and faults | Moderate configuration and contract-maintenance work. Gate: ordinary adapter traffic reaches the substitute without bypassing validation. |
+| Controlled queue and callback delivery | Tests duplication, delay, reordering, and redelivery | Low to moderate, depending on existing interfaces. Gate: the actual delivery sequence is recorded and replayable. |
+| Correlated traces plus scoped state inspection | Makes failures attributable and assertions auditable | Moderate instrumentation work. Gate: one synthetic payment can be followed through every relevant boundary. |
+| Per-run resource configuration and reset | Prevents contamination and enables parallel execution | Moderate orchestration work. Gate: concurrent runs cannot consume or modify each other’s resources. |
+| Controlled timing and completion signals | Makes retries and asynchronous assertions reproducible | Potentially higher implementation cost. Gate: tests finish on observable conditions within defined bounds, without relying on arbitrary sleeps. |
+
+Fault facilities should be restricted to isolated nonproduction deployments through normal configuration and access controls. They must not weaken callback authentication or expose a production testing backdoor.
+
+### Concrete verification scenarios
+
+Expected outcomes below are **proposed acceptance criteria**, pending the payment-state and recovery contracts.
+
+| Scenario | Preconditions | Stimulus | Expected result / decision criterion | Required evidence |
+|---|---|---|---|---|
+| Boundary compatibility | Versioned contracts, synthetic order, scoped resources | Submit an order through the real queue and adapter; deliver a supported callback | Messages and state transitions match the agreed contracts | Message captures, correlated trace, resulting state |
+| Ambiguous provider outcome | Substitute can record acceptance and suppress the response; recovery policy defined | Accept the request, then drop the connection or withhold the response | The outcome follows the agreed uncertain-payment policy; recovery causes no additional business charge | Substitute acceptance ledger, attempt history, recovery trace, final state |
+| Duplicate and reordered delivery | Real processing path and deduplication policy available | Redeliver a payment message; repeat and reorder supported callbacks | No extra business effect; state follows the agreed precedence rules | Delivery sequence, side-effect ledger, state history |
+| Failure and retry control | Retry limits and timing policy documented; substitute supports relevant faults | Inject connection failure, timeout, and applicable provider error responses | Attempts, timing, termination, and recovery match policy | Fault script, timestamps or logical time, attempt records |
+| Isolation | Two runs with separate topics and identified storage/callback boundaries | Execute concurrently, then clean up one run | Neither run consumes, changes, or removes the other’s resources | Bindings, identifiers, storage observations, cleanup record |
+| Reproduction | Pinned configuration, resettable fixtures, recorded stimuli | Repeat a failure scenario from the same starting state | Same normalized business outcome and policy-relevant sequence | Configuration manifest, fixture identity, stimulus script, comparable traces |
+
+## 5. Blockers and Residual Risk
+
+- **Failure coverage blocker:** E2 leaves adapter-to-provider faults uncontrolled. A substitute or equivalent isolated transport facility must be demonstrated before claiming this coverage.
+- **Assertion blocker:** Missing state, retry, deduplication, and recovery contracts prevent definitive correctness assertions.
+- **Isolation blocker:** E3 proves a queue capability, not effective deployment isolation.
+- **Decision blocker:** No runtime evidence supports an architecture-testability pass or release-readiness conclusion.
+
+Stop a test if resources cross run boundaries or traffic reaches unintended provider credentials/endpoints. Hand off disputed payment-state expectations to the service and product owners.
+
+Even after substitute tests pass, real-provider behavior and production parity remain residual risks. Mitigate them with sandbox contract checks and explicit documentation and acceptance of remaining differences.
+
+## 6. Next Actions and Open Questions
+
+1. **Service owners:** Supply the message contracts, callback route, state ownership, and retry/recovery rules.
+2. **Platform owner:** Demonstrate two isolated runs, including storage, consumers, callback routing, credentials, and cleanup.
+3. **Adapter owner:** Prove that a configured substitute can accept a request and suppress its response through the real adapter path.
+4. **QA owner:** Run the ambiguous-outcome scenario first, preserving configuration, stimuli, traces, and state evidence; then expand to duplicate delivery and retry cases.
+
+The architecture has useful candidate seams and queue isolation support. Its principal unresolved gap is controlled testing of the adapter’s external dependency, followed by evidence that isolation and recovery work across the complete asynchronous path.

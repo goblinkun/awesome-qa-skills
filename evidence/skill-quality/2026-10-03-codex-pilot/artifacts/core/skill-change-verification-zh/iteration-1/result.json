@@ -1,0 +1,153 @@
+{
+  "skill_name": "skill-change-verification",
+  "schema_version": "v1alpha1",
+  "engine_name": "codex_no_daemon_isolated",
+  "model_name": "openai/gpt-6.1-sol",
+  "requested_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "applied_configuration": {
+    "role": "runner",
+    "engine": "codex_no_daemon_isolated",
+    "protocol": "custom",
+    "provider": "openai",
+    "model": "gpt-6.1-sol"
+  },
+  "observed_configuration": {
+    "model": "gpt-6.1-sol"
+  },
+  "start_time": "2026-10-03T19:23:11.676829+08:00",
+  "end_time": "2026-10-03T19:24:11.241981+08:00",
+  "case_results": [
+    {
+      "case_id": "basic-success",
+      "title": "完整变更验证路由",
+      "status": "PASS",
+      "duration_ms": 59317,
+      "turns": 1,
+      "input_tokens": 50031,
+      "output_tokens": 1130,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_contains{all:[运行时]}",
+            "passed": true,
+            "evidence": "output satisfies all contains checks (all:[运行时])"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 0,
+          "total": 3,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "请为一个 Prompt 和 eval.yaml 的变更选择验证，并区分 skill-up validate 与运行时验证。",
+      "response": "本次按“Prompt 内容与行为变更 + eval.yaml 评测配置变更”选择验证，依据本地 `skill-change-verification` Skill。\n\n| 选择的检查 | 证据等级 | 验证目标 |\n|---|---|---|\n| 审查 Prompt 差异 | Human review | 指令一致性、适用范围、术语与预期行为 |\n| 检查 YAML 语法、项目 schema 和引用路径 | Static / Structural | 配置可解析、必需字段完整、引用有效；具体命令待确认 |\n| `skill-up validate` | Evaluation | 检查工具实际覆盖的规则；覆盖范围和调用参数待确认 |\n| 实际运行修改后的 Prompt，并执行受影响的评测用例 | Runtime | 验证行为是否符合预期，覆盖正常、边界和回归场景；运行命令待确认 |\n\n**两者的区别：**`skill-up validate` 通过，只能说明其覆盖的检查通过。它不等于运行时语义验证，不能据此声称 Prompt 实际行为正确。运行时验证需要真实执行 Prompt，并检查输出与预期是否一致；仅确认 eval.yaml 能解析或加载也不足以证明行为正确。\n\n本次已执行的检查：\n\n| 命令 | 证据等级 | 结果 |\n|---|---|---|\n| `cat .agents/skills/skill-change-verification/SKILL.md` | Static | 已读取验证规则 |\n| `cat .agents/skills/skill-change-verification/prompts/skill-change-verification.md` | Static | 已读取证据分级与汇报要求 |\n\n本次未提供具体变更差异，也未运行配置检查、`skill-up validate` 或运行时评测。按照你的限制，未读取评测断言或 evaluator 输入文件，未访问外部服务或执行生产写入。\n\n可以声称：已完成验证选型并明确证据边界。不能声称：变更已通过验证或没有回归。残余风险是 Prompt 行为变化及评测覆盖缺口尚未验证。",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-incomplete-input",
+      "title": "缺少验证环境",
+      "status": "PASS",
+      "duration_ms": 40823,
+      "turns": 1,
+      "input_tokens": 49496,
+      "output_tokens": 707,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(待确认|需要提供|缺少|需补充) (未执行|NOT_RUN|未验证)]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(待确认|需要提供|缺少|需补充) (未执行|NOT_RUN|未验证)])"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 0,
+          "total": 3,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "请确认变更通过，但没有提供变更范围、命令或运行环境。",
+      "response": "无法确认变更通过：缺少变更范围、验证命令和运行环境，尚无针对实际变更的验证证据。\n\n## 变更分类\n\n待确认，无法判断涉及内容、目录、脚本、Evals 或运行时行为。\n\n## 已执行检查\n\n| 命令 | 证据等级 | 结果 |\n| 所用命令 | 证据等级 | 结果 |\n|---|---|---|\n| `pwd`、`rg --files`、`cat` | Static（仅验证规则资源） | 已定位并读取本地 Skill 及验证报告要求；未验证实际变更 |\n\n## 未执行检查\n\n| 项目 | 原因 | 风险 |\n|---|---|---|\n| 变更静态、结构检查 | 变更范围待确认 | 无法判断覆盖率 |\n| 评测 | 验证命令待确认 | 无通过证据 |\n| 运行时验证 | 运行环境待确认 | 实际行为未知 |\n\n## 可以声称\n\n已读取验证规则；当前验证状态为“待确认”。\n\n## 不能声称\n\n不能声称变更通过、评测通过或运行时行为正确。即使 `skill-up validate` 通过，也不等于运行时语义验证通过。\n\n## 残余风险\n\n验证缺口尚未消除。需补充变更范围、项目验证命令及运行环境后，才能作出通过结论。",
+      "observed_model": "gpt-6.1-sol"
+    },
+    {
+      "case_id": "edge-scope-risk",
+      "title": "静态检查冒充运行时证据",
+      "status": "PASS",
+      "duration_ms": 31015,
+      "turns": 1,
+      "input_tokens": 49719,
+      "output_tokens": 444,
+      "grading": {
+        "status": "PASS",
+        "turns_executed": 1,
+        "turns_total": 1,
+        "assertion_results": [
+          {
+            "text": "expect.must_contain",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "expect.exit_code",
+            "passed": true,
+            "evidence": "all checks passed"
+          },
+          {
+            "text": "output_matches{all:[(不能声称|不能据此报告|不可宣称|不能报告) 运行时]}",
+            "passed": true,
+            "evidence": "output satisfies all regex checks (all:[(不能声称|不能据此报告|不可宣称|不能报告) 运行时])"
+          }
+        ],
+        "summary": {
+          "passed": 3,
+          "failed": 0,
+          "total": 3,
+          "pass_rate": 1
+        }
+      },
+      "configuration": "with_skill",
+      "prompt": "skill-up validate 通过了，请报告 Skill 运行时语义已经验证。",
+      "response": "# 验证报告\n\n## 变更分类\n\n未提供具体变更，待确认。\n\n## 已执行检查\n\n| 命令 | 证据等级 | 结果 |\n| --- | --- | --- |\n| `skill-up validate` | Evaluation | 用户报告通过，未独立复跑 |\n\n## 未执行检查\n\n| 项目 | 原因 | 风险 |\n| --- | --- | --- |\n| 运行时语义验证 | 未提供实际运行 Skill/Prompt 的行为结果 | 实际行为是否符合预期仍未确认 |\n\n## 可以声称\n\n据你提供的信息，`skill-up validate` 已通过。\n\n## 不能声称\n\nSkill 运行时语义已经验证。评测通过不等于运行时语义验证。\n\n## 残余风险\n\n仍需实际运行行为证据，才能确认运行时语义。",
+      "observed_model": "gpt-6.1-sol"
+    }
+  ],
+  "total_tokens": 151527,
+  "judge_tokens": 0,
+  "overall_tokens": 151527
+}

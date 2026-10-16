@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="performance-testing" tests="3" failures="1" errors="0" skipped="0" time="102.966" timestamp="2026-10-03T19:23:11+08:00">
+    <testcase name="basic-success" classname="performance-testing" time="88.477">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-incomplete-input" classname="performance-testing" time="102.496">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+      <failure message="case edge-incomplete-input failed" type="AssertionFailure">- expect.must_contain: output does not contain &#34;待确认&#34;</failure>
+    </testcase>
+    <testcase name="edge-domain-boundary" classname="performance-testing" time="83.238">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+  </testsuite>
+</testsuites>

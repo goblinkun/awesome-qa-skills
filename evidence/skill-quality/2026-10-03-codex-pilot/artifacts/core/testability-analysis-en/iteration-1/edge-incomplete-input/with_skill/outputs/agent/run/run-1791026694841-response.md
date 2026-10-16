@@ -1,0 +1,80 @@
+**1. Task understanding and scope**
+
+Assess whether the async refund flow can be tested reliably across three services, and identify the smallest changes and evidence needed to verify completion and failure handling. This is a first-pass assessment; no tests or system inspection were performed.
+
+**2. Input audit**
+
+**Confirmed facts, from your statement:** the flow is asynchronous, spans three services, and has plain logs but no correlation ID, sandbox callback, or status query.
+
+**Working assumptions:** proposed tests would use an isolated, nonproduction environment and synthetic refund data. Any assertions below are proposed acceptance criteria requiring agreement, not established product requirements.
+
+**Open questions:** service responsibilities, transport and retry behavior, refund state model, completion deadline, idempotency contract, existing log fields, test environment, and authoritative financial outcome source.
+
+Evidence is limited to the supplied description. No environment, version, artifacts, timestamps, or execution results establish recency or reproducibility.
+
+**3. Risks and priorities**
+
+Priorities reflect potential impact and difficulty detecting failure; likelihood is unknown.
+
+| Priority | Risk | Evidence and conclusion boundary |
+|---|---|---|
+| P1 | A test cannot reliably attribute events across all three services. | No correlation ID is confirmed. **Hypothesis to Verify:** existing identifiers may still support reliable joins; inspect representative logs. |
+| P1 | A test cannot establish authoritative refund completion. | No status query is confirmed. **Hypothesis to Verify:** another outcome source may exist; identify and validate it. |
+| P1 | Duplicate, missing, or incorrectly reported refunds escape detection. | These are plausible financial failure modes, **not observed defects**. Verify delivery semantics, idempotency, and reconciliation behavior. |
+| P2 | Callback timing and failure tests are difficult to reproduce. | No sandbox callback is confirmed. **Hypothesis to Verify:** other controlled injection or replay mechanisms may exist. |
+| P2 | Results cannot be reproduced across environments. | Environment and version information are absent. Actual environment mismatch is unsupported. |
+
+Address attribution and outcome evidence first: they determine whether subsequent scenario results can be trusted. There is no evidence supporting a P0 incident.
+
+**4. Core analysis and execution items**
+
+No numeric testability score is defensible from this input.
+
+| Dimension | First-pass assessment | Smallest verification |
+|---|---|---|
+| Observability | Cross-service attribution and terminal outcome evidence are unproven. | Trace one sample operation through logs and an authoritative outcome source. |
+| Controllability | A sandbox callback is unavailable; other controls are unknown. | Inventory ways to trigger success, failure, delay, and retry. |
+| Isolation | Unknown. | Confirm tests cannot affect real refunds or other test runs. |
+| Determinism | Async ordering and timing guarantees are unknown. | Obtain retry rules and an agreed completion deadline. |
+| Data setup | Unknown. | Establish synthetic refundable records and repeatable setup/cleanup. |
+| Fault injection | Unknown beyond the missing sandbox callback. | Identify controlled failure points at service boundaries. |
+| Environment parity | Unassessable. | Record versions, configuration, topology, and material differences. |
+| Automation interfaces | Status polling and sandbox callbacks are absent; alternatives are unknown. | Find an authenticated trigger and a machine-readable outcome oracle. |
+
+Recommended minimum improvements, after checking for existing equivalents:
+
+| Improvement | Value | Cost/tradeoff |
+|---|---|---|
+| Propagate an operation identifier through all three services and async boundaries; include it in logs. | Makes attribution and missing-hop investigation reliable. | Changes propagation and logging across services; avoid sensitive data in identifiers. |
+| Provide an authoritative outcome interface, such as a scoped status query or durable completion event. | Enables automated terminal-state assertions. | Requires state ownership, consistency semantics, and access controls. |
+| Provide an isolated callback simulator or replay interface, if callbacks drive the flow. | Enables repeatable delay, duplication, and failure tests. | Requires contract maintenance and strict nonproduction isolation. |
+| Create synthetic fixtures and record run configuration. | Makes reproduction and financial assertions dependable. | Requires setup, cleanup, and environment maintenance. |
+
+These hooks must preserve normal authorization and data isolation.
+
+The following scenarios are **execution-ready only after their preconditions are satisfied**:
+
+| Scenario | Preconditions | Stimulus | Proposed acceptance criterion | Required evidence |
+|---|---|---|---|---|
+| Successful refund | Isolated environment, valid synthetic refundable record, agreed deadline, attribution and outcome oracle | Submit one refund through the normal entry point. | Exactly one intended refund occurs; the reported terminal outcome agrees with the authoritative result within the deadline. | Initial/final financial record, attributed service events, terminal outcome, run configuration. |
+| Duplicate delivery | Confirmed retry/idempotency contract and controlled duplicate-delivery mechanism | Repeat the same logical refund request or callback. | Duplicate handling follows the contract and creates no additional financial effect. | Delivery attempts, operation identity, processing decisions, final financial result. |
+| Delayed or absent callback | Callback dependency confirmed, controlled timing mechanism, documented timeout policy | Delay beyond the agreed threshold, or withhold delivery. | State and recovery follow policy; success is not reported without authoritative evidence. | Delivery schedule, timed state observations, timeout/retry events, final outcome. |
+| Service-boundary failure and recovery | Isolated fault injection, identified boundary, documented recovery contract | Fail one handoff, restore it, and exercise the supported recovery path. | The operation reaches the documented outcome without an extra refund or unexplained disagreement between service state and financial result. | Injected fault, handoff/retry events, state transitions, final financial result. |
+
+**5. Blockers and residual risk**
+
+Execution is blocked by missing environment access, contracts, fixtures, and a demonstrated attribution/outcome method. This blocks a defensible end-to-end correctness claim; it does **not** prove the system is untestable.
+
+A release readiness judgment is unsupported. Reliability, idempotency, recovery correctness, isolation, and environment parity all remain unverified.
+
+For future execution, stop if tests may affect real funds or shared data. Hand contradictory outcome evidence or unresolved refunds to the responsible service owner; do not improvise recovery writes. Any acceptance of remaining uncertainty needs an explicit owner and documented scope.
+
+**6. Next actions and open questions**
+
+1. **Flow owner:** supply a sequence diagram, service responsibilities, state model, and delivery/retry contracts.
+2. **Service owners:** provide a masked sample trace and identify the authoritative refund outcome source. Attempt attribution before adding instrumentation.
+3. **QA/environment owner:** document an isolated environment, versions, synthetic fixtures, and available injection controls.
+4. **Product/financial owner:** agree completion deadlines and duplicate, timeout, and recovery expectations.
+5. Run the successful-refund scenario first. Proceed to fault scenarios only when attribution and outcome assertions are reliable.
+
+The strongest supported conclusion is that the stated interfaces leave important test evidence gaps. Claims of actual refund defects, failure frequency, root cause, or release safety remain unsupported.

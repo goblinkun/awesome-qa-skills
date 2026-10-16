@@ -1,0 +1,10 @@
+{
+  "eval_id": 0,
+  "eval_name": "设计完整 Skill 评测",
+  "prompt": "请为一个 Skill 设计并报告评测，覆盖 case 类型、judge 选择、trigger evidence、run metadata、失败分类、benchmark 与 regression，并输出评测范围、证据边界和推荐行动。",
+  "assertions": [
+    "expect.must_contain",
+    "expect.exit_code",
+    "output_matches{all:[评测范围 (证据边界|证据分别判断|证据约束|证据状态) 推荐行动]}"
+  ]
+}

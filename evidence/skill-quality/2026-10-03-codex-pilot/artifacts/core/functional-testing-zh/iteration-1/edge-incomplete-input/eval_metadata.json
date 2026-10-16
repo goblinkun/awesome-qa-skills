@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "功能测试：信息不全仍给初版",
+  "prompt": "用 functional-testing 帮我设计测试。\n需求只有一句：新版本加了积分兑换。没有原型和接口文档。\n请先给可用初版，并列出必须补齐的信息。\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_matches{all:[假设 待确认 (信息缺口|必须补齐的信息|待补充信息|信息不足|需要补齐)]}"
+  ]
+}

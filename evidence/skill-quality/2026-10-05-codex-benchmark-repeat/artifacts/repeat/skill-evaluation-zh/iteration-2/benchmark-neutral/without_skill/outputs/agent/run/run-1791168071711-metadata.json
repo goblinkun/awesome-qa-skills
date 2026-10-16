@@ -1,0 +1,18 @@
+{
+  "phase": "run",
+  "case_id": "benchmark-neutral",
+  "variant": "without_skill",
+  "started_at": "2026-10-05T02:41:11.711Z",
+  "completed_at": "2026-10-05T02:42:22.106Z",
+  "requested_model": "openai/gpt-6.1-sol",
+  "observed_model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "codex_version": "0.159.2",
+  "exit_code": 0,
+  "input_tokens": 32529,
+  "output_tokens": 1642,
+  "provider_errors": [],
+  "installed_skill_files": [],
+  "disabled_global_skill_count": 291,
+  "skill_catalog": null
+}

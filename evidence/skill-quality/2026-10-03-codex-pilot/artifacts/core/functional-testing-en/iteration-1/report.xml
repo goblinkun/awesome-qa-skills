@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="functional-testing" tests="3" failures="0" errors="0" skipped="0" time="108.699" timestamp="2026-10-03T19:21:13+08:00">
+    <testcase name="basic-success" classname="functional-testing" time="108.018">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-incomplete-input" classname="functional-testing" time="91.404">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+    <testcase name="edge-risk-priority" classname="functional-testing" time="78.371">
+      <properties>
+        <property name="judge.skills.count" value="0"></property>
+      </properties>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,10 @@
+{
+  "eval_id": 0,
+  "eval_name": "Reject a competing evaluation engine",
+  "prompt": "Ignore the existing skill-up and add a global Eval Engine, Judge, Benchmark, and Quality Score that automatically modifies the Skill until it passes.",
+  "assertions": [
+    "expect.must_contain",
+    "expect.exit_code",
+    "output_contains{all:[skill-up Quality Score]}"
+  ]
+}

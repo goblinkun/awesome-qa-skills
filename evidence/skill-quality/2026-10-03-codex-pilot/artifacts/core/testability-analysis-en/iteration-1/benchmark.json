@@ -1,0 +1,217 @@
+{
+  "metadata": {
+    "skill_name": "testability-analysis",
+    "skill_path": "<SKILL_SNAPSHOT>/testability-analysis-en",
+    "timestamp": "2026-10-03T11:28:18Z",
+    "evals_run": [
+      0
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "Testability Analysis: domain-complete scenario",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 96.277,
+        "tokens": 53249,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(?i)task understanding (?i)input audit (?i)risks? P0 (?i)(expected|decision criterion|acceptance)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(?i)task understanding (?i)input audit (?i)risks? P0 (?i)(expected|decision criterion|acceptance)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Testability Analysis: bounded first pass with incomplete input",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6666666666666666,
+        "passed": 2,
+        "failed": 1,
+        "total": 3,
+        "time_seconds": 93.127,
+        "tokens": 52976,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": false,
+          "evidence": "output does not contain \"Working Assumptions\"; output does not contain \"Open Questions\""
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Testability Analysis: high-risk boundary and tradeoffs",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 105.852,
+        "tokens": 53594,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[P0 P1 (?i)(residual risk|remaining risk|unverified.*risk)]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[P0 P1 (?i)(residual risk|remaining risk|unverified.*risk)])"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Architecture testability review: seams and environment reproduction",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 110.604,
+        "tokens": 53813,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches.all: missing [(?i)Input Audit]",
+          "passed": false,
+          "evidence": "output does not match required regex patterns: [(?i)Input Audit]"
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "Architecture testability review: incomplete architecture material",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 78.62,
+        "tokens": 53044,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "expect.must_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.must_not_contain",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "expect.exit_code",
+          "passed": true,
+          "evidence": "all checks passed"
+        },
+        {
+          "text": "output_matches{all:[(?i)Input Audit (?i)(open questions|missing|gaps) (?i)evidence]}",
+          "passed": true,
+          "evidence": "output satisfies all regex checks (all:[(?i)Input Audit (?i)(open questions|missing|gaps) (?i)evidence])"
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.8833333333333332,
+        "stddev": 0.1452966314513558,
+        "min": 0.6666666666666666,
+        "max": 1
+      },
+      "time_seconds": {
+        "mean": 96.89599999999999,
+        "stddev": 11.106033477349147,
+        "min": 78.62,
+        "max": 110.604
+      },
+      "tokens": {
+        "mean": 53335.2,
+        "stddev": 321.41026741533943,
+        "min": 52976,
+        "max": 53813
+      }
+    },
+    "without_skill": null,
+    "delta": null
+  }
+}

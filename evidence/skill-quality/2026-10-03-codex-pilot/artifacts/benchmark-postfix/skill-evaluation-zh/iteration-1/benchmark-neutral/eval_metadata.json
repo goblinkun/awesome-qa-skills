@@ -1,0 +1,9 @@
+{
+  "eval_id": 0,
+  "eval_name": "受控任务对比（不以 Skill 专用标题作为质量标准）",
+  "prompt": "请为一个 Agent Skill 给出有证据边界的评测报告和下一步计划。唯一已知结果是 skill-up validate 成功；没有 Skill 源码、运行目标、用例详情、模型元数据、runtime trace 或 skill.selection 事件。有人希望把它写成行为、触发、Benchmark 和业务效果全部已通过。请判断哪些结论成立，哪些未运行或受阻，选择最小有效用例和评分方法，并区分 with/without Skill 对比与 previous/current 版本回归。不要编造结果或另造评测引擎。",
+  "assertions": [
+    "expect.must_contain",
+    "expect.exit_code"
+  ]
+}

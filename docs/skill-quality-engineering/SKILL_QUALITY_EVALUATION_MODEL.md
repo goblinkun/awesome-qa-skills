@@ -493,7 +493,7 @@ Adversarial
 Benchmark
 Compatibility
 Trajectory
-Side-effect
+side_effect
 ```
 
 选择规则：
@@ -510,7 +510,7 @@ Side-effect
 | Benchmark | 要宣称 Effectiveness |
 | Compatibility | 要宣称兼容性 |
 | Trajectory | 过程影响正确性 |
-| Side-effect | Skill 会修改状态 |
+| side_effect | Skill 会修改状态 |
 
 ## 9. Evaluation Pyramid
 
@@ -583,32 +583,20 @@ LLM 输出具有非确定性。对于重要的 L3/L4 行为，可以执行多次
 
 ## 13. 状态模型
 
-使用：
-
-```text
-PASS
-FAIL
-NOT_RUN
-BLOCKED
-NOT_SCORED
-UNASSESSED
-INSUFFICIENT_EVIDENCE
-```
-
-本仓库不把 `PARTIAL` 作为独立的 canonical Evidence State：已执行但只能支持限制性结论时使用 `INSUFFICIENT_EVIDENCE`；尚未评估的维度使用 `UNASSESSED`；没有合法 Quality Score 时使用 `NOT_SCORED`。没有观察到失败，不等于已经 PASS。
+本仓库的 canonical Evidence State 集合、语义和判定规则以 [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT.md) 为唯一主来源。SQEM 不创建第二状态机；本文件不重复定义状态。
 
 ## 14. Quality Profile
 
 SQEM 不要求一个总质量分数。
 
-推荐：
+下面是仅用于展示字段关系的占位示例，不代表任何真实 Skill 当前已执行或已获得这些质量结论；真实档案必须关联 Evidence Report。
 
 ```text
 Skill Quality Profile
 ────────────────────────────────────
 
 Skill:
-functional-testing
+example-skill
 
 Version:
 x.y.z
@@ -617,25 +605,24 @@ Target Test Level:
 L3 Evaluated
 
 Current Test Level:
-L2 Verified
+L1 Valid
 
-Q1 Specification       PASS
-Q2 Design              PASS
-Q3 Package             PASS
-Q4 Behavior            PASS
+Q1 Specification       NOT_RUN
+Q2 Design              NOT_RUN
+Q3 Package             NOT_RUN
+Q4 Behavior            NOT_RUN
 Q5 Effectiveness       NOT_RUN
-Q6 Compatibility       INSUFFICIENT_EVIDENCE
-Q7 Evidence/Evolution  PASS
+Q6 Compatibility       NOT_RUN
+Q7 Evidence/Evolution  NOT_RUN
 
 Evidence Level:
-E2 Eval
+E1 Static
 
 Known Gaps:
-- 尚未执行 Benchmark
-- Cross-model 证据不完整
-- Real-project Evidence 有限
+- Runtime Eval 尚未执行
+- Cross-model 和 Real-project Evidence 尚未建立
 
-`INSUFFICIENT_EVIDENCE` 表示已有部分运行或审阅痕迹，但不足以支持完整兼容性声明；它不是通过状态。
+状态语义和限制性结论按 [Skill Evaluation Contract](../governance/SKILL_EVALUATION_CONTRACT.md) 记录；本占位示例不构成通过结论。
 
 Next Validation:
 - 执行 with/without Skill Benchmark
@@ -744,13 +731,13 @@ Required: Behavior Eval / Regression / Selected Runtime
 functional-testing
 testability-analysis
 performance-testing
-skill-evaluation-design
+skill-evaluation
 skill-change-verification
 ```
 
 Pilot 不仅测试 Skill，也测试 SQEM 本身是否实用、成本是否可接受。Pilot 结果进入 SQEM v1.1。
 
-这些五个候选是 SQEM 方法论 Pilot，不替换仓库已有的 `requirements-analysis`、`ui-test-playwright` 和 `discover-testing` Pilot 记录；它们的运行状态仍须服从 [既有 Pilot 契约](../governance/SKILL_EVALUATION_PILOTS.md)。
+其中附件方法名 `skill-evaluation-design` 映射到仓库现有 canonical Skill `skill-evaluation`；不创建别名目录。这些五个候选是 SQEM 方法论 Pilot，不替换仓库已有的 `requirements-analysis`、`ui-test-playwright` 和 `discover-testing` Pilot 记录；它们的运行状态仍须服从 [既有 Pilot 契约](../governance/SKILL_EVALUATION_PILOTS.md)。
 
 ## 19. 参考体系
 

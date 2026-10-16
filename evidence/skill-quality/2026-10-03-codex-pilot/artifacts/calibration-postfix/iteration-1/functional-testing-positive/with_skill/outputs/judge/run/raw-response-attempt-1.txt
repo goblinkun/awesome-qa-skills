@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "criterion_id": "criterion-1",
+      "passed": true,
+      "evidence": [
+        "final_message 区分“已知事实”和“待确认”事项，明确接口字段、权限矩阵、终态、幂等及退款规则待确认，并写明“不假设字段或状态名”。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-2",
+      "passed": true,
+      "evidence": [
+        "final_message 覆盖登录、购物车、下单、支付的正常闭环，以及同一支付回调发送两次、失败回调和重试。",
+        "final_message 还要求检查数量与金额边界、订单归属及未授权访问。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-3",
+      "passed": true,
+      "evidence": [
+        "final_message 将正常支付闭环、重复回调和支付失败列为 P0，将数量、金额边界及权限列为 P1；执行顺序从正常闭环开始，再验证重复回调和失败场景。",
+        "final_message 写明“30 分钟内优先两项 P0，其余记录为延后”，并指出延后退款和多渠道验证可能漏掉账务不一致或渠道差异。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-4",
+      "passed": true,
+      "evidence": [
+        "final_message 为正常闭环列出隔离账号、可售商品和批准规则作为前置条件，列出下单支付操作、金额与支付结果的预期，并要求保存请求、查询结果及关联日志。",
+        "final_message 为重复回调、失败回调和权限检查列出操作、待核对结果及资金、日志或订单归属证据；未知边界规则时阻塞相应断言。"
+      ],
+      "failures": []
+    },
+    {
+      "criterion_id": "criterion-5",
+      "passed": true,
+      "evidence": [
+        "final_message 明确“上述是设计，尚未执行测试，不能声称业务或发布通过”。",
+        "final_message 规定遇到真实资金、重复扣款或数据隔离失效时停止并升级负责人，并列出补充规则、确认隔离环境、执行测试和保存证据的下一步。"
+      ],
+      "failures": []
+    }
+  ]
+}

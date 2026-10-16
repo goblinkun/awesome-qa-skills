@@ -1,0 +1,70 @@
+### 1. Task Understanding
+
+**First draft for review and refinement.** Confirmed: the new release adds points redemption; no prototype or API documentation is available.
+
+Working assumption: a user selects an eligible reward, confirms redemption, spends points, and receives a redemption record or benefit. Reward type, eligibility, deductions, fulfillment, and reversal rules remain unconfirmed.
+
+Scope: eligibility → reward selection → confirmation → points deduction → fulfillment → history, including failures and relevant regression.
+
+### 2. Risk and Priority
+
+| Priority | Risk | Testing focus |
+|---|---|---|
+| P0 | Lost points, duplicate redemption, unauthorized access | Accounting consistency, retries, concurrency, ownership |
+| P1 | Incorrect eligibility or redemption decisions | Balance boundaries, expired points, limits, availability |
+| P2 | Confusing or inconsistent presentation | Confirmation details, messages, history display |
+
+P0 failures should block release. Final release criteria need agreement with the team.
+
+### 3. Core Functional Coverage
+
+- **Eligibility and selection:** eligible/ineligible users, available/unavailable rewards, valid/expired points.
+- **Confirmation and redemption:** displayed cost, successful redemption, insufficient balance, changed cost or availability.
+- **Accounting and fulfillment:** deduction accuracy, duplicate protection, simultaneous requests, dependency failures.
+- **Access and history:** authentication, account ownership, consistent balance and redemption status.
+- **Regression:** existing earning, expiry, balance, and history behavior.
+- **Conditional scope:** cancellation, refunds, stock, vouchers, shipping, and mixed cash/points payments require confirmation.
+
+### 4. Key Scenario List
+
+Use `C` for the confirmed redemption cost and `δ` for the smallest supported points unit. Expected outcomes below are **proposed acceptance criteria**, subject to business-rule confirmation.
+
+| ID / Priority | Preconditions and action | Expected result / evidence |
+|---|---|---|
+| R01 / P0 | Eligible account with spendable balance `B ≥ C`; select reward, review details, confirm once. | One redemption; balance becomes `B − C`; deduction and benefit/fulfillment record agree. |
+| R02 / P1 | Inspect confirmation before submitting; then exit without confirming. | Reward and cost are clear; exiting causes no deduction or redemption. |
+| R03 / P1 | Repeat redemption with balances `C − δ`, `C`, and `C + δ`. | Insufficient balance is rejected without deduction; exact balance succeeds and leaves zero; above-cost balance leaves `δ`. |
+| R04 / P1 | Account has zero points, or total points ≥ `C` but spendable points < `C` because some are expired/restricted. | Decision uses the approved spendable-points rule; rejected attempts change nothing. |
+| R05 / P0 | Double-click confirmation or repeat the same submission during processing. | A single redemption intent produces at most one deduction and one benefit. |
+| R06 / P0 | Submit concurrently from two sessions when balance covers only one redemption. | At most one succeeds; balance never becomes negative; records match the final result. |
+| R07 / P0 | In an approved test environment, interrupt the response after submission; retry or reload. | Original outcome remains discoverable; retry creates no duplicate; no ambiguous permanent deduction. |
+| R08 / P0 | Simulate fulfillment failure after redemption is accepted. | Approved recovery rule applies: a traceable pending/retry state or compensation. No unexplained lost points or duplicate benefit. |
+| R09 / P0 | Attempt redemption while signed out or after session expiry. Using supported test tooling, attempt access to another account’s redemption. | Unauthorized actions/access are rejected; neither account’s balance or benefits change. |
+| R10 / P1 | Use an account excluded by the confirmed role, membership, region, or other eligibility rule. | Redemption is rejected with an understandable reason and no deduction. |
+| R11 / P1 | Change balance, eligibility, reward cost, or availability between selection and confirmation. | Submission revalidates relevant state; no unapproved cost is charged; failure leaves consistent records. |
+| R12 / P1 | If stock or redemption limits exist, test the limit, one beyond it, and concurrent attempts for the last available reward. | Approved limits hold under concurrency; unsuccessful attempts deduct nothing. |
+| R13 / P1 | Complete successful, rejected, and pending redemptions; refresh and sign in again. | Balance and history remain consistent; each outcome is distinguishable; fulfillment status follows the approved timing. |
+| R14 / P1 | If reversal exists, cancel/refund an eligible redemption; repeat the reversal action. | Points and benefit are adjusted once according to policy; repeated reversal has no additional effect. |
+| R15 / P1 | Exercise existing earning and expiry flows before/after redemption, including the expiry cutoff. | Existing behavior remains correct; redemption uses the approved timing and deduction-order rules. |
+
+### 5. Execution Notes
+
+Prepare controlled accounts with exact, insufficient, excess, expired, and restricted balances; eligible/ineligible users; and two sessions for one account. Add limited-stock or reversible rewards only if supported.
+
+Run R01 and P0 cases first, then boundaries and regression. For each accounting case, capture before/after spendable balance, redemption reference/status, deduction evidence, and fulfillment outcome through approved test interfaces.
+
+Concurrency and failure cases need a controlled test environment and a way to inspect records or simulate dependency failures. Without those capabilities, mark them **blocked**, not passed. These cases have not been executed; no release-readiness claim is made.
+
+### 6. Open Questions
+
+**Must-have information to finalize and execute:**
+
+1. **Business flow:** What can be redeemed, by whom, through which entry point, and what counts as successful fulfillment?
+2. **Points rules:** Cost, spendable-balance definition, precision, expiry cutoff/timezone, deduction order, minimums, maximums, and redemption limits.
+3. **Failure rules:** Duplicate/retry behavior, concurrent submissions, pending states, fulfillment timeout, compensation, cancellation, and refunds.
+4. **Access rules:** Authentication requirements, eligibility differences, record visibility, and any administrator permissions.
+5. **Observable outcomes:** Expected confirmation/history content, statuses, error messages, and a way to reconcile deductions with benefits.
+6. **Execution resources:** Test build/environment, accounts and data, dependency test facilities, and integration documentation or equivalent behavior walkthrough.
+7. **Release boundaries:** Supported clients, affected existing flows, known defects, and agreed acceptance criteria.
+
+A prototype and API documentation are not prerequisites for this draft. Confirmed behavior and an accessible test build are needed to turn it into executable, release-specific cases.

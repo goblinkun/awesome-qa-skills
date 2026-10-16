@@ -1,0 +1,23 @@
+version: 1
+metadata: {key: "skill-change-verification"}
+interface:
+  display_name: "Skill Change Verification"
+  short_description: "Select evidence by change scope and distinguish static, evaluation, and runtime claims."
+  default_prompt: "Use the skill-change-verification skill to select and report verification evidence."
+policy: {allow_implicit_invocation: true}
+schema_version: v1alpha1
+environment: {type: none}
+skills: [{source: local_path, path: ., target: .agents/skills/skill-change-verification}]
+engine:
+  name: codex_no_daemon_isolated
+  model: {provider: openai, name: gpt-6.1-sol}
+  custom:
+    transport: local
+    response_format: session_result
+    local:
+      command: node
+      args: ["${SQET_ADAPTER}", "${input_file}"]
+cases:
+  files: [evals/cases/basic-success.yaml, evals/cases/edge-incomplete-input.yaml, evals/cases/edge-scope-risk.yaml]
+  defaults: {timeout_seconds: 900, max_turns: 8, expect: {exit_code: 0}}
+report: {formats: [json]}

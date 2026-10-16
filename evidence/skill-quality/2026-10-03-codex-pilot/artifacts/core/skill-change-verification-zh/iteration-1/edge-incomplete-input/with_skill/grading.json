@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "expect.must_contain",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "output_matches{all:[(待确认|需要提供|缺少|需补充) (未执行|NOT_RUN|未验证)]}",
+      "passed": true,
+      "evidence": "output satisfies all regex checks (all:[(待确认|需要提供|缺少|需补充) (未执行|NOT_RUN|未验证)])"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1
+  }
+}

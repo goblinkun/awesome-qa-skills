@@ -41,7 +41,7 @@ Use scheduled runs for higher-cost validation such as:
 | description / trigger metadata | Discovery, trigger, selection | Positive, Negative, Boundary |
 | workflow instructions | Behavior, trajectory | Behavior, Regression, Runtime |
 | references | Evidence use, output | Behavior, Regression |
-| scripts/tools | Runtime, side effects | Runtime, Side-effect, Regression |
+| scripts/tools | Runtime, side effects | Runtime, side_effect, Regression |
 | Eval definition | Evidence validity | Eval review / calibration |
 
 ## Gate Principle

@@ -1,0 +1,93 @@
+现有证据只支持“`skill-up validate` 成功”。不能据此宣布行为、触发、Benchmark 或业务效果通过。以下是证据报告与待执行方案；本次没有运行评测。
+
+## 范围
+
+目标 Skill 的源码、契约、运行目标和用例均未提供，因此触发条件、输入输出、约束和目标行为全部为 `unknown`。本报告判断证据边界，不判断 Skill 实际质量。
+
+## Run Metadata
+
+已知：用户提供 `skill-up validate` 成功这一结果。
+
+以下均为 `unknown`：`run_id`、Skill/Eval 版本、`skill-up` 版本、engine/provider/model、judge、运行环境、时间戳。没有原始日志、工件、runtime trace 或 `skill.selection` 事件；该结果未由本次独立复核。
+
+## 配置与覆盖范围
+
+最小候选集如下。须先读取目标 Skill 契约、已有 `evals/` 和 fixtures，才能把这些模板落实为有效用例、确定评分规则。
+
+| 用例 | 最小可观察断言 | 拟用 judge | 当前状态与限制 |
+|---|---|---|---|
+| HAPPY：完整有效输入 | 达成一个核心目标；满足输出格式和必需约束 | 优先 `rule_based`；可执行工件用 `script` | `NOT_RUN`；核心目标未知 |
+| INCOMPLETE：缺少一个必要输入 | 按契约澄清或处理缺失信息；不编造输入 | 优先 `rule_based` | `NOT_RUN`；必要输入未知 |
+| BOUNDARY：一个范围或风险边界 | 按契约处理边界；不执行禁止行为 | 输出用规则，过程用 trace 检查 | `NOT_RUN`；边界未知 |
+| 正向触发：每种相关模式各一个 | `skill.selection` 明确记录目标 Skill 被选择 | 确定性事件检查 | `NOT_RUN`；当前触发证据 `BLOCKED` |
+| NEGATIVE_TRIGGER：一个近似但不适用输入 | 完整选择记录明确证明未选择目标 Skill | 确定性事件检查 | `NOT_RUN`；不能以事件缺失代替负向证据 |
+
+正向模式只覆盖契约实际声明的显式、隐式、上下文触发；目前无法确定哪些适用。允许一个用例同时验证行为和触发，以减少重复，但分别评分。
+
+## Summary
+
+| 主张 | 证据状态 | 可成立的结论 |
+|---|---|---|
+| `skill-up validate` 成功 | `PASS`，依据用户报告 | 该次 validate 被报告成功；具体检查范围未知 |
+| 行为符合契约 | `NOT_RUN` | 没有行为运行结果 |
+| 已正确触发或未触发 | `BLOCKED` | 缺少 `skill.selection`，无法判断 |
+| Benchmark 全部通过或有收益 | `NOT_RUN` | 没有 with/without Skill 对比 |
+| 当前版本没有回归 | `NOT_RUN` | 没有 previous/current 对比 |
+| 业务效果已通过 | `INSUFFICIENT_EVIDENCE` | 没有业务指标或测量数据 |
+| 评测有效性 | `UNASSESSED` | 无契约、用例与 judge 可供审查 |
+| Quality Score | `NOT_SCORED` | 未评分，也不另造总分 |
+
+状态含义：
+
+- `PASS` / `FAIL`：已执行检查有证据满足／违反明确断言。
+- `NOT_RUN`：没有执行对应评测。
+- `BLOCKED`：必要输入、目标或证据缺失，无法完成判断。
+- `NOT_SCORED`：没有产生评分。
+- `UNASSESSED`：尚未评估该事项。
+- `INSUFFICIENT_EVIDENCE`：现有证据不足以支持所提结论。
+
+## Case Results
+
+唯一已知检查是 validate 成功；它不属于上述行为用例的通过证据。所有候选用例均未执行，没有可报告的成功率、耗时或语义评分。
+
+## Trigger / Process / Outcome / Artifact / Semantic Evidence
+
+- **Trigger：`BLOCKED`**。输出相似、提到 Skill 名称或表现符合预期，都不能替代选择事件。
+- **Process：`BLOCKED`**。没有 runtime trace，不能判断实际步骤或过程约束。
+- **Outcome / Artifact / Semantic：`NOT_RUN`**。没有运行输出、产物或 judge 结果。
+
+评分优先采用逐断言的确定性通过／失败，保留阻塞状态。只有规则和脚本无法判断的语义质量才使用 `agent_judge`：先定义可观察 rubric，再用人工确认样例校准，校准前不作为通过门槛。总质量分遵循既有治理契约。
+
+## Benchmark Results
+
+**`NOT_RUN`**。Benchmark 比较 **with Skill / without Skill**：使用同一任务集，控制模型、运行参数、环境、工具、预算及 judge，并记录差异。
+
+最小配对运行可以检查流程是否可行；它不能证明稳定收益或业务效果。重复次数和样本规模应由波动及结论用途决定。
+
+## Regression Findings
+
+**`NOT_RUN`**。版本回归比较 **previous / current Skill**，两组都使用 Skill，并保持评测条件可比。
+
+Benchmark 收益不能证明没有版本回归；版本回归通过也不能证明 Skill 相对不用 Skill 有收益。目前没有历史失败，不创建虚构的 regression case。确认真实失败根因后，再保留原始证据并添加回归用例。
+
+## Flaky / Blocked / Infrastructure Errors
+
+运行评测受阻于源码、契约和运行目标缺失；触发判断另受阻于选择事件缺失。Flaky 情况为 `UNASSESSED`；没有证据表明发生基础设施错误。
+
+## Eval Validity Findings
+
+**`UNASSESSED`**。尚不能判断断言是否符合契约、judge 是否有效、覆盖是否充分。
+
+Skill Defect、Eval Defect、Infrastructure Defect 均不能确认；根因分类保持 **`UNKNOWN`**。证据缺失不能直接归因为 Skill 缺陷。
+
+## Limitations
+
+validate 成功不能升级为 runtime 语义、发布准备度或业务成效结论。“全部已通过”超出了现有证据边界。
+
+## Recommended Actions
+
+1. 补齐目标 Skill、契约、已有 `evals/`、fixtures、运行目标和元数据；将候选模板落实为具体断言。
+2. 使用既有 **`skill-up`** 引擎运行最小用例集，保存 judge、输出、工件与 trace；不另造评测引擎。
+3. 为触发检查取得完整 `skill.selection` 证据；无法取得时继续标为 `BLOCKED`。
+4. 分别执行 with/without Benchmark 和 previous/current 回归，独立报告结论。
+5. 如需业务效果结论，先定义业务指标、基线和测量方法；在获得实际数据前保留 `INSUFFICIENT_EVIDENCE`。

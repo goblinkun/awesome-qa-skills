@@ -1,0 +1,10 @@
+📋 Loading configuration...
+level=INFO msg="Config: loading eval.yaml from <INTERRUPTED_ROOT>/packages/skill-evaluation-zh/evals/benchmark.yaml"
+✅ Loaded 1 case(s) | engine: codex_no_daemon_isolated | model: openai/gpt-6.1-sol
+
+🔑 Loading credentials...
+✅ Credentials ready
+
+🚀 Running evaluation (1 cases)
+   ⏳ [1/2] benchmark-neutral: 受控任务对比（不以 Skill 专用标题作为质量标准）...
+level=INFO msg="judge context materialized profile=standard dir=<INTERRUPTED_ROOT>/results/skill-evaluation-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context"

@@ -1,0 +1,32 @@
+📋 Loading configuration...
+level=INFO msg="Config: loading eval.yaml from <REPEAT_ROOT>/packages/functional-testing-zh/evals/benchmark.yaml"
+✅ Loaded 1 case(s) | engine: codex_no_daemon_isolated | model: openai/gpt-6.1-sol
+
+🔑 Loading credentials...
+✅ Credentials ready
+
+🚀 Running evaluation (1 cases)
+   ⏳ [1/2] benchmark-neutral: 受控任务对比（不以 Skill 专用标题作为质量标准）...
+level=INFO msg="judge context materialized profile=standard dir=<REPEAT_ROOT>/results/functional-testing-zh/iteration-1/benchmark-neutral/with_skill/outputs/judge/context"
+   ✅ [1/2] benchmark-neutral: PASS (100.0%)
+   ⏳ [2/2] benchmark-neutral: 受控任务对比（不以 Skill 专用标题作为质量标准）...
+level=INFO msg="judge context materialized profile=standard dir=<REPEAT_ROOT>/results/functional-testing-zh/iteration-1/benchmark-neutral/without_skill/outputs/judge/context"
+   ✅ [2/2] benchmark-neutral: PASS (100.0%)
+
+📊 Generating reports...
+✅ Reports saved to <REPEAT_ROOT>/results/functional-testing-zh/iteration-1
+   ⏳ [1/2] benchmark-neutral: 受控任务对比（不以 Skill 专用标题作为质量标准）...
+level=INFO msg="judge context materialized profile=standard dir=<REPEAT_ROOT>/results/functional-testing-zh/iteration-2/benchmark-neutral/with_skill/outputs/judge/context"
+   ✅ [1/2] benchmark-neutral: PASS (100.0%)
+   ⏳ [2/2] benchmark-neutral: 受控任务对比（不以 Skill 专用标题作为质量标准）...
+level=INFO msg="judge context materialized profile=standard dir=<REPEAT_ROOT>/results/functional-testing-zh/iteration-2/benchmark-neutral/without_skill/outputs/judge/context"
+   ✅ [2/2] benchmark-neutral: PASS (100.0%)
+
+📊 Generating reports...
+✅ Reports saved to <REPEAT_ROOT>/results/functional-testing-zh/iteration-2
+
+INFO Iteration stability summary:
+   benchmark-neutral: 2 trials, 2 PASS
+
+────────────────────────────────────────
+📋 Results: 4 passed, 0 failed, 0 errors

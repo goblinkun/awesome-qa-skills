@@ -1,0 +1,77 @@
+{
+  "expectations": [
+    {
+      "text": "expect.exit_code",
+      "passed": true,
+      "evidence": "all checks passed"
+    },
+    {
+      "text": "区分已提供事实、假设和待确认信息；不编造接口字段、角色规则或支付状态。",
+      "passed": true,
+      "evidence": "final_message 第 1 节分别列出已确认事实和当前假设，并明确接口字段、角色权限矩阵、支付最终状态规则尚未提供。; 第 1 节明确不预设状态名、接口字段、错误码或状态迁移规则；R4 用例规定规则缺失时记为阻塞。"
+    },
+    {
+      "text": "覆盖关键支付闭环、失败或重复回调以及相关边界或权限/数据条件。",
+      "passed": true,
+      "evidence": "final_message 第 4 节的 L1、C1、O1、P1 覆盖登录、购物车、下单、支付及服务端结果。; P2 覆盖支付失败或超时；R1、R2 覆盖串行与并发重复回调；R3、R4 覆盖无效、迟到和乱序通知。; A1 检查未登录及 A/B 用户越权，O2、B1、B2 检查重复下单、数量、库存和价格边界。"
+    },
+    {
+      "text": "按 30 分钟约束给出优先级、执行顺序和延后范围，解释残余风险。",
+      "passed": true,
+      "evidence": "final_message 第 2 节将风险分为 P0/P1，并给出从 0–3 分钟准备到 28–30 分钟汇总的执行顺序。; 第 2 节规定 P0 超时占用 P1 时间，30 分钟到点仍有 P0 未验证时报告验证不充分；第 5 节列出抽样后仍未验证的风险。"
+    },
+    {
+      "text": "关键执行项具有前置条件、刺激/操作、可核验的预期或验收标准及证据。",
+      "passed": true,
+      "evidence": "final_message 第 4 节场景表逐项设置前置条件、操作、预期判断和证据列。; R1 要求先保存处理前基线，再重放同一有效通知两次，以三次处理记录、前后状态和业务效果次数核验幂等；P1 要求用沙箱交易、回调、订单及支付记录核验正常支付。"
+    },
+    {
+      "text": "明确未执行/未验证、停止或升级条件以及下一步；不报告业务或发布已通过。",
+      "passed": true,
+      "evidence": "final_message 开头明确方案待执行、未执行测试且不代表发布通过；第 5 节再次声明所有用例均未执行。; 第 5 节列明环境、契约、严重缺陷及 30 分钟到点时的停止或阻塞条件，并要求 P0 缺陷登记及未运行项标记为未执行。; 第 6 节列出待确认信息和下一步，明确缺少支付最终状态规则及必要契约时无法给出完整通过结论。"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1
+  },
+  "judge_context": {
+    "profile": "standard",
+    "materialized_dir": "judge/context",
+    "manifest": {
+      "profile": "standard",
+      "materialized_dir": "judge/context",
+      "materials": [
+        {
+          "key": "final_message",
+          "mode": "include",
+          "path": "judge/context/final_message.txt",
+          "bytes": 12700,
+          "original_bytes": 12700
+        },
+        {
+          "key": "transcript",
+          "mode": "file_ref",
+          "path": "judge/context/transcript.json",
+          "bytes": 19584,
+          "original_bytes": 19584
+        },
+        {
+          "key": "workspace_diff",
+          "mode": "omit",
+          "bytes": 0
+        },
+        {
+          "key": "generated_files",
+          "mode": "file_ref",
+          "path": "judge/context/generated_files.txt",
+          "bytes": 474,
+          "original_bytes": 474
+        }
+      ]
+    },
+    "prompt_bytes": 16176
+  }
+}

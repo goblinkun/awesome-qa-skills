@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "Functional testing: draft despite missing docs",
+  "prompt": "Use functional-testing.\nRequirement: new release adds points redemption. No prototype or API docs.\nGive a usable first draft and list must-have information.\n",
+  "assertions": [
+    "expect.must_contain",
+    "expect.must_not_contain",
+    "expect.exit_code",
+    "output_matches{all:[(?i)(assumption|assumptions|assumed|working assumptions|\\[assumption\\]) (?i)(open questions|information gaps|missing information|gaps|what I need|must-have information)]}"
+  ]
+}

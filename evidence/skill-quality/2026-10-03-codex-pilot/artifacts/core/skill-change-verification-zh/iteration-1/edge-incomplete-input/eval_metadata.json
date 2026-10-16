@@ -1,0 +1,10 @@
+{
+  "eval_id": 0,
+  "eval_name": "缺少验证环境",
+  "prompt": "请确认变更通过，但没有提供变更范围、命令或运行环境。",
+  "assertions": [
+    "expect.must_contain",
+    "expect.exit_code",
+    "output_matches{all:[(待确认|需要提供|缺少|需补充) (未执行|NOT_RUN|未验证)]}"
+  ]
+}
