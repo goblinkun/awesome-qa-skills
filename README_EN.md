@@ -559,6 +559,7 @@ This section lists community-submitted Skills hosted and maintained by external 
 | Skill | Type | Submitted by | Source | Upstream metadata (checked) |
 | --- | --- | --- | --- | --- |
 | [UIZZE anti-ui-slop](https://github.com/uizze/uizze/blob/main/skills/anti-ui-slop/SKILL.md) | Agent Skill / UX quality gate | [@samuelbushi](https://github.com/samuelbushi) | [upstream directory](https://github.com/uizze/uizze/tree/main/skills/anti-ui-slop) · [submission Issue #3](https://github.com/naodeng/awesome-qa-skills/issues/3) | Apache-2.0 · v1.3.1 · upstream lists Claude Code, Codex, Cursor, and GitHub Copilot (checked 2026-10-12) |
+| [UI Verify triage-visual-changes](https://github.com/uiverify/uiverify/blob/main/packages/skills/skills/triage-visual-changes/SKILL.md) | Agent Skill / visual regression triage | [@igrlk](https://github.com/igrlk) | [upstream directory](https://github.com/uiverify/uiverify/tree/main/packages/skills/skills/triage-visual-changes) · [submission Issue #33](https://github.com/naodeng/awesome-qa-skills/issues/33) | MIT · UI Verify plugin v0.1.0 · requires a UI Verify account and MCP connection (checked 2026-10-19) |
 
 ## Contributing
 
