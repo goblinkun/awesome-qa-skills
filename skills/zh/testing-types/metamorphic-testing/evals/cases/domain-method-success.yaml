@@ -11,7 +11,9 @@ expect:
   exit_code: 0
 judge:
   type: agent_judge
-  model: openai/gpt-5
+  # 如果不能访问 gpt-5 就换用 deepseek-v4-pro
+  # model: openai/gpt-5
+  model: deepseek-v4-pro
   criteria:
     - "指出变换后丢一个 1、输出不等，distinct set 相同不能满足 C1。"
     - "给保留重复的置换关系判据和反例，不能发明去重等价。"
